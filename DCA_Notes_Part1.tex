@@ -1,0 +1,1901 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{longtable}
+
+% Header and Footer Setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{Prathibha Institute}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% Title formatting
+\titleformat{\section}{\Large\bfseries\color{blue!70!black}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{blue!50!black}}{\thesubsection}{1em}{}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries Prathibha Institute\par}
+    \vspace{1cm}
+    {\Large Diploma in Computer Applications (DCA)\par}
+    \vspace{1.5cm}
+    {\LARGE\bfseries Study Notes\par}
+    \vspace{0.5cm}
+    {\Large Part 1: Computer Fundamentals, MS Office \& Internet\par}
+    \vfill
+    {\large Comprehensive Course Material\par}
+    \vspace{0.5cm}
+    {\large \today\par}
+\end{titlepage}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% ============================================
+% TOPIC 1: FUNDAMENTALS OF COMPUTERS
+% ============================================
+
+\section{Fundamentals of Computers}
+
+\subsection{Introduction to Computers}
+
+\subsubsection{What is a Computer?}
+A computer is an electronic device that accepts data as input, processes it according to a set of instructions (program), and produces information as output. The term "computer" is derived from the Latin word "computare" which means to calculate.
+
+\textbf{Key Characteristics of Computers:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Speed:} Computers can process millions of instructions per second
+    \item \textbf{Accuracy:} Computers perform calculations with near-perfect accuracy
+    \item \textbf{Storage:} Large amounts of data can be stored and retrieved quickly
+    \item \textbf{Automation:} Can perform tasks automatically without human intervention
+    \item \textbf{Versatility:} Can perform various types of tasks
+    \item \textbf{Diligence:} Can work continuously without fatigue
+\end{itemize}
+
+\subsubsection{History of Computers}
+
+\textbf{Generations of Computers:}
+
+\begin{enumerate}
+    \item \textbf{First Generation (1940-1956): Vacuum Tubes}
+    \begin{itemize}
+        \item Technology: Vacuum tubes for circuitry, magnetic drums for memory
+        \item Examples: ENIAC, UNIVAC, EDVAC
+        \item Characteristics: Very large in size, consumed lot of electricity, generated excessive heat, slow in speed, less reliable
+    \end{itemize}
+    
+    \item \textbf{Second Generation (1956-1963): Transistors}
+    \begin{itemize}
+        \item Technology: Transistors replaced vacuum tubes
+        \item Examples: IBM 1401, CDC 1604
+        \item Characteristics: Smaller, faster, more reliable, less heat generation, less power consumption
+        \item Programming: Assembly language, high-level languages like COBOL, FORTRAN
+    \end{itemize}
+    
+    \item \textbf{Third Generation (1964-1971): Integrated Circuits}
+    \begin{itemize}
+        \item Technology: Integrated Circuits (ICs) - transistors on silicon chips
+        \item Examples: IBM 360 series, Honeywell-6000 series
+        \item Characteristics: Smaller size, faster, more reliable, affordable, commercial production started
+        \item Development: Operating systems, multiprogramming
+    \end{itemize}
+    
+    \item \textbf{Fourth Generation (1971-Present): Microprocessors}
+    \begin{itemize}
+        \item Technology: VLSI (Very Large Scale Integration) - thousands of ICs on single chip
+        \item Examples: IBM PC, Apple Macintosh, modern desktop computers
+        \item Characteristics: Portable, reliable, cheap, general-purpose
+        \item Development: GUI, internet, multimedia
+    \end{itemize}
+    
+    \item \textbf{Fifth Generation (Present-Future): Artificial Intelligence}
+    \begin{itemize}
+        \item Technology: ULSI (Ultra Large Scale Integration), AI, parallel processing
+        \item Focus: Voice recognition, natural language processing, expert systems
+        \item Examples: AI systems, quantum computers (in development)
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Computer Hardware and Software}
+
+\subsubsection{Hardware}
+Hardware refers to the physical components of a computer system that you can touch and see.
+
+\textbf{Categories of Hardware:}
+\begin{enumerate}
+    \item \textbf{Input Devices:} Devices used to enter data
+    \item \textbf{Output Devices:} Devices that display or output information
+    \item \textbf{Processing Unit:} CPU (Central Processing Unit)
+    \item \textbf{Storage Devices:} Devices that store data
+\end{enumerate}
+
+\subsubsection{Software}
+Software is a set of programs, procedures, and documentation that performs specific tasks on a computer system.
+
+\textbf{Types of Software:}
+
+\begin{enumerate}
+    \item \textbf{System Software:}
+    \begin{itemize}
+        \item Operating Systems (Windows, Linux, macOS)
+        \item Device Drivers
+        \item Utility Programs (Antivirus, Disk Cleanup)
+        \item Language Translators (Compilers, Interpreters)
+    \end{itemize}
+    
+    \item \textbf{Application Software:}
+    \begin{itemize}
+        \item Word Processors (MS Word)
+        \item Spreadsheets (MS Excel)
+        \item Database Management Systems (MS Access, Oracle)
+        \item Graphics Software (Photoshop, CorelDraw)
+        \item Web Browsers (Chrome, Firefox)
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Input and Output Devices}
+
+\subsubsection{Input Devices}
+Input devices are used to enter data and instructions into the computer.
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Device} & \textbf{Description and Usage} \\
+\hline
+\endhead
+
+\textbf{Keyboard} & Most common input device with alphanumeric keys, function keys (F1-F12), cursor control keys, special keys. Used for typing text and commands. \\
+\hline
+
+\textbf{Mouse} & Pointing device with left, right, and scroll buttons. Used to point, click, drag, and select items on screen. \\
+\hline
+
+\textbf{Scanner} & Converts printed documents and images into digital format. Types: Flatbed, Handheld, Drum scanners. \\
+\hline
+
+\textbf{Microphone} & Input device for voice and audio. Used for voice recording, video conferencing, voice commands. \\
+\hline
+
+\textbf{Webcam} & Captures video and images. Used for video conferencing, online meetings, photography. \\
+\hline
+
+\textbf{Joystick} & Gaming input device. Used for playing games, controlling cursors in 3D environments. \\
+\hline
+
+\textbf{Light Pen} & Pen-shaped pointing device. Used for drawing on screen, selecting menu items. \\
+\hline
+
+\textbf{Touch Screen} & Display screen sensitive to touch. Used in smartphones, tablets, ATMs, kiosks. \\
+\hline
+
+\textbf{Digital Camera} & Captures photographs in digital format. Used for photography, video recording. \\
+\hline
+
+\textbf{Barcode Reader} & Reads barcodes on products. Used in supermarkets, libraries, inventory management. \\
+\hline
+
+\textbf{OCR} & Optical Character Recognition - converts scanned documents to editable text. \\
+\hline
+
+\textbf{OMR} & Optical Mark Recognition - reads marked data from forms. Used in examination answer sheets. \\
+\hline
+
+\textbf{MICR} & Magnetic Ink Character Recognition - reads magnetic ink characters. Used in banks for check processing. \\
+\hline
+
+\textbf{Biometric} & Fingerprint scanner, iris scanner, face recognition. Used for authentication and security. \\
+\hline
+
+\end{longtable}
+
+\subsubsection{Output Devices}
+Output devices display or output the processed information.
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Device} & \textbf{Description and Usage} \\
+\hline
+\endhead
+
+\textbf{Monitor} & Visual display unit (VDU). Types: CRT, LCD, LED, OLED. Displays text, images, videos. Resolution measured in pixels. \\
+\hline
+
+\textbf{Printer} & Produces hard copy (printed) output. \\
+& \textbf{Impact Printers:} Dot Matrix (uses pins to strike ribbon) \\
+& \textbf{Non-Impact:} Inkjet (sprays ink), Laser (uses laser beam and toner), Thermal (uses heat) \\
+\hline
+
+\textbf{Speakers} & Output audio and sound. Used for music, system sounds, multimedia. \\
+\hline
+
+\textbf{Headphones} & Personal audio output device. Used for private listening. \\
+\hline
+
+\textbf{Projector} & Projects computer output onto large screen. Used in presentations, classrooms, theaters. \\
+\hline
+
+\textbf{Plotter} & Prints large format graphics. Used for architectural drawings, engineering designs. \\
+\hline
+
+\end{longtable}
+
+\subsection{Computer Memory}
+
+\subsubsection{Memory Hierarchy}
+Computer memory is organized in a hierarchy based on speed, cost, and capacity.
+
+\textbf{Primary Memory (Main Memory):}
+
+\begin{enumerate}
+    \item \textbf{RAM (Random Access Memory)}
+    \begin{itemize}
+        \item Volatile memory - loses data when power is off
+        \item Faster access speed
+        \item Used for storing currently running programs and data
+        \item Types: DRAM (Dynamic RAM), SRAM (Static RAM), DDR RAM
+        \item Capacity: Typically 4GB to 32GB in modern computers
+    \end{itemize}
+    
+    \item \textbf{ROM (Read Only Memory)}
+    \begin{itemize}
+        \item Non-volatile memory - retains data when power is off
+        \item Stores permanent instructions (BIOS, firmware)
+        \item Types: PROM (Programmable), EPROM (Erasable Programmable), EEPROM (Electrically Erasable Programmable)
+    \end{itemize}
+    
+    \item \textbf{Cache Memory}
+    \begin{itemize}
+        \item Very fast memory between CPU and RAM
+        \item Stores frequently accessed data
+        \item Levels: L1 (fastest, smallest), L2, L3 (slowest, largest)
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Secondary Memory (Storage Devices):}
+
+\begin{longtable}{|p{3.5cm}|p{9.5cm}|}
+\hline
+\textbf{Storage Device} & \textbf{Characteristics} \\
+\hline
+\endhead
+
+\textbf{Hard Disk Drive (HDD)} & Magnetic storage, 500GB to 10TB capacity, slower than SSD, cheaper per GB, used for mass storage \\
+\hline
+
+\textbf{Solid State Drive (SSD)} & Flash memory based, faster than HDD, more expensive, no moving parts, more durable \\
+\hline
+
+\textbf{Optical Discs} & CD (700MB), DVD (4.7GB), Blu-ray (25GB), uses laser technology, portable \\
+\hline
+
+\textbf{USB Flash Drive} & Portable, 4GB to 256GB+, plug and play, uses flash memory \\
+\hline
+
+\textbf{Memory Card} & SD Card, MicroSD, used in cameras, phones, tablets \\
+\hline
+
+\textbf{External HDD/SSD} & Portable external storage, USB connection, backup purposes \\
+\hline
+
+\textbf{Cloud Storage} & Online storage (Google Drive, Dropbox, OneDrive), accessible from anywhere \\
+\hline
+
+\end{longtable}
+
+\subsubsection{Memory Units}
+Understanding data measurement units:
+
+\begin{itemize}
+    \item \textbf{Bit:} Smallest unit (0 or 1)
+    \item \textbf{Nibble:} 4 bits
+    \item \textbf{Byte:} 8 bits (can represent one character)
+    \item \textbf{Kilobyte (KB):} 1024 bytes
+    \item \textbf{Megabyte (MB):} 1024 KB
+    \item \textbf{Gigabyte (GB):} 1024 MB
+    \item \textbf{Terabyte (TB):} 1024 GB
+    \item \textbf{Petabyte (PB):} 1024 TB
+\end{itemize}
+
+\subsection{Number Systems}
+
+\subsubsection{Types of Number Systems}
+
+\begin{enumerate}
+    \item \textbf{Decimal Number System (Base 10)}
+    \begin{itemize}
+        \item Uses digits: 0-9
+        \item Most commonly used by humans
+        \item Example: 125, 456, 789
+    \end{itemize}
+    
+    \item \textbf{Binary Number System (Base 2)}
+    \begin{itemize}
+        \item Uses digits: 0, 1
+        \item Used by computers internally
+        \item Example: 1010, 1101, 11110
+    \end{itemize}
+    
+    \item \textbf{Octal Number System (Base 8)}
+    \begin{itemize}
+        \item Uses digits: 0-7
+        \item Used in computer programming
+        \item Example: 12, 45, 77
+    \end{itemize}
+    
+    \item \textbf{Hexadecimal Number System (Base 16)}
+    \begin{itemize}
+        \item Uses digits: 0-9 and A-F (A=10, B=11, C=12, D=13, E=14, F=15)
+        \item Used in memory addresses, color codes
+        \item Example: 1A, FF, A5
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Number System Conversions}
+
+\textbf{Decimal to Binary:}
+\begin{itemize}
+    \item Divide decimal number by 2
+    \item Note the remainder
+    \item Repeat until quotient becomes 0
+    \item Write remainders in reverse order
+    \item Example: (25)\textsubscript{10} = (11001)\textsubscript{2}
+\end{itemize}
+
+\textbf{Binary to Decimal:}
+\begin{itemize}
+    \item Multiply each bit by 2\textsuperscript{position}
+    \item Sum all values
+    \item Example: (1101)\textsubscript{2} = 1×2³ + 1×2² + 0×2¹ + 1×2⁰ = 8 + 4 + 0 + 1 = (13)\textsubscript{10}
+\end{itemize}
+
+\textbf{Decimal to Octal:}
+\begin{itemize}
+    \item Divide by 8, note remainders
+    \item Example: (65)\textsubscript{10} = (101)\textsubscript{8}
+\end{itemize}
+
+\textbf{Decimal to Hexadecimal:}
+\begin{itemize}
+    \item Divide by 16, note remainders
+    \item Example: (255)\textsubscript{10} = (FF)\textsubscript{16}
+\end{itemize}
+
+\subsection{Operating System Basics}
+
+\subsubsection{What is an Operating System?}
+An Operating System (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. It acts as an interface between the user and computer hardware.
+
+\textbf{Functions of Operating System:}
+\begin{enumerate}
+    \item \textbf{Process Management:} Managing running programs
+    \item \textbf{Memory Management:} Allocating and deallocating memory
+    \item \textbf{File Management:} Organizing files and directories
+    \item \textbf{Device Management:} Managing input/output devices
+    \item \textbf{Security:} Protecting system from unauthorized access
+    \item \textbf{User Interface:} Providing interface for user interaction
+\end{enumerate}
+
+\subsubsection{Types of Operating Systems}
+
+\begin{enumerate}
+    \item \textbf{Single User, Single Tasking:} MS-DOS
+    \item \textbf{Single User, Multi Tasking:} Windows, macOS
+    \item \textbf{Multi User:} Unix, Linux
+    \item \textbf{Real Time OS:} Used in embedded systems, industrial control
+    \item \textbf{Mobile OS:} Android, iOS
+    \item \textbf{Network OS:} Windows Server, Linux Server
+\end{enumerate}
+
+\subsubsection{Popular Operating Systems}
+
+\textbf{Windows:}
+\begin{itemize}
+    \item Developed by Microsoft
+    \item User-friendly GUI
+    \item Versions: Windows 7, 8, 10, 11
+    \item Widely used for desktop computers
+\end{itemize}
+
+\textbf{Linux:}
+\begin{itemize}
+    \item Open-source OS
+    \item Free to use and modify
+    \item Distributions: Ubuntu, Fedora, Debian, CentOS
+    \item Popular in servers and programming
+\end{itemize}
+
+\textbf{macOS:}
+\begin{itemize}
+    \item Developed by Apple
+    \item Used in Apple Mac computers
+    \item Known for design and performance
+\end{itemize}
+
+\textbf{Mobile Operating Systems:}
+\begin{itemize}
+    \item \textbf{Android:} Open-source, Google, most popular mobile OS
+    \item \textbf{iOS:} Apple, used in iPhone and iPad
+\end{itemize}
+
+\subsubsection{Basic OS Operations}
+
+\textbf{File Management:}
+\begin{itemize}
+    \item Creating, copying, moving, deleting files and folders
+    \item File naming conventions
+    \item File extensions (.txt, .doc, .pdf, .jpg, etc.)
+    \item File compression (ZIP, RAR)
+\end{itemize}
+
+\textbf{Control Panel / Settings:}
+\begin{itemize}
+    \item System settings configuration
+    \item User account management
+    \item Display settings
+    \item Network configuration
+    \item Software installation/uninstallation
+\end{itemize}
+
+\newpage
+
+% ============================================
+% TOPIC 2: MS OFFICE
+% ============================================
+
+\section{Microsoft Office Suite}
+
+\subsection{Introduction to MS Office}
+Microsoft Office is a suite of productivity applications developed by Microsoft. It includes various programs for creating documents, spreadsheets, presentations, and managing emails.
+
+\textbf{Main Components:}
+\begin{itemize}
+    \item MS Word - Word Processing
+    \item MS Excel - Spreadsheet
+    \item MS PowerPoint - Presentations
+    \item MS Access - Database Management
+    \item MS Outlook - Email and Calendar
+    \item MS OneNote - Note-taking
+\end{itemize}
+
+\subsection{Microsoft Word}
+
+\subsubsection{Introduction to MS Word}
+MS Word is a word processing application used for creating, editing, formatting, and printing documents.
+
+\textbf{Starting MS Word:}
+\begin{itemize}
+    \item Start Menu → Microsoft Office → Word
+    \item Or search "Word" in Windows search
+\end{itemize}
+
+\subsubsection{MS Word Interface}
+
+\textbf{Components of Word Window:}
+\begin{enumerate}
+    \item \textbf{Title Bar:} Shows document name
+    \item \textbf{Menu Bar/Ribbon:} Contains tabs (Home, Insert, Design, Layout, References, Mailings, Review, View)
+    \item \textbf{Quick Access Toolbar:} Frequently used commands (Save, Undo, Redo)
+    \item \textbf{Ruler:} Shows margins and tab stops
+    \item \textbf{Work Area:} Where you type document content
+    \item \textbf{Status Bar:} Shows page number, word count, zoom
+    \item \textbf{Scroll Bars:} Navigate through document
+\end{enumerate}
+
+\subsubsection{Document Creation and Basic Operations}
+
+\textbf{Creating a New Document:}
+\begin{itemize}
+    \item File → New → Blank Document
+    \item Or Ctrl + N
+\end{itemize}
+
+\textbf{Saving a Document:}
+\begin{itemize}
+    \item File → Save (Ctrl + S)
+    \item Choose location and file name
+    \item File formats: .docx (default), .doc, .pdf, .txt
+\end{itemize}
+
+\textbf{Opening a Document:}
+\begin{itemize}
+    \item File → Open (Ctrl + O)
+    \item Browse and select file
+\end{itemize}
+
+\textbf{Basic Editing:}
+\begin{itemize}
+    \item \textbf{Select Text:} Click and drag, or Shift + Arrow keys
+    \item \textbf{Cut:} Ctrl + X
+    \item \textbf{Copy:} Ctrl + C
+    \item \textbf{Paste:} Ctrl + V
+    \item \textbf{Undo:} Ctrl + Z
+    \item \textbf{Redo:} Ctrl + Y
+    \item \textbf{Find:} Ctrl + F
+    \item \textbf{Replace:} Ctrl + H
+\end{itemize}
+
+\subsubsection{Text Formatting}
+
+\textbf{Font Formatting:}
+\begin{itemize}
+    \item \textbf{Font Type:} Times New Roman, Arial, Calibri, etc.
+    \item \textbf{Font Size:} 8, 10, 12, 14, 16, 18, etc.
+    \item \textbf{Font Style:} Bold (Ctrl + B), Italic (Ctrl + I), Underline (Ctrl + U)
+    \item \textbf{Font Color:} Change text color
+    \item \textbf{Highlight:} Background color for text
+    \item \textbf{Effects:} Strikethrough, Subscript, Superscript, Small Caps
+\end{itemize}
+
+\textbf{Paragraph Formatting:}
+\begin{itemize}
+    \item \textbf{Alignment:} Left (Ctrl + L), Center (Ctrl + E), Right (Ctrl + R), Justify (Ctrl + J)
+    \item \textbf{Line Spacing:} Single, 1.5, Double
+    \item \textbf{Indentation:} Left indent, Right indent, First line indent
+    \item \textbf{Bullets:} Create bulleted lists
+    \item \textbf{Numbering:} Create numbered lists
+    \item \textbf{Borders and Shading:} Add borders and background colors
+\end{itemize}
+
+\subsubsection{Page Setup and Layout}
+
+\textbf{Page Setup (Layout Tab):}
+\begin{itemize}
+    \item \textbf{Margins:} Normal, Narrow, Wide, Custom
+    \item \textbf{Orientation:} Portrait, Landscape
+    \item \textbf{Size:} A4, Letter, Legal, Custom
+    \item \textbf{Columns:} Single column, Two columns, Three columns
+\end{itemize}
+
+\textbf{Headers and Footers:}
+\begin{itemize}
+    \item Insert → Header/Footer
+    \item Add page numbers, date, document title
+    \item Different first page option
+    \item Different odd/even pages
+\end{itemize}
+
+\subsubsection{Inserting Objects}
+
+\textbf{Insert Tab Options:}
+\begin{enumerate}
+    \item \textbf{Pictures:} Insert images from computer
+    \item \textbf{Online Pictures:} Search and insert images from web
+    \item \textbf{Shapes:} Rectangles, circles, arrows, callouts
+    \item \textbf{SmartArt:} Visual diagrams and graphics
+    \item \textbf{Charts:} Insert graphs and charts
+    \item \textbf{Table:} Create tables
+    \item \textbf{WordArt:} Decorative text
+    \item \textbf{Symbols:} Special characters and symbols
+    \item \textbf{Equation:} Mathematical equations
+    \item \textbf{Hyperlink:} Link to websites or documents
+\end{enumerate}
+
+\subsubsection{Working with Tables}
+
+\textbf{Creating Tables:}
+\begin{itemize}
+    \item Insert → Table → Select rows and columns
+    \item Or Insert → Table → Insert Table (specify dimensions)
+    \item Or Insert → Table → Draw Table
+\end{itemize}
+
+\textbf{Table Operations:}
+\begin{itemize}
+    \item \textbf{Insert Rows/Columns:} Right-click → Insert
+    \item \textbf{Delete Rows/Columns:} Right-click → Delete
+    \item \textbf{Merge Cells:} Combine multiple cells into one
+    \item \textbf{Split Cells:} Divide cell into multiple cells
+    \item \textbf{Table Styles:} Apply predefined table designs
+    \item \textbf{Borders and Shading:} Customize table appearance
+    \item \textbf{AutoFit:} Automatically adjust column width
+\end{itemize}
+
+\subsubsection{Mail Merge}
+
+Mail Merge is used to create personalized letters, labels, envelopes, or emails to multiple recipients.
+
+\textbf{Steps for Mail Merge:}
+\begin{enumerate}
+    \item \textbf{Create Main Document:} Letter with placeholders
+    \item \textbf{Create Data Source:} Excel file or Word table with recipient information
+    \item \textbf{Start Mail Merge:} Mailings → Start Mail Merge → Letters
+    \item \textbf{Select Recipients:} Mailings → Select Recipients → Use Existing List
+    \item \textbf{Insert Merge Fields:} Insert fields like Name, Address, City
+    \item \textbf{Preview Results:} Check how documents will look
+    \item \textbf{Finish \& Merge:} Create individual documents or print
+\end{enumerate}
+
+\textbf{Applications of Mail Merge:}
+\begin{itemize}
+    \item Personalized invitation letters
+    \item Salary slips
+    \item Certificates
+    \item Mailing labels
+    \item Email campaigns
+\end{itemize}
+
+\subsubsection{Advanced Features}
+
+\textbf{Styles and Themes:}
+\begin{itemize}
+    \item Apply consistent formatting throughout document
+    \item Heading styles (Heading 1, 2, 3)
+    \item Paragraph styles
+    \item Themes for color and font coordination
+\end{itemize}
+
+\textbf{Table of Contents:}
+\begin{itemize}
+    \item Automatically generate from headings
+    \item References → Table of Contents
+    \item Update table when content changes
+\end{itemize}
+
+\textbf{Page Breaks and Section Breaks:}
+\begin{itemize}
+    \item \textbf{Page Break:} Start new page (Ctrl + Enter)
+    \item \textbf{Section Break:} Different formatting in different sections
+\end{itemize}
+
+\textbf{Track Changes and Comments:}
+\begin{itemize}
+    \item Review → Track Changes: Record all edits
+    \item Review → New Comment: Add comments
+    \item Accept or reject changes
+    \item Useful for collaborative editing
+\end{itemize}
+
+\subsection{Microsoft Excel}
+
+\subsubsection{Introduction to MS Excel}
+MS Excel is a spreadsheet application used for calculations, data analysis, creating charts, and managing data in tabular form.
+
+\textbf{Uses of Excel:}
+\begin{itemize}
+    \item Financial calculations and budgeting
+    \item Data analysis and reporting
+    \item Statistical analysis
+    \item Creating charts and graphs
+    \item Database management
+    \item Project management
+\end{itemize}
+
+\subsubsection{Excel Interface}
+
+\textbf{Components of Excel Window:}
+\begin{enumerate}
+    \item \textbf{Title Bar:} Shows workbook name
+    \item \textbf{Ribbon:} Tabs (Home, Insert, Page Layout, Formulas, Data, Review, View)
+    \item \textbf{Name Box:} Shows active cell reference
+    \item \textbf{Formula Bar:} Displays/edits cell contents
+    \item \textbf{Worksheet Area:} Grid of cells
+    \item \textbf{Column Headers:} A, B, C... (up to XFD)
+    \item \textbf{Row Headers:} 1, 2, 3... (up to 1,048,576)
+    \item \textbf{Sheet Tabs:} Navigate between worksheets
+    \item \textbf{Status Bar:} Shows calculations (Sum, Average, Count)
+\end{enumerate}
+
+\subsubsection{Basic Excel Concepts}
+
+\textbf{Terminology:}
+\begin{itemize}
+    \item \textbf{Cell:} Intersection of row and column (e.g., A1, B5)
+    \item \textbf{Cell Reference:} Address of a cell
+    \item \textbf{Range:} Group of cells (e.g., A1:D10)
+    \item \textbf{Worksheet/Sheet:} Single spreadsheet page
+    \item \textbf{Workbook:} Excel file containing multiple worksheets
+    \item \textbf{Active Cell:} Currently selected cell
+\end{itemize}
+
+\textbf{Data Types in Excel:}
+\begin{enumerate}
+    \item \textbf{Text:} Alphabetic and alphanumeric data
+    \item \textbf{Numbers:} Numeric values
+    \item \textbf{Dates:} Date and time values
+    \item \textbf{Formulas:} Start with = sign
+\end{enumerate}
+
+\subsubsection{Basic Operations}
+
+\textbf{Entering Data:}
+\begin{itemize}
+    \item Click on cell and type
+    \item Press Enter to move to next row
+    \item Press Tab to move to next column
+    \item AutoFill: Drag fill handle to copy/continue series
+\end{itemize}
+
+\textbf{Editing Data:}
+\begin{itemize}
+    \item Double-click cell or press F2 to edit
+    \item Delete key to clear contents
+    \item Edit in formula bar
+\end{itemize}
+
+\textbf{Selection Techniques:}
+\begin{itemize}
+    \item Click and drag to select range
+    \item Ctrl + A: Select all
+    \item Click column header to select entire column
+    \item Click row header to select entire row
+    \item Ctrl + Click: Select non-adjacent cells
+\end{itemize}
+
+\textbf{Cut, Copy, Paste:}
+\begin{itemize}
+    \item Cut: Ctrl + X
+    \item Copy: Ctrl + C
+    \item Paste: Ctrl + V
+    \item Paste Special: Paste values only, formulas only, formats only
+\end{itemize}
+
+\subsubsection{Formatting in Excel}
+
+\textbf{Cell Formatting:}
+\begin{itemize}
+    \item \textbf{Number Format:} General, Number, Currency, Accounting, Date, Time, Percentage
+    \item \textbf{Font:} Type, size, color, bold, italic, underline
+    \item \textbf{Alignment:} Horizontal and vertical alignment, merge cells
+    \item \textbf{Borders:} Add borders to cells
+    \item \textbf{Fill Color:} Background color
+    \item \textbf{Cell Styles:} Predefined formatting styles
+\end{itemize}
+
+\textbf{Row and Column Operations:}
+\begin{itemize}
+    \item \textbf{Insert:} Right-click → Insert
+    \item \textbf{Delete:} Right-click → Delete
+    \item \textbf{Hide/Unhide:} Right-click → Hide/Unhide
+    \item \textbf{Adjust Width/Height:} Drag border or double-click to auto-fit
+\end{itemize}
+
+\subsubsection{Formulas and Functions}
+
+\textbf{Creating Formulas:}
+\begin{itemize}
+    \item Start with = sign
+    \item Basic operators: + (add), - (subtract), * (multiply), / (divide), \^{} (power)
+    \item Example: =A1+A2, =B1*C1, =D1/E1
+\end{itemize}
+
+\textbf{Cell References:}
+\begin{enumerate}
+    \item \textbf{Relative Reference:} A1 (changes when copied)
+    \item \textbf{Absolute Reference:} \$A\$1 (doesn't change when copied)
+    \item \textbf{Mixed Reference:} \$A1 or A\$1 (partially fixed)
+\end{enumerate}
+
+\textbf{Important Functions:}
+
+\begin{longtable}{|p{3cm}|p{4cm}|p{6cm}|}
+\hline
+\textbf{Function} & \textbf{Syntax} & \textbf{Description} \\
+\hline
+\endhead
+
+SUM & =SUM(range) & Adds all numbers in range \\
+\hline
+
+AVERAGE & =AVERAGE(range) & Calculates average \\
+\hline
+
+MAX & =MAX(range) & Returns maximum value \\
+\hline
+
+MIN & =MIN(range) & Returns minimum value \\
+\hline
+
+COUNT & =COUNT(range) & Counts numbers in range \\
+\hline
+
+COUNTA & =COUNTA(range) & Counts non-empty cells \\
+\hline
+
+IF & =IF(condition, value\_if\_true, value\_if\_false) & Logical test \\
+\hline
+
+SUMIF & =SUMIF(range, criteria, sum\_range) & Sum based on condition \\
+\hline
+
+COUNTIF & =COUNTIF(range, criteria) & Count based on condition \\
+\hline
+
+VLOOKUP & =VLOOKUP(value, table, col\_num, FALSE) & Vertical lookup \\
+\hline
+
+HLOOKUP & =HLOOKUP(value, table, row\_num, FALSE) & Horizontal lookup \\
+\hline
+
+CONCATENATE & =CONCATENATE(text1, text2, ...) & Joins text strings \\
+\hline
+
+TODAY & =TODAY() & Current date \\
+\hline
+
+NOW & =NOW() & Current date and time \\
+\hline
+
+LEFT & =LEFT(text, num\_chars) & Extracts characters from left \\
+\hline
+
+RIGHT & =RIGHT(text, num\_chars) & Extracts characters from right \\
+\hline
+
+MID & =MID(text, start, num\_chars) & Extracts characters from middle \\
+\hline
+
+ROUND & =ROUND(number, decimals) & Rounds number \\
+\hline
+
+PMT & =PMT(rate, nper, pv) & Calculates loan payment \\
+\hline
+
+\end{longtable}
+
+\textbf{Function Examples:}
+\begin{itemize}
+    \item =SUM(A1:A10) - Adds values from A1 to A10
+    \item =AVERAGE(B1:B20) - Average of B1 to B20
+    \item =IF(A1$>$50, "Pass", "Fail") - Shows Pass if A1$>$50, else Fail
+    \item =VLOOKUP(A2, D1:E10, 2, FALSE) - Looks up A2 in D1:D10, returns value from column E
+\end{itemize}
+
+\subsubsection{Charts and Graphs}
+
+\textbf{Creating Charts:}
+\begin{enumerate}
+    \item Select data range
+    \item Insert → Charts
+    \item Choose chart type
+    \item Customize chart
+\end{enumerate}
+
+\textbf{Types of Charts:}
+\begin{itemize}
+    \item \textbf{Column Chart:} Vertical bars for comparing values
+    \item \textbf{Bar Chart:} Horizontal bars
+    \item \textbf{Line Chart:} Shows trends over time
+    \item \textbf{Pie Chart:} Shows proportions/percentages
+    \item \textbf{Area Chart:} Similar to line chart with filled area
+    \item \textbf{Scatter Chart:} Shows relationship between two variables
+    \item \textbf{Combo Chart:} Combines different chart types
+\end{itemize}
+
+\textbf{Chart Elements:}
+\begin{itemize}
+    \item Chart Title
+    \item Axis Titles (X-axis, Y-axis)
+    \item Legend
+    \item Data Labels
+    \item Gridlines
+\end{itemize}
+
+\subsubsection{Data Management}
+
+\textbf{Sorting Data:}
+\begin{itemize}
+    \item Select data → Data → Sort
+    \item Sort A to Z (ascending) or Z to A (descending)
+    \item Sort by multiple columns
+\end{itemize}
+
+\textbf{Filtering Data:}
+\begin{itemize}
+    \item Select data → Data → Filter
+    \item Click dropdown arrow in column header
+    \item Select values to display
+    \item Custom filters (greater than, less than, contains, etc.)
+\end{itemize}
+
+\textbf{Data Validation:}
+\begin{itemize}
+    \item Data → Data Validation
+    \item Restrict input to specific values
+    \item Create dropdown lists
+    \item Set number ranges
+    \item Custom validation rules
+\end{itemize}
+
+\subsubsection{Pivot Tables}
+
+\textbf{What is a Pivot Table?}
+Pivot Table is a powerful tool for summarizing, analyzing, and presenting large amounts of data.
+
+\textbf{Creating Pivot Table:}
+\begin{enumerate}
+    \item Select data range
+    \item Insert → PivotTable
+    \item Choose where to place pivot table
+    \item Drag fields to:
+    \begin{itemize}
+        \item Rows: Categories to group by
+        \item Columns: Sub-categories
+        \item Values: Numerical data to calculate
+        \item Filters: Filter entire table
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Pivot Table Operations:}
+\begin{itemize}
+    \item Summarize by: Sum, Average, Count, Max, Min
+    \item Group data: By date, number ranges
+    \item Refresh: Update when source data changes
+    \item Pivot Chart: Visual representation of pivot table
+\end{itemize}
+
+\subsubsection{Print Settings}
+
+\textbf{Page Setup:}
+\begin{itemize}
+    \item Page Layout → Page Setup
+    \item Orientation: Portrait or Landscape
+    \item Paper Size: A4, Letter, Legal
+    \item Scaling: Fit to page
+    \item Margins: Normal, Wide, Narrow, Custom
+\end{itemize}
+
+\textbf{Print Area:}
+\begin{itemize}
+    \item Select range → Page Layout → Print Area → Set Print Area
+    \item Print only selected cells
+\end{itemize}
+
+\textbf{Headers and Footers:}
+\begin{itemize}
+    \item Insert → Header \& Footer
+    \item Add page numbers, date, file path
+\end{itemize}
+
+\textbf{Print Titles:}
+\begin{itemize}
+    \item Page Layout → Print Titles
+    \item Repeat rows/columns on every printed page
+\end{itemize}
+
+\subsection{Microsoft PowerPoint}
+
+\subsubsection{Introduction to MS PowerPoint}
+MS PowerPoint is a presentation software used to create slide shows for business presentations, educational purposes, and training sessions.
+
+\textbf{Uses of PowerPoint:}
+\begin{itemize}
+    \item Business presentations
+    \item Educational lectures
+    \item Training materials
+    \item Product demonstrations
+    \item Conference presentations
+    \item Marketing pitches
+\end{itemize}
+
+\subsubsection{PowerPoint Interface}
+
+\textbf{Components:}
+\begin{enumerate}
+    \item \textbf{Slide Pane:} Shows current slide
+    \item \textbf{Thumbnail Pane:} Shows all slides in presentation
+    \item \textbf{Notes Pane:} Add speaker notes
+    \item \textbf{Ribbon:} Tabs (Home, Insert, Design, Transitions, Animations, Slide Show, Review, View)
+    \item \textbf{Status Bar:} Slide number, theme, view options
+\end{enumerate}
+
+\subsubsection{Creating Presentations}
+
+\textbf{Starting New Presentation:}
+\begin{itemize}
+    \item File → New → Blank Presentation
+    \item Or choose from templates
+\end{itemize}
+
+\textbf{Adding Slides:}
+\begin{itemize}
+    \item Home → New Slide
+    \item Or Ctrl + M
+    \item Choose slide layout (Title Slide, Title and Content, Two Content, etc.)
+\end{itemize}
+
+\textbf{Slide Layouts:}
+\begin{itemize}
+    \item Title Slide: For presentation title
+    \item Title and Content: Text with bullet points
+    \item Two Content: Two columns of content
+    \item Comparison: Compare two items
+    \item Blank: Empty slide for custom design
+\end{itemize}
+
+\subsubsection{Working with Text}
+
+\textbf{Text Boxes:}
+\begin{itemize}
+    \item Insert → Text Box
+    \item Click and drag to create
+    \item Type or paste text
+\end{itemize}
+
+\textbf{Formatting Text:}
+\begin{itemize}
+    \item Font, size, color, bold, italic, underline
+    \item Bullets and numbering
+    \item Line spacing
+    \item Alignment
+    \item WordArt for decorative text
+\end{itemize}
+
+\textbf{Best Practices for Text:}
+\begin{itemize}
+    \item Use large, readable fonts (minimum 24pt)
+    \item Limit text per slide (6 lines, 6 words per line rule)
+    \item Use bullet points instead of paragraphs
+    \item High contrast between text and background
+    \item Consistent font throughout presentation
+\end{itemize}
+
+\subsubsection{Inserting Objects}
+
+\textbf{Pictures and Images:}
+\begin{itemize}
+    \item Insert → Pictures → This Device
+    \item Or Insert → Online Pictures
+    \item Resize, crop, adjust
+    \item Picture styles and effects
+\end{itemize}
+
+\textbf{Shapes:}
+\begin{itemize}
+    \item Insert → Shapes
+    \item Rectangles, circles, arrows, flowchart symbols
+    \item Customize fill color, outline, effects
+    \item Group/ungroup shapes
+\end{itemize}
+
+\textbf{SmartArt:}
+\begin{itemize}
+    \item Insert → SmartArt
+    \item Visual diagrams: Process, Hierarchy, Cycle, Relationship, Matrix
+    \item Convert text to SmartArt
+    \item Change colors and styles
+\end{itemize}
+
+\textbf{Charts:}
+\begin{itemize}
+    \item Insert → Chart
+    \item Column, Bar, Line, Pie charts
+    \item Edit data in Excel worksheet
+    \item Customize chart design
+\end{itemize}
+
+\textbf{Tables:}
+\begin{itemize}
+    \item Insert → Table
+    \item Specify rows and columns
+    \item Format with table styles
+    \item Add/delete rows and columns
+\end{itemize}
+
+\textbf{Audio and Video:}
+\begin{itemize}
+    \item Insert → Audio/Video
+    \item From computer or online
+    \item Playback options (automatically, on click)
+    \item Trim audio/video
+\end{itemize}
+
+\subsubsection{Design and Themes}
+
+\textbf{Applying Themes:}
+\begin{itemize}
+    \item Design → Themes
+    \item Predefined color schemes and fonts
+    \item Variants: Different color variations
+    \item Consistent look throughout presentation
+\end{itemize}
+
+\textbf{Slide Background:}
+\begin{itemize}
+    \item Design → Format Background
+    \item Solid fill, gradient, picture, texture
+    \item Apply to one slide or all slides
+\end{itemize}
+
+\textbf{Master Slide:}
+\begin{itemize}
+    \item View → Slide Master
+    \item Edit master layout
+    \item Changes apply to all slides
+    \item Add logo, footer on every slide
+\end{itemize}
+
+\subsubsection{Transitions}
+
+\textbf{What are Transitions?}
+Transitions are effects that occur when moving from one slide to another.
+
+\textbf{Applying Transitions:}
+\begin{itemize}
+    \item Transitions → Choose effect (Fade, Push, Wipe, etc.)
+    \item Set duration (time for transition)
+    \item Sound options
+    \item Apply to one slide or all
+    \item Advance slide: On mouse click or automatically after time
+\end{itemize}
+
+\textbf{Popular Transitions:}
+\begin{itemize}
+    \item Fade
+    \item Push
+    \item Wipe
+    \item Split
+    \item Reveal
+    \item Morph (PowerPoint 2016+)
+\end{itemize}
+
+\subsubsection{Animations}
+
+\textbf{What are Animations?}
+Animations are effects applied to individual objects on a slide.
+
+\textbf{Types of Animations:}
+\begin{enumerate}
+    \item \textbf{Entrance:} How object appears (Fade In, Fly In, Zoom)
+    \item \textbf{Emphasis:} Draw attention to object (Pulse, Spin, Grow)
+    \item \textbf{Exit:} How object disappears (Fade Out, Fly Out)
+    \item \textbf{Motion Paths:} Object moves along path
+\end{enumerate}
+
+\textbf{Applying Animations:}
+\begin{itemize}
+    \item Select object
+    \item Animations → Choose effect
+    \item Set duration and delay
+    \item Start: On click, with previous, after previous
+    \item Animation Pane: Manage all animations on slide
+\end{itemize}
+
+\textbf{Animation Tips:}
+\begin{itemize}
+    \item Use animations sparingly
+    \item Don't distract from content
+    \item Be consistent
+    \item Time animations appropriately
+\end{itemize}
+
+\subsubsection{Slide Show}
+
+\textbf{Running Slide Show:}
+\begin{itemize}
+    \item Slide Show → From Beginning (F5)
+    \item Slide Show → From Current Slide (Shift + F5)
+    \item Click or press arrow keys to navigate
+    \item Press Esc to exit
+\end{itemize}
+
+\textbf{Slide Show Options:}
+\begin{itemize}
+    \item Presenter View: See notes, timer, next slide
+    \item Rehearse Timings: Practice presentation with timer
+    \item Record Slide Show: Record audio narration
+    \item Set Up Show: Kiosk mode, loop continuously
+\end{itemize}
+
+\textbf{Presentation Tips:}
+\begin{itemize}
+    \item Practice beforehand
+    \item Know your audience
+    \item Maintain eye contact
+    \item Speak clearly and confidently
+    \item Use pointer/laser pen
+    \item Be prepared for questions
+\end{itemize}
+
+\subsubsection{Saving and Sharing}
+
+\textbf{Save Formats:}
+\begin{itemize}
+    \item .pptx - PowerPoint Presentation (editable)
+    \item .ppsx - PowerPoint Show (opens directly in slide show)
+    \item .pdf - PDF format (non-editable)
+    \item .mp4 - Video format
+\end{itemize}
+
+\textbf{Sharing Options:}
+\begin{itemize}
+    \item Email as attachment
+    \item OneDrive/SharePoint sharing
+    \item Export as video
+    \item Export as handouts (PDF with multiple slides per page)
+    \item Print slides, notes, or handouts
+\end{itemize}
+
+\subsubsection{Advanced Features}
+
+\textbf{Hyperlinks and Action Buttons:}
+\begin{itemize}
+    \item Link to other slides
+    \item Link to external websites
+    \item Link to files
+    \item Interactive navigation
+\end{itemize}
+
+\textbf{Sections:}
+\begin{itemize}
+    \item Organize slides into sections
+    \item Collapse/expand sections
+    \item Easy navigation in large presentations
+\end{itemize}
+
+\textbf{Collaboration:}
+\begin{itemize}
+    \item Review → Comments
+    \item Share via OneDrive
+    \item Co-author in real-time
+    \item Track changes
+\end{itemize}
+
+\newpage
+
+% ============================================
+% TOPIC 3: INTERNET & EMAIL
+% ============================================
+
+\section{Internet and Email}
+
+\subsection{Introduction to Internet}
+
+\subsubsection{What is Internet?}
+The Internet is a global network of billions of computers and electronic devices connected together. It allows users to access information, communicate, and share data across the world.
+
+\textbf{Key Features:}
+\begin{itemize}
+    \item Global connectivity
+    \item Information sharing
+    \item Communication platform
+    \item Resource sharing
+    \item 24/7 availability
+\end{itemize}
+
+\textbf{History of Internet:}
+\begin{itemize}
+    \item \textbf{1969:} ARPANET created (first network)
+    \item \textbf{1983:} TCP/IP protocol adopted
+    \item \textbf{1989:} Tim Berners-Lee invented World Wide Web (WWW)
+    \item \textbf{1990s:} Internet became public and commercial
+    \item \textbf{2000s:} Broadband, social media, mobile internet
+    \item \textbf{Present:} IoT, cloud computing, 5G
+\end{itemize}
+
+\subsubsection{Internet Terminology}
+
+\begin{longtable}{|p{3.5cm}|p{9.5cm}|}
+\hline
+\textbf{Term} & \textbf{Definition} \\
+\hline
+\endhead
+
+\textbf{WWW} & World Wide Web - system of interlinked hypertext documents accessed via Internet \\
+\hline
+
+\textbf{Website} & Collection of web pages under one domain name \\
+\hline
+
+\textbf{Web Page} & Single document on the web, written in HTML \\
+\hline
+
+\textbf{URL} & Uniform Resource Locator - web address (e.g., https://www.example.com) \\
+\hline
+
+\textbf{HTTP/HTTPS} & Hypertext Transfer Protocol / Secure - protocol for web communication \\
+\hline
+
+\textbf{Browser} & Software to access web pages (Chrome, Firefox, Edge) \\
+\hline
+
+\textbf{Search Engine} & Website to search information (Google, Bing, Yahoo) \\
+\hline
+
+\textbf{Domain Name} & Unique name identifying website (google.com, facebook.com) \\
+\hline
+
+\textbf{IP Address} & Numerical address of device on network (192.168.1.1) \\
+\hline
+
+\textbf{ISP} & Internet Service Provider - company providing internet connection \\
+\hline
+
+\textbf{Bandwidth} & Amount of data transmitted per unit time \\
+\hline
+
+\textbf{Download} & Transferring data from internet to computer \\
+\hline
+
+\textbf{Upload} & Transferring data from computer to internet \\
+\hline
+
+\textbf{Homepage} & Main page of website \\
+\hline
+
+\textbf{Hyperlink} & Clickable link to another web page \\
+\hline
+
+\textbf{Cookie} & Small data file stored by website on your computer \\
+\hline
+
+\textbf{Cache} & Temporary storage of web pages for faster loading \\
+\hline
+
+\end{longtable}
+
+\subsection{Internet Connectivity}
+
+\subsubsection{Types of Internet Connections}
+
+\begin{enumerate}
+    \item \textbf{Dial-Up Connection}
+    \begin{itemize}
+        \item Uses telephone line and modem
+        \item Speed: 56 Kbps (very slow)
+        \item Cannot use phone and internet simultaneously
+        \item Obsolete technology
+    \end{itemize}
+    
+    \item \textbf{Broadband Connection}
+    \begin{itemize}
+        \item \textbf{DSL (Digital Subscriber Line):} Uses telephone line, faster than dial-up, 1-100 Mbps
+        \item \textbf{Cable:} Uses cable TV infrastructure, 10-500 Mbps
+        \item \textbf{Fiber Optic:} Uses fiber optic cables, 100-1000 Mbps (1 Gbps), fastest
+    \end{itemize}
+    
+    \item \textbf{Wireless Connection}
+    \begin{itemize}
+        \item \textbf{Wi-Fi:} Wireless local area network, range 30-50 meters
+        \item \textbf{Mobile Data:} 3G, 4G, 5G cellular networks
+        \item \textbf{Satellite:} Internet via satellite, for remote areas
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Required Equipment}
+\begin{itemize}
+    \item \textbf{Computer/Device:} PC, laptop, smartphone, tablet
+    \item \textbf{Modem:} Converts digital signals to analog and vice versa
+    \item \textbf{Router:} Distributes internet connection to multiple devices
+    \item \textbf{ISP Account:} Subscription from Internet Service Provider
+    \item \textbf{Browser:} Software to access websites
+\end{itemize}
+
+\subsection{Web Browsers}
+
+\subsubsection{What is a Web Browser?}
+A web browser is software that allows users to access, retrieve, and display content from the World Wide Web.
+
+\textbf{Popular Web Browsers:}
+\begin{itemize}
+    \item \textbf{Google Chrome:} Fast, most popular, developed by Google
+    \item \textbf{Mozilla Firefox:} Open-source, privacy-focused
+    \item \textbf{Microsoft Edge:} Built into Windows, Chromium-based
+    \item \textbf{Safari:} Default browser for Apple devices
+    \item \textbf{Opera:} Fast, built-in VPN
+    \item \textbf{Brave:} Privacy-focused, blocks ads and trackers
+\end{itemize}
+
+\subsubsection{Browser Features and Functions}
+
+\textbf{Address Bar:}
+\begin{itemize}
+    \item Enter website URL
+    \item Search directly from address bar
+    \item Shows secure connection (padlock icon for HTTPS)
+\end{itemize}
+
+\textbf{Navigation Buttons:}
+\begin{itemize}
+    \item \textbf{Back:} Go to previous page
+    \item \textbf{Forward:} Go to next page
+    \item \textbf{Refresh/Reload:} Reload current page
+    \item \textbf{Home:} Go to homepage
+    \item \textbf{Stop:} Stop loading page
+\end{itemize}
+
+\textbf{Bookmarks/Favorites:}
+\begin{itemize}
+    \item Save frequently visited websites
+    \item Organize in folders
+    \item Sync across devices
+    \item Shortcut: Ctrl + D (add bookmark)
+\end{itemize}
+
+\textbf{Tabs:}
+\begin{itemize}
+    \item Open multiple websites in one window
+    \item Ctrl + T: New tab
+    \item Ctrl + W: Close tab
+    \item Ctrl + Tab: Switch between tabs
+\end{itemize}
+
+\textbf{History:}
+\begin{itemize}
+    \item View recently visited websites
+    \item Search browsing history
+    \item Clear history for privacy
+    \item Ctrl + H: Open history
+\end{itemize}
+
+\textbf{Downloads:}
+\begin{itemize}
+    \item View downloaded files
+    \item Resume/pause downloads
+    \item Open download location
+    \item Ctrl + J: Open downloads
+\end{itemize}
+
+\textbf{Incognito/Private Mode:}
+\begin{itemize}
+    \item Browse without saving history
+    \item No cookies stored
+    \item Ctrl + Shift + N (Chrome/Edge)
+    \item Ctrl + Shift + P (Firefox)
+\end{itemize}
+
+\textbf{Extensions/Add-ons:}
+\begin{itemize}
+    \item Additional features for browser
+    \item Ad blockers, password managers, translators
+    \item Download from browser's extension store
+\end{itemize}
+
+\textbf{Settings:}
+\begin{itemize}
+    \item Default search engine
+    \item Homepage settings
+    \item Privacy and security
+    \item Clear browsing data
+    \item Manage passwords
+\end{itemize}
+
+\subsection{Search Engines}
+
+\subsubsection{What is a Search Engine?}
+A search engine is a web-based tool that helps users find information on the internet by searching for keywords or phrases.
+
+\textbf{Popular Search Engines:}
+\begin{itemize}
+    \item \textbf{Google:} Most popular, 90\%+ market share
+    \item \textbf{Bing:} Microsoft's search engine
+    \item \textbf{Yahoo:} Older search engine, still in use
+    \item \textbf{DuckDuckGo:} Privacy-focused, no tracking
+    \item \textbf{Yandex:} Popular in Russia
+    \item \textbf{Baidu:} Popular in China
+\end{itemize}
+
+\subsubsection{How to Use Search Engines}
+
+\textbf{Basic Search:}
+\begin{itemize}
+    \item Type keywords in search box
+    \item Press Enter or click Search button
+    \item Browse search results
+\end{itemize}
+
+\textbf{Search Tips:}
+\begin{itemize}
+    \item Use specific keywords
+    \item Use multiple keywords for better results
+    \item Check spelling
+    \item Use quotation marks for exact phrases: "climate change"
+    \item Use minus sign to exclude words: jaguar -car
+    \item Use site: to search specific website: site:wikipedia.org python
+    \item Use filetype: to find specific files: filetype:pdf resume template
+    \item Use OR for alternatives: laptop OR notebook
+\end{itemize}
+
+\textbf{Search Results:}
+\begin{itemize}
+    \item Blue link: Website title (clickable)
+    \item Green URL: Website address
+    \item Description: Preview of content
+    \item Sponsored/Ad: Paid advertisements
+\end{itemize}
+
+\subsubsection{Types of Searches}
+\begin{itemize}
+    \item \textbf{Web Search:} General web pages
+    \item \textbf{Image Search:} Photos and images
+    \item \textbf{Video Search:} Videos
+    \item \textbf{News Search:} Latest news articles
+    \item \textbf{Maps:} Location and directions
+    \item \textbf{Shopping:} Products and prices
+\end{itemize}
+
+\subsection{Email (Electronic Mail)}
+
+\subsubsection{Introduction to Email}
+Email (Electronic Mail) is a method of exchanging messages between people using electronic devices over the internet.
+
+\textbf{Advantages of Email:}
+\begin{itemize}
+    \item Instant delivery
+    \item Cost-effective (free)
+    \item 24/7 accessibility
+    \item Can send to multiple recipients
+    \item Attach files and documents
+    \item Maintain record of communication
+    \item Professional communication
+\end{itemize}
+
+\textbf{Popular Email Services:}
+\begin{itemize}
+    \item \textbf{Gmail:} Google's email service
+    \item \textbf{Outlook:} Microsoft's email (formerly Hotmail)
+    \item \textbf{Yahoo Mail:} Yahoo's email service
+    \item \textbf{ProtonMail:} Encrypted, privacy-focused
+    \item \textbf{iCloud Mail:} Apple's email service
+\end{itemize}
+
+\subsubsection{Email Address Structure}
+An email address has two parts separated by @ symbol:
+
+\textbf{Format:} username@domain.com
+
+\begin{itemize}
+    \item \textbf{Username:} Unique identifier (e.g., john.doe, student123)
+    \item \textbf{@ Symbol:} Separates username and domain
+    \item \textbf{Domain:} Email service provider (gmail.com, outlook.com)
+\end{itemize}
+
+\textbf{Examples:}
+\begin{itemize}
+    \item john.doe@gmail.com
+    \item student123@outlook.com
+    \item contact@prathibhainstitute.com
+\end{itemize}
+
+\subsubsection{Creating Email Account}
+
+\textbf{Steps to Create Gmail Account:}
+\begin{enumerate}
+    \item Go to www.gmail.com
+    \item Click "Create account"
+    \item Enter personal information:
+    \begin{itemize}
+        \item First name and Last name
+        \item Choose username (email address)
+        \item Create strong password
+    \end{itemize}
+    \item Verify phone number
+    \item Add recovery email (optional but recommended)
+    \item Enter date of birth and gender
+    \item Agree to terms and conditions
+    \item Complete verification
+\end{enumerate}
+
+\textbf{Password Guidelines:}
+\begin{itemize}
+    \item Minimum 8 characters
+    \item Mix of uppercase and lowercase letters
+    \item Include numbers
+    \item Include special characters (@, \#, \$, etc.)
+    \item Don't use personal information
+    \item Don't use common words
+\end{itemize}
+
+\subsubsection{Email Interface (Gmail)}
+
+\textbf{Main Components:}
+\begin{enumerate}
+    \item \textbf{Compose Button:} Create new email
+    \item \textbf{Inbox:} Received emails
+    \item \textbf{Starred:} Important emails marked with star
+    \item \textbf{Sent:} Emails you have sent
+    \item \textbf{Drafts:} Emails saved but not sent
+    \item \textbf{Spam:} Unwanted/junk emails
+    \item \textbf{Trash:} Deleted emails
+    \item \textbf{Labels/Folders:} Organize emails
+    \item \textbf{Search Box:} Search emails
+    \item \textbf{Settings:} Configure email preferences
+\end{enumerate}
+
+\subsubsection{Composing and Sending Email}
+
+\textbf{Steps to Send Email:}
+\begin{enumerate}
+    \item Click "Compose" button
+    \item Email compose window opens
+    \item Fill in details:
+    \begin{itemize}
+        \item \textbf{To:} Recipient's email address
+        \item \textbf{Cc (Carbon Copy):} Send copy to others (everyone sees)
+        \item \textbf{Bcc (Blind Carbon Copy):} Send copy to others (hidden from other recipients)
+        \item \textbf{Subject:} Brief description of email
+        \item \textbf{Body:} Main message content
+    \end{itemize}
+    \item Format text (bold, italic, underline, font, color)
+    \item Attach files if needed
+    \item Click "Send"
+\end{enumerate}
+
+\textbf{Email Writing Tips:}
+\begin{itemize}
+    \item Clear and descriptive subject line
+    \item Professional greeting (Dear Sir/Madam, Hi John)
+    \item Keep message concise and clear
+    \item Use proper grammar and spelling
+    \item Professional tone for formal emails
+    \item End with appropriate closing (Regards, Best wishes, Thank you)
+    \item Include signature if needed
+    \item Proofread before sending
+\end{itemize}
+
+\subsubsection{Email Attachments}
+
+\textbf{Attaching Files:}
+\begin{itemize}
+    \item Click attachment icon (paperclip)
+    \item Browse and select file from computer
+    \item Multiple files can be attached
+    \item Wait for upload to complete
+    \item Maximum size limit: 25MB (Gmail)
+\end{itemize}
+
+\textbf{Supported File Types:}
+\begin{itemize}
+    \item Documents: .doc, .docx, .pdf, .txt
+    \item Spreadsheets: .xls, .xlsx
+    \item Presentations: .ppt, .pptx
+    \item Images: .jpg, .png, .gif
+    \item Compressed files: .zip, .rar
+\end{itemize}
+
+\textbf{Large File Sharing:}
+\begin{itemize}
+    \item Use Google Drive (up to 15GB free)
+    \item Share link instead of attachment
+    \item Use file sharing services (Dropbox, OneDrive, WeTransfer)
+\end{itemize}
+
+\subsubsection{Managing Emails}
+
+\textbf{Reading Emails:}
+\begin{itemize}
+    \item Click on email in inbox to open
+    \item Read content
+    \item Download attachments if any
+    \item Reply, Forward, or Delete
+\end{itemize}
+
+\textbf{Reply and Forward:}
+\begin{itemize}
+    \item \textbf{Reply:} Send response to sender
+    \item \textbf{Reply All:} Send response to all recipients
+    \item \textbf{Forward:} Send email to someone else
+\end{itemize}
+
+\textbf{Organizing Emails:}
+\begin{itemize}
+    \item \textbf{Star:} Mark important emails
+    \item \textbf{Labels:} Categorize emails (Work, Personal, Important)
+    \item \textbf{Archive:} Remove from inbox but keep in account
+    \item \textbf{Delete:} Move to trash
+    \item \textbf{Mark as Read/Unread:} Change read status
+\end{itemize}
+
+\textbf{Filters and Rules:}
+\begin{itemize}
+    \item Automatically organize incoming emails
+    \item Apply labels automatically
+    \item Forward emails automatically
+    \item Delete spam automatically
+\end{itemize}
+
+\textbf{Search Emails:}
+\begin{itemize}
+    \item Use search box
+    \item Search by sender: from:john@example.com
+    \item Search by subject: subject:meeting
+    \item Search with attachment: has:attachment
+    \item Advanced search options
+\end{itemize}
+
+\subsubsection{Email Settings}
+
+\textbf{Important Settings:}
+\begin{itemize}
+    \item \textbf{Display Name:} How your name appears to recipients
+    \item \textbf{Signature:} Auto-added text at end of emails
+    \item \textbf{Vacation Responder:} Auto-reply when away
+    \item \textbf{Forwarding:} Forward emails to another account
+    \item \textbf{Theme:} Change appearance
+    \item \textbf{Inbox Type:} Default, Important first, Unread first
+    \item \textbf{Conversation View:} Group related emails
+\end{itemize}
+
+\subsection{Internet Security and Safety}
+
+\subsubsection{Online Threats}
+
+\begin{enumerate}
+    \item \textbf{Virus:} Malicious program that replicates and damages system
+    \item \textbf{Malware:} Software designed to harm computer
+    \item \textbf{Phishing:} Fake emails/websites to steal information
+    \item \textbf{Spam:} Unwanted bulk emails
+    \item \textbf{Ransomware:} Locks files and demands payment
+    \item \textbf{Spyware:} Secretly monitors user activity
+    \item \textbf{Identity Theft:} Stealing personal information
+    \item \textbf{Hacking:} Unauthorized access to systems
+\end{enumerate}
+
+\subsubsection{Security Best Practices}
+
+\textbf{Password Security:}
+\begin{itemize}
+    \item Use strong, unique passwords
+    \item Don't share passwords
+    \item Change passwords regularly
+    \item Use password manager
+    \item Enable two-factor authentication (2FA)
+\end{itemize}
+
+\textbf{Safe Browsing:}
+\begin{itemize}
+    \item Check website security (HTTPS, padlock icon)
+    \item Don't click suspicious links
+    \item Avoid downloading from untrusted sites
+    \item Use secure Wi-Fi networks
+    \item Clear browser cache and cookies regularly
+\end{itemize}
+
+\textbf{Email Security:}
+\begin{itemize}
+    \item Don't open emails from unknown senders
+    \item Don't click links in suspicious emails
+    \item Verify sender before sharing information
+    \item Don't download unknown attachments
+    \item Report spam and phishing
+\end{itemize}
+
+\textbf{Protection Tools:}
+\begin{itemize}
+    \item Install antivirus software (Windows Defender, Norton, McAfee)
+    \item Keep software updated
+    \item Use firewall
+    \item Regular system scans
+    \item Backup important data
+\end{itemize}
+
+\textbf{Personal Information:}
+\begin{itemize}
+    \item Don't share personal details publicly
+    \item Be cautious on social media
+    \item Read privacy policies
+    \item Use privacy settings
+    \item Monitor bank and credit card statements
+\end{itemize}
+
+\subsection{Internet Applications and Services}
+
+\subsubsection{E-Commerce}
+Online buying and selling of products and services.
+\begin{itemize}
+    \item Amazon, Flipkart, eBay
+    \item Online payment: Credit/Debit cards, UPI, Net Banking
+    \item Benefits: Convenience, comparison shopping, home delivery
+\end{itemize}
+
+\subsubsection{Social Media}
+Platforms for social networking and content sharing.
+\begin{itemize}
+    \item Facebook, Instagram, Twitter, LinkedIn
+    \item Sharing photos, videos, thoughts
+    \item Connecting with friends and professionals
+\end{itemize}
+
+\subsubsection{Online Banking}
+Managing bank accounts through internet.
+\begin{itemize}
+    \item Check balance, transaction history
+    \item Transfer money
+    \item Pay bills
+    \item Available 24/7
+\end{itemize}
+
+\subsubsection{Video Conferencing}
+Real-time video communication over internet.
+\begin{itemize}
+    \item Zoom, Microsoft Teams, Google Meet
+    \item Online meetings, classes, webinars
+    \item Screen sharing, recording
+\end{itemize}
+
+\subsubsection{Cloud Storage}
+Store files online and access from anywhere.
+\begin{itemize}
+    \item Google Drive, Dropbox, OneDrive
+    \item Automatic backup
+    \item File sharing and collaboration
+\end{itemize}
+
+\subsubsection{Streaming Services}
+Watch videos and listen to music online.
+\begin{itemize}
+    \item YouTube, Netflix, Amazon Prime, Spotify
+    \item On-demand content
+    \item No downloading required
+\end{itemize}
+
+\subsubsection{Online Education}
+Learning through internet platforms.
+\begin{itemize}
+    \item Coursera, Udemy, Khan Academy
+    \item Online courses, tutorials, certifications
+    \item Distance learning, e-learning
+\end{itemize}
+
+\subsection{Internet Etiquette (Netiquette)}
+
+\textbf{Guidelines for Online Behavior:}
+\begin{itemize}
+    \item Be respectful and courteous
+    \item Use appropriate language
+    \item Don't type in ALL CAPS (considered shouting)
+    \item Respect others' privacy
+    \item Don't spam or send chain letters
+    \item Give credit for others' work
+    \item Think before posting
+    \item Don't spread false information
+    \item Respect copyright laws
+    \item Be patient with beginners
+\end{itemize}
+
+\newpage
+
+% ============================================
+% CONCLUSION
+% ============================================
+
+\section{Conclusion}
+
+These comprehensive notes cover the fundamental topics of the DCA course:
+
+\begin{itemize}
+    \item \textbf{Computer Fundamentals:} Understanding hardware, software, memory, number systems, and operating systems
+    \item \textbf{MS Office:} Proficiency in Word (documents), Excel (spreadsheets, formulas, charts), and PowerPoint (presentations)
+    \item \textbf{Internet \& Email:} Using browsers, search engines, email communication, and online safety
+\end{itemize}
+
+These skills form the foundation of computer literacy and are essential for both academic and professional success. Regular practice with these applications will enhance your proficiency and productivity.
+
+\vspace{1cm}
+
+\textbf{For more information, contact:}
+
+\textbf{Prathibha Institute}
+
+Computer Training Center
+
+\vspace{2cm}
+
+\hrule
+\vspace{0.3cm}
+\textit{End of Notes - Part 1}
+
+\end{document}
