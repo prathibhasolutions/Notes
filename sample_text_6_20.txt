@@ -1,0 +1,1139 @@
+This book will be of highly use whether students are looking 
+for a quick revision before the board exams or just before other 
+examinations like Engineering Entrances, Medical Entrances 
+or any similar examination, they will find that this handbook 
+will answ er their needs admirably. 
+This handbook can ev en be used for revision of a subject in the 
+time betw een tw o shift of the exams, ev en this handbook can 
+be used while tra velling to Examination Centre or whenev er 
+you ha ve time, less sufficient or more.  Handbook means reference book listing brief facts on a subject. 
+So, to facilitate the students in this w e have released this 
+Handbook of Physics . This book has been prepared to serv e 
+the special purpose of the students, to rectify any query or any 
+concern point of a particular subject.
+The format of this handbook has been dev eloped particularly so 
+that it can be carried around by the students conv eniently.
+—To pro vide a focus to students to clear up their doubts about 
+particular concepts which w ere not clear to them earlier.—To support students in their revision of a subject just before 
+an examination.The objectives of publishing this handbook are :
+—To give confidence to the students just before they attempt 
+important examinations.
+However, w e have put our best efforts in preparing this book, 
+but if any error or what  so ev er has been skipped out, w e will 
+by heart w elcome y our suggestions. A part from all those who 
+helped in the compilation of this book a special note of thanks 
+goes to Ms. Y ojna Sharma of Arihant Publications.
+AuthorPREFACE
+ Telegram @unacademyplusdiscounts—Units1. Units and 
+Measur eme nt 1-8
+—Scalars
+—Vectors
+—Multiplication of Vectors
+—Vector or Cross P roduct of 
+Two Vectors
+—Frame o f Ref erence—Dimen sions
+—Speed—Addition of Vectors—Uniform M otion
+2. Scalars and V ectors 9-17
+—Scalar or Dot Product of 
+Two Vectors—Signif icant Figur es—Physical Qua ntities
+—Subtraction of Vectors—Rotation of Vectors
+—Direction Cosines o f a 
+Vector
+—Divisio n of Vectors by 
+Scalars
+—Rest —Systems of Units
+—Roundin g off—Homog eneity Principle
+—Error
+—Combinations of Errors
+—Tensors
+—Other T ypes of Vectors
+3. Motion in a 
+Straight Line  18-26
+—Motion
+—Disp lacemen t—Distance—Velocity
+—Accelera tion
+—Different Graphs of Motion
+—Motion Under G ravity
+4.  Motion in a P lane 
+(Projectile a nd Cir cular 
+Motion)   27-41
+—Projectile M otion and 
+Circular Motion
+—Centripetal Accelera tion
+—Centripetal Force
+—Centrifugal F orce
+—Examples F or obtaining 
+Centripetal
+—Force in D aily life
+—Motion of a pa rticle in a 
+Vertical Cir cle—Equations of Uniformly 
+Accelera ted M otion
+5. Laws o f Motion 42-53
+—Inertia 
+—Weight—Newton's L aws o f Motion
+—Friction
+—Motion on a Ro ugh  
+Inclined Pla ne—Impulse—Linear Momen tum
+—Rocket
+—Motion of Bodies in  
+Contact
+—Pulle y Mass S ystem—Equilib rium o f a P article—ForceCONTENTS
+ Telegram @unacademyplusdiscounts—Rigid B ody—Orbital Velocity
+—Elastic M odulii
+10. Hydrosta tics  96-101
+—Newton's L aw of Gravitation—Elastici ty—Rela tion between 
+Gravitational Field a nd 
+Potential 
+—Escape Velocity
+—Stress a nd S train Curve—Rotational M otion—Satellite
+—Hooke's L aw
+—Thrust—Torque
+—Accelera tion Due t o  Gravity—Linear Momen tum o f a 
+System o f Particles —Gravitational Field
+—Angular Momen tum—Types of Modulus of 
+Elastici ty—Kepler’s Laws o f  Pla netary 
+Motion
+8. Gravitation 74-87—The R adius of Gyration—Stress
+—Fluids—Poisson's R atio
+—Momen t of Inertia o f 
+Homegeneo us Rigid B odies9. Elasticity 88-95
+—Factors Affecting ccelera tion 
+Due t o Gravity—Gravitational P otential  
+Ener gy
+—Weightlessness
+—Momen t of Inertia
+—Centre of Gravity
+—Angular Impulse
+—Rotational K inetic Ener gy—Strain
+—Perpendic ular Ax es 
+Theo rem
+—Central F orces—Parallel Ax es Theo rem—Translational M otion—Deforming Force
+—Cantilever
+—Pressur e
+—Pressur e Exerted by the 
+Liquid
+—Buoyancy
+—Laws o f Floa tation
+—Density of a M ixture of 
+Subst ances—Pascal's L aw
+—Archimedes' P rinciple
+—Density and Rela tive 
+Density—Principle of Conservation of 
+Ener gy6. Work, Ene rgy and 
+Powe r 54-62
+—Other F orms of Ener gy
+—Collisio ns—Power 
+—One Dimen sional o r
+Head-o n Collisio n—Ener gy
+—Two Dimen sional o r
+Oblique C ollisio ns
+7. Rotational M otion 63-73—Work
+—Centre of Mass
+ Telegram @unacademyplusdiscounts—Flow of liquid
+—Reynold's N umber
+—Equation of Continuity11. Hydrodynami cs 102-109
+—Bernoulli's Theo rem
+—Venturimet er
+—Torricelli's Theo rem
+—Viscosity
+—Poiseuille's F ormula
+—Stoke's L aw and T erminal 
+Velocity
+—Critical V elocity
+12. Surface T ension 110-118—Ener gy of a L iquid
+—Rate of Flo w of Liquid
+—Adhesi ve Force
+—Ther modynamical T erms—Kinetic Ener gy of an Ideal 
+Gas
+—Latent Heat—Ther mometr ic Property—Temperature and its 
+Measuremen t—Factors Affecting Surface 
+Tension
+—Angle of Contact
+—Ther mometeres
+—Calorimetr y—Gas L aws14. Kinet ic The ory of 
+Gases 130-137
+—Molecular Range
+—Ther mal (H eat) Capacity—Zurin's L aw—Capillarity—Mean Free Path
+—Ther mal Eq uilib rium15. Thermo dynami cs 138-147
+—Cohesive Force
+13. Thermo metr y and  
+Calorimetr y 119-129
+—Heat —Critical T emperature,  
+Pressur e and V olume—Brownia n Motion —Assum ption of Kinetic 
+Theo ry of Gas es
+—Ideal or Perfect Gas 
+Equation
+—First Law of 
+Ther modynamics
+—Specific Heat—Entropy
+—Heat Engine
+—Ther mal Expa nsion
+—Triple Point of Water—Second L aw of 
+Ther modynamics
+—Water Eq uivalen t—Surface Ener gy—Degree of Freedo m—Real Gas es
+—Joule's L aw—Zeroth Law of 
+Ther modynamics
+—Ther modynamic P rocesses
+—Carnot’s Cycle—Internal Ener gy (U)
+16. Transmissi on of 
+Heat 148-153
+—Ingen H ausz Exp erimen t
+—Reflectance o r Ref lecting 
+Power
+—Absorptance o r Absorbing 
+Power—Work do ne
+—Heat Transmissio n—Refrigerator
+—Transmittance o r 
+Transmitting Power
+ Telegram @unacademyplusdiscounts—Stefan's L aw—Emissi ve Power
+—Emissi vity
+—Perfectly Black Body
+—Kirchhoff's Law
+—Wien's Disp lacemen t Law
+—Solar Constant
+17. Oscillations 154-165
+—Periodic M otion
+—Oscillatory Motion
+—Harmonic O scillation
+—Simple Harmonic M otion
+—Some I mportant Formulae 
+of SHM
+—Graphical Rep resentation of 
+SHM
+—Force in S HM—Doppler's Ef fect
+—Superposition of Waves—Equipotential S urface
+—Electric Di pole
+20. Current 
+Electricity 208-219—Second's P endulum
+—Compound P endulum
+—Ohm's L aw
+—Resisti vity
+—Superconductors—Echo
+—Vibrations in a str etched 
+string 
+—Torisonal P endulum
+—Spring Pendulum—Stationary or standin g 
+Waves
+—Melde's Exp erimen t
+19. Electrosta tics 185-207
+—Conical P endulum—Ener gy in S HM
+—Lissajou's Figur es
+18. Waves and S ound 166-184
+—Waves 
+—Sound W aves—Simple Pendulum
+—Velocity of Longitudinal 
+(Sound) W ave—Beats
+—Speed o f transverse Motion—Electric Flux
+—Van-de-G raaff Genera tor —Oscillations of liquid in a 
+U-tube—Interference 
+—Organ Pipes
+—Resonance T ube
+—Work D one—Charge
+—Shock Waves
+—Simple Harmonic W ave—Coulomb's L aw in V ector 
+Form
+—Electric Field
+—Electric Potential 
+—Gauss's Theo rem
+—Dipole in N on-Uniform 
+Electric Field
+—Electric Current 
+—Current Density
+—Mobility
+—Electrical Resist ance
+—Electrical C onductivity
+—Resist ors
+ Telegram @unacademyplusdiscounts—Farada y's L aws o f 
+Electromagnetic I nduction
+—Grouping of Coils—Earth's M agnetism
+—Lenz's L aw—Magnetic M ap
+—Hysteresis—Vibration Magnet ometer
+24. Electromag neti c 
+Indu ction 257-263—Gauss's L aw in M agnetism
+—Deflection Magnet ometer
+—Flemin g's Rig ht Hand R ule
+—Self-Induction—Tangent Gal vanometer
+—Magnetic Fl ux—Magnetic Di pole
+—Tangent Law
+—Eddy Currents—Neutral P oints
+—Coercivity—Coulomb's L aw
+—Mutual I nduction—Electric Cell
+—Kirchhoff's Laws
+—Wheatstone B ridge
+—Meter Bridge
+—Potentiometer—Combination of Resist ors
+21. Heating and C hemi cal 
+Effects of Current 220-226
+—Electric Ener gy
+—Electric Power
+—Electric Fuse—Heating Effects of Current
+—Short Cir cuiting
+—Overloadin g
+—Rating of Electrical 
+Appliances
+—Fusing of Bulb W hen i t is 
+Switched On
+—Chemical Ef fect of Electric 
+Current 
+—Ther moelectric Power
+—Toroid—Moving Coil Gal vanometer
+—Peltier Ef fect—Magnetic Di pole
+—Thomon's Ef fect
+—Right Hand Th umb Rule—Motion of a Cha rged P article 
+in a U niform M agnetic Field
+—Ther moelectric Ef fect—Ammet er
+—Natural M agnet
+—Artificial M agnet
+22. Magneti c Eff ect of 
+Current 227-239
+—Magnetic Field Due t o a 
+Straight Current Carrying 
+Conductor—Oersted's Exp erimen t—Farada y's L aws E lectrolysis
+—Soleno id—Flemin g's L eft Hand R ule
+—Voltmet er
+—Ther mopile23. Magnetism and 
+Matter  240-256—Cyclotron
+—Biot Savart's Law
+ Telegram @unacademyplusdiscounts25. Alterna ting 
+Current 264-274
+26. Electromag neti c
+Waves 275-278
+—Electromagnetic S pectrum—Disp lacemen t Current—Reactance
+—Mirror
+—Areal and Axial 
+Magnif ication
+—Refractive Index—Power in a n AC Cir cuit—Alternating Current
+—Resonance in a n AC Cir cuit
+—Wattless C urrent
+—Cho ke Coil
+—AC Genera tor or Dynamo
+—DC M otor
+—Transformer
+—Transformation Ratio—Impedance
+—Electromagnetic W aves
+27. Ray Op tics 279-304
+—Light
+—Important Terms
+—Reflection of Light
+—Types of Ref lection
+—Linear Magnif ication
+—Refraction of Light
+—Cauchy's F ormula
+—Critical An gle
+—Optical Fib res—Prism
+—Disp ersion of Light
+—Angular Disp ersion
+—Scattering of Light
+—Huma n Eye
+—Total Internal Ref lection 
+(TIR)
+—Cutting of a L ens—Simple M icroscope 
+—Astronomical T elescope
+28. Wave Op tics 305-316
+—Newton’s Corpuscular 
+Theo ry of light—Aberration of Lenses
+—Lens—Reflecting Telescopes
+29. Electrons, P hotons and 
+X-rays 317-329—Fresnel's B iprism
+—Polaroid
+—Photoelectric Ef fect
+—Davisson-Germer 
+Experimen t—Doppler's Ef fect in L ight
+—X-ra ys Spectrum—Cathode R ays—Young's D ouble Slit 
+Experimen t (YDS E)
+—Fringe Width—Interference o f Light—Superposition of Waves
+—Polarisation
+—Matter W aves on de-B roglie 
+Waves—Huygens’ Wave Theo ry 
+of light
+—Compton Effect—Diffraction—Huygens’ Principle
+—X-ra ys—Positive Rays
+ Telegram @unacademyplusdiscounts—Dalton's A tomic Theo ry
+—Nuclear Fusion—Hydrogen Spectrum S eries
+—Nuclear Bindin g Ener gy—Mass D efect—Bohr's A tomic M odel
+—Radioac tive Decay Law30. Atomic Physics 330-336
+31. Nuclear P hysics 337-343—Thomson's A tomic M odel
+—Rutherford's A tomic M odel
+—Nucleus
+—Isotones
+—Isomers
+—Nuclear Force—Wave Model
+—Isotopes
+—Isobars
+—Nuclear Reaction
+—Nuclear Fissio n
+—Radioac tivity
+—Ener gy Bands o f Solids—Solid32. Electronics 344-362
+—Zener Dio de
+—p-n Junction Dio de as  
+Rectifier
+—Logic Ga te
+—Truth Table—p-n Junction and Dio de—Basic L ogic Ga tes
+—Combination of Gates
+—Communica tion
+—Communica tion System
+—Modulation
+—Demo dulation
+—Antenna
+—Earth's A tmosp here
+—Propaga tion of Radio W aves
+—Light Emi tting Dio des 
+(LED)33. Comm unication 363-373
+—Microwave Propaga tion
+—Transistor—Satellite Communica tion
+—Types of Semico nductor—Demer its of Satellite 
+Communica tion
+—Black Hole—Mobile Telephony
+—Death of a Star—Life Cycle of a Star—Stars
+—The B ig-Bang Theo ry—Planets—Sun34. Unive rse 374-380
+—Solar System—Merits of Satellite 
+Communica tion
+—Optical C ommunica tion
+—Global P ositoining System 
+(GPS)
+—Galaxy—Internet T elephony
+—Constellation—Inner S tructure of the E arth
+Appendix 381-451
+ Telegram @unacademyplusdiscounts1
+Units and
+Measurement
+The comparison of any physical quantity with its standard un
+it is
+called
+measurement
+.
+Physical□Quantities
+All the quantities which can be measured directly or indirec
+tly in
+terms of which the laws of Physics are described are called ph
+ysical
+quantities.
+Units
+A standard amount of a physical quantity chosen to measure th
+e
+physical quantity of the same kind is called a physical unit.
+It should be
+easily reproducible, internationally accepted.
+Fundamental□Quantities□and□Their□Units
+Those physical quantities which are independent to each oth
+er are
+called
+fundamental quantities
+and their units are called
+fundamental units.
+Fundamental
+quantities
+Fundamental units
+Name Symbol Definition
+Length Metre m The metre is the length of the path
+travelled by light in vacuum during a
+time interval of 1/299,792,458 of a
+second. (
+1983
+)
+Mass Kilogram kg The kilogram is equal to the mass of
+the International prototype of the
+kilogram (a platinum-iridium alloy
+cylinder) kept at International Bureau of
+Weights and Measures at Sevres, near
+Paris, France. (
+1889
+)
+ Telegram @unacademyplusdiscountsFundamental
+quantities
+Fundamental units
+Name Symbol Definition
+Time Second s The second is the duration of
+9,192,631,770 periods of the radiation
+corresponding to the transition between
+the two hyperfine levels of the ground
+state of the cesium-133 atom. (
+1967
+)
+Electric current Ampere A The ampere is that constant curren
+t
+which, if maintained in two straight
+parallel conductors of infinite length,
+of negligible circular cross-section
+and placed 1 m apart in vacuum,
+would produce a force between these
+conductors equal to
+2 10
+7
+/c180
+/c45
+N/m of
+length. (
+1948
+)
+Thermodynamic
+temperature
+Kelvin K The kelvin is the fraction 1/273.16 of
+the thermodynamic temperature of the
+triple point of water. (
+1967
+)
+Amount of
+substance
+Mole mol The mole is the amount of substance of
+a system which contains as many
+elementary entities as there are atoms
+in 0.012 kg of carbon-12. (
+1971
+)
+Luminous
+intensity
+Candela cd The candela is the luminous intensity in
+a given direction of a source that emits
+monochromatic radiation of frequency
+540 10
+12
+/c180
+Hz and that has a radiant
+intensity in that direction of 1/683 watt
+per steradian. (
+1979
+)
+Supplementary□Fundamental□Quantities□and□Their□Units
+Radian and steradian are two supplementary fundamental uni
+ts. It
+measures plane angle and solid angle respectively.
+Supplementary
+fundamental
+quantities
+Supplementary units
+Name Symbol Definition
+Plane angle Radian rad One radian is the angle subtended at th
+e
+centre of a circle by an arc equal in length to
+the radius of the circle.
+i.e.
+d
+ds
+r
+/c113 /c61
+Solid angle Steradian sr One steradian is the solid angle sub
+tended at
+the centre of a sphere, by that surface of the
+sphere, which is equal in area, to the square of
+radius of the sphere.
+i.e.
+d
+dA
+r
+/c87 /c61
+2
+2
+Handbook□of
+Physics
+ Telegram @unacademyplusdiscountsDerived□Quantities□and□Their□Units
+Those physical quantities which are derived from fundament
+al
+quantities are called
+derived quantities
+and their units are called
+derived units
+e.g
+. Velocity, acceleration, force, work etc.
+Systems□of Units
+A system of units is the complete set of units, both fundament
+al and
+derived, for all kinds of physical quantities. The common sy
+stem of
+units which is used in mechanics are given below:
+(i)
+CGS System
+In this system, the unit of length is centimetre,
+the□unit□of□mass□is□gram□and□the□unit□of□time□is□second.
+(ii)
+FPS System
+In this system, the unit of length is foot, the unit
+of□mass□is□pound□and□the□unit□of□time□is□second.
+(iii)
+MKS System
+In this system, the unit of length is metre, the
+unit□of□mass□is□kilogram□and□the□unit□of□time□is□second.
+(iv)
+SI System
+The□system□of□units,□which□is□accepted
+Internationally for measurement is the System Internationaled
+units□abbreviated□as□SI.□This□system□contains□seven
+fundamental units and two supplementary fundamental units.
+Relationship between Some Mechanical
+SI Unit and Commonly Used Units
+S.No. Physical Quantities Units
+1. Length (a)
+1 micrometre
+/c61
+/c45
+10
+6
+m
+(b)
+1 nanometre
+/c61
+/c45
+10
+9
+m
+(c)
+1 angstrom
+/c61
+/c45
+10
+10
+m
+2. Mass (a)
+1 metric ton
+/c61
+10
+3
+kg
+(b) 1 pound
+/c61
+0.4537 kg
+(c)
+1 amu
+/c61 /c180
+/c45
+1.66 10
+23
+kg
+3. Volume
+1 litre
+/c61
+/c45
+10
+3 3
+m
+4. Force (a)
+1 dyne
+/c61
+/c45
+10
+5
+N
+(b) 1 kgf
+/c61
+9.81 N
+5. Pressure (a)
+1 kgf-
+m 9.81Nm
+–2
+2
+/c61
+(b)
+1 mm of Hg
+/c61
+133
+Nm
+/c45
+2
+(c)
+1 pascal
+/c61
+/c45
+1
+2
+Nm
+(d) 1 atmosphere pressure
+/c61
+76
+cm of Hg
+/c61 /c180
+1.01 10
+5
+pascal
+Units□and□Measurement
+3
+ Telegram @unacademyplusdiscountsS.No. Physical Quantities Units
+6. Work and energy (a)
+1 erg
+/c61
+/c45
+10
+7
+J
+(b) 1 kgf-m
+/c61
+9.81 J
+(c)
+1 kWh
+/c61 /c180
+3.6 J
+10
+6
+(d)
+1 10
+19
+eV 1.6 J
+/c61 /c180
+/c45
+7. Power (a)
+1 kgf-
+ms 9.81 W
+/c45
+/c61
+1
+(b) 1 horse power
+/c61
+746 W
+Some□Practical□Units of□Length
+(i) 1□fermi
+/c61
+/c45
+10
+15
+m
+(ii) 1□X-ray□unit
+/c61
+/c45
+10
+13
+m
+(iii) 1□astronomical□unit
+/c61 /c180
+1.49 m
+10
+11
+(average□distance□between
+sun and earth)
+(iv) 1□light□year
+/c61 /c180
+9.46 m
+10
+15
+(v) 1□parsec
+/c61 /c180 /c61
+3.08 m 3.26
+10
+16
+light□year
+Dimensions
+Dimensions of any physical quantity are those powers to whic
+h the
+fundamental quantities are raised to express that quantity
+. The
+expression of a physical quantity in terms of its dimensions
+, is called
+its
+dimensional formula
+.
+Dimensional Formula of Some Physical Quantities
+S.No.
+Physical
+Quantities
+Dimensional
+Formula
+MKS
+Units
+1.
+Area
+[L ]
+2
+m
+2
+2.
+Volume
+[L ]
+3
+m
+3
+3.
+Velocity
+[LT ]
+1
+/c45
+ms
+1
+/c45
+4.
+Acceleration
+[LT ]
+2
+/c45
+ms
+2
+/c45
+5.
+Force
+[MLT ]
+2
+/c45
+newton (N)
+6.
+Work or energy
+[ML T ]
+2 2
+/c45
+joule (J)
+7.
+Power
+[ML T ]
+2 3
+/c45
+J s
+1
+/c45
+or W
+(watt)
+8.
+Pressure or stress
+[ML T ]
+1 2
+/c45 /c45
+Nm
+2
+/c45
+9.
+Linear momentum or
+impulse
+[MLT ]
+1
+/c45
+kg ms
+1
+/c45
+10.
+Density
+[ML ]
+3
+/c45
+kg m
+3
+/c45
+11.
+Strain dimensionless unitless
+4
+Handbook□of
+Physics
+ Telegram @unacademyplusdiscountsS.No.
+Physical
+Quantities
+Dimensional
+Formula
+MKS
+Units
+12.
+Modulus of elasticity
+[ML T ]
+1 2
+/c45 /c45
+Nm
+2
+/c45
+13.
+Surface tension
+[MT ]
+2
+/c45
+Nm
+1
+/c45
+14.
+Velocity gradient
+[T ]
+1
+/c45
+s
+1
+/c45
+15.
+Coefficient of viscosity
+[ML T ]
+1 1
+/c45 /c45
+kg m s
+1 1
+/c45 /c45
+16.
+Gravitational constant
+[M L T ]
+1 3 2
+/c45 /c45
+Nm /kg
+2 2
+17.
+Moment of inertia
+[ML ]
+2
+kg
+-
+m
+2
+18.
+Angular velocity
+[T ]
+1
+/c45
+rad/s
+19.
+Angular acceleration
+[T ]
+2
+/c45
+rad/
+s
+2
+20.
+Angular momentum
+[ML T ]
+2 1
+/c45
+kg m s
+2 1
+/c45
+21.
+Specific heat
+[L T ]
+2 2 1
+/c45 /c45
+/c113
+kcal kg K
+1 1
+/c45 /c45
+22.
+Latent heat
+[L T ]
+2 2
+/c45
+kcal/kg
+23.
+Planck’s constant
+[ML T ]
+2 1
+/c45
+J-s
+24.
+Universal gas constant
+[ML T ]
+2 2 1
+/c45 /c45
+/c113
+J/mol-K
+Homogeneity□Principle
+If the dimensions of left hand side of an equation are equal to
+the
+dimensions of right hand side of the equation, then the equat
+ion is
+dimensionally correct. This is known as
+homogeneity principle
+.
+Mathematically, [LHS]
+/c61
+[RHS].
+Applications□of□Dimensions
+(i) To□check□the□accuracy□of□physical□equations.
+(ii) To change a physical quantity from one system of units to
+another□system□of□units.
+(iii) To□obtain□a□relation□between□different□physical□quantities.
+Significant□Figures
+In the measured value of a physical quantity, the number of di
+gits
+about the correctness of which we are sure plus the next doubt
+ful digit,
+are called the significant figures.
+Rules□for□Finding□Significant□Figures
+(i) All□non-zeros□digits□are□significant□figures,
+e.g.
+4362□m□has
+4□significant□figures.
+(ii) All□zeros□occuring□between□non-zero□digits□are□significant
+figures,
+e.g.
+1005□has□4□significant□figures.
+Units□and□Measurement
+5
+ Telegram @unacademyplusdiscounts(iii) All zeros to the right of the last non-zero digit are not significant,
+e.g.
+6250□has□only□3□significant□figures.
+(iv) In a digit less than one, all zeros to the right of the decimal point
+and to the left of a non-zero digit are not significant,
+e.g.
+0.00325
+has□only□3□significant□figures.
+(v) All zeros to the right of a non-zero digit in the decimal part are
+significant,
+e.g.
+1.4750□has□5□significant□figures.
+Significant□Figures□in□Algebraic□Operations
+(i)
+In Addition or Subtraction
+In addition or subtraction of
+the numerical values, the final result should retain as many
+decimal places as there are in the number with the least places.
+e.g.
+If
+l
+1
+/c61
+4.326 m
+and
+l
+2
+/c61
+1.50□m
+Then,
+l l
+1 2
+/c43 /c61 /c43
+(4.326 1.50) m
+/c61
+5.826 m
+As
+l
+2
+has measured upto two decimal places, therefore
+l l
+1 2
+/c43 /c61
+5.83 m
+(ii)
+In Multiplication or Division
+In multiplication or
+division of the numerical values, the final result should retain
+as many significant figures as there are in the original number
+with the least significant figures.
+e.g.
+If length
+l
+/c61
+12.5 m and
+breadth
+b
+/c61
+4.125
+m.
+Then, area
+A l b
+/c61 /c180 /c61 /c180
+12.5 4.125
+/c61
+51.5625 m
+2
+As
+l
+has only 3 significant figures, therefore
+A
+/c61
+51.6 m
+2
+Rounding□Off
+The process of omitting the non significant digits and retai
+ning only
+the desired number of significant-digits, incorporating t
+he required
+modifications to the last significant digit is called round
+ing off the
+number.
+Rules□for□Rounding□Off□a□Measurement
+(i) If the digit to be dropped is less than 5, then the preceding digit
+is□left□unchanged.
+e.g.
+1.54□is□rounded□off□to□1.5.
+(ii) If the digit to be dropped is greater than 5, then the preceding
+digit□is□raised□by□one.
+e.g.
+2.49□is□rounded□off□to□2.5.
+6
+Handbook□of
+Physics
+ Telegram @unacademyplusdiscounts(iii) If the digit to be dropped is 5 followed by digit other than ze
+ro,
+then the preceding digit is raised by one.
+e.g.
+3.55 is rounded off to
+3.6.
+(iv) If the digit to be dropped is 5 or 5 followed by zeros, then the
+preceding digit is raised by one, if it is odd and left unchang
+ed if it
+is even.
+e.g.
+3.750 is rounded off to 3.8 and 4.650 is rounded off
+to 4.6.
+Error
+The lack in accuracy in the measurement due to the limit of acc
+uracy
+of the measuring instrument or due to any other cause is calle
+d an
+error. The difference between the measured value and the tru
+e value of
+a quantity is known as the error in the measurement.
+Errors are usually classified as
+1.
+Absolute□Error
+The difference between the true value and the measured value
+of a
+quantity is called absolute error. If
+a a a
+1 2 3
+, , ,...
+,
+a
+n
+are the measured
+values of any quantity a in an experiment performed n times, t
+hen the
+arithmetic mean of these values is called the true value
+( )
+a
+m
+of the
+quantity.
+a
+a a a a
+n
+m
+n
+/c61
+/c43 /c43 /c43 /c43
+1 2 3
+...
+The absolute error in measured values is given by
+/c68
+a a a
+m
+1 1
+/c61 /c45
+/c68
+a a a
+m
+2 2
+/c61 /c45
+………………
+/c68
+a a a
+n m n
+/c61 /c45
+2.
+Mean□Absolute□Error
+The arithmetic mean of the magnitude of absolute errors in al
+l the
+measurement is called mean absolute error.
+/c68
+/c68 /c68 /c68
+a
+a a a
+n
+n
+/c61
+/c43 /c43 /c43
+| | | | ... | |
+1 2
+3.
+Relative□Error□or□Fractional□Error
+The ratio of mean absolute error to the true value is called re
+lative
+error.
+Relative error
+/c61
+Mean absolute error
+True value
+/c61
+/c68
+a
+a
+m
+Units□and□Measurement
+7
+ Telegram @unacademyplusdiscounts

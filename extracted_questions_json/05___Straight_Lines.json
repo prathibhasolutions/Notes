@@ -1,0 +1,1975 @@
+[
+  {
+    "question_text": "Two vertices of a triangle ABC are A(3,−1) and B(−2,3), and its orthocentre is P(1,1). If the coordinates of the point C are (α,β) and the centre of the of the circle circumscribing the triangle PAB is (h,k), then the value of (α+β)+2( h+k) equals 09 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "81",
+        "is_correct": false
+      },
+      {
+        "option_text": "15",
+        "is_correct": false
+      },
+      {
+        "option_text": "51",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A ray of light coming from the point P(1,2) gets reflected from the point Q on the x-axis and then passes through the point R(4,3). If the point S(h,k) is such that PQRS is a parallelogram, then hk2 is equal to : 09 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "70",
+        "is_correct": false
+      },
+      {
+        "option_text": "80",
+        "is_correct": false
+      },
+      {
+        "option_text": "60",
+        "is_correct": false
+      },
+      {
+        "option_text": "90",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the orthocentre of the triangle formed by the lines 2x+3y−1 = 0,x+2y−1 = 0 and ax+by−1 = 0, is the centroid of another triangle, whose circumcentre and orthocentre respectively are (3,4) and (−6,−8), then the value of |a−b| is_______ 08 Apr 2024 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If the image of the point (−4,5) in the line x+2y = 2 lies on the circle (x+4)2 +(y−3)2 = r2, then r is equal to: 08 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The equations of two sides AB and AC of a triangle ABC are 4x+y = 14 and 3x−2y = 5, respectively. The point (2,−4) divides the third side BC internally in the ratio 2 : 1. the equation of the side BC is 3 08 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "x+3y+2 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x−6y−10 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x−3y−6 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x+6y+6 = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the line segment joining the points (5,2) and (2,a) subtends an angle π at the origin, then the absolute value 4 of the product of all possible values of a is : 08 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "8",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "-4",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a ray of light passing through the point (3,10) reflects on the line 2x+y = 6 and the reflected ray passes through the point (7,2). If the equation of the incident ray is ax+by+1 = 0, then a2 +b2 +3ab is equal to_________ 08 Apr 2024 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If A(3,1,−1),B(5, 7, 1),C(2,2,1) and D(10, 2, −1) are the vertices of a quadrilateral ABCD, then its 3 3 3 3 3 3 area is 06 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "5√2 3 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4√2 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If P(6,1) be the orthocentre of the triangle whose vertices are A(5,−2),B(8,3) and C(h,k), then the point C lies on the circle: 06 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "x2 +y2 −61 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 +y2 −52 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 +y2 −65 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 +y2 −74 = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a variable line of slope m > 0 passing through the point (4,−9) intersect the coordinate axes at the points A and B. The minimum value of the sum of the distances of A and B from the origin is 06 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "30",
+        "is_correct": false
+      },
+      {
+        "option_text": "25",
+        "is_correct": false
+      },
+      {
+        "option_text": "15",
+        "is_correct": false
+      },
+      {
+        "option_text": "10",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the locus of the point, whose distances from the point (2,1) and (1,3) are in the ratio 5 : 4, is ax2 +by2 +cxy+dx+ey+170 = 0, then the value of a2 +2b+3c+4d+e is equal to : 06 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "37",
+        "is_correct": false
+      },
+      {
+        "option_text": "437",
+        "is_correct": false
+      },
+      {
+        "option_text": "-27",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If A(1,−1,2),B(5,7,−6),C(3,4,−10) and D(−1,−4,−2) are the vertices of a quadrilateral ABCD, then its area is : 05 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "48√7",
+        "is_correct": false
+      },
+      {
+        "option_text": "12√29",
+        "is_correct": false
+      },
+      {
+        "option_text": "24√7",
+        "is_correct": false
+      },
+      {
+        "option_text": "24√29",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let two straight lines drawn from the origin O intersect the line 3x+4y = 12 at the points P and Q such that △OPQ is an isosceles triangle and ∠POQ = 90∘ . If l = OP2 +PQ2 +QO2 , then the greatest integer less than or equal to l is : 05 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "42",
+        "is_correct": false
+      },
+      {
+        "option_text": "46",
+        "is_correct": false
+      },
+      {
+        "option_text": "44",
+        "is_correct": false
+      },
+      {
+        "option_text": "48",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A(−1,1) and B(2,3) be two points and P be a variable point above the line AB such that the area of △PAB is 10 . If the locus of P is ax+by = 15, then 5a+2 b is : 05 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "−6 5",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "−12 5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The vertices of a triangle are A(−1,3),B(−2,2) and C(3,−1). A new triangle is formed by shifting the sides of the triangle by one unit inwards. Then the equation of the side of the new triangle nearest to origin is : 04 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "x+y+(2−√2) = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "−x+y−(2−√2) = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x+y−(2−√2) = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x−y−(2+√2) = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Consider a triangle ABC having the vertices A(1,2),B(α,β) and C(γ,δ) and angles ∠ABC = π and 6 ∠BAC = 2π . If the points B and C lie on the line y = x+4, then α2 +γ2 is equal to ________ 3 04 Apr 2024 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let ABC be an isosceles triangle in which A is at (−1,0), ∠A = 2π, AB = AC and B is on the positive x− 3 axis. If BC = 4√3 and the line BC intersects the line y = x+3 at (α,β), then β4 is: 01 Feb 2024 (E) α2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let α, β, γ, δ ∈ Z and let A(α, β), B(1, 0), C(γ, δ) and D(1, 2) be the vertices of a parallelogram ABCD . If AB = √10 and the points A and C lie on the line 3y = 2x+1, then 2(α+β+γ+δ) is equal to 31 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "10",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "8",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A(a, b), B(3, 4) and (−6, −8) respectively denote the centroid, circumcentre and orthocentre of a triangle. Then, the distance of the point P(2a+3,7b+5) from the line 2x+3y−4 = 0 measured parallel to the line x−2y−1 = 0 is 31 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "15√5",
+        "is_correct": false
+      },
+      {
+        "option_text": "17√5 7 6",
+        "is_correct": false
+      },
+      {
+        "option_text": "17√5",
+        "is_correct": false
+      },
+      {
+        "option_text": "√5 7 17",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A(−2,−1), B(1,0), C(α,β) and D(γ,δ) be the vertices of a parallelogram ABCD. If the point C lies on 2x−y = 5 and the point D lies on 3x−2y = 6, then the value of |α+β+γ+δ| is equal to ______. 31 Jan 2024 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "A line passing through the point A(9,0) makes an angle of 30° with the positive direction of x-axis. If this line is rotated about A through an angle of 15° in the clockwise direction, then its equation in the new position is 30 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "y +x = 9",
+        "is_correct": false
+      },
+      {
+        "option_text": "x +y = 9 √3−2 √3−2",
+        "is_correct": false
+      },
+      {
+        "option_text": "x +y = 9",
+        "is_correct": false
+      },
+      {
+        "option_text": "y +x = 9 √3+2 √3+2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If x2 −y2 +2hxy+2gx+2fy+c = 0 is the locus of a point, which moves such that it is always equidistant from the lines x+2y+7 = 0 and 2x−y+8 = 0, then the value of g+c+h−f equals 30 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "14",
+        "is_correct": false
+      },
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "8",
+        "is_correct": false
+      },
+      {
+        "option_text": "29",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be the point of intersection of the lines 3x+2 y = 14,5 x−y = 6 and B be the point of intersection of the lines 4 x+3 y = 8, 6 x+y = 5. The distance of the point P(5,−2) from the line AB is 29 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "13",
+        "is_correct": false
+      },
+      {
+        "option_text": "8 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "6 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let (5, a), be the circumcenter of a triangle with vertices A(a,−2), B(a, 6) and C(a,−2). Let α denote the 4 4 circumradius, β denote the area and γ denote the perimeter of the triangle. Then α+β+γ is 29 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "60",
+        "is_correct": false
+      },
+      {
+        "option_text": "53",
+        "is_correct": false
+      },
+      {
+        "option_text": "62",
+        "is_correct": false
+      },
+      {
+        "option_text": "30",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The distance of the point (2,3) from the line 2x−3y+28 = 0, measured parallel to the line √3x−y+1 = 0, is equal to 29 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "6√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "3+4√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4+6√3 Q26*.In a ΔABC, suppose y = x is the equation of the bisector of the angle B and the equation of the side AC is 2x−y = 2. If 2 AB = BC and the point A and B are respectively (4,6) and (α,β), then α+2β is equal to 29 Jan 2024 (M)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A and B be two finite sets with m and n elements respectively. The total number of subsets of the set A is 56 more than the total number of subsets of B. Then the distance of the point P(m,n) from the point Q(−2,−3) is 27 Jan 2024 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If the sum of squares of all real values of α, for which the lines 2x−y+3 = 0, 6x+3y+1 = 0 and αx+2y−2 = 0 do not form a triangle is p, then the greatest integer less than or equal to p is ________. 27 Jan 2024 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let R be the interior region between the lines 3x−y+1 = 0 and x+2y−5 = 0 containing the origin. The set of all values of a, for which the points (a2,a+1) lie in R, is : 27 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(−3,−1)∪(−1,1)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−3,0)∪(1,1) 3 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−3,0)∪(2,1)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−3,−1)∪(1,1) 3 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The portion of the line 4x+5y = 20 in the first quadrant is trisected by the lines L 1 and L 2 passing through the origin. The tangent of an angle between the lines L 1 and L 2 is : 27 Jan 2024 (M) 8 25",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "5 41 2 30",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "5 41",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If (α, β) is the orthocenter of the triangle ABC with vertices A(3, –7), B(–1, 2) and C(4, 5), then 9α−6β+60 is equal to 15 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "25",
+        "is_correct": false
+      },
+      {
+        "option_text": "35",
+        "is_correct": false
+      },
+      {
+        "option_text": "30",
+        "is_correct": false
+      },
+      {
+        "option_text": "40",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Consider the triangles with vertices A(2, 1), B(0, 0) and C(t, 4), t = [0, 4]. If the maximum and the minimum perimeters of such triangles are obtained at t = α and t = β respectively, then 6α+21β is equal to ___________. 15 Apr 2023 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let (α,β) be the centroid of the triangle formed by the lines 15x−y = 82, 6x−5y = −4 and 9x+4y = 17. Then α+2β and 2α−β are the roots of the equation 13 Apr 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "x2 −7x+12 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 −14x+48 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 −13x+42 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 −10x+25 = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the point (α, 7√3) lies on the curve traced by the mid-points of the line segments of the lines 3 x cosθ+ysinθ = 7, θ ∈ (0, π) between the co-ordinates axes, then α is equal to 2 12 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−7",
+        "is_correct": false
+      },
+      {
+        "option_text": "−7√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "7√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "7 Q35*.If the line l 1 : 3y−2x = 3 is the angular bisector of the lines l 2 : x−y+1 = 0 and l 3 : αx+βy+17 = 0, then α2 +β2 −α−β is equal to ............ 11 Apr 2023 (E)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the equations of two adjacent sides of a parallelogram ABCD be 2x−3y = −23 and 5x+4y = 23. If the equation of its one diagonal AC is 3x+7y = 23 and the distance of A from the other diagonal is d, then 50d2 is equal to ______________ 10 Apr 2023 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let C(α, β) be the circumcentre of the triangle formed by the lines 4x+3y = 69, 4y−3x = 17, and x+7y = 61. Then (α−β)2 +α+β is equal to 08 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "18",
+        "is_correct": false
+      },
+      {
+        "option_text": "17",
+        "is_correct": false
+      },
+      {
+        "option_text": "15",
+        "is_correct": false
+      },
+      {
+        "option_text": "16",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The straight lines l 1 and l 2 pass through the origin and trisect the line segment of the line L : 9x+5y = 45 between the axes. If m 1 and m 2 are the slopes of the lines l 1 and l 2, then the point of intersection of the line y = (m 1 +m 2 )x with L lies on 06 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "y–2x = 5",
+        "is_correct": false
+      },
+      {
+        "option_text": "6x+y = 10",
+        "is_correct": false
+      },
+      {
+        "option_text": "y–x = 5",
+        "is_correct": false
+      },
+      {
+        "option_text": "6x–y = 15",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the orthocentre of the triangle, whose vertices are (1,2),(2,3) and (3,1) is (α,β), then the quadratic equation whose roots are α+4β and 4α+β, is 01 Feb 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "x2 −19x+90 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 −18x+80 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 −22x+120 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 −20x+99 = 0 Q40*.The combined equation of the two lines ax+by+c = 0 and a′x+b′y+c′ = 0 can be written as (ax+by+c)(a′x+b′y+c′) = 0. The equation of the angle bisectors of the lines represented by the equation 2x2 +xy−3y2 = 0 is 01 Feb 2023 (M)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A straight line cuts off the intercepts OA = a and OB = b on the positive directions of x-axis and y− axis respectively. If the perpendicular from origin O to this line makes an angle of π with positive direction of y- 6 axis and the area of △OAB is 98√3, then a2 −b2 is equal to: 30 Jan 2023 (M) 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "392",
+        "is_correct": false
+      },
+      {
+        "option_text": "196 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "196",
+        "is_correct": false
+      },
+      {
+        "option_text": "98 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let B and C be the two points on the line y+x =0 such that B and C are symmetric with respect to the origin. Suppose A is a point on y−2x = 2 such that ΔABC is an equilateral triangle. Then, the area of the ΔABC is 29 Jan 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√3 8 10",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√3 √3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A light ray emits from the origin making an angle 30° with the positive x-axis. After getting reflected by the line x+y = 1, if this ray intersects x-axis at Q, then the abscissa of Q is 29 Jan 2023 (M) 2 2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "(√3−1) 3+√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "√3 3−√3 2(√3+1)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A triangle is formed by X-axis, Y-axis and the line 3x+4y = 60. Then the number of points P(a,b) which lie strictly inside the triangle, where a is an integer and b is a multiple of a, is _____ . 25 Jan 2023 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "The equations of the sides AB, BC & CA of a triangle ABC are 2x+y = 0, x+py = 21a (a ≠ 0) and x−y = 3 respectively. Let P(2,a) be the centroid of the triangle ABC, then (BC)2 is equal to 24 Jan 2023 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A(α,−2),B(α,6) and C(α,−2) be vertices of a ΔABC. If (5, α) is the circumcentre of ΔABC, then 4 4 which of the following is NOT correct about ΔABC 29 Jul 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "area is 24",
+        "is_correct": false
+      },
+      {
+        "option_text": "perimeter is 25",
+        "is_correct": false
+      },
+      {
+        "option_text": "circumradius is 5",
+        "is_correct": false
+      },
+      {
+        "option_text": "inradius is 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the circumcentre of a triangle with vertices A(a,3),B(b,5) and C(a,b),ab > 0 be P(1,1). If the line AP intersects the line BC at the point Q(k 1 ,k 2 ), then k 1 +k 2 is equal to 29 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 7",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 7",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let m 1 ,m 2 be the slopes of two adjacent sides of a square of side a such that a2 +11a+3( m2 1 +m2 2 ) = 220 . If one vertex of the square is (10(cosα−sinα),10(sinα+cosα)), where α ∈ (0, π) and the equation of 2 one diagonal is (cosα−sinα)x+(sinα+cosα)y = 10, then 72(sin4α+cos4α)+a2 −3a+13 is equal to 29 Jul 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "119",
+        "is_correct": false
+      },
+      {
+        "option_text": "128",
+        "is_correct": false
+      },
+      {
+        "option_text": "145",
+        "is_correct": false
+      },
+      {
+        "option_text": "155",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "For t ∈ (0,2π), if ABC is an equilateral triangle with vertices A(sint,−cost),B(cost,sint) and C(a,b) such that its orthocentre lies on a circle with centre (1, 1), then (a2 −b2) is equal to 28 Jul 2022 (M) 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "8",
+        "is_correct": false
+      },
+      {
+        "option_text": "8 3 77 80",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "9 9",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A(1,1), B(−4,3),C(−2,−5) be vertices of a triangle ABC, P be a point on side BC, and Δ and Δ be 1 2 the areas of triangle APB and ABC. Respectively. If Δ : Δ = 4 : 7, then the area enclosed by the lines 1 2 AP,AC and the x-axis is 27 Jul 2022 (M) 1 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 4",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The equations of the sides AB,BC and CA of a triangle ABC are 2x+y = 0, x+py = 39 and x−y = 3 respectively and P(2,3) is its circumcentre. Then which of the following is NOT true 27 Jul 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(AC)2 = 9p",
+        "is_correct": false
+      },
+      {
+        "option_text": "(AC)2 +p2 = 136",
+        "is_correct": false
+      },
+      {
+        "option_text": "32 <area (ΔABC) < 36",
+        "is_correct": false
+      },
+      {
+        "option_text": "34 < area (ΔABC) < 38",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A point P moves so that the sum of squares of its distances from the points (1,2) and (−2,1) is 14. Let f(x,y) = 0 be the locus of P, which intersects the x-axis at the points A,B and the y-axis at the point C,D. Then the area of the quadrilateral ACBD is equal to 26 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "3√17 2 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "3√17",
+        "is_correct": false
+      },
+      {
+        "option_text": "9 4",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The equations of the sides AB,BC and CA of a triangle ABC are 2x+y = 0,x+py = 15a and x−y = 3 respectively. If its orthocentre is (2,a), −1 < a < 2, then p is equal to 26 Jul 2022 (M) 2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "A line, with the slope greater than one, passes through the point A(4,3) and intersects the line x−y−2 = 0 at the point B. If the length of the line segment AB is √29 , then B also lies on the line 25 Jul 2022 (M) 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2x+y = 9",
+        "is_correct": false
+      },
+      {
+        "option_text": "3x−2y = 7",
+        "is_correct": false
+      },
+      {
+        "option_text": "x+2y = 6",
+        "is_correct": false
+      },
+      {
+        "option_text": "2x−3y = 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the point P(α,β) be at a unit distance from each of the two lines L 1 : 3x−4y+12 = 0, and L 2 : 8x+6y+11 = 0. If P lies below L 1 and above L 2, then 100(α+β) is equal to 25 Jul 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−14",
+        "is_correct": false
+      },
+      {
+        "option_text": "42",
+        "is_correct": false
+      },
+      {
+        "option_text": "−22",
+        "is_correct": false
+      },
+      {
+        "option_text": "14",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The distance of the origin from the centroid of the triangle whose two sides have the equations x−2y+1 = 0 and 2x−y−1 = 0 and whose orthocenter is (7, 7) is: 29 Jun 2022 (E) 3 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The distance between the two points A and A′ which lie on y = 2 such that both the line segments AB and A′B (where B is the point (2,3)) subtend angle π at the origin, is equal to 29 Jun 2022 (M) 4",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "10",
+        "is_correct": false
+      },
+      {
+        "option_text": "48 5",
+        "is_correct": false
+      },
+      {
+        "option_text": "52",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a triangle be bounded by the lines L 1 : 2x+5y = 10; L 2 : −4x+3y = 12 and the line L 3, which passes through the point P(2,3), intersect L 2 at A and L 1 at B. If the point P divides the line-segment AB, internally in the ratio 1 : 3, then the area of the triangle is equal to 28 Jun 2022 (E) 110 132",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "13 13 142 151",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "13 13",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A ray of light passing through the point P(2,3) reflects on the X-axis at point A and the reflected ray passes through the point Q(5,4). Let R be the point that divides the line segment AQ internally into the ratio 2 : 1. Let the co-ordinates of the foot of the perpendicular M from R on the bisector of the angle PAQ be (α,β). Then, the value of 7α+3β is equal to _____. 28 Jun 2022 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "In an isosceles triangle ABC, the vertex A is (6,1) and the equation of the base BC is 2x+y = 4. Let the point B lie on the line x+3y = 7. If (α,β) is the centroid ΔABC, then 15(α+β) is equal to 27 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "51",
+        "is_correct": false
+      },
+      {
+        "option_text": "39",
+        "is_correct": false
+      },
+      {
+        "option_text": "41",
+        "is_correct": false
+      },
+      {
+        "option_text": "49",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let R be the point (3,7) and let P and Q be two points on the line x+y = 5 such that PQR is an equilateral triangle. Then the area of ΔPQR is 26 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "25",
+        "is_correct": false
+      },
+      {
+        "option_text": "25√3 4√3 2 25 25",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√3 2√3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the area of the triangle with vertices A(1,α),B(α,0) and C(0,α) be 4 sq. units. If the points (α,−α),(−α,α) and (α2,β) are collinear, then β is equal to 24 Jun 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A( 3 ,√a),a > 0, be a fixed point in the xy-plane. The image of A in y-axis be B and the image of B in √a x-axis be C. If D(3cosθ,asinθ), is a point in the fourth quadrant such that the maximum area of ΔACD is 12 square units, then a is equal to _____ 24 Jun 2022 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let the points of intersections of the lines x−y+1 = 0, x−2y+3 = 0 and 2x−5y+11 = 0 are the mid points of the sides of a triangle ABC. Then the area of the triangle ABC is 01 Sep 2021 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "A man starts walking from the point P(−3, 4), touches the x-axis at R, and then turns to reach at the point Q(0, 2), The man is walking at a constant speed. If the man reaches the point Q in the minimum time, then 50((PR)2 +(RQ)2) is equal to ______ . 01 Sep 2021 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If p and q are the lengths of the perpendiculars from the origin on the lines, x cosec α−ysecα = kcot2α and xsinα+ycosα = ksin2α respectively, then k2 is equal to : 31 Aug 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2p2 +q2",
+        "is_correct": false
+      },
+      {
+        "option_text": "p2 +2q2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4q2 +p2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4p2 +q2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be the set of all points (α, β) such that the area of triangle formed by the points (5, 6), (3, 2) and (α, β) is 12 square units. Then the least possible length of a line segment joining the origin to a point in A, is : 31 Aug 2021 (E) 8 12",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√5 √5 16 4",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√5 √5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A(a, 0), B(b, 2b+1) and C(0,b), b ≠ 0, |b| ≠ 1, be points such that the area of triangle ABC is 1 sq. unit, then the sum of all possible values of a is: 27 Aug 2021 (E) −2b 2b2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "b+1 b+1 −2b2 2b",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "b+1 b+1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be a fixed point (0,6) and B be a moving point (2t,0). Let M be the mid-point of AB and the perpendicular bisector of AB meets the y−axis at C. The locus of the mid-point P of MC is 27 Aug 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3x2 +2y−6 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "2x2 −3y+9 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "3x2 −2y−6 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "2x2 +3y−9 = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let ABC be a triangle with A(−3,1) and ∠ACB = θ,0 < θ < π . If the equation of the median through B is 2 2x+y−3 = 0 and the equation of angle bisector of C is 7x−4y−1 = 0, then tanθ is equal to: 26 Aug 2021 (M) 3 4",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The point P(a,b) undergoes the following three transformations successively: (a) reflection about the line y = x.",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Two sides of a parallelogram are along the lines 4x+5y = 0 and 7x+2y = 0 . If the equation of one of the diagonals of the parallelogram is 11x+7y = 9, then other diagonal passes through the point: 27 Jul 2021 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(1,2)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(2,2)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(2,1)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(1,3) Q73*.Let the equation of the pair of lines, y = px and y = qx, can be written as (y−px)(y−qx) = 0. Then the equation of the pair of the angle bisectors of the lines x2 −4xy−5y2 = 0 is: 25 Jul 2021 (E)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Consider a triangle having vertices A(−2,3), B(1,9) and C(3, 8). If a line L passing through the circum- centre of triangle ABC, bisects line BC, and intersects y-axis at point (0, α), then the value of real number α 2 is _______. 20 Jul 2021 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let the centroid of an equilateral triangle ABC be at the origin. Let one of the sides of the equilateral triangle be along the straight line x+y = 3. If R and r be the radius of circumcircle and incircle respectively of ΔABC, then (R+r) is equal to : 18 Mar 2021 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "7√2 √2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "3√2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The equation of one of the straight lines which passes through the point (1,3) and makes an angles tan−1(√2) with the straight line, y+1 = 3√2x is 18 Mar 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4√2x+5y−(15+4√2) = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "5√2x+4y−(15+4√2) = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "4√2x+5y−4√2 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "4√2x−5y−(5+4√2) = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The number of integral values of m so that the abscissa of point of intersection of lines 3x+4y = 9 and y = mx+1 is also an integer, is: 18 Mar 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "In a triangle PQR, the co-ordinates of the points P and Q are (−2,4) and (4,−2) respectively. If the equation of the perpendicular bisector of PR is 2x−y+2 = 0, then the centre of the circumcircle of the ΔPQR is: 17 Mar 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(–1, 0)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(–2, –2)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(0, 2)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(1, 4)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let tanα, tanβ and tanγ; α,β,γ ≠ (2n−1)π, n ∈ N be the slopes of the three line segments OA, OB and 2 OC, respectively, where O is origin. If circumcentre of ΔABC coincides with origin and its orthocentre lies 2 on y-axis, then the value of (cos3α+cos3β+cos3γ) is equal to : 17 Mar 2021 (E) cosα⋅cosβ⋅cosγ",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A(−1,1), B(3,4) and C(2,0) be given three points. A line y = mx, m > 0 , intersects lines AC and BC at point P and Q respectively. Let A and A be the areas of ΔABC and ΔPQC respectively, such that 1 2 A = 3A , then the value of m is equal to : 16 Mar 2021 (E) 1 2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 15",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The intersection of three lines x−y = 0, x+2y = 3 and 2x+y = 6 is a/an 26 Feb 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Isosceles triangle",
+        "is_correct": false
+      },
+      {
+        "option_text": "Equilateral triangle",
+        "is_correct": false
+      },
+      {
+        "option_text": "Right angled triangle",
+        "is_correct": false
+      },
+      {
+        "option_text": "None of the above",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The image of the point (3,5) in the line x−y+1 = 0, lies on : 25 Feb 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(x−2)2 +(y−4)2 = 4",
+        "is_correct": false
+      },
+      {
+        "option_text": "(x−4)2 +(y−4)2 = 8",
+        "is_correct": false
+      },
+      {
+        "option_text": "(x−4)2 +(y+2)2 = 16",
+        "is_correct": false
+      },
+      {
+        "option_text": "(x−2)2 +(y−2)2 = 12 Q83*.If the curve x2 +2y2 = 2 intersects the line x+y = 1 at two points P and Q, then the angle subtended by the line segment PQ at the origin is 25 Feb 2021 (E)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A man is walking on a straight line. The arithmetic mean of the reciprocals of the intercepts of this line on the coordinate axes is 1 . Three stones A,B and C are placed at the points (1,1),(2,2) and (4,4) respectively. 4 Then which of these stones is/are on the path of the man? 24 Feb 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "C only",
+        "is_correct": false
+      },
+      {
+        "option_text": "All the three",
+        "is_correct": false
+      },
+      {
+        "option_text": "B only",
+        "is_correct": false
+      },
+      {
+        "option_text": "A only",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a point P be such that its distance from the point (5,0) is thrice the distance of P from the point (−5,0). If the locus of the point P is a circle of radius r, then 4r2 (in the nearest integer) is equal to __________. 24 Feb 2021 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let L denote the line in the xy-plane with x and y intercepts as 3 and 1 respectively. Then the image of the point(−1, −4) in the line is : 06 Sep 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(11, 28)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(29, 8) 5 5 5 5",
+        "is_correct": false
+      },
+      {
+        "option_text": "(8, 29)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(29, 11) 5 5 5 5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A ray of light coming from the point (2,2√3) is incident at an angle 30° on the line x = 1 at the point A. The ray gets reflected on the line x = 1 and meets x -axis at the point B. Then, the line AB passes through the point 06 Sep 2020 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(3,− 1 )",
+        "is_correct": false
+      },
+      {
+        "option_text": "(4,−√3) √3 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "(3,−√3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(4,−√3)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the line, 2 x−y+3 = 0 is at a distance 1 and 2 from the lines 4x−2y+α = 0 and 6x−3y+β = 0 √5 √5 respectively, then the sum of all possible values of α and β is ____________. 05 Sep 2020 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If the perpendicular bisector of the line segment joining the points P(1,4) and Q(k,3) has y-intercept equal to −4, then a value of k is; 04 Sep 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−2",
+        "is_correct": false
+      },
+      {
+        "option_text": "−4",
+        "is_correct": false
+      },
+      {
+        "option_text": "√14",
+        "is_correct": false
+      },
+      {
+        "option_text": "√15",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A triangle ABC lying in the first quadrant has two vertices as A(1,2) and B(3,1). If∠BAC = 90o,and ar (ΔABC) = 5√5 sq. units, then the abscissa of the vertex C is : 04 Sep 2020 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1+√5",
+        "is_correct": false
+      },
+      {
+        "option_text": "1+2√5",
+        "is_correct": false
+      },
+      {
+        "option_text": "2+√5",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√5−1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If a ΔABC has vertices A(–1,7), B(–7,1) and C(5,–5), then its orthocentre has coordinates: 03 Sep 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(– 3,3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(3,−3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−3, 3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(3,−3) 5 5 5 5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The set of all possible values of θ in the interval (0,π) for which the points(1, 2) and (sinθ, cosθ) lie on the same side of the line x+y = 1 is? 02 Sep 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(0, π)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(π, 3π) 2 4 4",
+        "is_correct": false
+      },
+      {
+        "option_text": "(0, 3π)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(0, π) 4 4",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let D be the centroid of the triangle with vertices (3, −1) , (1,3) and (2,4) . Let P be the point of intersection of the lines x+3y−1 = 10 and 3x−y+1 = 0 . Then, the line passing through the points D and P also passes through the point: 09 Jan 2020 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(−9,−6)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(9,7)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(7,6)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−9,−7)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let two points be A(1, −1) and B(0,2). If a point P(x', y') be such that the area of ΔPAB = 5 sq. units and it lies on the line 3x+y−4λ = 0, then a value of λ is 08 Jan 2020 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "−3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A(1,0),B(6,2) and C(3,6) be the vertices of a triangle ABC. If P is a point inside the triangle ABC 2 such that the triangles APC,APB and BPC have equal areas, then the length of the line segment PQ, where Q is the point (−7, − 1), is 07 Jan 2020 (M) 6 3",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "The locus of the mid-points of the perpendiculars drawn from points on the line x = 2y, to the line x = y, is. 07 Jan 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2x−3y = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "5x−7y = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "3x−2y = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "7x−5y = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A triangle has a vertex at (1, 2) and the mid points of the two sides through it are (−1, 1) and (2, 3) . Then the centroid of this triangle is: 12 Apr 2019 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "A straight line L at a distance of 4 units from the origin makes positive intercepts on the coordinate axes and the perpendicular from the origin to this line makes an angle of 60° with the line x+y = 0. Then an equation of the line L is: Note: In actual JEE Main paper, two options were correct for this question. Hence, we have changed one option. 12 Apr 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(√3+1)x+(√3−1)y = 8√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "x+√3y = 8",
+        "is_correct": false
+      },
+      {
+        "option_text": "√3x+y = 8",
+        "is_correct": false
+      },
+      {
+        "option_text": "(√3−1)x+√3y = 8√2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Lines are drawn parallel to the line 4x−3y+2 = 0, at a distance 3 units from the origin. Then which one of 5 the following points lies on any of these lines? 10 Apr 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(1,−1)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−1, 2) 4 3 4 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−1,−2)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(1, 1) 4 3 4 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Slope of a line passing through P(2, 3) and intersecting the line x+y = 7 at a distance of 4 units from P, is 09 Apr 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "√7−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1–√7 √7+1 1+√7",
+        "is_correct": false
+      },
+      {
+        "option_text": "√5−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1–√5 √5+1 1+√5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the two lines x+(a−1)y = 1 and 2x+a2y = 1,(a ∈ R−{0,1}) are perpendicular, then the distance of their point of intersection from the origin is 09 Apr 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "√2 √5 5 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√2 5 5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A point on the straight line, 3x+5y = 15 which is equidistant from the coordinate axes will lie only in: 08 Apr 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1st and 2nd quadrants",
+        "is_correct": false
+      },
+      {
+        "option_text": "1st,2nd and 4th quadrants",
+        "is_correct": false
+      },
+      {
+        "option_text": "1st quadrant",
+        "is_correct": false
+      },
+      {
+        "option_text": "4th quadrant",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Suppose that the points (h, k), (1, 2) and (−3, 4) lie on the line L 1 . If a line L 2 passing through the points (h, k) and (4, 3) is perpendicular to L 1 , then h k equals: 08 Apr 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 7",
+        "is_correct": false
+      },
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the straight line 2x−3y+17 = 0 is perpendicular to the line passing through the points (7,17) and (15, β), then β equals : 12 Jan 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−5",
+        "is_correct": false
+      },
+      {
+        "option_text": "35 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "−35 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If a straight line passing through the point P(−3, 4) is such that its intercepted portion between the coordinate axes is bisected at P, then its equation is : 12 Jan 2019 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If in a parallelogram ABDC, the coordinates of A,B and C are respectively (1,2),(3,4) and (2,5), then the equation of the diagonal AD is : 11 Jan 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "5x−3y+1 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "5x+3y−11 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "3x−5y+7 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "3x+5y−13 = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "In a triangle, the sum of lengths of two sides is x and the product of the lengths of the same two sides is y. If x2 −c2 = y, where c is the length of the third side of the triangle, then the circumradius of the triangle is 11 Jan 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3y",
+        "is_correct": false
+      },
+      {
+        "option_text": "c 2 √3 c y",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 √3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the line 3x+4y−24 = 0 intersects the x-axis is at the point A and the y-axis at the point B, then the incentre of the triangle OAB, where O is the origin, is: 10 Jan 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(4, 4)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(3, 4)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(4, 3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(2, 2)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Two vertices of a triangle are (0,2) and (4,3). If its orthocenter is at the origin, then its third vertex lies in which quadrant? 10 Jan 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Fourth",
+        "is_correct": false
+      },
+      {
+        "option_text": "Second",
+        "is_correct": false
+      },
+      {
+        "option_text": "Third",
+        "is_correct": false
+      },
+      {
+        "option_text": "First",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Two sides of a parallelogram are along the lines, x+y = 3 and x−y+3 = 0. If its diagonals intersect at (2,4), then one of its vertex is: 10 Jan 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(3,6)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(2,6)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(2,1)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(3,5)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A point P moves on the line 2x−3y+4 = 0. If Q(1, 4) and R(3, −2) are fixed points, then the locus of the centroid of ΔPQR is a line: 10 Jan 2019 (M) 2 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "with slope",
+        "is_correct": false
+      },
+      {
+        "option_text": "with slope 3 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "parallel to y-axis",
+        "is_correct": false
+      },
+      {
+        "option_text": "parallel to x-axis",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the equations of two sides of a triangle be 3x−2y+6 = 0 and 4x+5y−20 = 0. If the orthocenter of this triangle is at (1, 1) then the equation of it's third side is: 09 Jan 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "122y+26x+1675 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "26x−122y−1675 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "26x+61y+1675 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "122y−26x−1675 = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Consider the set of all lines px+qy+r = 0 such that 3p+2q+4r = 0. Which one of the following statements is true? 09 Jan 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "The lines are not concurrent.",
+        "is_correct": false
+      },
+      {
+        "option_text": "The lines are concurrent at the point (3, 1) . 4 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "The lines are all parallel.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Each line passes through the origin.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let S be the set of all triangles in the xy -plane, each having one vertex at the origin and the other two vertices lie on coordinate axes with integral coordinates. If each triangle in S has area 50 sq. units, then the number of elements in the set S is: 09 Jan 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "36",
+        "is_correct": false
+      },
+      {
+        "option_text": "32",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "18",
+        "is_correct": false
+      }
+    ]
+  }
+]

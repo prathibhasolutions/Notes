@@ -1,0 +1,1954 @@
+[
+  {
+    "question_text": "Let A be a non-singular matrix of order 3 . If det(3adj(2adj((detA)A))) = 3−13 ⋅2−10 and det(3adj(2 A)) = 2m ⋅3n, then |3 m+2n| is equal to 09 Apr 2024 (M) 1 3",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let B = [ ] and A be a 2×2 matrix such that AB−1 = A−1. If BCB−1 = A and C4 +αC2 +βI = O, 1 5 then 2β−α is equal to 09 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "16",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "8",
+        "is_correct": false
+      },
+      {
+        "option_text": "10 2 a 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let A = 1 3 1 . If A3 = 4A2 −A−21I, where I is the identity matrix of order 3×3, then 2a+3b is ⎣ ⎦ 0 5 b equal to 08 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "-9",
+        "is_correct": false
+      },
+      {
+        "option_text": "-13",
+        "is_correct": false
+      },
+      {
+        "option_text": "-10",
+        "is_correct": false
+      },
+      {
+        "option_text": "-12 2 −1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = [ ]. If the sum of the diagonal elements of A13 is 3n, then n is equal to_________ 1 1 08 Apr 2024 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If A is a square matrix of order 3 such that det(A) = 3 and det(adj(−4adj(−3adj(3adj((2 A)−1))))) = 2m3n, then m+2n is equal to : 06 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 β α 3 3α −9 3α",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ Let αβ ≠ 0 and A = α α β . If B = −α 7 −2α is the matrix of cofactors of the elements of ⎣ ⎦ ⎣ ⎦ −β α 2α −2α 5 −2β A, then det(AB) is equal to : 05 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "64",
+        "is_correct": false
+      },
+      {
+        "option_text": "216",
+        "is_correct": false
+      },
+      {
+        "option_text": "343",
+        "is_correct": false
+      },
+      {
+        "option_text": "125",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A and B be two square matrices of order 3 such that |A| = 3 and |B| = 2. Then ATA(adj(2 A))−1(adj(4 B))(adj(AB))−1AAT is equal to : 05 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "108",
+        "is_correct": false
+      },
+      {
+        "option_text": "32",
+        "is_correct": false
+      },
+      {
+        "option_text": "81",
+        "is_correct": false
+      },
+      {
+        "option_text": "64 1 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ Let A be a 3×3 matrix of non-negative real elements such that A 1 = 3 1 . Then the maximum value of ⎣ ⎦ ⎣ ⎦ 1 1 det(A) is ______ 04 Apr 2024 (M) 1 3",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a 2×2 symmetric matrix such that A[ ] = [ ] and the determinant of A be 1 . If A−1 = αA+βI, 1 7 where I is an identity matrix of order 2×2, then α+β equals _______ 04 Apr 2024 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = [ ] and B = I +adj(A)+(adjA)2 +…+(adjA)10. Then, the sum of all the elements of the 0 1 matrix B is: 04 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "-124",
+        "is_correct": false
+      },
+      {
+        "option_text": "22",
+        "is_correct": false
+      },
+      {
+        "option_text": "-88",
+        "is_correct": false
+      },
+      {
+        "option_text": "-110 1 2 α",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let α ∈ (0,∞) and A = 1 0 1 . If det(adj(2A−AT)⋅adj(A−2AT)) = 28, then (det(A))2 is equal ⎣ ⎦ 0 1 2 to: 04 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "36",
+        "is_correct": false
+      },
+      {
+        "option_text": "16",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "49",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "√2 1 1 0 01 Feb 2024 (M) If A = [ ],B[ ],C = ABAT and X = ATC2A, then det X is equal to: −1 √2 1 1",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "243",
+        "is_correct": false
+      },
+      {
+        "option_text": "729",
+        "is_correct": false
+      },
+      {
+        "option_text": "27",
+        "is_correct": false
+      },
+      {
+        "option_text": "891",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = I 2 −2MMT, where M is real matrix of order 2×1 such that the relation MTM = I 1 holds. If λ is a real number such that the relation AX = λX holds for some non-zero real matrix X of order 2×1, then the sum of squares of all possible values of λ is equal to: 01 Feb 2024 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎛ ⎞ Let A be a 3×3 matrix and det(A) = 2. If n = det adj(adj(....(adjA)))) , then the remainder when n is    ⎝ ⎠ 2024−times divided by 9 is equal to __________. 31 Jan 2024 (E) x 0 0",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎛ ⎞ Let R = 0 y 0 be a non-zero 3×3 matrix, where xsinθ = ysin(θ+ 2π) = zsin(θ+ 4π) 3 3 ⎝ ⎠ 0 0 z ≠ 0,θ ∈ (0,2π). For a square matrix M, let Trace(M) denote the sum of all the diagonal entries of M. Then, among the statements: (I) Trace(R) = 0 (II) If Trace(adj (adj (R)) = 0, then R has exactly one non-zero entry. 30 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Both (I) and (II) are true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Only (II) is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Neither (I) nor (II) is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Only (I) is true 2 1 2 1 2 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ Let A = 6 2 11 and P = 5 0 2 . The sum of the prime factors of P−1AP−2I is equal to ⎣ ⎦ ⎣ ⎦ 3 3 2 7 1 5 29 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "26",
+        "is_correct": false
+      },
+      {
+        "option_text": "27",
+        "is_correct": false
+      },
+      {
+        "option_text": "66",
+        "is_correct": false
+      },
+      {
+        "option_text": "23",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ 29 Jan 2024 (M) Let A = 0 α β and 2A 3 = 221 where α,β ∈ Z, Then a value of α is ⎣ ⎦ 0 β α",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "17",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be a square matrix such that AAT = I. Then 1 A[( A+AT)2 +(A−AT)2] is equal to 2 29 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "A2 +I",
+        "is_correct": false
+      },
+      {
+        "option_text": "A3 +I",
+        "is_correct": false
+      },
+      {
+        "option_text": "A2 +AT",
+        "is_correct": false
+      },
+      {
+        "option_text": "A3 +AT",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be a 2×2 real matrix and I be the identity matrix of order 2. If the roots of the equation |A−xI| = 0 be −1 and 3, then the sum of the diagonal elements of the matrix A2 is _____. 27 Jan 2024 (E) 2 0 1 1",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ Let A = 1 1 0 , B = [B 1 B 2 B 3 ], where B 1, B 2 , B 3 are column matrices, and AB 1 = 0 , ⎣ ⎦ ⎣ ⎦ 1 0 1 0 2 3 ⎡ ⎤ ⎡ ⎤ AB = 3 ,AB = 2 2 3 ⎣ ⎦ ⎣ ⎦ 0 1 If α = |B| and β is the sum of all the diagonal elements of B, then α3 +β3 is equal to 27 Jan 2024 (M) cosx −sinx 0",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ Consider the matrix f(x) = sinx cosx 0 . Given below are two statements : ⎣ ⎦ 0 0 1 Statement I:f(−x) is the inverse of the matrix f(x). Statement II: f(x) f(y) = f(x+y). In the light of the above statements, choose the correct answer from the options given below 27 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Statement I is false but Statement II is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both Statement I and Statement II are false",
+        "is_correct": false
+      },
+      {
+        "option_text": "Statement I is true but Statement II is false",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both Statement I and Statement II are true",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the determinant of a square matrix A of order m be m−n, where m and n satisfy 4m+n = 22 and 17m+4n = 93. If det(n adj(adj(mA))) = 3a5b6c, then a+b+c is equal to 15 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "84",
+        "is_correct": false
+      },
+      {
+        "option_text": "96",
+        "is_correct": false
+      },
+      {
+        "option_text": "101",
+        "is_correct": false
+      },
+      {
+        "option_text": "109",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The number of symmetric matrices of order 3, with all the entries from the set {0,1,2,3,4,5,6,7,8,9} is 13 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "610",
+        "is_correct": false
+      },
+      {
+        "option_text": "106",
+        "is_correct": false
+      },
+      {
+        "option_text": "910",
+        "is_correct": false
+      },
+      {
+        "option_text": "109 1 3 α α",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ Let B = 1 2 3 ,α > 2 be the adjoint of a matrix A and |A| = 2. Then [α −2α α]B −2α is equal to ⎣ ⎦ ⎣ ⎦ α α 4 α 13 Apr 2023 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ 13 Apr 2023 (E) Let for A = α 3 1 ,|A| = 2. If |2 adj (2 adj (2A))| = 32n, then 3n+α is equal to ⎣ ⎦ 1 1 2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "11",
+        "is_correct": false
+      },
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "10 1 1 1 2 −1 −2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = [ 51]. If B = [ ] A[ ], then the sum of all the elements of the matrix ∑50 Bn is 0 1 −1 −1 1 1 n=1 equal to 12 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "75",
+        "is_correct": false
+      },
+      {
+        "option_text": "125",
+        "is_correct": false
+      },
+      {
+        "option_text": "50",
+        "is_correct": false
+      },
+      {
+        "option_text": "100 0 1 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let A = a 0 3 , where a,c ∈ R. If A3 = A and the positive value of a belongs to the interval (n−1, n], ⎣ ⎦ 1 c 0 where n ∈ N, then n is equal to ____. 11 Apr 2023 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a 2×2 matrix with real entries such that A′ = αA+1, where α ∈ R−{−1,1}., If det (A2 −A) = 4, the sum of all possible values of α is equal to 11 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "5 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If A is a 3×3 matrix and |A| = 2, then 3 adj (|3A|A2) is equal to 10 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "312 ⋅611",
+        "is_correct": false
+      },
+      {
+        "option_text": "312 ⋅610",
+        "is_correct": false
+      },
+      {
+        "option_text": "310 ⋅611",
+        "is_correct": false
+      },
+      {
+        "option_text": "311 ⋅610 5! 6! 7!",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ 10 Apr 2023 (E) If A = 1 6! 7! 8! , then |adj (adj (2A))| is equal to 5!6!7! ⎣ ⎦ 7! 8! 9!",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "220",
+        "is_correct": false
+      },
+      {
+        "option_text": "28",
+        "is_correct": false
+      },
+      {
+        "option_text": "212",
+        "is_correct": false
+      },
+      {
+        "option_text": "216 1 5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If A = [ ], A−1 = αA+βI and α+β = −2, then 4α2 +β2 +λ2 is equal to : 08 Apr 2023 (E) λ 10",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "19",
+        "is_correct": false
+      },
+      {
+        "option_text": "14",
+        "is_correct": false
+      },
+      {
+        "option_text": "10",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ √3 1 ⎤ 1 1 a b Let P = 2 2 , A = [ ] and Q = PAPT . If PTQ2007 P = [ ]then 2a+b−3c−4d is equal ⎣−1 √3⎦ 0 1 c d 2 2 to 08 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2004",
+        "is_correct": false
+      },
+      {
+        "option_text": "2005",
+        "is_correct": false
+      },
+      {
+        "option_text": "2007",
+        "is_correct": false
+      },
+      {
+        "option_text": "2006",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ 08 Apr 2023 (M) Let 1 2 −1 . If |adj(adj(adj2A))| = (16)n, then n is equal to ⎣ ⎦ 0 −1 2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "8",
+        "is_correct": false
+      },
+      {
+        "option_text": "10",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "12",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = [a ij ] 2×2 , where a ij ≠ 0 for all i,j and A2 = I, Let a be the sum of all diagonal elements of A and b = |A| Then 3a2 +4b2 is equal to 06 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "14",
+        "is_correct": false
+      },
+      {
+        "option_text": "7",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let P be a square matrix such that P2 = I −P. For α, β, γ, δ ∈ N, if Pα +Pβ = γl−29P and Pα −Pβ = δl−13P, then α+β+γ−δ is equal to 06 Apr 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "18",
+        "is_correct": false
+      },
+      {
+        "option_text": "40",
+        "is_correct": false
+      },
+      {
+        "option_text": "22",
+        "is_correct": false
+      },
+      {
+        "option_text": "24",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "1 √3 01 Feb 2023 (E) If A = 1[ ] then, 2 −√3 1",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "A30 −A25 = 2I",
+        "is_correct": false
+      },
+      {
+        "option_text": "A30 +A25 +A = I",
+        "is_correct": false
+      },
+      {
+        "option_text": "A30 +A25 −A = I",
+        "is_correct": false
+      },
+      {
+        "option_text": "A30 = A25 1 0 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let A = 0 4 −1 . Then the sum of the diagonal elements of the matrix (A+I)11 is equal to: ⎣ ⎦ 0 12 −3 31 Jan 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6144",
+        "is_correct": false
+      },
+      {
+        "option_text": "4094",
+        "is_correct": false
+      },
+      {
+        "option_text": "4097",
+        "is_correct": false
+      },
+      {
+        "option_text": "2050",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be a n×n matrix such that |A| = 2. If the determinant of the matrix Adj (2.Adj (2 A−1)) is 284 , then n is equal to _____ . 31 Jan 2023 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = ⌊a ˆiˆj ⌋⋅a ij ∈ Z∩[0,4], 1 ≤ i,j ≤ 2. The number of matrices A such that the sum of all entries is a prime number p ∈ (2,13) is _____ . 31 Jan 2023 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If P is a 3×3 real matrix such that PT = aP +(a−1)I, where a > 1, then 30 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "P is a singular matrix",
+        "is_correct": false
+      },
+      {
+        "option_text": "|Adj P| > 1",
+        "is_correct": false
+      },
+      {
+        "option_text": "Adj P = 1",
+        "is_correct": false
+      },
+      {
+        "option_text": "|Adj P| = 1 2 m n",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = [ ], d = |A| ≠ 0 and |A−d(Adj A)| = 0. Then 30 Jan 2023 (M) p q",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(1+d)2 = (m+q)2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1+d2 = (m+q)2",
+        "is_correct": false
+      },
+      {
+        "option_text": "(1+d)2 = m2 +q2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1+d2 = m2 +q2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let α and β be real numbers. Consider a 3×3 matrix A such that A2 = 3A+αI. If A4 = 21A+βI, then 29 Jan 2023 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a symmetric matrix such that |A| = 2 and [ ]A = [ ] If the sum of the diagonal elements of 3 3 α β 2 A is s, then βs is equal to _________. 29 Jan 2023 (E) α2 et e−t(sint−2cost) e−t(−2sint−cost)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ The set of all values of t ∈ R, for which the matrix et e−t(2sint+cost) e−t(sint−2cost) ⎣ ⎦ et e−tcost e−tsint is invertible, is 29 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "{(2k+1)π,k ∈ Z}",
+        "is_correct": false
+      },
+      {
+        "option_text": "{kπ+ π,k ∈ Z} 2 4",
+        "is_correct": false
+      },
+      {
+        "option_text": "{kπ,k ∈ Z}",
+        "is_correct": false
+      },
+      {
+        "option_text": "R",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A,B,C be 3×3 matrices such that A is symmetric and B and C are skew-symmetric. Consider the statements (S1) A13 B26 −B26 A13 is symmetric (S2) A26C13 −C13 A26 is symmetric Then, 25 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Only S2 is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Only S1 is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both S1 and S2 are false",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both S1 and S2 are true",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ 1 3 ⎤ 1 −i Let A = √10 √10 and B = [ ], where i = √−1. If M = ATBA, then the inverse of the matrix ⎣ −3 1 ⎦ 0 1 √10 √10 AM2023 AT is 25 Jan 2023 (E) 1 −2023i 1 0",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] 0 1 −2023i 1 1 0 1 2023i",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] 2023i 1 0 1 1 log y log z",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ x x ⎤ 25 Jan 2023 (M) Let x,y,z > 1 and A = log x 2 log z . Then adj (adj A2) is equal to y y ⎣ ⎦ log x log y 3 z z",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "64",
+        "is_correct": false
+      },
+      {
+        "option_text": "28",
+        "is_correct": false
+      },
+      {
+        "option_text": "48",
+        "is_correct": false
+      },
+      {
+        "option_text": "24",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If A and B are two non-zero n×n matrices such that A2 +B = A2B, then 24 Jan 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "AB = I",
+        "is_correct": false
+      },
+      {
+        "option_text": "A2B = I",
+        "is_correct": false
+      },
+      {
+        "option_text": "A2 = I or B = I",
+        "is_correct": false
+      },
+      {
+        "option_text": "A2B = BA2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The number of square matrices of order 5 with entries from the set {0,1}, such that the sum of all the elements in each row is 1 and the sum of all the elements in each column is also 1, is 24 Jan 2023 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a 3×3 matrix such that |adj(adj(adj.A))| = 124 . Then A−1adj A is equal to 24 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "√6",
+        "is_correct": false
+      },
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 −1 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Which of the following matrices can NOT be obtained from the matrix [ ] by a single elementary row 1 −1 operation? 29 Jul 2022 (E) 0 1 1 −1",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] 1 −1 −1 2 −1 2 −1 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] −2 7 −1 3 1 −1 2 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ 29 Jul 2022 (E) Let x = 1 and A = 0 1 6 . For k ∈ N, if X′AkX = 33, then k is equal to ⎣ ⎦ ⎣ ⎦ 1 0 0 −1",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "The number of matrices of order 3×3, whose entries are either 0 or 1 and the sum of all the entries is a prime number, is _______. 29 Jul 2022 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A and B be any two 3×3 symmetric and skew symmetric matrices respectively. Then which of the following is NOT true? 28 Jul 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "A4 −B4 is a symmetric matrix",
+        "is_correct": false
+      },
+      {
+        "option_text": "AB−BA is a symmetric matrix",
+        "is_correct": false
+      },
+      {
+        "option_text": "B5 −A5 is a skew-symmetric matrix",
+        "is_correct": false
+      },
+      {
+        "option_text": "AB+BA is a skew-symmetric matrix 1 −1 β 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = [ 2 α ] and B = [ 1 0 ],α,β ∈ R. Let α 1 be the value of α which satisfies 2 2 (A+B)2 = A2 +[ 2 2 ] and α 2 be the value of α which satisfies (A+B)2 = B2 . Then |α 1 −α 2 | is equal to 28 Jul 2022 (M) 0 1 0",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ Let the matrix A = 1 0 0 and the matrix B = A49 +2A98. If B = Adj(B ) for all n ≥ 1, then 0 n n−1 ⎣ ⎦ 0 0 1 det (B 4 ) is equal to 28 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "328",
+        "is_correct": false
+      },
+      {
+        "option_text": "330",
+        "is_correct": false
+      },
+      {
+        "option_text": "332",
+        "is_correct": false
+      },
+      {
+        "option_text": "336 1 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = ( ). Let α,β ∈ R be such that αA2 +βA = 2I. Then α+β is equal to 27 Jul 2022 (M) −2 −5",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−10",
+        "is_correct": false
+      },
+      {
+        "option_text": "−6",
+        "is_correct": false
+      },
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "10 4 −2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = ( ). If A2 +γA+18I = O, then det (A) is equal to _______. 27 Jul 2022 (E) α β",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let S be the set containing all 3×3 matrices with entries from {−1,0,1}. The total number of matrices A ∈ S such that the sum of all the diagonal elements of ATA is 6 is ______. 27 Jul 2022 (M) α β γ",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ Consider a matrix A = α2 β2 γ2 , where α,β,γ are three distinct natural numbers. ⎣ ⎦ β+γ γ+α α+β If det(adj(adj(adj(adjA))) = 232 ×316, then the number of such 3- tuples (α,β,γ) is _______. 27 Jul 2022 (E) (α−β)16(β−γ)16(γ−α)16 a b",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "The number of matrices A = [ ], where a,b,c,d ∈ {−1,0,1,2,3,……,10}, such that A = A−1, is c d ______. 26 Jul 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ 1 ⎤ ⎡ 92 −102 112 ⎤ 26 Jul 2022 (E) Let A = 1 and B = 122 132 −142 , then the value of A′BA is; ⎣ 1 ⎦ ⎣ −152 162 172 ⎦",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1224",
+        "is_correct": false
+      },
+      {
+        "option_text": "1042",
+        "is_correct": false
+      },
+      {
+        "option_text": "540",
+        "is_correct": false
+      },
+      {
+        "option_text": "539",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be a 2×2 matrix with det(A) = −1 and det((A+I)(Adj(A)+I)) = 4. Then the sum of the diagonal elements of A can be: 26 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "−√2 2 −1 −1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let A = 1 0 −1 and B = A−I. If ω = √3i−1 , then the number of elements in the set 2 ⎣ ⎦ 1 −1 0 {n ∈ {1,2,…,100} : An +(ωB)n = A+B} is equal to _____ . 25 Jul 2022 (M) 1 a a 1 48 2160",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ Let A = 0 1 b ,a,b ∈ R. If for some n ∈ N,An = 0 1 96 then n+a+b is equal to _______. ⎣ ⎦ ⎣ ⎦ 0 0 1 0 0 1 25 Jul 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = [a ] be a square matrix of order 3 such that a = 2j−i, for all i, j = 1,2,3. Then, the matrix ij ij A2 +A3 +…+A10 is equal to 29 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(310−1)A",
+        "is_correct": false
+      },
+      {
+        "option_text": "(310+1)A 2 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "(310+3)A",
+        "is_correct": false
+      },
+      {
+        "option_text": "(310−3)A 2 2 0 −α",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let M = [ ], where α is a non-zero real number and N = ∑49 M2k. If (I −M2)N = −2I, then the α 0 k=1 positive integral value of α is ______. 29 Jun 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = ( ). If B = I −5C (adj A)+5C (adj A)2 − ...− 5C (adj A)5 , then the sum of 0 2 1 2 5 all elements of the matrix B is: 29 Jun 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−5",
+        "is_correct": false
+      },
+      {
+        "option_text": "−6",
+        "is_correct": false
+      },
+      {
+        "option_text": "−7",
+        "is_correct": false
+      },
+      {
+        "option_text": "−8 1+i 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = ( ) where i = √−1. Then, the number of elements in the set −i 0 {n ∈ {1,2,….,100} : An = A} is 28 Jun 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a matrix of order 3×3 and det(A) = 2. Then det(det (A) adj (5 adj (A3)) is equal to _____. 28 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "256×106",
+        "is_correct": false
+      },
+      {
+        "option_text": "1024×106",
+        "is_correct": false
+      },
+      {
+        "option_text": "512×106",
+        "is_correct": false
+      },
+      {
+        "option_text": "256×1011",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A and B be two 3×3 matrices such that AB = I and |A| = 1 then |adj(Badj(2A))| is equal to 8 27 Jun 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "128",
+        "is_correct": false
+      },
+      {
+        "option_text": "32",
+        "is_correct": false
+      },
+      {
+        "option_text": "64",
+        "is_correct": false
+      },
+      {
+        "option_text": "102 14 28 −14",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ The positive value of the determinant of the matrix A, whose Adj(Adj(A)) = −14 14 28 , is ______. ⎣ ⎦ 28 −14 14 27 Jun 2022 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a matrix of order 2×2, whose entries are from the set {0,1,2,3,4,5}. If the sum of all the entries of A is a prime number p,2 < p < 8, then the number of such matrices A is 27 Jun 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a 3×3 invertible matrix. If |adj(24A)| =adj (3 adj (2A))|, then |A|2 is equal to 26 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "26",
+        "is_correct": false
+      },
+      {
+        "option_text": "212",
+        "is_correct": false
+      },
+      {
+        "option_text": "512",
+        "is_correct": false
+      },
+      {
+        "option_text": "66 0 1 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let X = 0 0 1 ,Y = αl+βX+γX2 and Z = α2I −αβX+(β2 −αγ)X2,α,β,γ ∈ R. ⎣ ⎦ 0 0 0 1 −2 1 ⎡ ⎤ 5 5 5 If Y−1 = 0 1 −2 , then (α−β+γ)2 is equal to ______. 5 5 ⎣ 0 0 1 ⎦ 5 26 Jun 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a 3×3 matrix having entries from the set {−1,0,1}. The number of all such matrices A having sum of all the entries equal to 5, is _____ 25 Jun 2022 (M) 0 −2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = [ ]. If M and N are two matrices given by M = ∑10 A2k and N = ∑10 A2k−1 then MN2 2 0 k=1 k=1 is 25 Jun 2022 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = ( ) andB = ( ) . Then the number of elements in the set { 1 −1 −1 2 (n,m) : n,m ∈ {1,2,…….10} and nAn +mBm = I} is _____. 25 Jun 2022 (E) −1 a",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let S = {( 0 b );a,b ∈ {1,2,3,…100}} and let T n = {A ∈ S : An(n+1) = I}. Then the number of 100 elements in ∩ T n is _____. 24 Jun 2022 (E) n=1 1 0 a",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ Let S ={√n : 1 ⩽ n ⩽ 50 and n is odd}. Let a ∈ S and A = −1 1 0 . If Σ det (adj A) = 100λ, then λ ⎣ ⎦ a∈S −a 0 1 is equal to 24 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "218",
+        "is_correct": false
+      },
+      {
+        "option_text": "221",
+        "is_correct": false
+      },
+      {
+        "option_text": "663",
+        "is_correct": false
+      },
+      {
+        "option_text": "1717",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let J n,m = ∫ 0 1/2 xm x − n 1 dx,∀n > m and n, m ∈ N. Consider a matrix A = [a ij ] 3×3 where J −J , i ≤ j a ij = { 6+i,3 i+3,3 . Then adj A−1 is : 01 Sep 2021 (E) 0 , i > j",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(15)2 ×234",
+        "is_correct": false
+      },
+      {
+        "option_text": "(15)2 ×242",
+        "is_correct": false
+      },
+      {
+        "option_text": "(105)2 ×236",
+        "is_correct": false
+      },
+      {
+        "option_text": "(105)2 ×238 a b",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The number of elements in the set {A = [ ] : a, b, d ∈ {−1, 0, 1} and (I −A)3 = I −A3}, where I 0 d is 2×2 identity matrix, is . 31 Aug 2021 (E) 0 2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If the matrix A = [ ] satisfies A(A3 +3I) = 2I, then the value of K is 27 Aug 2021 (M) K −1",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1 2 1 0 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ 26 Aug 2021 (E) Let A = 0 1 1 . Then A2025 −A2020 is equal to ⎣ ⎦ 1 0 0",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "A6 −A",
+        "is_correct": false
+      },
+      {
+        "option_text": "A6",
+        "is_correct": false
+      },
+      {
+        "option_text": "A5",
+        "is_correct": false
+      },
+      {
+        "option_text": "A5 −A",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be a 3×3 real matrix. If det (2 Adj (2 Adj (Adj (2A)))) = 241, then the value of det (A2) equals ______. 26 Aug 2021 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ 1 2 ⎤ 1 0 If A = √5 √5 ,B = [ ],i = √−1, and Q = ATBA, then the inverse of the matrix AQ2021AT is ⎣−2 1 ⎦ i 1 √5 √5 equal to: 26 Aug 2021 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "LetA = [ ]. If A−1 = αI +βA, α,β ∈ R, I is a 2×2 identity matrix, then 4(α−β) is equal to : −1 4 27 Jul 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "8 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 1 1 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ If A = 0 1 1 and M = A+A2 +A3 +…+A20, then the sum of all the elements of the matrix M is ⎣ ⎦ 0 0 1 equal to _______. 27 Jul 2021 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A and B be two 3×3 real matrices such that (A2 −B2) is invertible matrix. If A5 = B5 and A3 B2 = A2 B3, then the value of the determinant of the matrix A3 +B3 is equal to : 27 Jul 2021 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "0 0 i n a b a b",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let S = {n ∈ N, ( ) ( ) = ( )∀a,b,c,d ∈ R}, where i = √−1. Then the number of 2− 1 0 c d c d digit numbers in the set S is 25 Jul 2021 (M) 1 0",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "25 Jul 2021 (E) If P = [ ], then P50 is: 1 1 2 1 0 1 50",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] 25 1 0 1 1 25 1 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] 0 1 50 1 a b",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let M = {A = [ ] : a,b,c,d ∈ (±3,±2,±1,0)}. Define f : M → Z, as f(A) =det (A), for all A ∈ M c d where Z is set of all integers. Then the number of A ∈ M such that f(A) = 15 is equal to . 25 Jul 2021 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = [a ij ] be a real matrix of order 3×3, such that a i1 +a i2 +a i3 = 1, for i = 1,2,3 . Then, the sum of all the entries of the matrix A3 is equal to: 22 Jul 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "9 0 1 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let A = 1 0 0 . Then the number of 3×3 matrices B with entries from the set {1, 2, 3, 4, 5} and ⎣ ⎦ 0 0 1 satisfying AB = BA is ________. 22 Jul 2021 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = {a ij } be a 3×3 matrix, where a ij =⎨2 if i = j then det(3 Adj (2A−1)) is equal to ⎩ (−1)i+j if i > j ________. 20 Jul 2021 (E) 2 3",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = [ ], a ∈ R be written as P +Q where P is a symmetric matrix and Q is skew symmetric matrix. a 0 If det (Q) = 9, then the modulus of the sum of all possible values of determinant of P is equal to: 20 Jul 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "36",
+        "is_correct": false
+      },
+      {
+        "option_text": "24",
+        "is_correct": false
+      },
+      {
+        "option_text": "45",
+        "is_correct": false
+      },
+      {
+        "option_text": "18 1 −1 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let A = 0 1 −1 and B = 7A20 −20A7 +2I, ⎣ ⎦ 0 0 1 where I is an identity matrix of order 3×3. If B = [b ij ], then b 13 is equal to 20 Jul 2021 (M) 1 2 0 2 −1 5",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ Let A+2B = 6 −3 3 and 2A−B = 2 −1 0 . If Tr(A) denotes the sum of all diagonal ⎣ ⎦ ⎣ ⎦ −5 3 1 0 1 2 elements of the matrix A, then Tr(A)−Tr(B) has value equal to 18 Mar 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 2 −1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let I be an identity matrix of order 2×2 and P = [ ]. Then the value of n ∈ N for which 5 −3 Pn = 5I −8P is equal to ___ . 18 Mar 2021 (E) 0 sinα",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If A = [ ] and det(A2 − 1I) = 0, then a possible value of α is 17 Mar 2021 (M) sinα 0 2 π π",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 3 π π",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 6 a b α 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = [ ] and B = [ ] ≠ [ ] such that AB = B and a+d =2021, then the value of ad−bc is equal c d β 0 to ______ . 17 Mar 2021 (E) 2 3",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If A = [ ], then the value of det (A4)+ det (A10 −(Adj (2 A))10) is equal to ________. 0 −1 17 Mar 2021 (M) a b",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A = [ 1] and B = [ 1] be two 2×1matrices with real entries such that A = XB, where a b 2 2 1 −1 X = 1 [ ], and k ∈ R. If a2 +a2 = 2(b2 +b2) and (k2 +1)b2 ≠ −2 b b , then the value of k is √3 1 k 1 2 3 1 2 2 1 2 __________. 16 Mar 2021 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "The total number of 3×3 matrices A having enteries from the set (0,1,2,3) such that the sum of all the diagonal entries of AAT is 9, is equal to 16 Mar 2021 (M) −30 20 56 2 7 ω2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ Let P = 90 140 112 and A = −1 −ω 1 where ω = −1+ 2 i√3 , and I 3 be the identity matrix ⎣ ⎦ ⎣ ⎦ 120 60 14 0 −ω −ω+1 2 of order 3. If the determinant of the matrix (P−1AP −I 3 ) is αω2, then the value of α is equal to _________. 16 Mar 2021 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A be a symmetric matrix of order 2 with integer entries. If the sum of the diagonal elements of A2 is 1, then the possible number of such matrices is: 26 Feb 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "6 1 0 0 1 0 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ ⎡ ⎤ If the matrix A = 0 2 0 satisfies the equation A20 +αA19 +βA = 0 4 0 for some real numbers ⎣ ⎦ ⎣ ⎦ 3 0 −1 0 0 1 α and β, then β−α is equal to ______. 26 Feb 2021 (E) 1 −α",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If for the matrix, A = [ ], AAT = I 2, then the value of α4 +β4 is : 25 Feb 2021 (E) α β",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "0 −tan(θ) a −b If A = [ 2 ] and (I 2 +A)(I 2 −A)−1 = [ ], then 13(a2 +b2) is equal to _____ . tan(θ) 0 b a 2 25 Feb 2021 (M) x y z",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ Let A = y z x , where x, y and z are real numbers such that x+y+z > 0 and xyz = 2. If A2 = I 3, ⎣ ⎦ z x y then the value of x3 +y3 +z3 is 25 Feb 2021 (M) 3 −1 −2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ Let P = 2 0 α , where α ∈ R. Suppose Q = [q ij ] is a matrix satisfying PQ = kI 3 for ⎣ ⎦ 3 −5 0 some non-zero k ∈ R. If q = −k and |Q| = k2 , then α2 +k2 is equal to_________. 24 Feb 2021 (M) 23 8 2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let M be any 3×3 matrix with entries from the set {0,1,2}. The maximum number of such matrices, for which the sum of diagonal elements of MTM is seven, is______. 24 Feb 2021 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let θ = π and A = [ cosθ sinθ ]. If B = A+A4, then det (B) : 06 Sep 2020 (E) 5 −sinθ cosθ",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "is one",
+        "is_correct": false
+      },
+      {
+        "option_text": "lies in (2, 3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "is zero",
+        "is_correct": false
+      },
+      {
+        "option_text": "lies in (1, 2)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "IfA = [ ], (θ = π ) and A5 = [ ], where i = √−1, then which one of the following is not isinθ cosθ 24 c d true? 04 Sep 2020 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0 ≤ a2 +b2 ≤ 1",
+        "is_correct": false
+      },
+      {
+        "option_text": "a2 −d2 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "a2 −c2 = 1",
+        "is_correct": false
+      },
+      {
+        "option_text": "a2 −b2 = 1 2 x 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = [ 1 0 ], x ε R and A4 = [a ij ]. If a 11 = 109, then a 22 is equal to_____________. 03 Sep 2020 (M) 2 −1 1",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ Let A be a 3×3 matrix such that adj A = −1 0 2 and B =adj (adjA). If |A| = λ and ⎣ ⎦ 1 −2 −1 (B−1) ⊤ = μ, then the ordered pair (|λ|, μ) is equal to 03 Sep 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(3, 1 )",
+        "is_correct": false
+      },
+      {
+        "option_text": "(9, 1) 81 9",
+        "is_correct": false
+      },
+      {
+        "option_text": "(3, 81)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(9, 1 ) 81",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be a 2×2 real matrix with entries from {0, 1} and |A| ≠ 0. Consider the following two statements; (P) If A ≠ l 2, then |A| = −1 (Q) If |A| = 1, then tr(A) = 2 Where l 2 denotes 2×2 identity matrix and tr(A) denotes the sum of the diagonal entries of A. Then 02 Sep 2020 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(P) is false and (Q) is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both (P) and (Q) are false",
+        "is_correct": false
+      },
+      {
+        "option_text": "(P) is true and (Q) is false",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both (P) and (Q) are true 1 2 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let A = {X = (x,y,z)T : PX = 0 and x2 +y2 +z2 = 1} where P = −2 3 −4 then the set A ⎣ ⎦ 1 9 −1 02 Sep 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Is a singleton.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Is an empty set.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Contains more than two elements",
+        "is_correct": false
+      },
+      {
+        "option_text": "Contains exactly two elements a b c",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let a, b, c ∈ R be all non-zero and satisfies a3 +b3 +c3 = 2. If the matrix A = b c a satisfies ⎣ ⎦ c a b ATA = I, then a value of abc can be 02 Sep 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 3 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 3 1 1 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ 09 Jan 2020 (M) If A = 1 3 4 , B = adjA and C = 3A, then |adjB| is equal to |C| ⎣ ⎦ 1 −1 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "8",
+        "is_correct": false
+      },
+      {
+        "option_text": "16",
+        "is_correct": false
+      },
+      {
+        "option_text": "72",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 2 2 1 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If A = ( ) and I = ( ), then 10A−1 , is equal to. 08 Jan 2020 (E) 9 4 0 1",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "The number of all 3×3 matrices A, with entries from the set {−1,0,1} such that the sum of the diagonal elements of AAT is 3, is ___________. 08 Jan 2020 (M) 1 1 1",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "⎡ ⎤ Let α be a root of the equation x2 +x+1 = 0 and the matrix A = 1 1 α α2 , then the matrix A31 is √3 ⎣ ⎦ 1 α2 α4 equal to 07 Jan 2020 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "A3",
+        "is_correct": false
+      },
+      {
+        "option_text": "I 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "A2",
+        "is_correct": false
+      },
+      {
+        "option_text": "A 2 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If A is a symmetric matrix and B is skew- symmetric matrix such that A+B = [ ] , then AB is equal 5 −1 to: 12 Apr 2019 (M) −4 2 4 −2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] 1 4 1 −4 4 −2 −4 −2",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] −1 −4 −1 4 5 2α 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ If B = 0 2 1 is the inverse of a 3×3 matix A, then the sum of all values of α for which ⎣ ⎦ α 3 −1 det(A)+1 = 0, is: 12 Apr 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1 0 2y 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎛ ⎞ The total number of matrices A = 2x y −1 , (x, y ∈ R, x ≠ y) for which ATA = 3I 3 is: ⎝ ⎠ 2x −y 1 09 Apr 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 1 1 1 2 1 3 1 n−1 1 78 1 n",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If [ ][ ][ ]….[ ] = [ ], then the inverse of [ ] is: 09 Apr 2019 (M) 0 1 0 1 0 1 0 1 0 1 0 1 1 –12 1 0",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] 0 1 12 1 1 0 1 –13",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ]",
+        "is_correct": false
+      },
+      {
+        "option_text": "[ ] 13 1 0 1 cosα −sinα 0 −1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A = [ ], (a ∈ R) such that A32 = [ ]. Then, a value of α is: 08 Apr 2019 (M) sinα cosα 1 0",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "π 16 π π",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "64 32",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ Let P = 3 1 0 and Q = [q ] be two 3×3 matrices such that Q−P5 = I . Then q 21 +q 31 is equal to : ij 3 q ⎣ ⎦ 32 9 3 1 12 Jan 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "10",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "15",
+        "is_correct": false
+      },
+      {
+        "option_text": "135 0 2q r",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎛ ⎞ 11 Jan 2019 (M) Let A = p q −r . If AAT = I 3 , then |p| is: ⎝ ⎠ p −q r 1 1",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√5 √3 1 1",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√2 √6 cosθ −sinθ",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If A = [ ] , then the matrix A−50 when θ = π , is equal to: 09 Jan 2019 (M) sinθ cosθ 12",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "⎡ √3 1 ⎤",
+        "is_correct": false
+      },
+      {
+        "option_text": "⎡ 1 √3⎤ 2 2 2 2 ⎣ −1 √3⎦ ⎣ −√3 1 ⎦ 2 2 2 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "⎡√3 −1⎤",
+        "is_correct": false
+      },
+      {
+        "option_text": "⎡ 1 −√3⎤ 2 2 2 2 ⎣ 1 √3 ⎦ ⎣√3 1 ⎦ 2 2 2 2 et e−tcos t e−tsin t",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "⎡ ⎤ 09 Jan 2019 (E) If A = et −e−tcost−e−tsint −e−tsint+e−tcost , then A is: ⎣ ⎦ et 2e−tsint −2e−tcost",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Invertible only if t = π",
+        "is_correct": false
+      },
+      {
+        "option_text": "Not invertible for any t ∈ R",
+        "is_correct": false
+      },
+      {
+        "option_text": "Invertible only if t = π",
+        "is_correct": false
+      },
+      {
+        "option_text": "Invertible for all t ∈ R 2",
+        "is_correct": false
+      }
+    ]
+  }
+]

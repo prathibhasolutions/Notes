@@ -1,0 +1,2549 @@
+[
+  {
+    "question_text": "Let three vectors a = α^i+4^j+2k ^ ,b = 5^i+3^j+4k ^ ,c = x^i+y^j+zk ^ form a triangle such that c→= a→− → b and the area of the triangle is 5√6. If α is a positive real number, then |c→|2 is equal to: 09 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "16",
+        "is_correct": false
+      },
+      {
+        "option_text": "14",
+        "is_correct": false
+      },
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "10 −−−→ → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "→ → Let OA = 2a→,OB = 6a→+5b and OC = 3b, where O is the origin. If the area of the parallelogram with −−→ → adjacent sides OA and OC is 15 sq. units, then the area (in sq. units) of the quadrilateral OABC is equal to : 09 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "32",
+        "is_correct": false
+      },
+      {
+        "option_text": "40",
+        "is_correct": false
+      },
+      {
+        "option_text": "38",
+        "is_correct": false
+      },
+      {
+        "option_text": "35",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Between the following two statements: Statement I : Let a→ =^i+2^j−3k ^ and → b = 2^i+^j−k ^ . Then the vector r→ satisfying a→×r→= a→× → b and a→⋅r→= 0 is of magnitude √10. Statement II : In a triangle ABC,cos2A+cos2B+cos2C ≥ −3 . 09 Apr 2024 (E) 2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Statement I is incorrect but Statement II is correct.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both Statement I and Statement II are correct.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Statement I is correct but Statement II is incorrect.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both Statement I and Statement II are incorrect.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a→ = 2^i+α^j+k ^ , → b = −^i+k ^ ,c→= β^j−k ^ , where α and β are integers and αβ = −6. Let the values of the ordered pair (α,β), for which the area of the parallelogram of diagonals a→+ → b and → b+c→ is √ 2 21 , be (α 1 ,β 1 ) and (α 2 ,β 2 ). Then α2 1 +β2 1 −α 2 β 2 is equal to 09 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "19",
+        "is_correct": false
+      },
+      {
+        "option_text": "17",
+        "is_correct": false
+      },
+      {
+        "option_text": "24",
+        "is_correct": false
+      },
+      {
+        "option_text": "21 → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ^ i+2 ^ j+3k ^ ,b = 2 ^ i+3 ^ j−5k ^ and c = 3 ^ i− ^ j+λk ^ be three vectors. Let r be anit vector along → b+c→ . If r→⋅a→ = 3, then 3λ is equal to: 08 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "21",
+        "is_correct": false
+      },
+      {
+        "option_text": "30",
+        "is_correct": false
+      },
+      {
+        "option_text": "25",
+        "is_correct": false
+      },
+      {
+        "option_text": "27",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The set of all α, for which the vectors a→ = αt^i+6^j−3k ^ and → b = t^i−2^j−2αtk ^ are inclined at an obtuse angle for all t ∈ R, is 08 Apr 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(−4,1)",
+        "is_correct": false
+      },
+      {
+        "option_text": "[0,1) 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−4,0]",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−2,0] 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a→ = 4 ^ i− ^ j+k ^ , → b = 11 ^ i− ^ j+k ^ and c→ be a vector such that (a→+ → b)×c→= c→×(−2a→+3 → b). If (2a→+3 → b)⋅c→= 1670, then |c→|2 is equal to : 08 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1609",
+        "is_correct": false
+      },
+      {
+        "option_text": "1618",
+        "is_correct": false
+      },
+      {
+        "option_text": "1600",
+        "is_correct": false
+      },
+      {
+        "option_text": "1627",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a→ = 9^i−13^j+25k ^ , → b = 3^i+7^j−13k ^ and c→= 17^i−2^j+k ^ be three given vectors. If r→ is a vector such that r→×a→ = ( → b+c→)×a→ and r→⋅( → b−c→) = 0, then |593r→+67a→|2 is equal to___________ 08 Apr 2024 (M) (593)2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a→ = 2^i−3^j+4k ^ , → b = 3^i+4^j−5k ^ and a vector c→ be such that a→×( → b+c→)+ → b×c→=^i+8^j+13k ^ . If → a→⋅c→= 13, then (24−b⋅c→) is equal to_______ 06 Apr 2024 (M) → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = 2^i+^j−k ^ ,b = ((a×(^i+^j))×^i)×^i. Then the square of the projection of a on b is : 06 Apr 2024 (E) 1 2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 3 1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "5 → → → → →→ → → → Q11*. Let a = 6 ^ i+ ^ j−k ^ and b = ^ i+ ^ j. If c is a is vector such that |c| ≥ 6,a⋅c = 6|c|,|c−a| = 2√2 and the angle between a→× → b and c→ is 60∘ , then |(a→× → b)×c→| is equal to: 06 Apr 2024 (E)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Consider three vectors a→, → b,c→. Let |a→| = 2,| → b| = 3 and a→ = → b×c→. If α ∈ [0, π] is the angle between the vectors 3 → b and c→ , then the minimum value of 27|c→−a→|2 is equal to: 05 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "110",
+        "is_correct": false
+      },
+      {
+        "option_text": "124",
+        "is_correct": false
+      },
+      {
+        "option_text": "121",
+        "is_correct": false
+      },
+      {
+        "option_text": "105 → → → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ^ i−3 ^ j+7k ^ ,b = 2 ^ i− ^ j+k ^ and c be a vector such that (a+2b)×c = 3(c×a). If a→⋅c→= 130, then → b⋅c→ is equal to _______ 05 Apr 2024 (M) → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = 2 ^ i+5 ^ j−k ^ ,b = 2 ^ i−2 ^ j+2k ^ and c be three vectors such that (c→+ ^ i)×(a→+ → b+ ^ i) = a→×(c→+ ^ i). If a→⋅c→= −29, then c→⋅(−2^i+^j+k ^ ) is equal to: 05 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "15",
+        "is_correct": false
+      },
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "10",
+        "is_correct": false
+      },
+      {
+        "option_text": "5 →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a unit vector which makes an angle of 60∘ with 2 ^ i+2 ^ j−k ^ and angle 45∘ with ^ i−k ^ be C. Then → C+(−1^ i+ 1 ^ j− √2k ^ ) is : 04 Apr 2024 (M) 2 3√2 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "√2^ i− 1k ^",
+        "is_correct": false
+      },
+      {
+        "option_text": "( 1 + 1)^i+( 1 − 1 )^j+( 1 + √2)k ^ 3 2 √3 2 √3 3√2 √3 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "√2^ i+ 1 ^ j− 1k ^",
+        "is_correct": false
+      },
+      {
+        "option_text": "−√2^i+ √2^j+(1 + 2√2)k ^ 3 3√2 2 3 3 2 3 −−→ →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let ABC be a triangle of area 15√2 and the vectors AB =^i+2^j−7k ^ ,BC = a^i+b^j+ck and −→ AC = 6 ^ i+d ^ j−2k ^ , d > 0. Then the square of the length of the largest side of the triangle ABC is _______ 04 Apr 2024 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "For λ > 0, let θ be the angle between the vectors a→ = ^ i+λ ^ j−3k ^ and → b = 3 ^ i− ^ j+2k ^ . If the vectors a→+ → b and a→− → b are mutually perpendicular, then the value of (14 cos θ)2 is equal to 04 Apr 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "50",
+        "is_correct": false
+      },
+      {
+        "option_text": "40",
+        "is_correct": false
+      },
+      {
+        "option_text": "25",
+        "is_correct": false
+      },
+      {
+        "option_text": "20 Q18*.Let a→ =^i+^j+k ^ , → b = 2^i+4^j−5k ^ and c→= x^i+2^j+3k ^ ,x ∈ R. If d → is the unit vector in the direction of → → → b+c→ such that a→⋅d = 1, then (a→×b)⋅c→ is equal to 04 Apr 2024 (E)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = −5ˆi+ˆj−3ˆk, b =ˆi+2ˆj−4ˆk and c = (((a×b)×ˆi)×ˆi)×ˆi. Then c⋅(−ˆi+ˆj+ˆk) is equal to 01 Feb 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−12",
+        "is_correct": false
+      },
+      {
+        "option_text": "−10",
+        "is_correct": false
+      },
+      {
+        "option_text": "−13",
+        "is_correct": false
+      },
+      {
+        "option_text": "−15",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Consider a ΔABC where A(1,3,2),B(−2,8,0) and C(3,6,7). If the angle bisector of ∠BAC meets the line −−→ → 01 Feb 2024 (E) BC at D, then the length of the projection of the vector AD on the vector AC is:",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "37",
+        "is_correct": false
+      },
+      {
+        "option_text": "√38 2√38 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "39",
+        "is_correct": false
+      },
+      {
+        "option_text": "√19 2√38 → → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a =ˆi+ˆj+ˆk,b = −ˆi−8ˆj+2ˆk and c = 4ˆi+c ˆj+c ˆk be three vectors such that b×a = c×a. If the 2 3 → angle between the vector c and the vector 3 ˆ i+4 ˆ j+ ˆ k is θ, then the greatest integer less than or equal to tan2θ is: 01 Feb 2024 (E) → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = 3 ˆ i+ ˆ j−2 ˆ k, b = 4 ˆ i+ ˆ j+7 ˆ k and c = ˆ i−3 ˆ j+4 ˆ k be three vectors. If a vectors p satisfies → → → → →→ → p×b = c×b and p⋅a = 0, then p⋅( ˆ i− ˆ j− ˆ k) is equal to 31 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "24",
+        "is_correct": false
+      },
+      {
+        "option_text": "36",
+        "is_correct": false
+      },
+      {
+        "option_text": "28",
+        "is_correct": false
+      },
+      {
+        "option_text": "32 → → → → →→ → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a and b be two vectors such that a = 1, b = 4 and a⋅b = 2. If c = (2a×b)−3b and the angle → → between b andc is α, then 192sin2α is equal to _________ 31 Jan 2024 (M) → → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = 3ˆi+2ˆj+ˆk,b = 2ˆi−ˆj+3ˆk and c be a vector such that (a+b)×c = 2(a×b)+24ˆj−6ˆk and → → → →2 ˆ (a−b+i).c = −3. Then c is equal to _______. 31 Jan 2024 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A(2,3,5) and C(−3,4,−2) be opposite vertices of a parallelogram ABCD if the diagonal −→ ˆ ˆ ˆ 30 Jan 2024 (M) BD = i+2j+3k then the area of the parallelogram is equal to",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1√410",
+        "is_correct": false
+      },
+      {
+        "option_text": "1√474 2 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1√586",
+        "is_correct": false
+      },
+      {
+        "option_text": "1√306 2 2 → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = a i ˆ i+a 2 ˆ j+a 3 ˆ k and b = b 1 ˆ i+b 2 ˆ j+b 3 ˆ k be two vectors such that a = 1;a⋅b = 2 and b = 4. If → → → → → → c = 2(a×b)−3b, then the angle between b and c is equal to : 30 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "cos−1( 2 )",
+        "is_correct": false
+      },
+      {
+        "option_text": "cos−1(− 1 ) √3 √3",
+        "is_correct": false
+      },
+      {
+        "option_text": "cos−1(−√3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "cos−1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let → a =ˆi+αˆj+β ˆ k , α,β ∈ R. Let a vector b be such that the angle between → a and b is π and b = 6, If 4 →→ → → a⋅b = 3√2, then the value of (α2 +β2) a×b 2 is equal to 30 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "90",
+        "is_correct": false
+      },
+      {
+        "option_text": "75",
+        "is_correct": false
+      },
+      {
+        "option_text": "95",
+        "is_correct": false
+      },
+      {
+        "option_text": "85 → → → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a and b be two vectors such that b = 1 and b×a = 2 Then (b×a)−b 2 is equal to 30 Jan 2024 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 →→ → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a, b and c be three non-zero vectors such that b and c are non-collinear if a+5b is collinear with →→ → → → → → → c,b+6c is collinear with a and a+αb+βc = 0, then α+β is equal to 29 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "35",
+        "is_correct": false
+      },
+      {
+        "option_text": "30",
+        "is_correct": false
+      },
+      {
+        "option_text": "−30",
+        "is_correct": false
+      },
+      {
+        "option_text": "−25 −−−",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "→ → → → → → → Let OA = a,OB = 12a+4b and OC = b, where O is the origin. If S is the parallelogram with adjacent sides OA and OC, then area of the quadrilateral OABC is equal to _____ 29 Jan 2024 (E) area of S",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "10",
+        "is_correct": false
+      },
+      {
+        "option_text": "7",
+        "is_correct": false
+      },
+      {
+        "option_text": "8",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a unit vector uˆ= x ˆ i+y ˆ j+z ˆ k make angles π, π and 2π with the vectors 1 ˆ i+ 1 ˆ k, 1 ˆ j+ 1 ˆ k and 2 3 3 √2 √2 √2 √2 → 1 ˆ i+ 1 ˆ j respectively. If v = 1 ˆ i+ 1 ˆ j+ 1 ˆ k, then |u^−v→|2 is equal to 29 Jan 2024 (E) √2 √2 √2 √2 √2 11 5",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "7 → → → → → → →→",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If a =ˆi+2ˆj+ˆk, b = 3(ˆi−ˆj+ˆk) and c be the vector such that a×c = b and a⋅c = 3, then → → → → → a⋅((c×b)−b−c) is equal to 27 Jan 2024 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "32",
+        "is_correct": false
+      },
+      {
+        "option_text": "24",
+        "is_correct": false
+      },
+      {
+        "option_text": "20",
+        "is_correct": false
+      },
+      {
+        "option_text": "36",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The least positive integral value of α, for which the angle between the vectors αˆi−2ˆj+2ˆk and αˆi+2αˆj−2ˆk is acute, is _____. 27 Jan 2024 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let ABCD be a quadrilateral. If E and F are the mid points of the diagonals AC and BD respectively and −−−−−→ → → → → 15 Apr 2023 (M) (AB− BC)+(AD−DC) = k FE, then k is equal to",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "−2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "−4",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let S be the set of all (λ, μ) for which the vectors λˆi−ˆj+ ˆ k, ˆj+2ˆj+μ ˆ k and 3ˆi−4ˆj+5 ˆ k, where λ−μ = 5, are coplanar, then ∑ 80(λ2 +μ2) is equal to 15 Apr 2023 (M) (λ, μ)∈S",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = 2, b = 3 and the angle between the vectors a and b be π . Then (a+2b)×(2a−3b) 2 is equal 4 to 13 Apr 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "441",
+        "is_correct": false
+      },
+      {
+        "option_text": "482",
+        "is_correct": false
+      },
+      {
+        "option_text": "841",
+        "is_correct": false
+      },
+      {
+        "option_text": "882",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let for a triangle ABC −→ ˆ ˆ ˆ AB = −2i+j+3k −→ CB = αˆi+βˆj+γˆk −→ ˆ ˆ ˆ CA = 4i+3j+δk −−→ → If δ > 0 and the area of the triangle ABC is 5√6 then CB⋅CA is equal to 13 Apr 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "60",
+        "is_correct": false
+      },
+      {
+        "option_text": "54",
+        "is_correct": false
+      },
+      {
+        "option_text": "108",
+        "is_correct": false
+      },
+      {
+        "option_text": "120 → → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 3ˆi+ˆj−ˆk and c = 2ˆi−3ˆj+3ˆk. If b is a vector such that a = b×c and b 2 = 50, then → 2 → 72− b+c is equal to __________. 13 Apr 2023 (M) → → → → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a =ˆi+4ˆj+2ˆk,b = 3ˆi−2ˆj+7ˆk and c = 2ˆi−ˆj+4ˆk. If a vector d satisfies d×b = c×b and d⋅a = 24, →2 13 Apr 2023 (M) then d is equal to",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "323",
+        "is_correct": false
+      },
+      {
+        "option_text": "423",
+        "is_correct": false
+      },
+      {
+        "option_text": "313",
+        "is_correct": false
+      },
+      {
+        "option_text": "413",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a, b, c be three distinct real numbers, none equal to one. If the vectors aˆi+ˆj+ ˆ k, ˆi+bˆj+ ˆ k and ˆi+ˆj+cˆk are coplanar, then 1 + 1 + 1 is equal to 1−a 1−b 1−c 12 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "−2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let λ ∈ Z, a = λˆi+ˆj− ˆ k and b = 3ˆi−ˆj+2 ˆ k. Let c be a vector such that → → → → →→→ →→ → 2 ˆ ˆ ˆ (a+b+c)×c = 0, a⋅c = −17 and b⋅c = −20. Then c×(λi+j+k) is equal to 12 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "46",
+        "is_correct": false
+      },
+      {
+        "option_text": "53",
+        "is_correct": false
+      },
+      {
+        "option_text": "62",
+        "is_correct": false
+      },
+      {
+        "option_text": "49",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the plane x+3y−2z+6 = 0 meet the co-ordinate axes at the points A, B, C. If the orthocenter of the triangle ABC is (α, β, 6), then 98(α+β)2 is equal to __________. 12 Apr 2023 (M) 7 → → → → → →→ → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a =ˆi+2ˆj+3ˆk and b =ˆi+ˆj−ˆk. If c is a vector such that a⋅c = 11,b⋅(a×c) = 27 and b⋅c = → → → −√3 b , then a×c 2 is equal to 11 Apr 2023 (E) → ˆ ˆ ˆ ˆ",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a be a non-zero vector parallel to the line of intersection of the two planes described by i+j,i+k and → → → → ˆ ˆ ˆ ˆ ˆ ˆ ˆ i−j,j−k. If θ is the angle between the vector a and the vector b = 2i−2j+k and a⋅b = 6, then the → ordered pair (θ,|a→×b|) is equal to 11 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(π,3√6)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(π,3√6) 3 4",
+        "is_correct": false
+      },
+      {
+        "option_text": "(π,6)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(π,6) 3 4 → → → → → →→ Q45*. If four distinct points with position vectors a,b,c and d are coplanar, then [abc] is equal to 11 Apr 2023 (E) →→ → →→ →→ → →→",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "For any vector a = a 1 i+a 2 j+a 3 k, with 10|a i | < 1,i = 1,2,3, consider the following statements: → (A) : max{|a 1 |,|a 2 |,|a 3 |} ≤ a → (B) : a ≤ 3max{|a |,|a |,|a |} 11 Apr 2023 (M) 1 2 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Only (B) is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Only (A) is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both (A) and (B) are true",
+        "is_correct": false
+      },
+      {
+        "option_text": "Neither (A) nor (B) is true → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 2ˆi+7ˆj−ˆk, ˆ b = 3ˆi+5ˆk and c =ˆi−ˆj+2ˆk Let d be a vector which is perpendicular to both a and b → → → → , and c⋅d = 12. Then(− ˆ i+ ˆ j− ˆ k)⋅(c×d) is equal to 10 Apr 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "24",
+        "is_correct": false
+      },
+      {
+        "option_text": "44",
+        "is_correct": false
+      },
+      {
+        "option_text": "42",
+        "is_correct": false
+      },
+      {
+        "option_text": "48",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the points P and Q are respectively the circumcenter and the orthocentre of a ΔABC, then −−−→ → → 10 Apr 2023 (E) PA+PB+PC is equal to _______ −−→ →",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "2QP 2PQ −−→ →",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "PQ QP",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let O be the origin and the position vector of the point P be − ˆ i−2 ˆ j+3k. If the position vectors of the points A, B and C are −2ˆi+ˆj−3k, 2ˆi+4ˆj−2k and −4ˆi ^ +2ˆj−k respectively, then the projection of the vector −−−→ → → 10 Apr 2023 (M) OP on a vector perpendicular to the vectors AB and AC is",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "8 3 7 10",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "An arc PQ of a circle subtends a right angle at its centre O. The mid point of the arc PQ is R. If −−−→ → → → → → → 10 Apr 2023 (M) OP = u, OR = v and OQ = αu+βv, then α, β2, are the roots of the equation",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "x2 +x−2 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "x2 −x−2 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "3x2 −2x−1 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "3x2 +2x−1 = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the points with position vectors αˆi+10ˆj+13ˆk, 6ˆi+11ˆj+11ˆk, 9ˆi+βˆj−8ˆk are collinear, then 2 (19α−6β)2 is equal to 08 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "36",
+        "is_correct": false
+      },
+      {
+        "option_text": "25",
+        "is_correct": false
+      },
+      {
+        "option_text": "49",
+        "is_correct": false
+      },
+      {
+        "option_text": "16",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The area of the quadrilateral ABCD with vertices A(2,1,1), B(1,2,5), C(−2,−3,5) and D(1,−6,−7) is equal to 08 Apr 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "48",
+        "is_correct": false
+      },
+      {
+        "option_text": "8√38",
+        "is_correct": false
+      },
+      {
+        "option_text": "54",
+        "is_correct": false
+      },
+      {
+        "option_text": "9√38 −−−→ → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the vectors u 1 = ˆ i+ ˆ j+a ˆ k, u 2 = ˆ i+b ˆ j+ ˆ k, and u 3 = c ˆ i+ ˆ j+ ˆ k be coplanar. If the vectors −−→ → → v 1 = (a+b)ˆi+cˆj+cˆk, v 2 = aˆi+(b+c)ˆj+aˆk and v 3 = bˆi+bˆj+(c+a)ˆk are also coplanar, then 6(a+b+c) is equal to 08 Apr 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "6 → → → → → → → →→",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 6ˆi+9ˆj+12ˆk, b = αˆi+11ˆj−2ˆk and c be vectors such that a×c = a×b If a⋅c = −12, and → → c⋅(ˆi−2ˆj+ˆk) = 5 then c⋅(ˆi+ˆj+ˆk) is equal to _______ 08 Apr 2023 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "The sum of all values of α, for which the points whose position vectors are ˆi−2ˆj+3ˆk, 2ˆi−3ˆj+4ˆk, (α+1)ˆi+2ˆk and 9ˆi+(α−8)ˆj+6ˆk are coplanar, is equal to 06 Apr 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the position vectors of the points A,B,C and D be 5ˆi+5ˆj+2λ ˆk,ˆi+2ˆj+3ˆk,−2ˆi+λ ˆj+4ˆk and − ˆ i+5 ˆ j+6 ˆ k. Let the set S = {λ ∈ R : the points A,B,C and D are coplanar}. The ∑ (λ+2)2 is equal λ∈S to 06 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "25",
+        "is_correct": false
+      },
+      {
+        "option_text": "37 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "14",
+        "is_correct": false
+      },
+      {
+        "option_text": "41 → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 2 ˆ i+3 ˆ j+4 ˆ k, b = ˆ i−2 ˆ j−2 ˆ k and c = − ˆ i+4 ˆ j+3 ˆ k. If d is a vector perpendicular to both b and c, → → → → and a⋅d = 18, then a×d 2 is equal to 06 Apr 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "640",
+        "is_correct": false
+      },
+      {
+        "option_text": "680",
+        "is_correct": false
+      },
+      {
+        "option_text": "720",
+        "is_correct": false
+      },
+      {
+        "option_text": "760",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 5ˆi−ˆj−3 ˆ k and b =ˆi+3ˆj+5 ˆ k be two vectors. Then which one of the following statements is TRUE? 01 Feb 2023 (E) → → →",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Projection of a on b is −13 and the direction of the projection vector is opposite to the direction of b √35 → → →",
+        "is_correct": false
+      },
+      {
+        "option_text": "Projection of a on b is −17 and the direction of the projection vector is opposite to the direction of b √35 → → →",
+        "is_correct": false
+      },
+      {
+        "option_text": "Projection of a on b is 17 and the direction of the projection vector is opposite to the direction of b √35 → → →",
+        "is_correct": false
+      },
+      {
+        "option_text": "Projection of a on b is 13 and the direction of the projection vector is opposite to the direction of a √35",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A(2,6,2),B(−4,0,λ),C(2,3,−1) and D(4,5,0), |λ| ≤ 5 are the vertices of a quadrilateral ABCD. If its area is 18 square units, then 5−6λ is equal to _____ . 01 Feb 2023 (M) → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = 2 ˆ i−7 ˆ j+5 ˆ k , b = ˆ i+ ˆ k and c = ˆ i+2 ˆ j−3 ˆ k be three given vectors. If r is a vector such that → → → → →→ → r×a = c×a and r⋅b = 0, then r is equal to: 01 Feb 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "11√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "11 7 7",
+        "is_correct": false
+      },
+      {
+        "option_text": "11√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "√914 5 7 → → → → ˆ ˆ ˆ ˆ ˆ ˆ Q62*.Let v = αi+2j−3k, w = 2αi+j−k, and u be a vector such that u = α > 0. If the minimum value of →→→ → 2 the scalar triple product [u v w] is −α√3401, and u. ˆ i = m where m and n are coprime natural numbers, n then m+n is equal to _____ . 01 Feb 2023 (M) → → → → 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "→ → → → Let a and b be two vector such that a = √14, b = √6 and a×b = √48. Then (a⋅b) is equal to _____ . 31 Jan 2023 (M) → → → → → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = 2ˆi+ˆj+ˆk, and b and c be two nonzero vectors such that a+b+c = a+b−c and b⋅c = 0. Consider the following two statement: → → → (A) a+λc ≥ a for all λ ∈ R. → → (B) a and c are always parallel 31 Jan 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "only (B) is correct",
+        "is_correct": false
+      },
+      {
+        "option_text": "neither (A) nor (B) is correct",
+        "is_correct": false
+      },
+      {
+        "option_text": "only (A) is correct",
+        "is_correct": false
+      },
+      {
+        "option_text": "both (A) and (B) are correct. → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a =ˆi+2ˆj+3ˆk,b =ˆi−ˆj+2ˆk and c = 5ˆi−3ˆj+3ˆk, be there(three) vector. If r is a vector such that, → → → → →→ →2 r×b = c×b and r⋅a = 0, then 25 r is equal to 31 Jan 2023 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a,b,c be three vectors such that a = √31,4 b = c = 2 and 2(a×b) = 3(c×a). If the angle → 2 → →→ 31 Jan 2023 (E) between b and c is 2π , then (a×c) is equal to _____ . 3 →→ a⋅b → → → → → → → → → → → → Q67*. Let aand b be two vectors. Let a = 1, b = 4 and a⋅b = 2. If c = (2a×b)−3b, then the value of b⋅c is 30 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−24",
+        "is_correct": false
+      },
+      {
+        "option_text": "−48",
+        "is_correct": false
+      },
+      {
+        "option_text": "−84",
+        "is_correct": false
+      },
+      {
+        "option_text": "−60 →→→ → → → Q68*. If a, b, c are three non-zero vectors and nˆ is a unit vector perpendicular to c such that a = αb−nˆ,(α ≠ 0) → → → → → and b⋅c = 12, then c×(a×b) is equal to: 30 Jan 2023 (M)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the vectors a = λˆi+μˆj+4 ˆ k,b = −2ˆi+4ˆj−2 ˆ k and c = 2ˆi+3ˆj+ ˆ k are coplanar and the projection of a → on the vector b is √54 units, then the sum of all possible values of λ+μ is equal to 29 Jan 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "24",
+        "is_correct": false
+      },
+      {
+        "option_text": "18 → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a,b and c be three non-zero non-coplanar vectors. Let the position vectors of four points A, B, C and D −−− → → → → → → → → → → → → → → → be a−b+c, λa−3b+4c, −a+2b−3c and 2a−4b+6c respectively. If AB, AC and AD are coplanar, then λ is : 29 Jan 2023 (M) → → → → → → → → →→ →→",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If a =ˆi+2ˆk, b =ˆi+ˆj+ˆk, c = 7ˆi−3ˆj+4ˆk, r×b+b×c = 0 and r⋅a = 0 then r.c is equal to: 29 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "34",
+        "is_correct": false
+      },
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "36",
+        "is_correct": false
+      },
+      {
+        "option_text": "30 → → → → → → → Q73*. Let a = 4 ˆ i+3 ˆ j and b = 3 ˆ i−4 ˆ j+5 ˆ k and c is a vector such that c⋅(a×b)+25 = 0,c⋅( ˆ i+ ˆ j+ ˆ k) = 4 → → → → and projection of c on a is 1 , then the projection of c on b equals: 29 Jan 2023 (E)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the four points, whose position vectors are 3ˆi−4ˆj+2ˆk,ˆi+2ˆj−ˆk,−2ˆi−ˆj+3ˆk and 5ˆi−2αˆj+4ˆk are coplanar, then α is equal to 25 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "73",
+        "is_correct": false
+      },
+      {
+        "option_text": "−107 17 17",
+        "is_correct": false
+      },
+      {
+        "option_text": "−73",
+        "is_correct": false
+      },
+      {
+        "option_text": "107 17 17 →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The vector a = −ˆi+2ˆj+ ˆ k is rotated through a right angle, passing through the y-axis in its way and the → → → → resulting vector is b. Then the projection of 3a+√2b on c = 5ˆi+4ˆj+3 ˆ k is 25 Jan 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "√6",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√3 → → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = −ˆi−ˆj+ ˆ k,a⋅b = 1 and a×b =ˆi−ˆj. Then a−6b is equal to 25 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3(ˆi−ˆj− ˆ k)",
+        "is_correct": false
+      },
+      {
+        "option_text": "3(ˆi+ˆj+ ˆ k) ˆ ˆ ˆ ˆ ˆ ˆ",
+        "is_correct": false
+      },
+      {
+        "option_text": "3(i−j+k)",
+        "is_correct": false
+      },
+      {
+        "option_text": "3(i+j−k) Q77*. Let → a, → b and → c be three non zero vectors such that → b⋅ → c = 0 and → a×( → b× → c) = → b− → c . If → d be a vector such 2 → → → → → → → → that b⋅d = a⋅b, then (a×b)⋅(c×d) is equal to 25 Jan 2023 (M) 3 1",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let α = 4 ˆ i+3 ˆ j+5 ˆ k and β = ˆ i+2 ˆ j−4 ˆ k. Let β 1 be parallel to α and β 2 be perpendicular to α. If → → → → β = β 1 +β 2, then the value of 5β 2 ⋅( ˆ i+ ˆ j+ ˆ k) is 24 Jan 2023 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "11",
+        "is_correct": false
+      },
+      {
+        "option_text": "7",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let PQR be a triangle. The pointsA, B and C are on the sides QR, RP and PQ respectively such that QA = RB = PC = 1 . Then Area(ΔPQR) is equal to 24 Jan 2023 (M) AR BP CQ 2 Area(ΔABC)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "5 2 → → →→ →→ → → → → →→",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a =ˆi+2ˆj+λˆk, b = 3ˆi−5ˆj−λˆk, a⋅c = 7, 2(b⋅c)+43 = 0, a×c = b×c, then a⋅b is equal to 24 Jan 2023 (E) → → → → → → → → → → ˆ ˆ ˆ ˆ ˆ ˆ",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let u = i−j−2k, v = 2i+j−k, v⋅w = 2 and v×w = u+λv, then u⋅w is equal to 24 Jan 2023 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "−2 3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If (2,3,9),(5,2,1),(1,λ,8) and (λ,2,3) are coplanar, then the product of all possible values of λ is 29 Jul 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a→ and → b be two vectors such that |a→+ → b|2 = |a→|2 +2| → b|2,a→⋅ → b = 3 and |a→× → b|2 = 75. Then |a→|2 is equal to ______. 29 Jul 2022 (E) → → → → → → → → → → Q84*. Let a = 3ˆi+ˆj and b =ˆi+2ˆj+ ˆ k. Let c be a vector satisfying a×(b×c) = b+λc. If b and c are non- parallel, then the value of λ is 29 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−5",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1 → → → Q85*. Let a,b,c be three coplanar concurrent vectors such that angles between any two of them is same. If the → → → → → → → → → → → → product of their magnitudes is 14 and (a×b)⋅(b×c)+(b×c)⋅(c×a)+(c×a)⋅(a×b) = 168 → → → then a + b + c is equal to 29 Jul 2022 (E)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let ˆa and ˆ b be two unit vectors such that the angle between them is π . If θ is the angle between the vectors 4 (ˆa+ ˆ b) and (ˆa+2 ˆ b+2(ˆa× ˆ b)) then the value of 164cos2θ is equal to 29 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "90+27√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "45+18√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "90+3√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "54+90√2 → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the vectors a = (1+t) ˆ i+(1−t) ˆ j+ ˆ k, b = (1−t) ˆ i+(1+t) ˆ j+2 ˆ k and c = t ˆ i−t ˆ j+ ˆ k, t ∈ R be such → → → → that for α,β,γ ∈ R, αa+βb+γc = 0 ⇒ α = β = γ = 0. Then, the set of all values of t is 28 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "a non-empty finite set",
+        "is_correct": false
+      },
+      {
+        "option_text": "equal to N",
+        "is_correct": false
+      },
+      {
+        "option_text": "equal to R−{0}",
+        "is_correct": false
+      },
+      {
+        "option_text": "equal to R → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a vector a has a magnitude 9. Let a vector b be such that for every (x,y)R×R−{(0,0)}, the vector → → → → → → (xa+yb) is perpendicular to the vector (6ya−18xb). Then the value of a×b is equal to 28 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "9√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "27√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "81 →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let S be the set of all a ∈ R for which the angle between the vectors u = a(log b)ˆi−6ˆj+3ˆk and e → ˆ ˆ ˆ v = (log b)i+2j+2a(log b)k,(b > 1) is acute. Then S is equal to 28 Jul 2022 (E) e e",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(−∞,−4)",
+        "is_correct": false
+      },
+      {
+        "option_text": "Φ 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−4,0)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(12,∞) 3 7 → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = αˆi+ˆj+β ˆ k and b = 3ˆi−5ˆj+4 ˆ k be two vectors, such that a×b = −ˆi+9ˆi+12 ˆ k. Then the → → → → projection of b−2a on b+a is equal to 27 Jul 2022 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = α ˆ i+ ˆ j− ˆ k and b = 2 ˆ i+ ˆ j−α ˆ k,α > 0. If the projection of a×b on the vector − ˆ i+2 ˆ j−2 ˆ k is 30, then α is equal to 26 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "15",
+        "is_correct": false
+      },
+      {
+        "option_text": "8 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "13",
+        "is_correct": false
+      },
+      {
+        "option_text": "7 2 −−−",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let ABC be a triangle such that B → C = → a,C → A = → b, A → B = → c, → a = 6√2, → b = 2√3 and → b⋅ → c = 12 Consider the statements : → → → → → (S1): (a×b)+(c×b) − c = 6(2√2−1) (S2): ∠ABC = cos−1(√2). Then 3 25 Jul 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "both (S1) and (S2)are true",
+        "is_correct": false
+      },
+      {
+        "option_text": "only (S1) is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "only (S2) is true",
+        "is_correct": false
+      },
+      {
+        "option_text": "both (S1) and (S2) are false → → → → →→ →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ˆ i− ˆ j+2 ˆ k and let b be a vector such that a×b = 2 ˆ i− ˆ k and a⋅b = 3. Then the projection of b on the → → vector a−b is: 25 Jul 2022 (E) 2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√3 √21 7 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√7",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 3 3 → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = αˆi+3ˆj− ˆ k,b = 3ˆi−βˆj+4 ˆ k and c =ˆi+2ˆj−2 ˆ k where α,β ∈ R be three vectors. If the projection → → → → of a on c is 10 andb×c = −6ˆi+10ˆj+7 ˆ k , then the value of α+β equal to 29 Jun 2022 (M) 3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      },
+      {
+        "option_text": "6 → → → → → → → →→",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ˆ i−2 ˆ j+3 ˆ k, b = ˆ i+ ˆ j+ ˆ k and c be a vector such that a×(b+c) = 0, then the value of 3(c.a) is equal to _______. 29 Jun 2022 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let A, B, C be three points whose position vectors respectively are:",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a be a vector which is perpendicular to the vector 3 ˆ i+ 1ˆ j+2 ˆ k. If a×(2 ˆ i+ ˆ k) = 2 ˆ i−13 ˆ j−4 ˆ k, then 2 → ˆ ˆ ˆ the projection of the vector a on the vector 2i+2j+k is 28 Jun 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 3 5 7",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 3 → → → → →→ →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If a = 2 ˆ i+ ˆ j+3 ˆ k, b = 3 ˆ i+3 ˆ j+ ˆ k and c = c 1 ˆ i+c 2 ˆ j+c 3 ˆ k are coplanar vectors and a⋅c = 5,b ⊥ c, then 122(c 1 +c 2 +c 3 ) is equal to ______. 28 Jun 2022 (M) → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = α ˆ i+2 ˆ j− ˆ k and b = −2 ˆ i+α ˆ j+ ˆ k, where α ∈ R. If the area of the parallelogram whose adjacent → → →2 → → →2 sides are represented by the vectors a and b is √15(α2 +4), then the value of 2 a +(a⋅b) b is equal to 28 Jun 2022 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "10",
+        "is_correct": false
+      },
+      {
+        "option_text": "7",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "14 → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a and b be the vectors along the diagonal of a parallelogram having area 2√2. Let the angle between a → → → → → → → → → → → → and b be acute. a = 1 and a.b = a×b . If c = 2√2(a×b)−2b, then an angle between b and c is 27 Jun 2022 (E) −π 5π",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 6 π 3π",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 4 → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ˆ i+ ˆ j− ˆ k and c = 2 ˆ i−3 ˆ j+2 ˆ k. Then the number of vectors b such that b×c = a and → b ∈ {1,2,…,10} is 27 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ˆ i+ ˆ j+2 ˆ k,b = 2 ˆ i−3 ˆ j+ ˆ k and c = ˆ i− ˆ j+ ˆ k be the three given vectors. Let v be a vector in the → → → → → plane of a and b whose projection on c is 2 . If v, ˆ j = 7, then v⋅( ˆ i+ ˆ k) is equal to 26 Jun 2022 (E) √3",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "7",
+        "is_correct": false
+      },
+      {
+        "option_text": "8",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let θ be the angle between the vectors a and b, where a = 4, b = 3 and θ ∈ (π, π). Then 4 3 → → → → 2 →→ 2 25 Jun 2022 (M) (a−b)×(a+b) +4(a⋅b) is equal to ______ → ˆ ˆ ˆ",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = a 1 i+a 2 j+a 3 k, a i > 0, i = 1,2,3 be a vector which makes equal angles with the coordinate axes → → ˆ ˆ OX,OY and OZ. Also, let the projection of a on the vector 3i+4j be 7. Let b be a vector obtained by → → → → ˆ ˆ rotating a with 90°. If a,b and x-axis are coplanar, then projection of a→ vector b on 3i+4j is equal to 25 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "√7",
+        "is_correct": false
+      },
+      {
+        "option_text": "√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "7 → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let b = ˆ i+ ˆ j+λ ˆ k,λ ∈ R. If a is a vector such that a×b = 13 ˆ i− ˆ j−4 ˆ k and a⋅b+21 = 0, then → → → → (b−a)⋅(ˆk−ˆj)+(b+a)⋅(ˆi−ˆk) is equal to 25 Jun 2022 (E) → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let ˆa, ˆ b be unit vectors. If c be a vector such that the angle between ˆa and c is π , and ˆ b = c+2(c×ˆa), 12 →2 then 6c is equal to: 24 Jun 2022 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6(3−√3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "6(3+√3)",
+        "is_correct": false
+      },
+      {
+        "option_text": "3+√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "6(√3+1)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a and b be two unit vectors such that |(ˆa+^b)+2(ˆa×^b)| = 2. If θ ∈ (0,π) is the angle between a^ and ^b, then among the statement ^ ^ (S1) : 2ˆa×b =ˆa−b (S2) : The projection of ˆa on (ˆa+ ^ b) is 1 24 Jun 2022 (E) 2",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "Only (S1) is true.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Only (S2) is true.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both (S1) and (S2) are true.",
+        "is_correct": false
+      },
+      {
+        "option_text": "Both (S1) and (S2) are false. → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 2 ˆ i− ˆ j+2 ˆ k and b = ˆ i+2 ˆ j− ˆ k. Let a vector v be in the plane containing a and b. If v is → → perpendicular to the vector 3ˆi+2ˆj−ˆk and its projection on a is 19 units, then 2v 2 is equal to _____. 01 Sep 2021 (E) → → → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a and b be two vectors such that 2a+3b = 3a+b and the angle between a and b is 60°. If 1a is a 8 → unit vector, then b is equal to :",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = ˆ i+5 ˆ j+α ˆ k, b = ˆ i+3 ˆ j+β ˆ k and c = − ˆ i+2 ˆ j−3 ˆ k be three vectors such that, b×c = 5√3 and a → → is perpendicular to b. Then the greatest amongst the values of a 2 is ________. 27 Aug 2021 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "A hall has a square floor of dimension 10 m×10 m (see the figure) and vertical walls. If the angle GPH between the diagonals AG and BH is cos−1 1, then the height of the 5 hall (in meters) is: 26 Aug 2021 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "5√2",
+        "is_correct": false
+      },
+      {
+        "option_text": "5√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "5√10",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If the projection of the vector ˆi+2ˆj+ˆk on the sum of the two vectors 2ˆi+4ˆj−5ˆk and −λˆi+2ˆj+3ˆk is 1, then λ is equal to _______. 26 Aug 2021 (E) → → → → → → → →→ → → Q117*. Let a = ˆ i+ ˆ j+ ˆ k and b = ˆ j− ˆ k. If c is a vector such that a×c = b and a⋅c = 3, then a⋅(b×c) is equal to: 26 Aug 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "−2",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "−6 → → → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ˆ i+ ˆ j+ ˆ k,b and c = ˆ j− ˆ k be three vectors such that a×b = c and a⋅b = 1. If the length of → → → projection vector of the vector b on the vector a×c is l, then the value of 3l2 is equal to _____. 27 Jul 2021 (M) → → → → → Q119*. Let a = ˆ i−α ˆ j+β ˆ k,b = 3 ˆ i+β ˆ j−α ˆ k and c = −α ˆ i−2 ˆ j+ ˆ k, where α and β are integers. If a⋅b = −1 → → → → → and b⋅c = 10, then (a×b)⋅c is equal to ______. 27 Jul 2021 (E)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If a = 2, b = 5 and a×b = 8, then a⋅b is equal to: 25 Jul 2021 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let the vectors (2+a+b)ˆi+(a+2b+c)ˆj−(b+c)ˆk, (1+b)ˆi+2bˆj−bˆk and ˆ ˆ ˆ (2+b)i+2bj+(1−b)k, ∀a,b,c ∈ R be co-planar. Then which of the following is true? 25 Jul 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2b = a+c",
+        "is_correct": false
+      },
+      {
+        "option_text": "3c = a+b",
+        "is_correct": false
+      },
+      {
+        "option_text": "a = b+2c",
+        "is_correct": false
+      },
+      {
+        "option_text": "2a = b+c ˆ ˆ ˆ ˆ ˆ ˆ ˆ ˆ",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a,b and c be distinct positive numbers. If the vectors ai+aj+ck,i+k and ci+cj+bk are co-planar, then c is equal to: 25 Jul 2021 (E) 2 a+b",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "1+1 2 a b",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 + 1",
+        "is_correct": false
+      },
+      {
+        "option_text": "√ab a b → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let p = 2ˆi+3ˆj+ˆk and q =ˆi+2ˆj+ˆk be two vectors. If a vector r = (αˆi+βˆj+γˆk) is perpendicular to → → → → → each of the vectors (p+q) and (p−q), and r = √3, then |α|+|β|+|γ| is equal to 25 Jul 2021 (M) → → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If a and b are unit vectors and (a+3b) is perpendicular to (7a−5b) and (a−4b) is perpendicular to → → → → (7a−2b), then the angle between a and b (in degrees) is _________. 25 Jul 2021 (E) → → → → Q127*. Let a vector a be coplanar with vectors b = 2ˆi+ˆj+ˆk and c =ˆi−ˆj+ˆk. If a is perpendicular to → → → → → → d = 3ˆi+2ˆj+6ˆk, and a = √10. Then a possible value of [→ a b → c ]+[→ a b d ]+[→ a → c d ] is equal to: 22 Jul 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−42",
+        "is_correct": false
+      },
+      {
+        "option_text": "−40",
+        "is_correct": false
+      },
+      {
+        "option_text": "−29",
+        "is_correct": false
+      },
+      {
+        "option_text": "−38",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a,b,c be three mutually perpendicular vectors of the same magnitude and equally inclined at an angle θ, → → → with the vector a+b+c. Then 36cos22θ is equal to 20 Jul 2021 (M) −−−−−→ → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "In a triangle ABC, if BC = 3, CA = 5 and BA = 7, then the projection of the vector BA on BC is equal to 20 Jul 2021 (E) 19 13",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 2 11 15",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 2 → → → →→ → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 2 ˆ i+ ˆ j−2 ˆ k and b = ˆ i+ ˆ j. If c is a vector such that a⋅c = c , c−a = 2√2 and the angle between → → → → → → (a×b) and c is π , then the value of (a×b)×c is: 20 Jul 2021 (M) 6",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 3",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 2 → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "For p > 0, a vector v 2 = 2 ˆ i+(p+1) ˆ j is obtained by rotating the vector v 1 = √3p ˆ i+ ˆ j by an angle θ about (α√3−2) 20 Jul 2021 (E) origin in counter clockwise direction. If tanθ = , then the value of α is equal to (4√3+3) → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a and b be two non-zero vectors perpendicular to each other and a = b , If a×b = a , then the angle → → → → → between the vectors (a+b+(a×b)) and a is equal to : 18 Mar 2021 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "sin−1( 1 )",
+        "is_correct": false
+      },
+      {
+        "option_text": "cos−1( 1 ) √3 √3",
+        "is_correct": false
+      },
+      {
+        "option_text": "cos−1( 1 )",
+        "is_correct": false
+      },
+      {
+        "option_text": "sin−1( 1 ) √2 √6 −−−−−→ → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "In a triangle ABC, if BC = 8, CA = 7, AB = 10, then the projection of the vector AB on AC is equal to : 18 Mar 2021 (E) 25 85",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 14 127 115",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "20 16 →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A vector a has components 3p and 1 with respect to a rectangular cartesian system. This system is rotated → through a certain angle about the origin in the counter clockwise sense. If, with respect to new system, a has components p+1 and √10, then a value of p is equal to: 18 Mar 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "−5 4",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1 5",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 2ˆi−3ˆj+4ˆk and b = 7ˆi+ˆj−6ˆk If r×a = r×b,r⋅(ˆi+2ˆj+ˆk) = −3, then r⋅(2ˆi−3ˆj+ˆk) is equal to: 17 Mar 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "12",
+        "is_correct": false
+      },
+      {
+        "option_text": "8",
+        "is_correct": false
+      },
+      {
+        "option_text": "13",
+        "is_correct": false
+      },
+      {
+        "option_text": "10 → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let x be a vector in the plane containing vectors a = 2 ˆ i− ˆ j+ ˆ k and b = ˆ i+2 ˆ j− ˆ k. If the vector x is → perpendicular to (3 ˆ i+2 ˆ j− ˆ k) and its projection on a is 17√6, then the value of |x→| is equal to _______. 2 17 Mar 2021 (E) −−→ →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "ˆ ˆ ˆ ˆ ˆ ˆ Let O be the origin. Let OP = xi+yj−k and OQ = −i+2j+3xk, x, y ∈ R, x > 0, be such that −−−−−→ → → → → PQ = √20 and the vector OP is perpendicular to OQ. If OR = 3ˆi+zˆj−7 ˆ k, z ∈ R, is coplanar with OP −→ 17 Mar 2021 (E) and OQ, then the value of x2 +y2 +z2 is equal to",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "7",
+        "is_correct": false
+      },
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 → → → Q139*. If → a = αˆi+βˆj+3 ˆ k, b = −βˆi−αˆj− ˆ k and → c =ˆi−2ˆj− ˆ k such that → a⋅b = 1 and b⋅ → c = −3, then → → → 1((a×b)⋅c) is equal to _______. 3 17 Mar 2021 (M)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a vector α ˆ i+β ˆ j be obtained by rotating the vector √3 ˆ i+ ˆ j by an angle 45° about the origin in counterclockwise direction in the first quadrant. Then the area (in sq. units) of triangle having vertices (α,β),(0,β) and (0,0) is equal to 16 Mar 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√2 √2 → → → → → →→",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ˆ i+2 ˆ j−3 ˆ k and b = 2 ˆ i−3 ˆ j+5 ˆ k. If r×a = b×r,r⋅(α ˆ i+2 ˆ j+ ˆ k) = 3 and → → r⋅(2 ˆ i+5 ˆ j−α ˆ k) = −1,α ∈ R, then the value of α+ r 2 is equal to : 16 Mar 2021 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "9",
+        "is_correct": false
+      },
+      {
+        "option_text": "15",
+        "is_correct": false
+      },
+      {
+        "option_text": "13",
+        "is_correct": false
+      },
+      {
+        "option_text": "11 → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let c be a vector perpendicular to the vectors a =ˆi+ˆj−ˆk and b =ˆi+2ˆj+ˆk. If c⋅(ˆi+ˆj+3ˆk) = 8, then → → → the value of c⋅(a×b) is equal to 16 Mar 2021 (E) −−→ →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If vectors a 1 = x ˆ i− ˆ j+ ˆ k and a 2 = ˆ i+y ˆ j+z ˆ k are collinear, then a possible unit vector parallel to the vector xˆi+yˆj+z ˆ k is: 26 Feb 2021 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "1 (−ˆj+ˆk)",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 (ˆi+ˆj−ˆk) √2 √3",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 ( ˆ i− ˆ j)",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 ( ˆ i− ˆ j+ ˆ k) √2 √3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If (1,5,35),(7,5,5),(1,λ,7) and (2λ,1,2) are coplanar, then the sum of all possible values of λ is: 26 Feb 2021 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "44",
+        "is_correct": false
+      },
+      {
+        "option_text": "−44 5 5",
+        "is_correct": false
+      },
+      {
+        "option_text": "39",
+        "is_correct": false
+      },
+      {
+        "option_text": "−39 5 5 → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = ˆ i+α ˆ j+3 ˆ k and b = 3 ˆ i−α ˆ j+ ˆ k. If the area of the parallelogram whose adjacent sides are → → →→ represented by the vectors a and b is 8√3 square units, then a⋅b is equal to ___ . 25 Feb 2021 (E) → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = ˆ i+2 ˆ j− ˆ k, b = ˆ i− ˆ j and c = ˆ i− ˆ j− ˆ k be three given vectors. If r is a vector such that → → → → →→ →→ r×a = c×a and r⋅b = 0, then r⋅a is equal to 25 Feb 2021 (M) →→ → → → →→→ → → Q148*. Let three vectors a,b and c be such that c is coplanar with a and b,a⋅c = 7 and b is perpendicular to c, → ˆ ˆ ˆ → ˆ ˆ → → →2 24 Feb 2021 (M) where a = −i+j+k and b = 2i+k, then the value of 2 a+b+c is → → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If x and y be two non-zero vectors such that x+y = x and 2x+λy is perpendicular to y, then the value of λ is ...... . 06 Sep 2020 (E) → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If a and b are unit vectors, then the greatest value of √3 a+b + a−b is 06 Sep 2020 (M) → → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let the vectors a,b,c be such that a = 2, b = 4 and c = 4. If the projection of b on a is equal to the → → → → → → → projection of c on a and b is perpendicular to c, then the value of a+b−c is … 05 Sep 2020 (E) → ˆ ˆ ˆ Q152*.If the volume of a parallelopiped, whose coterminous edges are given by the vectors a = i+j+nk , → → b = 2 ˆ i+ 4 ˆ j− n ˆ k and,c = ˆ i+n ˆ j+3 ˆ k (n ≥ 0) is 158 cubic units, then : 05 Sep 2020 (M) →→ → →",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "a⋅c = 17",
+        "is_correct": false
+      },
+      {
+        "option_text": "b⋅c = 10",
+        "is_correct": false
+      },
+      {
+        "option_text": "n = 7",
+        "is_correct": false
+      },
+      {
+        "option_text": "n = 9 → → 2 → 2 → Q153*. If a = 2ˆi+ˆj+2ˆk, then, the value of ˆi×(a×ˆi) + ˆj×(a×ˆj) + ˆk×(a×ˆk) 2, is equal to : 04 Sep 2020 (E) → → → → → Q154*. Let x 0 be the point of local maxima of f(x) = a⋅(b×c), wherea = x ˆ i−2 ˆ j+3 ˆ k, b = −2 ˆ i+x ˆ j− ˆ k → →→ →→ →→ and c = 7 ˆ i−2 ˆ j+x ˆ k. Then the value of a⋅b+b⋅c+c⋅a at x = x 0 is: 04 Sep 2020 (M)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a, b, c ∈ R be such that a2 +b2 +c2 = 1. If acosθ = bcos(θ+ 2π) = ccos(θ+ 4π),where θ = π 3 3 9 , then the angle between the vectors aˆi+bˆj+cˆk and bˆi+cˆj+aˆk is: 03 Sep 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "2π 3 π π",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 9",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "→→ → → →2 → →2 → →2 → →2 Let a, b and c be three unit vectors such that a−b + a−c = 8. Then a+2b + a+2c is equal to 02 Sep 2020 (M)",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let the position vectors of points 'A' and 'B' be ˆi+ˆj+ˆk and 2ˆi+ˆj+3ˆk, respectively. A point ′P′ divides the −−−−→ → → → 2 line segment AB internally in the ratio λ : 1(λ > 0). If O is the origin and OB⋅OP−3 OA×OP = 6 then λ is equal to 02 Sep 2020 (E) → → → → → → → → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a,b and c be three vectors such that a = √3, b = 5,b∙c = 10 and the angle between b and c is π. If a 3 → → → → → is perpendicular to the vector b×c, then a×(b×c) is equal to ____________. 09 Jan 2020 (E) → → →",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "If the vectors, p = (a+1)ˆi+aˆj+aˆk,q = aˆi+(a+1)ˆj+aˆk and r = aˆi+aˆj+(a+1)ˆk(a ∈ R) are →→ 2 → →2 coplanar and 3(p.q) −λ r×q = 0 , then the value of λ is ________ 09 Jan 2020 (M) → → → → → → → →→",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = ˆ i−2 ˆ j+ ˆ k and b = ˆ i− ˆ j+ ˆ k, be two vectors. If c, is a vector such that b×c = b×a and c⋅a = 0, →→ then c⋅b, is equal to. 08 Jan 2020 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−3",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 2 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1 2 → → ˆ ˆ ˆ ˆ ˆ ˆ Q161*.Let the volume of a parallelepiped whose coterminous edges are given by u = i+j+λk, v = i+j+3k → → → and w = 2ˆi+ˆj+ ˆ k be 1 cu. unit. If θ be the angle between the edges u and w, then the value of cosθ can be 08 Jan 2020 (M) 7 7",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "A vector a = αˆi+2ˆj+βˆk(α,β ∈ R) lies in the plane of the vectors, b =ˆi+ˆj and c =ˆi−ˆj+4ˆk. If a → → bisects the angle between b and c, then 07 Jan 2020 (M) → → ˆ ˆ",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "a⋅i+3 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "a⋅i+1 = 0 → → ˆ ˆ",
+        "is_correct": false
+      },
+      {
+        "option_text": "a⋅k+2 = 0",
+        "is_correct": false
+      },
+      {
+        "option_text": "a⋅k+4 = 0",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a,b and c, be three unit vectors such that a+b+c = 0. If λ = a⋅b+b⋅c+c⋅a and → → → → → → → → d = a×b+b×c+c×a, then the order pair, (λ,d), is equal to. 07 Jan 2020 (E) → → →",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(3,3a×c)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−3,3 → c×b) 2 2 → → → →",
+        "is_correct": false
+      },
+      {
+        "option_text": "(3,3b×c)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(−3,3a×b) 2 2 → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let α ∈ R and the three vectors a = α ˆ i+ ˆ j+3 ˆ k, b = 2 ˆ i+ ˆ j−α ˆ k and c = α ˆ i−2 ˆ j+3 ˆ k. Then the set S = { →→ → α : a,b and c are coplanar} 12 Apr 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "is singleton",
+        "is_correct": false
+      },
+      {
+        "option_text": "contains exactly two positive numbers",
+        "is_correct": false
+      },
+      {
+        "option_text": "is empty",
+        "is_correct": false
+      },
+      {
+        "option_text": "contains exactly two numbers only one of which is positive → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 3 ˆ i+2 ˆ j+2 ˆ k and b = ˆ i+2 ˆ j−2 ˆ k be two vectors. If a vector perpendicular to both the vectors a+b → → and a−b has the magnitude 12 then one such vector is: 12 Apr 2019 (M) ˆ ˆ ˆ ˆ ˆ ˆ",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4(2i+2j+k)",
+        "is_correct": false
+      },
+      {
+        "option_text": "4(2i−2j−k)",
+        "is_correct": false
+      },
+      {
+        "option_text": "4(−2ˆi−2ˆj+ˆk)",
+        "is_correct": false
+      },
+      {
+        "option_text": "4(2ˆi+2ˆj−ˆk) Q166*.If the volume of parallelepiped formed by the vectors ˆi+λˆj+ ˆ k,ˆj+λ ˆ k and λˆi+ ˆ k is minimum, then λ is equal to: 12 Apr 2019 (M)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A(3,0,−1), B(2,10,6) and C(1,2,1) be the vertices of a triangle and M be the mid-point of AC. If G divides BM in the ratio, 2 : 1 , then cos(∠GOA) (O being the origin) is equal to 10 Apr 2019 (M) 1 1",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√30 6√10 1 1",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "√15 2√15 ˆ ˆ ˆ",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The distance of the point having position vector −i+2j+6k from the straight line passing through the point ˆ ˆ ˆ (2, 3, −4) and parallel to the vector, 6i+3j−4k is 10 Apr 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "2√13",
+        "is_correct": false
+      },
+      {
+        "option_text": "7 →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "If a unit vector a makes angles π with ˆi, π with ˆj and θ ∈ (0,π) with ˆk, then a value of θ is: 3 4 09 Apr 2019 (E) 5π 5π",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "6 12 π 2π",
+        "is_correct": false
+      },
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 3 −−−−→ → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let → α = 3ˆi+ˆj and β = 2ˆi−ˆj+3 ˆ k. If β = β 1 −β 2 , where β 1 is parallel to → α and β 2 is perpendicular to → α, −−→ → 09 Apr 2019 (M) then β ×β is equal to: 1 2",
+    "solution_text": "",
+    "options": []
+  },
+  {
+    "question_text": "Let a = 3ˆi+2ˆj+xˆk and b =ˆi−ˆj+ˆk, for some real x. Then the condition for |a→× → b| = r to follow 08 Apr 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0 < r ≤ √3",
+        "is_correct": false
+      },
+      {
+        "option_text": "r ≥ 5√3 2 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "√3 < r ≤ 3√3",
+        "is_correct": false
+      },
+      {
+        "option_text": "3 √3 < r < 5√3 2 2 2 2 ˆ ˆ ˆ",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The magnitude of the projection of the vector 2i+3j+k on the vector perpendicular to the plane containing ˆ ˆ ˆ ˆ ˆ ˆ the vectors i+j+k and i+2j+3k, is: 08 Apr 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "3√6",
+        "is_correct": false
+      },
+      {
+        "option_text": "√3 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "√6",
+        "is_correct": false
+      },
+      {
+        "option_text": "√3 2",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "The sum of the distinct real values of μ for which the vectors μˆi+ˆj+ˆk, ˆi+μˆj+ˆk, ˆi+ˆj+μˆk are co- planar, is 12 Jan 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "0",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 → → → → → Q174*. Let a, b and c be three unit vectors, out of which vectors b and c are non-parallel. If α and β are the angles → → → → → → → which vector a makes with vectors b and c respectively and a×(b×c) = 1b, then |α−β| is equal to : 2 12 Jan 2019 (E)",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a→ = ^ i+2 ^ j+4k ^ , → b = ^ i+λ ^ j+4k ^ and c→= 2 ^ i+4 ^ j+(λ2 −1)k ^ be coplanar vectors. Then the non-zero vector a→×c→ is: 11 Jan 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−10^i−5^j",
+        "is_correct": false
+      },
+      {
+        "option_text": "−14^i−5^j ^ ^ ^ ^",
+        "is_correct": false
+      },
+      {
+        "option_text": "−14i+5j",
+        "is_correct": false
+      },
+      {
+        "option_text": "−10i+5j",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let √3 ^ i+ ^ j, ^ i+√3 ^ j and β ^ i+(1−β) ^ j respectively be the position vectors of the points A,B and C with respect to the origin O. If the distance of C from the bisector of the acute angle between OA and OB is 3 , √2 then the sum of all possible values of β is: 11 Jan 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      },
+      {
+        "option_text": "2",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 → → → → → → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let α = (λ−2) a+b and β = (4λ−2) a+3b, be two given vectors where vectors a and b are non- → → collinear. The value of λ for which vectors α and β are collinear, is: 10 Jan 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "−4",
+        "is_correct": false
+      },
+      {
+        "option_text": "−3",
+        "is_correct": false
+      },
+      {
+        "option_text": "4",
+        "is_correct": false
+      },
+      {
+        "option_text": "3",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a = 2ˆi+λ 1 ˆj+3 ˆ k, b = 4ˆi+(3−λ 2 )ˆj+6 ˆ k and c = 3ˆi+6ˆj+(λ 3 −1) ˆ k be three vectors such that → → → → b = 2a and a is perpendicular to c. Then a possible value of (λ 1 , λ 2 , λ 3 ) is 10 Jan 2019 (M)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "(−1, 4, 0)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(1,5,1) 2",
+        "is_correct": false
+      },
+      {
+        "option_text": "(1, 4,−2)",
+        "is_correct": false
+      },
+      {
+        "option_text": "(1,3,1) 2 → ˆ ˆ ˆ",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let A be a point on the line r = (1−3μ)i+(μ−1)j+(2+5μ)k and B(3, 2, 6) be a point in the space. −→ 10 Jan 2019 (M) Then the value of μ for which the vector AB is parallel to the plane x−4y+3z = 1 is 1 1",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "",
+        "is_correct": false
+      },
+      {
+        "option_text": "2 4",
+        "is_correct": false
+      },
+      {
+        "option_text": "−1",
+        "is_correct": false
+      },
+      {
+        "option_text": "1 4 8 → → →",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "question_text": "Let a =ˆi+ˆj+√2ˆk, b = b 1 ˆi+b 2 ˆj+√2ˆk and c = 5ˆi+ˆj+√2ˆk be three vectors such that the projection → → → → → → → vector of b on a is a . If a+b is perpendicular to c , then b is equal to: 09 Jan 2019 (E)",
+    "solution_text": "",
+    "options": [
+      {
+        "option_text": "√22",
+        "is_correct": false
+      },
+      {
+        "option_text": "√32",
+        "is_correct": false
+      },
+      {
+        "option_text": "6",
+        "is_correct": false
+      },
+      {
+        "option_text": "4 → → → → → → → →→ →2 Q181*. Let a = ˆ i− ˆ j, b = ˆ i+ ˆ j+ ˆ k and c be a vector such that a×c+b = 0 and a.c = 4, then c is equal to: 09 Jan 2019 (M)",
+        "is_correct": false
+      }
+    ]
+  }
+]
