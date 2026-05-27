@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete C Language Syllabus Notes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+    :root{--bg:#e9eef8;--ink:#0d214a;--soft:#37527f;--code:#f4f8ff;--ok:#0d6b42;}
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;color:var(--ink);font-family:"Space Grotesk","Segoe UI",sans-serif;background:linear-gradient(145deg,var(--bg),#f8fbff);line-height:1.45;}
+    .wrapper{max-width:1400px;margin:18px auto;padding:10px;}
+    .page{--ac:#0a2a6b;--sf:#eef4ff;--ln:#c9d8ef;position:relative;background:linear-gradient(180deg,var(--sf) 0%,#fff 40%);border:1px solid var(--ln);border-top:6px solid var(--ac);border-radius:12px;box-shadow:0 12px 30px rgba(13,33,74,.08);padding:20px;padding-right:90px;margin:0 0 16px;}
+    .page:nth-of-type(6n+1){--ac:#0a2a6b;--sf:#eef4ff;--ln:#c9d8ef;}
+    .page:nth-of-type(6n+2){--ac:#0d6b42;--sf:#edf9f2;--ln:#c8e8d5;}
+    .page:nth-of-type(6n+3){--ac:#8c3f00;--sf:#fff4e9;--ln:#f0d5ba;}
+    .page:nth-of-type(6n+4){--ac:#5b1f8a;--sf:#f7efff;--ln:#e1ccf7;}
+    .page:nth-of-type(6n+5){--ac:#006274;--sf:#ebf9fc;--ln:#c5e9f0;}
+    .page:nth-of-type(6n){--ac:#a1264d;--sf:#fff0f4;--ln:#f3c8d7;}
+    .logo-badge{position:absolute;top:10px;right:8px;width:62px;height:62px;border-radius:8px;background:rgba(255,255,255,.98);padding:4px;border:2px solid var(--ac);display:flex;align-items:center;justify-content:center;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+    .logo-badge img{width:100%;height:100%;object-fit:contain;}
+    h1,h2,h3{margin:0 0 8px;line-height:1.2;}
+    h1{font-size:1.9rem;color:var(--ink);}
+    h2{font-size:1.35rem;color:var(--ac);border-bottom:2px solid var(--ln);padding-bottom:5px;}
+    h3{font-size:1rem;color:var(--ac);margin-top:12px;margin-bottom:6px;}
+    p{margin:7px 0;color:var(--soft);font-size:.94rem;}
+    ul,ol{margin:7px 0 7px 18px;padding:0;color:var(--soft);}
+    li{margin:3px 0;font-size:.93rem;}
+    .def{background:color-mix(in srgb,var(--sf) 70%,#fff 30%);border:1px solid var(--ln);border-left:4px solid var(--ac);border-radius:6px;padding:8px;margin:7px 0;font-size:.91rem;color:#1a3a5c;}
+    .note{background:color-mix(in srgb,var(--sf) 60%,#fff 40%);border-left:4px solid var(--ac);border-radius:6px;padding:7px 9px;font-size:.89rem;color:#20477f;margin:6px 0;}
+    .prob{background:#fffbf0;border:1px solid #e8d7c3;border-left:4px solid #d9a574;border-radius:6px;padding:8px;margin:7px 0;font-size:.9rem;font-weight:700;}
+    code,pre{font-family:"JetBrains Mono","Consolas",monospace;}
+    pre{margin:7px 0;background:var(--code);border:1px solid #d8e5fb;border-radius:6px;padding:8px 10px;overflow:auto;font-size:.79rem;line-height:1.4;color:#102e61;}
+    table{width:100%;border-collapse:collapse;margin:7px 0;font-size:.86rem;}
+    th,td{border:1px solid #cfddf5;padding:5px 7px;text-align:left;vertical-align:top;}
+    thead th{background:color-mix(in srgb,var(--sf) 85%,#fff 15%);color:var(--ac);font-weight:700;}
+    .footer{margin-top:7px;border-top:1px dashed #c9d8ef;padding-top:4px;font-size:.74rem;color:#58729d;}
+    span.tag{display:inline-block;background:#edf4ff;border:1px solid #b7cdf1;color:#0f3571;border-radius:20px;padding:4px 11px;font-size:.82rem;font-weight:700;margin:3px 5px 0 0;}
+    @page{size:A4 landscape;margin:8mm 8mm 9mm;}
+    @media print{
+      html,body{background:#fff;}
+      .wrapper{max-width:none;margin:0;padding:0;}
+      .page{margin:0;border:0;border-radius:0;box-shadow:none;padding:6mm 5mm;page-break-after:always;}
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+      pre,table,ul,ol{page-break-inside:avoid;}
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+<!-- ======== PAGE 1: COVER ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h1>Complete C Language Syllabus Notes</h1>
+<p style="font-size:1.1rem;margin:14px 0 6px;"><strong>Comprehensive Notes — Definitions, Examples, and Solved Problems</strong></p>
+<p>Full-coverage C programming guide for beginners to advanced students. Every topic includes detailed definitions, worked code examples, program outputs, and practice problems.</p>
+<div style="margin:16px 0;">
+  <span class="tag">Fundamentals</span>
+  <span class="tag" style="background:#eef9f2;border-color:#c8e8d5;color:#0d6b42;">Data Types</span>
+  <span class="tag" style="background:#fff4e9;border-color:#f0d5ba;color:#8c3f00;">Control Flow</span>
+  <span class="tag" style="background:#f7efff;border-color:#e1ccf7;color:#5b1f8a;">Functions</span>
+  <span class="tag" style="background:#ebf9fc;border-color:#c5e9f0;color:#006274;">Pointers</span>
+  <span class="tag" style="background:#fff0f4;border-color:#f3c8d7;color:#a1264d;">Structures</span>
+</div>
+<h3>Syllabus at a Glance</h3>
+<table>
+<thead><tr><th>#</th><th>Topic</th><th>#</th><th>Topic</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Introduction to C, Structure</td><td>9</td><td>Pointers & Pointer Arithmetic</td></tr>
+<tr><td>2</td><td>Tokens, Data Types, Variables</td><td>10</td><td>Structures & Unions</td></tr>
+<tr><td>3</td><td>Operators & Expressions</td><td>11</td><td>Enumerations (enum)</td></tr>
+<tr><td>4</td><td>Input/Output & Format Specifiers</td><td>12</td><td>Dynamic Memory Allocation</td></tr>
+<tr><td>5</td><td>Decision Making (if/switch)</td><td>13</td><td>Preprocessor Directives</td></tr>
+<tr><td>6</td><td>Loops (for, while, do-while)</td><td>14</td><td>File Handling</td></tr>
+<tr><td>7</td><td>Arrays (1D &amp; 2D)</td><td>15</td><td>Storage Classes &amp; Scope</td></tr>
+<tr><td>8</td><td>Strings &amp; String Functions</td><td>16</td><td>Recursion, Sorting, Searching</td></tr>
+</tbody>
+</table>
+<div class="footer">Page 1 &bull; Complete C Language Syllabus</div>
+</section>
+
+<!-- ======== PAGE 2: INTRODUCTION ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>1. Introduction to C Language</h2>
+<div class="def">
+<strong>Definition:</strong> C is a general-purpose, procedural, compiled programming language created by Dennis Ritchie at Bell Labs in 1972. It provides low-level memory access through pointers and is the foundation for C++, Java, and many modern languages.
+</div>
+<h3>Key Characteristics</h3>
+<ul>
+<li><strong>Simplicity:</strong> Only 32 reserved keywords; clean, readable syntax</li>
+<li><strong>Efficiency:</strong> Close to machine hardware; fast execution and small memory footprint</li>
+<li><strong>Portability:</strong> Source code compiled on one platform can run on another with minimal changes</li>
+<li><strong>Modular:</strong> Code can be split into functions; promotes reuse</li>
+<li><strong>Low-level access:</strong> Direct memory manipulation through pointers</li>
+<li><strong>Case-sensitive:</strong> <code>name</code>, <code>Name</code>, and <code>NAME</code> are three different identifiers</li>
+</ul>
+<h3>Why Learn C?</h3>
+<ul>
+<li>Foundation for C++, C#, Java, Go, and many others</li>
+<li>Used in OS kernels (Linux, Windows), embedded systems, compilers, game engines</li>
+<li>Essential for technical interviews and competitive programming</li>
+<li>Teaches deep understanding of memory, CPU, and computer architecture</li>
+</ul>
+<h3>Structure of a C Program</h3>
+<pre>/*----------- Section 1: Documentation -----------*/
+// Program: Demo
+// Author: Student
+
+/*----------- Section 2: Preprocessor -----------*/
+#include &lt;stdio.h&gt;           // Standard I/O library
+#include &lt;stdlib.h&gt;
+#define MAX 100               // Macro constant
+
+/*----------- Section 3: Global Variables --------*/
+int globalVar = 50;           // Accessible everywhere
+
+/*----------- Section 4: Function Prototype ------*/
+int add(int a, int b);        // Declaration (before main)
+
+/*----------- Section 5: main Function -----------*/
+int main(void) {
+    int result = add(10, 5);
+    printf("Sum = %d\n", result);
+    return 0;                 // Return 0 = success
+}
+
+/*----------- Section 6: Function Definitions ----*/
+int add(int a, int b) {
+    return a + b;
+}</pre>
+<h3>Compilation Steps</h3>
+<pre>Source Code (.c)
+   ↓ Preprocessing (#include, #define, strip comments)
+Preprocessed Code
+   ↓ Compilation (convert to assembly)
+Assembly Code (.s)
+   ↓ Assembling (convert to machine code)
+Object File (.o / .obj)
+   ↓ Linking (combine with libraries)
+Executable (.exe / a.out)</pre>
+<h3>Compilation Commands</h3>
+<pre>gcc program.c -o program          # Compile to executable
+gcc -Wall program.c -o program    # Show all warnings
+gcc -O2 program.c -o program      # Optimize level 2
+./program                         # Run on Linux/Mac
+program.exe                       # Run on Windows</pre>
+<div class="prob">Prob 1: Display name, college, branch</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    printf("Name: Arun Kumar\n");
+    printf("College: JNTU Hyderabad\n");
+    printf("Branch: Computer Science\n");
+    return 0;
+}
+// Output:
+// Name: Arun Kumar
+// College: JNTU Hyderabad
+// Branch: Computer Science</pre>
+<div class="prob">Prob 2: Area and perimeter of rectangle</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    float length = 12.5f, width = 8.0f;
+    float area = length * width;
+    float perimeter = 2 * (length + width);
+    printf("Area: %.2f sq units\n", area);
+    printf("Perimeter: %.2f units\n", perimeter);
+    return 0;
+}
+// Output:
+// Area: 100.00 sq units
+// Perimeter: 41.00 units</pre>
+<div class="footer">Page 2 &bull; Introduction to C</div>
+</section>
+
+<!-- ======== PAGE 3: DATA TYPES ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>2. Tokens, Data Types, Variables &amp; Constants</h2>
+<div class="def">
+<strong>Token:</strong> Smallest syntactic unit in a C program (keywords, identifiers, constants, operators, separators).<br>
+<strong>Data Type:</strong> Defines the type of data and the operations that can be performed on it.<br>
+<strong>Variable:</strong> Named memory location that stores a value of a specific data type.
+</div>
+<h3>Types of Tokens</h3>
+<table>
+<thead><tr><th>Token</th><th>Example</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Keywords</td><td>int, if, return, while</td><td>Reserved words with fixed meaning</td></tr>
+<tr><td>Identifiers</td><td>age, total, myFunc</td><td>User-defined names</td></tr>
+<tr><td>Constants</td><td>10, 3.14, 'A', "Hi"</td><td>Literal fixed values</td></tr>
+<tr><td>Operators</td><td>+, -, *, /, ==, &amp;&amp;</td><td>Perform operations</td></tr>
+<tr><td>Separators</td><td>; { } ( ) [ ]</td><td>Delimit structure</td></tr>
+</tbody>
+</table>
+<h3>All 32 C Keywords</h3>
+<pre>auto     break    case     char    const    continue  default   do
+double   else     enum     extern  float    for       goto      if
+inline   int      long     register restrict return   short     signed
+sizeof   static   struct   switch  typedef  union     unsigned  void
+volatile while</pre>
+<h3>Identifier Rules</h3>
+<ul>
+<li>Must start with a letter (a-z, A-Z) or underscore (_)</li>
+<li>Can contain letters, digits (0-9), and underscore only</li>
+<li>Cannot be a C keyword (cannot use <code>int</code> as variable name)</li>
+<li>Case-sensitive: <code>sum</code> ≠ <code>Sum</code> ≠ <code>SUM</code></li>
+<li>No length limit (first 31 characters significant in C90)</li>
+</ul>
+<h3>Primitive Data Types</h3>
+<table>
+<thead><tr><th>Type</th><th>Size</th><th>Range</th><th>Format</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>char</td><td>1 byte</td><td>-128 to 127</td><td>%c / %d</td><td>'A', 65</td></tr>
+<tr><td>unsigned char</td><td>1 byte</td><td>0 to 255</td><td>%u</td><td>200</td></tr>
+<tr><td>short int</td><td>2 bytes</td><td>-32768 to 32767</td><td>%hd</td><td>1000</td></tr>
+<tr><td>int</td><td>4 bytes</td><td>-2.1B to 2.1B</td><td>%d</td><td>42</td></tr>
+<tr><td>unsigned int</td><td>4 bytes</td><td>0 to 4.2B</td><td>%u</td><td>3000000000</td></tr>
+<tr><td>long int</td><td>4-8 bytes</td><td>Platform dependent</td><td>%ld</td><td>100000L</td></tr>
+<tr><td>long long</td><td>8 bytes</td><td>±9.2 × 10^18</td><td>%lld</td><td>9000000000LL</td></tr>
+<tr><td>float</td><td>4 bytes</td><td>±3.4×10^±38</td><td>%f / %e</td><td>3.14f</td></tr>
+<tr><td>double</td><td>8 bytes</td><td>±1.7×10^±308</td><td>%lf</td><td>3.14159</td></tr>
+</tbody>
+</table>
+<h3>Variable Declaration &amp; Initialization</h3>
+<pre>int age = 25;                      // Integer
+float salary = 50000.50f;          // Float (use 'f' suffix)
+double pi = 3.14159265358979;      // Double precision
+char grade = 'A';                  // Character
+int a, b, c = 10;                  // Multiple (a,b uninitialized)
+const float GRAVITY = 9.8f;        // Constant (cannot change)
+const int MAX = 100;
+
+// Type modifiers
+unsigned int count = 4000000000U;
+long long bigNum = 9000000000LL;
+signed char temp = -10;</pre>
+<div class="prob">Prob 3: Print sizes of all data types</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    printf("char:      %zu byte(s)\n", sizeof(char));
+    printf("int:       %zu byte(s)\n", sizeof(int));
+    printf("float:     %zu byte(s)\n", sizeof(float));
+    printf("double:    %zu byte(s)\n", sizeof(double));
+    printf("long long: %zu byte(s)\n", sizeof(long long));
+    return 0;
+}
+// Output:
+// char:      1 byte(s)
+// int:       4 byte(s)
+// float:     4 byte(s)
+// double:    8 byte(s)
+// long long: 8 byte(s)</pre>
+<div class="prob">Prob 4: Temperature conversion Celsius to Fahrenheit</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    float celsius = 100.0f;
+    float fahrenheit = (celsius * 9.0f / 5.0f) + 32.0f;
+    printf("%.1f°C = %.1f°F\n", celsius, fahrenheit);
+    return 0;
+}
+// Output: 100.0°C = 212.0°F</pre>
+<div class="footer">Page 3 &bull; Data Types &amp; Variables</div>
+</section>
+
+<!-- ======== PAGE 4: OPERATORS ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>3. Operators and Expressions</h2>
+<div class="def">
+<strong>Operator:</strong> Symbol that instructs the compiler to perform specific mathematical, relational, logical, or bitwise operations on operands.<br>
+<strong>Expression:</strong> Combination of operands and operators that evaluates to a single value.
+</div>
+<h3>Arithmetic Operators</h3>
+<table>
+<thead><tr><th>Op</th><th>Name</th><th>Example</th><th>Result</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>+</td><td>Addition</td><td>7 + 3</td><td>10</td><td></td></tr>
+<tr><td>-</td><td>Subtraction</td><td>7 - 3</td><td>4</td><td></td></tr>
+<tr><td>*</td><td>Multiplication</td><td>7 * 3</td><td>21</td><td></td></tr>
+<tr><td>/</td><td>Division</td><td>7 / 3</td><td>2</td><td>Integer truncates</td></tr>
+<tr><td>%</td><td>Modulus</td><td>7 % 3</td><td>1</td><td>Integers only</td></tr>
+<tr><td>++</td><td>Increment</td><td>a++; ++a;</td><td>a+1</td><td>Post/Pre</td></tr>
+<tr><td>--</td><td>Decrement</td><td>a--; --a;</td><td>a-1</td><td>Post/Pre</td></tr>
+</tbody>
+</table>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int a = 15, b = 4;
+    printf("a+b=%d, a-b=%d, a*b=%d\n", a+b, a-b, a*b);
+    printf("a/b=%d (integer), a%%b=%d\n", a/b, a%b);
+    
+    // Float division
+    float fa = 15.0f, fb = 4.0f;
+    printf("%.1f / %.1f = %.2f\n", fa, fb, fa/fb);
+    
+    return 0;
+}
+// Output:
+// a+b=19, a-b=11, a*b=60
+// a/b=3 (integer), a%b=3
+// 15.0 / 4.0 = 3.75</pre>
+<h3>Relational and Logical Operators</h3>
+<pre>// Relational: returns 1 (true) or 0 (false)
+5 &gt; 3  → 1     5 &lt; 3  → 0     5 == 5 → 1
+5 != 3 → 1     5 &gt;= 5 → 1     5 &lt;= 4 → 0
+
+// Logical
+1 &amp;&amp; 1 → 1  (AND: both true)
+1 || 0 → 1  (OR: at least one true)
+!0    → 1   (NOT: reverses)
+
+// Practical example
+int age = 20;
+if (age &gt;= 18 &amp;&amp; age &lt;= 60) printf("Working age\n");</pre>
+<h3>Assignment and Bitwise Operators</h3>
+<pre>// Assignment shorthand
+int x = 10;
+x += 5;    // x = 15  (x = x + 5)
+x -= 3;    // x = 12  (x = x - 3)
+x *= 2;    // x = 24
+x /= 4;    // x = 6
+x %= 4;    // x = 2
+
+// Bitwise (work on binary representation)
+//  5 = 0000 0101
+//  3 = 0000 0011
+5 &amp; 3 → 1   (0001, AND)
+5 | 3 → 7   (0111, OR)
+5 ^ 3 → 6   (0110, XOR)
+~5    → -6  (flip all bits)
+5 &lt;&lt; 1 → 10 (multiply by 2)
+5 &gt;&gt; 1 → 2  (divide by 2)</pre>
+<h3>Increment/Decrement: Pre vs Post</h3>
+<pre>int a = 5;
+int b = a++;   // b=5, a=6 (post: use then increment)
+int c = ++a;   // a=7, c=7 (pre: increment then use)
+
+// In loops
+for (int i = 0; i &lt; 5; i++) printf("%d ", i); // 0 1 2 3 4
+for (int i = 5; i &gt; 0; i--) printf("%d ", i); // 5 4 3 2 1</pre>
+<h3>Operator Precedence (High → Low)</h3>
+<pre>() []                →  Parentheses, subscript
+! ~ ++ --            →  Unary, Logical NOT, bitwise NOT
+* / %                →  Multiplicative
++ -                  →  Additive
+&lt;&lt; &gt;&gt;               →  Bit shift
+&lt; &lt;= &gt; &gt;=          →  Relational
+== !=                →  Equality
+&amp; → ^ → |           →  Bitwise AND, XOR, OR
+&amp;&amp; → ||             →  Logical AND, OR
+?:                   →  Ternary
+= += -= *= /=        →  Assignment (right to left)</pre>
+<div class="prob">Prob 5: Simple &amp; Compound Interest</div>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main(void) {
+    float p = 1000, r = 5, t = 2;
+    float si = (p * r * t) / 100;
+    float ci = p * pow(1 + r/100, t) - p;
+    printf("SI = %.2f\n", si);
+    printf("CI = %.2f\n", ci);
+    return 0;
+}
+// Output:
+// SI = 100.00
+// CI = 102.50</pre>
+<div class="footer">Page 4 &bull; Operators &amp; Expressions</div>
+</section>
+
+<!-- ======== PAGE 5: INPUT/OUTPUT ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>4. Input/Output and Format Specifiers</h2>
+<div class="def">
+<strong>printf():</strong> Outputs formatted text to standard output (console).<br>
+<strong>scanf():</strong> Reads formatted input from standard input (keyboard).<br>
+<strong>Format Specifier:</strong> Controls how a value is printed/read (e.g., %d for int).
+</div>
+<h3>Format Specifier Reference</h3>
+<table>
+<thead><tr><th>Specifier</th><th>Type</th><th>Example</th><th>Output</th></tr></thead>
+<tbody>
+<tr><td>%d / %i</td><td>int</td><td>printf("%d", 42)</td><td>42</td></tr>
+<tr><td>%ld</td><td>long int</td><td>printf("%ld", 123L)</td><td>123</td></tr>
+<tr><td>%lld</td><td>long long</td><td>printf("%lld", 9LL)</td><td>9</td></tr>
+<tr><td>%f</td><td>float/double</td><td>printf("%f", 3.14)</td><td>3.140000</td></tr>
+<tr><td>%.2f</td><td>float 2 decimals</td><td>printf("%.2f", 3.14)</td><td>3.14</td></tr>
+<tr><td>%e</td><td>scientific</td><td>printf("%e", 1500)</td><td>1.500000e+03</td></tr>
+<tr><td>%c</td><td>char</td><td>printf("%c", 'A')</td><td>A</td></tr>
+<tr><td>%s</td><td>string</td><td>printf("%s", "Hi")</td><td>Hi</td></tr>
+<tr><td>%x / %X</td><td>hex</td><td>printf("%x", 255)</td><td>ff / FF</td></tr>
+<tr><td>%o</td><td>octal</td><td>printf("%o", 8)</td><td>10</td></tr>
+<tr><td>%p</td><td>pointer</td><td>printf("%p", ptr)</td><td>0x7ffd…</td></tr>
+<tr><td>%zu</td><td>size_t</td><td>sizeof(int)</td><td>4</td></tr>
+</tbody>
+</table>
+<h3>printf() Formatting Options</h3>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    printf("Integer: %d\n", 42);
+    printf("Float:   %.2f\n", 3.14159);
+    printf("Char:    %c\n", 'Z');
+    printf("String:  %s\n", "Hello");
+    
+    // Padding and width
+    printf("|%10d|\n", 42);       // Right align, width 10
+    printf("|%-10d|\n", 42);      // Left align
+    printf("|%010d|\n", 42);      // Zero padding
+    printf("|%+d|\n", 42);        // Always show sign
+    printf("|%10.3f|\n", 3.14);   // Width + decimals
+    
+    return 0;
+}
+// Output:
+// Integer: 42
+// Float:   3.14
+// Char:    Z
+// String:  Hello
+// |        42|
+// |42        |
+// |0000000042|
+// |+42|
+// |     3.140|</pre>
+<h3>scanf() - Keyboard Input</h3>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int age;
+    float gpa;
+    char grade;
+    
+    printf("Enter age: ");
+    scanf("%d", &amp;age);          // &amp; = address-of operator
+    
+    printf("Enter GPA: ");
+    scanf("%f", &amp;gpa);
+    
+    printf("Enter grade: ");
+    scanf(" %c", &amp;grade);       // Space before %c skips whitespace
+    
+    printf("You are %d years old, GPA: %.2f, Grade: %c\n",
+           age, gpa, grade);
+    
+    return 0;
+}
+// Sample:
+// Enter age: 20
+// Enter GPA: 8.5
+// Enter grade: A
+// You are 20 years old, GPA: 8.50, Grade: A</pre>
+<h3>getchar() and putchar()</h3>
+<pre>// Read single character
+char c = getchar();
+putchar(c);             // Print single character
+
+// Read string with spaces
+char name[50];
+fgets(name, 50, stdin); // Reads entire line (safe)</pre>
+<div class="prob">Prob 6: Area of circle</div>
+<pre>#include &lt;stdio.h&gt;
+#define PI 3.14159f
+int main(void) {
+    float r;
+    printf("Enter radius: ");
+    scanf("%f", &amp;r);
+    printf("Area = %.2f\n", PI * r * r);
+    return 0;
+}
+// Output: Enter radius: 7  →  Area = 153.94</pre>
+<div class="prob">Prob 7: Convert seconds to HH:MM:SS</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int totalSec = 3725;
+    int h = totalSec / 3600;
+    int m = (totalSec % 3600) / 60;
+    int s = totalSec % 60;
+    printf("%02d:%02d:%02d\n", h, m, s); // Output: 01:02:05
+    return 0;
+}</pre>
+<div class="footer">Page 5 &bull; Input/Output</div>
+</section>
+
+<!-- ======== PAGE 6: DECISION MAKING ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>5. Decision Making — if, if-else, switch</h2>
+<div class="def">
+<strong>Decision Making:</strong> Selecting which block of code to execute based on a condition. C provides if, if-else, if-else-if, nested if, and switch statements for branching.
+</div>
+<h3>if Statement</h3>
+<pre>if (condition) {
+    // Executes only when condition is true (non-zero)
+}
+
+// Example
+int marks = 70;
+if (marks &gt;= 50) {
+    printf("Pass!\n");
+}  // Output: Pass!</pre>
+<h3>if-else Statement</h3>
+<pre>if (condition) {
+    // Execute if true
+} else {
+    // Execute if false
+}
+
+int score = 45;
+if (score &gt;= 50) {
+    printf("Pass\n");
+} else {
+    printf("Fail\n");
+}  // Output: Fail</pre>
+<h3>if-else-if Ladder</h3>
+<pre>if (marks &gt;= 90) {
+    printf("Grade A\n");
+} else if (marks &gt;= 80) {
+    printf("Grade B\n");
+} else if (marks &gt;= 70) {
+    printf("Grade C\n");
+} else if (marks &gt;= 50) {
+    printf("Grade D\n");
+} else {
+    printf("Fail\n");
+}</pre>
+<h3>Nested if</h3>
+<pre>int age = 20, income = 50000;
+if (age &gt;= 18) {
+    if (income &gt;= 30000) {
+        printf("Eligible for loan\n");
+    } else {
+        printf("Income too low\n");
+    }
+} else {
+    printf("Too young\n");
+}  // Output: Eligible for loan</pre>
+<h3>switch Statement</h3>
+<pre>int day = 3;
+switch(day) {
+    case 1: printf("Monday\n");    break;
+    case 2: printf("Tuesday\n");   break;
+    case 3: printf("Wednesday\n"); break;
+    case 4: printf("Thursday\n");  break;
+    case 5: printf("Friday\n");    break;
+    default: printf("Weekend\n");
+}  // Output: Wednesday
+
+// IMPORTANT: break exits the switch block
+// Without break, execution "falls through" to next case</pre>
+<h3>Ternary Operator ?:</h3>
+<pre>condition ? value_if_true : value_if_false
+
+int a = 10, b = 20;
+int max = (a &gt; b) ? a : b;     // max = 20
+char *msg = (a % 2 == 0) ? "even" : "odd";  // "even"
+printf("Max = %d, a is %s\n", max, msg);    // Max = 20, a is even</pre>
+<div class="prob">Prob 8: Check if a number is positive, negative, or zero</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int num;
+    printf("Enter number: ");
+    scanf("%d", &amp;num);
+    
+    if (num &gt; 0)
+        printf("%d is Positive\n", num);
+    else if (num &lt; 0)
+        printf("%d is Negative\n", num);
+    else
+        printf("Zero\n");
+    
+    return 0;
+}
+// Output: Enter number: -5  →  -5 is Negative</pre>
+<div class="prob">Prob 9: Grade using switch on character</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    char g;
+    printf("Enter grade (A-F): ");
+    scanf(" %c", &amp;g);
+    switch(g) {
+        case 'A': printf("Outstanding\n"); break;
+        case 'B': printf("Very Good\n");   break;
+        case 'C': printf("Good\n");        break;
+        default:  printf("Below average\n");
+    }
+    return 0;
+}
+// Output: Enter grade: B  →  Very Good</pre>
+<div class="footer">Page 6 &bull; Decision Making</div>
+</section>
+
+<!-- ======== PAGE 7: LOOPS ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>6. Loops — for, while, do-while</h2>
+<div class="def">
+<strong>Loop:</strong> A control structure that repeats a block of code until a condition becomes false. Types: <code>for</code> (known iterations), <code>while</code> (condition checked first), <code>do-while</code> (executes at least once).
+</div>
+<h3>for Loop</h3>
+<pre>for (initialization; condition; update) {
+    // body
+}
+
+// Print 1 to 5
+for (int i = 1; i &lt;= 5; i++) {
+    printf("%d ", i);
+}  // Output: 1 2 3 4 5
+
+// Sum of 1 to N
+int sum = 0;
+for (int i = 1; i &lt;= 10; i++) sum += i;
+printf("Sum = %d\n", sum);  // Sum = 55
+
+// Nested for (multiplication table)
+for (int i = 1; i &lt;= 3; i++) {
+    for (int j = 1; j &lt;= 3; j++) {
+        printf("%2d ", i*j);
+    }
+    printf("\n");
+}
+// Output:
+//  1  2  3
+//  2  4  6
+//  3  6  9</pre>
+<h3>while Loop</h3>
+<pre>while (condition) {
+    // body
+    // update variable to avoid infinite loop
+}
+
+// Count digits in a number
+int n = 12345, count = 0;
+while (n != 0) {
+    n /= 10;
+    count++;
+}
+printf("Digits: %d\n", count);  // Digits: 5
+
+// Read until 0
+int x;
+printf("Enter numbers (0 to stop): ");
+while (scanf("%d", &amp;x) &amp;&amp; x != 0) {
+    printf("You entered: %d\n", x);
+}</pre>
+<h3>do-while Loop</h3>
+<pre>do {
+    // body — executes at least ONCE
+} while (condition);
+
+int n;
+do {
+    printf("Enter a positive number: ");
+    scanf("%d", &amp;n);
+} while (n &lt;= 0);   // Keep asking until valid
+printf("You entered: %d\n", n);</pre>
+<h3>break and continue</h3>
+<pre>// break — exit loop immediately
+for (int i = 1; i &lt;= 10; i++) {
+    if (i == 5) break;
+    printf("%d ", i);
+}  // Output: 1 2 3 4
+
+// continue — skip current iteration
+for (int i = 1; i &lt;= 10; i++) {
+    if (i % 2 == 0) continue;  // Skip even numbers
+    printf("%d ", i);
+}  // Output: 1 3 5 7 9</pre>
+<div class="prob">Prob 10: Print Fibonacci series</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int n = 10;
+    int a = 0, b = 1, next;
+    printf("Fibonacci: ");
+    for (int i = 0; i &lt; n; i++) {
+        printf("%d ", a);
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    printf("\n");
+    return 0;
+}
+// Output: Fibonacci: 0 1 1 2 3 5 8 13 21 34</pre>
+<div class="prob">Prob 11: Check prime number</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int n = 17, prime = 1;
+    if (n &lt; 2) prime = 0;
+    for (int i = 2; i * i &lt;= n; i++) {
+        if (n % i == 0) { prime = 0; break; }
+    }
+    printf("%d is %s\n", n, prime ? "Prime" : "Not Prime");
+    return 0;
+}
+// Output: 17 is Prime</pre>
+<div class="prob">Prob 12: Print multiplication table</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int n = 7;
+    for (int i = 1; i &lt;= 10; i++)
+        printf("%d x %d = %d\n", n, i, n * i);
+    return 0;
+}
+// Output: 7 x 1 = 7 ... 7 x 10 = 70</pre>
+<div class="footer">Page 7 &bull; Loops</div>
+</section>
+
+<!-- ======== PAGE 8: ARRAYS ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>7. Arrays — 1D and 2D</h2>
+<div class="def">
+<strong>Array:</strong> A collection of elements of the same data type stored in contiguous memory locations. Indexed from 0. Size must be known at compile time (for stack arrays).<br>
+<strong>Syntax:</strong> <code>datatype arrayName[size];</code>
+</div>
+<h3>1D Array: Declaration and Access</h3>
+<pre>// Declaration
+int scores[5];                          // Uninitialized
+int grades[5] = {90, 85, 78, 92, 88};  // Initialized
+int arr[] = {1, 2, 3, 4, 5};           // Auto size = 5
+
+// Access (index 0 to n-1)
+printf("%d\n", grades[0]);   // 90 (first)
+printf("%d\n", grades[4]);   // 88 (last)
+grades[2] = 100;             // Modify element
+
+// Array size
+int n = sizeof(arr) / sizeof(arr[0]);   // n = 5</pre>
+<h3>1D Array: Input/Output &amp; Common Operations</h3>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int arr[5] = {45, 23, 89, 12, 67};
+    int n = 5;
+    
+    // Print all elements
+    printf("Array: ");
+    for (int i = 0; i &lt; n; i++) printf("%d ", arr[i]);
+    
+    // Find sum and average
+    int sum = 0;
+    for (int i = 0; i &lt; n; i++) sum += arr[i];
+    printf("\nSum: %d, Avg: %.1f\n", sum, (float)sum/n);
+    
+    // Find max and min
+    int max = arr[0], min = arr[0];
+    for (int i = 1; i &lt; n; i++) {
+        if (arr[i] &gt; max) max = arr[i];
+        if (arr[i] &lt; min) min = arr[i];
+    }
+    printf("Max: %d, Min: %d\n", max, min);
+    return 0;
+}
+// Output:
+// Array: 45 23 89 12 67
+// Sum: 236, Avg: 47.2
+// Max: 89, Min: 12</pre>
+<h3>2D Array: Matrix</h3>
+<pre>// Declaration
+int mat[3][3];                // 3x3 uninitialized
+int mat[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+// Access
+printf("%d\n", mat[0][1]);   // 2 (row 0, col 1)
+printf("%d\n", mat[1][2]);   // 6 (row 1, col 2)
+
+// Print 2D array
+for (int i = 0; i &lt; 2; i++) {
+    for (int j = 0; j &lt; 3; j++) {
+        printf("%d ", mat[i][j]);
+    }
+    printf("\n");
+}</pre>
+<div class="prob">Prob 13: Reverse an array in place</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int arr[] = {10, 20, 30, 40, 50};
+    int n = 5;
+    
+    // Reverse using two pointers
+    int left = 0, right = n - 1;
+    while (left &lt; right) {
+        int temp = arr[left];
+        arr[left++] = arr[right];
+        arr[right--] = temp;
+    }
+    
+    for (int i = 0; i &lt; n; i++) printf("%d ", arr[i]);
+    printf("\n");
+    return 0;
+}
+// Output: 50 40 30 20 10</pre>
+<div class="prob">Prob 14: Matrix addition</div>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int A[2][2] = {{1,2},{3,4}};
+    int B[2][2] = {{5,6},{7,8}};
+    int C[2][2];
+    
+    for (int i = 0; i &lt; 2; i++)
+        for (int j = 0; j &lt; 2; j++)
+            C[i][j] = A[i][j] + B[i][j];
+    
+    printf("Sum matrix:\n");
+    for (int i = 0; i &lt; 2; i++) {
+        for (int j = 0; j &lt; 2; j++) printf("%d ", C[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+// Output:
+// Sum matrix:
+// 6 8
+// 10 12</pre>
+<div class="footer">Page 8 &bull; Arrays</div>
+</section>
+
+<!-- ======== PAGE 9: STRINGS ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>8. Strings and String Functions</h2>
+<div class="def">
+<strong>String:</strong> An array of characters terminated by the null character <code>'\0'</code>. In C, there is no built-in string type — strings are handled as <code>char</code> arrays.<br>
+<strong>Example:</strong> "Hello" is stored as {'H','e','l','l','o','\0'} (6 bytes).
+</div>
+<h3>String Declaration and Input</h3>
+<pre>char s1[20] = "Hello";           // Initialize with literal
+char s2[] = "World";             // Auto-size (6 chars + '\0')
+char s3[20];                     // Uninitialized
+
+// Input methods
+scanf("%s", s3);                 // Stops at whitespace
+scanf("%19s", s3);               // Limit input size (safe)
+fgets(s3, sizeof(s3), stdin);    // Read full line (with '\n')
+gets(s3);                        // Unsafe - buffer overflow risk!
+
+// Character access
+printf("%c\n", s1[0]);          // H (first char)
+printf("%c\n", s1[4]);          // o (last char before '\0')</pre>
+<h3>String Functions (string.h)</h3>
+<table>
+<thead><tr><th>Function</th><th>Description</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>strlen(s)</td><td>Length of string</td><td>strlen("Hi") = 2</td></tr>
+<tr><td>strcpy(dst, src)</td><td>Copy src to dst</td><td>strcpy(b, "Hi")</td></tr>
+<tr><td>strncpy(d,s,n)</td><td>Copy at most n chars</td><td>Safer version</td></tr>
+<tr><td>strcat(s1, s2)</td><td>Append s2 to s1</td><td>Modify s1 in place</td></tr>
+<tr><td>strcmp(s1, s2)</td><td>Compare; 0=equal</td><td>strcmp("a","a")=0</td></tr>
+<tr><td>strchr(s, c)</td><td>Find char in string</td><td>strchr("Hi", 'i')</td></tr>
+<tr><td>strstr(s1, s2)</td><td>Find substring</td><td>strstr("Hello","ll")</td></tr>
+<tr><td>strupr/strlwr</td><td>Upper/lower case</td><td>Non-standard</td></tr>
+</tbody>
+</table>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main(void) {
+    char s1[50] = "Hello";
+    char s2[50] = "World";
+    
+    printf("len(s1) = %zu\n", strlen(s1));      // 5
+    
+    strcat(s1, " ");
+    strcat(s1, s2);
+    printf("concat: %s\n", s1);                 // Hello World
+    
+    int cmp = strcmp("apple", "banana");
+    printf("cmp = %d\n", cmp);                  // negative (a &lt; b)
+    
+    char upper[50];
+    strcpy(upper, s1);
+    for (int i = 0; upper[i]; i++) {
+        if (upper[i] &gt;= 'a' &amp;&amp; upper[i] &lt;= 'z')
+            upper[i] -= 32;                     // to uppercase
+    }
+    printf("upper: %s\n", upper);               // HELLO WORLD
+    return 0;
+}</pre>
+<div class="prob">Prob 15: Count vowels and consonants</div>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;ctype.h&gt;
+int main(void) {
+    char s[] = "Programming";
+    int vowels = 0, consonants = 0;
+    for (int i = 0; s[i]; i++) {
+        char c = tolower(s[i]);
+        if (c &gt;= 'a' &amp;&amp; c &lt;= 'z') {
+            if (c=='a'||c=='e'||c=='i'||c=='o'||c=='u') vowels++;
+            else consonants++;
+        }
+    }
+    printf("Vowels: %d, Consonants: %d\n", vowels, consonants);
+    return 0;
+}
+// Output: Vowels: 3, Consonants: 8</pre>
+<div class="prob">Prob 16: Palindrome check</div>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main(void) {
+    char s[] = "radar";
+    int n = strlen(s), pal = 1;
+    for (int i = 0; i &lt; n/2; i++) {
+        if (s[i] != s[n-1-i]) { pal = 0; break; }
+    }
+    printf("%s is %s\n", s, pal ? "palindrome" : "NOT palindrome");
+    return 0;
+}
+// Output: radar is palindrome</pre>
+<div class="footer">Page 9 &bull; Strings</div>
+</section>
+
+<!-- ======== PAGE 10: FUNCTIONS ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>9. Functions and Recursion</h2>
+<div class="def">
+<strong>Function:</strong> A named, reusable block of code that performs a specific task. It can accept input (parameters) and optionally return a value. Promotes modularity and code reuse.<br>
+<strong>Recursion:</strong> A function that calls itself, with a base case to stop.
+</div>
+<h3>Function Syntax</h3>
+<pre>// 1. Declaration (prototype) — tells compiler about the function
+return_type functionName(type param1, type param2);
+
+// 2. Definition — actual implementation
+return_type functionName(type param1, type param2) {
+    // body
+    return value;  // optional for void
+}
+
+// 3. Call — invoke the function
+int result = functionName(arg1, arg2);</pre>
+<h3>Function Examples</h3>
+<pre>#include &lt;stdio.h&gt;
+
+// No param, no return
+void greet(void) {
+    printf("Hello, World!\n");
+}
+
+// With params, with return
+int add(int a, int b) {
+    return a + b;
+}
+
+// With params, no return
+void printMax(int a, int b) {
+    if (a &gt; b) printf("Max = %d\n", a);
+    else        printf("Max = %d\n", b);
+}
+
+int main(void) {
+    greet();                    // Hello, World!
+    printf("%d\n", add(5, 3)); // 8
+    printMax(10, 20);          // Max = 20
+    return 0;
+}</pre>
+<h3>Call by Value vs Call by Reference</h3>
+<pre>// Call by Value — copy passed, original unchanged
+void swapValue(int a, int b) {
+    int t = a; a = b; b = t;   // Only local copies changed
+}
+
+// Call by Reference — address passed, original modified
+void swapRef(int *a, int *b) {
+    int t = *a; *a = *b; *b = t;
+}
+
+int x = 5, y = 10;
+swapValue(x, y);    // x=5, y=10 still
+swapRef(&amp;x, &amp;y);    // x=10, y=5 now</pre>
+<h3>Recursion</h3>
+<pre>// Factorial: n! = n * (n-1)!   Base: 0! = 1
+int factorial(int n) {
+    if (n &lt;= 1) return 1;          // Base case
+    return n * factorial(n - 1);   // Recursive call
+}
+
+// Power: base^exp
+int power(int base, int exp) {
+    if (exp == 0) return 1;        // Base case
+    return base * power(base, exp - 1);
+}
+
+// Fibonacci: fib(n) = fib(n-1) + fib(n-2)
+int fib(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return fib(n-1) + fib(n-2);
+}
+
+int main(void) {
+    printf("5! = %d\n", factorial(5));   // 120
+    printf("2^8 = %d\n", power(2, 8));  // 256
+    printf("fib(7) = %d\n", fib(7));    // 13
+    return 0;
+}</pre>
+<div class="prob">Prob 17: Number to reverse using function</div>
+<pre>#include &lt;stdio.h&gt;
+int reverseNum(int n) {
+    int rev = 0;
+    while (n != 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    return rev;
+}
+int main(void) {
+    printf("Reverse of 12345 = %d\n", reverseNum(12345));
+    return 0;
+}
+// Output: Reverse of 12345 = 54321</pre>
+<div class="prob">Prob 18: Check Armstrong number</div>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int isArmstrong(int n) {
+    int temp = n, digits = 0, sum = 0;
+    while (temp) { digits++; temp /= 10; }
+    temp = n;
+    while (temp) {
+        int d = temp % 10;
+        sum += (int)pow(d, digits);
+        temp /= 10;
+    }
+    return sum == n;
+}
+int main(void) {
+    printf("153: %s\n", isArmstrong(153) ? "Armstrong" : "No");
+    printf("100: %s\n", isArmstrong(100) ? "Armstrong" : "No");
+    return 0;
+}
+// Output:  153: Armstrong   100: No</pre>
+<div class="footer">Page 10 &bull; Functions &amp; Recursion</div>
+</section>
+
+<!-- ======== PAGE 11: STORAGE CLASSES ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>10. Storage Classes and Scope</h2>
+<div class="def">
+<strong>Storage Class:</strong> Determines the scope (visibility), lifetime (duration), and default initial value of a variable. Four types: <code>auto</code>, <code>register</code>, <code>static</code>, <code>extern</code>.
+</div>
+<h3>Storage Class Summary</h3>
+<table>
+<thead><tr><th>Class</th><th>Scope</th><th>Lifetime</th><th>Default Value</th><th>Storage</th></tr></thead>
+<tbody>
+<tr><td>auto</td><td>Local (block)</td><td>Block execution</td><td>Garbage</td><td>Stack</td></tr>
+<tr><td>register</td><td>Local (block)</td><td>Block execution</td><td>Garbage</td><td>CPU Register</td></tr>
+<tr><td>static (local)</td><td>Local (block)</td><td>Program lifetime</td><td>0</td><td>Data Segment</td></tr>
+<tr><td>static (global)</td><td>File only</td><td>Program lifetime</td><td>0</td><td>Data Segment</td></tr>
+<tr><td>extern</td><td>Global (multi-file)</td><td>Program lifetime</td><td>0</td><td>Data Segment</td></tr>
+</tbody>
+</table>
+<h3>auto (default for local variables)</h3>
+<pre>void func(void) {
+    auto int x = 10;    // 'auto' is implicit — not needed
+    printf("%d\n", x);
+    // x destroyed when function returns
+}</pre>
+<h3>register (hint for CPU register storage)</h3>
+<pre>void sum(int n) {
+    register int i;     // Hint: store i in CPU register for speed
+    int total = 0;
+    for (i = 1; i &lt;= n; i++) total += i;
+    printf("Sum = %d\n", total);
+}
+// Note: Cannot take address of register variable (&amp;i is error)</pre>
+<h3>static — Persists across function calls</h3>
+<pre>void counter(void) {
+    static int count = 0;   // Initialized once, persists
+    count++;
+    printf("Called %d time(s)\n", count);
+}
+
+int main(void) {
+    counter();    // Called 1 time(s)
+    counter();    // Called 2 time(s)
+    counter();    // Called 3 time(s)
+    return 0;
+}</pre>
+<h3>extern — Share variable across files</h3>
+<pre>// File1.c
+int globalScore = 100;          // Definition
+
+// File2.c
+extern int globalScore;         // Declaration (no memory allocated)
+printf("%d\n", globalScore);    // Uses variable from File1.c</pre>
+<h3>Variable Scope Examples</h3>
+<pre>#include &lt;stdio.h&gt;
+int g = 10;                 // Global: accessible everywhere
+
+void func(void) {
+    int g = 20;             // Local: hides global 'g'
+    printf("Local g = %d\n", g);    // 20
+}
+
+int main(void) {
+    printf("Global g = %d\n", g);   // 10
+    func();                         // Local g = 20
+    printf("Global g = %d\n", g);   // 10 (unchanged)
+    return 0;
+}</pre>
+<div class="footer">Page 11 &bull; Storage Classes &amp; Scope</div>
+</section>
+
+<!-- ======== PAGE 12: POINTERS ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>11. Pointers and Pointer Arithmetic</h2>
+<div class="def">
+<strong>Pointer:</strong> A variable that stores the memory address of another variable. Enables direct memory access, dynamic memory allocation, and efficient parameter passing.<br>
+<strong>Operators:</strong> <code>&amp;</code> (address-of), <code>*</code> (dereference/indirection).
+</div>
+<h3>Pointer Basics</h3>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    int x = 42;
+    int *ptr;           // Declare pointer to int
+    ptr = &amp;x;           // Assign address of x to ptr
+    
+    printf("Value of x:       %d\n", x);
+    printf("Address of x:     %p\n", (void*)&amp;x);
+    printf("Value of ptr:     %p\n", (void*)ptr);   // Same as &x
+    printf("Value at ptr (*): %d\n", *ptr);         // 42
+    
+    *ptr = 100;         // Modify x through pointer
+    printf("x after *ptr=100: %d\n", x);            // 100
+    return 0;
+}</pre>
+<h3>Pointer Arithmetic</h3>
+<pre>int arr[] = {10, 20, 30, 40, 50};
+int *p = arr;           // Points to arr[0]
+
+printf("%d\n", *p);     // 10
+p++;                    // Move to arr[1]
+printf("%d\n", *p);     // 20
+printf("%d\n", *(p+2)); // 40  (arr[3])
+printf("%d\n", arr[3]); // 40  (same thing)
+
+// ptr[i] == *(ptr + i)
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d ", *(arr + i));  // 10 20 30 40 50
+}</pre>
+<h3>Pointer to Pointer and NULL Pointer</h3>
+<pre>// Pointer to pointer (**)
+int x = 10;
+int *p = &amp;x;       // p → x
+int **pp = &amp;p;     // pp → p → x
+
+printf("%d\n", x);      // 10
+printf("%d\n", *p);     // 10
+printf("%d\n", **pp);   // 10
+
+// NULL pointer
+int *np = NULL;
+if (np == NULL) printf("NULL pointer\n");
+// NEVER dereference NULL pointer — it causes crash!</pre>
+<h3>Pointer with Arrays and Functions</h3>
+<pre>// Array name is a pointer to first element
+int arr[] = {1, 2, 3};
+printf("%p == %p\n", (void*)arr, (void*)&amp;arr[0]); // Same
+
+// Passing array to function using pointer
+void printArr(int *a, int n) {
+    for (int i = 0; i &lt; n; i++) printf("%d ", a[i]);
+}
+// Call: printArr(arr, 3);  // Prints: 1 2 3
+
+// Function returning pointer (use static or heap — not local)
+int* getMax(int *a, int *b) {
+    return (*a &gt; *b) ? a : b;
+}</pre>
+<div class="prob">Prob 19: Swap using pointers</div>
+<pre>#include &lt;stdio.h&gt;
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int main(void) {
+    int x = 100, y = 200;
+    printf("Before: x=%d, y=%d\n", x, y);
+    swap(&amp;x, &amp;y);
+    printf("After:  x=%d, y=%d\n", x, y);
+    return 0;
+}
+// Output:
+// Before: x=100, y=200
+// After:  x=200, y=100</pre>
+<div class="prob">Prob 20: Find max using pointer to function</div>
+<pre>#include &lt;stdio.h&gt;
+int max(int a, int b) { return a &gt; b ? a : b; }
+int main(void) {
+    int (*fp)(int, int) = max;  // Function pointer
+    printf("max(5,9) = %d\n", fp(5, 9)); // 9
+    return 0;
+}</pre>
+<div class="footer">Page 12 &bull; Pointers</div>
+</section>
+
+<!-- ======== PAGE 13: STRUCTURES ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>12. Structures, Unions, and Enumerations</h2>
+<div class="def">
+<strong>Structure:</strong> User-defined data type that groups variables of different types under one name. Each member has its own memory.<br>
+<strong>Union:</strong> Like structure but all members share the same memory location (size = largest member).<br>
+<strong>Enum:</strong> Named integer constants.
+</div>
+<h3>Structure Declaration and Usage</h3>
+<pre>// Declare structure
+struct Student {
+    char name[50];      // 50 bytes
+    int rollNo;         // 4 bytes
+    float gpa;          // 4 bytes
+};                      // Total: at least 58 bytes
+
+// Declare variable
+struct Student s1;
+struct Student s2 = {"Rahul", 101, 8.5f};
+
+// Access members (dot operator)
+s1.rollNo = 102;
+strcpy(s1.name, "Priya");
+printf("Roll: %d, GPA: %.1f\n", s1.rollNo, s1.gpa);
+
+// Array of structures
+struct Student class[30];
+class[0] = s2;
+printf("%s\n", class[0].name);  // Rahul</pre>
+<h3>typedef for Structure</h3>
+<pre>typedef struct {
+    char name[50];
+    int age;
+    double salary;
+} Employee;
+
+Employee e1 = {"Arjun Kumar", 30, 65000.0};
+printf("Name: %s, Age: %d\n", e1.name, e1.age);</pre>
+<h3>Structure with Pointer (Arrow Operator →)</h3>
+<pre>typedef struct { char name[50]; int age; } Person;
+
+Person p = {"Sara", 25};
+Person *ptr = &amp;p;
+
+// Access via pointer
+printf("%s\n", ptr-&gt;name);     // Sara (same as (*ptr).name)
+printf("%d\n", ptr-&gt;age);      // 25
+
+ptr-&gt;age = 26;
+printf("Updated age: %d\n", p.age);  // 26</pre>
+<h3>Union</h3>
+<pre>union Data {
+    int i;      // 4 bytes
+    float f;    // 4 bytes
+    char c;     // 1 byte
+};              // Size = 4 (max member)
+
+union Data d;
+d.i = 42;
+printf("int: %d\n", d.i);      // 42
+d.f = 3.14f;
+printf("float: %.2f\n", d.f);  // 3.14  (d.i is now garbage)
+printf("Size: %zu\n", sizeof(union Data));  // 4</pre>
+<h3>Enumeration (enum)</h3>
+<pre>enum Weekday { MON=1, TUE, WED, THU, FRI, SAT, SUN };
+enum Boolean { FALSE=0, TRUE=1 };
+
+enum Weekday today = WED;
+printf("Day number: %d\n", today);  // 3
+
+if (today &gt;= MON &amp;&amp; today &lt;= FRI)
+    printf("Weekday\n");
+else
+    printf("Weekend\n");
+// Output: Weekday</pre>
+<div class="prob">Prob 21: Student grade using structure</div>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+typedef struct {
+    char name[50]; int marks[5]; float avg; char grade;
+} Student;
+void compute(Student *s) {
+    int sum = 0;
+    for (int i = 0; i &lt; 5; i++) sum += s-&gt;marks[i];
+    s-&gt;avg = sum / 5.0f;
+    s-&gt;grade = s-&gt;avg &gt;= 90 ? 'A' : s-&gt;avg &gt;= 75 ? 'B' : 'C';
+}
+int main(void) {
+    Student st = {"Kavya", {88, 92, 78, 95, 85}};
+    compute(&amp;st);
+    printf("%s: Avg=%.1f Grade=%c\n", st.name, st.avg, st.grade);
+    return 0;
+}
+// Output: Kavya: Avg=87.6 Grade=B</pre>
+<div class="footer">Page 13 &bull; Structures, Unions &amp; Enums</div>
+</section>
+
+<!-- ======== PAGE 14: DYNAMIC MEMORY ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>13. Dynamic Memory Allocation</h2>
+<div class="def">
+<strong>Dynamic Memory:</strong> Memory allocated at runtime from the <em>heap</em> segment (unlike stack-based local variables). Controlled by programmer. Must be explicitly freed to avoid memory leaks.<br>
+<strong>Header:</strong> <code>#include &lt;stdlib.h&gt;</code>
+</div>
+<h3>malloc() — Allocate Memory (Uninitialized)</h3>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void) {
+    int n = 5;
+    int *arr = (int*) malloc(n * sizeof(int));
+    
+    if (arr == NULL) {          // ALWAYS check NULL
+        printf("Memory error!\n");
+        return 1;
+    }
+    
+    for (int i = 0; i &lt; n; i++) arr[i] = (i + 1) * 10;
+    
+    for (int i = 0; i &lt; n; i++) printf("%d ", arr[i]);
+    printf("\n");
+    
+    free(arr);                  // ALWAYS free allocated memory
+    arr = NULL;                 // Prevent dangling pointer
+    
+    return 0;
+}
+// Output: 10 20 30 40 50</pre>
+<h3>calloc() — Allocate and Zero-Initialize</h3>
+<pre>// calloc(count, elementSize) — initializes all bytes to 0
+float *grades = (float*) calloc(10, sizeof(float));
+
+if (grades == NULL) return 1;
+
+// All values are 0.0 initially
+for (int i = 0; i &lt; 5; i++) printf("%.1f ", grades[i]);
+// Output: 0.0 0.0 0.0 0.0 0.0
+
+free(grades);</pre>
+<h3>realloc() — Resize Allocated Memory</h3>
+<pre>int *arr = (int*) malloc(3 * sizeof(int));
+arr[0] = 10; arr[1] = 20; arr[2] = 30;
+
+// Resize from 3 to 5 elements
+arr = (int*) realloc(arr, 5 * sizeof(int));
+if (arr == NULL) return 1;
+arr[3] = 40; arr[4] = 50;
+
+for (int i = 0; i &lt; 5; i++) printf("%d ", arr[i]);
+// Output: 10 20 30 40 50
+free(arr);</pre>
+<h3>Comparison Table</h3>
+<table>
+<thead><tr><th>Function</th><th>Syntax</th><th>Initialized?</th><th>Returns</th></tr></thead>
+<tbody>
+<tr><td>malloc()</td><td>malloc(bytes)</td><td>No (garbage)</td><td>void* or NULL</td></tr>
+<tr><td>calloc()</td><td>calloc(n, size)</td><td>Yes (zeros)</td><td>void* or NULL</td></tr>
+<tr><td>realloc()</td><td>realloc(ptr, bytes)</td><td>No (extra)</td><td>void* or NULL</td></tr>
+<tr><td>free()</td><td>free(ptr)</td><td>—</td><td>void</td></tr>
+</tbody>
+</table>
+<h3>Dynamic Structure</h3>
+<pre>typedef struct { char name[50]; int age; } Person;
+
+// Allocate one structure
+Person *p = (Person*) malloc(sizeof(Person));
+strcpy(p-&gt;name, "Deepa");
+p-&gt;age = 22;
+printf("%s, %d\n", p-&gt;name, p-&gt;age);   // Deepa, 22
+free(p);
+
+// Allocate array of structures
+Person *team = (Person*) malloc(5 * sizeof(Person));
+for (int i = 0; i &lt; 5; i++) team[i].age = 20 + i;
+free(team);</pre>
+<div class="prob">Prob 22: Dynamic array of student marks</div>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main(void) {
+    int n = 4;
+    int *marks = (int*) calloc(n, sizeof(int));
+    int total = 0;
+    for (int i = 0; i &lt; n; i++) { marks[i] = 70 + i*5; total += marks[i]; }
+    printf("Marks: ");
+    for (int i = 0; i &lt; n; i++) printf("%d ", marks[i]);
+    printf("\nAverage: %.1f\n", (float)total/n);
+    free(marks);
+    return 0;
+}
+// Output:
+// Marks: 70 75 80 85
+// Average: 77.5</pre>
+<div class="footer">Page 14 &bull; Dynamic Memory Allocation</div>
+</section>
+
+<!-- ======== PAGE 15: PREPROCESSOR & FILE HANDLING ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>14–15. Preprocessor Directives and File Handling</h2>
+<div class="def">
+<strong>Preprocessor:</strong> Processes the C source file <em>before</em> compilation. Lines starting with <code>#</code> are preprocessor directives.<br>
+<strong>File Handling:</strong> Reading from and writing to files on disk using FILE pointer and functions from <code>stdio.h</code>.
+</div>
+<h3>Preprocessor Directives</h3>
+<pre>// Include header files
+#include &lt;stdio.h&gt;      // System headers (angle brackets)
+#include "mylib.h"       // User headers (quotes)
+
+// Macro constants (no semicolon, no type)
+#define PI     3.14159f
+#define MAX    100
+#define SQUARE(x)  ((x) * (x))     // Function macro
+#define MAX2(a,b)  ((a) &gt; (b) ? (a) : (b))
+
+// Usage
+float area = PI * SQUARE(5);       // 78.53...
+int m = MAX2(10, 20);               // 20
+
+// Conditional compilation
+#define DEBUG
+#ifdef DEBUG
+    printf("Debug info\n");
+#endif
+
+// Header guard (prevent double inclusion)
+#ifndef MYHEADER_H
+#define MYHEADER_H
+// ... header contents ...
+#endif</pre>
+<h3>File Handling Modes</h3>
+<table>
+<thead><tr><th>Mode</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>"r"</td><td>Read only (file must exist)</td></tr>
+<tr><td>"w"</td><td>Write only (creates/overwrites)</td></tr>
+<tr><td>"a"</td><td>Append only (creates if not exists)</td></tr>
+<tr><td>"r+"</td><td>Read and Write</td></tr>
+<tr><td>"rb"</td><td>Read binary</td></tr>
+<tr><td>"wb"</td><td>Write binary</td></tr>
+</tbody>
+</table>
+<h3>Write to File</h3>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    FILE *fp = fopen("student.txt", "w");
+    if (fp == NULL) {
+        perror("Error");
+        return 1;
+    }
+    fprintf(fp, "Name: Ravi\n");
+    fprintf(fp, "Roll: 101\n");
+    fprintf(fp, "Marks: 90\n");
+    fclose(fp);
+    printf("Saved to student.txt\n");
+    return 0;
+}</pre>
+<h3>Read from File</h3>
+<pre>#include &lt;stdio.h&gt;
+int main(void) {
+    FILE *fp = fopen("student.txt", "r");
+    if (fp == NULL) {
+        perror("Not found");
+        return 1;
+    }
+    char line[100];
+    while (fgets(line, sizeof(line), fp) != NULL) {
+        printf("%s", line);
+    }
+    fclose(fp);
+    return 0;
+}
+// Output:
+// Name: Ravi
+// Roll: 101
+// Marks: 90</pre>
+<div class="prob">Prob 23: Append and count lines in file</div>
+<pre>#include &lt;stdio.h&gt;
+void appendLine(const char *file, const char *text) {
+    FILE *fp = fopen(file, "a");
+    if (fp) { fprintf(fp, "%s\n", text); fclose(fp); }
+}
+int countLines(const char *file) {
+    FILE *fp = fopen(file, "r");
+    if (!fp) return -1;
+    int lines = 0; char ch;
+    while ((ch = fgetc(fp)) != EOF) if (ch == '\n') lines++;
+    fclose(fp);
+    return lines;
+}
+int main(void) {
+    appendLine("notes.txt", "Line 1");
+    appendLine("notes.txt", "Line 2");
+    printf("Lines: %d\n", countLines("notes.txt")); // 2
+    return 0;
+}</pre>
+<div class="footer">Page 15 &bull; Preprocessor &amp; File Handling</div>
+</section>
+
+<!-- ======== PAGE 16: SORTING, SEARCHING & REFERENCE ======== -->
+<section class="page">
+<div class="logo-badge"><img src="prathibha_logo.png" alt="Logo"/></div>
+<h2>16. Sorting, Searching, and Quick Reference</h2>
+<h3>Bubble Sort</h3>
+<div class="def"><strong>Bubble Sort:</strong> Compare adjacent elements; swap if out of order. Repeat for n-1 passes. O(n²) time complexity.</div>
+<pre>#include &lt;stdio.h&gt;
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i &lt; n-1; i++) {
+        for (int j = 0; j &lt; n-i-1; j++) {
+            if (arr[j] &gt; arr[j+1]) {
+                int t = arr[j]; arr[j] = arr[j+1]; arr[j+1] = t;
+            }
+        }
+    }
+}
+int main(void) {
+    int a[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = 7;
+    bubbleSort(a, n);
+    for (int i = 0; i &lt; n; i++) printf("%d ", a[i]);
+    return 0;
+}
+// Output: 11 12 22 25 34 64 90</pre>
+<h3>Selection Sort</h3>
+<pre>void selectionSort(int arr[], int n) {
+    for (int i = 0; i &lt; n-1; i++) {
+        int minIdx = i;
+        for (int j = i+1; j &lt; n; j++)
+            if (arr[j] &lt; arr[minIdx]) minIdx = j;
+        int t = arr[minIdx]; arr[minIdx] = arr[i]; arr[i] = t;
+    }
+}</pre>
+<h3>Binary Search</h3>
+<div class="def"><strong>Binary Search:</strong> Works on sorted arrays. Halves search space each step. O(log n) — much faster than linear O(n).</div>
+<pre>int binarySearch(int arr[], int n, int target) {
+    int lo = 0, hi = n - 1;
+    while (lo &lt;= hi) {
+        int mid = (lo + hi) / 2;
+        if (arr[mid] == target) return mid;       // Found
+        else if (arr[mid] &lt; target) lo = mid + 1; // Search right
+        else hi = mid - 1;                         // Search left
+    }
+    return -1;                                     // Not found
+}
+
+int main(void) {
+    int arr[] = {10, 20, 30, 40, 50, 60, 70};
+    int idx = binarySearch(arr, 7, 40);
+    if (idx &gt;= 0) printf("Found at index %d\n", idx);  // 3
+    else           printf("Not found\n");
+    return 0;
+}</pre>
+<h3>Escape Sequences</h3>
+<table>
+<thead><tr><th>Sequence</th><th>Meaning</th><th>Sequence</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><td>\n</td><td>Newline</td><td>\t</td><td>Horizontal Tab</td></tr>
+<tr><td>\r</td><td>Carriage Return</td><td>\b</td><td>Backspace</td></tr>
+<tr><td>\\</td><td>Backslash</td><td>\"</td><td>Double Quote</td></tr>
+<tr><td>\'</td><td>Single Quote</td><td>\0</td><td>Null Character</td></tr>
+<tr><td>\a</td><td>Alert (bell)</td><td>\f</td><td>Form Feed</td></tr>
+</tbody>
+</table>
+<h3>Common Mistakes to Avoid</h3>
+<ul>
+<li><strong>Array out-of-bounds:</strong> arr[5] valid for int arr[5]? NO — only arr[0] to arr[4]</li>
+<li><strong>Integer division:</strong> 7/2 = 3 not 3.5 — cast to float: (float)7/2 = 3.5</li>
+<li><strong>Uninitialized variable:</strong> int x; printf("%d", x); — undefined behaviour</li>
+<li><strong>Missing &amp; in scanf:</strong> scanf("%d", num) should be scanf("%d", &amp;num)</li>
+<li><strong>Missing break in switch:</strong> Falls through to next case</li>
+<li><strong>Dangling pointer:</strong> Using pointer after free(ptr)</li>
+<li><strong>NULL dereference:</strong> *ptr when ptr == NULL — segfault</li>
+<li><strong>String overflow:</strong> Use fgets or strncpy; never gets()</li>
+</ul>
+<h3>Standard Library Headers</h3>
+<pre>&lt;stdio.h&gt;    printf, scanf, fopen, fclose, fgets
+&lt;stdlib.h&gt;   malloc, calloc, free, exit, atoi, rand
+&lt;string.h&gt;   strlen, strcpy, strcat, strcmp, strchr
+&lt;math.h&gt;     sqrt, pow, floor, ceil, fabs, sin, cos
+&lt;ctype.h&gt;    isalpha, isdigit, toupper, tolower
+&lt;time.h&gt;     time, clock, difftime</pre>
+<div class="footer">Page 16 &bull; Sorting, Searching &amp; Quick Reference</div>
+</section>
+
+</div>
+</body>
+</html>
