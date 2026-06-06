@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prathibha Institute UPI QR Print</title>
+  <style>
+    :root {
+      --ink: #14213d;
+      --muted: #5b6474;
+      --line: #d7dde8;
+      --brand: #1d5fd0;
+      --brand-deep: #123b8f;
+      --brand-soft: #eaf2ff;
+      --accent: #84b6ff;
+      --paper: #ffffff;
+      --sheet-edge: #dfe6ef;
+      --shadow: 0 18px 48px rgba(20, 33, 61, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(circle at top left, rgba(29, 95, 208, 0.14), transparent 26%),
+        linear-gradient(180deg, #eff5f9 0%, #e8eef5 100%);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .sheet {
+      position: relative;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 10mm auto;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--sheet-edge);
+      box-shadow: var(--shadow);
+    }
+
+    .sheet::before,
+    .sheet::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .sheet::before {
+      width: 210mm;
+      height: 210mm;
+      top: -120mm;
+      right: -82mm;
+      background: radial-gradient(circle, rgba(29, 95, 208, 0.16), rgba(29, 95, 208, 0));
+    }
+
+    .sheet::after {
+      width: 150mm;
+      height: 150mm;
+      bottom: -86mm;
+      left: -48mm;
+      background: radial-gradient(circle, rgba(132, 182, 255, 0.18), rgba(132, 182, 255, 0));
+    }
+
+    .top-band {
+      position: relative;
+      z-index: 1;
+      padding: 14mm 16mm 0;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12mm;
+      padding-bottom: 8mm;
+      border-bottom: 2px solid rgba(29, 95, 208, 0.16);
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .logo-shell {
+      display: grid;
+      place-items: center;
+      width: 82px;
+      height: 82px;
+      flex: 0 0 auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(20, 33, 61, 0.08);
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--brand-deep);
+    }
+
+    .brand-copy p {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(29, 95, 208, 0.18);
+      background: rgba(29, 95, 208, 0.08);
+      color: var(--brand-deep);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 14mm;
+      padding: 14mm 16mm 16mm;
+    }
+
+    .overview {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12mm;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand-deep);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: 46px;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .hero-title span {
+      color: var(--brand);
+    }
+
+    .support-copy {
+      max-width: 82%;
+      margin: 14px 0 0;
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .highlight-card {
+      position: relative;
+      padding: 16px 18px;
+      border: 1px solid rgba(29, 95, 208, 0.14);
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(29, 95, 208, 0.08), rgba(132, 182, 255, 0.16));
+    }
+
+    .highlight-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+      color: var(--brand-deep);
+    }
+
+    .highlight-card p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 14px 14px 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--brand-deep);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .step h2 {
+      margin: 2px 0 4px;
+      font-size: 17px;
+      color: var(--ink);
+    }
+
+    .step p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .qr-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid rgba(20, 33, 61, 0.08);
+      border-radius: 28px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+      box-shadow: 0 18px 40px rgba(20, 33, 61, 0.09);
+    }
+
+    .qr-panel-header {
+      width: 100%;
+      text-align: center;
+      padding: 8px 10px 14px;
+    }
+
+    .qr-panel-header h2 {
+      margin: 0;
+      font-size: 31px;
+      letter-spacing: -0.02em;
+      color: var(--brand-deep);
+    }
+
+    .qr-panel-header p {
+      margin: 8px auto 0;
+      max-width: 90%;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .qr-frame {
+      width: 100%;
+      padding: 14px;
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(29, 95, 208, 0.08), rgba(132, 182, 255, 0.16)),
+        #fff;
+      border: 1px solid rgba(29, 95, 208, 0.12);
+    }
+
+    .qr-shell {
+      padding: 16px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .qr-image {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .upi-pill {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #f6f8fb;
+      border: 1px solid var(--line);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      word-break: break-all;
+    }
+
+    .acceptance-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .acceptance-row span {
+      padding: 10px 8px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 16px;
+      width: 100%;
+      padding: 14px 16px;
+      border-top: 1px dashed rgba(20, 33, 61, 0.18);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .footer-strip strong {
+      color: var(--brand-deep);
+    }
+
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
+    @media screen and (max-width: 980px) {
+      .sheet {
+        width: auto;
+        min-height: auto;
+        margin: 12px;
+      }
+
+      .brand-row,
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .badge {
+        align-self: flex-start;
+      }
+
+      .support-copy {
+        max-width: 100%;
+      }
+
+      .hero-title {
+        font-size: 40px;
+      }
+
+      .acceptance-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media print {
+      html,
+      body {
+        background: #fff;
+      }
+
+      .sheet {
+        width: auto;
+        min-height: 0;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+      }
+
+      .sheet::before,
+      .sheet::after {
+        opacity: 0.7;
+      }
+
+      .top-band {
+        padding: 8mm 10mm 0;
+      }
+
+      .brand-row {
+        gap: 7mm;
+        padding-bottom: 4mm;
+      }
+
+      .logo-shell {
+        width: 72px;
+        height: 72px;
+        border-radius: 14px;
+      }
+
+      .logo {
+        width: 56px;
+        height: 56px;
+      }
+
+      .brand-copy h1 {
+        font-size: 24px;
+      }
+
+      .brand-copy p,
+      .badge,
+      .eyebrow,
+      .footer-strip {
+        font-size: 11px;
+      }
+
+      .badge {
+        padding: 8px 12px;
+      }
+
+      .content {
+        gap: 8mm;
+        padding: 8mm 10mm 10mm;
+      }
+
+      .overview {
+        gap: 8mm;
+      }
+
+      .eyebrow {
+        margin-bottom: 8px;
+        padding: 6px 10px;
+      }
+
+      .hero-title {
+        font-size: 38px;
+      }
+
+      .support-copy {
+        max-width: 100%;
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .highlight-card {
+        padding: 12px 14px;
+        border-radius: 16px;
+      }
+
+      .highlight-card strong {
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      .highlight-card p,
+      .step p,
+      .qr-panel-header p {
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .steps {
+        gap: 8px;
+      }
+
+      .step {
+        grid-template-columns: 40px 1fr;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 14px;
+      }
+
+      .step-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 17px;
+      }
+
+      .step h2 {
+        margin: 1px 0 3px;
+        font-size: 15px;
+      }
+
+      .qr-panel {
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      .qr-panel-header {
+        padding: 4px 6px 10px;
+      }
+
+      .qr-panel-header h2 {
+        font-size: 26px;
+      }
+
+      .qr-frame {
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      .qr-shell {
+        padding: 12px;
+        border-radius: 16px;
+      }
+
+      .qr-image {
+        max-width: 260px;
+      }
+
+      .upi-pill {
+        margin-top: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      .acceptance-row {
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .acceptance-row span {
+        padding: 8px 6px;
+        font-size: 10px;
+      }
+
+      .footer-strip {
+        margin-top: 12px;
+        padding: 10px 12px 0;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <section class="top-band">
+      <div class="brand-row">
+        <div class="brand-block">
+          <div class="logo-shell">
+            <img class="logo" src="prathibha_logo.png" alt="Prathibha Institute logo" />
+          </div>
+          <div class="brand-copy">
+            <h1>Prathibha Institute</h1>
+            <p>Official UPI Payment Counter</p>
+          </div>
+        </div>
+        <div class="badge">Secure Scan &amp; Pay</div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="overview">
+        <div>
+          <div class="eyebrow">Digital Payments</div>
+          <h2 class="hero-title">Scan the <span>UPI QR</span> to pay instantly.</h2>
+          <p class="support-copy">
+            Use any UPI-enabled app to complete your payment in seconds. This print is optimized
+            for counter display, desk placement, and reception use.
+          </p>
+        </div>
+
+        <div class="highlight-card">
+          <strong>Professional payment display</strong>
+          <p>
+            Clear branding, high-contrast QR placement, and print-safe spacing help the code scan
+            reliably even when laminated or placed behind a desk shield.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h2>Open Any UPI App</h2>
+              <p>PhonePe, Google Pay, Paytm, BHIM, or any banking app that supports UPI.</p>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h2>Scan The QR Code</h2>
+              <p>Point the scanner steadily at the QR panel on the right and confirm the payee.</p>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h2>Complete Payment</h2>
+              <p>Enter the amount if required, authorize the transaction, and save the receipt.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="qr-panel">
+        <div class="qr-panel-header">
+          <h2>Scan &amp; Pay</h2>
+          <p>UPI QR linked to the institute payment ID for fast and contactless collection.</p>
+        </div>
+
+        <div class="qr-frame">
+          <div class="qr-shell">
+            <img class="qr-image" src="upi_qr_prathibha.svg" alt="UPI QR code for payment" />
+            <div class="upi-pill">8499930530@ybl</div>
+          </div>
+        </div>
+
+        <div class="acceptance-row" aria-label="Supported UPI apps">
+          <span>PhonePe</span>
+          <span>GPay</span>
+          <span>Paytm</span>
+          <span>BHIM</span>
+        </div>
+
+        <div class="footer-strip">
+          <span><strong>Payee:</strong> Prathibha Institute</span>
+          <span><strong>Mode:</strong> UPI</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

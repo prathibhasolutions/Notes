@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Additional Answer Sheet - A4</title>
+  <style>
+    :root {
+      --paper-width: 210mm;
+      --paper-height: 297mm;
+      --border-color: #222;
+      --muted: #555;
+      --line-color: #b9c0c8;
+      --header-bg: #f3f6f9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Georgia, serif;
+      color: #111;
+      background: #fff;
+    }
+
+    .page {
+      width: var(--paper-width);
+      height: var(--paper-height);
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid var(--border-color);
+      display: grid;
+      grid-template-rows: 7% 4% 1fr;
+      gap: 1.5mm;
+      padding: 1.5mm;
+    }
+
+    .head {
+      border: 1.6px solid var(--border-color);
+      background: var(--header-bg);
+      padding: 1.5mm 2mm;
+      display: grid;
+      grid-template-columns: 15mm 1fr;
+      gap: 2.5mm;
+      align-items: center;
+    }
+
+    .logo-wrap {
+      width: 12mm;
+      height: 12mm;
+      border: 1px solid #999;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title-area {
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .institute {
+      font-size: 12pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      text-transform: uppercase;
+    }
+
+    .sheet-title {
+      margin-top: 0.5mm;
+      font-size: 8.8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .meta {
+      border: 1.6px solid var(--border-color);
+      padding: 0 2mm 0.8mm;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 0.7fr;
+      gap: 3mm;
+      font-size: 9pt;
+      align-items: end;
+    }
+
+    .field {
+      display: flex;
+      align-items: flex-end;
+      gap: 2mm;
+      min-width: 0;
+    }
+
+    .label {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .line {
+      flex: 1;
+      border-bottom: 1px solid #111;
+      height: 3.2mm;
+    }
+
+    .answer-area {
+      border: 1.4px solid var(--border-color);
+      background: #fff;
+      padding: 0 2mm;
+    }
+
+    .back-page {
+      width: var(--paper-width);
+      height: var(--paper-height);
+      margin: 0 auto;
+      background: #fff;
+      padding: 6mm;
+    }
+
+    .back-plain {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border: 1.4px solid #222;
+    }
+
+    .note {
+      margin-top: 2mm;
+      color: var(--muted);
+      font-size: 9pt;
+      text-align: right;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        margin: 0;
+        width: var(--paper-width);
+        height: var(--paper-height);
+        border-width: 2px;
+        page-break-after: always;
+      }
+
+      .back-page {
+        width: var(--paper-width);
+        height: var(--paper-height);
+        margin: 0;
+        page-break-after: auto;
+      }
+
+      .note {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="page" aria-label="A4 Additional Answer Sheet">
+    <header class="head">
+      <div class="logo-wrap" aria-label="Institute Logo">
+        <img src="prathibha_logo.png" alt="Institute logo" />
+      </div>
+      <div class="title-area">
+        <div class="institute">Prathibha Institute</div>
+        <div class="sheet-title">Answer Sheet</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Student and Exam Details">
+      <div class="field"><span class="label">Student Name:</span><span class="line"></span></div>
+      <div class="field"><span class="label">Exam:</span><span class="line"></span></div>
+      <div class="field"><span class="label">Page No.:</span><span class="line"></span></div>
+    </section>
+
+    <section class="answer-area" aria-label="Writing Area"></section>
+  </section>
+
+  <section class="back-page" aria-label="Back Side Blank Page">
+    <section class="back-plain" aria-label="Plain area with minimum margins"></section>
+  </section>
+
+  <p class="note">Print setting tip: Keep scale at 100% and disable browser headers/footers.</p>
+</body>
+</html>
