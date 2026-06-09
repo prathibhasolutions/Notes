@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Test 3 - Mathematics</title>
+  <style>
+    :root {
+      --ink: #111;
+      --muted: #4b5563;
+      --line: #cbd5e1;
+      --accent: #0f3d73;
+      --paper: 210mm;
+      --paper-h: 297mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 8mm;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Georgia, serif;
+      color: var(--ink);
+      background: #f4f7fb;
+    }
+
+    .sheet {
+      width: var(--paper);
+      min-height: var(--paper-h);
+      margin: 10px auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 9mm;
+    }
+
+    .head {
+      border: 1.5px solid var(--ink);
+      padding: 3mm;
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      background: #f8fbff;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid #9aa7ba;
+      object-fit: contain;
+      background: #fff;
+      padding: 1px;
+    }
+
+    .title {
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 18pt;
+      letter-spacing: 0.3px;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .title p {
+      margin: 2px 0 0;
+      font-size: 10.5pt;
+      font-weight: 700;
+    }
+
+    .meta {
+      margin-top: 4mm;
+      border: 1.2px solid var(--ink);
+      padding: 2.5mm;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3mm;
+      font-size: 10pt;
+    }
+
+    .meta div {
+      border-bottom: 1px solid #222;
+      padding-bottom: 1.5mm;
+      min-height: 6mm;
+    }
+
+    .instructions {
+      margin-top: 3.5mm;
+      border-left: 3px solid var(--accent);
+      padding: 2mm 3mm;
+      background: #f8fbff;
+      font-size: 10pt;
+    }
+
+    .instructions strong {
+      color: var(--accent);
+    }
+
+    .grid {
+      margin-top: 4mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
+    }
+
+    .q {
+      border: 1px solid var(--line);
+      padding: 2.2mm;
+      break-inside: avoid;
+    }
+
+    .q p {
+      margin: 0 0 1.4mm;
+      font-size: 10pt;
+      line-height: 1.35;
+    }
+
+    .opts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8mm 3mm;
+      font-size: 9.4pt;
+      color: #1f2937;
+    }
+
+    .topic {
+      margin-top: 6mm;
+      font-size: 11pt;
+      border-bottom: 1px dashed #8da0b8;
+      color: var(--accent);
+      font-weight: 700;
+      padding-bottom: 1mm;
+      text-transform: uppercase;
+    }
+
+    .answer-key {
+      margin-top: 5mm;
+      border: 1px solid #111;
+      padding: 3mm;
+      background: #fcfdff;
+      page-break-before: always;
+    }
+
+    .answer-key h2 {
+      margin: 0 0 2mm;
+      font-size: 13pt;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .answers {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1mm 6mm;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+
+    .foot {
+      margin-top: 4mm;
+      font-size: 8.8pt;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .sheet {
+        margin: 0 auto;
+        border: none;
+        width: auto;
+        min-height: auto;
+        padding: 0;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="head">
+      <img class="logo" src="prathibha_logo.png" alt="Institute Logo" />
+      <div class="title">
+        <h1>Grand Test 3</h1>
+        <p>Matrices | Determinants | Vector Algebra | 3D Geometry | Straight Lines</p>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Candidate details">
+      <div><strong>Name:</strong></div>
+      <div><strong>Date:</strong></div>
+      <div><strong>Batch:</strong></div>
+    </section>
+
+    <section class="instructions">
+      <strong>Instructions:</strong> Total Questions: 30 | Marks: 30 | Time: 60 Minutes. Choose the correct option for each question.
+    </section>
+
+    <h3 class="topic">Section A - Matrices</h3>
+    <section class="grid">
+      <article class="q"><p>1) If A = [[2, 1], [5, 3]], then det(A) equals:</p><div class="opts"><span>A) 1</span><span>B) 0</span><span>C) -1</span><span>D) 11</span></div></article>
+      <article class="q"><p>2) If A = [[1, 2], [0, 1]], then A^2 is:</p><div class="opts"><span>A) [[1, 2], [0, 1]]</span><span>B) [[1, 4], [0, 1]]</span><span>C) [[1, 0], [2, 1]]</span><span>D) [[2, 2], [0, 2]]</span></div></article>
+      <article class="q"><p>3) For A = [[a, b], [c, d]], trace(adj A) is:</p><div class="opts"><span>A) a + d</span><span>B) b + c</span><span>C) ad - bc</span><span>D) a - d</span></div></article>
+      <article class="q"><p>4) If A is a skew-symmetric matrix of order 3, then det(A) is always:</p><div class="opts"><span>A) 1</span><span>B) -1</span><span>C) 0</span><span>D) 3</span></div></article>
+      <article class="q"><p>5) A square matrix A is invertible if and only if:</p><div class="opts"><span>A) trace(A) = 0</span><span>B) det(A) != 0</span><span>C) A is diagonal</span><span>D) A is symmetric</span></div></article>
+      <article class="q"><p>6) The eigenvalues of identity matrix I3 are:</p><div class="opts"><span>A) 0, 0, 0</span><span>B) 1, 1, 1</span><span>C) 1, 0, -1</span><span>D) Depends on basis</span></div></article>
+    </section>
+
+    <h3 class="topic">Section B - Determinants</h3>
+    <section class="grid">
+      <article class="q"><p>7) Determinant of upper triangular matrix with diagonal entries 2, 3, 5 is:</p><div class="opts"><span>A) 10</span><span>B) 30</span><span>C) 0</span><span>D) 15</span></div></article>
+      <article class="q"><p>8) If two rows of a determinant are equal, then the determinant is:</p><div class="opts"><span>A) 2</span><span>B) 1</span><span>C) -1</span><span>D) 0</span></div></article>
+      <article class="q"><p>9) For a 3 x 3 matrix A, det(kA) equals:</p><div class="opts"><span>A) k det(A)</span><span>B) k^2 det(A)</span><span>C) k^3 det(A)</span><span>D) det(A)/k</span></div></article>
+      <article class="q"><p>10) Area of triangle with vertices (0,0), (2,0), (0,3) is:</p><div class="opts"><span>A) 2</span><span>B) 3</span><span>C) 4</span><span>D) 6</span></div></article>
+      <article class="q"><p>11) If det([[x, 2], [3, 4]]) = 10, then x is:</p><div class="opts"><span>A) 2</span><span>B) 3</span><span>C) 4</span><span>D) 5</span></div></article>
+      <article class="q"><p>12) If det(A) = 5 and A is invertible, then det(A^-1) equals:</p><div class="opts"><span>A) 5</span><span>B) 1/5</span><span>C) -5</span><span>D) 25</span></div></article>
+    </section>
+
+    <h3 class="topic">Section C - Vector Algebra</h3>
+    <section class="grid">
+      <article class="q"><p>13) Magnitude of vector i + j + k is:</p><div class="opts"><span>A) 1</span><span>B) sqrt(2)</span><span>C) sqrt(3)</span><span>D) 3</span></div></article>
+      <article class="q"><p>14) Dot product of two perpendicular vectors is:</p><div class="opts"><span>A) 1</span><span>B) -1</span><span>C) 0</span><span>D) Depends on vectors</span></div></article>
+      <article class="q"><p>15) i x j equals:</p><div class="opts"><span>A) -k</span><span>B) k</span><span>C) i</span><span>D) j</span></div></article>
+      <article class="q"><p>16) Angle between vectors (1,0,0) and (1,1,0) is:</p><div class="opts"><span>A) 30 deg</span><span>B) 45 deg</span><span>C) 60 deg</span><span>D) 90 deg</span></div></article>
+      <article class="q"><p>17) Scalar projection of a = (2,2,0) on b = (1,0,0) is:</p><div class="opts"><span>A) 1</span><span>B) 2</span><span>C) 2sqrt(2)</span><span>D) 0</span></div></article>
+      <article class="q"><p>18) If a = (1,2,3), b = (3,2,1), then a dot b equals:</p><div class="opts"><span>A) 6</span><span>B) 8</span><span>C) 10</span><span>D) 12</span></div></article>
+    </section>
+
+    <h3 class="topic">Section D - Three Dimensional Geometry</h3>
+    <section class="grid">
+      <article class="q"><p>19) Distance between points (1,2,3) and (4,6,3) is:</p><div class="opts"><span>A) 3</span><span>B) 4</span><span>C) 5</span><span>D) 6</span></div></article>
+      <article class="q"><p>20) Direction ratios of line (x-1)/2 = (y+3)/(-1) = z/4 are:</p><div class="opts"><span>A) (2, -1, 4)</span><span>B) (1, -3, 0)</span><span>C) (2, 1, 4)</span><span>D) (1, 1, 1)</span></div></article>
+      <article class="q"><p>21) Sphere with center (1,-2,3) and radius 4 has equation:</p><div class="opts"><span>A) (x-1)^2 + (y-2)^2 + (z-3)^2 = 16</span><span>B) (x+1)^2 + (y+2)^2 + (z+3)^2 = 16</span><span>C) (x-1)^2 + (y+2)^2 + (z-3)^2 = 16</span><span>D) (x-1)^2 + (y+2)^2 + (z+3)^2 = 4</span></div></article>
+      <article class="q"><p>22) Plane through origin with normal vector (2,-1,3) is:</p><div class="opts"><span>A) 2x - y + 3z = 0</span><span>B) x + y + z = 1</span><span>C) 2x + y - 3z = 0</span><span>D) 2x - y + 3z = 1</span></div></article>
+      <article class="q"><p>23) Midpoint of A(2,0,4) and B(4,2,6) is:</p><div class="opts"><span>A) (3,1,5)</span><span>B) (2,1,5)</span><span>C) (3,2,5)</span><span>D) (6,2,10)</span></div></article>
+      <article class="q"><p>24) Equation of line parallel to z-axis through (1,-2,5) is:</p><div class="opts"><span>A) x = 1, y = -2</span><span>B) y = -2, z = 5</span><span>C) x = 1, z = 5</span><span>D) x + y = -1</span></div></article>
+    </section>
+
+    <h3 class="topic">Section E - Straight Lines</h3>
+    <section class="grid">
+      <article class="q"><p>25) Slope of the line through points (1,2) and (3,6) is:</p><div class="opts"><span>A) 1</span><span>B) 2</span><span>C) 3</span><span>D) 4</span></div></article>
+      <article class="q"><p>26) Equation of line with slope -1 and y-intercept 4 is:</p><div class="opts"><span>A) x - y + 4 = 0</span><span>B) y = x + 4</span><span>C) x + y - 4 = 0</span><span>D) x + y + 4 = 0</span></div></article>
+      <article class="q"><p>27) Distance of point (3,4) from x-axis is:</p><div class="opts"><span>A) 3</span><span>B) 4</span><span>C) 5</span><span>D) 7</span></div></article>
+      <article class="q"><p>28) Angle between lines with slopes 1 and -1 is:</p><div class="opts"><span>A) 0 deg</span><span>B) 45 deg</span><span>C) 60 deg</span><span>D) 90 deg</span></div></article>
+      <article class="q"><p>29) Equation of line through origin parallel to 2x - 3y + 5 = 0 is:</p><div class="opts"><span>A) 2x - 3y + 5 = 0</span><span>B) 2x - 3y = 0</span><span>C) 3x - 2y = 0</span><span>D) x - y = 0</span></div></article>
+      <article class="q"><p>30) If y = mx + c passes through (2,5) and c = 1, then m is:</p><div class="opts"><span>A) 1</span><span>B) 2</span><span>C) 3</span><span>D) 4</span></div></article>
+    </section>
+
+    <section class="answer-key">
+      <h2>Answer Key - Grand Test 3</h2>
+      <div class="answers">
+        <div>1) A</div><div>2) B</div><div>3) A</div><div>4) C</div><div>5) B</div>
+        <div>6) B</div><div>7) B</div><div>8) D</div><div>9) C</div><div>10) B</div>
+        <div>11) C</div><div>12) B</div><div>13) C</div><div>14) C</div><div>15) B</div>
+        <div>16) B</div><div>17) B</div><div>18) C</div><div>19) C</div><div>20) A</div>
+        <div>21) C</div><div>22) A</div><div>23) A</div><div>24) A</div><div>25) B</div>
+        <div>26) C</div><div>27) B</div><div>28) D</div><div>29) B</div><div>30) B</div>
+      </div>
+      <p class="foot">Prepared as a fresh set with entirely different questions.</p>
+    </section>
+  </main>
+</body>
+</html>
