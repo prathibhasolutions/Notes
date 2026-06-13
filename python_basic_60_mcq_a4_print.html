@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Basic Test - 66 MCQs - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #16222e;
+      --muted: #435463;
+      --line: #9fb0c0;
+      --soft: #d5dee7;
+      --accent: #0f4f82;
+      --bg: #eef3f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 8mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #e7edf4 0%, #dde7f1 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 7mm auto;
+      background: #fff;
+      border: 1px solid #c7d3df;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.5mm 8mm rgba(16, 33, 50, 0.09);
+      padding: 7.5mm 7mm 7mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.5mm;
+      padding: 2.6mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+    }
+
+    .header-logo {
+      width: 14mm;
+      height: 14mm;
+      flex-shrink: 0;
+      object-fit: contain;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      padding: 0.5mm;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.5pt;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #11395d;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.7pt;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: #42576b;
+      font-weight: 700;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.9mm;
+      font-size: 9.4pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.8mm 2mm;
+      min-height: 8mm;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.8mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.4;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #103e68;
+    }
+
+    h3 {
+      margin: 3mm 0 2mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124770;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .questions {
+      width: 100%;
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 5.5mm;
+      font-size: 9.8pt;
+      line-height: 1.38;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    li {
+      margin: 0 0 2.8mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e1ea;
+      padding-bottom: 1.6mm;
+    }
+
+    .code {
+      display: block;
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 9.2pt;
+      line-height: 1.3;
+      margin-top: 0.9mm;
+      background: #f6f9fc;
+      border: 1px solid #d7e1eb;
+      border-radius: 0.9mm;
+      padding: 1.4mm 1.8mm;
+      white-space: pre;
+      tab-size: 4;
+    }
+
+    .opts {
+      color: #233a4e;
+      margin-top: 0.7mm;
+      display: block;
+    }
+
+    .footer {
+      margin-top: 2.4mm;
+      text-align: center;
+      font-size: 7.9pt;
+      color: #4d5d6c;
+      border-top: 1px dashed #a5b4c2;
+      padding-top: 1.1mm;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425260;
+      font-size: 8.3pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 16mm);
+        border: 1px solid #c7d3df;
+        border-top: 2.2mm solid var(--accent);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Python Basic MCQ Test Paper">
+    <header class="header">
+      <img class="header-logo" src="prathibha_logo.png" alt="Prathibha Logo" />
+      <div class="header-text">
+        <div class="title">Python Basic Test - 60 MCQs</div>
+        <div class="subtitle">Syllabus: Introduction, Syntax, Indentation, Datatypes, Strings</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Paper Metadata">
+      <div><b>Time:</b> 60 Minutes</div>
+      <div><b>Marks:</b> 60</div>
+      <div><b>Name:</b> ______________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Attempt all questions. Each question carries 1 mark. Choose one correct option. 
+    </section>
+
+    <h3>Multiple Choice Questions</h3>
+
+    <section class="questions">
+      <ol>
+        <li>Default extension for Python files is:<span class="opts">A) .pt B) .py C) .pyt D) .python</span></li>
+        <li>Using tabs and spaces inconsistently in one block can cause:<span class="opts">A) NameError B) TypeError C) IndentationError D) No issue</span></li>
+        <li>Single-line comments in Python start with:<span class="opts">A) // B) # C) -- D) /*</span></li>
+        <li>Which quotes can define a string?<span class="opts">A) Single quotes B) Double quotes C) Triple quotes D) Both A and B</span></li>
+        <li>Which is a valid identifier?<span class="opts">A) total_marks B) total-marks C) 2marks D) class</span></li>
+        <li>Which is an invalid identifier?<span class="opts">A) score2 B) _value C) first_name D) first-name</span></li>
+        <li>Python identifiers are:<span class="opts">A) Case-insensitive B) Case-sensitive C) Number-only D) Always uppercase</span></li>
+        <li>Output of <span class="code">print('Hi')</span><span class="opts">A) 'Hi' B) Hi C) Error D) None</span></li>
+        <li>What happens here?<span class="code">print("Hello)</span><span class="opts">A) Prints Hello B) SyntaxError C) NameError D) None</span></li>
+        <li>Output of <span class="code">print(type('7'))</span><span class="opts">A) &lt;class 'int'&gt; B) &lt;class 'str'&gt; C) str D) Error</span></li>
+        <li>Output of <span class="code">print(type(7))</span><span class="opts">A) &lt;class 'integer'&gt; B) &lt;class 'int'&gt; C) int D) Error</span></li>
+        <li>Output of <span class="code">print(type(7.0))</span><span class="opts">A) &lt;class 'float'&gt; B) &lt;class 'int'&gt; C) number D) Error</span></li>
+        <li>Output of <span class="code">print(type(True))</span><span class="opts">A) &lt;class 'bool'&gt; B) &lt;class 'int'&gt; C) boolean D) Error</span></li>
+
+        <li>What happens here?<span class="code">    print('Hello')</span><span class="opts">A) Prints Hello B) IndentationError C) ValueError D) None</span></li>
+        <li>Unmatched parentheses generally produce:<span class="opts">A) SyntaxError B) TypeError C) NameError D) No error</span></li>
+        <li>Blank lines in Python are:<span class="opts">A) Mandatory after each statement B) Not syntax-significant C) Forbidden D) Converted to comments</span></li>
+        <li>In Python 3, <span class="code">print 'Hi'</span> gives:<span class="opts">A) Hi B) SyntaxError C) TypeError D) None</span></li>
+        <li>Which assignment statement is valid?<span class="opts">A) x := 10 B) x = 10 C) let x = 10 D) int x = 10</span></li>
+        <li>What happens here?<span class="code">a, b = 1, 2</span><span class="opts">A) Error B) Valid C) NameError D) SyntaxError</span></li>
+        <li>What happens here?<span class="code">s = 'Hi'
+s[0] = 'h'</span><span class="opts">A) Works B) TypeError C) IndexError D) No output</span></li>
+        <li>Which import statement is valid?<span class="opts">A) import math B) include math C) using math D) import: math</span></li>
+        <li>Output of <span class="code">print(int('25'))</span><span class="opts">A) 25 B) '25' C) 25.0 D) Error</span></li>
+        <li>Output of <span class="code">print(int('2.5'))</span><span class="opts">A) 2 B) 2.5 C) Error D) None of these</span></li>
+        <li>Output of <span class="code">print(float('2.5'))</span><span class="opts">A) 2 B) 2.0 C) 2.5 D) Error</span></li>
+        <li>Output of <span class="code">print(type(str(25)))</span><span class="opts">A) &lt;class 'int'&gt; B) &lt;class 'str'&gt; C) &lt;class 'float'&gt; D) Error</span></li>
+        <li>Output of <span class="code">print(type(1_000))</span><span class="opts">A) &lt;class 'int'&gt; B) &lt;class 'float'&gt; C) &lt;class 'str'&gt; D) Error</span></li>
+        <li>Datatype of <span class="code">3j</span> is:<span class="opts">A) float B) complex C) int D) str</span></li>
+
+        <li>Output of <span class="code">print(len('planet'))</span><span class="opts">A) 5 B) 6 C) 7 D) Error</span></li>
+        <li>Output of <span class="code">print('river'.upper())</span><span class="opts">A) river B) RIVER C) River D) Error</span></li>
+        <li>Output of <span class="code">print('SuNShInE'.lower())</span><span class="opts">A) sunshine B) SUNSHINE C) SuNShInE D) Error</span></li>
+        <li>Output of <span class="code">print('garden'.capitalize())</span><span class="opts">A) garden B) Garden C) GARDEN D) Error</span></li>
+        <li>Output of <span class="code">print('  moon  '.strip())</span><span class="opts">A) '  moon  ' B) 'moon' C) ' moon ' D) Error</span></li>
+        <li>Output of <span class="code">print('red|blue'.split('|'))</span><span class="opts">A) ['red', 'blue'] B) red blue C) ('red','blue') D) Error</span></li>
+        <li>Output of <span class="code">print('mango'.replace('g', 'k'))</span><span class="opts">A) manko B) mango C) makgo D) Error</span></li>
+        <li>Output of <span class="code">print('starter'.startswith('sta'))</span><span class="opts">A) True B) False C) Error D) None</span></li>
+        <li>Output of <span class="code">print('music'.endswith('ic'))</span><span class="opts">A) True B) False C) Error D) None</span></li>
+        <li>Output of <span class="code">s = 'orange'
+print(s[2])</span><span class="opts">A) r B) a C) n D) Error</span></li>
+        <li>Output of <span class="code">s = 'window'
+print(s[-2])</span><span class="opts">A) o B) w C) d D) Error</span></li>
+        <li>Output of <span class="code">s = 'camera'
+print(s[1:4])</span><span class="opts">A) cam B) ame C) amer D) mera</span></li>
+        <li>Output of <span class="code">s = 'silver'
+print(s[:3])</span><span class="opts">A) sil B) ilv C) silv D) Error</span></li>
+        <li>Output of <span class="code">s = 'rocket'
+print(s[3:])</span><span class="opts">A) ket B) rok C) cket D) Error</span></li>
+        <li>Output of <span class="code">name = 'Asha'
+age = 19
+print(name, age)</span><span class="opts">A) Asha19 B) Asha 19 C) Asha,19 D) Error</span></li>
+        <li>Output of <span class="code">x = '12'
+y = '8'
+print(x + y)</span><span class="opts">A) 20 B) 128 C) Error D) 12 8</span></li>
+        <li>Output of <span class="code">x = '12'
+y = 8
+print(x + y)</span><span class="opts">A) 20 B) 128 C) TypeError D) None</span></li>
+        <li>Output of <span class="code">x = '12'
+y = 8
+print(x, y)</span><span class="opts">A) 128 B) 12 8 C) Error D) 20</span></li>
+        <li>Output of <span class="code">a = 4
+b = 6
+print('Total =', a + b)</span><span class="opts">A) Total = 46 B) Total = 10 C) Error D) Total =</span></li>
+        <li>Which module provides random numbers?<span class="opts">A) math B) random C) numbers D) range</span></li>
+        <li>Which statement generates a random integer from 10 to 20?<span class="opts">A) random(10,20) B) random.randrange(10,20) C) randint(10,20) without import D) math.randrange(10,21)</span></li>
+        <li>Output of <span class="code">text = '''Sky
+Cloud'''
+print(type(text))</span><span class="opts">A) &lt;class 'list'&gt; B) &lt;class 'str'&gt; C) &lt;class 'tuple'&gt; D) Error</span></li>
+        <li>Triple quotes are useful for:<span class="opts">A) Multiline strings B) Only comments C) Only numbers D) Both A and B</span></li>
+        <li>Output of <span class="code">print('sun' in 'sunrise')</span><span class="opts">A) True B) False C) Error D) None</span></li>
+        <li>Output of <span class="code">print('code' not in 'decode')</span><span class="opts">A) True B) False C) Error D) None</span></li>
+        <li>Output of <span class="code">s = 'planet'
+s = s.replace('a', '@')
+print(s)</span><span class="opts">A) planet B) pl@net C) pLanet D) Error</span></li>
+        <li>Output of <span class="code">print('Go' + 'al')</span><span class="opts">A) Goal B) Go al C) Error D) Go,al</span></li>
+        <li>Output of <span class="code">print('Go', 'al')</span><span class="opts">A) Goal B) Go al C) Go,al D) Error</span></li>
+        <li>Which escape character inserts a new line?<span class="opts">A) \t B) \n C) \\ D) \"</span></li>
+        <li>Output of <span class="code">print('It\'s \"fine\"')</span><span class="opts">A) Its fine B) It's "fine" C) Error D) It\'s \"fine\"</span></li>
+        <li>Output of <span class="code">print('D:\\docs\\new')</span><span class="opts">A) D:docsnew B) D:\docs\new C) Error D) None</span></li>
+        <li>Output of <span class="code">x = 7
+y = 0.5
+print(type(x + y))</span><span class="opts">A) &lt;class 'int'&gt; B) &lt;class 'float'&gt; C) &lt;class 'str'&gt; D) Error</span></li>
+ <li>Output of <span class="code">s = 'marble'
+print(s[-1:])</span><span class="opts">A) e B) marble C) m D) Error</span></li>
+        </ol>
+    </section>
+
+    <div class="footer">End of Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: A4, Portrait, Scale 100%, disable browser header/footer.</p>
+</body>
+</html>

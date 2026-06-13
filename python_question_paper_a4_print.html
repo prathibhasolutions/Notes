@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --page-margin: 11mm;
+      --ink: #14202b;
+      --muted: #52606d;
+      --line: #233445;
+      --soft-line: #bac5cf;
+      --panel: #f6f8fb;
+      --panel-strong: #e8eef5;
+      --accent: #143f6b;
+      --accent-soft: #2a628f;
+      --paper-edge: #d5dde6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #e6ebf1 0%, #dce4ec 100%);
+      font-family: "Times New Roman", Georgia, serif;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      margin: 8mm auto;
+      background: #fff;
+      min-height: 297mm;
+      padding: var(--page-margin);
+      border: 1px solid var(--paper-edge);
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 3mm 8mm rgba(17, 30, 44, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at top right, rgba(20, 63, 107, 0.08), transparent 27%), linear-gradient(135deg, rgba(15, 76, 129, 0.04) 0%, rgba(15, 76, 129, 0) 38%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1.2px solid var(--line);
+      background: linear-gradient(180deg, var(--panel) 0%, #ffffff 100%);
+      padding: 3.4mm 3.6mm;
+      display: grid;
+      grid-template-columns: 18mm 1fr auto;
+      gap: 3.4mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      border-radius: 2mm;
+    }
+
+    .logo {
+      width: 15mm;
+      height: 15mm;
+      border: 1px solid #9caaba;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 1.6mm;
+      box-shadow: inset 0 0 0 1px #eef2f6;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title-block {
+      text-align: left;
+      line-height: 1.15;
+    }
+
+    .institute {
+      font-size: 12.6pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #0f2943;
+    }
+
+    .exam-title {
+      margin-top: 0.9mm;
+      font-size: 14.3pt;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .subject-line {
+      margin-top: 0.9mm;
+      font-size: 9pt;
+      color: #425263;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+    }
+
+    .paper-stamp {
+      border: 1px solid #9db0c3;
+      background: linear-gradient(180deg, #ffffff 0%, var(--panel-strong) 100%);
+      color: var(--accent);
+      padding: 1.6mm 2.4mm;
+      font-size: 8.6pt;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .meta {
+      margin-top: 3mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.4pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      padding: 2.1mm 2.4mm;
+      min-height: 9.2mm;
+      border: 1px solid var(--soft-line);
+      background: #fff;
+      border-radius: 1.6mm;
+      box-shadow: inset 0 0 0 1px #f7f9fb;
+    }
+
+    .rule-box {
+      margin-top: 3mm;
+      border: 1px solid var(--soft-line);
+      border-left: 2.2mm solid var(--accent);
+      padding: 2.4mm 2.6mm;
+      font-size: 9pt;
+      line-height: 1.45;
+      position: relative;
+      z-index: 1;
+      background: #fbfdff;
+      border-radius: 0 1.6mm 1.6mm 0;
+    }
+
+    .rule-box b {
+      color: #0d3559;
+      display: inline-block;
+      margin-bottom: 0.7mm;
+    }
+
+    h3 {
+      margin: 4mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid var(--soft-line);
+      background: linear-gradient(180deg, var(--panel) 0%, #ffffff 100%);
+      color: var(--accent);
+      padding: 1.8mm 2.3mm;
+      position: relative;
+      z-index: 1;
+      border-radius: 1.5mm;
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 5.4mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    li {
+      margin: 0 0 2.1mm;
+      line-height: 1.42;
+      font-size: 9.35pt;
+      padding: 0 0 1.3mm 0.3mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e1e8;
+    }
+
+    .code {
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.9pt;
+      white-space: pre-wrap;
+      background: linear-gradient(180deg, #f7fafd 0%, #f1f6fb 100%);
+      border: 1px solid #d7e1ea;
+      border-left: 1.6mm solid #9db8d3;
+      padding: 1.7mm 2mm;
+      margin-top: 1mm;
+      line-height: 1.3;
+      border-radius: 1.2mm;
+    }
+
+    .inline-code {
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.9pt;
+      background: #f4f8fc;
+      border: 1px solid #d6e1ec;
+      padding: 0.2mm 1mm;
+      border-radius: 0.8mm;
+    }
+
+    .marks {
+      font-size: 8.7pt;
+      color: #3b556d;
+      margin-top: 1mm;
+      margin-bottom: 2.4mm;
+      position: relative;
+      z-index: 1;
+      background: #f6f9fc;
+      border: 1px solid #d8e1ea;
+      padding: 1.5mm 2mm;
+      border-radius: 1.3mm;
+    }
+
+    .example {
+      margin-top: 0.9mm;
+      font-size: 8.7pt;
+      color: #35506a;
+      background: #f8fbfe;
+      border: 1px solid #dbe4ec;
+      border-left: 1.2mm solid #86a7c5;
+      padding: 1.1mm 1.7mm;
+      border-radius: 1.1mm;
+      line-height: 1.35;
+    }
+
+    .example b {
+      color: #173f66;
+    }
+
+    .footer-note {
+      margin-top: 3mm;
+      border-top: 1px dashed #98a5b2;
+      padding-top: 1.8mm;
+      font-size: 8.6pt;
+      color: #4f5c68;
+      text-align: center;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 8mm;
+      text-align: right;
+      color: #44515d;
+      font-size: 9pt;
+      font-family: Georgia, serif;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        box-shadow: none;
+        border: 1px solid var(--paper-edge);
+        border-top: 2.2mm solid var(--accent);
+        min-height: calc(297mm - 20mm);
+        page-break-after: auto;
+      }
+
+      .header,
+      .meta div,
+      .rule-box,
+      h3,
+      .marks,
+      .code,
+      .inline-code {
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Python A4 Question Paper">
+    <header class="header">
+      <div class="logo" aria-label="Institute Logo">
+        <img src="prathibha_logo.png" alt="Institute logo" />
+      </div>
+      <div class="title-block">
+        <div class="institute">Prathibha Institute</div>
+        <div class="exam-title">Advanced Python Examination</div>
+       
+      </div>
+      
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 1.5 Hours</div>
+      <div><b>Maximum Marks:</b> 50</div>
+      <div><b>Name:</b> __________________</div>
+    </section>
+
+    <section class="rule-box" aria-label="Instructions">
+      <b>General Instructions:</b>
+      1. Answer all questions in Section A and Section B.
+      2. Section C has 7 program questions; answer any 5.
+      3. Each question in Section A and B carries 1 mark.
+      4. Each question in Section C carries 6 marks.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol>
+      <li>What is the value of <span class="inline-code">x</span> after execution?
+        <div class="code">x = 3
+x += x == 3
+x *= 2</div>
+        Options: A) 6 B) 8 C) 7 D) 4
+      </li>
+      <li>Evaluate output:
+        <div class="code">a = 2
+b = 3
+c = 4
+print(a &lt; b == c &gt; a)</div>
+        Options: A) True B) False C) 0 D) Error
+      </li>
+      <li>For <span class="inline-code">n = 14</span>, what is printed?
+        <div class="code">if n % 2 == 0:
+    if n % 7:
+        print(1)
+    else:
+        print(2)
+else:
+    print(3)</div>
+        Options: A) 1 B) 2 C) 3 D) Nothing
+      </li>
+      <li>What is output?
+        <div class="code">x = 5
+match x % 4:
+    case 0:
+        print(10)
+    case 1 | 2:
+        print(20)
+    case _:
+        print(30)</div>
+        Options: A) 10 B) 20 C) 30 D) Error
+      </li>
+      <li>How many times does inner loop run?
+        <div class="code">count = 0
+for i in range(1, 5):
+    for j in range(i, 5):
+        count += 1
+print(count)</div>
+        Options: A) 6 B) 8 C) 10 D) 12
+      </li>
+      <li>Pick correct value of <span class="inline-code">z</span>:
+        <div class="code">z = 2 ** 3 ** 2 // 8</div>
+        Options: A) 8 B) 64 C) 512 D) 2048
+      </li>
+      <li>What is printed?
+        <div class="code">x = 0
+for i in range(3):
+    x = x or i
+print(x)</div>
+        Options: A) 0 B) 1 C) 2 D) Error
+      </li>
+      <li>Choose correct output:
+        <div class="code">s = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        continue
+    s += i
+else:
+    s -= 1
+print(s)</div>
+        Options: A) 8 B) 9 C) 7 D) 6
+      </li>
+      <li>Find output:
+        <div class="code">x = 3
+y = 9
+print(not x &gt; 2 and y // x == 3)</div>
+        Options: A) True B) False C) 3 D) Error
+      </li>
+      <li>What is value of <span class="inline-code">p</span>?
+        <div class="code">p = 1
+for i in range(1, 4):
+    p *= i
+    if p &gt; 2:
+        break
+else:
+    p += 10
+print(p)</div>
+        Options: A) 2 B) 6 C) 12 D) 16
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol>
+      <li>In Python, the data type of <span class="inline-code">3 + 0j</span> is __________.</li>
+      <li>The expression <span class="inline-code">7 // 3 * 3 + 7 % 3</span> evaluates to __________.</li>
+      <li>To match any unmatched pattern in <span class="inline-code">match</span>, use case __________.</li>
+      <li>If <span class="inline-code">x = 4</span>, then <span class="inline-code">x &lt;&lt; 1</span> gives __________.</li>
+      <li>The Boolean result of <span class="inline-code">0 and 5</span> is __________.</li>
+      <li>A <span class="inline-code">for</span> loop can have an optional __________ block that executes if loop is not terminated by <span class="inline-code">break</span>.</li>
+      <li>The value of <span class="inline-code">int(True) + int(False) + 4</span> is __________.</li>
+      <li>For <span class="inline-code">n = 19</span>, the value of <span class="inline-code">n % 10 // 2</span> is __________.</li>
+      <li>In nested loops, the inner loop runs completely for every single __________ loop iteration.</li>
+      <li>The final value of <span class="inline-code">x</span> is __________.
+        <div class="code">x = 1
+while x &lt; 20:
+    x *= 2</div>
+      </li>
+    </ol>
+
+    <h3>Section C: Programs (Answer Any 5 Questions, 5 x 6 = 30 Marks)</h3>
+    <div class="marks">Write complete Python programs. Answer any 5 questions.</div>
+    <ol>
+      <li>Read an integer <span class="inline-code">n</span>. Print code <span class="inline-code">1</span> if <span class="inline-code">n</span> is positive-even-prime, code <span class="inline-code">2</span> if positive-even-non-prime, code <span class="inline-code">3</span> if positive-odd-prime, code <span class="inline-code">4</span> if positive-odd-non-prime, and code <span class="inline-code">0</span> if <span class="inline-code">n &lt;= 0</span>. Use nested <span class="inline-code">if</span> only.
+        <div class="example"><b>Example:</b> Input: 11<br /> <b>Output:</b> 3</div>
+      </li>
+      <li>Read integer <span class="inline-code">n</span>. Compute
+        <div class="code">S = (1*1) - (1*2) + (2*1) - (2*2) + (3*1) - (3*2) + ... + (n*1) - (n*2)</div>
+        using nested loops and print <span class="inline-code">S</span>. No formula shortcuts.
+        <div class="example"><b>Example:</b> Input: 3<br /> <b>Output:</b> -6</div>
+      </li>
+      <li>Read integer <span class="inline-code">n</span>. Using <span class="inline-code">while</span> loop and arithmetic operations only, repeatedly replace <span class="inline-code">n</span> by sum of its digits until a single digit remains. Print that final digit.
+        <div class="example"><b>Example:</b> Input: 9875<br /> <b>Output:</b> 2</div>
+      </li>
+      <li>Read integer <span class="inline-code">r</span> (<span class="inline-code">1 &lt;= r &lt;= 9</span>). Print the first <span class="inline-code">r</span> rows of Pascal triangle using nested loops only. Do not use arrays or strings. Each row must appear on a new line with values separated by a single space.
+        <div class="example"><b>Example:</b> Input: 5<br /> <b>Output:</b><br />1<br />1 1<br />   1 2 1<br />1 3 3 1<br />1 4 6 4 1</div>
+      </li>
+      <li>Read integer <span class="inline-code">t</span>. Find the smallest positive integer <span class="inline-code">k</span> such that
+        <div class="code">1^2 + 2^2 + 3^2 + ... + k^2 &gt;= t</div>
+        using loop only. Print <span class="inline-code">k</span> and the achieved sum.
+        <div class="example"><b>Example:</b> Input: 20<br /> <b>Output:</b> 4 30</div>
+      </li>
+      <li>Read integer <span class="inline-code">n</span>. Count how many digits of <span class="inline-code">n</span> are even, odd, and zero (treat input 0 carefully). Print these three counts in order. Use loops and operators only.
+        <div class="example"><b>Example:</b> Input: 2461350<br /> <b>Output:</b> 3 3 1</div>
+      </li>
+      <li>Read integer <span class="inline-code">n</span>. Check whether <span class="inline-code">n</span> belongs to the Fibonacci series or not using loops and variables only. Print <span class="inline-code">YES</span> if it belongs to the series and <span class="inline-code">NO</span> otherwise. Treat <span class="inline-code">0</span> and <span class="inline-code">1</span> correctly.
+        <div class="example"><b>Example:</b> Input: 34<br /> <b>Output:</b> YES</div>
+      </li>
+    </ol>
+
+    <p class="footer-note">End of Question Paper</p>
+  </section>
+
+  <p class="print-tip">Print tip: set scale to 100% and disable browser header/footer.</p>
+</body>
+</html>
