@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Basics Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .code {
+      display: block;
+      white-space: pre;
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.8pt;
+      line-height: 1.27;
+      margin-top: 0.9mm;
+      background: #f5f9fd;
+      border: 1px solid #d8e2ec;
+      border-radius: 1mm;
+      padding: 1.45mm 1.8mm;
+      tab-size: 4;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Python Basics Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Python Basics - A4 Question Paper</div>
+        <div class="subtitle">Syllabus: Syntax, Data Types, Variables, Operators, Numbers, Casting, Booleans, Strings</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 90 Minutes</div>
+      <div><b>Total Marks:</b> 50</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill in the blanks, and Section C has 6 programs. Program questions must be solved using only the given syllabus and should avoid control structures like if/else and loops.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        What is the datatype of the result when an integer is added to a float in Python?
+        <span class="opts">A) &lt;class 'int'&gt;  B) &lt;class 'float'&gt;  C) &lt;class 'complex'&gt;  D) Error</span>
+      </li>
+      <li>
+        Which statement is valid multiple assignment syntax in Python?
+        <span class="opts">A) x, y = 10 20  B) x = y = 10  C) int x, y = 10, 20  D) x := 10, y := 20</span>
+      </li>
+      <li>
+        What is the value of floor division of 5 by 2 plus remainder of 5 divided by 2?
+        <span class="opts">A) 1  B) 2  C) 3  D) 4</span>
+      </li>
+      <li>
+        Which expression uses a bitwise operator?
+        <span class="opts">A) a and b  B) a &amp; b  C) a in b  D) a is b</span>
+      </li>
+      <li>
+        Which pair correctly represents the boolean value of a non-empty string and the number zero?
+        <span class="opts">A) False False  B) True False  C) False True  D) True True</span>
+      </li>
+      <li>
+        If 101 and 11 are treated as binary values and converted to decimal, what is their sum?
+        <span class="opts">A) 6  B) 7  C) 8  D) 9</span>
+      </li>
+      <li>
+        What is the output when the text Py is repeated two times and then 3 is concatenated as text?
+        <span class="opts">A) PyPy3  B) Py23  C) PyPyPy  D) Error</span>
+      </li>
+      <li>
+        What substring is obtained from the word python using indices from minus four to minus one?
+        <span class="opts">A) tho  B) hon  C) yth  D) thon</span>
+      </li>
+      <li>
+        Which operator checks whether two variables point to the same object?
+        <span class="opts">A) ==  B) =  C) is  D) in</span>
+      </li>
+      <li>
+        What is the value of 3 raised to the power of 2 raised to the power of 2 in Python?
+        <span class="opts">A) 81  B) 36  C) 18  D) 12</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>The operator used for exponentiation in Python is <span class="blank">__________</span>.</li>
+      <li>The datatype of a number written with j as imaginary part is <span class="blank">__________</span>.</li>
+      <li>After converting a number into text form, the datatype becomes <span class="blank">__________</span>.</li>
+      <li>Division of two integers using the normal division operator gives a <span class="blank">__________</span> type result.</li>
+      <li>In Python, an identifier cannot start with a <span class="blank">__________</span>.</li>
+      <li>The boolean value of an empty string is <span class="blank">__________</span>.</li>
+      <li>Joining two strings with plus operator is called string <span class="blank">__________</span>.</li>
+      <li>Floor division of 17 by 3 gives <span class="blank">__________</span>.</li>
+      <li>The cast used to convert a float value to integer is <span class="blank">__________</span>.</li>
+      <li>Negative index minus one in a string refers to the <span class="blank">__________</span> character.</li>
+    </ol>
+
+    <h3>Section C: Programs (6 x 5 = 30 Marks)</h3>
+    <p class="marks">Write programs using only syntax, datatypes, variables, operators, numbers, casting, booleans, and strings. Do not use loops or if/else. Keep exactly two formula-based programs.</p>
+    <ol class="single-col">
+      <li>
+        Write a program to read the radius of a circle and print diameter, circumference, and area using standard formulas.
+      </li>
+      <li>
+        Write a program to read a string and print first character, last character, first three characters, last three characters, reverse string, length, uppercase form, and lowercase form.
+      </li>
+      <li>
+        Write a program to read first name and last name and print full name, full name in uppercase, full name in title case, initials, and total number of characters excluding spaces.
+      </li>
+      <li>
+        Write a program to read two numbers and print the boolean results for greater than, less than, equal to, not equal to, greater than or equal to, less than or equal to, and boolean conversion of each number.
+      </li>
+      <li>
+        Write a program to read three numbers and print sum, difference, product, division, floor division, remainder, power, and the datatype of each computed result.
+      </li>
+      <li>
+        Write a program to read principal, rate, and time, then print simple interest, total amount, and monthly interest using standard formulas.
+      </li>
+    </ol>
+
+    <div class="footer">End of Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Basics If-Else Match Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.8pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Python Basics If Else Match Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Python Part 1 -Question Paper</div>
+        <div class="subtitle">Syllabus: Syntax, Data Types, Variables, Operators, Numbers, Casting, Booleans, Strings, If-Else, Match</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 90 Minutes</div>
+      <div><b>Total Marks:</b> 50</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill in the blanks, and Section C has 6 programs. In Section C, write one formula-based program, three if-else programs, one match-case program, and one operators-focused program.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which keyword begins a conditional branch in Python?
+        <span class="opts">A) then  B) if  C) case  D) switch</span>
+      </li>
+      <li>
+        Which keyword is used for an alternative branch when the if condition is false?
+        <span class="opts">A) elif  B) alt  C) else  D) except</span>
+      </li>
+      <li>
+        In a multi-condition chain, which keyword checks another condition after if?
+        <span class="opts">A) elseif  B) elif  C) else if  D) case</span>
+      </li>
+      <li>
+        What is the boolean value of an empty string in Python?
+        <span class="opts">A) True  B) False  C) None  D) Error</span>
+      </li>
+      <li>
+        Which operator gives True only when both conditions are True?
+        <span class="opts">A) and  B) or  C) not  D) is</span>
+      </li>
+      <li>
+        Which statement about match-case is correct in Python?
+        <span class="opts">A) It replaces all if-else in every case  B) It matches patterns against a subject value  C) It works only with numbers  D) It does not support default case</span>
+      </li>
+      <li>
+        Which case pattern works as the default branch in match-case?
+        <span class="opts">A) else  B) default  C) _  D) any</span>
+      </li>
+      <li>
+        What is the result type of normal division of two integers?
+        <span class="opts">A) int  B) float  C) bool  D) str</span>
+      </li>
+      <li>
+        Which operator checks value equality, not object identity?
+        <span class="opts">A) is  B) ==  C) =  D) !=</span>
+      </li>
+      <li>
+        What is the value of expression not True or False?
+        <span class="opts">A) True  B) False  C) Error  D) None</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>The keyword used to check a condition is <span class="blank">__________</span>.</li>
+      <li>The keyword used when the if condition is false is <span class="blank">__________</span>.</li>
+      <li>The keyword used for an extra condition between if and else is <span class="blank">__________</span>.</li>
+      <li>In match-case, the symbol used for any other value is <span class="blank">__________</span>.</li>
+      <li>The keyword used to start pattern matching in Python is <span class="blank">__________</span>.</li>
+      <li>The datatype obtained after converting 25 to text is <span class="blank">__________</span>.</li>
+      <li>The boolean value of zero is <span class="blank">__________</span>.</li>
+      <li>The operator used for floor division is <span class="blank">__________</span>.</li>
+      <li>The operator used for exponentiation is <span class="blank">__________</span>.</li>
+      <li>Negative index minus one in a string refers to the <span class="blank">__________</span> character.</li>
+    </ol>
+
+    <h3>Section C: Programs (6 x 5 = 30 Marks)</h3>
+    <p class="marks">Write clear and complete programs on the given topics. Use if-else and match where requested. Keep logic correct for edge cases and tricky values.</p>
+    <ol class="single-col">
+      <li>
+        Formula-based: Write a program to read length and breadth of a rectangle and print area, perimeter.
+      </li>
+      <li>
+        If-else based: Write a program to read three numbers and print the greatest number. If all are equal, print that they are all equal.
+      </li>
+      <li>
+        If-else based: Write a program to read a year and print whether it is a leap year or not using all conditions: divisible by 400 is leap year, divisible by 100 but not 400 is not leap year, divisible by 4 but not by 100 is leap year, otherwise not leap year.
+      </li>
+      <li>
+        If-else based: Write a program to read marks in five subjects, calculate total and percentage, then print grade as Distinction, First Class, Second Class, Pass, or Fail. Also handle invalid input if any mark is less than 0 or greater than 100.
+      </li>
+      <li>
+        Match based: Write a menu-driven calculator program using match-case for choices add, subtract, multiply, divide, and default invalid choice.
+      </li>
+      <li>
+        Operators based: Write a program to read two integers and print results of arithmetic, relational, logical, assignment update, bitwise, identity, and membership operator checks with proper labels.
+      </li>
+    </ol>
+
+    <div class="footer">End of Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>
