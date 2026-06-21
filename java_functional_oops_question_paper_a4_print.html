@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Functional Programming and OOP Fundamentals Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.1pt;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.6pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.45pt;
+      line-height: 1.36;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.4pt;
+      line-height: 1.37;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 8.9pt;
+      line-height: 1.45;
+      padding-left: 1.2mm;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Java Functional Programming and OOP Fundamentals Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Java Functional Programming and OOP Fundamentals</div>
+        <div class="subtitle">Syllabus: Java Functional Programming, Classes, Objects, Constructors, Methods, Encapsulation Basics (No Inheritance, No Polymorphism)</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 90 Minutes</div>
+      <div><b>Total Marks:</b> 50</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill in the blanks, and Section C has 6 programs.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which keyword is used to define a class in Java?
+        <span class="opts">A) object<br>B) class<br>C) method<br>D) define</span>
+      </li>
+      <li>
+        Which keyword is used to create an object in Java?
+        <span class="opts">A) class<br>B) new<br>C) this<br>D) void</span>
+      </li>
+      <li>
+        Which one is a valid variable declaration in Java?
+        <span class="opts">A) int 1num;<br>B) int num = 10;<br>C) number int = 10;<br>D) int = num 10;</span>
+      </li>
+      <li>
+        Which method name is special and used as program entry point?
+        <span class="opts">A) start()<br>B) run()<br>C) main()<br>D) init()</span>
+      </li>
+      <li>
+        Which statement about a constructor is correct?
+        <span class="opts">A) It must return void<br>B) Its name must match class name<br>C) It can be final only<br>D) It can be abstract</span>
+      </li>
+      <li>
+        Which access modifier is used to hide variables inside a class?
+        <span class="opts">A) public<br>B) private<br>C) static<br>D) final</span>
+      </li>
+      <li>
+        What does this keyword refer to in Java?
+        <span class="opts">A) Current object<br>B) Parent class<br>C) Package name<br>D) Method name</span>
+      </li>
+      <li>
+        Which is a correct method declaration?
+        <span class="opts">A) int add(int a, int b)<br>B) add int(a, b)<br>C) method add(int a, int b)<br>D) int add = (int a, int b)</span>
+      </li>
+      <li>
+        Which is true about objects?
+        <span class="opts">A) Object is a blueprint<br>B) Object is an instance of class<br>C) Object is a method only<br>D) Object is a datatype keyword</span>
+      </li>
+      <li>
+        Which keyword is used to return a value from a method?
+        <span class="opts">A) break<br>B) print<br>C) return<br>D) continue</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>A class is a <span class="blank">__________</span> for creating objects.</li>
+      <li>The keyword used to create an object is <span class="blank">__________</span>.</li>
+      <li>The method that starts Java program execution is <span class="blank">__________</span>.</li>
+      <li>A constructor name must be same as the <span class="blank">__________</span> name.</li>
+      <li>The keyword used to refer to current object is <span class="blank">__________</span>.</li>
+      <li>A variable declared inside a method is called a <span class="blank">__________</span> variable.</li>
+      <li>A constructor has no explicit <span class="blank">__________</span> type.</li>
+      <li>Variables declared inside a class but outside methods are called <span class="blank">__________</span> variables.</li>
+      <li>The keyword used to hide data members is <span class="blank">__________</span>.</li>
+      <li>A block of code that performs a task is called a <span class="blank">__________</span>.</li>
+    </ol>
+
+    <h3>Section C: Programs (6 x 5 = 30 Marks)</h3>
+    <p class="marks">Write all programs in Java. Include proper input and output. </p>
+    <ol class="single-col">
+      <li>
+        Write a program to read three sides of a triangle and print the type of triangle (Equilateral, Isosceles, or Scalene) using if/else.
+        <br><b>Sample Input:</b> 5 5 8
+        <br><b>Sample Output:</b> Isosceles Triangle
+      </li>
+      <li>
+        Write a program to read 10 integer elements into an array, then use loops to print the array elements, sum of all elements, and largest element.
+        <br><b>Sample Input:</b> 4 9 2 15 7 1 6 8 3 10
+        <br><b>Sample Output:</b> Elements: 4 9 2 15 7 1 6 8 3 10, Sum: 65, Largest: 15
+      </li>
+      <li>
+        Write a nested-loop program to print the following alphabet pattern up to n rows :<br>
+       
+        <br><b>Sample Input:</b> 4
+        <br><b>Sample Output:</b><br>
+        A<br>
+        BC<br>
+        DEF<br>
+        GHIJ<br>
+      </li>
+      <li>
+        Write a program to read a sentence, count vowels using String methods, and store each word length into an integer array and print that array.
+        <br><b>Sample Input:</b> Java is very easy
+        <br><b>Sample Output:</b> Vowel Count: 6, Word Lengths: [4, 2, 4, 4]
+      </li>
+      <li>
+        OOP Program 1: Create a class Student with fields id, marks1, marks2, marks3, a constructor to initialize them, and a method totalMarks(). In main, create two objects and print each total.
+        <br><b>Sample Input:</b> Student1: 101 78 82 91, Student2: 102 88 76 84
+        <br><b>Sample Output:</b> Student 101 Total: 251, Student 102 Total: 248
+      </li>
+      <li>
+        OOP Program 2: Create a class Calculator with methods add, sub, mul, div, and mod. In main, create an object, call all methods for two input numbers, and print results.
+        <br><b>Sample Input:</b> 20 6
+        <br><b>Sample Output:</b> Add: 26, Sub: 14, Mul: 120, Div: 3, Mod: 2
+      </li>
+    </ol>
+
+    <div class="footer">End of Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>

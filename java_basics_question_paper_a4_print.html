@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Basics Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .code {
+      display: block;
+      white-space: pre;
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.8pt;
+      line-height: 1.27;
+      margin-top: 0.9mm;
+      background: #f5f9fd;
+      border: 1px solid #d8e2ec;
+      border-radius: 1mm;
+      padding: 1.45mm 1.8mm;
+      tab-size: 4;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Java Basics Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Java Basics - A4 Question Paper</div>
+        <div class="subtitle">Syllabus: Syntax, Data Types, Variables, Operators, Numbers, Type Casting, Booleans</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 90 Minutes</div>
+      <div><b>Total Marks:</b> 50</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill in the blanks, and Section C has 6 programs. Program questions must be solved using only the given syllabus and should avoid control structures like if/else and loops.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        What is the datatype of the result when an int is added to a double in Java?
+        <span class="opts">A) int  B) float  C) double  D) long</span>
+      </li>
+      <li>
+        Which declaration is valid in Java?
+        <span class="opts">A) int a = 10, b = 20;  B) int a, b = 10, 20;  C) a int = 10;  D) int a = b = 10;</span>
+      </li>
+      <li>
+        What is the value of 5 / 2 + 5 % 2 in Java using int values?
+        <span class="opts">A) 1  B) 2  C) 3  D) 4</span>
+      </li>
+      <li>
+        Which expression uses a bitwise operator?
+        <span class="opts">A) a && b  B) a &amp; b  C) a || b  D) !a</span>
+      </li>
+      <li>
+        If a = 5 and b = 0, what is the result of (a > b) && (b == 0)?
+        <span class="opts">A) true  B) false  C) 0  D) Error</span>
+      </li>
+      <li>
+        What is the decimal value of binary 101 plus binary 11?
+        <span class="opts">A) 6  B) 7  C) 8  D) 9</span>
+      </li>
+      <li>
+        Which cast is required to assign 19.8 to an int variable?
+        <span class="opts">A) (double)  B) (float)  C) (int)  D) No cast needed</span>
+      </li>
+      <li>
+        What is the output type of the expression 7L + 3?
+        <span class="opts">A) int  B) long  C) float  D) byte</span>
+      </li>
+      <li>
+        Which operator checks value equality for primitive numbers?
+        <span class="opts">A) =  B) ==  C) equals  D) !=</span>
+      </li>
+      <li>
+        What is the value of 3 * 2 * 2 + 4 / 2 in Java?
+        <span class="opts">A) 10  B) 12  C) 14  D) 16</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>The operator used for remainder in Java is <span class="blank">__________</span>.</li>
+      <li>The datatype used for whole numbers up to about 2 billion is <span class="blank">__________</span>.</li>
+      <li>The datatype suffix used with long literals is <span class="blank">__________</span>.</li>
+      <li>The result type of int / int in Java is generally <span class="blank">__________</span>.</li>
+      <li>Explicit conversion from double to int is called <span class="blank">__________</span>.</li>
+      <li>The boolean datatype in Java is <span class="blank">__________</span>.</li>
+      <li>The operator used for logical AND is <span class="blank">__________</span>.</li>
+      <li>Floor-like integer result of 17 / 3 in int division is <span class="blank">__________</span>.</li>
+      <li>The unary operator used to increase a value by 1 is <span class="blank">__________</span>.</li>
+      <li>The datatype used for decimal values with higher precision than float is <span class="blank">__________</span>.</li>
+    </ol>
+
+    <h3>Section C: Programs (6 x 5 = 30 Marks)</h3>
+    <p class="marks">Write programs using only syntax, datatypes, variables, operators, numbers, type casting, and booleans. Do not use loops, if/else, arrays, or strings. Keep all programs formula-based and operator-based.</p>
+    <ol class="single-col">
+      <li>
+        Write a program to read radius and print diameter, circumference, and area of a circle using formulas.
+      </li>
+      <li>
+        Write a program to read principal, rate, and time, then print simple interest and total amount using formulas.
+      </li>
+      <li>
+        Write a program to read length, width, and height of a cuboid and print volume and total surface area.
+      </li>
+      <li>
+        Write a program to read distance (km) and time (hours), then print speed in km/h and m/s.
+      </li>
+      <li>
+        Write a program to read two numbers and print sum, difference, product, quotient, remainder, and power using operators.
+      </li>
+      <li>
+        Write a program to read marks of five subjects and print total, average, and percentage using formulas.
+      </li>
+    </ol>
+
+    <div class="footer">End of Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>
