@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PPT → Word Textbook Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --navy:       #172954;
+            --navy-mid:   #1e3a6e;
+            --accent:     #4a90e2;
+            --accent-lt:  #e8f0fe;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background: #eef2f7;
+            font-family: 'Segoe UI', Calibri, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* ── Header ─────────────────────────────────────────── */
+        .site-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+            color: #fff;
+            padding: 1.4rem 0 1.2rem;
+            text-align: center;
+            box-shadow: 0 3px 14px rgba(0,0,0,.22);
+        }
+        .site-header .logo-wrap img {
+            height: 48px;
+            margin-bottom: 0.5rem;
+        }
+        .site-header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -.4px;
+            margin: 0 0 .2rem;
+        }
+        .site-header p {
+            opacity: .75;
+            font-size: .88rem;
+            margin: 0;
+        }
+        .badge-ppt  { color: #ff7043; }
+        .badge-word { color: #4fc3f7; }
+        .arrow-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent);
+            border-radius: 50%;
+            width: 30px; height: 30px;
+            font-size: 1rem;
+            vertical-align: middle;
+            margin: 0 6px;
+        }
+
+        /* ── Main card ───────────────────────────────────────── */
+        .converter-card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 8px 34px rgba(23,41,84,.13);
+            overflow: hidden;
+        }
+        .converter-card .card-cap {
+            background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 100%);
+            color: #fff;
+            padding: .85rem 1.4rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* ── Drop zone ───────────────────────────────────────── */
+        .drop-zone {
+            border: 2.5px dashed #b0bec5;
+            border-radius: 14px;
+            padding: 2.8rem 2rem 2.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all .22s ease;
+            background: #fafbfc;
+            user-select: none;
+        }
+        .drop-zone:hover,
+        .drop-zone.dragover {
+            border-color: var(--accent);
+            background: var(--accent-lt);
+        }
+        .drop-zone .dz-icon {
+            font-size: 3.2rem;
+            color: var(--navy);
+            opacity: .55;
+            display: block;
+            margin-bottom: .6rem;
+        }
+        .drop-zone h5 {
+            color: var(--navy);
+            font-weight: 600;
+            margin-bottom: .3rem;
+            font-size: 1.05rem;
+        }
+        .drop-zone .dz-hint {
+            color: #78909c;
+            font-size: .85rem;
+            margin: 0;
+        }
+
+        /* ── File badge ──────────────────────────────────────── */
+        .file-badge {
+            background: #e8f5e9;
+            border: 1.5px solid #a5d6a7;
+            border-radius: 10px;
+            padding: .6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-size: .9rem;
+            color: #2e7d32;
+        }
+        .file-badge .file-icon { font-size: 1.4rem; }
+        .file-badge .clear-btn {
+            cursor: pointer;
+            color: #e57373;
+            margin-left: auto;
+            font-size: 1.1rem;
+            transition: color .15s;
+        }
+        .file-badge .clear-btn:hover { color: #c62828; }
+
+        /* ── Convert button ──────────────────────────────────── */
+        .btn-convert {
+            background: linear-gradient(90deg, var(--navy) 0%, var(--accent) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: .75rem 2.8rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: .3px;
+            transition: opacity .2s, transform .15s;
+        }
+        .btn-convert:hover:not(:disabled) {
+            opacity: .88;
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .btn-convert:disabled { opacity: .5; cursor: not-allowed; }
+
+        /* ── Progress ────────────────────────────────────────── */
+        .progress { height: 8px; border-radius: 4px; }
+        .progress-bar {
+            background: linear-gradient(90deg, var(--navy), var(--accent));
+            transition: width .4s ease;
+        }
+        .prog-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: .82rem;
+            color: #78909c;
+            margin-bottom: 4px;
+        }
+
+        /* ── Status boxes ────────────────────────────────────── */
+        .status-box {
+            border-radius: 10px;
+            padding: .8rem 1.1rem;
+            font-size: .93rem;
+            display: flex;
+            align-items: flex-start;
+            gap: .55rem;
+        }
+        .status-ok    { background:#e8f5e9; color:#1b5e20; border:1.5px solid #a5d6a7; }
+        .status-err   { background:#ffeaeb; color:#b71c1c; border:1.5px solid #f4aaaa; }
+
+        /* ── Feature chips ───────────────────────────────────── */
+        .chip {
+            background: #e8eaf6;
+            color: var(--navy);
+            border-radius: 20px;
+            padding: .28rem .85rem;
+            font-size: .8rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: .3rem;
+            margin: .2rem .15rem;
+        }
+        .chip i { color: var(--accent); }
+
+        /* ── How it works ────────────────────────────────────── */
+        .how-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            box-shadow: 0 2px 12px rgba(23,41,84,.07);
+        }
+        .how-card h6 {
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: .9rem;
+        }
+        .step { display:flex; align-items:flex-start; gap:.9rem; padding:.45rem 0; }
+        .step-num {
+            background: var(--navy);
+            color: #fff;
+            border-radius: 50%;
+            width: 27px; height: 27px; min-width: 27px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: .77rem; font-weight: 700;
+        }
+        .step-txt { font-size: .89rem; color: #455a64; padding-top: 4px; line-height: 1.4; }
+        .note-box {
+            background: #fff8e1;
+            border-left: 4px solid #ffa000;
+            border-radius: 0 8px 8px 0;
+            padding: .75rem 1rem;
+            font-size: .85rem;
+            color: #5d4037;
+            margin-top: .9rem;
+        }
+        code { background:#f5f5f5; padding:1px 5px; border-radius:4px; }
+    </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────────────────── -->
+<header class="site-header">
+    <div class="logo-wrap">
+        <img src="logo.png" alt="Logo" onerror="this.style.display='none'">
+    </div>
+    <h1>
+        <i class="bi bi-file-earmark-ppt-fill badge-ppt"></i>
+        <span class="arrow-circle"><i class="bi bi-arrow-right"></i></span>
+        <i class="bi bi-file-earmark-word-fill badge-word"></i>
+        PPT → Word Textbook Converter
+    </h1>
+    <p>Convert PowerPoint presentations into clean, continuous, textbook-style Word documents</p>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────────────────────── -->
+<div class="container" style="max-width:760px; margin-top:2.2rem; margin-bottom:3rem;">
+
+    <!-- Converter card -->
+    <div class="converter-card card mb-4">
+        <div class="card-cap">
+            <i class="bi bi-magic me-2"></i>Convert Presentation to Word
+        </div>
+        <div class="card-body p-4">
+
+            <!-- Drop zone -->
+            <div class="drop-zone mb-3" id="dropZone"
+                 onclick="document.getElementById('fileInput').click()">
+                <i class="bi bi-cloud-arrow-up dz-icon"></i>
+                <h5>Drop your .pptx file here</h5>
+                <p class="dz-hint">or click to browse your computer</p>
+                <p class="dz-hint mt-1" style="font-size:.78rem;color:#b0bec5;">
+                    Supports PowerPoint 2007+ (.pptx)
+                </p>
+            </div>
+            <input type="file" id="fileInput" accept=".pptx" style="display:none">
+
+            <!-- File info badge (hidden until file chosen) -->
+            <div id="fileInfo" class="file-badge mb-3" style="display:none">
+                <i class="bi bi-file-earmark-ppt-fill file-icon"></i>
+                <span id="fileName"></span>
+                <i class="bi bi-x-circle clear-btn" title="Remove file"
+                   onclick="clearFile()"></i>
+            </div>
+
+            <!-- Progress bar (hidden until conversion starts) -->
+            <div id="progressArea" style="display:none" class="mb-3">
+                <div class="prog-label">
+                    <span id="progLabel">Processing…</span>
+                    <span id="progPct">0%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped
+                                progress-bar-animated"
+                         id="progressBar" role="progressbar"
+                         style="width:0%" aria-valuenow="0"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <!-- Status message -->
+            <div id="statusBox" style="display:none" class="status-box mb-3"></div>
+
+            <!-- Convert button -->
+            <div class="text-center mt-3">
+                <button class="btn btn-convert" id="convertBtn"
+                        onclick="doConvert()" disabled>
+                    <i class="bi bi-arrow-repeat me-2"></i>Convert to Word
+                </button>
+            </div>
+
+            <!-- Feature chips -->
+            <div class="text-center mt-4">
+                <span class="chip"><i class="bi bi-check2-circle"></i>All text extracted</span>
+                <span class="chip"><i class="bi bi-check2-circle"></i>Images included</span>
+                <span class="chip"><i class="bi bi-check2-circle"></i>Tables preserved</span>
+                <span class="chip"><i class="bi bi-check2-circle"></i>Textbook layout</span>
+                <span class="chip"><i class="bi bi-check2-circle"></i>Bold &amp; italic kept</span>
+                <span class="chip"><i class="bi bi-check2-circle"></i>No slide-per-page waste</span>
+                <span class="chip"><i class="bi bi-check2-circle"></i>Font sizes scaled</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="how-card">
+        <h6><i class="bi bi-info-circle me-2"></i>How It Works</h6>
+
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-txt">
+                Select or drag a <strong>.pptx</strong> file from your computer.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-txt">
+                Click <strong>Convert to Word</strong>. The local server processes
+                everything on your machine — no data leaves your computer.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-txt">
+                All slides are merged into a single <strong>continuous
+                textbook-style</strong> document. Slide titles become section
+                headings; bullets, tables, and images flow naturally without
+                one-page-per-slide waste.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-txt">
+                Your <strong>_textbook.docx</strong> file downloads automatically.
+            </div>
+        </div>
+
+        <div class="note-box">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i>
+            <strong>Prerequisites:</strong> start the local server first —
+            <code>python ppt_to_word_server.py</code> — then open
+            <code>http://localhost:5000</code> in your browser.
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let selectedFile = null;
+
+    // ── File input ──────────────────────────────────────────────────────────
+    document.getElementById('fileInput').addEventListener('change', function (e) {
+        if (e.target.files.length > 0) handleFile(e.target.files[0]);
+    });
+
+    function handleFile(file) {
+        if (!file.name.toLowerCase().endsWith('.pptx')) {
+            showStatus('err', '<i class="bi bi-x-circle-fill me-1"></i>' +
+                'Please select a <strong>.pptx</strong> file (PowerPoint 2007+).');
+            return;
+        }
+        selectedFile = file;
+        document.getElementById('fileName').textContent =
+            file.name + '  (' + fmtSize(file.size) + ')';
+        document.getElementById('fileInfo').style.display = 'flex';
+        document.getElementById('convertBtn').disabled = false;
+        hideStatus();
+    }
+
+    function clearFile() {
+        selectedFile = null;
+        document.getElementById('fileInput').value = '';
+        document.getElementById('fileInfo').style.display = 'none';
+        document.getElementById('convertBtn').disabled = true;
+        hideStatus();
+    }
+
+    function fmtSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / 1048576).toFixed(1) + ' MB';
+    }
+
+    // ── Drag & drop ─────────────────────────────────────────────────────────
+    const dz = document.getElementById('dropZone');
+
+    dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
+    dz.addEventListener('dragleave', ()  => dz.classList.remove('dragover'));
+    dz.addEventListener('drop', e => {
+        e.preventDefault();
+        dz.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) handleFile(e.dataTransfer.files[0]);
+    });
+
+    // ── Conversion ──────────────────────────────────────────────────────────
+    async function doConvert() {
+        if (!selectedFile) return;
+
+        const btn = document.getElementById('convertBtn');
+        btn.disabled = true;
+        hideStatus();
+        setProgress('Uploading file…', 15);
+
+        const formData = new FormData();
+        formData.append('file', selectedFile);
+
+        try {
+            setProgress('Converting slides to textbook format…', 50);
+
+            const response = await fetch('/convert', {
+                method: 'POST',
+                body: formData
+            });
+
+            setProgress('Assembling Word document…', 82);
+
+            if (!response.ok) {
+                let msg = 'Conversion failed.';
+                try {
+                    const j = await response.json();
+                    msg = j.error || msg;
+                    if (j.traceback) {
+                        // Show full traceback in console for debugging
+                        console.error('Server traceback:\n' + j.traceback);
+                        // Show last meaningful line in UI
+                        const lines = j.traceback.trim().split('\n').filter(l => l.trim());
+                        const detail = lines[lines.length - 1];
+                        if (detail && detail !== msg) msg += '\n\nDetail: ' + detail;
+                    }
+                } catch (_) {}
+                throw new Error(msg);
+            }
+
+            // Extract filename from Content-Disposition header
+            const cd       = response.headers.get('Content-Disposition') || '';
+            const match    = cd.match(/filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/);
+            const filename = match ? match[1].replace(/['"]/g, '') : 'textbook.docx';
+
+            setProgress('Downloading…', 100);
+
+            const blob = await response.blob();
+            const url  = URL.createObjectURL(blob);
+            const a    = document.createElement('a');
+            a.href     = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            hideProgress();
+            showStatus('ok',
+                '<i class="bi bi-check-circle-fill me-2"></i>' +
+                'Downloaded: <strong>' + filename + '</strong>');
+
+        } catch (err) {
+            hideProgress();
+            showStatus('err',
+                '<i class="bi bi-x-circle-fill me-2"></i>' + err.message);
+        } finally {
+            btn.disabled = false;
+        }
+    }
+
+    // ── Progress helpers ────────────────────────────────────────────────────
+    function setProgress(label, pct) {
+        const area = document.getElementById('progressArea');
+        area.style.display = 'block';
+        document.getElementById('progLabel').textContent = label;
+        document.getElementById('progPct').textContent   = pct + '%';
+        const bar = document.getElementById('progressBar');
+        bar.style.width       = pct + '%';
+        bar.setAttribute('aria-valuenow', pct);
+    }
+
+    function hideProgress() {
+        document.getElementById('progressArea').style.display = 'none';
+    }
+
+    // ── Status helpers ───────────────────────────────────────────────────────
+    function showStatus(type, html) {
+        const box = document.getElementById('statusBox');
+        box.className      = 'status-box mb-3 status-' + type;
+        box.innerHTML      = html;
+        box.style.display  = 'flex';
+    }
+
+    function hideStatus() {
+        document.getElementById('statusBox').style.display = 'none';
+    }
+</script>
+</body>
+</html>
