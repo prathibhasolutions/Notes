@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C Language If-Else Loops Arrays Strings Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.8pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    .single-col li {
+      margin: 0 0 1.9mm;
+      padding-bottom: 1mm;
+    }
+
+    .sample {
+      display: block;
+      margin-top: 0.6mm;
+      font-size: 8.2pt;
+      line-height: 1.25;
+      color: #35526a;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+        padding: 6mm 6mm;
+      }
+
+      .header {
+        padding: 2.1mm 2.3mm;
+      }
+
+      .meta {
+        margin-top: 2mm;
+      }
+
+      .instructions {
+        margin-top: 2mm;
+        padding: 1.6mm 1.8mm;
+        font-size: 8.6pt;
+        line-height: 1.3;
+      }
+
+      h3 {
+        margin: 2.4mm 0 1.4mm;
+        padding: 1.2mm 1.6mm;
+      }
+
+      .two-col {
+        font-size: 9.1pt;
+        line-height: 1.3;
+      }
+
+      .print-tip {
+        display: none;
+      }
+
+      .single-col {
+        font-size: 9.1pt;
+        line-height: 1.3;
+      }
+
+      .single-col li {
+        margin: 0 0 1.4mm;
+        padding-bottom: 0.8mm;
+      }
+
+      .sample {
+        font-size: 7.8pt;
+        line-height: 1.2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="C Language If Else Loops Arrays Strings Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">C Language - Question Paper</div>
+        <div class="subtitle">Syllabus: If-Else (Hard), Loops, Nested Loops (Star Patterns), Arrays (1D and 2D), Strings</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 90 Minutes</div>
+      <div><b>Total Marks:</b> 50</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which condition correctly checks whether a year y is a leap year in C?
+        <span class="opts">A) y % 4 == 0 || y % 100 != 0  B) (y % 400 == 0) || (y % 4 == 0 &amp;&amp; y % 100 != 0)  C) y % 100 == 0 &amp;&amp; y % 4 == 0  D) y % 4 == 0 &amp;&amp; y % 400 != 0</span>
+      </li>
+      <li>
+        For int n = 29, what is the smallest valid divisor check limit in prime testing loop for efficiency?
+        <span class="opts">A) n - 1  B) n / 2  C) sqrt(n)  D) n</span>
+      </li>
+      <li>
+        Which loop always executes at least once?
+        <span class="opts">A) for  B) while  C) do-while  D) nested for</span>
+      </li>
+      <li>
+        In nested loops for a right triangle star pattern of n rows, number of stars in row i is:
+        <span class="opts">A) n  B) i  C) n - i  D) 2i - 1 in all cases</span>
+      </li>
+      <li>
+        What is the valid declaration of a 2D integer array with 3 rows and 4 columns?
+        <span class="opts">A) int a(3,4);  B) int a[3][4];  C) int a{3}{4};  D) int[3][4] a;</span>
+      </li>
+      <li>
+        Which function is used to find length of a string in C?
+        <span class="opts">A) len()  B) strlen()  C) strsize()  D) length()</span>
+      </li>
+      <li>
+        What is the output of strcmp("cat", "cat")?
+        <span class="opts">A) 0  B) Positive value  C) Negative value  D) Compilation error</span>
+      </li>
+      <li>
+        Which if-else ladder order is best for grading marks to avoid wrong classification?
+        <span class="opts">A) ascending thresholds  B) random order  C) descending thresholds  D) only single if</span>
+      </li>
+      <li>
+        If char s[] = "HELLO";, what is s[5]?
+        <span class="opts">A) 'O'  B) '\\0'  C) '\\n'  D) Undefined always</span>
+      </li>
+      <li>
+        Which statement is true for break inside inner loop of nested loops?
+        <span class="opts">A) exits both loops  B) exits only inner loop  C) exits only outer loop  D) skips next outer iteration</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>In C, overwriting is prevented by <span class="blank">__________</span>keyword.</li>
+      <li>The keyword used to choose among multiple conditions based on an expression is <span class="blank">__________</span>.</li>
+      <li>A prime number has exactly <span class="blank">__________</span> positive factors.</li>
+      <li>In a for loop, the three parts are initialization, condition, and <span class="blank">__________</span>.</li>
+      <li>To terminate a C string, the special character used is <span class="blank">__________</span>.</li>
+      <li>For int a[5]; valid index range is 0 to <span class="blank">__________</span>.</li>
+      <li>In a 2D array int m[3][4]; total number of elements is <span class="blank">__________</span>.</li>
+      <li>The library header required for strlen() is <span class="blank">__________</span>.</li>
+      <li>The statement used to skip remaining statements in current loop iteration is <span class="blank">__________</span>.</li>
+      <li>To read a line including spaces into a string safely, we can use <span class="blank">__________</span>.</li>
+    </ol>
+
+    <h3>Section C: Programs (Attempt Any 6 out of 7, 6 x 5 = 30 Marks)</h3>
+    <p class="marks">Write complete C programs with proper input, processing, and output formatting. Include suitable conditions and loop logic for edge cases.</p>
+    <ol class="single-col">
+      <li>
+        Write a program to read basic salary and years of service. Compute bonus using slabs: if service &gt;= 10 and salary &lt;= 30000, bonus is 20%; if service &gt;= 10 and salary &gt; 30000, bonus is 15%; if service between 5 and 9 years, bonus is 10%; otherwise 5%. Print net salary.
+        <span class="sample"><b>Sample Input:</b> 28000 12<br><b>Sample Output:</b> Bonus = 5600.00, Net Salary = 33600.00</span>
+      </li>
+      <li>
+    Write a program to read three side lengths and determine whether the triangle is valid. If valid, classify as Equilateral, Isosceles, or Scalene.
+        <span class="sample"><b>Sample Input:</b> 3 4 5<br><b>Sample Output:</b> Valid Triangle, Scalene</span>
+      </li>
+      <li>
+        Write a program to check whether a number is prime. If it is not prime, print its smallest divisor greater than 1.
+        <span class="sample"><b>Sample Input:</b> 91<br><b>Sample Output:</b> Not Prime, Smallest Divisor = 7</span>
+      </li>
+      <li>
+        Write a program to print all prime numbers between two given integers m and n (inclusive) and also print the count of primes found.
+        <span class="sample"><b>Sample Input:</b> 10 25<br><b>Sample Output:</b> 11 13 17 19 23, Count = 5</span>
+      </li>
+      <li>
+        Nested Loops (Star Pattern): Write a program to print an inverted star pattern where each next row has one less star and one extra leading space.
+        <span class="sample"><b>Sample Input:</b> 3<br><b>Sample Output:</b><br>***<br> **<br>  *</span>
+      </li>
+      <li>
+        Arrays (1D and 2D): (a) Read n elements into a 1D array and print the second largest distinct element. (b) Read a 3x3 matrix and print sum of principal diagonal.
+        <span class="sample"><b>Sample Input:</b> n=6, arr: 5 2 9 9 7 3; matrix: 1 2 3 / 4 5 6 / 7 8 9<br><b>Sample Output:</b> Second Largest Distinct = 7, Principal Diagonal Sum = 15</span>
+      </li>
+      <li>
+        Write a program to read a sentence and count the number of vowels, consonants.
+        <span class="sample"><b>Sample Input:</b> C Language<br><b>Sample Output:</b> Vowels = 4, Consonants = 5</span>
+      </li>
+    </ol>
+
+    <div class="footer">End of Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>

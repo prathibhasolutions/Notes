@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Loops Methods OOP Syntax Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.7pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.35;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.4mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.6mm 0 1.4mm;
+      font-size: 8.45pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.3pt;
+      line-height: 1.29;
+      column-count: 2;
+      column-gap: 5.5mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.15pt;
+      line-height: 1.24;
+    }
+
+    li {
+      margin: 0 0 1.9mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 0.95mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.45mm;
+      color: #223c52;
+      font-size: 8.55pt;
+      line-height: 1.24;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .sample {
+      display: block;
+      margin-top: 0.45mm;
+      font-size: 7.8pt;
+      line-height: 1.18;
+      color: #35526a;
+    }
+
+    .footer {
+      margin-top: 2.2mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.1mm;
+      text-align: center;
+      font-size: 8pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+        padding: 6mm 6mm;
+      }
+
+      .header {
+        padding: 2.2mm 2.4mm;
+      }
+
+      .meta {
+        margin-top: 2mm;
+      }
+
+      .instructions {
+        margin-top: 2mm;
+        padding: 1.6mm 1.8mm;
+        font-size: 8.6pt;
+        line-height: 1.28;
+      }
+
+      h3 {
+        margin: 2.2mm 0 1.2mm;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Java Loops Methods OOP Syntax Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Java - Question Paper</div>
+        <div class="subtitle">Syllabus: Loops, Nested Loops, Methods, OOP Basics (Class, Inheritance, Polymorphism Syntax)</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 90 Minutes</div>
+      <div><b>Total Marks:</b> 50</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions in Section A and Section B. In Section C, there are 7 programs. Attempt any 6 only. Section A carries 10 marks, Section B carries 10 marks, and Section C carries 30 marks.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which loop is best when number of iterations is known?
+        <span class="opts">A) while  B) do-while  C) for  D) if</span>
+      </li>
+      <li>
+        What is the output?<br>for(int i=1;i&lt;=3;i++) System.out.print(i+" ");
+        <span class="opts">A) 0 1 2  B) 1 2 3  C) 1 2 3 4  D) 3 2 1</span>
+      </li>
+      <li>
+        What is the output?<br>int i=1; while(i&lt;=3){System.out.print(i); i++;}
+        <span class="opts">A) 123  B) 0123  C) 321  D) 111</span>
+      </li>
+      <li>
+        In nested loops for rows=3, pattern for "*" often prints how many total stars in triangle form?
+        <span class="opts">A) 3  B) 6  C) 9  D) 12</span>
+      </li>
+      <li>
+        Which is a correct method declaration?
+        <span class="opts">A) int add(int a, int b)  B) add int(a,b)  C) method add()  D) int add = (a,b)</span>
+      </li>
+      <li>
+        What is the output?<br>static int sq(int n){return n*n;} System.out.print(sq(4));
+        <span class="opts">A) 4  B) 8  C) 16  D) 44</span>
+      </li>
+      <li>
+        Which keyword is used to inherit a class in Java?
+        <span class="opts">A) implements  B) extends  C) inherits  D) super</span>
+      </li>
+      <li>
+        Method overriding is an example of:
+        <span class="opts">A) Compile-time polymorphism  B) Runtime polymorphism  C) Encapsulation only  D) Abstraction only</span>
+      </li>
+      <li>
+        What is the output?<br>class A{void m(){System.out.print("A");}} class B extends A{void m(){System.out.print("B");}} A x=new B(); x.m();
+        <span class="opts">A) A  B) B  C) AB  D) Error</span>
+      </li>
+      <li>
+        Which statement creates an object of class Car?
+        <span class="opts">A) Car = new c();  B) new Car c;  C) Car c = new Car();  D) Car c();</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>The loop that executes at least once is <span class="blank">__________</span>.</li>
+      <li>The keyword used to stop a loop immediately is <span class="blank">__________</span>.</li>
+      <li>The keyword used to skip current iteration and continue loop is <span class="blank">__________</span>.</li>
+      <li>A loop inside another loop is called a <span class="blank">__________</span> loop.</li>
+      <li>A method that does not return any value uses return type <span class="blank">__________</span>.</li>
+      <li>The method name that starts program execution is <span class="blank">__________</span>.</li>
+      <li>The keyword used to create an object is <span class="blank">__________</span>.</li>
+      <li>The keyword used for inheritance between classes is <span class="blank">__________</span>.</li>
+      <li>When child method has same signature as parent method, it is called <span class="blank">__________</span>.</li>
+      <li>One interface, many forms behavior is called <span class="blank">__________</span>.</li>
+    </ol>
+
+    <h3>Section C: Programs (Attempt Any 6 out of 7, 6 x 5 = 30 Marks)</h3>
+    <p class="marks">Write moderately challenging Java programs with correct syntax. Focus on loops, nested loops, methods, and basic OOP syntax.</p>
+    <ol class="single-col">
+      <li>
+        Write a program using for loop to print Fibonacci series for n terms and also print the sum of even-valued terms.
+        <span class="sample"><b>Sample Input:</b> 7<br><b>Sample Output:</b> 0 1 1 2 3 5 8, Even Sum = 10</span>
+      </li>
+      <li>
+        Write a program using while loop to print all prime numbers between m and n (inclusive) and print total prime count.
+        <span class="sample"><b>Sample Input:</b> 10 30<br><b>Sample Output:</b> 11 13 17 19 23 29, Count = 6</span>
+      </li>
+      <li>
+        Write a nested-loop program to print a hollow square star pattern of size n.
+        <span class="sample"><b>Sample Input:</b> 5<br><b>Sample Output:</b><br>*****<br>*   *<br>*   *<br>*   *<br>*****</span>
+      </li>
+      <li>
+        Create a class MathUtil with methods gcd(int a, int b) and lcm(int a, int b). In main, read two numbers and print both results.
+        <span class="sample"><b>Sample Input:</b> 12 18<br><b>Sample Output:</b> GCD = 6, LCM = 36</span>
+      </li>
+      <li>
+        Create class Shape with method area(). Create classes Rectangle and Circle that extend Shape and override area(). In main, use Shape references to call both.
+        <span class="sample"><b>Sample Input:</b> Rectangle 5 4, Circle 3<br><b>Sample Output:</b> Rectangle Area = 20.0, Circle Area = 28.27</span>
+      </li>
+      <li>
+        Create class Student with fields id, name, m1, m2, m3; constructor to initialize; methods total(), percentage(), and grade(). Create one object and display full report.
+        <span class="sample"><b>Sample Input:</b> 101 Ravi 78 82 91<br><b>Sample Output:</b> Total = 251, Percentage = 83.67, Grade = A</span>
+      </li>
+      <li>
+        Create class Converter with constructor and one method celsiusToFahrenheit(int celsius). In main, read temperature in Celsius, call the method, and print Fahrenheit value.
+        <span class="sample"><b>Sample Input:</b> 30<br><b>Sample Output:</b> 86.0</span>
+      </li>
+    </ol>
+
+    <div class="footer">End of Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>
