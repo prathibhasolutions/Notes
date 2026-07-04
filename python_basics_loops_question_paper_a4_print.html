@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python Basics Question Paper - A4 Print</title>
+  <title>Python Basics If Else Match While Question Paper - A4 Print</title>
   <style>
     :root {
       --paper-w: 210mm;
@@ -293,134 +293,102 @@
   </style>
 </head>
 <body>
-  <section class="paper" aria-label="Python Basics A4 Question Paper">
+  <section class="paper" aria-label="Python Basics If Else Match While A4 Question Paper">
     <header class="header">
       <div class="logo" aria-label="Institute Logo">
         <img src="prathibha_logo.png" alt="Institute logo" />
       </div>
       <div class="title-block">
         <div class="institute">Prathibha Institute</div>
-        <div class="exam-title">Python Programming Examination</div>
-        <div class="subject-line">Syllabus: Basics · if/else · match · while loop · for loop</div>
+        <div class="exam-title">Python Programming Question Paper</div>
+        <div class="subject-line">Syllabus: Basics · if/else · match · while loop (No Nested Loops)</div>
       </div>
       <div class="paper-stamp">Set &ndash; II</div>
     </header>
 
     <section class="meta" aria-label="Exam Metadata">
-      <div><b>Time:</b> 1.5 Hours</div>
+      <div><b>Time:</b> 90 Minutes</div>
       <div><b>Maximum Marks:</b> 50</div>
       <div><b>Name:</b> __________________</div>
     </section>
 
     <section class="rule-box" aria-label="Instructions">
       <b>General Instructions:</b>
-      1. Answer all questions in Section A and Section B.&nbsp;&nbsp;
-      2. Section C has 6 program questions; answer any 5.&nbsp;&nbsp;
+      1. Answer all questions in all sections.&nbsp;&nbsp;
+      2. Section A has 10 MCQs and Section B has 10 fill in the blanks.&nbsp;&nbsp;
       3. Each question in Section A and B carries 1 mark.&nbsp;&nbsp;
-      4. Each question in Section C carries 6 marks.&nbsp;&nbsp;
-      5. No nested loops are required in any program question.
+      4. Section C has 6 programs and each carries 5 marks.&nbsp;&nbsp;
+      5. Use only basic logic with if-else, match, and while loops. No nested loops.
     </section>
 
     <!-- ══════════════════ SECTION A ══════════════════ -->
     <h3>Section A &mdash; Multiple Choice Questions &nbsp;(10 &times; 1 = 10 Marks)</h3>
     <ol>
 
-      <li>What is the output of the following code?
-        <div class="code">x = 5
-if x &gt; 3:
-    if x &gt; 7:
-        print("A")
-    else:
-        print("B")
+      <li>Which keyword is used to start a condition in Python?
+        Options: &nbsp;A)&nbsp;if &nbsp;&nbsp;B)&nbsp;then &nbsp;&nbsp;C)&nbsp;switch &nbsp;&nbsp;D)&nbsp;case
+      </li>
+
+      <li>Which keyword is used when all previous conditions are false?
+        Options: &nbsp;A)&nbsp;elif &nbsp;&nbsp;B)&nbsp;else &nbsp;&nbsp;C)&nbsp;when &nbsp;&nbsp;D)&nbsp;default
+      </li>
+
+      <li>What is the output of <span class="inline-code">print(bool(0))</span>?
+        Options: &nbsp;A)&nbsp;True &nbsp;&nbsp;B)&nbsp;False &nbsp;&nbsp;C)&nbsp;0 &nbsp;&nbsp;D)&nbsp;None
+      </li>
+
+      <li>What is printed?
+        <div class="code">x = 8
+if x % 2 == 0:
+    print("Even")
+else:
+    print("Odd")</div>
+        Options: &nbsp;A)&nbsp;Odd &nbsp;&nbsp;B)&nbsp;Even &nbsp;&nbsp;C)&nbsp;8 &nbsp;&nbsp;D)&nbsp;Error
+      </li>
+
+      <li>Which symbol is used as the default case in <span class="inline-code">match</span>?
+        Options: &nbsp;A)&nbsp;* &nbsp;&nbsp;B)&nbsp;_ &nbsp;&nbsp;C)&nbsp;? &nbsp;&nbsp;D)&nbsp;#
+      </li>
+
+      <li>What is the output?
+        <div class="code">day = 2
+match day:
+    case 1:
+        print("Mon")
+    case 2:
+        print("Tue")
+    case _:
+        print("Other")</div>
+        Options: &nbsp;A)&nbsp;Mon &nbsp;&nbsp;B)&nbsp;Tue &nbsp;&nbsp;C)&nbsp;Other &nbsp;&nbsp;D)&nbsp;Error
+      </li>
+
+      <li>How many times will this loop run?
+        <div class="code">i = 1
+while i &lt;= 4:
+    i += 1</div>
+        Options: &nbsp;A)&nbsp;3 &nbsp;&nbsp;B)&nbsp;4 &nbsp;&nbsp;C)&nbsp;5 &nbsp;&nbsp;D)&nbsp;Infinite
+      </li>
+
+      <li>What is the final value of <span class="inline-code">x</span>?
+        <div class="code">x = 1
+while x &lt; 10:
+    x *= 2</div>
+        Options: &nbsp;A)&nbsp;8 &nbsp;&nbsp;B)&nbsp;10 &nbsp;&nbsp;C)&nbsp;16 &nbsp;&nbsp;D)&nbsp;32
+      </li>
+
+      <li>What does <span class="inline-code">break</span> do inside a loop?
+        Options: &nbsp;A)&nbsp;Skips current iteration &nbsp;&nbsp;B)&nbsp;Stops the loop &nbsp;&nbsp;C)&nbsp;Restarts the loop &nbsp;&nbsp;D)&nbsp;Does nothing
+      </li>
+
+      <li>What is the output?
+        <div class="code">n = 5
+if n &gt; 7:
+    print("A")
+elif n &gt; 3:
+    print("B")
 else:
     print("C")</div>
         Options: &nbsp;A)&nbsp;A &nbsp;&nbsp;B)&nbsp;B &nbsp;&nbsp;C)&nbsp;C &nbsp;&nbsp;D)&nbsp;Error
-      </li>
-
-      <li>What is the value of <span class="inline-code">x</span> after execution?
-        <div class="code">x = 10
-x //= 3
-x **= 2</div>
-        Options: &nbsp;A)&nbsp;9 &nbsp;&nbsp;B)&nbsp;3 &nbsp;&nbsp;C)&nbsp;11 &nbsp;&nbsp;D)&nbsp;100
-      </li>
-
-      <li>What is printed?
-        <div class="code">n = 12
-match n % 5:
-    case 0:
-        print("zero")
-    case 1 | 2:
-        print("small")
-    case _:
-        print("other")</div>
-        Options: &nbsp;A)&nbsp;zero &nbsp;&nbsp;B)&nbsp;small &nbsp;&nbsp;C)&nbsp;other &nbsp;&nbsp;D)&nbsp;Error
-      </li>
-
-      <li>How many times is <span class="inline-code">Hello</span> printed?
-        <div class="code">i = 1
-while i &lt;= 5:
-    if i % 2 == 0:
-        i += 1
-        continue
-    print("Hello")
-    i += 1</div>
-        Options: &nbsp;A)&nbsp;5 &nbsp;&nbsp;B)&nbsp;3 &nbsp;&nbsp;C)&nbsp;2 &nbsp;&nbsp;D)&nbsp;4
-      </li>
-
-      <li>What is the output?
-        <div class="code">for i in range(2, 10, 3):
-    print(i, end=" ")</div>
-        Options: &nbsp;A)&nbsp;2 5 8 &nbsp;&nbsp;B)&nbsp;2 4 6 8 &nbsp;&nbsp;C)&nbsp;2 3 4 5 &nbsp;&nbsp;D)&nbsp;2 5 8 11
-      </li>
-
-      <li>What is printed?
-        <div class="code">s = 0
-for i in range(1, 6):
-    s += i
-else:
-    s += 10
-print(s)</div>
-        Options: &nbsp;A)&nbsp;15 &nbsp;&nbsp;B)&nbsp;25 &nbsp;&nbsp;C)&nbsp;10 &nbsp;&nbsp;D)&nbsp;16
-      </li>
-
-      <li>What does this code print?
-        <div class="code">x = 7
-if x &gt; 10:
-    print("big")
-elif x &gt; 5:
-    print("medium")
-elif x &gt; 3:
-    print("small")
-else:
-    print("tiny")</div>
-        Options: &nbsp;A)&nbsp;big &nbsp;&nbsp;B)&nbsp;medium &nbsp;&nbsp;C)&nbsp;small &nbsp;&nbsp;D)&nbsp;tiny
-      </li>
-
-      <li>What is the final value printed by <span class="inline-code">count</span>?
-        <div class="code">count = 0
-n = 100
-while n &gt; 1:
-    n //= 2
-    count += 1
-print(count)</div>
-        Options: &nbsp;A)&nbsp;6 &nbsp;&nbsp;B)&nbsp;7 &nbsp;&nbsp;C)&nbsp;5 &nbsp;&nbsp;D)&nbsp;8
-      </li>
-
-      <li>What is the output?
-        <div class="code">x = "5"
-y = int(x) + 2
-print(type(y))</div>
-        Options: &nbsp;A)&nbsp;&lt;class 'str'&gt; &nbsp;&nbsp;B)&nbsp;&lt;class 'int'&gt; &nbsp;&nbsp;C)&nbsp;&lt;class 'float'&gt; &nbsp;&nbsp;D)&nbsp;Error
-      </li>
-
-      <li>What is the output?
-        <div class="code">for i in range(5):
-    if i == 3:
-        break
-else:
-    print("done")
-print("end")</div>
-        Options: &nbsp;A)&nbsp;done end &nbsp;&nbsp;B)&nbsp;end &nbsp;&nbsp;C)&nbsp;done &nbsp;&nbsp;D)&nbsp;Error
       </li>
 
     </ol>
@@ -429,63 +397,64 @@ print("end")</div>
     <h3>Section B &mdash; Fill in the Blanks &nbsp;(10 &times; 1 = 10 Marks)</h3>
     <ol>
 
-      <li>The result of <span class="inline-code">type(3.0)</span> is __________.</li>
+      <li>The keyword used for an additional condition after <span class="inline-code">if</span> is __________.</li>
 
-      <li><span class="inline-code">range(1, 10, 2)</span> generates __________ values.</li>
+      <li>The keyword used to run code when all conditions fail is __________.</li>
 
-      <li>The keyword used to skip the rest of a loop body and jump to the next iteration is __________.</li>
+      <li>The Python statement used for pattern matching is __________.</li>
 
-      <li>In a <span class="inline-code">match</span> statement, the wildcard pattern that matches any value is __________.</li>
+      <li>In <span class="inline-code">match</span>, the default pattern is written as __________.</li>
 
-      <li><span class="inline-code">bool(0)</span> evaluates to __________.</li>
+      <li>The loop used when the number of iterations is not fixed is __________ loop.</li>
 
-      <li>The expression <span class="inline-code">2 ** 4 // 5</span> evaluates to __________.</li>
+      <li>The value of <span class="inline-code">5 // 2</span> is __________.</li>
 
-      <li>In Python, <span class="inline-code">elif</span> stands for __________.</li>
+      <li>The value of <span class="inline-code">17 % 5</span> is __________.</li>
 
-      <li>The output of <span class="inline-code">print(10 % 3 + 2 * 4)</span> is __________.</li>
+      <li>The boolean value of an empty string <span class="inline-code">""</span> is __________.</li>
 
-      <li>A <span class="inline-code">while</span> loop that never terminates is called a(n) __________ loop.</li>
+      <li>To stop a loop immediately, we use the keyword __________.</li>
 
-      <li>The final value of <span class="inline-code">x</span> after the loop is __________.
-        <div class="code">x = 0
-for i in range(1, 5):
-    x += i * 2</div>
+      <li>The output of the below code is __________.
+        <div class="code">i = 1
+total = 0
+while i &lt;= 3:
+    total += i
+    i += 1
+print(total)</div>
       </li>
 
     </ol>
 
     <!-- ══════════════════ SECTION C ══════════════════ -->
-    <h3>Section C &mdash; Programs &nbsp;(Answer Any 5 &mdash; 5 &times; 6 = 30 Marks)</h3>
-    <div class="marks">Write complete Python programs. Answer any 5 questions. No nested loops are needed.</div>
+    <h3>Section C &mdash; Programs &nbsp;(6 &times; 5 = 30 Marks)</h3>
+    <div class="marks">Write complete Python programs for all questions. Use basics, if-else, match, and while loops only. Do not use nested loops.</div>
     <ol>
 
-      <li>Read a positive integer <span class="inline-code">n</span>. Using a <span class="inline-code">for</span> loop, print all numbers from <span class="inline-code">1</span> to <span class="inline-code">n</span> that are divisible by <span class="inline-code">3</span> or <span class="inline-code">5</span>, but <b>not</b> by both. Use <span class="inline-code">if/elif/else</span> inside the loop.
-        <div class="example"><b>Example:</b> Input: 20<br /><b>Output:</b> 3 5 6 9 10 12 18 20</div>
+      <li>Write a program to read a number and print whether it is positive, negative, or zero using if-elif-else.
+        <div class="example"><b>Example:</b> Input: -7 &nbsp;&nbsp; <b>Output:</b> Negative</div>
       </li>
 
-      <li>Read a positive integer <span class="inline-code">n</span>. Using a <span class="inline-code">while</span> loop and arithmetic operators only, reverse the digits of <span class="inline-code">n</span> and print the result.
+      <li>Write a program to read marks of a student and print grade using if-elif-else:
+        A (90 and above), B (75 to 89), C (50 to 74), Fail (below 50).
+        <div class="example"><b>Example:</b> Input: 82 &nbsp;&nbsp; <b>Output:</b> B</div>
+      </li>
+
+      <li>Write a menu-driven calculator using <span class="inline-code">match</span> for choices:
+        1-Addition, 2-Subtraction, 3-Multiplication, 4-Division, default-Invalid choice.
+        <div class="example"><b>Example:</b> Input: choice=1, a=12, b=8 &nbsp;&nbsp; <b>Output:</b> 20</div>
+      </li>
+
+      <li>Write a program to read a positive integer <span class="inline-code">n</span> and print numbers from 1 to <span class="inline-code">n</span> using a while loop.
+        <div class="example"><b>Example:</b> Input: 5 &nbsp;&nbsp; <b>Output:</b> 1 2 3 4 5</div>
+      </li>
+
+      <li>Write a program to read a positive integer <span class="inline-code">n</span>. Using a while loop, find and print the sum of digits of <span class="inline-code">n</span>.
+        <div class="example"><b>Example:</b> Input: 248 &nbsp;&nbsp; <b>Output:</b> 14</div>
+      </li>
+
+      <li>Write a program to read a positive integer <span class="inline-code">n</span>. Using a while loop, reverse the number and print it.
         <div class="example"><b>Example:</b> Input: 12345<br /><b>Output:</b> 54321</div>
-      </li>
-
-      <li>Read a positive integer <span class="inline-code">n</span> greater than 1. Using a <span class="inline-code">for</span> loop, determine whether <span class="inline-code">n</span> is prime or not. Print <span class="inline-code">Prime</span> or <span class="inline-code">Not Prime</span>.
-        <div class="example"><b>Example:</b> Input: 17&nbsp;&nbsp;<b>Output:</b> Prime &nbsp;&nbsp;&nbsp;&nbsp; Input: 15&nbsp;&nbsp;<b>Output:</b> Not Prime</div>
-      </li>
-
-      <li>Read a month number <span class="inline-code">m</span> (1&ndash;12). Using a <span class="inline-code">match</span> statement, print the season:
-        <div class="code">12, 1, 2  → Winter
-3,  4, 5  → Spring
-6,  7, 8  → Summer
-9, 10, 11 → Autumn</div>
-        <div class="example"><b>Example:</b> Input: 7&nbsp;&nbsp;<b>Output:</b> Summer</div>
-      </li>
-
-      <li>Read a positive integer <span class="inline-code">n</span>. Using a <span class="inline-code">for</span> loop, print the complete multiplication table of <span class="inline-code">n</span> from <span class="inline-code">1</span> to <span class="inline-code">10</span> in the format shown.
-        <div class="example"><b>Example:</b> Input: 5<br /><b>Output:</b> 5 x 1 = 5<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 x 2 = 10<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 x 10 = 50</div>
-      </li>
-
-      <li>Read a positive integer <span class="inline-code">n</span>. Using a <span class="inline-code">while</span> loop and arithmetic operators only, repeatedly replace <span class="inline-code">n</span> with the sum of its digits until a single digit remains. Print that final single digit.
-        <div class="example"><b>Example:</b> Input: 9875&nbsp;&nbsp;<b>Output:</b> 2 &nbsp;&nbsp;(9875 &rarr; 29 &rarr; 11 &rarr; 2)</div>
       </li>
 
     </ol>
