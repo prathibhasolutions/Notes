@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Excel Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #9db3c4;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+      --table-head: #164e6b;
+      --table-alt: #f7fbfd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #8a5c1f;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.45pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.45pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 8.95pt;
+      line-height: 1.33;
+    }
+
+    .blank {
+      letter-spacing: 1.1px;
+      font-weight: 700;
+      color: #28465d;
+    }
+
+    .sample-data-wrap {
+      margin-top: 1.5mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .sample-caption {
+      background: linear-gradient(90deg, #eaf4fb 0%, #f8fbfe 100%);
+      color: #163f63;
+      font-size: 8.6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      padding: 1.5mm 2mm;
+      border-bottom: 1px solid var(--soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.85pt;
+      line-height: 1.2;
+    }
+
+    th, td {
+      border: 1px solid #cfdbe5;
+      padding: 1.3mm 1.1mm;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    th {
+      background: var(--table-head);
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: var(--table-alt);
+    }
+
+    .table-note {
+      font-size: 8pt;
+      color: #4b6174;
+      padding: 1.4mm 2mm 1.6mm;
+      border-top: 1px solid var(--soft);
+      background: #fbfdff;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Advanced Excel Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Advanced Excel - A4 Question Paper</div>
+        <div class="subtitle">Syllabus: Workbook Basics, Formulas, Functions, References, Lookup, Text, Date & Time, Data Tools, Charts, Pivot Tables, What-If Analysis</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 120 Minutes</div>
+      <div><b>Total Marks:</b> 60</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill in the blanks, Section C has 10 shortcut key questions, and Section D has 5 long practical questions based on the sample data given below. Use Excel formulas wherever applicable and show working in the workbook.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which symbol is used at the start of every formula in Excel?
+        <span class="opts">A) +  B) =  C) @  D) #</span>
+      </li>
+      <li>
+        Which function is used to calculate the total of values in a range?
+        <span class="opts">A) SUM  B) AVERAGE  C) COUNT  D) PRODUCT</span>
+      </li>
+      <li>
+        Which formula calculates the average of cells B2 to B20?
+        <span class="opts">A) =SUM(B2:B20)  B) =AVERAGE(B2:B20)  C) =COUNT(B2:B20)  D) =MIN(B2:B20)</span>
+      </li>
+      <li>
+        Which function adds values only when one condition is met?
+        <span class="opts">A) SUM  B) SUMIF  C) COUNT  D) ROUND</span>
+      </li>
+      <li>
+        Which function can search for a value in the first column of a table and return a related value from another column?
+        <span class="opts">A) VLOOKUP  B) CONCAT  C) RANK  D) PMT</span>
+      </li>
+      <li>
+        Which function adds values based on multiple criteria?
+        <span class="opts">A) SUMIFS  B) SUM  C) COUNTBLANK  D) IFERROR</span>
+      </li>
+      <li>
+        Which feature highlights cells based on rules such as greater than a target?
+        <span class="opts">A) Data Validation  B) Conditional Formatting  C) Grouping  D) Page Break</span>
+      </li>
+      <li>
+        Which chart is best to compare monthly sales values across several regions?
+        <span class="opts">A) Column chart  B) Pie chart  C) Scatter chart  D) Surface chart</span>
+      </li>
+      <li>
+        Which function is used to avoid errors when a lookup value is not found?
+        <span class="opts">A) IFERROR  B) IF  C) MID  D) ROUND</span>
+      </li>
+      <li>
+        Which tool is used to summarize and analyze large datasets quickly?
+        <span class="opts">A) PivotTable  B) Spell Check  C) Find and Replace  D) Freeze Panes</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>The function used to calculate the total of a range is <span class="blank">__________</span>.</li>
+      <li>The function used to calculate the average of values is <span class="blank">__________</span>.</li>
+      <li>The function used to calculate totals with multiple conditions is <span class="blank">__________</span>.</li>
+      <li>The lookup function that works vertically is <span class="blank">__________</span>.</li>
+      <li>The reference written as $A$1 is called <span class="blank">__________</span> reference.</li>
+      <li>The feature used to keep headings visible while scrolling is <span class="blank">__________</span> Panes.</li>
+      <li>The tool used to restrict valid input in a cell is <span class="blank">__________</span> Validation.</li>
+      <li>The function used to return a value when a formula causes an error is <span class="blank">__________</span>.</li>
+      <li>The command used to remove repeated records is <span class="blank">__________</span> Duplicates.</li>
+      <li>The feature used to quickly reshape and summarize data is <span class="blank">__________</span> Table.</li>
+    </ol>
+
+    <h3>Section C: Shortcut Keys Test (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>Q1. Which shortcut creates a new workbook in Excel? <span class="opts">A) Ctrl + N  B) Ctrl + O  C) Ctrl + S  D) Ctrl + P</span></li>
+      <li>Q2. Which shortcut opens an existing workbook? <span class="opts">A) Ctrl + N  B) Ctrl + O  C) Ctrl + W  D) Ctrl + F</span></li>
+      <li>Q3. Which shortcut saves the current workbook? <span class="opts">A) Ctrl + S  B) Ctrl + P  C) Ctrl + Z  D) Ctrl + X</span></li>
+      <li>Q4. Which shortcut cuts the selected cells? <span class="opts">A) Ctrl + C  B) Ctrl + X  C) Ctrl + V  D) Ctrl + Y</span></li>
+      <li>Q5. Which shortcut copies the selected cells? <span class="opts">A) Ctrl + C  B) Ctrl + X  C) Ctrl + V  D) Ctrl + B</span></li>
+      <li>Q6. Which shortcut pastes copied cells? <span class="opts">A) Ctrl + P  B) Ctrl + V  C) Ctrl + F  D) Ctrl + A</span></li>
+      <li>Q7. Which shortcut is used to undo the last action? <span class="opts">A) Ctrl + U  B) Ctrl + Y  C) Ctrl + Z  D) Ctrl + R</span></li>
+      <li>Q8. Which shortcut is used to print the current worksheet/workbook? <span class="opts">A) Ctrl + P  B) Ctrl + S  C) Ctrl + N  D) Ctrl + O</span></li>
+      <li>Q9. Which shortcut is used to find text or values in a worksheet? <span class="opts">A) Ctrl + H  B) Ctrl + F  C) Ctrl + G  D) Ctrl + T</span></li>
+      <li>Q10. Which shortcut is used to replace text or values in a worksheet? <span class="opts">A) Ctrl + R  B) Ctrl + F  C) Ctrl + H  D) Ctrl + Shift + F</span></li>
+    </ol>
+
+    <h3>Section D: Practical Questions Using Sample Data (5 x 6 = 30 Marks)</h3>
+    <p class="marks">Use the table below for all Section D questions. Assume the discount is in percent and the final sale value should be calculated after discount. Each question is intentionally long and should be treated as a full practical exercise.</p>
+
+    <div class="sample-data-wrap" aria-label="Sample Data Table">
+      <div class="sample-caption">Sample Data: Sales Performance Register</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Emp ID</th>
+            <th>Employee Name</th>
+            <th>Department</th>
+            <th>City</th>
+            <th>Date</th>
+            <th>Month</th>
+            <th>Year</th>
+            <th>Units Sold</th>
+            <th>Unit Price</th>
+            <th>Discount %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>E101</td><td>Asha</td><td>Sales</td><td>Hyderabad</td><td>12-01-2026</td><td>January</td><td>2026</td><td>45</td><td>850</td><td>5</td></tr>
+          <tr><td>E102</td><td>Rohit</td><td>Sales</td><td>Chennai</td><td>03-02-2026</td><td>February</td><td>2026</td><td>38</td><td>920</td><td>7</td></tr>
+          <tr><td>E103</td><td>Meera</td><td>Support</td><td>Bangalore</td><td>18-02-2026</td><td>February</td><td>2026</td><td>29</td><td>760</td><td>4</td></tr>
+          <tr><td>E104</td><td>Imran</td><td>Sales</td><td>Pune</td><td>09-03-2026</td><td>March</td><td>2026</td><td>51</td><td>690</td><td>8</td></tr>
+          <tr><td>E105</td><td>Divya</td><td>Accounts</td><td>Hyderabad</td><td>27-03-2026</td><td>March</td><td>2026</td><td>33</td><td>1100</td><td>6</td></tr>
+          <tr><td>E106</td><td>Karan</td><td>Support</td><td>Delhi</td><td>11-04-2026</td><td>April</td><td>2026</td><td>41</td><td>780</td><td>5</td></tr>
+          <tr><td>E107</td><td>Nisha</td><td>Sales</td><td>Mumbai</td><td>25-04-2026</td><td>April</td><td>2026</td><td>57</td><td>640</td><td>10</td></tr>
+          <tr><td>E108</td><td>Arjun</td><td>IT</td><td>Chennai</td><td>08-05-2026</td><td>May</td><td>2026</td><td>24</td><td>1250</td><td>3</td></tr>
+          <tr><td>E109</td><td>Priya</td><td>Accounts</td><td>Pune</td><td>19-05-2026</td><td>May</td><td>2026</td><td>36</td><td>980</td><td>6</td></tr>
+          <tr><td>E110</td><td>Sameer</td><td>Sales</td><td>Delhi</td><td>02-06-2026</td><td>June</td><td>2026</td><td>49</td><td>715</td><td>9</td></tr>
+        </tbody>
+      </table>
+      <div class="table-note">Suggested extra columns in Excel: Gross Sale, Discount Amount, Net Sale, Commission, Bonus, Rank, Performance Status, Quarter, and Ageing Days.</div>
+    </div>
+
+    <ol class="single-col">
+      <li>
+        Create a workbook from the Sales Performance Register table and demonstrate Text to Columns on combined text data, apply Data Validation with drop-down lists and number restrictions, group and ungroup both rows and columns, protect and unprotect the sheet, merge cells for the title area, apply Wrap Text in headings, and use Conditional Formatting rules on the above table including Highlight Cells Rules, Data Bars, Color Scales, and Icon Sets. Show the formatted output clearly and explain the steps through the sheet layout.
+      </li>
+      <li>
+        Remove the existing setup and create a workbook control task using features from the Formulas and Data tabs: apply Define Name for key ranges, demonstrate Trace Precedents for at least three calculated cells, perform Do What-If Analysis with Scenario Manager or Goal Seek, and implement a complete Data Validation method with list, whole number, and date rules including input message and error alert.
+      </li>
+      <li>
+        Prepare a reporting sheet from the Sales Performance Register and include advanced lookup formulas using VLOOKUP, HLOOKUP, MATCH, and INDEX. Use the Date, Month, and Year columns to calculate quarter, weekday, year-to-date totals, and ageing in days with date functions. Apply conditional formatting to highlight overdue items, top performers, low stock items, and duplicate values.
+      </li>
+      <li>
+        Create an analysis dashboard using PivotTable and PivotChart. Show department-wise and city-wise totals, use slicers or filters if available, and add a column chart for Net Sale and a pie chart for department share. Add sparkline-style trend visuals or mini summaries where possible. Use sort, filter, remove duplicates, freeze panes, and page setup settings to prepare the report for printing.
+      </li>
+      <li>
+        Create a comprehensive formula practice sheet using only the Sales Performance Register data. Write formulas using SUM, AVERAGE, COUNT, COUNTBLANK, MAX, MIN, LEN, LEFT, RIGHT, UPPER, LOWER, TRIM, AND, OR, SUMIF, COUNTIF, AVERAGEIF, SUMIFS, COUNTIFS, AVERAGEIFS, IF, and IFS. Use the formulas to calculate totals, averages, blank cells, highest and lowest values, text length checks, clean and format text, and build category-wise, city-wise, and status-wise summaries. Show each formula clearly, apply it to all rows, and present the result in a neat worksheet.
+      </li>
+    </ol>
+
+    <div class="footer">End of Question Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>
