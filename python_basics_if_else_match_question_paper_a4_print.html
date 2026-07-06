@@ -193,6 +193,17 @@
       letter-spacing: 0.33px;
     }
 
+    .io {
+      margin-top: 0.8mm;
+      padding: 1mm 1.3mm;
+      border: 1px solid #d5e1ec;
+      border-radius: 1mm;
+      background: #fbfdff;
+      font-size: 8.55pt;
+      color: #1f3c53;
+      line-height: 1.32;
+    }
+
     .print-tip {
       width: var(--paper-w);
       margin: 0 auto 7mm;
@@ -238,87 +249,93 @@
     </section>
 
     <section class="instructions" aria-label="Instructions">
-      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill in the blanks, and Section C has 6 programs. In Section C, write one formula-based program, three if-else programs, one match-case program, and one operators-focused program.
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill in the blanks, and Section C has 6 programs. In Section C, write one formula-based program, three if-else programs, one match-case program, and one operators-focused program. Follow the sample input/output style shown in each program.
     </section>
 
     <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
     <ol class="two-col">
       <li>
-        Which keyword begins a conditional branch in Python?
-        <span class="opts">A) then  B) if  C) case  D) switch</span>
+        What is the output of: <code>print(bool([]), bool('0'))</code>?
+        <span class="opts">A) False False  B) True False  C) False True  D) True True</span>
       </li>
       <li>
-        Which keyword is used for an alternative branch when the if condition is false?
-        <span class="opts">A) elif  B) alt  C) else  D) except</span>
+        Which expression is equivalent to <code>not (a and b)</code>?
+        <span class="opts">A) not a and not b  B) not a or not b  C) a and not b  D) a or b</span>
       </li>
       <li>
-        In a multi-condition chain, which keyword checks another condition after if?
-        <span class="opts">A) elseif  B) elif  C) else if  D) case</span>
+        If <code>x = 5</code>, what is printed by <code>print('A' if x % 2 else 'B')</code>?
+        <span class="opts">A) A  B) B  C) 5  D) Error</span>
       </li>
       <li>
-        What is the boolean value of an empty string in Python?
+        What is the output of <code>print(3 == 3.0, 3 is 3.0)</code>?
+        <span class="opts">A) True True  B) False False  C) True False  D) False True</span>
+      </li>
+      <li>
+        Which statement about <code>match-case</code> is correct?
+        <span class="opts">A) It supports guard clauses using if  B) It works only with int/str  C) It requires default keyword  D) It checks object identity only</span>
+      </li>
+      <li>
+        What is the output of <code>print(7 // -3, 7 % -3)</code>?
+        <span class="opts">A) -2 1  B) -3 -2  C) -3 2  D) -2 -1</span>
+      </li>
+      <li>
+        Which option correctly identifies Python's default case pattern in match?
+        <span class="opts">A) default:  B) else:  C) case _:  D) case *:</span>
+      </li>
+      <li>
+        For <code>s = 'Python'</code>, what does <code>s[-4:-1]</code> return?
+        <span class="opts">A) tho  B) yth  C) ytho  D) ythn</span>
+      </li>
+      <li>
+        If <code>n = 0</code>, which condition is safest to check "non-zero"?
+        <span class="opts">A) if n == True  B) if bool(n) is True  C) if n  D) if n is not False</span>
+      </li>
+      <li>
+        What is printed by <code>print(not True or False and True)</code>?
         <span class="opts">A) True  B) False  C) None  D) Error</span>
-      </li>
-      <li>
-        Which operator gives True only when both conditions are True?
-        <span class="opts">A) and  B) or  C) not  D) is</span>
-      </li>
-      <li>
-        Which statement about match-case is correct in Python?
-        <span class="opts">A) It replaces all if-else in every case  B) It matches patterns against a subject value  C) It works only with numbers  D) It does not support default case</span>
-      </li>
-      <li>
-        Which case pattern works as the default branch in match-case?
-        <span class="opts">A) else  B) default  C) _  D) any</span>
-      </li>
-      <li>
-        What is the result type of normal division of two integers?
-        <span class="opts">A) int  B) float  C) bool  D) str</span>
-      </li>
-      <li>
-        Which operator checks value equality, not object identity?
-        <span class="opts">A) is  B) ==  C) =  D) !=</span>
-      </li>
-      <li>
-        What is the value of expression not True or False?
-        <span class="opts">A) True  B) False  C) Error  D) None</span>
       </li>
     </ol>
 
     <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
     <ol class="two-col">
-      <li>The keyword used to check a condition is <span class="blank">__________</span>.</li>
-      <li>The keyword used when the if condition is false is <span class="blank">__________</span>.</li>
-      <li>The keyword used for an extra condition between if and else is <span class="blank">__________</span>.</li>
-      <li>In match-case, the symbol used for any other value is <span class="blank">__________</span>.</li>
-      <li>The keyword used to start pattern matching in Python is <span class="blank">__________</span>.</li>
-      <li>The datatype obtained after converting 25 to text is <span class="blank">__________</span>.</li>
-      <li>The boolean value of zero is <span class="blank">__________</span>.</li>
-      <li>The operator used for floor division is <span class="blank">__________</span>.</li>
-      <li>The operator used for exponentiation is <span class="blank">__________</span>.</li>
-      <li>Negative index minus one in a string refers to the <span class="blank">__________</span> character.</li>
+      <li>The operator with higher precedence between <code>and</code> and <code>or</code> is <span class="blank">__________</span>.</li>
+      <li>In <code>match-case</code>, a condition added to a pattern is called a <span class="blank">__________</span>.</li>
+      <li>The result of <code>bool('')</code> is <span class="blank">__________</span>.</li>
+      <li>The result of <code>bool('False')</code> is <span class="blank">__________</span>.</li>
+      <li>The equality operator is <span class="blank">__________</span>, while identity operator is <span class="blank">__________</span>.</li>
+      <li>The output type of <code>9 / 3</code> is <span class="blank">__________</span>.</li>
+      <li>The value of <code>7 // -3</code> is <span class="blank">__________</span>.</li>
+      <li>The wildcard/default pattern in <code>match</code> is <span class="blank">__________</span>.</li>
+      <li>The slice <code>'Python'[-3:]</code> gives <span class="blank">__________</span>.</li>
+      <li>The expression <code>not (False or True)</code> evaluates to <span class="blank">__________</span>.</li>
     </ol>
 
     <h3>Section C: Programs (6 x 5 = 30 Marks)</h3>
     <p class="marks">Write clear and complete programs on the given topics. Use if-else and match where requested. Keep logic correct for edge cases and tricky values.</p>
     <ol class="single-col">
       <li>
-        Formula-based: Write a program to read length and breadth of a rectangle and print area, perimeter.
+        Formula-based: Write a program to read length and breadth of a rectangle and print area and perimeter. Validate that both values are positive; otherwise print <code>Invalid dimensions</code>.
+        <div class="io"><b>Example Input:</b> length = 7, breadth = 4<br><b>Example Output:</b> Area = 28, Perimeter = 22</div>
       </li>
       <li>
-        If-else based: Write a program to read three numbers and print the greatest number. If all are equal, print that they are all equal.
+        If-else based: Write a program to read three numbers and print the greatest number. Handle ties clearly: if exactly two are equal and greatest, print both values and mention tie.
+        <div class="io"><b>Example Input:</b> a = 9, b = 9, c = 3<br><b>Example Output:</b> Greatest values are 9 and 9 (tie)</div>
       </li>
       <li>
-        If-else based: Write a program to read a year and print whether it is a leap year or not using all conditions: divisible by 400 is leap year, divisible by 100 but not 400 is not leap year, divisible by 4 but not by 100 is leap year, otherwise not leap year.
+        If-else based: Write a program to read a year and print whether it is a leap year or not using full Gregorian rules. Also reject year values less than 1.
+        <div class="io"><b>Example Input:</b> year = 1900<br><b>Example Output:</b> 1900 is not a leap year</div>
       </li>
       <li>
-        If-else based: Write a program to read marks in five subjects, calculate total and percentage, then print grade as Distinction, First Class, Second Class, Pass, or Fail. Also handle invalid input if any mark is less than 0 or greater than 100.
+        If-else based: Write a program to read marks in five subjects, calculate total and percentage, then print grade as Distinction, First Class, Second Class, Pass, or Fail. Add rule: if any subject is below 35, final result is Fail regardless of percentage. Also handle invalid input.
+        <div class="io"><b>Example Input:</b> 82, 76, 91, 33, 88<br><b>Example Output:</b> Total = 370, Percentage = 74.0, Result = Fail (one subject below pass mark)</div>
       </li>
       <li>
-        Match based: Write a menu-driven calculator program using match-case for choices add, subtract, multiply, divide, and default invalid choice.
+        Match based: Write a menu-driven calculator program using match-case for choices <code>+ - * / // %</code> and default invalid choice. Handle division by zero safely.
+        <div class="io"><b>Example Input:</b> a = 10, b = 0, op = /<br><b>Example Output:</b> Error: division by zero</div>
       </li>
       <li>
-        Operators based: Write a program to read two integers and print results of arithmetic, relational, logical, assignment update, bitwise, identity, and membership operator checks with proper labels.
+        Operators based: Write a program to read two integers and print results of arithmetic, relational, logical, assignment update, bitwise, identity, and membership operator checks with proper labels. Include a short note where identity and equality may differ.
+        <div class="io"><b>Example Input:</b> x = 5, y = 2<br><b>Example Output:</b> x+y=7, x//y=2, x&y=0, x==y=False, x is y=False, '5' in str(x)=True</div>
       </li>
     </ol>
 
