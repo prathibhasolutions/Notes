@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Full Syllabus Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 7mm 6.6mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.5mm 2.8mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 12.8pt;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 0.9mm;
+      text-align: center;
+      font-size: 8.2pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.28px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.2mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8mm;
+      padding: 1.8mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.2mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 1.9mm 2.1mm;
+      font-size: 8.65pt;
+      line-height: 1.33;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 2.6mm 0 1.4mm;
+      font-size: 9.7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.42px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.3mm 1.8mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.4mm 0 1.2mm;
+      font-size: 8.2pt;
+      color: #3e566c;
+      line-height: 1.25;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.2mm;
+      font-size: 8.95pt;
+      line-height: 1.24;
+      column-count: 2;
+      column-gap: 5.4mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.2mm;
+      font-size: 8.9pt;
+      line-height: 1.23;
+    }
+
+    li {
+      margin: 0 0 1.8mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 0.95mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.45mm;
+      color: #223c52;
+      font-size: 8.35pt;
+      line-height: 1.2;
+      padding-left: 0.8mm;
+    }
+
+    .blank {
+      letter-spacing: 1.1px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .sample {
+      display: block;
+      margin-top: 0.45mm;
+      color: #35526a;
+      font-size: 7.75pt;
+      line-height: 1.17;
+    }
+
+    .footer {
+      margin-top: 2.4mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1mm;
+      text-align: center;
+      font-size: 7.9pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.32px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Java Full Syllabus Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Java Question Paper</div>
+        <div class="subtitle">Medium Level Programming and Theory Paper</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 180 Minutes</div>
+      <div><b>Total Marks:</b> 100</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions in Section A, Section B and Section D. In Section C, answer any 4 out of 5 theory questions. Write neat and complete answers with proper logic and output.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which of the following is a valid Java identifier?
+        <span class="opts">A) 1value<br>B) total_marks<br>C) class<br>D) my-value</span>
+      </li>
+      <li>
+        Which data type is used to store decimal values in Java?
+        <span class="opts">A) int<br>B) char<br>C) double<br>D) boolean</span>
+      </li>
+      <li>
+        Which statement is used to check multiple conditions one after another?
+        <span class="opts">A) break<br>B) if else if<br>C) continue<br>D) return</span>
+      </li>
+      <li>
+        Which keyword is commonly used with <code>switch</code> to stop execution of the next case?
+        <span class="opts">A) exit<br>B) stop<br>C) break<br>D) skip</span>
+      </li>
+      <li>
+        Which loop executes at least once even if the condition is false?
+        <span class="opts">A) for<br>B) while<br>C) do while<br>D) nested for</span>
+      </li>
+      <li>
+        What is the output of <code>for(int i=1;i&lt;=3;i++) System.out.print(i);</code>?
+        <span class="opts">A) 0123<br>B) 123<br>C) 321<br>D) 111</span>
+      </li>
+      <li>
+        Which array index represents the first element of an array?
+        <span class="opts">A) 0<br>B) 1<br>C) -1<br>D) 2</span>
+      </li>
+      <li>
+        Which method returns the length of a String?
+        <span class="opts">A) size()<br>B) count()<br>C) length()<br>D) get()</span>
+      </li>
+      <li>
+        A function that calls itself is known as:
+        <span class="opts">A) looping<br>B) nesting<br>C) recursion<br>D) overloading</span>
+      </li>
+      <li>
+        In a 2D array, rows and columns are accessed using:
+        <span class="opts">A) one index only<br>B) two indexes<br>C) a String key<br>D) a boolean value</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>The keyword used to define a decision block in Java is <span class="blank">__________</span>.</li>
+      <li>The <code>default</code> block is used inside a <span class="blank">__________</span> statement.</li>
+      <li>The loop that is best when the number of iterations is known is <span class="blank">__________</span>.</li>
+      <li>A loop inside another loop is called a <span class="blank">__________</span> loop.</li>
+      <li>The index of the first element in an array is <span class="blank">__________</span>.</li>
+      <li>The String method used to compare two strings by content is <span class="blank">__________</span>.</li>
+      <li>A method that does not return any value has return type <span class="blank">__________</span>.</li>
+      <li>The process in which a method calls itself is called <span class="blank">__________</span>.</li>
+      <li>A 2D array is also called a <span class="blank">__________</span> array.</li>
+      <li>The keyword used to stop the current loop immediately is <span class="blank">__________</span>.</li>
+    </ol>
+
+    <h3>Section C: Theory Questions (Attempt Any 4 out of 5, 4 x 5 = 20 Marks)</h3>
+    <p class="marks">Each answer should be brief but complete. Use examples wherever needed.</p>
+    <ol class="single-col">
+      <li>Explain the difference between <code>if</code>, <code>if else</code> and <code>switch</code> with suitable examples.</li>
+      <li>Differentiate between <code>while</code> loop and <code>for</code> loop. When is each one preferred?</li>
+      <li>What are arrays in Java? Explain one-dimensional and two-dimensional arrays with examples.</li>
+      <li>Explain important String operations in Java such as <code>length()</code>, <code>charAt()</code>, <code>equals()</code> and <code>substring()</code>.</li>
+      <li>What is recursion? Explain how it differs from iteration with one suitable example.</li>
+    </ol>
+
+    <h3>Section D: Program Questions (10 x 6 = 60 Marks)</h3>
+    <p class="marks">Write complete Java programs with proper class names, methods and output formatting. Use the sample input and output as guidance.</p>
+    <ol class="single-col">
+      <li>
+        Write a program to read a number and check whether it is positive, negative or zero using <code>if else</code>.
+        <span class="sample"><b>Sample Input:</b> 15<br><b>Sample Output:</b> Positive number</span>
+      </li>
+      <li>
+        Write a menu-driven calculator program using <code>switch</code> for addition, subtraction, multiplication and division.
+        <span class="sample"><b>Sample Input:</b> choice = 1, a = 12, b = 8<br><b>Sample Output:</b> Sum = 20</span>
+      </li>
+      <li>
+        Write a program to print all numbers from 1 to 100 that are divisible by both 3 and 5 using a <code>while</code> loop.
+        <span class="sample"><b>Sample Input:</b> No input<br><b>Sample Output:</b> 15 30 45 60 75 90</span>
+      </li>
+      <li>
+        Write a program using nested <code>for</code> loops to print the following pattern for <code>n = 5</code>: 1 on first line, 12 on second line, 123 on third line and so on.
+        <span class="sample"><b>Sample Input:</b> 5<br><b>Sample Output:</b><br>1<br>12<br>123<br>1234<br>12345</span>
+      </li>
+      <li>
+        Write a program to store 10 integers in an array and print the largest and smallest elements.
+        <span class="sample"><b>Sample Input:</b> 12 45 7 90 34 21 67 5 88 19<br><b>Sample Output:</b> Largest = 90, Smallest = 5</span>
+      </li>
+      <li>
+        Write a program to read a String and count the number of vowels, consonants, digits and spaces in it.
+        <span class="sample"><b>Sample Input:</b> Java 123<br><b>Sample Output:</b> Vowels = 2, Consonants = 2, Digits = 3, Spaces = 1</span>
+      </li>
+      <li>
+        Write a program with a function to check whether a given number is prime. Call the function from <code>main</code> and display the result.
+        <span class="sample"><b>Sample Input:</b> 17<br><b>Sample Output:</b> Prime number</span>
+      </li>
+      <li>
+        Write a recursive program to find the factorial of a number.
+        <span class="sample"><b>Sample Input:</b> 5<br><b>Sample Output:</b> Factorial = 120</span>
+      </li>
+      <li>
+        Write a recursive program to generate the Fibonacci series up to <code>n</code> terms.
+        <span class="sample"><b>Sample Input:</b> 7<br><b>Sample Output:</b> 0 1 1 2 3 5 8</span>
+      </li>
+      <li>
+        Write a program to read a <code>3 x 3</code> matrix and print the sum of each row and each column.
+        <span class="sample"><b>Sample Input:</b><br>1 2 3<br>4 5 6<br>7 8 9<br><b>Sample Output:</b><br>Row sums: 6 15 24<br>Column sums: 12 15 18</span>
+      </li>
+    </ol>
+
+    <div class="footer">Java Full Syllabus Question Paper - A4 Printable Format</div>
+  </section>
+
+  <div class="print-tip">Print on A4 paper with default margins or use Save as PDF.</div>
+</body>
+</html>
