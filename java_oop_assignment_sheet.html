@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java OOP Assignment Sheet - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: #8a5c1f; }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-block ol {
+      margin: 0;
+      padding-left: 5.2mm;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+      font-size: 9.2pt;
+    }
+
+    .notes {
+      margin-top: 3mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      position: relative;
+      z-index: 1;
+      background: #fafcff;
+      font-size: 9pt;
+    }
+
+    code {
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.8pt;
+      background: #f3f7fb;
+      padding: 0.2mm 0.6mm;
+      border-radius: 0.7mm;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper { margin: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">Java Object Oriented Programming Assignment Sheet</div>
+        <div class="subtitle">Topic-wise Programming Practice for Java Learners</div>
+      </div>
+    </div>
+
+
+    <div class="instructions">
+      <b>Instructions:</b> Solve each question using Java OOP concepts only. Write class design, Java source code, and a short explanation for every program. Use features like classes, objects, constructors, inheritance, interfaces, packages, and exception handling in Java.
+    </div>
+
+    <h3>Topic-wise Assignment Questions</h3>
+
+    <div class="topic-block">
+      <h4>1. Class and Object Basics</h4>
+      <ol>
+        <li>Create a class <strong>Student</strong> with fields <code>name</code>, <code>rollNo</code>, and <code>marks</code>.</li>
+        <li>Create two <strong>Student</strong> objects and display their details using a method.</li>
+        <li>Write a <strong>Car</strong> class with attributes like <code>brand</code>, <code>model</code>, and <code>speed</code>.</li>
+        <li>Create a <strong>Book</strong> class with <code>title</code>, <code>author</code>, and <code>price</code>, and print the details.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>2. Constructors in Java</h4>
+      <ol>
+        <li>Design a class <strong>Employee</strong> with a parameterized constructor.</li>
+        <li>Create a <strong>Rectangle</strong> class using a constructor to initialize <code>length</code> and <code>breadth</code>.</li>
+        <li>Write a class where each object stores a unique ID using constructor logic.</li>
+        <li>Create a <strong>BankAccount</strong> class that initializes account number and balance in the constructor.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>3. Methods and Behavior</h4>
+      <ol>
+        <li>Create a <strong>Circle</strong> class with methods to compute area and circumference.</li>
+        <li>Write a <strong>Calculator</strong> class with methods for <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, and <code>divide()</code>.</li>
+        <li>Build a <strong>Person</strong> class with methods like <code>eat()</code>, <code>sleep()</code>, and <code>study()</code>.</li>
+        <li>Create a <strong>LibraryBook</strong> class with methods to borrow and return the book.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>4. Instance Variables and Static Members</h4>
+      <ol>
+        <li>Create a class where a static variable counts the number of objects created.</li>
+        <li>Use both instance and static variables in a class and explain the difference.</li>
+        <li>Create a <strong>Department</strong> class with a static department name and instance-specific details.</li>
+        <li>Write a program to show how a static method can be called without creating an object.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>5. Encapsulation in Java</h4>
+      <ol>
+        <li>Implement a <strong>Student</strong> class with private data members and getter/setter methods.</li>
+        <li>Write a <strong>BankAccount</strong> class that restricts direct modification of the balance.</li>
+        <li>Use private methods and public methods to show controlled access in a class.</li>
+        <li>Demonstrate the use of access modifiers like <code>public</code>, <code>private</code>, and <code>protected</code>.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>6. Inheritance</h4>
+      <ol>
+        <li>Create a base class <strong>Animal</strong> and derived classes <strong>Dog</strong> and <strong>Cat</strong>.</li>
+        <li>Write a <strong>Vehicle</strong> base class and derive <strong>Bike</strong> and <strong>Car</strong>.</li>
+        <li>Make a <strong>Person</strong> parent class and <strong>Student</strong> child class.</li>
+        <li>Implement a <strong>Shape</strong> base class with <strong>Rectangle</strong> and <strong>Circle</strong> derived classes.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>7. Method Overriding and <code>super()</code></h4>
+      <ol>
+        <li>Create a base class <strong>Animal</strong> with a method <code>sound()</code> and override it in child classes.</li>
+        <li>Use <code>super()</code> in a child constructor to call the parent constructor.</li>
+        <li>Write a parent class <strong>Employee</strong> and child class <strong>Manager</strong> using method overriding.</li>
+        <li>Build a program where a child class changes the behavior of a parent method.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>8. Abstract Classes and Interfaces</h4>
+      <ol>
+        <li>Create an abstract class <strong>Shape</strong> with abstract method <code>area()</code>.</li>
+        <li>Create an interface <strong>Printable</strong> with a method <code>printDetails()</code>, and implement it in a class.</li>
+        <li>Write a program showing how one class can implement multiple interfaces.</li>
+        <li>Build an example where an abstract class is used as a common base for multiple types.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>9. Polymorphism in Java</h4>
+      <ol>
+        <li>Create a <strong>Shape</strong> class hierarchy where different objects compute area differently.</li>
+        <li>Write a method that accepts a parent type and works with multiple child objects.</li>
+        <li>Demonstrate runtime polymorphism with method overriding.</li>
+        <li>Use interface-based polymorphism to call different implementations through one reference type.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>10. Packages and Import Statements</h4>
+      <ol>
+        <li>Create a small package structure for a <strong>student</strong> and <strong>course</strong> system.</li>
+        <li>Write classes in separate files and import them using package statements.</li>
+        <li>Design a package-based OOP program where classes are separated by responsibility.</li>
+        <li>Create a package-based Java program that uses <code>public</code> classes across different files.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>11. Final, Static, and This Keywords</h4>
+      <ol>
+        <li>Write a class using the <code>final</code> keyword for constants and final methods.</li>
+        <li>Create a class that uses <code>this</code> to refer to the current object.</li>
+        <li>Demonstrate the use of <code>static</code> variables and methods in a Java class.</li>
+        <li>Write a program showing the difference between instance and class-level behavior.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>12. Constructors, Overloading, and Method Overloading</h4>
+      <ol>
+        <li>Write a <strong>Student</strong> class with overloaded constructors.</li>
+        <li>Create a <strong>Calculator</strong> class with overloaded methods for addition.</li>
+        <li>Overload a method for different parameter types in Java.</li>
+        <li>Show how constructor overloading helps initialize objects in different ways.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>13. Exception Handling in OOP</h4>
+      <ol>
+        <li>Create a <strong>BankAccount</strong> class that throws an exception for invalid withdrawal.</li>
+        <li>Use <code>try</code>, <code>catch</code>, and <code>finally</code> inside class methods.</li>
+        <li>Write a <strong>Student</strong> class that validates marks and handles invalid input.</li>
+        <li>Demonstrate custom exception handling in Java OOP.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>14. Inner Classes and Nested Classes</h4>
+      <ol>
+        <li>Create a class <strong>Student</strong> with a nested class <strong>Address</strong>.</li>
+        <li>Use a member inner class and access its outer class members.</li>
+        <li>Create a method-local inner class inside a class method.</li>
+        <li>Explain how nested classes help organize related data in Java OOP.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>15. Java OOP Extras for Beginners</h4>
+      <ol>
+        <li>Create a class implementing the <code>Comparable</code> interface and compare objects.</li>
+        <li>Use Java <code>@Override</code> annotation to show method overriding clearly.</li>
+        <li>Write a program where one class contains another object as a field to show composition.</li>
+        <li>Use the <code>this</code> keyword and constructor chaining to initialize a class correctly.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>16. Mini Projects</h4>
+      <ol>
+        <li>Create a <strong>Library Management System</strong> using classes for <strong>Book</strong>, <strong>Student</strong>, and <strong>Library</strong>.</li>
+        <li>Build a <strong>Banking System</strong> with account creation, deposit, withdraw, and balance check.</li>
+        <li>Design a <strong>Student Result Management System</strong> using Java classes and methods.</li>
+        <li>Create a <strong>Hospital Management System</strong> for patient and appointment handling.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>17. Advanced Practice Questions</h4>
+      <ol>
+        <li>Design a Java class hierarchy for a <strong>restaurant ordering system</strong>.</li>
+        <li>Create a <strong>shopping cart</strong> using classes like <strong>Product</strong>, <strong>CartItem</strong>, and <strong>Cart</strong>.</li>
+        <li>Build a <strong>ticket booking</strong> system for trains or movies using Java OOP.</li>
+        <li>Implement a simple <strong>quiz game</strong> using class-based design in Java.</li>
+      </ol>
+    </div>
+
+    <div class="topic-block">
+      <h4>18. Threads and Multithreading in Java</h4>
+      <ol>
+        <li>Create a class that extends <code>Thread</code> and prints numbers from 1 to 10.</li>
+        <li>Write a class that implements <code>Runnable</code> and runs it using a <code>Thread</code> object.</li>
+        <li>Develop a program where two threads execute concurrently and print alternating values.</li>
+        <li>Demonstrate thread synchronization using the <code>synchronized</code> keyword.</li>
+        <li>Create a simple ticket-booking or counter system using multiple threads.</li>
+        <li>Explain the difference between <code>Thread</code> and <code>Runnable</code> in Java.</li>
+      </ol>
+    </div>
+
+    <div class="notes">
+      <strong>Suggested Practice Plan:</strong> Start with classes, objects, constructors, and methods. Then move to encapsulation, inheritance, polymorphism, abstract classes, interfaces, exceptions, and finally mini projects.
+    </div>
+  </div>
+</body>
+</html>

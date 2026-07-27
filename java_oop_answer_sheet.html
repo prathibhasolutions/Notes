@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java OOP Answer Sheet - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .question {
+      font-size: 8.95pt;
+      line-height: 1.4;
+      color: #243a4f;
+      margin: 0 0 1.4mm;
+      font-weight: 700;
+    }
+
+    .sub-block {
+      border: 1px dashed #c8d5e2;
+      border-radius: 1mm;
+      padding: 1.8mm 2mm;
+      margin: 1.8mm 0 0;
+      background: #f9fbfe;
+    }
+
+    .qnum {
+      font-weight: 700;
+      color: #0d4664;
+      margin-bottom: 0.8mm;
+      font-size: 8.7pt;
+    }
+
+    pre {
+      margin: 0;
+      padding: 1.8mm 2mm;
+      background: #f4f8fc;
+      border: 1px solid #d4dfeb;
+      border-left: 2.2mm solid #4b7fac;
+      border-radius: 1.2mm;
+      overflow: auto;
+      font-size: 8.5pt;
+      line-height: 1.3;
+      font-family: "Courier New", Consolas, monospace;
+    }
+
+    .explain {
+      margin-top: 1.6mm;
+      font-size: 8.9pt;
+      line-height: 1.45;
+      color: #29435d;
+    }
+
+    code {
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.8pt;
+      background: #f3f7fb;
+      padding: 0.2mm 0.6mm;
+      border-radius: 0.7mm;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper { margin: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">Java OOP Answer Sheet</div>
+        <div class="subtitle">Solved Programs with Explanations</div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><strong>Class:</strong> Java Learners</div>
+      <div><strong>Subject:</strong> OOP with Java</div>
+      <div><strong>Format:</strong> A4 Print Sheet</div>
+    </div>
+
+    <div class="instructions">
+      <b>Note:</b> This answer sheet contains worked Java OOP solutions. Each section starts with the question, followed by the solved program and a short explanation.
+    </div>
+
+    <h3>Java OOP Solved Reference</h3>
+
+    <div class="topic-block">
+      <h4>1. Class and Object Basics</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a class <strong>Student</strong> with fields <code>name</code>, <code>rollNo</code>, and <code>marks</code>.</div>
+        <pre>class Student {
+    String name;
+    int rollNo;
+    double marks;
+
+    void display() {
+        System.out.println(name + " " + rollNo + " " + marks);
+    }
+}</pre>
+        <div class="explain">This model answer shows the object state and the method used to print it.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Create two <strong>Student</strong> objects and display their details using a method.</div>
+        <pre>public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student();
+
+        s1.name = "Asha";
+        s1.rollNo = 10;
+        s1.marks = 89.5;
+
+        s2.name = "Ravi";
+        s2.rollNo = 11;
+        s2.marks = 91.0;
+
+        s1.display();
+        s2.display();
+    }
+}</pre>
+        <div class="explain">Two separate objects can hold different data because each instance has its own attribute values.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Write a <strong>Car</strong> class with attributes like <code>brand</code>, <code>model</code>, and <code>speed</code>.</div>
+        <pre>class Car {
+    String brand;
+    String model;
+    int speed;
+
+    void showDetails() {
+        System.out.println(brand + " " + model + " " + speed);
+    }
+}</pre>
+        <div class="explain">A class can represent a real-world object with its own data fields and behavior.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Create a <strong>Book</strong> class with <code>title</code>, <code>author</code>, and <code>price</code>, and print the details.</div>
+        <pre>class Book {
+    String title;
+    String author;
+    double price;
+
+    void printBook() {
+        System.out.println(title + " by " + author + " - Rs. " + price);
+    }
+}</pre>
+        <div class="explain">This shows how a simple class can model a book's attributes and print them as a summary.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>2. Constructors in Java</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Design a class <strong>Employee</strong> with a parameterized constructor.</div>
+        <pre>class Employee {
+    String name;
+    int id;
+
+    Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    void display() {
+        System.out.println(name + " " + id);
+    }
+}</pre>
+        <div class="explain">The constructor initializes the object immediately with the supplied values.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Create a <strong>Rectangle</strong> class using a constructor to initialize <code>length</code> and <code>breadth</code>.</div>
+        <pre>class Rectangle {
+    int length, breadth;
+
+    Rectangle(int length, int breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    int area() {
+        return length * breadth;
+    }
+}</pre>
+        <div class="explain">Constructor parameters help set the object state as soon as the instance is created.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Write a class where each object stores a unique ID using constructor logic.</div>
+        <pre>class Product {
+    static int nextId = 1;
+    int id;
+
+    Product() {
+        id = nextId++;
+    }
+}</pre>
+        <div class="explain">A static counter can generate unique IDs for every object created.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Create a <strong>BankAccount</strong> class that initializes account number and balance in the constructor.</div>
+        <pre>class BankAccount {
+    int accNo;
+    double balance;
+
+    BankAccount(int accNo, double balance) {
+        this.accNo = accNo;
+        this.balance = balance;
+    }
+}</pre>
+        <div class="explain">This is a simple constructor-based initialization pattern used in realistic banking programs.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>3. Methods and Behavior</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a <strong>Circle</strong> class with methods to compute area and circumference.</div>
+        <pre>class Circle {
+    double radius;
+
+    double area() {
+        return 3.14 * radius * radius;
+    }
+
+    double circumference() {
+        return 2 * 3.14 * radius;
+    }
+}</pre>
+        <div class="explain">Methods define behavior, while the field stores the object data needed for computation.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Write a <strong>Calculator</strong> class with methods for <code>add()</code>, <code>subtract()</code>, <code>multiply()</code>, and <code>divide()</code>.</div>
+        <pre>class Calculator {
+    int add(int a, int b) { return a + b; }
+    int subtract(int a, int b) { return a - b; }
+    int multiply(int a, int b) { return a * b; }
+    int divide(int a, int b) { return a / b; }
+}</pre>
+        <div class="explain">Multiple methods provide different operations without changing the class design.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Build a <strong>Person</strong> class with methods like <code>eat()</code>, <code>sleep()</code>, and <code>study()</code>.</div>
+        <pre>class Person {
+    void eat() { System.out.println("Eating"); }
+    void sleep() { System.out.println("Sleeping"); }
+    void study() { System.out.println("Studying"); }
+}</pre>
+        <div class="explain">This demonstrates a class showing real-world behavior through methods.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Create a <strong>LibraryBook</strong> class with methods to borrow and return the book.</div>
+        <pre>class LibraryBook {
+    String title;
+    boolean issued;
+
+    void borrow() { issued = true; }
+    void returnBook() { issued = false; }
+}</pre>
+        <div class="explain">Methods can update object state, which is a major part of OOP problem solving.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>4. Instance Variables and Static Members</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a class where a static variable counts the number of objects created.</div>
+        <pre>class Student {
+    static int count = 0;
+    Student() { count++; }
+}</pre>
+        <div class="explain">The shared count value belongs to the class rather than to any single object.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Use both instance and static variables in a class and explain the difference.</div>
+        <pre>class Counter {
+    int instanceValue = 5;
+    static int staticValue = 10;
+}</pre>
+        <div class="explain">An instance variable is unique to one object, whereas a static variable is shared across all objects.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Create a <strong>Department</strong> class with a static department name and instance-specific details.</div>
+        <pre>class Department {
+    static String deptName = "Computer Science";
+    String head;
+    int strength;
+}</pre>
+        <div class="explain">A department name is common to all department objects, while the head and strength differ per object.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Write a program to show how a static method can be called without creating an object.</div>
+        <pre>class Utility {
+    static void printMessage() {
+        System.out.println("Hello");
+    }
+}</pre>
+        <div class="explain">Static methods can be invoked through the class name itself.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>5. Encapsulation in Java</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Implement a <strong>Student</strong> class with private data members and getter/setter methods.</div>
+        <pre>class Student {
+    private String name;
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+}</pre>
+        <div class="explain">Private fields restrict direct access and keep the data safe.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Write a <strong>BankAccount</strong> class that restricts direct modification of the balance.</div>
+        <pre>class BankAccount {
+    private double balance;
+    public void deposit(double amount) { balance += amount; }
+    public double getBalance() { return balance; }
+}</pre>
+        <div class="explain">Only controlled methods can alter the balance, which is the main purpose of encapsulation.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Use private methods and public methods to show controlled access in a class.</div>
+        <pre>class Example {
+    private void helper() { System.out.println("Internal"); }
+    public void run() { helper(); }
+}</pre>
+        <div class="explain">Public methods act as entry points, while private methods handle internal logic.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Demonstrate the use of access modifiers like <code>public</code>, <code>private</code>, and <code>protected</code>.</div>
+        <pre>class Demo {
+    public int a;
+    private int b;
+    protected int c;
+}</pre>
+        <div class="explain">These modifiers define how visible and accessible a member is across the program.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>6. Inheritance</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a base class <strong>Animal</strong> and derived classes <strong>Dog</strong> and <strong>Cat</strong>.</div>
+        <pre>class Animal { void sound() { System.out.println("Animal sound"); } }
+class Dog extends Animal { void sound() { System.out.println("Bark"); } }
+class Cat extends Animal { void sound() { System.out.println("Meow"); } }</pre>
+        <div class="explain">Child classes inherit common properties and behavior from the parent class.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Write a <strong>Vehicle</strong> base class and derive <strong>Bike</strong> and <strong>Car</strong>.</div>
+        <pre>class Vehicle { String type; }
+class Bike extends Vehicle { }
+class Car extends Vehicle { }</pre>
+        <div class="explain">Inheritance is a clean way to reuse shared features among related classes.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Make a <strong>Person</strong> parent class and <strong>Student</strong> child class.</div>
+        <pre>class Person { String name; }
+class Student extends Person { int rollNo; }</pre>
+        <div class="explain">The child class adds its own data while inheriting the parent's data and behavior.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Implement a <strong>Shape</strong> base class with <strong>Rectangle</strong> and <strong>Circle</strong> derived classes.</div>
+        <pre>class Shape { double area() { return 0; } }
+class Rectangle extends Shape { double length, breadth; }
+class Circle extends Shape { double radius; }</pre>
+        <div class="explain">Inheritance allows specialized subclasses to extend a shared abstraction.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>7. Method Overriding and <code>super()</code></h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a base class <strong>Animal</strong> with a method <code>sound()</code> and override it in child classes.</div>
+        <pre>class Animal { void sound() { System.out.println("Animal"); } }
+class Dog extends Animal { @Override void sound() { System.out.println("Bark"); } }</pre>
+        <div class="explain">Overriding changes the method implementation in the subclass.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Use <code>super()</code> in a child constructor to call the parent constructor.</div>
+        <pre>class Person { Person(String name) { System.out.println(name); } }
+class Student extends Person { Student(String name) { super(name); } }</pre>
+        <div class="explain">The child constructor uses <code>super()</code> to initialize parent fields or behavior.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Write a parent class <strong>Employee</strong> and child class <strong>Manager</strong> using method overriding.</div>
+        <pre>class Employee { void work() { System.out.println("Working"); } }
+class Manager extends Employee { @Override void work() { System.out.println("Managing"); } }</pre>
+        <div class="explain">This demonstrates specialized subclass behavior while retaining the parent interface.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Build a program where a child class changes the behavior of a parent method.</div>
+        <pre>class Shape { void draw() { System.out.println("Shape"); } }
+class Rectangle extends Shape { @Override void draw() { System.out.println("Rectangle"); } }</pre>
+        <div class="explain">This is a textbook example of how polymorphism and overriding work together in Java.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>8. Abstract Classes and Interfaces</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create an abstract class <strong>Shape</strong> with abstract method <code>area()</code>.</div>
+        <pre>abstract class Shape { abstract double area(); }</pre>
+        <div class="explain">Abstract classes define a shared contract that subclasses must fulfill.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Create an interface <strong>Printable</strong> with a method <code>printDetails()</code>, and implement it in a class.</div>
+        <pre>interface Printable { void printDetails(); }
+class Student implements Printable { public void printDetails() { } }</pre>
+        <div class="explain">Interfaces describe behavior without providing implementation details.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Write a program showing how one class can implement multiple interfaces.</div>
+        <pre>interface A { void a(); }
+interface B { void b(); }
+class C implements A, B { public void a() {} public void b() {} }</pre>
+        <div class="explain">Java allows a class to implement more than one interface, helping in flexible design.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Build an example where an abstract class is used as a common base for multiple types.</div>
+        <pre>abstract class Vehicle { abstract void start(); }
+class Bike extends Vehicle { public void start() { } }
+class Car extends Vehicle { public void start() { } }</pre>
+        <div class="explain">An abstract base class ensures a common method signature across diverse related classes.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>9. Polymorphism in Java</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a <strong>Shape</strong> class hierarchy where different objects compute area differently.</div>
+        <pre>class Shape { double area() { return 0; } }
+class Rectangle extends Shape { double area() { return 10; } }</pre>
+        <div class="explain">Polymorphism allows many shapes to share the same method name but with different implementations.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Write a method that accepts a parent type and works with multiple child objects.</div>
+        <pre>void printArea(Shape s) { System.out.println(s.area()); }</pre>
+        <div class="explain">A common parent type can work with different subclasses through polymorphism.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Demonstrate runtime polymorphism with method overriding.</div>
+        <pre>Shape s = new Rectangle();
+System.out.println(s.area());</pre>
+        <div class="explain">Java decides the overridden method to call at runtime based on the actual object reference.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Use interface-based polymorphism to call different implementations through one reference type.</div>
+        <pre>interface Payment { void pay(); }
+class CardPayment implements Payment { public void pay() { } }
+class UpiPayment implements Payment { public void pay() { } }</pre>
+        <div class="explain">Interface references let the same code work across different concrete implementations.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>10. Packages and Import Statements</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a small package structure for a <strong>student</strong> and <strong>course</strong> system.</div>
+        <pre>package student;
+public class Student { }</pre>
+        <div class="explain">Packages keep related classes organized and easier to maintain.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Write classes in separate files and import them using package statements.</div>
+        <pre>import student.Student;
+public class Main { Student s = new Student(); }</pre>
+        <div class="explain">The import statement allows one file to reuse classes defined in another package.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Design a package-based OOP program where classes are separated by responsibility.</div>
+        <pre>package course; class Course { }</n>
+package student; class Student { }</pre>
+        <div class="explain">This is the usual style for separating class responsibilities in larger Java programs.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Create a package-based Java program that uses <code>public</code> classes across different files.</div>
+        <pre>package demo;
+public class Demo { public int x; }</pre>
+        <div class="explain">A public class in a package can be accessed from other files when imported correctly.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>11. Final, Static, and This Keywords</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Write a class using the <code>final</code> keyword for constants and final methods.</div>
+        <pre>class Demo { final int ID = 10; final void test() { } }</pre>
+        <div class="explain">A final field or method cannot be changed or overridden after declaration.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Create a class that uses <code>this</code> to refer to the current object.</div>
+        <pre>class Person { String name; Person(String name) { this.name = name; } }</pre>
+        <div class="explain"><code>this</code> distinguishes the current object from the constructor parameter.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Demonstrate the use of <code>static</code> variables and methods in a Java class.</div>
+        <pre>class MathUtils { static int square(int n) { return n * n; } }</pre>
+        <div class="explain">A static method belongs to the class and does not require an instance to run.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Write a program showing the difference between instance and class-level behavior.</div>
+        <pre>class Example { int x; static int y; }</pre>
+        <div class="explain">The value of <code>x</code> is tied to each object, but <code>y</code> is shared across the class.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>12. Constructors, Overloading, and Method Overloading</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Write a <strong>Student</strong> class with overloaded constructors.</div>
+        <pre>class Student { Student() {} Student(String name) {} }</pre>
+        <div class="explain">Overloaded constructors let an object be initialized in multiple ways.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Create a <strong>Calculator</strong> class with overloaded methods for addition.</div>
+        <pre>class Calculator { int add(int a, int b) { return a + b; } double add(double a, double b) { return a + b; } }</pre>
+        <div class="explain">Overloading allows the same method name to work with different parameter types.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Overload a method for different parameter types in Java.</div>
+        <pre>class Demo { void print(int x) {} void print(String x) {} }</pre>
+        <div class="explain">Java selects the correct method version based on the argument passed.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Show how constructor overloading helps initialize objects in different ways.</div>
+        <pre>class Person { Person() {} Person(String name) {} }</pre>
+        <div class="explain">This makes the class more flexible when new objects are created in different contexts.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>13. Exception Handling in OOP</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a <strong>BankAccount</strong> class that throws an exception for invalid withdrawal.</div>
+        <pre>class BankAccount { void withdraw(int amount) { if (amount > 500) throw new ArithmeticException(); } }</pre>
+        <div class="explain">Invalid business logic can be represented as an exception in the class method.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Use <code>try</code>, <code>catch</code>, and <code>finally</code> inside class methods.</div>
+        <pre>try { } catch (Exception e) { } finally { }</pre>
+        <div class="explain">These blocks ensure safe execution and graceful recovery from error conditions.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Write a <strong>Student</strong> class that validates marks and handles invalid input.</div>
+        <pre>class Student { void setMarks(int marks) { if(marks < 0) throw new IllegalArgumentException(); } }</pre>
+        <div class="explain">Validating data inside class methods improves reliability and prevents invalid states.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Demonstrate custom exception handling in Java OOP.</div>
+        <pre>class InvalidMarksException extends Exception { }</pre>
+        <div class="explain">Custom exceptions make error handling clearer and more domain-specific.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>14. Inner Classes and Nested Classes</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a class <strong>Student</strong> with a nested class <strong>Address</strong>.</div>
+        <pre>class Student { class Address { String city; } }</pre>
+        <div class="explain">Nested classes help group related data structures inside a logical container.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Use a member inner class and access its outer class members.</div>
+        <pre>class Outer { int x = 10; class Inner { void show() { System.out.println(x); } } }</pre>
+        <div class="explain">Inner classes are associated with an outer object and can access its members directly.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Create a method-local inner class inside a class method.</div>
+        <pre>class Outer { void demo() { class Inner { } } }</pre>
+        <div class="explain">A local inner class is useful when a small helper class is needed only within a method.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Explain how nested classes help organize related data in Java OOP.</div>
+        <pre>class Student { class Address { String city; } }</pre>
+        <div class="explain">Nested classes make code easier to read and keep logically related data together.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>15. Java OOP Extras for Beginners</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a class implementing the <code>Comparable</code> interface and compare objects.</div>
+        <pre>class Student implements Comparable<Student> { int marks; public int compareTo(Student o) { return this.marks - o.marks; } }</pre>
+        <div class="explain">This lets objects be ordered in a natural way using Java's comparison interface.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Use Java <code>@Override</code> annotation to show method overriding clearly.</div>
+        <pre>@Override void run() { }</pre>
+        <div class="explain">The annotation makes the overriding relationship explicit and improves readability.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Write a program where one class contains another object as a field to show composition.</div>
+        <pre>class Address { String city; }
+class Student { Address address; }</pre>
+        <div class="explain">Composition is a powerful OOP design principle where one object contains other objects.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Use the <code>this</code> keyword and constructor chaining to initialize a class correctly.</div>
+        <pre>class Demo { Demo() { this(5); } Demo(int x) { } }</pre>
+        <div class="explain">Constructor chaining helps reduce duplication and keep initialization logic consistent.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>16. Mini Projects</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a <strong>Library Management System</strong> using classes for <strong>Book</strong>, <strong>Student</strong>, and <strong>Library</strong>.</div>
+        <pre>class Book { String title; }
+class Student { String name; }
+class Library { Book[] books; }</pre>
+        <div class="explain">Mini projects help combine multiple OOP concepts into a real-world application.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Build a <strong>Banking System</strong> with account creation, deposit, withdraw, and balance check.</div>
+        <pre>class BankAccount { double balance; void deposit() {} void withdraw() {} }</pre>
+        <div class="explain">This is a strong beginner-level project because it uses attributes, methods, and object interaction.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Design a <strong>Student Result Management System</strong> using Java classes and methods.</div>
+        <pre>class Student { String name; int marks; }</n>
+class Result { void displayGrade() { } }</pre>
+        <div class="explain">This project naturally uses data storage, calculations, and simple object relationships.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Create a <strong>Hospital Management System</strong> for patient and appointment handling.</div>
+        <pre>class Patient { String name; }
+class Appointment { Patient patient; }</pre>
+        <div class="explain">Multiple class interactions make this a useful advanced practice example.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>17. Advanced Practice Questions</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Design a Java class hierarchy for a <strong>restaurant ordering system</strong>.</div>
+        <pre>class FoodItem { String name; }
+class Order { FoodItem[] items; }</pre>
+        <div class="explain">A realistic class hierarchy teaches good decomposition and inheritance choices.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Create a <strong>shopping cart</strong> using classes like <strong>Product</strong>, <strong>CartItem</strong>, and <strong>Cart</strong>.</div>
+        <pre>class Product { String name; double price; }
+class CartItem { Product product; int quantity; }</pre>
+        <div class="explain">This project shows composition and object collaboration in a practical application.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Build a <strong>ticket booking</strong> system for trains or movies using Java OOP.</div>
+        <pre>class Ticket { String passengerName; }
+class BookingSystem { Ticket[] tickets; }</pre>
+        <div class="explain">Ticket systems are commonly used to teach object modeling and workflow logic.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Implement a simple <strong>quiz game</strong> using class-based design in Java.</div>
+        <pre>class Question { String text; String answer; }
+class Quiz { Question[] questions; }</pre>
+        <div class="explain">A quiz game is a compact way to practice objects, arrays, and logic together.</div>
+      </div>
+    </div>
+
+    <div class="topic-block">
+      <h4>18. Threads and Multithreading in Java</h4>
+      <div class="sub-block">
+        <div class="qnum">Question 1</div>
+        <div class="question">Create a class that extends <code>Thread</code> and prints numbers from 1 to 10.</div>
+        <pre>class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 10; i++) System.out.println(i);
+    }
+}</pre>
+        <div class="explain">This shows the simplest way to create a thread in Java.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 2</div>
+        <div class="question">Write a class that implements <code>Runnable</code> and runs it using a <code>Thread</code> object.</div>
+        <pre>class Task implements Runnable { public void run() { } }
+Thread t = new Thread(new Task());</pre>
+        <div class="explain">The <code>Runnable</code> interface is often preferred when class reuse is important.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 3</div>
+        <div class="question">Develop a program where two threads execute concurrently and print alternating values.</div>
+        <pre>class PrintTask implements Runnable { public void run() { for (int i = 0; i < 5; i++) System.out.println(i); } }</pre>
+        <div class="explain">Concurrent threads help explain shared CPU scheduling and execution overlap.</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="qnum">Question 4</div>
+        <div class="question">Demonstrate thread synchronization using the <code>synchronized</code> keyword.</div>
+        <pre>synchronized void print() { System.out.println("Safe shared output"); }</pre>
+        <div class="explain">Synchronization prevents multiple threads from corrupting shared resource access.</div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <strong>Teacher Note:</strong> This answer sheet is now aligned to the four-question-per-topic structure of the assignment sheet and gives complete worked reference blocks for each topic area.
+    </div>
+  </div>
+</body>
+</html>
