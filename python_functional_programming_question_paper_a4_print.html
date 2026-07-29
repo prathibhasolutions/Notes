@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Functional Programming Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b { color: #113f68; }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .code {
+      display: block;
+      white-space: pre;
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.8pt;
+      line-height: 1.27;
+      margin-top: 0.9mm;
+      background: #f5f9fd;
+      border: 1px solid #d8e2ec;
+      border-radius: 1mm;
+      padding: 1.45mm 1.8mm;
+      tab-size: 4;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+      .print-tip { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Python Basics Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" width="14" height="14" />
+      </div>
+      <div>
+        <div class="title">Python - Question Paper</div>
+        <div class="subtitle">Basics, Loops, Functions, Strings, Collections, Recursion, File Handling</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 180 Minutes</div>
+      <div><b>Total Marks:</b> 100</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 4 theory questions, and Section C has 10 programming questions. Write neat answers with proper syntax, logic, and output wherever applicable.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which of the following is a valid Python identifier?
+        <span class="opts">A) 7value<br>B) total_value<br>C) if<br>D) hello-world</span>
+      </li>
+      <li>
+        Which operator is used to check whether two values are equal?
+        <span class="opts">A) =<br>B) ==<br>C) !=<br>D) =&gt;</span>
+      </li>
+      <li>
+        Which statement is used to skip the current iteration of a loop?
+        <span class="opts">A) break<br>B) continue<br>C) pass<br>D) return</span>
+      </li>
+      <li>
+        Which loop is best when the number of iterations is known in advance?
+        <span class="opts">A) while<br>B) for<br>C) do-while<br>D) if</span>
+      </li>
+      <li>
+        Which data structure stores values in key-value pairs?
+        <span class="opts">A) List<br>B) Tuple<br>C) Dictionary<br>D) Set</span>
+      </li>
+      <li>
+        Which of the following is an immutable data type?
+        <span class="opts">A) List<br>B) Tuple<br>C) Set<br>D) Dictionary</span>
+      </li>
+      <li>
+        A function is created using which keyword?
+        <span class="opts">A) class<br>B) import<br>C) def<br>D) loop</span>
+      </li>
+      <li>
+        Which method is used to add an element to a list?
+        <span class="opts">A) insert()<br>B) append()<br>C) add()<br>D) extend()</span>
+      </li>
+      <li>
+        What is the output of len("HELLO")?
+        <span class="opts">A) 4<br>B) 5<br>C) 6<br>D) 3</span>
+      </li>
+      <li>
+        Which mode is used to open a file for writing?
+        <span class="opts">A) r<br>B) w<br>C) a<br>D) x</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Theory Questions (4 x 5 = 20 Marks)</h3>
+    <ol class="single-col">
+      <li>Explain the difference between if, if-else, and if-elif-else statements with suitable examples.</li>
+      <li>Differentiate between break and continue statements in loops.</li>
+      <li>What is a function? Explain the difference between a function with arguments and a function without arguments.</li>
+      <li>Explain the difference between a list and a tuple with examples.</li>
+    </ol>
+
+    <h3>Section C: Programming Questions (10 x 7 = 70 Marks)</h3>
+    <ol class="single-col">
+      <li>Write a Python program to accept two numbers and swap them without using a third variable.<br><span class="sample">Example Input: 10 20<br>Example Output: After swapping: 20 10</span></li>
+      <li>Write a program to read a year and check whether it is a leap year or not using if-else.<br><span class="sample">Example Input: 2024<br>Example Output: Leap Year</span></li>
+      <li>Write a program to print the first 15 even numbers using a for loop.<br><span class="sample">Example Output: 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30</span></li>
+      <li>Write a program to find the sum of digits of a given number using a while loop.<br><span class="sample">Example Input: 1234<br>Example Output: 10</span></li>
+      <li>Write a program to print the following pattern using nested loops:<br><span class="sample">****<br>***<br>**<br>*</span></li>
+      <li>Write a function to find the sum of first n natural numbers using recursion.<br><span class="sample">Example Input: 5<br>Example Output: 15</span></li>
+      <li>Write a program to reverse a string without using any built-in reverse function.<br><span class="sample">Example Input: COMPUTER<br>Example Output: RETUPMOC</span></li>
+      <li>Write a program to create a list of 10 integers, find the largest element, and print it.<br><span class="sample">Example Input: 8 12 3 19 5 27 10 6 14 1<br>Example Output: 27</span></li>
+      <li>Write a program to store student marks in a dictionary and display them.<br><span class="sample">Example Input: {"Ravi": 78, "Meera": 92}<br>Example Output: Ravi: 78, Meera: 92</span></li>
+      <li>Write a program to create a text file and write at least 5 lines into it.<br><span class="sample">Example Output: File created successfully with 5 lines written.</span></li>
+    </ol>
+
+    <div class="footer">Prepared for Classroom / Practical Examination</div>
+  </section>
+</body>
+</html>
