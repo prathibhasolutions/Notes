@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Programming Question Paper </title>
+
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.1pt;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.6pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.45pt;
+      line-height: 1.36;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.4pt;
+      line-height: 1.37;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 8.9pt;
+      line-height: 1.45;
+      padding-left: 1.2mm;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="paper">
+
+<header class="header">
+    <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo">
+    </div>
+
+    <div>
+        <div class="title">JAVA PROGRAMMING - QUESTION PAPER</div>
+        <div class="subtitle">
+            Basics, Operators, Conditional Statements, Loops,
+            Arrays, Functions, Recursion, Strings
+        </div>
+    </div>
+</header>
+
+<section class="meta">
+    <div><b>Time:</b> 90 Minutes</div>
+    <div><b>Total Marks:</b> 100</div>
+    <div><b>Name:</b> _______________________</div>
+</section>
+
+<section class="instructions">
+<b>Instructions:</b>
+Answer all questions.
+Write complete Java programs with proper syntax,
+logic and sample output wherever applicable.
+</section>
+
+<h3> Programming Questions (10 × 10 = 100 Marks)</h3>
+
+<ol class="single-col">
+
+<li>
+
+Write a Java program to find the sum of all elements in an integer array.
+
+<br><br>
+
+<b>Sample Input:</b><br>
+5<br>
+10 20 30 40 50
+
+<br><br>
+
+<b>Sample Output:</b><br>
+Sum = 150
+
+</li>
+
+<li>
+
+Write a Java program to print the following two patterns using nested loops.
+
+<br><br>
+
+<b>Pattern 1</b>
+
+<pre>
+*
+**
+***
+****
+*****
+</pre>
+
+<b>Pattern 2</b>
+
+<pre>
+*****
+****
+***
+**
+*
+</pre>
+
+</li>
+
+<li>
+
+Write a Java program to find the factorial of a number using recursion.
+
+<br><br>
+
+<b>Sample Input:</b><br>
+5
+
+<br><br>
+
+<b>Sample Output:</b><br>
+Factorial = 120
+
+</li>
+
+<li>
+
+Write a Java program to check whether a given string is a palindrome using a function.
+
+<br><br>
+
+<b>Sample Input:</b><br>
+MADAM
+
+<br><br>
+
+<b>Sample Output:</b><br>
+Palindrome
+
+</li>
+
+<li>
+
+Write a Java program to display the grade of a student using if-else or switch statement.
+
+Use the following grading system:
+
+<pre>
+90-100 : A
+80-89  : B
+70-79  : C
+60-69  : D
+Below 60 : Fail
+</pre>
+
+<b>Sample Input:</b><br>
+84
+
+<br><br>
+
+<b>Sample Output:</b><br>
+Grade = B
+
+</li>
+
+<li>
+
+Write a Java program to check whether a number is Prime or Not.
+
+<br><br>
+
+<b>Sample Input:</b><br>
+29
+
+<br><br>
+
+<b>Sample Output:</b><br>
+Prime Number
+
+</li>
+
+<li>
+
+Write a Java program to find the sum of even digits in a given number.
+
+<br><br>
+
+<b>Sample Input:</b><br>
+4821356
+
+<br><br>
+
+<b>Sample Output:</b><br>
+Sum of Even Digits = 20
+
+</li>
+
+<li>
+
+Write a Java program to reverse the elements of an integer array.
+
+<br><br>
+
+<b>Sample Input:</b><br>
+5<br>
+10 20 30 40 50
+
+<br><br>
+
+<b>Sample Output:</b><br>
+50 40 30 20 10
+
+</li>
+
+<li>
+
+Write a Java program to swap two numbers using a third variable.
+
+<br><br>
+
+<b>Sample Input:</b><br>
+15 25
+
+<br><br>
+
+<b>Sample Output:</b><br>
+After Swapping<br>
+First Number = 25<br>
+Second Number = 15
+
+</li>
+
+<li>
+
+Write a Java program to print the multiplication table of a given number.
+
+<br><br>
+
+<b>Sample Input:</b><br>
+7
+
+<br><br>
+
+<b>Sample Output:</b>
+
+<pre>
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70
+</pre>
+
+</li>
+
+</ol>
+
+<div class="footer">
+Prathibha Institute
+</div>
+
+</section>
+
+</body>
+</html>
