@@ -21,7 +21,7 @@
 
     @page {
       size: A4;
-      margin: 9mm;
+      margin: 0;
     }
 
     body {
@@ -35,9 +35,9 @@
 
     .paper {
       width: var(--paper-w);
-      min-height: 297mm;
-      margin: 8mm auto;
-      background: #fff;
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
       border: 1px solid #c9d7e2;
       border-top: 2.4mm solid var(--accent);
       box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
@@ -199,9 +199,59 @@
       font-size: 9pt;
     }
 
+    .topic-note {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-note p {
+      margin: 0 0 1.5mm;
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: #304556;
+    }
+
+    .key-points {
+      margin: 1.3mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1mm;
+      font-size: 7.9pt;
+      line-height: 1.4;
+      color: #314759;
+    }
+
+    .code {
+      margin: 1.3mm 0 0;
+      border: 1px solid #d9e5ef;
+      border-left: 2mm solid #0f5f7f;
+      border-radius: 1mm;
+      background: #fffdf8;
+      color: #203040;
+      padding: 2mm;
+      font-size: 7.8pt;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
     @media print {
       body { background: #fff; }
-      .paper { margin: 0; box-shadow: none; }
+      .paper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        min-height: auto;
+      }
     }
   </style>
 </head>
@@ -212,203 +262,418 @@
         <img src="prathibha_logo.png" alt="Prathibha Logo" />
       </div>
       <div class="title-block">
-        <div class="title">Python Object Oriented Programming Assignment Sheet</div>
-        <div class="subtitle">Topic-wise Programming Practice for Python Learners</div>
+        <div class="title">Python Object Oriented Programming Complete Notes</div>
+        <div class="subtitle">Full Syllabus with Examples, Syntax, and Practice Concepts</div>
       </div>
     </div>
 
-    
-
     <div class="instructions">
-      <b>Instructions:</b> Solve each question using Python OOP syntax only. Write the class design, source code, and a short explanation for every program. Use concepts like <code>self</code>, <code>__init__</code>, inheritance, encapsulation, polymorphism, and Python magic methods.
+      <b>Study Note:</b> Python OOP is based on real-world modeling using classes and objects. Each class defines a blueprint, and each object is an instance of that blueprint. Concepts such as encapsulation, inheritance, polymorphism, abstraction, and magic methods help in writing reusable and maintainable programs.
     </div>
 
-    <h3>Topic-wise Assignment Questions</h3>
+  
 
-    <div class="topic-block">
+    <h3>Python OOP Syllabus Notes</h3>
+
+    <div class="topic-note">
       <h4>1. Class and Object Basics</h4>
-      <ol>
-        <li>Create a class <strong>Student</strong> with name, roll_no, and marks.</li>
-        <li>Instantiate two student objects and display their details.</li>
-        <li>Create a <strong>Car</strong> class with attributes brand and speed.</li>
-        <li>Create a <strong>Book</strong> class with title, author, price, and display method.</li>
-      </ol>
+      <p>A class is a blueprint for creating objects. An object is an instance of a class. A class stores attributes and methods, while an object holds actual data.</p>
+      <ul class="key-points">
+        <li>Class defines the structure and behavior of objects.</li>
+        <li>Object is a real instance created from the class.</li>
+        <li>Attributes store data, and methods describe behavior.</li>
+      </ul>
+      <pre class="code">class Student:
+    def __init__(self, name, roll_no, marks):
+        self.name = name
+        self.roll_no = roll_no
+        self.marks = marks
+
+    def display(self):
+        print(self.name, self.roll_no, self.marks)
+
+s1 = Student("Asha", 101, 89)
+s2 = Student("Kiran", 102, 92)
+s1.display()
+s2.display()</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>2. Constructor and Instance Variables</h4>
-      <ol>
-        <li>Design an <strong>Employee</strong> class using a constructor.</li>
-        <li>Create a <strong>Rectangle</strong> class with length and breadth using <code>__init__</code>.</li>
-        <li>Write a program where each object stores a unique ID.</li>
-        <li>Make a class <strong>BankAccount</strong> that initializes account number and balance.</li>
-      </ol>
+      <p>The <code>__init__</code> method is a special constructor used to initialize object attributes. Every object gets its own instance variables.</p>
+      <ul class="key-points">
+        <li><code>__init__</code> runs automatically when an object is created.</li>
+        <li>Instance variables are stored separately for each object.</li>
+        <li>Constructors help assign default or incoming values to the object.</li>
+      </ul>
+      <pre class="code">class Employee:
+    def __init__(self, emp_id, name, salary):
+        self.emp_id = emp_id
+        self.name = name
+        self.salary = salary
+
+e1 = Employee(1, "Ravi", 45000)
+print(e1.name, e1.salary)</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>3. Methods and Behavior</h4>
-      <ol>
-        <li>Create a <strong>Circle</strong> class with methods to calculate area and circumference.</li>
-        <li>Write a class <strong>Calculator</strong> with methods for add, subtract, multiply, and divide.</li>
-        <li>Build a <strong>Person</strong> class with <code>eat()</code>, <code>sleep()</code>, and <code>study()</code>.</li>
-        <li>Create a <strong>LibraryBook</strong> class with methods to borrow and return a book.</li>
-      </ol>
+      <p>Methods define the behavior of a class. They can perform calculations, manipulate attributes, or return results.</p>
+      <ul class="key-points">
+        <li>Methods are functions defined inside a class.</li>
+        <li>They operate on object data through <code>self</code>.</li>
+        <li>Methods help implement actions like calculation, validation, or display.</li>
+      </ul>
+      <pre class="code">class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+    def circumference(self):
+        return 2 * 3.14 * self.radius
+
+c = Circle(7)
+print("Area:", c.area())
+print("Circumference:", c.circumference())</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>4. Instance, Class, and Static Variables</h4>
-      <ol>
-        <li>Create a class where a class variable counts the number of objects created.</li>
-        <li>Write a class with both instance variables and class variables.</li>
-        <li>Demonstrate the difference between instance attributes and class attributes.</li>
-        <li>Create a <strong>Department</strong> class that stores department name as a class variable.</li>
-      </ol>
+      <p>Instance variables are unique per object. Class variables are shared by all instances. Static variables are usually used for information that belongs to the class rather than a specific object.</p>
+      <ul class="key-points">
+        <li>Instance variables belong to each object individually.</li>
+        <li>Class variables are shared by all instances of the class.</li>
+        <li>Static-like class-level data is useful for common constants or counters.</li>
+      </ul>
+      <pre class="code">class Student:
+    school = "ABC Public School"
+    count = 0
+
+    def __init__(self, name):
+        self.name = name
+        Student.count += 1
+
+s1 = Student("Asha")
+s2 = Student("Bharat")
+print(Student.school)
+print(Student.count)</pre>
     </div>
 
-    <div class="topic-block">
-      <h4>5. Encapsulation in Python</h4>
-      <ol>
-        <li>Implement a <strong>Student</strong> class with private attributes and getter/setter methods.</li>
-        <li>Write a <strong>BankAccount</strong> class that restricts direct balance modification.</li>
-        <li>Create a class with a private method <code>__calculate()</code> and call it safely using Python name-mangling rules.</li>
-        <li>Demonstrate public, protected, and private member usage in Python OOP.</li>
-      </ol>
+    <div class="topic-note">
+      <h4>5. Encapsulation</h4>
+      <p>Encapsulation protects data using private members and controlled access through methods. In Python, private attributes are named with double underscores.</p>
+      <ul class="key-points">
+        <li>Encapsulation hides internal object details from outside access.</li>
+        <li>Private attributes are indicated with <code>__</code> in Python.</li>
+        <li>Getter and setter methods provide safe controlled access.</li>
+      </ul>
+      <pre class="code">class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient balance")
+
+    def get_balance(self):
+        return self.__balance
+
+acc = BankAccount(5000)
+acc.deposit(1000)
+print(acc.get_balance())</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>6. Inheritance</h4>
-      <ol>
-        <li>Create a base class <strong>Animal</strong> and derived classes <strong>Dog</strong> and <strong>Cat</strong>.</li>
-        <li>Write a <strong>Vehicle</strong> base class and derive <strong>Bike</strong> and <strong>Car</strong>.</li>
-        <li>Make a <strong>Person</strong> parent class and <strong>Student</strong> child class.</li>
-        <li>Implement a <strong>Shape</strong> base class with <strong>Rectangle</strong> and <strong>Circle</strong> derived classes.</li>
-      </ol>
+      <p>Inheritance allows one class to extend another. The child class inherits properties and methods from the parent class.</p>
+      <ul class="key-points">
+        <li>Child class inherits attributes and methods from parent.</li>
+        <li>It promotes code reuse and better organization.</li>
+        <li>Parent class is called base class and child class is derived class.</li>
+      </ul>
+      <pre class="code">class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+class Cat(Animal):
+    def meow(self):
+        print("Cat meows")
+
+d = Dog()
+d.speak()
+d.bark()</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>7. Method Overriding and <code>super()</code></h4>
-      <ol>
-        <li>Create a base <strong>Animal</strong> class with a <code>sound()</code> method and override it in derived classes.</li>
-        <li>Use <code>super()</code> in a child constructor to initialize parent attributes.</li>
-        <li>Write a program showing different behavior of the same method in different classes.</li>
-        <li>Build a <strong>Teacher</strong> and <strong>Student</strong> class where child methods override a base method.</li>
-      </ol>
+      <p>Method overriding happens when a child class defines a method with the same name as its parent. The <code>super()</code> function lets the child call the parent method.</p>
+      <ul class="key-points">
+        <li>Overriding changes the parent behavior in the child class.</li>
+        <li><code>super()</code> allows access to parent methods and constructors.</li>
+        <li>It is useful when child needs extra initialization or custom logic.</li>
+      </ul>
+      <pre class="code">class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Student(Person):
+    def __init__(self, name, roll_no):
+        super().__init__(name)
+        self.roll_no = roll_no
+
+s = Student("Nisha", 7)
+print(s.name, s.roll_no)</pre>
     </div>
 
-    <div class="topic-block">
-      <h4>8. Multiple Inheritance</h4>
-      <ol>
-        <li>Create classes <strong>Employee</strong>, <strong>Scholar</strong>, and <strong>Researcher</strong> with multiple inheritance.</li>
-        <li>Design a class combining <strong>Student</strong> and <strong>SportsPlayer</strong> properties.</li>
-        <li>Demonstrate MRO with a small program in Python.</li>
-        <li>Create a class that inherits from two different parent classes and shows method resolution.</li>
-      </ol>
+    <div class="topic-note">
+      <h4>8. Multiple Inheritance and MRO</h4>
+      <p>Multiple inheritance allows a class to inherit from more than one parent. Python resolves the method order using the Method Resolution Order (MRO).</p>
+      <ul class="key-points">
+        <li>Multiple inheritance uses more than one parent class.</li>
+        <li>MRO decides which parent method is called first.</li>
+        <li>It is powerful but can create ambiguity if not designed carefully.</li>
+      </ul>
+      <pre class="code">class Employee:
+    def work(self):
+        print("Working")
+
+class Scholar:
+    def study(self):
+        print("Studying")
+
+class Researcher(Employee, Scholar):
+    pass
+
+r = Researcher()
+r.work()
+r.study()
+print(Researcher.mro())</pre>
     </div>
 
-    <div class="topic-block">
-      <h4>9. Polymorphism in Python</h4>
-      <ol>
-        <li>Create a base class <strong>Shape</strong> with <code>area()</code> and use different derived classes.</li>
-        <li>Demonstrate Python duck typing using a function that accepts any object with a <code>move()</code> method.</li>
-        <li>Write a program showing polymorphic behavior with default arguments in Python methods.</li>
-        <li>Build a <strong>Payment</strong> class with <code>pay()</code> implemented differently in multiple classes.</li>
-      </ol>
+    <div class="topic-note">
+      <h4>9. Polymorphism</h4>
+      <p>Polymorphism means the same method name can behave differently in different classes. This is very useful for code reusability.</p>
+      <ul class="key-points">
+        <li>One method name can behave differently for different classes.</li>
+        <li>It enables common interfaces for multiple implementations.</li>
+        <li>Polymorphism reduces code dependency on specific class types.</li>
+      </ul>
+      <pre class="code">class Circle:
+    def area(self):
+        return 3.14 * 2 * 2
+
+class Rectangle:
+    def area(self):
+        return 4 * 5
+
+for shape in [Circle(), Rectangle()]:
+    print(shape.area())</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>10. Abstraction</h4>
-      <ol>
-        <li>Use <code>abc</code> and <code>@abstractmethod</code> to create an abstract base class.</li>
-        <li>Create a <strong>Vehicle</strong> abstract class with abstract methods <code>start()</code> and <code>stop()</code>.</li>
-        <li>Build a framework where different devices share a common abstract interface.</li>
-        <li>Show why abstract classes are useful in designing large systems.</li>
-      </ol>
+      <p>Abstraction hides unnecessary implementation details and exposes only important behavior. It is implemented using abstract base classes.</p>
+      <ul class="key-points">
+        <li>Abstraction focuses on what an object does, not how it does it.</li>
+        <li><code>ABC</code> and <code>@abstractmethod</code> define a common rule set.</li>
+        <li>It helps in designing stable interfaces for large systems.</li>
+      </ul>
+      <pre class="code">from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+
+class Bike(Vehicle):
+    def start(self):
+        print("Bike started")
+
+b = Bike()
+b.start()</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>11. Class Methods and Static Methods</h4>
-      <ol>
-        <li>Create a <strong>Student</strong> class with a class method to count total students.</li>
-        <li>Write a static method to check if a number is prime.</li>
-        <li>Build a class with both static and class methods and explain their differences.</li>
-        <li>Make a <strong>Time</strong> class with a static method to display current time information.</li>
-      </ol>
+      <p><code>@classmethod</code> receives the class itself as the first parameter. <code>@staticmethod</code> is independent and does not access instance or class state automatically.</p>
+      <ul class="key-points">
+        <li><code>@classmethod</code> works with class-level information.</li>
+        <li><code>@staticmethod</code> works like a normal utility function inside the class.</li>
+        <li>Class methods use <code>cls</code>, while static methods do not use <code>self</code> or <code>cls</code>.</li>
+      </ul>
+      <pre class="code">class Student:
+    count = 0
+
+    def __init__(self, name):
+        self.name = name
+        Student.count += 1
+
+    @classmethod
+    def total_students(cls):
+        return cls.count
+
+    @staticmethod
+    def is_prime(n):
+        return all(n % i for i in range(2, int(n ** 0.5) + 1))
+
+s1 = Student("A")
+s2 = Student("B")
+print(Student.total_students())
+print(Student.is_prime(7))</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>12. Magic Methods and Operator Overloading</h4>
-      <ol>
-        <li>Create a <strong>ComplexNumber</strong> class and overload <code>+</code>.</li>
-        <li>Implement <code>__str__</code> and <code>__repr__</code> for a class.</li>
-        <li>Overload <code>__len__</code> for a custom data class.</li>
-        <li>Create a <strong>Vector</strong> class that supports addition and comparison.</li>
-      </ol>
+      <p>Magic methods define special behavior for built-in operators and object representations. They start and end with double underscores.</p>
+      <ul class="key-points">
+        <li>Magic methods are special dunder methods like <code>__str__</code> and <code>__add__</code>.</li>
+        <li>They allow custom behavior for operators and object display.</li>
+        <li>Operator overloading makes user-defined objects work naturally with Python syntax.</li>
+      </ul>
+      <pre class="code">class ComplexNumber:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        return ComplexNumber(self.real + other.real, self.imag + other.imag)
+
+    def __str__(self):
+        return f"{self.real}+{self.imag}i"
+
+c1 = ComplexNumber(2, 3)
+c2 = ComplexNumber(4, 5)
+print(c1 + c2)
+print(str(c1))</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>13. Composition and Aggregation</h4>
-      <ol>
-        <li>Create a <strong>University</strong> class containing multiple <strong>Department</strong> objects.</li>
-        <li>Make a <strong>Team</strong> class that contains multiple <strong>Player</strong> objects.</li>
-        <li>Build an <strong>Order</strong> class containing multiple <strong>Item</strong> objects.</li>
-        <li>Show the difference between composition and aggregation using a real-life example.</li>
-      </ol>
+      <p>Composition is a strong ownership relation where a part belongs entirely to the whole. Aggregation is a weaker relation where the object may exist independently.</p>
+      <ul class="key-points">
+        <li>Composition means one object owns or contains another.</li>
+        <li>Aggregation means one object uses another without owning it completely.</li>
+        <li>These patterns model real-world relationships between systems.</li>
+      </ul>
+      <pre class="code">class Player:
+    def __init__(self, name):
+        self.name = name
+
+class Team:
+    def __init__(self):
+        self.players = []
+
+    def add_player(self, player):
+        self.players.append(player)
+
+team = Team()
+team.add_player(Player("Rohit"))
+team.add_player(Player("Virat"))
+print(len(team.players))</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>14. Exception Handling in OOP</h4>
-      <ol>
-        <li>Create a <strong>BankAccount</strong> class that raises an error on negative withdrawal.</li>
-        <li>Write a class to validate age and throw <code>ValueError</code> for invalid input.</li>
-        <li>Handle exceptions in methods using <code>try</code>, <code>except</code>, and <code>finally</code>.</li>
-        <li>Build a <strong>Student</strong> class with error handling for invalid marks.</li>
-      </ol>
+      <p>OOP programs can raise custom or built-in exceptions. Exception handling ensures the program remains safe and user-friendly.</p>
+      <ul class="key-points">
+        <li>Exceptions represent runtime errors and invalid conditions.</li>
+        <li><code>try</code>, <code>except</code>, and <code>finally</code> control error flow.</li>
+        <li>Exception handling keeps class methods robust during invalid inputs.</li>
+      </ul>
+      <pre class="code">class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def withdraw(self, amount):
+        try:
+            if amount > self.balance:
+                raise ValueError("Withdraw amount exceeds balance")
+            self.balance -= amount
+        except ValueError as e:
+            print(e)
+
+acc = BankAccount(500)
+acc.withdraw(600)</pre>
     </div>
 
-    <div class="topic-block">
+    <div class="topic-note">
       <h4>15. File Handling with OOP</h4>
-      <ol>
-        <li>Create a <strong>StudentFileManager</strong> class to save and read student records.</li>
-        <li>Build a class that writes employee data to a CSV or text file.</li>
-        <li>Store and retrieve book records using object-oriented file operations.</li>
-        <li>Develop a mini inventory system using file-backed classes.</li>
-      </ol>
+      <p>Classes may be used to manage file inputs and outputs. The file is treated as a storage layer or record set for objects.</p>
+      <ul class="key-points">
+        <li>OOP classes can encapsulate all file read and write logic.</li>
+        <li>File-handling methods manage persistent storage of object data.</li>
+        <li>This pattern is useful for records, inventory, and student management systems.</li>
+      </ul>
+      <pre class="code">class StudentFileManager:
+    def save(self, student):
+        with open("students.txt", "a") as f:
+            f.write(student + "\n")
+
+    def read(self):
+        with open("students.txt", "r") as f:
+            return f.read()
+
+m = StudentFileManager()
+m.save("Asha")
+print(m.read())</pre>
     </div>
 
-    <div class="topic-block">
-      <h4>16. Mini Projects</h4>
-      <ol>
-        <li>Create a <strong>Library Management System</strong> with books, students, and issue/return functions.</li>
-        <li>Build a <strong>Student Result Management System</strong> using classes for student, marks, and result.</li>
-        <li>Design a <strong>Banking System</strong> with account creation, deposit, withdraw, and balance check.</li>
-        <li>Create a <strong>Hospital Management System</strong> for patient records and appointments.</li>
-      </ol>
+    <div class="topic-note">
+      <h4>16. Relationship Modeling in OOP</h4>
+      <p>Real-world software design often uses relationships such as one-to-many, ownership, or dependency. These are modeled using class composition, aggregation, and object interaction patterns.</p>
+      <ul class="key-points">
+        <li>Relationships show how objects interact in software design.</li>
+        <li>Composition and aggregation are common relationship patterns.</li>
+        <li>These patterns help describe ownership, dependency, and teamwork between objects.</li>
+      </ul>
+      <pre class="code">class Department:
+    def __init__(self, name):
+        self.name = name
+
+class University:
+    def __init__(self):
+        self.departments = []
+
+    def add_department(self, dept):
+        self.departments.append(dept)
+
+u = University()
+u.add_department(Department("Computer Science"))
+print(len(u.departments))</pre>
     </div>
 
-    <div class="topic-block">
-      <h4>17. Advanced Practice Questions</h4>
-      <ol>
-        <li>Design a real-world Python class hierarchy for a <strong>restaurant ordering system</strong>.</li>
-        <li>Create a <strong>shopping cart</strong> using classes such as <strong>Product</strong>, <strong>CartItem</strong>, and <strong>Cart</strong>.</li>
-        <li>Build a <strong>ticket booking</strong> system for movies or trains.</li>
-        <li>Implement a simple <strong>quiz game</strong> using Python class-based structures.</li>
-      </ol>
-    </div>
+    <div class="topic-note">
+      <h4>17. Advanced Practice Concepts</h4>
+      <p>These include <code>@property</code>, <code>@dataclass</code>, nested classes, and package-based module design. They are used for cleaner and more professional software structure.</p>
+      <ul class="key-points">
+        <li><code>@property</code> allows controlled read and write of attributes.</li>
+        <li><code>@dataclass</code> reduces boilerplate for simple data classes.</li>
+        <li>Nested classes and packages help structure larger Python applications elegantly.</li>
+      </ul>
+      <pre class="code">from dataclasses import dataclass
 
-    <div class="topic-block">
-      <h4>18. Beginner Python OOP Extras</h4>
-      <ol>
-        <li>Use the <code>@property</code> decorator to create getter and setter behavior for class attributes.</li>
-        <li>Write a Python class using <code>@classmethod</code> and <code>@staticmethod</code> to compare their usage.</li>
-        <li>Create a class using the <code>@dataclass</code> decorator and explain its advantage over regular classes.</li>
-        <li>Implement a class with a custom <code>__del__</code> method and explain object destruction in Python.</li>
-        <li>Write a program with a nested class, such as a <strong>Student</strong> class containing an inner <strong>Address</strong> class.</li>
-        <li>Create a small Python package/module design for OOP, such as separate files for <strong>student.py</strong>, <strong>course.py</strong>, and <strong>main.py</strong>, and connect them using classes.</li>
-      </ol>
+@dataclass
+class Student:
+    name: str
+    marks: int
+
+s = Student("Meera", 90)
+print(s)</pre>
     </div>
 
     <div class="notes">
-      <strong>Suggested Practice Plan:</strong> Solve the beginner questions first, then move to inheritance, abstraction, file handling, and the mini projects.
+      <strong>Important Exam Tip:</strong> Always learn the definition, the syntax, and one small working example for each concept so the theory can be written and explained confidently in exams.
     </div>
   </div>
 </body>
