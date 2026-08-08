@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C Language Supplementary Exam Notes - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #102232;
+      --accent: #0f4b7b;
+      --soft-line: #c9d5e3;
+      --panel: #f8fbff;
+      --code-bg: #f4f7fb;
+      --shadow: rgba(16, 31, 46, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #e5edf7, #dde8f3);
+      font-family: "Times New Roman", Georgia, serif;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .toolbar {
+      max-width: 210mm;
+      margin: 10mm auto 0;
+      text-align: right;
+    }
+
+    .toolbar button {
+      background: linear-gradient(180deg, #184f87, #0f385c);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 12pt;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 3px 12px rgba(8, 26, 44, 0.25);
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 6mm auto 10mm;
+      padding: 8mm 7mm;
+      background: #ffffff;
+      box-shadow: 0 3mm 10mm var(--shadow);
+      border: 1px solid #ced9e7;
+      border-top: 3mm solid var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(15, 75, 123, 0.08), transparent 30%),
+        linear-gradient(135deg, rgba(15, 75, 123, 0.05), transparent 40%);
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 18mm 1fr auto;
+      gap: 3mm;
+      align-items: center;
+      border: 1px solid var(--soft-line);
+      background: linear-gradient(180deg, #f8fbfe, #ffffff);
+      padding: 3mm 3mm;
+      border-radius: 2mm;
+    }
+
+    .logo {
+      width: 15mm;
+      height: 15mm;
+      border: 1px solid #b7c8d8;
+      border-radius: 1.5mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title-block {
+      text-align: center;
+      line-height: 1.15;
+    }
+
+    .institute {
+      font-size: 11.6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #11293f;
+    }
+
+    .exam-title {
+      margin-top: 1mm;
+      font-size: 12.7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .subject-line {
+      margin-top: 1mm;
+      font-size: 8.3pt;
+      color: #45576a;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .stamp {
+      border: 1px solid #9eb3c8;
+      border-radius: 999px;
+      padding: 1.6mm 2.2mm;
+      background: linear-gradient(180deg, #ffffff, #eef4fa);
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .meta {
+      margin-top: 3mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft-line);
+      border-radius: 1.3mm;
+      padding: 1.8mm 2.2mm;
+      background: white;
+      font-size: 9pt;
+      min-height: 8mm;
+    }
+
+    .instruction {
+      margin-top: 3mm;
+      border: 1px solid var(--soft-line);
+      border-left: 2mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      background: #fbfdff;
+      padding: 2mm 2.3mm;
+      font-size: 9.2pt;
+      line-height: 1.4;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      margin: 4mm 0 1.8mm;
+      border: 1px solid var(--soft-line);
+      border-radius: 1.2mm;
+      background: linear-gradient(180deg, #f6faff, #ffffff);
+      padding: 1.8mm 2.2mm;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 9.7pt;
+      letter-spacing: 0.35px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .question {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 2.8mm;
+      padding: 0 0 1.5mm;
+      border-bottom: 1px dotted #d4dfe9;
+      line-height: 1.42;
+      font-size: 9.5pt;
+    }
+
+    .question strong {
+      color: #163554;
+    }
+
+    .subq {
+      margin-top: 1.2mm;
+      margin-left: 4.6mm;
+      color: #213849;
+    }
+
+    .answer {
+      margin-top: 1.4mm;
+      display: block;
+      background: #f7faff;
+      border: 1px solid #d6e0ec;
+      border-left: 2mm solid #74a0ca;
+      color: #274461;
+      padding: 1.8mm 2mm;
+      border-radius: 1.2mm;
+      font-size: 8.8pt;
+      line-height: 1.38;
+    }
+
+    .answer b,
+    .code-label {
+      color: #0f4b7b;
+      font-weight: 700;
+    }
+
+    .code {
+      margin-top: 1.1mm;
+      background: var(--code-bg);
+      border: 1px solid #d6e4f5;
+      border-left: 2mm solid #7ea7d1;
+      border-radius: 1.2mm;
+      padding: 1.8mm 2mm;
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.25pt;
+      line-height: 1.35;
+      white-space: pre-wrap;
+      color: #10293f;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      position: relative;
+      z-index: 1;
+      border-top: 1px dashed #aab9ca;
+      padding-top: 1.5mm;
+      text-align: center;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #56708a;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .paper {
+        margin: 0 auto;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <section class="paper" aria-label="C Language Supplementary Exam Answer Sheet">
+    <div class="header">
+      <div class="logo"><img src="prathibha_logo.png" alt="Logo" /></div>
+      <div class="title-block">
+        <div class="exam-title">C Language Supplementary Examination Answers</div>
+        <div class="subject-line">Computer Programming and Data Structures</div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><strong>Time:</strong> 3 Hours</div>
+      <div><strong>Max. Marks:</strong> 75</div>
+      <div><strong>Instructions:</strong> Answer any five questions</div>
+    </div>
+
+    <div class="instruction">
+      <b>Exam-focused revision:</b> This sheet is arranged directly around the actual question patterns from the two recent papers, with structured answers, key definitions, and core C programs.
+    </div>
+
+    <h3>Past Paper Questions and Proper Answers</h3>
+
+    <div class="question">
+      <strong>1(a).</strong> Differentiate between RAM and ROM.
+      <div class="answer">
+        <b>Answer:</b> RAM is volatile memory used for temporary data storage while a program is running. It allows both read and write access. ROM is non-volatile memory used to store permanent instructions like firmware or boot code. It is mainly read-only and retains data even when power is off.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>1(b).</strong> Write in detail about algorithms.
+      <div class="answer">
+        <b>Answer:</b> An algorithm is a finite sequence of well-defined steps for solving a problem. It must have input, output, clear steps, and terminate after a finite number of operations. Common properties are definiteness, finiteness, effectiveness, input, and output. Example: algorithm to find the largest number from n inputs.
+      </div>
+      <div class="code-label">Algorithm Example:</div>
+      <div class="code">Algorithm MaxNumber
+Input: n numbers
+Output: largest number
+1. Read n
+2. Read first number and store in max
+3. For i = 2 to n
+   a. Read next number
+   b. If number > max, assign it to max
+4. Print max
+End</div>
+    </div>
+
+    <div class="question">
+      <strong>2(a).</strong> Define a data type. Mention the different data types supported by C language, giving one example each.
+      <div class="answer">
+        <b>Answer:</b> A data type defines the kind of data a variable can store and the operations allowed on it. In C, basic data types include char, int, float, double, and void. Derived types include arrays, pointers, structures, and unions. Examples: <code>char ch = 'A';</code>, <code>int x = 25;</code>, <code>float pi = 3.14f;</code>, <code>double d = 8.12345;</code>.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>2(b).</strong> What are control flow statements? Write a C program to find factorial of a given number using loops.
+      <div class="answer">
+        <b>Answer:</b> Control flow statements control the order in which instructions are executed. They include if, if-else, switch, for, while, do-while, break, and continue. A factorial number is the product of all positive integers up to n.
+      </div>
+      <div class="code-label">Code Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+int main() {
+    int n, i, fact = 1;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+
+    for (i = 1; i &lt;= n; i++)
+        fact *= i;
+
+    printf("Factorial of %d = %d\n", n, fact);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>3(a).</strong> Discuss about function definition and function call in C. Write a C program using function to print Fibonacci series of a given number.
+      <div class="answer">
+        <b>Answer:</b> A function is a block of code that performs a specific task. A function is defined once and can be called many times. The function definition includes the return type, name, and parameters. Calling a function means executing that function. Example below prints Fibonacci series using a function.
+      </div>
+      <div class="code-label">Code Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+void fibonacci(int n) {
+    int a = 0, b = 1, c;
+    printf("Fibonacci Series: ");
+    for (int i = 0; i &lt; n; i++) {
+        printf("%d ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    printf("\n");
+}
+
+int main() {
+    int n = 8;
+    fibonacci(n);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>3(b).</strong> Write a program to copy the contents of one array into another in reverse order.
+      <div class="code-label">Code Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+int main() {
+    int a[5] = {10, 20, 30, 40, 50};
+    int b[5];
+
+    for (int i = 0; i &lt; 5; i++)
+        b[i] = a[4 - i];
+
+    printf("Copied in reverse order:\n");
+    for (int i = 0; i &lt; 5; i++)
+        printf("%d ", b[i]);
+
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>4(a).</strong> List and explain use of string handling functions. Write a C Program to concatenate "Virat" and "Kohli" strings and print the resulting string.
+      <div class="answer">
+        <b>Answer:</b> String handling functions are used to manipulate text in C. Common functions are <code>strcpy()</code> to copy a string, <code>strlen()</code> to find length, <code>strcat()</code> to concatenate, <code>strcmp()</code> to compare, and <code>strrev()</code> to reverse. The example below concatenates two strings.
+      </div>
+      <div class="code-label">Code Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char s1[20] = "Virat";
+    char s2[20] = "Kohli";
+    strcat(s1, s2);
+    printf("Result: %s\n", s1);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>4(b).</strong> Give the syntax and importance of void pointer with an example.
+      <div class="answer">
+        <b>Answer:</b> A void pointer is a generic pointer declared as <code>void *</code>. It can hold the address of any data type, but before dereferencing it must be cast to the correct pointer type. This is useful for generic programming and memory functions.
+      </div>
+      <div class="code-label">Code Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+int main() {
+    int x = 10;
+    void *vp;
+    vp = &amp;x;
+    printf("Value = %d\n", *(int *)vp);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>5(a).</strong> How is structure different from an array? Write a C program to create an array of 100 textbooks with title, price, and number of pages using structures and print them.
+      <div class="answer">
+        <b>Answer:</b> An array stores only values of the same type, while a structure can store different types in one record. A structure is useful to store a book record containing title, price, and pages.
+      </div>
+      <div class="code-label">Code Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+struct Book {
+    char title[30];
+    int price;
+    int pages;
+};
+
+int main() {
+    struct Book books[2] = {
+        {"C Programming", 250, 400},
+        {"Data Structures", 300, 500}
+    };
+
+    for (int i = 0; i &lt; 2; i++) {
+        printf("Title: %s Price: %d Pages: %d\n",
+               books[i].title, books[i].price, books[i].pages);
+    }
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>5(b).</strong> Elaborate self-referential structure with an example.
+      <div class="answer">
+        <b>Answer:</b> A self-referential structure contains a pointer member that points to a variable of the same type. It is used for linked lists, trees, and graphs. The pointer is used to connect nodes.
+      </div>
+      <div class="code-label">Code Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+int main() {
+    struct Node *head = malloc(sizeof(struct Node));
+    head-&gt;data = 10;
+    head-&gt;next = NULL;
+    printf("Data = %d\n", head-&gt;data);
+    free(head);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>6(a).</strong> Explain file reading, writing and command line arguments. Give examples.
+      <div class="answer">
+        <b>Answer:</b> File handling means reading from or writing to a file using functions like <code>fopen()</code>, <code>fclose()</code>, <code>fgetc()</code>, <code>fprintf()</code>, and <code>fscanf()</code>. Command-line arguments are supplied to the program while running it and are handled using <code>argc</code> and <code>argv[]</code>.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>6(b).</strong> Write a program to copy one file to another. While doing so replace all lowercase characters to their equivalent uppercase characters.
+      <div class="code-label">Code Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main() {
+    FILE *src, *dest;
+    char ch;
+
+    src = fopen("input.txt", "r");
+    dest = fopen("output.txt", "w");
+
+    if (src == NULL || dest == NULL) {
+        printf("File open error\n");
+        return 1;
+    }
+
+    while ((ch = fgetc(src)) != EOF)
+        fputc(toupper(ch), dest);
+
+    fclose(src);
+    fclose(dest);
+    printf("File copied successfully\n");
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>7(a).</strong> Write an algorithm for implementation of quick sort with an example.
+      <div class="answer">
+        <b>Answer:</b> Quick sort partitions the array around a pivot, placing smaller elements to the left and larger elements to the right. Then it recursively sorts the subarrays. Complexity is $O(n \log n)$ on average and $O(n^2)$ in the worst case.
+      </div>
+      <div class="code-label">Algorithm Sketch:</div>
+      <div class="code">QuickSort(arr, low, high)
+1. If low &lt; high:
+   a. pivot = partition(arr, low, high)
+   b. QuickSort(arr, low, pivot-1)
+   c. QuickSort(arr, pivot+1, high)
+2. End</div>
+    </div>
+
+    <div class="question">
+      <strong>7(b).</strong> Define time complexity. Compare and construct time complexity for linear search and binary search with an example.
+      <div class="answer">
+        <b>Answer:</b> Time complexity measures how the running time of an algorithm grows with input size. Linear search checks each element one by one and takes $O(n)$ time. Binary search works on sorted arrays and reduces the search interval by half each time, giving $O(log n)$ time.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>8(a).</strong> Write an algorithm to convert infix expression to postfix expression.
+      <div class="answer">
+        <b>Answer:</b> In postfix notation, operators appear after operands. Use a stack. When an operand is read, output it. When an operator is read, pop higher-precedence operators, then push the current operator. When a closing parenthesis is seen, pop until the opening parenthesis is found.
+      </div>
+      <div class="code-label">Example:</div>
+      <div class="code">Infix:  A + B * C
+Postfix: A B C * +</div>
+    </div>
+
+    <div class="question">
+      <strong>8(b).</strong> Write an algorithm for implementation of Stack using linked list.
+      <div class="answer">
+        <b>Answer:</b> A stack using a linked list stores each element as a node. Push inserts a new node at the front. Pop removes the front node. This method uses dynamic memory and does not suffer from fixed-size limitations.
+      </div>
+      <div class="code-label">Stack Push/Pop Idea:</div>
+      <div class="code">Push(value):
+1. create new node
+2. set new node data = value
+3. new node next = top
+4. top = new node
+
+Pop():
+1. if top == NULL, stack underflow
+2. else delete top node and move top to next</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 1.</strong> Explain storage classes in C.
+      <div class="answer">
+        <b>Answer:</b> Storage classes determine the lifetime, scope, and default value of variables. The four main storage classes are <code>auto</code>, <code>register</code>, <code>static</code>, and <code>extern</code>. <code>auto</code> is local and default, <code>register</code> stores in CPU register when possible, <code>static</code> retains value between function calls, and <code>extern</code> refers to a global variable defined elsewhere.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 2.</strong> What is structure? How is it different from union?
+      <div class="answer">
+        <b>Answer:</b> A structure stores different data types in a single record and allocates separate memory for each member. A union shares the same memory space for all members. Structure is used when all members are needed together; union is used when one member is active at a time.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 3.</strong> Explain merge sort with an example.
+      <div class="answer">
+        <b>Answer:</b> Merge sort divides the list into two halves, sorts each half recursively, and then merges the sorted halves. It has a time complexity of $O(n \log n)$ in all cases.
+      </div>
+    </div>
+
+    <h3>Exact Paper Questions from the Attached Question Paper</h3>
+
+    <div class="question">
+      <strong>Paper Q1.</strong> What is an algorithm? Write an algorithm to find maximum number from given numbers.
+      <div class="answer">
+        <b>Answer:</b> An algorithm is a step-by-step method that solves a problem in a finite number of steps. It must be precise, finite, effective, and produce a result. To find the maximum number from a set of numbers, first read the count and the first value as the current maximum, then compare each next value with this maximum and update it whenever a larger value is found. Finally print the maximum.
+      </div>
+      <div class="code-label">Algorithm:</div>
+      <div class="code">Algorithm FindMax
+Input: n numbers
+Output: maximum value
+1. Read n
+2. Read first number as max
+3. For i = 2 to n
+   3.1 Read next number
+   3.2 If number > max then max = number
+4. Print max
+End</div>
+    </div>
+
+    <div class="question">
+      <strong>Paper Q2.</strong> Draw a flow chart to check whether the given number is perfect number or not.
+      <div class="answer">
+        <b>Answer:</b> A perfect number is a number whose sum of proper divisors equals the number itself. For example, 6 is perfect because $1 + 2 + 3 = 6$. The flowchart reads the input number, initializes a sum to 0, checks every divisor from 1 to half the number, adds each divisor to the sum, and then compares the sum with the original number. If they are equal, print "Perfect Number"; otherwise print "Not Perfect".
+      </div>
+      <div class="code-label">Flowchart Logic:</div>
+      <div class="code">Start
+  Read n
+  sum = 0
+  for i = 1 to n/2
+      if n % i == 0
+          sum = sum + i
+  if sum == n
+      print "Perfect"
+  else
+      print "Not Perfect"
+End</div>
+    </div>
+
+    <div class="question">
+      <strong>Paper Q3.</strong> Explain the control statements in C language with an example.
+      <div class="answer">
+        <b>Answer:</b> Control statements decide the flow of execution of a C program. They include decision-making statements such as <code>if</code>, <code>if-else</code>, and <code>switch</code>, and looping statements such as <code>for</code>, <code>while</code>, and <code>do-while</code>. <code>break</code> and <code>continue</code> also change the normal loop flow. Example: a <code>switch</code> statement chooses among multiple cases.
+      </div>
+      <div class="code-label">Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+int main() {
+    int choice = 2;
+
+    switch (choice) {
+        case 1: printf("C\n"); break;
+        case 2: printf("Java\n"); break;
+        case 3: printf("Python\n"); break;
+        default: printf("Invalid\n");
+    }
+
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>Paper Q4.</strong> Explain the storage classes in detail. Define an array. Write the declaration and initialization of different types of arrays.
+      <div class="answer">
+        <b>Answer:</b> Storage classes describe how long a variable stays in memory and where it is stored. The main storage classes in C are <code>auto</code>, <code>register</code>, <code>static</code>, and <code>extern</code>. <code>auto</code> variables are local and automatic; <code>register</code> tries to keep the variable in CPU register; <code>static</code> variables retain their values across calls; and <code>extern</code> variables are declared outside and shared between files. An array is a collection of elements of the same data type stored in contiguous memory.
+      </div>
+      <div class="code-label">Declaration and Initialization:</div>
+      <div class="code">int marks[5] = {80, 85, 90, 75, 95};
+float avg[3] = {78.5f, 82.0f, 88.0f};
+char name[10] = "Ravi";
+double values[4] = {1.2, 2.3, 3.4, 4.5};</div>
+    </div>
+
+    <div class="question">
+      <strong>Paper Q5.</strong> Explain various string input/output functions with example. Write a C program which demonstrates the concept of pointer to pointer.
+      <div class="answer">
+        <b>Answer:</b> String input and output functions are used to handle text data. <code>gets()</code> reads a string, <code>puts()</code> prints a string, <code>scanf()</code> reads text, and <code>printf()</code> prints formatted text. A pointer to pointer is a pointer that holds the address of another pointer. It is useful when you need to modify the value of a pointer itself or manage dynamic memory and multidimensional structures.
+      </div>
+      <div class="code-label">Pointer-to-Pointer Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+int main() {
+    int x = 10;
+    int *p = &amp;x;
+    int **pp = &amp;p;
+
+    printf("x = %d\n", **pp);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>Paper Q6.</strong> Differentiate between structures and union. Discuss the concept of nested structures.
+      <div class="answer">
+        <b>Answer:</b> A structure allows multiple members of different data types to be stored together, and each member has its own memory location. A union also stores different members, but all members share the same memory location. Therefore, a union can store only one member at a time. A nested structure means a structure containing another structure as a member, which is used to model complex records such as student details with address details.
+      </div>
+      <div class="code-label">Nested Structure Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+struct Address {
+    int houseNo;
+    char city[20];
+};
+
+struct Student {
+    int rollNo;
+    char name[20];
+    struct Address addr;
+};
+
+int main() {
+    struct Student s = {101, "Aman", {12, "Hyderabad"}};
+    printf("%d %s %d %s\n", s.rollNo, s.name, s.addr.houseNo, s.addr.city);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>Paper Q7.</strong> Discuss in detail file input/output operations. Write a C program to read and display the contents of a file.
+      <div class="answer">
+        <b>Answer:</b> File input/output means reading from and writing to external files. In C, files are opened using <code>fopen()</code>, read using <code>fgetc()</code>, <code>fscanf()</code>, or <code>fgets()</code>, and written using <code>fputc()</code>, <code>fprintf()</code>, or <code>fputs()</code>. Finally, the file is closed using <code>fclose()</code>. File operations are essential for saving data permanently and processing large amounts of information.
+      </div>
+      <div class="code-label">Read and Display File Contents:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *fp;
+    char ch;
+
+    fp = fopen("sample.txt", "r");
+    if (fp == NULL) {
+        printf("Unable to open file\n");
+        return 1;
+    }
+
+    while ((ch = fgetc(fp)) != EOF) {
+        putchar(ch);
+    }
+
+    fclose(fp);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>Paper Q8.</strong> Explain the merge sort algorithm with an example.
+      <div class="answer">
+        <b>Answer:</b> Merge sort is a divide-and-conquer sorting algorithm. It splits the array into two halves, sorts each half recursively, and then merges the two sorted halves to produce a completely sorted array. It is efficient and stable and has a time complexity of $O(n \log n)$ in the best, average, and worst cases.
+      </div>
+      <div class="code-label">Merge Sort Idea:</div>
+      <div class="code">MergeSort(A, low, high)
+1. If low < high
+   a. mid = (low + high) / 2
+   b. MergeSort(A, low, mid)
+   c. MergeSort(A, mid + 1, high)
+   d. Merge(A, low, mid, high)
+2. End</div>
+    </div>
+
+    <div class="question">
+      <strong>Paper Q9.</strong> What is stack? Explain in brief stack operations and applications. Explain how a queue can be implemented using arrays.
+      <div class="answer">
+        <b>Answer:</b> A stack is a linear data structure that follows the Last In First Out (LIFO) principle. Its main operations are push (insert on top), pop (remove from top), and peek (view top element). Stacks are used in expression evaluation, recursion, backtracking, and function call management. A queue is a linear data structure that follows the First In First Out (FIFO) principle. It can be implemented using arrays by maintaining front and rear indices, where insertion is done at the rear and deletion is done from the front.
+      </div>
+      <div class="code-label">Array Queue Idea:</div>
+      <div class="code">Queue operations using array:
+- Enqueue: insert at rear
+- Dequeue: remove from front
+- Front: first element
+- Rear: last element
+- Overflow: when rear == size - 1
+- Underflow: when front == rear and queue is empty</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 4.</strong> Write an algorithm for bubble sort and explain its working with an example.
+      <div class="answer">
+        <b>Answer:</b> Bubble sort repeatedly compares adjacent elements and swaps them if they are in the wrong order. In every pass, the largest unsorted element moves to the end. It is simple to understand but inefficient for large data because its time complexity is $O(n^2)$ in the worst case.
+      </div>
+      <div class="code-label">Bubble Sort Idea:</div>
+      <div class="code">BubbleSort(arr, n)
+1. Repeat for i = 0 to n-1
+2. Repeat for j = 0 to n-i-2
+   if arr[j] > arr[j+1]
+      swap(arr[j], arr[j+1])
+3. End</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 5.</strong> Explain selection sort with an example. State its time complexity.
+      <div class="answer">
+        <b>Answer:</b> Selection sort finds the smallest element in the remaining unsorted list and places it at the beginning of the unsorted section. It repeats this process until the whole array is sorted. It has a time complexity of $O(n^2)$ because it scans the array repeatedly.
+      </div>
+      <div class="code-label">Selection Sort Idea:</div>
+      <div class="code">SelectionSort(arr, n)
+1. for i = 0 to n-1
+   a. find smallest element in arr[i..n-1]
+   b. swap it with arr[i]
+2. End</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 6.</strong> Write an algorithm and example for insertion sort.
+      <div class="answer">
+        <b>Answer:</b> Insertion sort builds the final sorted array one element at a time. Each new element is inserted into its correct position among the already sorted elements. It is efficient for small arrays and has time complexity of $O(n^2)$ in the worst case.
+      </div>
+      <div class="code-label">Insertion Sort Idea:</div>
+      <div class="code">InsertionSort(arr, n)
+1. for i = 1 to n-1
+   a. key = arr[i]
+   b. j = i - 1
+   c. while j >= 0 and arr[j] > key
+         arr[j+1] = arr[j]
+         j = j - 1
+   d. arr[j+1] = key
+2. End</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 7.</strong> Explain quick sort algorithm with an example and compare with merge sort.
+      <div class="answer">
+        <b>Answer:</b> Quick sort is a divide-and-conquer sorting algorithm that uses a pivot element to partition the array into smaller and larger parts. It then recursively sorts the two partitions. Its average time complexity is $O(n \log n)$, but worst case can be $O(n^2)$. Merge sort is stable and has consistent $O(n \log n)$ time in all cases; quick sort is usually faster in practice but less stable.
+      </div>
+      <div class="code-label">Quick Sort Idea:</div>
+      <div class="code">QuickSort(arr, low, high)
+1. if low < high
+   a. pivot = partition(arr, low, high)
+   b. QuickSort(arr, low, pivot-1)
+   c. QuickSort(arr, pivot+1, high)
+2. End</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 8.</strong> Define binary search and compare it with linear search.
+      <div class="answer">
+        <b>Answer:</b> Linear search checks elements one by one from the start until it finds the target, so its time complexity is $O(n)$. Binary search works only on sorted arrays and repeatedly halves the search space, giving time complexity $O(\log n)$. Binary search is faster for large sorted arrays, whereas linear search is simpler and works on unsorted arrays.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 9.</strong> What is recursion? Write a C program to find factorial using recursion.
+      <div class="answer">
+        <b>Answer:</b> Recursion is a technique in which a function calls itself to solve a smaller version of the same problem. It must have a base condition to stop infinite recursion. A recursive factorial program uses a base case when the input number becomes 0 or 1.
+      </div>
+      <div class="code-label">Recursive Factorial Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+int fact(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    return n * fact(n - 1);
+}
+
+int main() {
+    int n = 5;
+    printf("Factorial = %d\n", fact(n));
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 10.</strong> Explain the software development method in C programming. Differentiate between algorithm, pseudocode, and flowchart.
+      <div class="answer">
+        <b>Answer:</b> The software development method is the systematic approach to problem solving: problem analysis, design, coding, testing, and maintenance. An algorithm is a sequence of steps, pseudocode is a language-like representation of logic, and a flowchart is a graphical representation of the algorithm. All three are used to plan and express solutions clearly before coding.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 11.</strong> Explain operator precedence and associativity in C with an example.
+      <div class="answer">
+        <b>Answer:</b> Operator precedence defines the order in which operators are evaluated in an expression. Associativity decides the order when operators have the same precedence. For example, in the expression <code>a + b * c</code>, multiplication is evaluated before addition because <code>*</code> has higher precedence than <code>+</code>. In expressions like <code>a - b - c</code>, left associativity is applied.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 12.</strong> Differentiate between call by value and call by reference with examples.
+      <div class="answer">
+        <b>Answer:</b> In call by value, a copy of the actual argument is passed to the function, so changes inside the function do not affect the caller. In call by reference, the memory address of the variable is passed, so changes inside the function affect the original value. Call by reference is usually implemented using pointers.
+      </div>
+      <div class="code-label">Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+void swapByValue(int a, int b) {
+    int t = a;
+    a = b;
+    b = t;
+}
+
+void swapByReference(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int main() {
+    int x = 5, y = 10;
+    swapByValue(x, y);
+    printf("After value call: %d %d\n", x, y);
+    swapByReference(&amp;x, &amp;y);
+    printf("After reference call: %d %d\n", x, y);
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 13.</strong> Explain pointer arithmetic and pointer to array with suitable example.
+      <div class="answer">
+        <b>Answer:</b> Pointer arithmetic means performing arithmetic operations on pointer variables like increment, decrement, and addition/subtraction. A pointer to an array can be used to access array elements using address arithmetic. This is useful for traversal and dynamic memory handling.
+      </div>
+      <div class="code-label">Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[4] = {10, 20, 30, 40};
+    int *p = arr;
+
+    printf("%d %d %d\n", *p, *(p + 1), *(p + 2));
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 14.</strong> Explain string handling in C. Write a program to compare two strings using <code>strcmp()</code> and find its length using <code>strlen()</code>.
+      <div class="answer">
+        <b>Answer:</b> C strings are arrays of characters terminated by the null character <code>'\0'</code>. Common string functions include <code>strcpy()</code>, <code>strcat()</code>, <code>strlen()</code>, <code>strcmp()</code>, and <code>strrev()</code>. These functions help in copying, concatenating, comparing, and processing text data.
+      </div>
+      <div class="code-label">String Example:</div>
+      <div class="code">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char s1[] = "Hello";
+    char s2[] = "Hello";
+
+    printf("Length = %zu\n", strlen(s1));
+    printf("Compare result = %d\n", strcmp(s1, s2));
+    return 0;
+}</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 15.</strong> Explain linked list. Write the algorithm for insertion and deletion in a singly linked list.
+      <div class="answer">
+        <b>Answer:</b> A linked list is a dynamic data structure in which each node contains data and a pointer to the next node. Insertion is done by creating a new node and joining it at the required position, while deletion removes a node and reconnects the remaining links. Linked lists are useful because they do not require fixed-size memory allocation like arrays.
+      </div>
+      <div class="code-label">Linked List Idea:</div>
+      <div class="code">Insertion:
+1. Create new node
+2. Assign new node data
+3. Connect new node to desired position
+4. Update links
+
+Deletion:
+1. Find the node to delete
+2. Adjust previous node link
+3. Free the node memory</div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 16.</strong> Explain <code>typedef</code>, <code>enum</code>, and bit fields in C with examples.
+      <div class="answer">
+        <b>Answer:</b> <code>typedef</code> gives a new name to an existing type, making code easier to read. <code>enum</code> defines a set of named integer constants. Bit fields allow storing data within a smaller number of bits in a structure. These are very useful in systems, flags, and compact data design.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 17.</strong> Discuss formatted input/output functions and file status functions in C. Mention functions like <code>fprintf()</code>, <code>fscanf()</code>, <code>perror()</code>, and <code>feof()</code>.
+      <div class="answer">
+        <b>Answer:</b> Formatted I/O functions allow data to be read and written in a controlled way. <code>fprintf()</code> writes formatted data to a file, while <code>fscanf()</code> reads formatted data from a file. File status functions such as <code>perror()</code> print error messages associated with the last file operation, and <code>feof()</code> checks whether the end of file has been reached. These functions are commonly used in file-handling programs.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 18.</strong> Explain infix to postfix conversion using a stack. Convert <code>A + B * C</code> into postfix form.
+      <div class="answer">
+        <b>Answer:</b> Infix notation places the operator between operands, whereas postfix puts the operator after the operands. To convert, scan the expression left to right. If an operand is read, append it to the output. If an operator is read, pop operators of higher or equal precedence from the stack and then push the current operator. Parentheses are handled by popping until the opening parenthesis is found. For <code>A + B * C</code>, the postfix expression is <code>A B C * +</code>.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 19.</strong> Differentiate between queue and stack. Write a short note on queue operations using linked list.
+      <div class="answer">
+        <b>Answer:</b> A stack follows LIFO and a queue follows FIFO. In a queue, insertion occurs at the rear and deletion occurs at the front. A linked-list implementation uses two pointers: front and rear. New nodes are added at the rear and removed from the front, making it dynamic and flexible when the size is not known in advance.
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>Extra Important Question 20.</strong> Write a note on searching methods in C. Compare linear search and binary search with examples.
+      <div class="answer">
+        <b>Answer:</b> Searching is the process of finding a required item in a given set of data. Linear search checks each element one by one and is suitable for unsorted arrays. Binary search works only on sorted arrays by repeatedly dividing the search interval. The time complexity of linear search is $O(n)$ and that of binary search is $O(\log n)$.
+      </div>
+    </div>
+
+    <div class="footer">End of C Language Exam Answer Sheet</div>
+  </section>
+</body>
+</html>
