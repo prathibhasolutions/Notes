@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python OOP & Functional Programming Project</title>
+  <style>
+    :root {
+      --bg: #eef6f4;
+      --ink: #17312f;
+      --ink-soft: #355d59;
+      --text: #304146;
+      --muted: #687a78;
+      --line: #bfd9d6;
+      --panel: #ffffff;
+      --accent: #145b54;
+      --accent-two: #ccd9d8;
+      --shadow: rgba(27, 84, 80, 0.11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(130, 202, 181, 0.22), transparent 30%),
+        radial-gradient(circle at 90% 5%, rgba(33, 119, 118, 0.22), transparent 38%),
+        var(--bg);
+      line-height: 1.58;
+    }
+
+    .document {
+      max-width: 1200px;
+      margin: auto;
+      background: var(--panel);
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 58px var(--shadow);
+      padding: 34px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #0d8b74);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 24px;
+    }
+
+    h1, h2, h3 {
+      color: var(--ink);
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 48px);
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+    }
+
+    h2 {
+      font-size: 29px;
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #faffff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(290px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #fbfffe, #eefbfa);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .card p {
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .tagline {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .section {
+      margin-top: 16px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: 12px;
+      padding-left: 20px;
+      margin-top: 4px;
+    }
+
+    .feature-list li {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .code-box {
+      margin-top: 12px;
+      background: #122b26;
+      color: #d8fff5;
+      border-radius: 12px;
+      border: 1px solid #79a7a7;
+      overflow: hidden;
+    }
+
+    .code-title {
+      background: #173b38;
+      padding: 10px 14px;
+      color: #c7fbec;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid #375f59;
+    }
+
+    pre {
+      margin: 0;
+      padding: 15px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 11px;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--accent);
+      color: white;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .document {
+        max-width: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 5mm;
+      }
+
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="document">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">PS</div>
+        <div>
+          <h1>Python School System</h1>
+          <div class="subtitle">OOP + Functional Programming Project for Students</div>
+        </div>
+      </div>
+      <div class="meta">Study Project / File DB / Python</div>
+    </header>
+
+    <section class="section">
+      <h2>Project Description</h2>
+      <p>
+        This project is a complete Python-based school management system designed for students to learn object-oriented programming,
+        functional programming, CLI input handling, file database operations, and professional software structure.
+      </p>
+      <p>
+        It is a multi-file project that manages students, teachers, administrators, departments, courses, enrollments, reports,
+        and grade information using a JSON file database layer.
+      </p>
+      <div class="tagline">Focus: Real Learning + Software Design</div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Main System</h3>
+        <p>The system stores academy information, user data, courses, students, teachers, enrollments, and report records.</p>
+      </article>
+
+      <article class="card">
+        <h3>Functional Programming</h3>
+        <p>The system uses list comprehensions, map/filter, reduce-style computations, sorting, and dashboard generation.</p>
+      </article>
+
+      <article class="card">
+        <h3>OOP Concepts</h3>
+        <p>It uses classes, inheritance, abstraction, encapsulation, multiple inheritance, composition, aggregation, and magic methods.</p>
+      </article>
+
+      <article class="card">
+        <h3>File Handling Database</h3>
+        <p>JSON files are used as a lightweight database. Data is saved and loaded in persistent storage.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Project Modules</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>main.py</td>
+              <td>Application entry point and menu loop</td>
+            </tr>
+            <tr>
+              <td>src/models.py</td>
+              <td>Domain classes: Person, Student, Teacher, Administrator, Course, Enrollment, School</td>
+            </tr>
+            <tr>
+              <td>src/services.py</td>
+              <td>Business rules, reports, registration, enrollment logic</td>
+            </tr>
+            <tr>
+              <td>src/storage.py</td>
+              <td>JSON persistence layer for file-based database functionality</td>
+            </tr>
+            <tr>
+              <td>src/utils.py</td>
+              <td>Helper functions, ID generation, markers, calculations, and utilities</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>OOP Concepts Used</h2>
+      <ul class="feature-list">
+        <li>Abstraction with a general Person class.</li>
+        <li>Encapsulation through private attributes and getters.</li>
+        <li>Inheritance using Student, Teacher, Administrator, and Employee.</li>
+        <li>Multiple inheritance through Employee and AuditLogMixin concepts.</li>
+        <li>Composition through School containing departments, courses, students, and teachers.</li>
+        <li>Aggregation through Student, Course, Enrollment relationships.</li>
+        <li>Magic methods like __str__, __repr__, __len__, and __contains__.</li>
+        <li>Methods for report generation and reusable business logic.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Functional Programming Concepts</h2>
+      <ul class="feature-list">
+        <li>List comprehensions for collecting data.</li>
+        <li>Lambda expressions for transformations and filtering.</li>
+        <li>map() to generate list summaries.</li>
+        <li>filter() to select students by status.</li>
+        <li>reduce() style average calculation.</li>
+        <li>Sorting and dashboard generation.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Project Flow</h2>
+      <div class="code-box">
+        <div class="code-title">Main Flow</div>
+        <pre><code>from src.app import SchoolApplication
+
+if __name__ == '__main__':
+    app = SchoolApplication()
+    app.run()</code></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Core Python Skeleton</h2>
+      <div class="code-box">
+        <div class="code-title">models.py - OOP Domain Layer</div>
+        <pre><code>class Person:
+    def __init__(self, person_id, name, email, age):
+        self._person_id = person_id
+        self._name = name
+        self._email = email
+        self._age = age
+
+class Student(Person):
+    def __init__(self, person_id, name, email, age, student_id):
+        super().__init__(person_id, name, email, age)
+        self._student_id = student_id
+        self._course_ids = []
+
+class Teacher(Employee):
+    def teach(self):
+        return f"{self.name} is conducting a class"
+
+class School:
+    def __init__(self, school_id, name):
+        self.students = {}
+        self.teachers = {}
+        self.courses = {}
+        self.enrollments = {}
+        self.departments = {}</code></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>File Database Layer</h2>
+      <div class="code-box">
+        <div class="code-title">storage.py - Lightweight JSON Database</div>
+        <pre><code>import json
+import os
+
+class JsonFileStorage:
+    def __init__(self, data_dir):
+        self.data_dir = data_dir
+        os.makedirs(self.data_dir, exist_ok=True)
+
+    def save_json(self, filename, payload):
+        with open(os.path.join(self.data_dir, filename), 'w') as file:
+            json.dump(payload, file, indent=4)
+
+    def load_json(self, filename):
+        path = os.path.join(self.data_dir, filename)
+        if not os.path.exists(path):
+            return {}
+        with open(path, 'r') as file:
+            return json.load(file)</code></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Features</h2>
+      <ul class="feature-list">
+        <li>Student registration</li>
+        <li>Teacher registration</li>
+        <li>Admin console</li>
+        <li>Course creation</li>
+        <li>Enrollment records</li>
+        <li>Mark management</li>
+        <li>Grade calculation</li>
+        <li>Dashboard reports</li>
+        <li>JSON file persistence</li>
+        <li>Command-line interface</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>How the Application Works</h2>
+      <p>
+        The user launches the program using the main entry file. The application builds a School object and an object relation tree of
+        departments, students, teachers, administrators, courses, and enrollments. User input is read from the terminal and business
+        operations are executed through service classes.
+      </p>
+      <p>
+        Data persists through JSON files. Every major action saves or updates the data set so the application can be restarted and load data from the stored files.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Learning Outcome</h2>
+      <p>
+        Students who study this project learn how Python applications are organized into files, how classes model real-world objects,
+        how services handle operations, and how storage layers separate business logic from persistence.
+      </p>
+    </section>
+
+    <div class="footer-note">
+      This study project is a complete Python educational application with OOP and functional design patterns.
+    </div>
+  </div>
+</body>
+</html>

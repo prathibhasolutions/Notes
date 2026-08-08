@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python OOP & Functional Programming Project Sheet - Library Management System</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .meta div span {
+      color: #7c8fa0;
+      font-size: 7.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: #8a5c1f; }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-block ol {
+      margin: 0;
+      padding-left: 5.2mm;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+    }
+
+    .notes {
+      margin-top: 3mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      position: relative;
+      z-index: 1;
+      background: #fafcff;
+      font-size: 9pt;
+    }
+
+    .topic-note {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-note p {
+      margin: 0 0 1.5mm;
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: #304556;
+    }
+
+    .key-points {
+      margin: 1.3mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1mm;
+      font-size: 7.9pt;
+      line-height: 1.4;
+      color: #314759;
+    }
+
+    .code {
+      margin: 1.3mm 0 0;
+      border: 1px solid #d9e5ef;
+      border-left: 2mm solid #0f5f7f;
+      border-radius: 1mm;
+      background: #fffdf8;
+      color: #203040;
+      padding: 2mm;
+      font-size: 7.8pt;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .full-listing-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: auto;
+    }
+
+    .full-listing-block .code {
+      page-break-inside: auto;
+      font-size: 7.4pt;
+      line-height: 1.42;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+      margin: 1mm 0 0;
+    }
+
+    .badge {
+      font-size: 7.3pt;
+      color: #0f5f7f;
+      border: 1px solid #bcd7e2;
+      background: #eef7fb;
+      border-radius: 3mm;
+      padding: 0.8mm 2.2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">Python OOP + Functional Programming Project</div>
+        <div class="subtitle">Library Management System &mdash; Notes and Study Sheet</div>
+      </div>
+    </div>
+
+   
+
+    <div class="instructions">
+      <b>Study Note:</b> This project builds a complete, working Library Management System in Python. It is designed for beginners and covers the full Object-Oriented Programming syllabus (classes, objects, encapsulation, inheritance, multiple inheritance, abstraction, magic methods, composition, aggregation) together with basic Functional Programming ideas (pure functions, higher-order functions, function composition, recursion). <b>Type the complete code shown in Section 18 exactly as written into a file named <code>library_system.py</code> and run it with Python 3.</b>
+    </div>
+
+    <h3>Project Description</h3>
+
+    <div class="topic-note">
+      <h4>1. Project Topic</h4>
+      <p>The project is called a Library Management System. It manages books, members (people who borrow books), and a librarian (the person who manages the library) inside one running program.</p>
+      <ul class="key-points">
+        <li>Books are represented as objects with a title, author, price, and borrow status.</li>
+        <li>Members and the Librarian are modeled using classes that share a common parent.</li>
+        <li>The Library class holds and organizes everything together.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>2. Project Goals</h4>
+      <p>This project shows how a small but complete Python application is designed using clean, reusable, object-oriented code combined with functional-style data processing.</p>
+      <ul class="key-points">
+        <li>Register members and a librarian as real objects.</li>
+        <li>Add books to the library and track whether they are borrowed.</li>
+        <li>Let members borrow and return books through methods.</li>
+        <li>Use pure functions and higher-order functions to analyze the book collection.</li>
+        <li>Save and load the entire book collection using a JSON file as a simple database.</li>
+        <li>Run everything through a simple text menu that the user interacts with.</li>
+      </ul>
+      <div class="badge-row">
+        <span class="badge">OOP</span>
+        <span class="badge">Functional</span>
+        <span class="badge">JSON Storage</span>
+        <span class="badge">Menu Driven</span>
+      </div>
+    </div>
+
+    <div class="topic-note">
+      <h4>3. File Handling as Database</h4>
+      <p>The program uses a JSON file to permanently store book records. Every book is converted into a dictionary and written to a file, and can be read back later so data is not lost when the program closes.</p>
+      <pre class="code">def save_to_file(self, filename):
+    data = [book.to_dict() for book in self.books]
+    with open(filename, "w") as f:
+        json.dump(data, f, indent=4)
+
+def load_from_file(self, filename):
+    with open(filename, "r") as f:
+        data = json.load(f)</pre>
+    </div>
+
+    <h3>OOP Concepts Used</h3>
+
+    <div class="topic-note">
+      <h4>4. Classes and Objects</h4>
+      <p>A class is a blueprint; an object is a real instance built from that blueprint. Person, Member, Librarian, Book, and Library are all classes in this project. Each Book you create is a separate object with its own title and price.</p>
+      <pre class="code">class Book:
+    def __init__(self, book_id, title, author, price):
+        self.book_id = book_id
+        self.title = title
+        self.author = author
+        self.price = price
+        self._is_borrowed = False</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>5. Encapsulation</h4>
+      <p>Encapsulation keeps important data protected inside an object. Attributes are marked private with an underscore and are only changed through controlled methods or properties, such as the age setter that blocks negative values.</p>
+      <pre class="code">class Person:
+    def __init__(self, person_id, name, email, age):
+        self._person_id = person_id
+        self._name = name
+        self._email = email
+        self._age = age
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            raise ValueError("Age cannot be negative")
+        self._age = value</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>6. Inheritance</h4>
+      <p>Member is created as a special form of the Person class. It reuses everything Person already has (name, email, age) and adds its own extra features, like a list of borrowed books.</p>
+      <pre class="code">class Member(Person, LibraryUser):
+    def __init__(self, person_id, name, email, age, member_id):
+        super().__init__(person_id, name, email, age)
+        self._member_id = member_id
+        self._borrowed_books = []
+
+    @property
+    def member_id(self):
+        return self._member_id</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>7. Multiple Inheritance</h4>
+      <p>Librarian inherits from more than one class at once: Person (for name/email/age), LibraryUser (for the abstract role methods), and AuditLogMixin (for logging every action the librarian performs).</p>
+      <pre class="code">class AuditLogMixin:
+    def __init__(self):
+        self._audit_log = []
+
+    def log_event(self, message):
+        self._audit_log.append(message)
+
+class Librarian(Person, LibraryUser, AuditLogMixin):
+    def __init__(self, person_id, name, email, age, staff_id):
+        Person.__init__(self, person_id, name, email, age)
+        AuditLogMixin.__init__(self)
+        self._staff_id = staff_id</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>8. Abstraction</h4>
+      <p>The LibraryUser class is an abstract base class built with Python's <code>abc</code> module. It cannot be created directly &mdash; it only defines what every user type <em>must</em> be able to do, hiding how each one actually does it.</p>
+      <pre class="code">from abc import ABC, abstractmethod
+
+class LibraryUser(ABC):
+    @abstractmethod
+    def get_role(self):
+        pass
+
+    @abstractmethod
+    def get_details(self):
+        pass</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>9. Magic Methods</h4>
+      <p>Special double-underscore methods let custom objects behave like Python's built-in types. Here Book defines how it prints itself, and Library defines its own length and looping behavior.</p>
+      <pre class="code">class Book:
+    def __str__(self):
+        status = "Borrowed" if self._is_borrowed else "Available"
+        return f"{self.title} by {self.author} - {status}"
+
+class Library:
+    def __len__(self):
+        return len(self.books)
+
+    def __iter__(self):
+        return iter(self.books)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>10. Composition and Aggregation</h4>
+      <p>The Library class is built from other objects: it <b>aggregates</b> books, members, and librarians into lists. These objects are meaningful on their own, but the Library brings them together into one working system.</p>
+      <pre class="code">class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+        self.members = []
+        self.librarians = []</pre>
+    </div>
+
+    <h3>Functional Programming Concepts</h3>
+
+    <div class="topic-note">
+      <h4>11. Pure Functions</h4>
+      <p>A pure function always gives the same output for the same input and does not change anything outside itself. These small, predictable functions are the building blocks of functional programming.</p>
+      <pre class="code">def get_title(book):
+    return book.title
+
+def get_price(book):
+    return book.price
+
+def is_available(book):
+    return not book.is_borrowed</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>12. Functions as First-Class Objects &amp; Higher-Order Functions</h4>
+      <p>In Python, a function can be stored, passed around, and given to another function just like any value. A higher-order function is a function that accepts another function as one of its arguments and calls it internally.</p>
+      <pre class="code">def apply_to_all_books(book_list, action):
+    """Takes a function 'action' and applies it to every book."""
+    results = []
+    for book in book_list:
+        results.append(action(book))
+    return results
+
+def select_books(book_list, condition):
+    """Takes a function 'condition' and keeps only books that pass it."""
+    selected = []
+    for book in book_list:
+        if condition(book):
+            selected.append(book)
+    return selected</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>13. Function Composition</h4>
+      <p>Function composition means combining two simple functions to build a new, more powerful function. Here, a discount function and a tax function are joined together into one final-price function.</p>
+      <pre class="code">def apply_discount(price):
+    return price - (price * 0.10)
+
+def add_service_tax(price):
+    return price + (price * 0.05)
+
+def compose(first_function, second_function):
+    """Combines two functions into one new function."""
+    def combined_function(value):
+        return second_function(first_function(value))
+    return combined_function
+
+calculate_final_price = compose(apply_discount, add_service_tax)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>14. Recursion</h4>
+      <p>A recursive function is a function that calls itself with a smaller version of the problem until it reaches a simple base case. Here, recursion is used to add up the price of every book in the library.</p>
+      <pre class="code">def calculate_total_price(book_list):
+    if len(book_list) == 0:
+        return 0
+    first_book = book_list[0]
+    remaining_books = book_list[1:]
+    return first_book.price + calculate_total_price(remaining_books)</pre>
+    </div>
+
+    <h3>Project Structure</h3>
+
+    <div class="topic-note">
+      <h4>15. Program Flow</h4>
+      <p>The program starts at <code>main()</code>, creates one Library object and one Librarian, then repeatedly shows a menu until the user chooses to exit.</p>
+      <pre class="code">if __name__ == "__main__":
+    main()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>16. Main Features</h4>
+      <ul class="key-points">
+        <li>Add new books to the library (recorded through the Librarian, with an audit log entry).</li>
+        <li>Register new members.</li>
+        <li>View all books, only available books, only borrowed books, or books sorted by price.</li>
+        <li>Calculate the total value of the entire book collection using recursion.</li>
+        <li>Calculate a book's final price after discount and tax using function composition.</li>
+        <li>Borrow and return books between a member and the library.</li>
+        <li>Save the full book collection to <code>library_data.json</code> and load it back later.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>17. Concepts Covered Checklist</h4>
+      <div class="badge-row">
+        <span class="badge">Class &amp; Object</span>
+        <span class="badge">Encapsulation</span>
+        <span class="badge">Inheritance</span>
+        <span class="badge">Multiple Inheritance</span>
+        <span class="badge">Abstraction</span>
+        <span class="badge">Magic Methods</span>
+        <span class="badge">Composition</span>
+        <span class="badge">Aggregation</span>
+        <span class="badge">Pure Functions</span>
+        <span class="badge">Higher-Order Functions</span>
+        <span class="badge">Function Composition</span>
+        <span class="badge">Recursion</span>
+        <span class="badge">JSON File Handling</span>
+        <span class="badge">Property Decorators</span>
+        <span class="badge">Exception Handling</span>
+      </div>
+    </div>
+
+    <h3>18. Complete Program Code &mdash; Type This Into <code>library_system.py</code></h3>
+
+    <div class="full-listing-block">
+      <pre class="code">"""
+LIBRARY MANAGEMENT SYSTEM
+A Beginner Python Project using OOP and Functional Programming
+"""
+
+import json
+from abc import ABC, abstractmethod
+
+
+# ---------------- ABSTRACTION ----------------
+class LibraryUser(ABC):
+    """Abstract base class - defines what every user type must do."""
+
+    @abstractmethod
+    def get_role(self):
+        pass
+
+    @abstractmethod
+    def get_details(self):
+        pass
+
+
+# ---------------- ENCAPSULATION (Base Class) ----------------
+class Person:
+    def __init__(self, person_id, name, email, age):
+        self._person_id = person_id
+        self._name = name
+        self._email = email
+        self._age = age
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def person_id(self):
+        return self._person_id
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            raise ValueError("Age cannot be negative")
+        self._age = value
+
+    def get_contact_info(self):
+        return f"{self._name} <{self._email}>"
+
+
+# ---------------- MULTIPLE INHERITANCE (Mixin) ----------------
+class AuditLogMixin:
+    def __init__(self):
+        self._audit_log = []
+
+    def log_event(self, message):
+        self._audit_log.append(message)
+
+    def show_log(self):
+        for entry in self._audit_log:
+            print("LOG:", entry)
+
+
+# ---------------- INHERITANCE ----------------
+class Member(Person, LibraryUser):
+    def __init__(self, person_id, name, email, age, member_id):
+        super().__init__(person_id, name, email, age)
+        self._member_id = member_id
+        self._borrowed_books = []
+
+    @property
+    def member_id(self):
+        return self._member_id
+
+    def get_role(self):
+        return "Member"
+
+    def get_details(self):
+        return f"Member: {self._name} (ID: {self._member_id})"
+
+    def borrow_book(self, book):
+        if book.is_borrowed:
+            print(f"{book.title} is already borrowed.")
+            return
+        self._borrowed_books.append(book)
+        book.mark_borrowed()
+        print(f"{self._name} borrowed '{book.title}'")
+
+    def return_book(self, book):
+        if book in self._borrowed_books:
+            self._borrowed_books.remove(book)
+            book.mark_returned()
+            print(f"{self._name} returned '{book.title}'")
+
+    def list_borrowed_books(self):
+        return [book.title for book in self._borrowed_books]
+
+    def __str__(self):
+        return f"Member({self._name}, ID={self._member_id})"
+
+
+# ---------------- MULTIPLE INHERITANCE (used) ----------------
+class Librarian(Person, LibraryUser, AuditLogMixin):
+    def __init__(self, person_id, name, email, age, staff_id):
+        Person.__init__(self, person_id, name, email, age)
+        AuditLogMixin.__init__(self)
+        self._staff_id = staff_id
+
+    def get_role(self):
+        return "Librarian"
+
+    def get_details(self):
+        return f"Librarian: {self._name} (Staff ID: {self._staff_id})"
+
+    def add_book_to_library(self, library, book):
+        library.add_book(book)
+        self.log_event(f"Added book: {book.title}")
+        print(f"Book '{book.title}' added by {self._name}")
+
+    def __str__(self):
+        return f"Librarian({self._name}, Staff ID={self._staff_id})"
+
+
+# ---------------- MAGIC METHODS ----------------
+class Book:
+    def __init__(self, book_id, title, author, price):
+        self.book_id = book_id
+        self.title = title
+        self.author = author
+        self.price = price
+        self._is_borrowed = False
+
+    def mark_borrowed(self):
+        self._is_borrowed = True
+
+    def mark_returned(self):
+        self._is_borrowed = False
+
+    @property
+    def is_borrowed(self):
+        return self._is_borrowed
+
+    def __str__(self):
+        status = "Borrowed" if self._is_borrowed else "Available"
+        return f"{self.title} by {self.author} - Rs.{self.price} - {status}"
+
+    def __repr__(self):
+        return f"Book(id={self.book_id}, title='{self.title}')"
+
+    def to_dict(self):
+        return {
+            "book_id": self.book_id,
+            "title": self.title,
+            "author": self.author,
+            "price": self.price,
+            "is_borrowed": self._is_borrowed
+        }
+
+
+# ---------------- PURE FUNCTIONS ----------------
+def get_title(book):
+    return book.title
+
+
+def get_price(book):
+    return book.price
+
+
+def is_available(book):
+    return not book.is_borrowed
+
+
+def is_borrowed_book(book):
+    return book.is_borrowed
+
+
+# ---------------- HIGHER-ORDER FUNCTIONS ----------------
+def apply_to_all_books(book_list, action):
+    """Takes a function 'action' and applies it to every book in the list."""
+    results = []
+    for book in book_list:
+        results.append(action(book))
+    return results
+
+
+def select_books(book_list, condition):
+    """Takes a function 'condition' and keeps only the books that pass it."""
+    selected = []
+    for book in book_list:
+        if condition(book):
+            selected.append(book)
+    return selected
+
+
+# ---------------- FUNCTION COMPOSITION ----------------
+def apply_discount(price):
+    """Reduces a price by 10%."""
+    return price - (price * 0.10)
+
+
+def add_service_tax(price):
+    """Adds 5% service tax to a price."""
+    return price + (price * 0.05)
+
+
+def compose(first_function, second_function):
+    """Combines two functions into one new function."""
+    def combined_function(value):
+        return second_function(first_function(value))
+    return combined_function
+
+
+calculate_final_price = compose(apply_discount, add_service_tax)
+
+
+# ---------------- RECURSION ----------------
+def calculate_total_price(book_list):
+    """Recursive function: calls itself with a smaller list each time."""
+    if len(book_list) == 0:
+        return 0
+    first_book = book_list[0]
+    remaining_books = book_list[1:]
+    return first_book.price + calculate_total_price(remaining_books)
+
+
+# ---------------- COMPOSITION AND AGGREGATION ----------------
+class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+        self.members = []
+        self.librarians = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def add_member(self, member):
+        self.members.append(member)
+
+    def add_librarian(self, librarian):
+        self.librarians.append(librarian)
+
+    def find_book(self, title):
+        for book in self.books:
+            if book.title.lower() == title.lower():
+                return book
+        return None
+
+    def find_member(self, member_id):
+        for member in self.members:
+            if member.member_id == member_id:
+                return member
+        return None
+
+    # ---- FUNCTIONAL PROGRAMMING METHODS ----
+    def available_books(self):
+        return select_books(self.books, is_available)
+
+    def borrowed_books(self):
+        return select_books(self.books, is_borrowed_book)
+
+    def book_titles(self):
+        return apply_to_all_books(self.books, get_title)
+
+    def sorted_books_by_price(self):
+        return sorted(self.books, key=get_price)
+
+    def total_inventory_value(self):
+        return calculate_total_price(self.books)
+
+    def expensive_books(self, limit):
+        def is_expensive(book):
+            return book.price >= limit
+        return select_books(self.books, is_expensive)
+
+    # ---- MAGIC METHODS ----
+    def __len__(self):
+        return len(self.books)
+
+    def __iter__(self):
+        return iter(self.books)
+
+    def __str__(self):
+        return f"Library({self.name}, {len(self.books)} books)"
+
+    # ---- FILE HANDLING (JSON DATABASE) ----
+    def save_to_file(self, filename):
+        data = [book.to_dict() for book in self.books]
+        with open(filename, "w") as f:
+            json.dump(data, f, indent=4)
+        print(f"Saved {len(data)} books to {filename}")
+
+    def load_from_file(self, filename):
+        try:
+            with open(filename, "r") as f:
+                data = json.load(f)
+        except FileNotFoundError:
+            print("No saved file found.")
+            return
+        self.books = []
+        for item in data:
+            book = Book(item["book_id"], item["title"], item["author"], item["price"])
+            if item["is_borrowed"]:
+                book.mark_borrowed()
+            self.books.append(book)
+        print(f"Loaded {len(self.books)} books from {filename}")
+
+
+def print_menu():
+    print("\n===== LIBRARY MANAGEMENT SYSTEM =====")
+    print("1. Add a new book")
+    print("2. Add a new member")
+    print("3. Show all books")
+    print("4. Show available books")
+    print("5. Show borrowed books")
+    print("6. Show books sorted by price")
+    print("7. Show total inventory value (recursion)")
+    print("8. Show final price of a book (discount + tax)")
+    print("9. Borrow a book")
+    print("10. Return a book")
+    print("11. Save library to file")
+    print("12. Load library from file")
+    print("13. Exit")
+
+
+def main():
+    library = Library("City Central Library")
+
+    librarian = Librarian(1, "Mr. Ravi Kumar", "ravi@library.com", 35, "STF001")
+    library.add_librarian(librarian)
+
+    book_id_counter = 1
+    member_id_counter = 1
+
+    while True:
+        print_menu()
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            title = input("Enter book title: ")
+            author = input("Enter author name: ")
+            price = float(input("Enter book price: "))
+            book = Book(book_id_counter, title, author, price)
+            librarian.add_book_to_library(library, book)
+            book_id_counter += 1
+
+        elif choice == "2":
+            name = input("Enter member name: ")
+            email = input("Enter member email: ")
+            age = int(input("Enter member age: "))
+            member = Member(member_id_counter, name, email, age, f"MEM{member_id_counter:03d}")
+            library.add_member(member)
+            print(f"Member added: {member}")
+            member_id_counter += 1
+
+        elif choice == "3":
+            print(f"\nTotal books in library: {len(library)}")
+            for book in library:
+                print(book)
+
+        elif choice == "4":
+            print("\nAvailable books:")
+            for book in library.available_books():
+                print(book)
+
+        elif choice == "5":
+            print("\nBorrowed books:")
+            for book in library.borrowed_books():
+                print(book)
+
+        elif choice == "6":
+            print("\nBooks sorted by price:")
+            for book in library.sorted_books_by_price():
+                print(book)
+
+        elif choice == "7":
+            total = library.total_inventory_value()
+            print(f"\nTotal inventory value (recursion): Rs.{total}")
+
+        elif choice == "8":
+            title = input("Enter book title: ")
+            book = library.find_book(title)
+            if book:
+                final_price = calculate_final_price(book.price)
+                print(f"Original price: Rs.{book.price}")
+                print(f"Final price after discount and tax: Rs.{round(final_price, 2)}")
+            else:
+                print("Book not found.")
+
+        elif choice == "9":
+            if not library.members:
+                print("No members yet. Add a member first.")
+                continue
+            title = input("Enter book title to borrow: ")
+            member_id = input("Enter member ID (e.g. MEM001): ")
+            book = library.find_book(title)
+            member = library.find_member(member_id)
+            if book and member:
+                member.borrow_book(book)
+            else:
+                print("Book or member not found.")
+
+        elif choice == "10":
+            title = input("Enter book title to return: ")
+            member_id = input("Enter member ID: ")
+            book = library.find_book(title)
+            member = library.find_member(member_id)
+            if book and member:
+                member.return_book(book)
+            else:
+                print("Book or member not found.")
+
+        elif choice == "11":
+            library.save_to_file("library_data.json")
+
+        elif choice == "12":
+            library.load_from_file("library_data.json")
+
+        elif choice == "13":
+            print("Thank you for using the Library Management System!")
+            break
+
+        else:
+            print("Invalid choice. Try again.")
+
+
+if __name__ == "__main__":
+    main()</pre>
+    </div>
+
+    <div class="notes">
+      <strong>Exam Summary:</strong> This project is a complete Library Management System combining Object-Oriented Programming (classes, encapsulation, inheritance, multiple inheritance, abstraction, magic methods, composition, aggregation) with basic Functional Programming (pure functions, higher-order functions, function composition, recursion), plus JSON file handling for permanent storage and a menu-driven interface for interaction. Type the code in Section 18 exactly, save it as <code>library_system.py</code>, and run it using <code>python library_system.py</code>.
+    </div>
+  </div>
+</body>
+</html>
