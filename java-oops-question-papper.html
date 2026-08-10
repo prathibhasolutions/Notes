@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java OOP Question Paper - A4 Print</title>
+
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(
+        180deg,
+        var(--bg-top) 0%,
+        var(--bg-bottom) 100%
+      );
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(
+        180deg,
+        #f6f9fc 0%,
+        #ffffff 100%
+      );
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="paper" aria-label="Java OOP Question Paper">
+
+  <header class="header">
+
+    <div class="logo">
+      <img
+        src="prathibha_logo.png"
+        alt="Institute Logo"
+        width="14"
+        height="14"
+      />
+    </div>
+
+    <div>
+      <div class="title">Java OOP - Question Paper</div>
+
+      <div class="subtitle">
+        Classes & Objects, Constructors, Methods, Encapsulation,
+        Inheritance, Polymorphism, Abstraction, Interfaces,
+        Exception Handling, File Handling & Collections
+      </div>
+    </div>
+
+  </header>
+
+  <section class="meta" aria-label="Exam Metadata">
+
+    <div><b>Time:</b> 180 Minutes</div>
+
+    <div><b>Total Marks:</b> 100</div>
+
+    <div><b>Name:</b> ____________________</div>
+
+  </section>
+
+  <section class="instructions" aria-label="Instructions">
+
+    <b>Instructions:</b>
+    Answer all questions. Section A has 10 MCQs and Section B has
+    10 theory and programming questions. Write proper Java syntax,
+    logic, and output wherever applicable.
+
+  </section>
+
+
+  <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+
+  <ol class="two-col">
+
+    <li>
+      Which keyword is used to create a class in Java?
+      <span class="opts">
+        A) class<br>
+        B) Class<br>
+        C) define<br>
+        D) object
+      </span>
+    </li>
+
+    <li>
+      Which method is called automatically when an object is created?
+      <span class="opts">
+        A) main()<br>
+        B) constructor<br>
+        C) display()<br>
+        D) start()
+      </span>
+    </li>
+
+    <li>
+      Which keyword is used to refer to the current object?
+      <span class="opts">
+        A) self<br>
+        B) current<br>
+        C) this<br>
+        D) object
+      </span>
+    </li>
+
+    <li>
+      Which keyword is used to inherit a class in Java?
+      <span class="opts">
+        A) implements<br>
+        B) extends<br>
+        C) inherits<br>
+        D) super
+      </span>
+    </li>
+
+    <li>
+      Which keyword is used to inherit an interface?
+      <span class="opts">
+        A) extends<br>
+        B) inherits<br>
+        C) implements<br>
+        D) interface
+      </span>
+    </li>
+
+    <li>
+      Which OOP concept allows the same method name with different
+      parameters?
+      <span class="opts">
+        A) Method overriding<br>
+        B) Method overloading<br>
+        C) Encapsulation<br>
+        D) Abstraction
+      </span>
+    </li>
+
+    <li>
+      Which keyword is used to access the parent class members?
+      <span class="opts">
+        A) parent<br>
+        B) base<br>
+        C) super<br>
+        D) this
+      </span>
+    </li>
+
+    <li>
+      Which keyword is used to create an abstract class?
+      <span class="opts">
+        A) abstract<br>
+        B) interface<br>
+        C) virtual<br>
+        D) extends
+      </span>
+    </li>
+
+    <li>
+      Which block is used to handle an exception?
+      <span class="opts">
+        A) check-catch<br>
+        B) try-catch<br>
+        C) error-catch<br>
+        D) exception
+      </span>
+    </li>
+
+    <li>
+      Which collection does not allow duplicate elements?
+      <span class="opts">
+        A) ArrayList<br>
+        B) LinkedList<br>
+        C) HashSet<br>
+        D) Array
+      </span>
+    </li>
+
+  </ol>
+
+
+  <h3>Section B: Theory & Programming Questions (10 x 9 = 90 Marks)</h3>
+
+  <ol class="single-col">
+
+    <li>
+      <b>Classes, Objects, Constructors and Methods:</b>
+      Explain the difference between a class and an object.
+      Explain constructors and methods in Java. Write a Java program
+      to create a class <b>Student</b> with instance variables
+      <b>name</b>, <b>rollNo</b>, and <b>marks</b>. Use a constructor
+      to initialize the values and a method to display the details.
+    </li>
+
+    <li>
+      <b>Static and Instance Members:</b>
+      Explain the difference between static and instance variables.
+      Write a Java program to create an <b>Employee</b> class with
+      instance variables <b>name</b> and <b>salary</b>, and a static
+      variable <b>companyName</b>. Create multiple objects and
+      display their details.
+    </li>
+
+    <li>
+      <b>Encapsulation:</b>
+      What is encapsulation? Explain access modifiers in Java.
+      Write a Java program to create a <b>BankAccount</b> class
+      with a private <b>balance</b> variable. Create public methods
+      <b>deposit()</b>, <b>withdraw()</b>, and
+      <b>displayBalance()</b> to access and modify the balance.
+    </li>
+
+    <li>
+      <b>Inheritance and super():</b>
+      Explain inheritance in Java. Write a program with a parent
+      class <b>Person</b> containing a constructor and a method
+      <b>display()</b>. Create a child class <b>Student</b> with
+      an additional variable <b>course</b>. Use <b>super()</b> to
+      call the parent constructor and display all details.
+    </li>
+
+    <li>
+      <b>Method Overloading and Overriding:</b>
+      Explain the difference between method overloading and method
+      overriding. Write a Java program to demonstrate method
+      overloading using an <b>add()</b> method with different
+      parameter lists. Also create a parent class <b>Animal</b>
+      and child class <b>Dog</b> to demonstrate method overriding.
+    </li>
+
+    <li>
+      <b>Polymorphism:</b>
+      Explain compile-time and runtime polymorphism in Java.
+      Write a program using a parent class reference to refer to
+      child class objects and demonstrate runtime polymorphism
+      through method overriding.
+    </li>
+
+    <li>
+      <b>Abstraction and Abstract Class:</b>
+      What is abstraction? Explain abstract classes and abstract
+      methods. Create an abstract class <b>Shape</b> with an
+      abstract method <b>area()</b>. Create <b>Circle</b> and
+      <b>Rectangle</b> classes that extend Shape and implement
+      the <b>area()</b> method.
+    </li>
+
+    <li>
+      <b>Interfaces:</b>
+      Explain interfaces in Java. Create an interface
+      <b>Printable</b> containing a method <b>printDetails()</b>.
+      Implement the interface in classes <b>Student</b> and
+      <b>Employee</b> and provide their own implementation of
+      the method. Also explain how interfaces support multiple
+      inheritance in Java.
+    </li>
+
+    <li>
+      <b>Exception Handling:</b>
+      Explain <b>try</b>, <b>catch</b>, <b>finally</b>,
+      <b>throw</b>, and <b>throws</b>. Write a Java program that
+      accepts two numbers and performs division. Handle
+      <b>ArithmeticException</b> and <b>InputMismatchException</b>
+      using appropriate exception handling. Also demonstrate the
+      use of the <b>finally</b> block.
+    </li>
+
+    <li>
+      <b>File Handling and Collections:</b>
+      Write a Java program to create a text file and write student
+      details into it. Read the contents of the file and display
+      them. Then store multiple student names in an
+      <b>ArrayList</b> and display the elements using a loop.
+      Explain the purpose of file handling and collections in Java.
+    </li>
+
+  </ol>
+
+
+  <div class="footer">
+    Prepared for Classroom / Practical Examination
+  </div>
+
+</section>
+
+</body>
+</html>

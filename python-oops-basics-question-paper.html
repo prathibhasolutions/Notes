@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python OOP Question Paper - A4 Print</title>
+
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(
+        180deg,
+        var(--bg-top) 0%,
+        var(--bg-bottom) 100%
+      );
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(
+        180deg,
+        #f6f9fc 0%,
+        #ffffff 100%
+      );
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .code {
+      display: block;
+      white-space: pre;
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.8pt;
+      line-height: 1.27;
+      margin-top: 0.9mm;
+      background: #f5f9fd;
+      border: 1px solid #d8e2ec;
+      border-radius: 1mm;
+      padding: 1.45mm 1.8mm;
+      tab-size: 4;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="paper" aria-label="Python OOP Question Paper">
+
+    <header class="header">
+
+      <div class="logo">
+        <img
+          src="prathibha_logo.png"
+          alt="Institute Logo"
+          width="14"
+          height="14"
+        />
+      </div>
+
+      <div>
+        <div class="title">Python OOP - Question Paper</div>
+
+        <div class="subtitle">
+          OOP Basics, Constructor, Methods, Encapsulation, Inheritance,
+          Multiple Inheritance, Polymorphism, Method Overriding, super()
+        </div>
+      </div>
+
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+
+      <div><b>Time:</b> 180 Minutes</div>
+
+      <div><b>Total Marks:</b> 100</div>
+
+      <div><b>Name:</b> ____________________</div>
+
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+
+      <b>Instructions:</b>
+      Answer all questions. Section A has 10 MCQs and Section B has
+      10 theory and programming questions. Write neat answers with
+      proper Python syntax, logic, and output wherever applicable.
+
+    </section>
+
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+
+    <ol class="two-col">
+
+      <li>
+        Which keyword is used to create a class in Python?
+        <span class="opts">
+          A) object<br>
+          B) class<br>
+          C) define<br>
+          D) new
+        </span>
+      </li>
+
+      <li>
+        Which method is automatically called when an object is created?
+        <span class="opts">
+          A) start()<br>
+          B) create()<br>
+          C) __init__()<br>
+          D) main()
+        </span>
+      </li>
+
+      <li>
+        What does <b>self</b> refer to inside a Python class?
+        <span class="opts">
+          A) Parent class<br>
+          B) Current object<br>
+          C) Constructor<br>
+          D) Module
+        </span>
+      </li>
+
+      <li>
+        Which OOP concept combines data and methods inside a class?
+        <span class="opts">
+          A) Encapsulation<br>
+          B) Inheritance<br>
+          C) Polymorphism<br>
+          D) Overriding
+        </span>
+      </li>
+
+      <li>
+        Which notation is commonly used to indicate a private variable
+        in Python?
+        <span class="opts">
+          A) #variable<br>
+          B) _variable<br>
+          C) __variable<br>
+          D) @variable
+        </span>
+      </li>
+
+      <li>
+        A class acquiring properties and methods from another class is called:
+        <span class="opts">
+          A) Encapsulation<br>
+          B) Inheritance<br>
+          C) Polymorphism<br>
+          D) Constructor
+        </span>
+      </li>
+
+      <li>
+        What is multiple inheritance?
+        <span class="opts">
+          A) One class having many objects<br>
+          B) One class inheriting from multiple parent classes<br>
+          C) Multiple constructors in one class<br>
+          D) Multiple methods in a class
+        </span>
+      </li>
+
+      <li>
+        Which concept allows the same method name to perform different
+        operations?
+        <span class="opts">
+          A) Polymorphism<br>
+          B) Encapsulation<br>
+          C) Constructor<br>
+          D) Inheritance
+        </span>
+      </li>
+
+      <li>
+        Which function is used to access members of the parent class?
+        <span class="opts">
+          A) parent()<br>
+          B) base()<br>
+          C) super()<br>
+          D) upper()
+        </span>
+      </li>
+
+      <li>
+        When a child class provides its own version of a parent class method,
+        it is called:
+        <span class="opts">
+          A) Method overloading<br>
+          B) Method overriding<br>
+          C) Method hiding<br>
+          D) Method calling
+        </span>
+      </li>
+
+    </ol>
+
+
+    <h3>Section B: Theory & Programming Questions (10 x 9 = 90 Marks)</h3>
+
+    <ol class="single-col">
+
+      <li>
+        <b>Class and Object:</b>
+        Explain the difference between a class and an object.
+        Write a Python program to create a class <b>Student</b> with
+        attributes <b>name</b>, <b>roll_no</b>, and <b>marks</b>.
+        Create an object and display the student details.
+      </li>
+
+      <li>
+        <b>Constructor:</b>
+        What is a constructor in Python? Explain the purpose of
+        <b>__init__()</b>. Write a program to create a class
+        <b>Employee</b> with a constructor that accepts employee name,
+        ID, and salary and displays the details.
+      </li>
+
+      <li>
+        <b>Methods:</b>
+        What is a method in Python? Write a class <b>Rectangle</b>
+        with <b>length</b> and <b>width</b> as attributes.
+        Create methods to calculate and display the area and perimeter.
+      </li>
+
+      <li>
+        <b>Encapsulation:</b>
+        Explain encapsulation in Python. Write a program to create a
+        class <b>BankAccount</b> with a private variable
+        <b>__balance</b>. Create methods <b>deposit()</b>,
+        <b>withdraw()</b>, and <b>display_balance()</b>.
+      </li>
+
+      <li>
+        <b>Inheritance:</b>
+        Explain inheritance with an example.
+        Write a Python program with a parent class <b>Animal</b>
+        containing a method <b>eat()</b>. Create a child class
+        <b>Dog</b> that inherits the method and has an additional
+        method <b>bark()</b>.
+      </li>
+
+      <li>
+        <b>Multiple Inheritance:</b>
+        What is multiple inheritance? Write a Python program with
+        two parent classes <b>Father</b> and <b>Mother</b>.
+        Create a child class <b>Child</b> that inherits from both
+        classes and displays information from both parents.
+      </li>
+
+      <li>
+        <b>Polymorphism:</b>
+        Explain polymorphism in Python. Write a program with two
+        classes <b>Circle</b> and <b>Rectangle</b>, each containing
+        an <b>area()</b> method. Create objects of both classes and
+        demonstrate how the same method name performs different operations.
+      </li>
+
+      <li>
+        <b>Method Overriding:</b>
+        What is method overriding? Write a Python program with a
+        parent class <b>Vehicle</b> having a method <b>start()</b>.
+        Create child classes <b>Car</b> and <b>Bike</b> and override
+        the <b>start()</b> method in both classes.
+      </li>
+
+      <li>
+        <b>super() Method:</b>
+        Explain the purpose of the <b>super()</b> method.
+        Write a Python program with a parent class <b>Person</b>
+        containing a constructor for <b>name</b> and <b>age</b>.
+        Create a child class <b>Student</b> with an additional
+        attribute <b>course</b>. Use <b>super()</b> to call the
+        parent constructor and display all details.
+      </li>
+
+      <li>
+        <b>Combined OOP Concepts:</b>
+        Create a Python program for an <b>Employee</b> management
+        system using a class and constructor. Use encapsulation
+        for salary, inheritance for <b>Manager</b> and
+        <b>Developer</b> classes, method overriding for calculating
+        salary, and <b>super()</b> to initialize parent class
+        attributes. Display the details of both employees.
+      </li>
+
+    </ol>
+
+
+    <div class="footer">
+      Prepared for Classroom / Practical Examination
+    </div>
+
+  </section>
+
+</body>
+</html>

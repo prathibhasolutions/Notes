@@ -1,0 +1,1462 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoCAD 2D Complete Notes - Mechanical &amp; Civil Drafting</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .meta div span {
+      color: #7c8fa0;
+      font-size: 7.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: #8a5c1f; }
+
+    h2.part-title {
+      margin: 4.5mm 0 2.4mm;
+      font-size: 11.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: linear-gradient(90deg, #0f5f7f, #124a76);
+      border-radius: 1.3mm;
+      padding: 2mm 2.6mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-block ol {
+      margin: 0;
+      padding-left: 5.2mm;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+    }
+
+    .notes {
+      margin-top: 3mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      position: relative;
+      z-index: 1;
+      background: #fafcff;
+      font-size: 9pt;
+    }
+
+    .topic-note {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-note p {
+      margin: 0 0 1.5mm;
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: #304556;
+    }
+
+    .key-points {
+      margin: 1.3mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1mm;
+      font-size: 7.9pt;
+      line-height: 1.4;
+      color: #314759;
+    }
+
+    .code {
+      margin: 1.3mm 0 0;
+      border: 1px solid #d9e5ef;
+      border-left: 2mm solid #0f5f7f;
+      border-radius: 1mm;
+      background: #fffdf8;
+      color: #203040;
+      padding: 2mm;
+      font-size: 7.8pt;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+      margin: 1mm 0 0;
+    }
+
+    .badge {
+      font-size: 7.3pt;
+      color: #0f5f7f;
+      border: 1px solid #bcd7e2;
+      background: #eef7fb;
+      border-radius: 3mm;
+      padding: 0.8mm 2.2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .badge.mech { color: #8a5c1f; border-color: #e3cfa8; background: #fdf6ea; }
+    .badge.civil { color: #1f7a4d; border-color: #b9dfc7; background: #ecfaf1; }
+
+    .assign-block {
+      border: 1px solid #d6e0ea;
+      border-left: 2mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      background: #fffefb;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .assign-block h4 { color: #8a5c1f; }
+
+    .assign-block .solution-label {
+      display: inline-block;
+      margin: 1.6mm 0 0.8mm;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0f5f7f;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid #bcd7e2;
+      padding-bottom: 0.6mm;
+    }
+
+    .quick-ref {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.6pt;
+      margin-top: 1mm;
+    }
+
+    .quick-ref th, .quick-ref td {
+      border: 1px solid var(--soft);
+      padding: 1mm 1.5mm;
+      text-align: left;
+    }
+
+    .quick-ref th {
+      background: #eef5fa;
+      color: #124a76;
+      text-transform: uppercase;
+      font-size: 7pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">AutoCAD 2D Complete Notes</div>
+        <div class="subtitle">Commands &bull; Operations &bull; Mechanical &amp; Civil Drafting &bull; Assignments with Solutions</div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><span>Name</span>&nbsp;</div>
+      <div><span>Class / Roll No.</span>&nbsp;</div>
+      <div><span>Date</span>&nbsp;</div>
+    </div>
+
+    <div class="instructions">
+      <b>Study Note:</b> These notes cover the complete AutoCAD 2D syllabus used for Mechanical and Civil engineering drafting &mdash; every Draw and Modify command, precision drawing tools, annotation (text, dimensioning), organization tools (layers, blocks, layouts, plotting), and dedicated Mechanical and Civil drawing applications. Each command includes its <b>definition</b>, <b>step-by-step method</b>, and a <b>worked example</b>. Practical <b>assignments with full solutions</b> are provided at the end of the Mechanical and Civil sections, followed by a Quick Command Reference table.
+    </div>
+
+    <h2 class="part-title">Part A &mdash; AutoCAD Fundamentals</h2>
+
+    <div class="topic-note">
+      <h4>1. What is AutoCAD 2D?</h4>
+      <p>AutoCAD is a computer-aided design (CAD) software used to create precise technical drawings. AutoCAD 2D refers to drafting done on a flat XY plane, used to produce engineering drawings such as machine part drawings (mechanical) and building plans (civil) with exact dimensions, unlike freehand sketching.</p>
+      <ul class="key-points">
+        <li>Every object drawn has exact, measurable coordinates and dimensions.</li>
+        <li>Drawings are created at real-world (1:1) scale and only scaled down when printed.</li>
+        <li>Used across mechanical, civil, electrical, and architectural fields.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>2. The AutoCAD Interface</h4>
+      <p>The AutoCAD screen is made up of several key areas that every drafter must recognize before drawing.</p>
+      <ul class="key-points">
+        <li><b>Drawing Area</b> &ndash; the large central space where objects are drawn (the model space).</li>
+        <li><b>Command Line</b> &ndash; a text bar at the bottom where commands are typed and AutoCAD shows prompts.</li>
+        <li><b>Ribbon / Toolbars</b> &ndash; tabs (Home, Insert, Annotate, View) containing icon buttons for commands.</li>
+        <li><b>UCS Icon</b> &ndash; the small arrow icon at the bottom-left showing the current coordinate system (X, Y axes).</li>
+        <li><b>Status Bar</b> &ndash; bottom strip showing coordinates, and toggles for Grid, Snap, Ortho, Osnap, etc.</li>
+        <li><b>Layout Tabs</b> &ndash; at the bottom, switch between Model space and Layout (paper space) sheets.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>3. Coordinate Systems</h4>
+      <p>Every point in AutoCAD is placed using one of three coordinate entry methods, typed directly at the command line.</p>
+      <ul class="key-points">
+        <li><b>Absolute Coordinates</b> &ndash; measured from the fixed origin (0,0). Format: <code>X,Y</code></li>
+        <li><b>Relative Coordinates</b> &ndash; measured from the last point entered. Format: <code>@X,Y</code></li>
+        <li><b>Polar Coordinates</b> &ndash; distance and angle from the last point. Format: <code>@distance&lt;angle</code></li>
+      </ul>
+      <pre class="code">Command: LINE
+Specify first point: 0,0          (absolute - starts at origin)
+Specify next point: @50,0         (relative - 50 units right)
+Specify next point: @50&lt;90        (polar - 50 units at 90 degrees, i.e. straight up)
+Specify next point: @50,50        (relative - diagonal move)
+Specify next point: C             (closes the shape back to first point)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>4. Units and Drawing Limits (UNITS, LIMITS)</h4>
+      <p>Before drawing, the correct measurement unit and drawing area size must be set up so the drawing is accurate and to scale.</p>
+      <ul class="key-points">
+        <li><b>UNITS</b> command &ndash; sets the type of unit (Decimal, Engineering, Architectural) and the precision (number of decimal places). Mechanical drawings typically use Decimal (mm); Civil drawings often use Architectural (feet-inches) or Decimal (metres).</li>
+        <li><b>LIMITS</b> command &ndash; sets the size of the drawing sheet boundary (lower-left and upper-right corner), used mainly as a plotting reference.</li>
+      </ul>
+      <pre class="code">Command: UNITS
+(Opens Drawing Units dialog box)
+ Type: Decimal
+ Precision: 0.00
+
+Command: LIMITS
+Specify lower left corner [ON/OFF] &lt;0.0000,0.0000&gt;: 0,0
+Specify upper right corner &lt;420.0000,297.0000&gt;: 420,297   (A3 sheet in mm)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>5. Layers &ndash; Concept and Creation (LAYER)</h4>
+      <p>A layer is like a transparent sheet used to organize objects by type &mdash; for example, one layer for outlines, one for dimensions, one for hidden lines, one for centre lines. Every object takes on the colour, linetype, and lineweight of the layer it is placed on unless overridden.</p>
+      <ul class="key-points">
+        <li>Open the Layer Properties Manager by typing <code>LA</code> or <code>LAYER</code>.</li>
+        <li>Click "New Layer", type a name, then set its Colour, Linetype, and Lineweight.</li>
+        <li>Set a layer "Current" before drawing so new objects go onto it.</li>
+        <li>Standard mechanical layers: Outline (continuous, thick), Centre (centre linetype, thin), Hidden (dashed linetype, thin), Dimension (continuous, thin).</li>
+        <li>Standard civil layers: Walls, Doors-Windows, Dimensions, Text, Grid/Axis, Furniture.</li>
+      </ul>
+      <pre class="code">Command: LAYER
+(Layer Properties Manager opens)
+New Layer -> name: OUTLINE   -> Colour: White -> Linetype: Continuous -> Lineweight: 0.50mm
+New Layer -> name: CENTRE    -> Colour: Red   -> Linetype: CENTER     -> Lineweight: 0.25mm
+New Layer -> name: HIDDEN    -> Colour: Yellow-> Linetype: HIDDEN     -> Lineweight: 0.25mm
+New Layer -> name: DIMENSION -> Colour: Green -> Linetype: Continuous -> Lineweight: 0.18mm
+Set OUTLINE as current layer before drawing the object outline.</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>6. Drawing Aids: OSNAP, ORTHO, POLAR, GRID, SNAP</h4>
+      <p>These tools help place points with pixel-perfect accuracy instead of clicking freehand, which is essential for engineering-accurate drawings.</p>
+      <ul class="key-points">
+        <li><b>OSNAP (Object Snap)</b> &ndash; F3 to toggle. Locks the cursor onto exact geometric points: Endpoint, Midpoint, Centre, Intersection, Perpendicular, Tangent, Quadrant, Nearest.</li>
+        <li><b>ORTHO</b> &ndash; F8 to toggle. Restricts the cursor to strictly horizontal or vertical movement.</li>
+        <li><b>POLAR TRACKING</b> &ndash; F10 to toggle. Displays a dotted guide line and angle tooltip when the cursor nears set angles (e.g. 0, 30, 45, 90 degrees).</li>
+        <li><b>GRID</b> &ndash; F7 to toggle. Displays a background dot/line grid as a visual measuring reference (does not print).</li>
+        <li><b>SNAP</b> &ndash; F9 to toggle. Forces the cursor to jump only to fixed grid spacing intervals.</li>
+        <li><b>Dynamic Input</b> &ndash; F12 to toggle. Shows coordinate and length values directly next to the cursor while drawing.</li>
+      </ul>
+      <div class="badge-row">
+        <span class="badge">F3 OSNAP</span>
+        <span class="badge">F7 GRID</span>
+        <span class="badge">F8 ORTHO</span>
+        <span class="badge">F9 SNAP</span>
+        <span class="badge">F10 POLAR</span>
+        <span class="badge">F12 DYNAMIC INPUT</span>
+      </div>
+    </div>
+
+
+    <h2 class="part-title">Part B &mdash; Draw Commands</h2>
+
+    <div class="topic-note">
+      <h4>7. LINE (Shortcut: L)</h4>
+      <p>Draws one or more straight line segments between points. Each segment is a separate object unless drawn with Polyline.</p>
+      <ul class="key-points">
+        <li>Type <code>LINE</code> or <code>L</code>, press Enter.</li>
+        <li>Click or type the first point.</li>
+        <li>Click or type each next point; AutoCAD keeps drawing connected segments.</li>
+        <li>Press Enter/Esc to stop, or type <code>C</code> to close the shape back to the start point, or <code>U</code> to undo the last segment.</li>
+      </ul>
+      <pre class="code">Command: LINE
+Specify first point: 0,0
+Specify next point: 100,0
+Specify next point: 100,60
+Specify next point: 0,60
+Specify next point: C</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>8. Construction Line &amp; Ray (XLINE, RAY)</h4>
+      <p>XLINE draws an infinite line in both directions through a point, used as a temporary reference/guide line. RAY draws a line infinite in only one direction. Both are typically drawn on a non-printing "construction" layer and deleted or frozen before final plotting.</p>
+      <ul class="key-points">
+        <li>Type <code>XLINE</code> (or <code>XL</code>); specify a point, then a second point or an angle.</li>
+        <li>Options include Horizontal, Vertical, Angle, Bisect, and Offset.</li>
+      </ul>
+      <pre class="code">Command: XLINE
+Specify a point or [Hor/Ver/Ang/Bisect/Offset]: H     (creates an infinite horizontal reference line)
+Specify through point: 0,50</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>9. POLYLINE (Shortcut: PL)</h4>
+      <p>Draws connected straight and/or curved segments that behave as a single combined object, unlike LINE where every segment is separate. Widely used for outlines, borders, and shapes that need uniform width.</p>
+      <ul class="key-points">
+        <li>Type <code>PLINE</code> or <code>PL</code>, specify the start point.</li>
+        <li>Type <code>W</code> to set a start/end width if a thick outline is needed.</li>
+        <li>Type <code>A</code> to switch to Arc segment mode, <code>L</code> to switch back to Line mode.</li>
+        <li>Type <code>C</code> to close the polyline into a loop.</li>
+      </ul>
+      <pre class="code">Command: PLINE
+Specify start point: 0,0
+Current line-width is 0.0000
+Specify next point: 80,0
+Specify next point [Arc/Width]: A
+Specify endpoint of arc: 100,20
+Specify endpoint of arc [Line]: L
+Specify next point: 100,60
+Specify next point: C</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>10. RECTANGLE (Shortcut: REC)</h4>
+      <p>Draws a rectangle as a single polyline object by specifying two diagonally opposite corners. Very commonly used for plot boundaries, room outlines, and part blanks.</p>
+      <ul class="key-points">
+        <li>Type <code>RECTANG</code> or <code>REC</code>.</li>
+        <li>Specify the first corner point.</li>
+        <li>Specify the opposite corner &ndash; either by clicking, or typing relative coordinates for exact width/height.</li>
+        <li>Options before the first corner include Chamfer and Fillet, to create rectangles with cut or rounded corners.</li>
+      </ul>
+      <pre class="code">Command: RECTANG
+Specify first corner point [Chamfer/Fillet]: 0,0
+Specify other corner point [Dimensions]: @120,80    (120 wide, 80 tall rectangle)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>11. POLYGON</h4>
+      <p>Draws a regular polygon (equal sides and angles), from 3 to 1024 sides, based on the number of sides and either an inscribed/circumscribed circle radius or one edge length.</p>
+      <ul class="key-points">
+        <li>Type <code>POLYGON</code>, enter the number of sides.</li>
+        <li>Specify the centre point of the polygon.</li>
+        <li>Choose <code>I</code> (Inscribed &ndash; polygon fits inside an imaginary circle) or <code>C</code> (Circumscribed &ndash; polygon fits around an imaginary circle).</li>
+        <li>Enter the radius of that imaginary circle.</li>
+      </ul>
+      <pre class="code">Command: POLYGON
+Enter number of sides &lt;4&gt;: 6
+Specify center of polygon or [Edge]: 60,40
+Enter an option [Inscribed in circle/Circumscribed about circle] &lt;I&gt;: I
+Specify radius of circle: 25      (draws a regular hexagon - used for bolt heads)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>12. CIRCLE (Shortcut: C)</h4>
+      <p>Draws a circle using one of several construction methods depending on what information is known.</p>
+      <ul class="key-points">
+        <li><b>Centre, Radius</b> &ndash; default method: pick centre, type radius.</li>
+        <li><b>Centre, Diameter</b> &ndash; type <code>D</code> after picking centre, then enter diameter.</li>
+        <li><b>2-Point (2P)</b> &ndash; circle passes through two given points (its diameter endpoints).</li>
+        <li><b>3-Point (3P)</b> &ndash; circle passes through three given points.</li>
+        <li><b>Tan, Tan, Radius (TTR)</b> &ndash; circle tangent to two existing objects with a given radius.</li>
+      </ul>
+      <pre class="code">Command: CIRCLE
+Specify center point for circle or [3P/2P/Ttr]: 50,50
+Specify radius of circle or [Diameter]: 20</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>13. ARC (Shortcut: A)</h4>
+      <p>Draws a curved segment that is part of a circle, using various combinations of Start point, Centre, End point, Angle, Direction, Radius, or Chord Length. The most common method is 3-Point.</p>
+      <ul class="key-points">
+        <li><b>3-Point</b> &ndash; specify a start point, a point on the arc, and an end point.</li>
+        <li><b>Start, Centre, End</b> &ndash; specify start point, then centre, then end angle/point.</li>
+        <li><b>Start, Centre, Angle</b> &ndash; specify start, centre, and an included angle to sweep.</li>
+      </ul>
+      <pre class="code">Command: ARC
+Specify start point of arc or [Center]: 0,0
+Specify second point of arc or [Center/End]: 20,15
+Specify end point of arc: 40,0</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>14. ELLIPSE</h4>
+      <p>Draws an ellipse (or elliptical arc) by defining its axes. Used in mechanical work for representing angled circular holes/features, and in civil work for landscaping/curved features.</p>
+      <ul class="key-points">
+        <li>Type <code>ELLIPSE</code>, specify one endpoint of the first axis, then the other endpoint.</li>
+        <li>Then specify the distance for the second (half) axis, or type <code>C</code> to define by centre first.</li>
+      </ul>
+      <pre class="code">Command: ELLIPSE
+Specify axis endpoint of ellipse or [Arc/Center]: 0,0
+Specify other endpoint of axis: 80,0
+Specify distance to other axis or [Rotation]: 30</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>15. SPLINE</h4>
+      <p>Draws a smooth, flowing curve that passes through (or near) a series of picked points. Used for irregular/free-form boundaries such as contour lines in civil site plans or cam-profile curves in mechanical design.</p>
+      <ul class="key-points">
+        <li>Type <code>SPLINE</code>, pick multiple points along the desired curve path.</li>
+        <li>Press Enter to finish; optionally specify start and end tangent directions.</li>
+      </ul>
+      <pre class="code">Command: SPLINE
+Specify first point: 0,0
+Specify next point: 20,15
+Specify next point: 45,10
+Specify next point: 70,25
+Specify next point: Enter (to finish)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>16. POINT &amp; DONUT</h4>
+      <p><b>POINT</b> places a single reference marker at an exact coordinate, often used for surveying/reference marks. <b>DONUT</b> draws a filled ring (or solid filled circle if the inside diameter is set to 0), often used to mark rebar cross-sections in civil drawings or as a filled indicator dot.</p>
+      <ul class="key-points">
+        <li>Type <code>POINT</code> or <code>PO</code>, then click or type the coordinate. Use <code>DDPTYPE</code> to change the point's display style/size.</li>
+        <li>Type <code>DONUT</code>, enter the inside diameter, then the outside diameter, then pick the centre point(s).</li>
+      </ul>
+      <pre class="code">Command: DONUT
+Specify inside diameter of donut &lt;0.5000&gt;: 0
+Specify outside diameter of donut &lt;1.0000&gt;: 10
+Specify center of donut or &lt;exit&gt;: 30,30   (draws a solid filled dot)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>17. HATCH (Shortcut: H)</h4>
+      <p>Fills a bounded, enclosed area with a repeating pattern &ndash; used to show sectioned material in mechanical drawings and materials like brickwork, earth, or concrete in civil drawings.</p>
+      <ul class="key-points">
+        <li>Type <code>HATCH</code> or <code>H</code>; the Hatch Creation ribbon tab opens.</li>
+        <li>Choose a Pattern (e.g. ANSI31 diagonal lines for metal sections, AR-BRSTD for brick, EARTH for soil).</li>
+        <li>Set the Scale of the pattern to suit the drawing size.</li>
+        <li>Click inside the closed boundary you want filled (Pick Points), or select the bounding objects directly (Select Objects).</li>
+        <li>Press Enter to apply.</li>
+      </ul>
+      <pre class="code">Command: HATCH
+Pick internal point or [Select objects]: (click inside the closed boundary)
+Pattern: ANSI31   Scale: 1   Angle: 0
+Press Enter to accept</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>18. REGION &amp; BOUNDARY</h4>
+      <p>REGION converts a closed 2D shape (made of lines/arcs/polylines) into a single 2D solid area object, which can then have its area/centroid properties queried, and can be combined with other regions using Union, Subtract, or Intersect. BOUNDARY automatically traces a closed polyline or region from overlapping/enclosing objects by clicking a point inside them.</p>
+      <ul class="key-points">
+        <li>Type <code>REGION</code>, select the closed set of objects, press Enter.</li>
+        <li>Type <code>BOUNDARY</code>, click inside an enclosed area to auto-generate its outline as a new object.</li>
+      </ul>
+      <pre class="code">Command: REGION
+Select objects: (select the 4 lines forming a closed rectangle)
+Select objects: Enter
+1 loop extracted. 1 Region created.</pre>
+    </div>
+
+    <h2 class="part-title">Part C &mdash; Modify Commands</h2>
+
+    <div class="topic-note">
+      <h4>19. MOVE (Shortcut: M)</h4>
+      <p>Relocates one or more selected objects from one place to another without changing their size, shape, or rotation.</p>
+      <ul class="key-points">
+        <li>Type <code>MOVE</code> or <code>M</code>, select the object(s), press Enter.</li>
+        <li>Specify a base point (a point on the object to move from).</li>
+        <li>Specify the destination point, or type a relative displacement.</li>
+      </ul>
+      <pre class="code">Command: MOVE
+Select objects: (select the object)
+Select objects: Enter
+Specify base point: (click a corner of the object)
+Specify second point: @50,0    (moves the object 50 units to the right)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>20. COPY (Shortcut: CO or CP)</h4>
+      <p>Creates one or more duplicate copies of selected objects, leaving the originals in place. Works identically to MOVE but keeps the source object.</p>
+      <ul class="key-points">
+        <li>Type <code>COPY</code> or <code>CO</code>, select object(s), press Enter.</li>
+        <li>Specify a base point, then the destination point(s) &ndash; multiple copies can be placed one after another until Enter/Esc is pressed.</li>
+      </ul>
+      <pre class="code">Command: COPY
+Select objects: (select the object)
+Select objects: Enter
+Specify base point: 0,0
+Specify second point: @0,40
+Specify second point: @0,80    (a second copy placed further along)
+Specify second point: Enter</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>21. ROTATE (Shortcut: RO)</h4>
+      <p>Turns selected objects around a fixed base point by a specified angle.</p>
+      <ul class="key-points">
+        <li>Type <code>ROTATE</code> or <code>RO</code>, select object(s), press Enter.</li>
+        <li>Specify the base point (the pivot point).</li>
+        <li>Enter the rotation angle (positive = counter-clockwise), or type <code>C</code> to copy while rotating (Copy option), or <code>R</code> to reference an existing angle and rotate to a new one.</li>
+      </ul>
+      <pre class="code">Command: ROTATE
+Select objects: (select the object)
+Select objects: Enter
+Specify base point: (click the pivot point)
+Specify rotation angle or [Copy/Reference]: 45</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>22. SCALE (Shortcut: SC)</h4>
+      <p>Enlarges or reduces selected objects uniformly (equally in X and Y) about a chosen base point.</p>
+      <ul class="key-points">
+        <li>Type <code>SCALE</code> or <code>SC</code>, select object(s), press Enter.</li>
+        <li>Specify the base point.</li>
+        <li>Enter a scale factor (e.g. 2 = double size, 0.5 = half size), or type <code>R</code> to scale by reference length.</li>
+      </ul>
+      <pre class="code">Command: SCALE
+Select objects: (select the object)
+Select objects: Enter
+Specify base point: (click reference point)
+Specify scale factor or [Copy/Reference]: 0.5</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>23. MIRROR (Shortcut: MI)</h4>
+      <p>Creates a mirrored (flipped) copy of selected objects across a mirror line, ideal for symmetrical parts and layouts (e.g. mirroring half a bracket to complete it, or mirroring a room layout).</p>
+      <ul class="key-points">
+        <li>Type <code>MIRROR</code> or <code>MI</code>, select object(s), press Enter.</li>
+        <li>Specify the first point of the mirror line, then the second point (use Ortho for a perfectly vertical/horizontal mirror line).</li>
+        <li>Choose whether to erase the original object (type <code>Y</code>) or keep it (type <code>N</code>, the default).</li>
+      </ul>
+      <pre class="code">Command: MIRROR
+Select objects: (select the half-shape)
+Select objects: Enter
+Specify first point of mirror line: 60,0
+Specify second point of mirror line: 60,100
+Erase source objects? [Yes/No] &lt;N&gt;: N</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>24. OFFSET (Shortcut: O)</h4>
+      <p>Creates a new parallel copy of a line, polyline, circle, or arc at a specified distance &ndash; extremely useful for creating wall thicknesses in civil plans or parallel outlines in mechanical parts.</p>
+      <ul class="key-points">
+        <li>Type <code>OFFSET</code> or <code>O</code>.</li>
+        <li>Enter the offset distance.</li>
+        <li>Select the object to offset, then click on the side where the copy should appear.</li>
+        <li>Repeat for other objects, or press Enter/Esc to finish.</li>
+      </ul>
+      <pre class="code">Command: OFFSET
+Specify offset distance or [Through/Erase/Layer] &lt;1.0000&gt;: 230   (e.g. 230mm wall thickness)
+Select object to offset or &lt;exit&gt;: (click the wall line)
+Specify point on side to offset: (click outside the wall to offset outward)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>25. TRIM (Shortcut: TR)</h4>
+      <p>Cuts and removes the portion of an object that extends past a chosen cutting-edge boundary, keeping only the required part.</p>
+      <ul class="key-points">
+        <li>Type <code>TRIM</code> or <code>TR</code>, select the cutting-edge object(s), press Enter (or just press Enter to select all as possible edges).</li>
+        <li>Click on the part of the object(s) you want removed &ndash; repeat for multiple trims.</li>
+        <li>Hold Shift while clicking to instead extend an object (switches to Extend behaviour temporarily).</li>
+      </ul>
+      <pre class="code">Command: TRIM
+Select cutting edges ...
+Select objects or &lt;select all&gt;: (select the boundary line)
+Select objects: Enter
+Select object to trim or shift-select to extend: (click the overhanging part to delete)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>26. EXTEND (Shortcut: EX)</h4>
+      <p>Lengthens a selected object until it meets a chosen boundary edge &ndash; the exact opposite operation to TRIM.</p>
+      <ul class="key-points">
+        <li>Type <code>EXTEND</code> or <code>EX</code>, select the boundary edge object(s), press Enter.</li>
+        <li>Click on the object that needs to be stretched out to meet that boundary.</li>
+        <li>Hold Shift while clicking to instead trim (switches to Trim behaviour temporarily).</li>
+      </ul>
+      <pre class="code">Command: EXTEND
+Select boundary edges ...
+Select objects or &lt;select all&gt;: (select the boundary line)
+Select objects: Enter
+Select object to extend or shift-select to trim: (click the short line to stretch it to the boundary)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>27. FILLET (Shortcut: F)</h4>
+      <p>Joins two lines (or other objects) with a smooth rounded arc of a specified radius at their corner &ndash; used for rounded corners on mechanical parts (avoiding stress concentration) and rounded plan corners in civil work.</p>
+      <ul class="key-points">
+        <li>Type <code>FILLET</code> or <code>F</code>.</li>
+        <li>Type <code>R</code> to set the fillet radius, enter the value.</li>
+        <li>Click the first object, then click the second object &ndash; AutoCAD automatically trims/extends and adds the rounded corner.</li>
+        <li>Setting radius to 0 creates a sharp square corner instead (useful for squaring off a corner).</li>
+      </ul>
+      <pre class="code">Command: FILLET
+Select first object or [Undo/Polyline/Radius/Trim/Multiple]: R
+Specify fillet radius &lt;0.0000&gt;: 10
+Select first object: (click line 1)
+Select second object: (click line 2)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>28. CHAMFER (Shortcut: CHA)</h4>
+      <p>Joins two lines with a flat angled bevel edge instead of a curve &ndash; standard on mechanical parts to remove sharp edges and ease assembly.</p>
+      <ul class="key-points">
+        <li>Type <code>CHAMFER</code> or <code>CHA</code>.</li>
+        <li>Type <code>D</code> to set two chamfer distances (or <code>A</code> for a distance + angle method), enter the values.</li>
+        <li>Click the first line, then click the second line.</li>
+      </ul>
+      <pre class="code">Command: CHAMFER
+Select first line or [Undo/Polyline/Distance/Angle/Trim/Method/Multiple]: D
+Specify first chamfer distance &lt;0.0000&gt;: 5
+Specify second chamfer distance &lt;5.0000&gt;: 5
+Select first line: (click line 1)
+Select second line: (click line 2)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>29. ARRAY &ndash; Rectangular, Polar, Path (Shortcut: AR)</h4>
+      <p>Creates multiple evenly-spaced copies of an object in one operation. Three types are available depending on the pattern needed.</p>
+      <ul class="key-points">
+        <li><b>Rectangular Array (ARRAYRECT)</b> &ndash; copies arranged in rows and columns (e.g. a grid of columns in a civil plan, or a grid of holes).</li>
+        <li><b>Polar Array (ARRAYPOLAR)</b> &ndash; copies arranged evenly around a centre point (e.g. bolt holes around a circular flange).</li>
+        <li><b>Path Array (ARRAYPATH)</b> &ndash; copies distributed evenly along a curve or path (e.g. railing balusters along a staircase edge).</li>
+      </ul>
+      <pre class="code">Command: ARRAYRECT
+Select objects: (select the hole)
+Select objects: Enter
+Type = Rectangular
+Specify number of columns: 4     Specify column spacing: 30
+Specify number of rows: 3        Specify row spacing: 30
+
+Command: ARRAYPOLAR
+Select objects: (select the bolt hole)
+Specify center point of array: 0,0     (flange centre)
+Enter number of items: 6
+Specify angle to fill &lt;360&gt;: 360</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>30. STRETCH (Shortcut: S)</h4>
+      <p>Moves the vertices/endpoints of objects caught inside a crossing selection window, while leaving fully-enclosed objects untouched &ndash; used to resize part of a shape without redrawing it, e.g. lengthening one wall of a room.</p>
+      <ul class="key-points">
+        <li>Type <code>STRETCH</code> or <code>S</code>.</li>
+        <li>Select objects using a crossing window (drag right-to-left) that only partially encloses the geometry to be stretched.</li>
+        <li>Specify a base point, then the displacement point.</li>
+      </ul>
+      <pre class="code">Command: STRETCH
+Select objects to stretch by crossing-window or crossing-polygon...
+Select objects: (drag a crossing window over the wall's end)
+Select objects: Enter
+Specify base point: (click a reference point)
+Specify second point: @500,0    (extends the wall by 500 units)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>31. BREAK (Shortcut: BR)</h4>
+      <p>Splits an object into two, or removes a section between two picked points &ndash; used to insert a gap in a line for a wall opening, or to separate an object for editing.</p>
+      <ul class="key-points">
+        <li>Type <code>BREAK</code> or <code>BR</code>, select the object at the first break point.</li>
+        <li>Specify the second break point (or type <code>F</code> to redefine the first point precisely).</li>
+        <li>"Break at Point" (a separate tool) splits an object into two with no gap at all.</li>
+      </ul>
+      <pre class="code">Command: BREAK
+Select object: (click the line at the first break point)
+Specify second break point [First point]: (click the second break point)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>32. JOIN (Shortcut: J)</h4>
+      <p>Combines two or more separate but aligned/collinear objects (lines, arcs, polylines) into a single continuous object &ndash; the reverse operation of BREAK or EXPLODE.</p>
+      <ul class="key-points">
+        <li>Type <code>JOIN</code> or <code>J</code>.</li>
+        <li>Select the objects to be joined (they must be collinear for lines, or share endpoints).</li>
+        <li>Press Enter to merge them into one object.</li>
+      </ul>
+      <pre class="code">Command: JOIN
+Select source object or multiple objects to join at once: (select all line segments)
+Select objects to join: Enter
+3 lines joined into 1 line.</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>33. EXPLODE (Shortcut: X)</h4>
+      <p>Breaks a compound object (polyline, rectangle, block, hatch, dimension) down into its individual, separate basic components (lines/arcs). Used when a single part of a combined object needs to be edited independently.</p>
+      <ul class="key-points">
+        <li>Type <code>EXPLODE</code> or <code>X</code>, select the object(s), press Enter.</li>
+        <li>Note: exploding removes special properties like polyline width or block attribute values.</li>
+      </ul>
+      <pre class="code">Command: EXPLODE
+Select objects: (select the rectangle)
+Select objects: Enter    (the rectangle becomes 4 separate lines)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>34. MATCH PROPERTIES (Shortcut: MA)</h4>
+      <p>Copies the properties (layer, colour, linetype, lineweight, and for text/dimensions, style) from one "source" object onto other "destination" objects &ndash; a fast way to make objects consistent without manually changing each property.</p>
+      <ul class="key-points">
+        <li>Type <code>MATCHPROP</code> or <code>MA</code>.</li>
+        <li>Click the source object (the one with the correct properties).</li>
+        <li>Click each destination object that should take on those same properties.</li>
+      </ul>
+      <pre class="code">Command: MATCHPROP
+Select source object: (click the correctly-formatted line)
+Select destination object(s): (click the objects to update)
+Select destination object(s): Enter</pre>
+    </div>
+
+    <h2 class="part-title">Part D &mdash; Annotation: Text &amp; Dimensioning</h2>
+
+    <div class="topic-note">
+      <h4>35. Single Line Text (DTEXT / TEXT)</h4>
+      <p>Places one or more independent lines of text, where each line is a separate text object &ndash; suited for short labels such as room names or part numbers.</p>
+      <ul class="key-points">
+        <li>Type <code>DTEXT</code> (or <code>TEXT</code>), specify the start point.</li>
+        <li>Enter the text height, then the rotation angle.</li>
+        <li>Type the text; press Enter to move to a new line, press Enter twice (or Esc) to finish.</li>
+      </ul>
+      <pre class="code">Command: DTEXT
+Specify start point of text: 10,10
+Specify height &lt;2.5000&gt;: 5
+Specify rotation angle of text &lt;0&gt;: 0
+Enter text: BEDROOM 1
+Enter text: Enter (twice to finish)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>36. Multiline Text &amp; Text Styles (MTEXT, STYLE)</h4>
+      <p>MTEXT creates a single paragraph-style text object that can wrap across multiple lines within a defined width &ndash; suited for notes, specifications, and title block text. STYLE lets you define the font, width factor, and obliquing angle used by text and dimensions.</p>
+      <ul class="key-points">
+        <li>Type <code>MTEXT</code> or <code>T</code>, drag out a text boundary box, then type the paragraph in the in-place editor.</li>
+        <li>Type <code>STYLE</code> to open the Text Style manager; set Font (e.g. Arial, Romans.shx for drafting), Height, and Width Factor.</li>
+      </ul>
+      <pre class="code">Command: MTEXT
+Specify first corner: 0,0
+Specify opposite corner: 100,20
+(Type paragraph text in the editor, e.g.:)
+NOTE: ALL DIMENSIONS ARE IN MILLIMETRES UNLESS OTHERWISE STATED.</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>37. Dimension Basics &amp; Dimension Style (DIMSTYLE)</h4>
+      <p>A dimension object records and displays a measured distance or angle automatically, made up of extension lines, dimension lines, arrowheads, and the dimension text. A Dimension Style controls how all of these look (arrow size, text height, units, precision) consistently across the whole drawing.</p>
+      <ul class="key-points">
+        <li>Type <code>DIMSTYLE</code> or <code>D</code> to open the Dimension Style Manager.</li>
+        <li>Click "New" to create a style, then configure: Lines (extension line offset), Symbols and Arrows (arrow size), Text (height, position), Primary Units (precision, e.g. 0.0).</li>
+        <li>Set this style "Current" before placing dimensions.</li>
+        <li>Mechanical drawings usually use 2 decimal precision in mm; civil drawings often use whole numbers in mm or metres to 2 decimals.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>38. Linear, Aligned &amp; Angular Dimensions</h4>
+      <p>These are the three most common dimension types for measuring straight distances and angles.</p>
+      <ul class="key-points">
+        <li><b>DIMLINEAR</b> &ndash; measures a purely horizontal or vertical distance between two points.</li>
+        <li><b>DIMALIGNED</b> &ndash; measures the true distance between two points along their own slanted direction (not forced horizontal/vertical).</li>
+        <li><b>DIMANGULAR</b> &ndash; measures the angle between two lines, or three points.</li>
+      </ul>
+      <pre class="code">Command: DIMLINEAR
+Specify first extension line origin: (click one endpoint)
+Specify second extension line origin: (click other endpoint)
+Specify dimension line location: (click to place the dimension line/text)
+
+Command: DIMANGULAR
+Select arc, circle, line, or &lt;specify vertex&gt;: (click first line)
+Select second line: (click second line)
+Specify dimension arc line location: (click to place)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>39. Radius, Diameter &amp; Leader Dimensions</h4>
+      <p>Used specifically for circular features (holes, fillets, shafts) and for pointing out notes on a specific feature.</p>
+      <ul class="key-points">
+        <li><b>DIMRADIUS</b> &ndash; labels the radius of a selected circle or arc, prefixed with "R".</li>
+        <li><b>DIMDIAMETER</b> &ndash; labels the diameter of a selected circle or arc, prefixed with the diameter symbol.</li>
+        <li><b>LEADER / QLEADER / MLEADER</b> &ndash; draws an arrow line from a feature to a text note placed alongside it, e.g. "4 HOLES, &Oslash;10" pointing at a bolt-hole pattern.</li>
+      </ul>
+      <pre class="code">Command: DIMDIAMETER
+Select arc or circle: (click the hole)
+Dimension text = 20
+Specify dimension line location: (click to place)
+
+Command: MLEADER
+Specify leader arrow location: (click near the feature)
+Specify leader landing location: (click where the text should sit)
+Type text: 4 HOLES, DIA 10 THRU</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>40. TABLE Command</h4>
+      <p>Inserts a formatted grid of rows and columns directly into the drawing &ndash; used for door/window schedules in civil drawings, and bill-of-materials/parts lists in mechanical drawings.</p>
+      <ul class="key-points">
+        <li>Type <code>TABLE</code>, set the number of columns and rows in the Insert Table dialog.</li>
+        <li>Click to place the table, then type directly into each cell (Tab moves to the next cell).</li>
+      </ul>
+      <pre class="code">Command: TABLE
+(Insert Table dialog: Columns = 4, Rows = 5)
+Specify insertion point: (click to place)
+(Type headers: MARK | DESCRIPTION | SIZE | QTY, then fill in each row)</pre>
+    </div>
+
+    <h2 class="part-title">Part E &mdash; Organization &amp; Output Tools</h2>
+
+    <div class="topic-note">
+      <h4>41. BLOCK &amp; INSERT</h4>
+      <p>A block is a group of objects combined and saved as a single reusable symbol within a drawing &ndash; for example a door symbol, a bolt symbol, or a north-arrow. Once defined, it can be inserted repeatedly at different locations, scales, and rotations, and if the block definition is edited, every inserted copy updates automatically.</p>
+      <ul class="key-points">
+        <li>Draw the symbol once, then type <code>BLOCK</code> (or <code>B</code>).</li>
+        <li>Give it a name, specify a base (insertion) point, then select the objects to include.</li>
+        <li>To place it elsewhere, type <code>INSERT</code>, choose the block name, set scale/rotation, and click to place.</li>
+      </ul>
+      <pre class="code">Command: BLOCK
+Name: DOOR-900
+Base point: (click the hinge point of the door)
+Select objects: (select the drawn door symbol)
+
+Command: INSERT
+Name: DOOR-900
+Specify insertion point: (click on the wall opening)
+Specify scale factor &lt;1&gt;: 1
+Specify rotation angle &lt;0&gt;: 90</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>42. WBLOCK &amp; Attributes (ATTDEF)</h4>
+      <p>WBLOCK ("Write Block") saves a block (or selected objects) out as its own separate DWG file on disk, so it can be reused across different drawings/projects, not just within the current file. ATTDEF (Attribute Definition) adds an editable text field to a block, such as a part number or room name, so every inserted copy can show different information while keeping the same graphic symbol.</p>
+      <ul class="key-points">
+        <li>Type <code>WBLOCK</code>, select the block/objects, choose a file location and name, click OK.</li>
+        <li>Type <code>ATTDEF</code> before creating the block: set a Tag (e.g. PARTNO), a Prompt (e.g. "Enter part number"), and a Default value.</li>
+        <li>Include the attribute text along with the graphics when running BLOCK, so it becomes part of the block definition.</li>
+      </ul>
+      <pre class="code">Command: ATTDEF
+Tag: PARTNO
+Prompt: Enter part number
+Default: PN-001
+(place the attribute text, then run BLOCK including this text + the symbol)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>43. Layouts &ndash; Model Space vs Paper Space</h4>
+      <p><b>Model Space</b> is where the actual drawing is created at true, real-world 1:1 scale. <b>Paper Space (Layout)</b> is a separate sheet representing the actual printed page (e.g. A3), onto which one or more scaled "windows" (viewports) into Model Space are placed, along with the title block, border, and drawing notes.</p>
+      <ul class="key-points">
+        <li>Click the "Layout1" tab at the bottom of the screen to switch to paper space.</li>
+        <li>Insert or draw a title block and border directly in the layout (it represents the physical sheet).</li>
+        <li>Use MVIEW (see next topic) to open a window showing the model space drawing at a controlled scale.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>44. Viewports (MVIEW)</h4>
+      <p>A viewport is a "window" placed inside a Layout that displays the Model Space drawing at a specific, locked scale &ndash; this is how a full-size drawing is correctly scaled down to fit on a printed sheet.</p>
+      <ul class="key-points">
+        <li>On a Layout tab, type <code>MVIEW</code>, then drag a rectangle to create the viewport window.</li>
+        <li>Double-click inside the viewport to enter it (border turns bold), then set the display scale from the Viewport Scale flyout in the status bar (e.g. 1:100 for a civil floor plan, 1:1 or 1:2 for a mechanical part).</li>
+        <li>Double-click outside the viewport to lock back into Paper Space.</li>
+        <li>Lock the viewport scale afterward to prevent accidental zooming from changing it.</li>
+      </ul>
+      <pre class="code">Command: MVIEW
+Specify corner of viewport: (click first corner)
+Specify opposite corner: (click opposite corner)
+(double-click inside -> set scale to 1:50 from the status bar scale list)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>45. PLOT / Printing a Drawing</h4>
+      <p>PLOT sends the finished drawing (usually from a Layout) to a printer/plotter or exports it as a PDF, at the correct paper size and scale.</p>
+      <ul class="key-points">
+        <li>Type <code>PLOT</code> (Ctrl+P), or click the Plot icon while on the Layout tab.</li>
+        <li>Choose the Printer/Plotter (or "DWG to PDF" for a digital file).</li>
+        <li>Set Paper Size (e.g. A3, A4) and Plot Area to "Layout".</li>
+        <li>Set Plot Scale to <code>1:1</code> when plotting a Layout (since the viewport already controls the model scale).</li>
+        <li>Click Preview to check, then click OK to plot.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part F &mdash; Mechanical Drawing Applications</h2>
+
+    <div class="topic-note">
+      <h4>46. Orthographic Projection Basics</h4>
+      <p>Orthographic projection represents a 3D object using multiple flat 2D views (Front View, Top View, Side View), each showing the object as seen from a different direction, aligned with each other. This is the core method for producing manufacturable mechanical drawings.</p>
+      <ul class="key-points">
+        <li><b>First Angle Projection</b> &ndash; the object is imagined between the observer and the plane. The Top View is placed <em>below</em> the Front View, and the Side View is placed to the <em>right</em>, viewed from the left. Standard in India, Europe, and most of Asia (symbol: truncated cone with wide end).</li>
+        <li><b>Third Angle Projection</b> &ndash; the plane is imagined between the observer and the object. The Top View is placed <em>above</em> the Front View. Standard in the USA and Canada (symbol: truncated cone with narrow end).</li>
+        <li>Views must always be drawn in alignment using vertical/horizontal construction (XLINE) so features line up correctly between views.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>47. Sectional Views</h4>
+      <p>A sectional view shows the object as if cut through by an imaginary cutting plane, revealing internal features (holes, ribs, wall thickness) that would otherwise be hidden. The cut surface is shown with hatching.</p>
+      <ul class="key-points">
+        <li>Decide the cutting plane location and draw a Cutting Plane Line (thick dashed/dash-dot line with arrows showing viewing direction), labelled e.g. A-A.</li>
+        <li>Draw the sectional view as a separate view showing what is revealed by that cut.</li>
+        <li>Apply <code>HATCH</code> (typically ANSI31 pattern for metal) to all solid material surfaces that the cutting plane passes through.</li>
+        <li>Ribs, webs, and shafts are conventionally NOT hatched even if the cutting plane passes along their length.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>48. Dimensioning Standards for Mechanical Drawings</h4>
+      <p>Mechanical dimensioning must clearly and unambiguously define every size needed to manufacture the part, following standard conventions.</p>
+      <ul class="key-points">
+        <li>Dimension lines should not cross each other; place smaller dimensions closer to the object, larger overall dimensions further out.</li>
+        <li>Diameters are marked with the &Oslash; symbol (DIMDIAMETER); radii with "R" (DIMRADIUS).</li>
+        <li>Tolerances specify the permitted variation in a dimension, e.g. <code>50 &plusmn;0.05</code>, entered in the Dimension Style's Tolerance tab or typed directly into the dimension text.</li>
+        <li>Surface finish, material, and general tolerance notes are added as MTEXT notes near the title block.</li>
+        <li>A standard title block (drawn once, saved as a block) should include: Part Name, Material, Scale, Drawn By, Date, and Drawing Number.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>49. Standard Mechanical Symbols &amp; Line Types</h4>
+      <ul class="key-points">
+        <li><b>Continuous thick line</b> &ndash; visible outlines and edges.</li>
+        <li><b>Continuous thin line</b> &ndash; dimension lines, extension lines, leader lines, hatching.</li>
+        <li><b>Dashed line (HIDDEN linetype)</b> &ndash; edges/features hidden behind the visible surface.</li>
+        <li><b>Centre line (CENTER linetype, thin)</b> &ndash; axes of symmetry, hole centres, shaft centrelines &ndash; alternating long-short dashes.</li>
+        <li><b>&Oslash;</b> before a value = diameter; <b>R</b> before a value = radius; <b>&plusmn;</b> = tolerance; <b>&deg;</b> = degrees.</li>
+      </ul>
+    </div>
+
+    <h3>Mechanical Assignments with Solutions</h3>
+
+    <div class="assign-block">
+      <h4>Assignment M1 &mdash; Draw a Hexagonal Bolt Head (Top View)</h4>
+      <p><b>Task:</b> Draw the top view of a hexagonal bolt head with an across-flats size of 24mm, with a Ø10mm through-hole at its centre, fully dimensioned.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Set OUTLINE as current layer.
+2. Draw the hexagon:
+   Command: POLYGON
+   Enter number of sides &lt;4&gt;: 6
+   Specify center of polygon: 0,0
+   Enter an option [Inscribed/Circumscribed] &lt;I&gt;: C
+   Specify radius of circle: 12          (12 = half of 24mm across-flats)
+
+3. Draw the centre hole:
+   Command: CIRCLE
+   Specify center point: 0,0
+   Specify radius: 5                     (Ø10mm hole)
+
+4. Switch to CENTRE layer and draw two centre lines through 0,0
+   (one horizontal, one vertical, extending 4mm past the hexagon).
+
+5. Switch to DIMENSION layer.
+   Command: DIMDIAMETER  -> select the circle -> places "Ø10"
+   Command: DIMLINEAR    -> pick two opposite flats -> places "24" across flats
+
+6. Add note using MTEXT below the view: "HEXAGON BOLT HEAD - A/F 24, Ø10 THRU"</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment M2 &mdash; Draw a Flanged Shaft Coupling (Front View)</h4>
+      <p><b>Task:</b> Draw the front (circular) view of a flange coupling: outer flange diameter 100mm, shaft bore Ø30mm, and 4 equally-spaced bolt holes of Ø8mm on a 70mm pitch-circle diameter.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Draw the outer flange:
+   Command: CIRCLE -> Center: 0,0 -> Radius: 50        (Ø100mm outer flange)
+
+2. Draw the shaft bore:
+   Command: CIRCLE -> Center: 0,0 -> Radius: 15         (Ø30mm bore)
+
+3. Draw the pitch-circle diameter as a construction reference (CENTRE layer):
+   Command: CIRCLE -> Center: 0,0 -> Radius: 35         (70mm PCD, thin centre line)
+
+4. Draw ONE bolt hole on the pitch circle:
+   Command: CIRCLE -> Center: 0,35 -> Radius: 4         (Ø8mm hole, placed at top)
+
+5. Array the hole around the centre using Polar Array:
+   Command: ARRAYPOLAR
+   Select objects: (select the Ø8 hole)
+   Specify center point of array: 0,0
+   Enter number of items: 4
+   Specify angle to fill &lt;360&gt;: 360
+
+6. Add centre lines through the shaft bore (horizontal + vertical, CENTRE layer).
+
+7. Dimension: DIMDIAMETER on outer flange (Ø100), DIMDIAMETER on bore (Ø30),
+   DIMDIAMETER on one bolt hole (Ø8), and DIMLINEAR/leader noting "PCD 70, 4 HOLES EQUI-SPACED".</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment M3 &mdash; Draw a Machine Bracket with Fillets and Holes</h4>
+      <p><b>Task:</b> Draw an L-shaped mounting bracket, 100mm x 80mm overall, arm thickness 15mm, with 5mm fillets at all internal corners and two Ø8mm mounting holes.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Draw the outer L-shape outline using LINE with relative coordinates:
+   Command: LINE
+   Specify first point: 0,0
+   Specify next point: @100,0
+   Specify next point: @0,15
+   Specify next point: @-85,0
+   Specify next point: @0,65
+   Specify next point: @-15,0
+   Specify next point: C
+
+2. Round the internal corner with FILLET:
+   Command: FILLET -> R -> 5
+   Select first object: (inner vertical edge)
+   Select second object: (inner horizontal edge)
+
+3. Round the two external base corners the same way (radius 5).
+
+4. Add two mounting holes:
+   Command: CIRCLE -> Center: 20,20 -> Radius: 4         (Ø8mm)
+   Command: COPY   -> select the hole -> base point 20,20 -> second point: 80,50
+
+5. Add centre lines (CENTRE layer) through both holes.
+
+6. Dimension overall length (100), overall height (80), arm thickness (15),
+   fillet radius (R5, using DIMRADIUS), hole diameters (Ø8, DIMDIAMETER),
+   and hole position dimensions using DIMLINEAR from the base edges.</pre>
+    </div>
+
+    <h2 class="part-title">Part G &mdash; Civil Drawing Applications</h2>
+
+    <div class="topic-note">
+      <h4>50. Civil Drawing Types: Plan, Elevation, Section</h4>
+      <ul class="key-points">
+        <li><b>Plan</b> &ndash; a top-down (bird's eye) view of a building floor, showing walls, doors, windows, and room layout, as if a horizontal cut was taken about 1m above floor level.</li>
+        <li><b>Elevation</b> &ndash; a straight-on view of one exterior face (front/side/rear) of a building, showing height, window/door positions, and roof outline.</li>
+        <li><b>Section</b> &ndash; a vertical cut through the building showing floor-to-floor heights, foundation depth, and internal construction details.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>51. Scale in Civil Drawings</h4>
+      <p>Because buildings are far too large to draw at real size on paper, civil drawings are always drawn full-size (1:1) in Model Space, then plotted at a reduced scale through the Layout viewport.</p>
+      <ul class="key-points">
+        <li>Site/Layout plans: commonly 1:200 or 1:500.</li>
+        <li>Floor plans, elevations, sections: commonly 1:50 or 1:100.</li>
+        <li>Detail drawings (door/window/foundation details): commonly 1:10 or 1:20.</li>
+        <li>Always draw at true size (1:1) in Model Space &ndash; scale is only applied when setting up the viewport in the Layout (see Section 44).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>52. Civil Drafting Symbols &amp; Conventions</h4>
+      <ul class="key-points">
+        <li><b>Walls</b> &ndash; drawn as two parallel lines (OFFSET) at true wall thickness (e.g. 230mm brick wall), often filled with a hatch pattern in section.</li>
+        <li><b>Doors</b> &ndash; shown as a break in the wall with a line (the door leaf) and a quarter-circle arc (ARC) showing the swing path.</li>
+        <li><b>Windows</b> &ndash; shown as a break in the wall with two/three parallel lines across the opening.</li>
+        <li><b>North Arrow</b> &ndash; a symbol block placed on site/floor plans indicating true north orientation.</li>
+        <li><b>Grid/Axis lines</b> &ndash; centre lines (labelled 1,2,3... and A,B,C...) used to locate columns and structural elements consistently across all drawings.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>53. Wall, Door &amp; Window Representation &ndash; Method</h4>
+      <p>The standard method for drawing walls with door and window openings combines OFFSET, TRIM/BREAK, and ARC.</p>
+      <ul class="key-points">
+        <li>Draw the wall centre line first (single LINE, on a Grid/Axis layer).</li>
+        <li>OFFSET it by half the wall thickness on each side to get the two wall faces.</li>
+        <li>At each opening location, use BREAK (or TRIM with construction lines) to remove the wall lines across the opening width.</li>
+        <li>For a door: draw the door leaf as a short LINE at the opening edge, then draw its swing arc with ARC (centre at the hinge point, radius = door width).</li>
+        <li>For a window: draw two/three short parallel LINEs across the opening gap.</li>
+      </ul>
+    </div>
+
+    <h3>Civil Assignments with Solutions</h3>
+
+    <div class="assign-block">
+      <h4>Assignment C1 &mdash; Draw a Simple Room Floor Plan</h4>
+      <p><b>Task:</b> Draw the plan of a single room, 4m x 3.5m internal size, 230mm thick walls, with one 900mm door and one 1200mm window, fully dimensioned. (Draw at 1:1 in mm: 4000 x 3500.)</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Set WALLS as current layer. Draw the wall centre-line rectangle:
+   Command: RECTANG
+   Specify first corner point: 0,0
+   Specify other corner point: @4230,3730     (internal size + wall thickness)
+
+2. Offset the outline to create wall thickness (230mm wall = 115mm each side):
+   Command: OFFSET -> distance 115 -> select each edge -> offset outward
+   Command: OFFSET -> distance 115 -> select each edge -> offset inward
+   (Result: two parallel rectangles representing the inner and outer wall faces)
+
+3. Create the door opening on the bottom wall:
+   Command: BREAK
+   Select object: (click the bottom wall line)
+   Specify second break point: (click 900mm along, using OSNAP + typed distance)
+   (repeat BREAK on both the inner and outer wall lines at the same location)
+
+4. Draw the door leaf and swing:
+   Command: LINE -> from the opening edge, length 900mm, perpendicular to wall
+   Command: ARC -> Center: hinge point -> Start: door leaf end -> Included angle: 90
+
+5. Create the window opening on the side wall using BREAK the same way (1200mm wide),
+   then draw 2 short parallel LINEs across the gap to represent the window.
+
+6. Switch to DIMENSION layer:
+   DIMLINEAR along each internal wall face -> 4000 and 3500
+   DIMLINEAR across the door opening -> 900
+   DIMLINEAR across the window opening -> 1200
+
+7. Add room label with DTEXT: "BEDROOM  4.0m x 3.5m" placed at the room centre.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment C2 &mdash; Draw a Building Elevation</h4>
+      <p><b>Task:</b> Draw the front elevation of a single-storey building, 8m wide, plinth height 0.6m, wall height 3m above plinth, with one door (1m x 2.1m) and two windows (1.2m x 1.2m, sill height 0.9m).</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Set OUTLINE as current layer. Draw the ground/plinth reference line:
+   Command: LINE -> 0,0 to 8000,0            (ground line)
+
+2. Draw the plinth line 600mm above ground:
+   Command: LINE -> 0,600 to 8000,600
+
+3. Draw the main building outline up to the eave/roof line:
+   Command: RECTANG -> First corner: 0,600 -> Other corner: @8000,3000
+   (wall height 3000mm above plinth)
+
+4. Draw the door: positioned 1000mm from the left wall, on the plinth line.
+   Command: RECTANG -> First corner: 1000,600 -> Other corner: @1000,2100
+
+5. Draw window 1: sill height 900mm above plinth = 1500mm above ground.
+   Command: RECTANG -> First corner: 3000,1500 -> Other corner: @1200,1200
+
+6. Copy the window for the second opening:
+   Command: COPY -> select window 1 -> base point (any corner) -> @2500,0
+
+7. Add a simple sloped roof outline on top using LINE from each top corner
+   meeting at a ridge point above the centre.
+
+8. Dimension overall width (8000), plinth height (600), wall height (3000),
+   door size (1000 x 2100), window size (1200 x 1200), and sill height (900)
+   using DIMLINEAR, placed outside the elevation outline.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment C3 &mdash; Draw a Site / Layout Plan with Setbacks</h4>
+      <p><b>Task:</b> A rectangular plot is 15m x 20m. Draw the plot boundary and the building footprint (10m x 12m) respecting a 3m front setback, 2m rear setback, and 1.5m side setbacks on both sides.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Set a "PLOT-BOUNDARY" layer current. Draw the plot boundary:
+   Command: RECTANG
+   Specify first corner point: 0,0
+   Specify other corner point: @15000,20000        (15m x 20m plot, in mm)
+
+2. Offset the boundary inward to mark each setback line (construction/reference lines):
+   Command: OFFSET -> distance 1500 -> select LEFT edge -> offset inward   (side setback)
+   Command: OFFSET -> distance 1500 -> select RIGHT edge -> offset inward  (side setback)
+   Command: OFFSET -> distance 3000 -> select FRONT edge -> offset inward  (front setback)
+   Command: OFFSET -> distance 2000 -> select REAR edge -> offset inward   (rear setback)
+
+3. Use these four offset lines as guides: switch to BUILDING layer and draw
+   the 10m x 12m building footprint rectangle using OSNAP Intersection to
+   snap exactly to where the setback guide lines cross, confirming it fits
+   within the buildable area.
+   Command: RECTANG -> First corner: (snap to front-left setback intersection)
+                    -> Other corner: @10000,12000
+
+4. Delete or freeze the construction/setback guide lines once the building
+   rectangle is confirmed correctly placed (or keep them on a non-plotting layer).
+
+5. Dimension: plot boundary (15000 x 20000), building footprint (10000 x 12000),
+   and each setback distance (1500, 1500, 3000, 2000) using DIMLINEAR.
+
+6. Insert a North Arrow block at the top corner of the plot, and label the
+   plot with MTEXT: "PLOT NO. __ , AREA = 300 SQ.M".</pre>
+    </div>
+
+    <h2 class="part-title">Part H &mdash; Additional Practice Assignments</h2>
+
+    <div class="assign-block">
+      <h4>Assignment P1 &mdash; Bearing Housing (Mechanical, Hatch + Dimension Practice)</h4>
+      <div class="badge-row"><span class="badge mech">Mechanical</span></div>
+      <p><b>Task:</b> Draw a front sectional view of a bearing housing block: 60mm x 60mm square block, Ø30mm bore through the centre, section-hatched, fully dimensioned.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Command: RECTANG -> 0,0 to @60,60                     (outer block)
+2. Command: CIRCLE  -> Center: 30,30 -> Radius: 15        (Ø30 bore)
+3. Command: FILLET  -> R -> 6 -> apply to all 4 outer corners
+4. Command: HATCH   -> Pattern ANSI31 -> Scale 1
+   Pick internal point: (click the solid material area between the
+   square outline and the circle - NOT inside the bore itself)
+5. Draw centre lines through the bore centre (CENTRE layer).
+6. Dimension: DIMLINEAR for 60 x 60 outer size, DIMDIAMETER for Ø30 bore,
+   DIMRADIUS for R6 corner fillets.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment P2 &mdash; Dog-Leg Staircase Plan (Civil, Array + Offset Practice)</h4>
+      <div class="badge-row"><span class="badge civil">Civil</span></div>
+      <p><b>Task:</b> Draw the plan of a straight staircase flight: overall run 2400mm, 12 steps of 200mm tread width each, flight width 1000mm.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Command: RECTANG -> 0,0 to @2400,1000       (overall staircase outline)
+2. Draw ONE riser line (a single LINE) at the very first step edge:
+   Command: LINE -> 0,0 to @0,1000
+3. Array the riser line along the length using Rectangular Array:
+   Command: ARRAYRECT
+   Select objects: (select the riser line)
+   Type = Rectangular, Columns = 12, Column spacing = 200, Rows = 1
+4. Add an arrow (LINE + small triangle, or a leader) along the centre of the
+   flight showing the "UP" direction, labelled with DTEXT "UP".
+5. Dimension overall length (2400), individual tread width (200, one dimension
+   is enough with a note "12 TREADS @ 200 = 2400"), and flight width (1000).</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment P3 &mdash; Gasket Plate with Bolt Holes (Mechanical, Polar Array Practice)</h4>
+      <div class="badge-row"><span class="badge mech">Mechanical</span></div>
+      <p><b>Task:</b> Draw a circular gasket plate, outer diameter 120mm, centre hole Ø50mm, with 8 equally-spaced Ø6mm bolt holes on a 100mm pitch circle diameter.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Command: CIRCLE -> Center: 0,0 -> Radius: 60      (Ø120 outer plate)
+2. Command: CIRCLE -> Center: 0,0 -> Radius: 25      (Ø50 centre hole)
+3. Command: CIRCLE -> Center: 0,50 -> Radius: 3      (one Ø6 bolt hole on the 100mm PCD, placed at top)
+4. Command: ARRAYPOLAR
+   Select objects: (select the Ø6 hole)
+   Specify center point of array: 0,0
+   Enter number of items: 8
+   Specify angle to fill &lt;360&gt;: 360
+5. Draw a thin CENTRE-layer circle at radius 50 to show the pitch circle diameter.
+6. Dimension: DIMDIAMETER for outer plate (Ø120) and centre hole (Ø50),
+   DIMDIAMETER for one bolt hole (Ø6), and a leader note "8 HOLES ON PCD 100".</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment P4 &mdash; Compound Wall Layout (Civil, Offset + Dimension Practice)</h4>
+      <div class="badge-row"><span class="badge civil">Civil</span></div>
+      <p><b>Task:</b> Draw a compound (boundary) wall plan around a 20m x 15m plot, wall thickness 230mm, with one 3m wide gate opening on the front side.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Command: RECTANG -> 0,0 to @20000,15000          (plot boundary centre-line)
+2. Command: OFFSET -> distance 115 -> select each edge -> offset outward (outer wall face)
+3. Command: OFFSET -> distance 115 -> select each edge -> offset inward  (inner wall face)
+4. On the front wall, mark the gate opening 3000mm wide, centred:
+   Command: BREAK
+   Select object: (front outer wall line)
+   Specify second break point: (click 3000mm gap, centred along the front wall)
+   (repeat BREAK on the inner wall line at the same location)
+5. Draw two short return-wall end caps (LINE) at each side of the gate opening
+   connecting the inner and outer wall faces.
+6. Dimension overall plot size (20000 x 15000), wall thickness (230),
+   and the gate opening width (3000) using DIMLINEAR.</pre>
+    </div>
+
+    <h3>Quick Command Reference Table</h3>
+    <div class="topic-note">
+      <table class="quick-ref">
+        <tr><th>Command</th><th>Shortcut</th><th>Category</th><th>Function</th></tr>
+        <tr><td>LINE</td><td>L</td><td>Draw</td><td>Straight line segments</td></tr>
+        <tr><td>PLINE</td><td>PL</td><td>Draw</td><td>Connected line/arc as one object</td></tr>
+        <tr><td>RECTANG</td><td>REC</td><td>Draw</td><td>Rectangle</td></tr>
+        <tr><td>POLYGON</td><td>POL</td><td>Draw</td><td>Regular polygon</td></tr>
+        <tr><td>CIRCLE</td><td>C</td><td>Draw</td><td>Circle</td></tr>
+        <tr><td>ARC</td><td>A</td><td>Draw</td><td>Curved arc segment</td></tr>
+        <tr><td>ELLIPSE</td><td>EL</td><td>Draw</td><td>Ellipse / elliptical arc</td></tr>
+        <tr><td>SPLINE</td><td>SPL</td><td>Draw</td><td>Smooth free-form curve</td></tr>
+        <tr><td>HATCH</td><td>H</td><td>Draw</td><td>Fill a bounded area with a pattern</td></tr>
+        <tr><td>MOVE</td><td>M</td><td>Modify</td><td>Relocate objects</td></tr>
+        <tr><td>COPY</td><td>CO</td><td>Modify</td><td>Duplicate objects</td></tr>
+        <tr><td>ROTATE</td><td>RO</td><td>Modify</td><td>Turn objects about a point</td></tr>
+        <tr><td>SCALE</td><td>SC</td><td>Modify</td><td>Resize objects uniformly</td></tr>
+        <tr><td>MIRROR</td><td>MI</td><td>Modify</td><td>Flip a copy across a line</td></tr>
+        <tr><td>OFFSET</td><td>O</td><td>Modify</td><td>Parallel copy at set distance</td></tr>
+        <tr><td>TRIM</td><td>TR</td><td>Modify</td><td>Cut off object past a boundary</td></tr>
+        <tr><td>EXTEND</td><td>EX</td><td>Modify</td><td>Lengthen object to a boundary</td></tr>
+        <tr><td>FILLET</td><td>F</td><td>Modify</td><td>Round a corner</td></tr>
+        <tr><td>CHAMFER</td><td>CHA</td><td>Modify</td><td>Bevel a corner</td></tr>
+        <tr><td>ARRAYRECT/POLAR/PATH</td><td>AR</td><td>Modify</td><td>Multiple evenly-spaced copies</td></tr>
+        <tr><td>STRETCH</td><td>S</td><td>Modify</td><td>Move vertices in a crossing window</td></tr>
+        <tr><td>BREAK</td><td>BR</td><td>Modify</td><td>Split / remove part of an object</td></tr>
+        <tr><td>JOIN</td><td>J</td><td>Modify</td><td>Merge aligned objects into one</td></tr>
+        <tr><td>EXPLODE</td><td>X</td><td>Modify</td><td>Break a compound object apart</td></tr>
+        <tr><td>MATCHPROP</td><td>MA</td><td>Modify</td><td>Copy properties between objects</td></tr>
+        <tr><td>DTEXT / MTEXT</td><td>DT / T</td><td>Annotate</td><td>Single-line / paragraph text</td></tr>
+        <tr><td>DIMLINEAR/ALIGNED/ANGULAR</td><td>&mdash;</td><td>Annotate</td><td>Distance / angle dimensions</td></tr>
+        <tr><td>DIMRADIUS/DIAMETER</td><td>&mdash;</td><td>Annotate</td><td>Radius / diameter dimensions</td></tr>
+        <tr><td>MLEADER</td><td>&mdash;</td><td>Annotate</td><td>Arrow + note leader</td></tr>
+        <tr><td>LAYER</td><td>LA</td><td>Organize</td><td>Manage drawing layers</td></tr>
+        <tr><td>BLOCK / INSERT</td><td>B / I</td><td>Organize</td><td>Create / place reusable symbols</td></tr>
+        <tr><td>MVIEW</td><td>&mdash;</td><td>Output</td><td>Create a scaled layout viewport</td></tr>
+        <tr><td>PLOT</td><td>Ctrl+P</td><td>Output</td><td>Print / export the drawing</td></tr>
+      </table>
+    </div>
+
+    <div class="notes">
+      <strong>Exam Summary:</strong> AutoCAD 2D drafting is built on three pillars: <b>Draw</b> commands (Line, Polyline, Rectangle, Circle, Arc, Polygon, Ellipse, Spline, Hatch) to create geometry; <b>Modify</b> commands (Move, Copy, Rotate, Scale, Mirror, Offset, Trim, Extend, Fillet, Chamfer, Array, Stretch, Break, Join, Explode) to edit it accurately; and <b>Annotation/Organization</b> tools (Text, Dimensions, Layers, Blocks, Layouts, Plot) to document and output it correctly. Mechanical drawings apply these through orthographic projection, sectioning, and precise tolerance dimensioning; Civil drawings apply them through scaled plans, elevations, sections, and standard building conventions. Complete mastery requires practicing every command listed above and working through the Mechanical and Civil assignments until each can be reproduced independently.
+    </div>
+  </div>
+</body>
+</html>
