@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tally Prime Complete Notes for Beginners</title>
+  <title>Tally Prime Complete Job-Ready Course Notes</title>
   <style>
     :root {
       --paper-w: 210mm;
@@ -283,6 +283,12 @@
       letter-spacing: 0.2px;
     }
 
+    .badge.gst { color: #8a5c1f; border-color: #e3cfa8; background: #fdf6ea; }
+    .badge.inv { color: #1f7a4d; border-color: #b9dfc7; background: #ecfaf1; }
+    .badge.pay { color: #6a3b96; border-color: #d6c2ea; background: #f6f0fb; }
+    .badge.tds { color: #a13a3a; border-color: #e8b9b9; background: #fdf1f1; }
+    .badge.job { color: #b8590a; border-color: #f0cda3; background: #fff3e6; }
+
     .assign-block {
       border: 1px solid #d6e0ea;
       border-left: 2mm solid var(--accent-2);
@@ -348,8 +354,8 @@
         <img src="prathibha_logo.png" alt="Prathibha Logo" />
       </div>
       <div class="title-block">
-        <div class="title">Tally Prime Complete Notes</div>
-        <div class="subtitle">Accounting Basics &bull; Masters &bull; Vouchers &bull; GST &bull; Reports &bull; Assignments with Solutions</div>
+        <div class="title">Tally Prime Complete Course Notes</div>
+        <div class="subtitle">Accounting &bull; Inventory &bull; GST &bull; TDS &bull; Payroll &bull; Reports &mdash; Job-Ready Beginner Guide</div>
       </div>
     </div>
 
@@ -360,980 +366,1195 @@
     </div>
 
     <div class="instructions">
-      <b>Study Note:</b> These notes are written for complete beginners and cover the full Tally Prime syllabus in simple language &mdash; basic accounting concepts, company creation, all master types (Ledgers, Groups, Stock Items), every accounting and inventory voucher, GST setup and invoicing, all major financial reports, banking features, and keyboard shortcuts. Every topic includes a plain-language <b>definition</b>, the exact <b>menu path / steps</b> to do it in Tally Prime, and a <b>worked example</b>. Practical <b>assignments with full solutions</b> are provided at the end of major sections, followed by a Quick Shortcut Reference table.
+      <b>Study Note:</b> These notes take you from complete beginner to job-ready in Tally Prime. They cover everything a working Accounts Executive or Tally Operator uses daily &mdash; company setup, ledgers and stock masters, every accounting and inventory voucher, GST (including E-Way Bill and e-Invoice), TDS, Payroll, Cost Centres, Budgets, and every major report (including Outstanding Receivables/Payables and Cash Flow, which real jobs check constantly). Every topic gives a plain-English <b>definition</b>, the exact <b>menu path and steps</b>, and a <b>worked example</b>. A full set of <b>assignments with solutions</b> and a shortcut reference table are at the end.
     </div>
 
     <h2 class="part-title">Part A &mdash; Getting Started with Tally Prime</h2>
 
     <div class="topic-note">
-      <h4>1. What is Tally Prime?</h4>
-      <p>Tally Prime is accounting software used by businesses to record their day-to-day financial transactions (sales, purchases, payments, receipts), manage stock/inventory, calculate tax (GST), and automatically generate financial reports like the Balance Sheet and Profit &amp; Loss Account &mdash; all without manual calculation.</p>
+      <h4>1. What is Tally Prime, and Why Learn It?</h4>
+      <p>Tally Prime is accounting software used by businesses to record every money transaction, manage stock, calculate GST and TDS, run payroll, and instantly generate financial reports &mdash; replacing manual, paper-based bookkeeping. It is one of the most widely used accounting tools in India, and proficiency in it is a standard, often mandatory, requirement for Accounts Executive, Accounts Assistant, and Billing Executive jobs.</p>
+      <div class="badge-row"><span class="badge job">Job Relevance</span></div>
       <ul class="key-points">
-        <li>It replaces the traditional paper-based system of maintaining account books (Cash Book, Ledger, Journal) by hand.</li>
-        <li>Once a transaction (a "voucher") is entered once, Tally automatically updates every related report.</li>
-        <li>Used widely by shops, traders, manufacturers, and accounting firms across India.</li>
+        <li>Every entry made is called a "voucher" &ndash; the basic building block of all accounting in Tally.</li>
+        <li>Reports (Balance Sheet, GST returns, Outstanding lists) are generated automatically and instantly from the vouchers entered &ndash; never calculated by hand.</li>
+        <li>Real accounting jobs use Tally for day-to-day billing, GST filing support, bank reconciliation, salary processing, and month-end/year-end closing.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>2. Basics of Accounting &ndash; The Golden Rules</h4>
-      <p>Before using Tally, it helps to understand the simple rules that decide whether an amount is Debited (Dr) or Credited (Cr). Every account in Tally belongs to one of three types, each with its own golden rule.</p>
+      <h4>2. Downloading, Installing &amp; Starting Tally Prime</h4>
+      <p>Tally Prime must be installed once on the computer before use. After installation, it opens to a screen listing your companies, and then to the Gateway of Tally.</p>
       <ul class="key-points">
-        <li><b>Personal Account</b> (accounts of persons, firms, companies, e.g. a customer or supplier): <i>Debit the receiver, Credit the giver.</i></li>
-        <li><b>Real Account</b> (assets and properties, e.g. Cash, Furniture, Machinery): <i>Debit what comes in, Credit what goes out.</i></li>
-        <li><b>Nominal Account</b> (expenses, incomes, losses, gains, e.g. Rent, Salary, Commission Received): <i>Debit all expenses and losses, Credit all incomes and gains.</i></li>
-      </ul>
-      <pre class="code">Example: Paid Rs.5,000 cash as rent.
-- Rent is a Nominal Account (an expense) -> Debit Rent A/c (expense increasing)
-- Cash is a Real Account -> Credit Cash A/c (cash going out)
-Entry: Rent A/c Dr 5,000
-           To Cash A/c   5,000</pre>
-    </div>
-
-    <div class="topic-note">
-      <h4>3. Types of Accounting Vouchers &ndash; A Quick Preview</h4>
-      <p>In Tally, every transaction is entered through a "Voucher" &ndash; a digital form that matches a specific type of transaction. Each voucher type has its own shortcut key, covered in detail in Part C.</p>
-      <ul class="key-points">
-        <li><b>Payment</b> &ndash; money going out (e.g. paying a supplier).</li>
-        <li><b>Receipt</b> &ndash; money coming in (e.g. from a customer).</li>
-        <li><b>Contra</b> &ndash; transfer between own cash and bank accounts.</li>
-        <li><b>Journal</b> &ndash; non-cash adjustment entries (e.g. depreciation).</li>
-        <li><b>Sales</b> and <b>Purchase</b> &ndash; goods/services sold or bought.</li>
+        <li>Download the Tally Prime setup file from the official Tally Solutions website.</li>
+        <li>Run the installer and follow the on-screen steps (Install for Single User is common for learning/practice).</li>
+        <li>Open Tally Prime from the desktop icon; the first screen lists any companies already created.</li>
+        <li>Tally Prime is almost entirely operated using the keyboard (function keys, Enter/Escape) rather than the mouse &ndash; this speed is exactly what employers expect from an experienced operator.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>4. The Tally Prime Screen (Gateway of Tally)</h4>
-      <p>When Tally Prime opens (after selecting a company), the main screen is called the Gateway of Tally. Understanding its layout makes navigating the software much easier.</p>
+      <h4>3. Gateway of Tally &ndash; Understanding the Screen</h4>
+      <p>The Gateway of Tally is the main home screen from which every other screen is reached.</p>
       <ul class="key-points">
-        <li><b>Top Menu Bar</b> &ndash; company name, current date, and version info.</li>
-        <li><b>Gateway of Tally (centre)</b> &ndash; the main menu listing Masters, Transactions (Vouchers), Utilities, and Reports.</li>
-        <li><b>Button Bar (right side)</b> &ndash; on-screen buttons showing the keyboard shortcut for common actions (most tasks can be done faster using these shortcut keys directly).</li>
-        <li><b>Calculator Panel (bottom)</b> &ndash; a handy on-screen calculator, opened anytime with Ctrl+N.</li>
-        <li>Pressing <b>Esc</b> repeatedly always steps back to the previous screen, eventually returning to the Gateway of Tally.</li>
+        <li><b>Top bar</b> &ndash; shows the current company name and financial year.</li>
+        <li><b>Left menu</b> &ndash; main options: Create Company, Vouchers, Reports.</li>
+        <li><b>Right-side button list</b> &ndash; shows function-key shortcuts available on the current screen.</li>
+        <li>Press <code>Esc</code> repeatedly to go back a screen at a time; press <code>Ctrl+M</code> from anywhere to jump straight back to the Gateway of Tally.</li>
+        <li>Press <code>Alt+G</code> ("Go To") at any time to open a search box and jump directly to any report, voucher, or master by typing its name.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>5. Creating a Company</h4>
-      <p>A "Company" in Tally represents one complete business/organization whose books of accounts are maintained separately. This must be created first before anything else can be done.</p>
+      <h4>4. Creating a Company</h4>
+      <p>A "Company" in Tally represents one business/organisation whose books of accounts you want to maintain. Every ledger, voucher, and report belongs to this one company.</p>
       <ul class="key-points">
-        <li>From the startup screen, select "Create Company".</li>
-        <li>Enter the Company Name, Mailing Address, State, and Financial Year Beginning date.</li>
-        <li>Select the Currency (Base Currency Symbol, e.g. &#8377; for Rupees).</li>
-        <li>Press <b>Ctrl+A</b> (or Enter through all fields) to save.</li>
+        <li>From the startup screen, select <code>Create Company</code>.</li>
+        <li>Fill in Name, Mailing Address, State, Pin Code, and Financial Year start date (e.g. 1-Apr-2025).</li>
+        <li>Fill GSTIN/Company details now if known, or leave blank and enable later under Statutory Features.</li>
+        <li>Press <code>Ctrl+A</code> (or Enter through all fields) to save.</li>
       </ul>
-      <pre class="code">Gateway: Startup Screen -> Create Company
+      <pre class="code">Path: Startup Screen -> Create Company
+
 Name              : ABC Traders
-Mailing Address   : 12, Market Road, Hyderabad
+Mailing Address   : 12, MG Road, Hyderabad
 State             : Telangana
-Financial Year From : 1-Apr-2025
-Base Currency     : Indian Rupee (Rs.)
-Press Ctrl+A to Save</pre>
+Pin Code          : 500001
+Financial Year From: 1-Apr-2025
+Books Beginning From: 1-Apr-2025
+
+Press Ctrl+A to accept and save the company.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>6. Loading, Selecting &amp; Shutting a Company</h4>
+      <h4>5. Loading, Selecting, Altering &amp; Shutting a Company</h4>
+      <p>In real office use, multiple client companies are often maintained in one Tally installation, so switching between them correctly is a daily skill.</p>
       <ul class="key-points">
-        <li><b>Select Company</b> &ndash; if a company is already created but not open, go to Gateway of Tally &gt; press <b>K</b> (Company) &gt; Select Company, or use shortcut <b>F1</b> from the startup screen.</li>
-        <li><b>Shut Company</b> &ndash; closes the currently open company without closing Tally itself. Use shortcut <b>Alt+F1</b>.</li>
-        <li>Multiple companies can exist in Tally, but only the required one(s) need to be open at a time.</li>
+        <li><b>Select a Company</b> &ndash; press <code>F1</code> (or <code>K</code> at the startup list) and choose from the list of existing companies to open it.</li>
+        <li><b>Alter Company details</b> &ndash; press <code>Alt+F3</code> from the Gateway of Tally to reach the company alteration menu (change name, address, financial year, etc.).</li>
+        <li><b>Shut a Company</b> &ndash; press <code>Alt+F1</code> to close the current company without closing Tally itself, e.g. before opening a different client's company.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>7. F11 (Company Features) &amp; F12 (Configuration)</h4>
-      <p>These two screens control what features are switched on for the company and how Tally behaves &ndash; they must be set up correctly before entering GST, inventory, or advanced transactions.</p>
+      <h4>6. Company Features (F11) &amp; Configuration (F12)</h4>
+      <p>These two screens turn Tally's optional modules on or off, so the software only shows the features that specific business needs.</p>
       <ul class="key-points">
-        <li><b>F11 &ndash; Features</b> &ndash; turns major functional areas ON/OFF for this company: Accounting Features, Inventory Features, Statutory &amp; Taxation (GST, TDS), and more.</li>
-        <li><b>F12 &ndash; Configuration</b> &ndash; controls how screens/fields display and behave (e.g. showing extra columns, default entry formats). Configuration applies more generally, across all companies.</li>
+        <li><b>F11 (Features)</b> &ndash; company-specific switches: Accounting Features, Inventory Features, Statutory &amp; Taxation (GST, TDS), Payroll. These affect only the current company.</li>
+        <li><b>F12 (Configure)</b> &ndash; general display/behaviour settings (e.g. invoice printing options, extra fields shown), applying more broadly across reports and vouchers.</li>
+        <li>A beginner should enable: "Maintain Accounts" and "Integrate Accounts with Inventory" immediately, then GST/TDS/Payroll as each topic is reached.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Press F11
- Accounting Features:
-   Maintain Bill-wise Details? Yes
- Inventory Features:
-   Maintain Stock? Yes
- Statutory &amp; Taxation:
-   Enable Goods and Services Tax (GST)? Yes
-Press Ctrl+A to Save</pre>
-    </div>
+      <pre class="code">Path: Gateway of Tally -> F11 (Company Features)
 
-
-    <h2 class="part-title">Part B &mdash; Masters (Ledgers, Groups &amp; Stock)</h2>
-
-    <div class="topic-note">
-      <h4>8. What is a Ledger and a Group?</h4>
-      <p>A <b>Ledger</b> is an individual account, such as "Cash", "ABC Traders (Customer)", or "Rent Paid" &ndash; every single transaction must involve at least two ledgers. A <b>Group</b> is a category that similar ledgers are organized under, so reports (like the Balance Sheet) can total them together correctly.</p>
-      <ul class="key-points">
-        <li>Tally already provides 28 built-in "Primary Groups" ready to use &ndash; you do not need to create these.</li>
-        <li>Important default groups: Capital Account, Loans (Liability), Current Liabilities, Fixed Assets, Current Assets, Sundry Debtors (customers who owe money), Sundry Creditors (suppliers owed money), Sales Accounts, Purchase Accounts, Direct/Indirect Expenses, Direct/Indirect Incomes, Bank Accounts, Cash-in-Hand, Duties &amp; Taxes.</li>
-        <li>Every ledger you create must be placed "Under" one of these groups (or a custom sub-group you create).</li>
-      </ul>
+Maintain Accounts                : Yes
+Enable Inventory                 : Yes
+Integrate Accounts with Inventory: Yes
+Enable Goods and Services Tax(GST): Yes  (turn on when starting the GST section)
+Enable Tax Deducted at Source(TDS): Yes  (turn on when starting the TDS section)
+Enable Payroll                   : Yes  (turn on when starting the Payroll section)</pre>
     </div>
 
     <div class="topic-note">
-      <h4>9. Creating a Single Ledger</h4>
+      <h4>7. The Golden Rules of Accounting (Beginner Refresher)</h4>
+      <p>Tally applies these traditional double-entry rules automatically behind the scenes every time a voucher is entered, so understanding them makes every entry make sense.</p>
       <ul class="key-points">
-        <li>Go to Gateway of Tally &gt; Create &gt; Ledger (or shortcut <b>Alt+C</b> from most transaction screens for a quick create).</li>
-        <li>Type the Ledger Name.</li>
-        <li>Select the correct Group "Under" which it belongs.</li>
-        <li>If it is a Cash/Bank ledger or Debtor/Creditor, enter the Opening Balance if any exists on the start date.</li>
-        <li>Press Ctrl+A to save.</li>
-      </ul>
-      <pre class="code">Gateway of Tally -> Create -> Ledger
-Name          : Rent Paid
-Under         : Indirect Expenses
-Opening Balance: 0
-Press Ctrl+A to Save
-
-Gateway of Tally -> Create -> Ledger
-Name          : HDFC Bank
-Under         : Bank Accounts
-Opening Balance: 50,000 Dr
-Press Ctrl+A to Save</pre>
-    </div>
-
-    <div class="topic-note">
-      <h4>10. Creating Multiple Ledgers Together</h4>
-      <p>Instead of creating ledgers one at a time, Tally allows creating several ledgers in a single grid-style screen, which saves time when setting up a new company.</p>
-      <ul class="key-points">
-        <li>Go to Gateway of Tally &gt; Create (under Multiple Ledgers) &gt; Multiple Ledgers.</li>
-        <li>Select the Group under which all these ledgers should be created (or choose "All Items" to pick a different group per row).</li>
-        <li>Type each ledger name and its opening balance directly into the grid.</li>
-      </ul>
-      <pre class="code">Gateway of Tally -> Create -> Multiple Ledgers
-Under: Sundry Debtors
-Row 1: Ramesh Traders     Opening Balance: 10,000 Dr
-Row 2: Suresh Enterprises Opening Balance: 5,000 Dr
-Press Ctrl+A to Save</pre>
-    </div>
-
-    <div class="topic-note">
-      <h4>11. Altering &amp; Deleting Ledgers</h4>
-      <ul class="key-points">
-        <li><b>Alter</b> &ndash; Gateway of Tally &gt; Alter &gt; Ledger &gt; select the ledger &gt; change details &gt; Ctrl+A to save.</li>
-        <li><b>Delete</b> &ndash; open the ledger in Alter mode, then press <b>Alt+D</b>. A ledger with existing transactions cannot be deleted until those entries are removed.</li>
+        <li><b>Personal Account</b> (people, firms, banks): Debit the receiver, Credit the giver.</li>
+        <li><b>Real Account</b> (assets, cash, stock): Debit what comes in, Credit what goes out.</li>
+        <li><b>Nominal Account</b> (expenses, incomes): Debit all expenses and losses, Credit all incomes and gains.</li>
+        <li>In every voucher, total Debit must always equal total Credit &ndash; Tally will not let an unbalanced entry be saved.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>12. Stock Groups &amp; Stock Categories</h4>
-      <p>Just as Groups organize ledgers, <b>Stock Groups</b> organize similar stock items together (e.g. "Electronics", "Stationery"). <b>Stock Categories</b> provide a second, independent way to classify items (e.g. by brand), useful for cross-analysis reports. Both are optional but keep large inventories organized.</p>
+      <h4>8. Types of Accounts &amp; Voucher Types &ndash; Quick Preview</h4>
+      <p>Before going topic by topic, it helps to see the whole map: every transaction in a business falls into one of a small set of standard voucher types, each with its own function key.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Create &gt; Stock Group &ndash; enter a name, choose whether it should have sub-groups.</li>
-        <li>Gateway of Tally &gt; Create &gt; Stock Category &ndash; enter a name similarly.</li>
+        <li><b>Pure Accounting</b>: Payment (F5), Receipt (F6), Contra (F4), Journal (F7).</li>
+        <li><b>Trading</b>: Sales (F8), Purchase (F9), Debit Note, Credit Note, Sales/Purchase Order.</li>
+        <li><b>Inventory-only</b>: Stock Journal, Physical Stock, Delivery Note, Receipt Note.</li>
+        <li><b>Payroll</b>: Payroll Voucher (Ctrl+F4), Attendance Voucher.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part B &mdash; Masters: Ledgers, Groups &amp; Stock</h2>
+
+    <div class="topic-note">
+      <h4>9. Understanding Groups (Chart of Accounts)</h4>
+      <p>A Group is a category that similar ledgers are organised under, so reports (like the Balance Sheet) automatically total them correctly. Tally Prime comes with 28 pre-defined Primary Groups already set up; a beginner rarely needs to create new groups, only ledgers under the existing ones.</p>
+      <ul class="key-points">
+        <li><b>Capital Account</b> &ndash; owner's capital, reserves.</li>
+        <li><b>Sundry Debtors</b> &ndash; customers who owe you money (assets).</li>
+        <li><b>Sundry Creditors</b> &ndash; suppliers you owe money to (liabilities).</li>
+        <li><b>Cash-in-Hand / Bank Accounts</b> &ndash; cash and bank balances.</li>
+        <li><b>Purchase Accounts / Sales Accounts</b> &ndash; trading purchases and sales.</li>
+        <li><b>Direct/Indirect Expenses</b> and <b>Direct/Indirect Incomes</b> &ndash; feed the Profit &amp; Loss Account.</li>
+        <li><b>Fixed Assets</b> &ndash; land, machinery, furniture (long-term assets).</li>
+        <li><b>Duties &amp; Taxes</b> &ndash; GST, TDS, and other statutory tax ledgers.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>13. Units of Measure</h4>
-      <p>A Unit of Measure defines how a stock item is counted or measured (e.g. Nos, Kg, Litre, Box) &ndash; every stock item must be assigned a unit before it can be created.</p>
+      <h4>10. Creating a Single Ledger</h4>
+      <p>A Ledger is an individual account &ndash; a specific customer, a specific expense like "Rent", or "Cash". Every voucher entry is made by selecting two or more ledgers. Tally starts every new company with two ready-made ledgers: <code>Cash</code> and <code>Profit &amp; Loss A/c</code>.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Create &gt; Unit.</li>
-        <li>Choose Simple (a single unit, e.g. Nos, Kg) or Compound (a unit made of two units, e.g. 1 Box = 12 Nos).</li>
-        <li>Type the Symbol (e.g. "Kg") and the Formal Name (e.g. "Kilograms").</li>
+        <li>Go to Create &gt; Ledger, type a Name, then select the correct Group ("Under").</li>
+        <li>For customers/suppliers, set "Maintain balances bill-by-bill: Yes" so each invoice can be tracked and settled individually &ndash; essential for real Outstanding reports later.</li>
+        <li>Enter an Opening Balance if the ledger already has a balance on the first day of the books.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Create -> Unit
-Type: Simple
-Symbol      : Nos
-Formal Name : Numbers
-Number of Decimal Places: 0
-Press Ctrl+A to Save</pre>
+      <pre class="code">Path: Gateway of Tally -> Create -> Ledger
+
+Name  : Ramesh Traders
+Under : Sundry Debtors
+Maintain balances bill-by-bill: Yes
+Default Credit Period: 30 days
+Opening Balance: 15,000  Dr
+
+Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>14. Creating a Stock Item</h4>
-      <p>A Stock Item is the actual product/goods that a business buys and sells &ndash; e.g. "LED Bulb 9W". Stock Items are only needed if the company deals in physical goods; a pure services business may not need this at all.</p>
+      <h4>11. Creating Multiple Ledgers Together</h4>
+      <p>When many similar ledgers are needed (e.g. ten customer accounts), Tally offers a faster grid-style entry screen instead of creating them one at a time.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Create &gt; Stock Item.</li>
-        <li>Enter the Name, select the Stock Group (or "Not Applicable"), and select the Unit of measure.</li>
-        <li>Optionally set GST Applicability and tax rate directly on the item.</li>
-        <li>Enter Opening Balance (quantity and value) if existing stock is being entered.</li>
-      </ul>
-      <pre class="code">Gateway of Tally -> Create -> Stock Item
-Name          : LED Bulb 9W
-Under         : Electronics
-Units         : Nos
-GST Applicable: Applicable, Rate 12%
-Opening Balance: 100 Nos @ Rs.80 = Rs.8,000
-Press Ctrl+A to Save</pre>
-    </div>
-
-    <div class="topic-note">
-      <h4>15. Godowns / Locations</h4>
-      <p>A Godown represents a physical storage location (e.g. Main Warehouse, Branch Store) &ndash; useful when a business stores stock in more than one place and needs to track quantities location-wise.</p>
-      <ul class="key-points">
-        <li>Gateway of Tally &gt; Create &gt; Godown.</li>
-        <li>By default, Tally provides one Godown called "Main Location"; additional godowns can be added as needed.</li>
+        <li>Go to Create &gt; select "Multiple Ledgers" (or press <code>Alt+G</code> and search "Multi Ledger").</li>
+        <li>Choose the common "Under Group" for all of them (or "All Items" to set it per row).</li>
+        <li>Type each Name and Opening Balance directly into the grid rows.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>16. Voucher Types (Overview)</h4>
-      <p>A Voucher Type is the template/category a transaction is recorded under (Payment, Receipt, Sales, Purchase, etc.). Tally provides all standard voucher types by default; custom voucher types (e.g. a separate "Cash Sales" type) can also be created for specific business needs.</p>
+      <h4>12. Altering &amp; Deleting Ledgers/Masters</h4>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Create &gt; Voucher Type (only needed for custom types).</li>
-        <li>The full list of standard voucher types and their shortcut keys is covered in Part C.</li>
+        <li>Go to Alter &gt; Ledger, select the ledger, make changes, press Ctrl+A to save.</li>
+        <li>To delete, open the ledger in Alter mode and press <code>Alt+D</code>. A ledger cannot be deleted if it has voucher entries against it &ndash; those entries must be removed first.</li>
       </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>13. Stock Groups &amp; Stock Categories</h4>
+      <p>A Stock Group organises stock items by type (e.g. "Electronics", "Stationery"), similar to how a Group organises ledgers. A Stock Category is a second, independent way to classify items (e.g. by brand), used alongside Stock Groups for cross-analysis.</p>
+      <ul class="key-points">
+        <li>Go to Create &gt; Stock Group, give it a Name, and select "Under" (or "Primary" for a top-level group).</li>
+        <li>Stock Categories are optional and created the same way via Create &gt; Stock Category.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>14. Units of Measure (Simple &amp; Compound)</h4>
+      <p>A Unit defines how a stock item is counted or measured &ndash; Numbers, Kilograms, Litres, Boxes, etc. A Compound Unit links two units together (e.g. 1 Box = 12 Pieces) so stock can be entered in either unit and converted automatically.</p>
+      <ul class="key-points">
+        <li>Go to Create &gt; Unit, enter a Symbol (e.g. "Nos", "Kg") and Formal Name.</li>
+        <li>For a compound unit, select Type "Compound", then choose the First Unit and Second Unit with the conversion factor (e.g. 1 Box = 12 Pcs).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>15. Creating a Stock Item</h4>
+      <p>A Stock Item is the actual product or material being bought, sold, or manufactured &ndash; the inventory equivalent of a ledger.</p>
+      <ul class="key-points">
+        <li>Go to Create &gt; Stock Item, enter a Name, select the Stock Group ("Under") and Unit.</li>
+        <li>Optionally set GST details (rate, HSN code) directly on the item, so every invoice using it auto-calculates tax correctly.</li>
+        <li>Enter an Opening Balance/Quantity/Rate if stock already exists on the first day of books.</li>
+      </ul>
+      <pre class="code">Path: Gateway of Tally -> Create -> Stock Item
+
+Name        : LED Bulb 9W
+Under       : Electronics
+Units       : Nos
+GST Applicable: Applicable   HSN Code: 8539   Rate: 12%
+Opening Balance: 100 Nos @ Rs.60 each
+
+Press Ctrl+A to save.</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>16. Godowns / Locations</h4>
+      <p>A Godown (or Location) represents a physical storage place &ndash; a warehouse, shop floor, or branch &ndash; so stock quantity can be tracked per location, not just as one company-wide total.</p>
+      <ul class="key-points">
+        <li>Enable in F11: "Maintain multiple Godowns? Yes".</li>
+        <li>Go to Create &gt; Godown, enter a Name (e.g. "Main Warehouse", "Retail Shop").</li>
+        <li>Every inventory voucher then asks which Godown the stock is moving into or out of.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>17. Price Levels &amp; Price Lists</h4>
+      <p>A real business often sells the same item at different rates to different types of customers &ndash; e.g. Wholesale vs Retail price. Price Levels define these customer categories, and a Price List sets the actual selling rate for each stock item at each level, so the correct rate fills in automatically during billing.</p>
+      <div class="badge-row"><span class="badge job">Common in Sales Jobs</span></div>
+      <ul class="key-points">
+        <li>Enable in F12 (Configure) or F11: "Use Multiple Price Levels? Yes".</li>
+        <li>Go to Create &gt; Price Level, create levels such as "Wholesale" and "Retail".</li>
+        <li>Go to Create &gt; Price List, select a Price Level, then set the rate for each stock item at that level.</li>
+        <li>When billing, select the customer's Price Level in the Sales Voucher, and Tally auto-fills the correct item rate.</li>
+      </ul>
+      <pre class="code">Path: Gateway of Tally -> Create -> Price Level
+Name: Wholesale
+Name: Retail
+
+Path: Gateway of Tally -> Create -> Price List -> Wholesale
+Item: LED Bulb 9W    Rate: 55   (lower rate for bulk buyers)
+
+Path: Gateway of Tally -> Create -> Price List -> Retail
+Item: LED Bulb 9W    Rate: 70   (normal shop price)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>18. Reorder Levels</h4>
+      <p>A Reorder Level is the minimum stock quantity at which Tally will flag an item as needing to be restocked, helping avoid running out of fast-moving items &ndash; a common daily check for a store/inventory job.</p>
+      <ul class="key-points">
+        <li>Go to Gateway of Tally &gt; Reorder Levels (under Inventory Info), select the Stock Group or Item.</li>
+        <li>Enter the Reorder Quantity and Minimum Order Quantity for each item.</li>
+        <li>View the result anytime in Display More Reports &gt; Inventory Reports &gt; Reorder Status, which lists items that have fallen below their set level.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>19. Batch-wise Details &amp; Expiry Dates</h4>
+      <p>Batch tracking records stock in separate lots (batches), each with its own manufacturing and expiry date &ndash; essential in pharmaceutical, food, and FMCG businesses so old stock is sold first and expired stock is easily identified.</p>
+      <div class="badge-row"><span class="badge job">Pharma / FMCG Jobs</span></div>
+      <ul class="key-points">
+        <li>Enable in F11 (Inventory Features): "Maintain Batch-wise Details? Yes" and "Track Date of Manufacture/Expiry? Yes".</li>
+        <li>When creating/altering the Stock Item, set "Maintain in Batches: Yes".</li>
+        <li>Every purchase/sales voucher for that item will now ask for the Batch Name, Manufacturing Date, and Expiry Date.</li>
+        <li>View batch-wise stock and expiry status in Display More Reports &gt; Inventory Reports &gt; Batch Summary.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>20. Bill of Materials (BOM)</h4>
+      <p>A Bill of Materials defines the "recipe" of raw materials and components needed to manufacture one unit of a finished stock item &ndash; used by manufacturing businesses to plan and record production.</p>
+      <ul class="key-points">
+        <li>While creating/altering a (finished) Stock Item, enable "Set Components (BOM)? Yes".</li>
+        <li>List each raw material item and the quantity required to produce one unit of the finished item.</li>
+        <li>This BOM is then used automatically by the Manufacturing Journal (see Part D) to consume raw materials and produce finished stock.</li>
+      </ul>
+      <pre class="code">Path: Alter -> Stock Item -> Wooden Chair -> Set Components (BOM)? Yes
+
+Component (Raw Material)   Quantity (per 1 Chair)
+Wood Plank                  4 Nos
+Screws                      12 Nos
+Varnish                     0.25 Ltr</pre>
     </div>
 
     <h2 class="part-title">Part C &mdash; Accounting Vouchers</h2>
 
     <div class="topic-note">
-      <h4>17. Voucher Entry Basics</h4>
-      <p>All transactions are entered from Gateway of Tally &gt; Vouchers (or by pressing <b>V</b>). Each type of transaction opens on a different function key, listed below.</p>
+      <h4>21. Voucher Entry Basics</h4>
+      <p>A Voucher is the single document used to record one transaction &ndash; every accounting entry in Tally, without exception, is entered as some type of voucher. Getting comfortable with the voucher screen layout is the single most important practical skill for a Tally job.</p>
       <ul class="key-points">
-        <li>Press <b>F2</b> inside any voucher screen to change the voucher date.</li>
-        <li>Type the Ledger name and Tally will auto-suggest matches as you type (no need to type the full name).</li>
-        <li>Press <b>Ctrl+A</b> to save the voucher once entry is complete (or Enter through every field to the end).</li>
-        <li>Press <b>Page Up</b> to view the previous voucher, <b>Page Down</b> for the next.</li>
-        <li>Press <b>Alt+D</b> while viewing a saved voucher to delete it.</li>
+        <li>Open any voucher from Gateway of Tally &gt; Vouchers, or press its function-key shortcut directly.</li>
+        <li>Sales and Purchase vouchers can be entered in two modes: <b>Accounting Invoice</b> (no stock items, just ledger amounts &ndash; used for service businesses) and <b>Item Invoice</b> (select actual stock items with quantity and rate &ndash; used for trading/product businesses). Switch between them using <code>Ctrl+H</code> (Change Mode) on the voucher screen.</li>
+        <li>If a ledger you need does not exist yet, you do not need to leave the voucher: type the new name and press <code>Alt+C</code> to create it instantly without losing your place.</li>
+        <li>Every voucher requires today's (or the entered) Date at the top &ndash; press <code>F2</code> to change it if needed.</li>
+        <li>Press <code>Ctrl+A</code> at any point to accept/save the voucher.</li>
+        <li>Press <code>Page Up</code> / <code>Page Down</code> to move to the previous/next saved voucher of the same type &ndash; useful for quickly checking or correcting recent entries.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>18. Payment Voucher (F5)</h4>
-      <p>Records money going OUT of the business &ndash; for example, paying a supplier, paying rent, or paying salaries, whether by cash or bank.</p>
+      <h4>22. Payment Voucher (F5)</h4>
+      <p>Records money going OUT of the business &ndash; e.g. paying an expense, paying a supplier, or withdrawing cash. Debits the expense/party account and credits the Cash or Bank account paid from.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Vouchers &gt; press <b>F5</b>.</li>
-        <li>Select the ledger being paid FROM (Cash or Bank) in the "Account" field.</li>
-        <li>Select the ledger being paid TO (e.g. an expense or a supplier) and enter the amount.</li>
-        <li>Add a Narration (short description) if needed, then Ctrl+A to save.</li>
+        <li>Press <code>F5</code>, select the Account paid FROM (Cash or a Bank ledger).</li>
+        <li>Under Particulars, select the ledger being paid TO (e.g. an expense or a supplier), and enter the Amount.</li>
+        <li>Press <code>Ctrl+A</code> to save.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Vouchers -> F5 (Payment)
-Account (paid from) : Cash
-Particulars (paid to): Rent Paid       Amount: 5,000
-Narration: Being rent paid for the month
-Press Ctrl+A to Save</pre>
+      <pre class="code">Command: F5 (Payment Voucher)
+Account (paid from): Cash
+Particulars: Rent Paid   Amount: 5,000
+Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>19. Receipt Voucher (F6)</h4>
-      <p>Records money coming IN to the business &ndash; for example, receiving payment from a customer, or receiving a loan.</p>
+      <h4>23. Receipt Voucher (F6)</h4>
+      <p>Records money coming IN to the business &ndash; e.g. receiving payment from a customer, or the owner introducing capital. Debits the Cash/Bank account receiving the money and credits the source account.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Vouchers &gt; press <b>F6</b>.</li>
-        <li>Select the ledger receiving the money INTO (Cash or Bank) in the "Account" field.</li>
-        <li>Select the ledger the money is coming FROM (e.g. a customer) and enter the amount.</li>
+        <li>Press <code>F6</code>, select the Account money is received INTO (Cash or Bank).</li>
+        <li>Under Particulars, select the source ledger (e.g. a customer, or Capital Account), and enter the Amount.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Vouchers -> F6 (Receipt)
-Account (received into) : HDFC Bank
-Particulars (received from): Ramesh Traders   Amount: 10,000
-Narration: Being payment received against outstanding bill
-Press Ctrl+A to Save</pre>
+      <pre class="code">Command: F6 (Receipt Voucher)
+Account (received into): Cash
+Particulars: Ramesh Traders   Amount: 15,000
+Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>20. Contra Voucher (F4)</h4>
-      <p>Records a transfer of funds between the business's OWN cash and bank accounts only &ndash; for example, depositing cash into the bank, or withdrawing cash from the bank. Never used for transactions with outside parties.</p>
+      <h4>24. Contra Voucher (F4)</h4>
+      <p>Records a transfer of money strictly between the company's own Cash and Bank accounts &ndash; e.g. depositing cash into the bank, or withdrawing cash from the bank. Both ledgers involved must be Cash or Bank type.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Vouchers &gt; press <b>F4</b>.</li>
-        <li>Both the "Account" and "Particulars" must be Cash/Bank ledgers only.</li>
+        <li>Press <code>F4</code>, select the account money is going INTO.</li>
+        <li>Select the account money is coming FROM, and enter the Amount.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Vouchers -> F4 (Contra)
-Account (deposited into) : HDFC Bank
-Particulars (from)        : Cash          Amount: 20,000
-Narration: Being cash deposited into bank
-Press Ctrl+A to Save</pre>
+      <pre class="code">Command: F4 (Contra Voucher)
+Account (deposited into): HDFC Bank
+Particulars (from): Cash   Amount: 20,000
+Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>21. Journal Voucher (F7)</h4>
-      <p>Records non-cash adjustment entries that don't directly involve cash or bank &ndash; for example, depreciation, writing off a bad debt, or correcting an entry. This is where the debit/credit golden rules are applied most directly.</p>
+      <h4>25. Journal Voucher (F7)</h4>
+      <p>Used for adjustment entries that do not directly involve Cash or Bank &ndash; e.g. adjusting outstanding expenses, writing off a bad debt, transferring an amount between two ledgers, or recording depreciation. This is the most "manual" voucher, requiring the user to select both the Debit and Credit ledgers directly.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Vouchers &gt; press <b>F7</b>.</li>
-        <li>Select the ledger to Debit and enter the amount.</li>
-        <li>Select the ledger to Credit &ndash; Tally auto-fills the same amount to keep the entry balanced.</li>
+        <li>Press <code>F7</code>. Select the ledger to Debit and enter the amount, then the ledger to Credit &ndash; Tally will not let you save until Debit total = Credit total.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Vouchers -> F7 (Journal)
-Dr  Depreciation A/c        2,000
-    Cr  Furniture A/c              2,000
-Narration: Being depreciation charged on furniture
-Press Ctrl+A to Save</pre>
+      <pre class="code">Command: F7 (Journal Voucher)
+Dr  Depreciation Expense    2,000
+    Cr  Furniture               2,000  (year-end depreciation adjustment)
+Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>22. Sales Voucher (F8)</h4>
-      <p>Records goods or services SOLD to a customer &ndash; the most frequently used voucher in a trading business, and where GST is calculated automatically if enabled.</p>
+      <h4>26. Sales Voucher (F8)</h4>
+      <p>Records goods or services sold to a customer &ndash; the most frequently used voucher in a billing/sales job. Increases the customer's (Sundry Debtor's) balance and records Sales income.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Vouchers &gt; press <b>F8</b>.</li>
-        <li>Select the Party (customer) ledger.</li>
-        <li>Select "Item Invoice" mode (if inventory is used) and enter each Stock Item, quantity, and rate; Tally calculates the total automatically.</li>
-        <li>Select the GST tax ledgers (CGST/SGST or IGST) so tax is added automatically.</li>
+        <li>Press <code>F8</code>. In Item Invoice mode, select the Party (customer), the Sales Ledger, then each Stock Item with Quantity and Rate &ndash; the Amount and GST (if applicable) calculate automatically.</li>
+        <li>In Accounting Invoice mode (for services, no stock), simply select the Party and the income ledger with the amount.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Vouchers -> F8 (Sales)
-Party A/c Name: Ramesh Traders
-Sales Ledger  : Sales Accounts
-Name of Item        Qty   Rate    Amount
-LED Bulb 9W          10    80      800
-   CGST @6%                         48
-   SGST @6%                         48
-                              Total  896
-Press Ctrl+A to Save</pre>
+      <pre class="code">Command: F8 (Sales Voucher - Item Invoice mode)
+Party A/c Name: Meera Book Depot
+Sales Ledger: Sales Accounts
+Item: Notebook   Qty: 40   Rate: 50   Amount: 2,000
+Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>23. Purchase Voucher (F9)</h4>
-      <p>Records goods or services BOUGHT from a supplier, the mirror image of the Sales voucher.</p>
+      <h4>27. Purchase Voucher (F9)</h4>
+      <p>Records goods or services bought from a supplier &ndash; the mirror opposite of the Sales voucher. Increases the supplier's (Sundry Creditor's) balance and records Purchase expense/stock coming in.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Vouchers &gt; press <b>F9</b>.</li>
-        <li>Select the Party (supplier) ledger, then enter each Stock Item, quantity, and rate the same way as Sales.</li>
-        <li>Select the GST tax ledgers to add input tax automatically.</li>
+        <li>Press <code>F9</code>. Select the Party (supplier), Purchase Ledger, then each Stock Item with Quantity and Rate.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Vouchers -> F9 (Purchase)
-Party A/c Name: Suresh Enterprises
+      <pre class="code">Command: F9 (Purchase Voucher - Item Invoice mode)
+Party A/c Name: Kiran Stores
 Purchase Ledger: Purchase Accounts
-Name of Item        Qty   Rate    Amount
-LED Bulb 9W          50    60     3,000
-   CGST @6%                         180
-   SGST @6%                         180
-                              Total  3,360
-Press Ctrl+A to Save</pre>
+Item: Notebook   Qty: 100   Rate: 30   Amount: 3,000
+Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>24. Debit Note &amp; Credit Note</h4>
-      <p>These handle RETURNS after a Sales or Purchase has already been recorded. A <b>Debit Note</b> (Alt+F5) is used when the business returns goods to a supplier (a purchase return) &ndash; it reduces what is owed to the supplier. A <b>Credit Note</b> (Alt+F6) is used when a customer returns goods (a sales return) &ndash; it reduces what the customer owes.</p>
+      <h4>28. Debit Note &amp; Credit Note</h4>
+      <p>These record returns and post-invoice corrections. A <b>Debit Note</b> is raised when the business returns goods to a supplier (reducing what is owed to them) or needs to claim a reduction. A <b>Credit Note</b> is raised when a customer returns goods (reducing what they owe) or is given a price correction.</p>
       <ul class="key-points">
-        <li>Both must first be enabled in F11 Features ("Use Debit/Credit Notes? Yes").</li>
-        <li>Entry style is identical to Purchase/Sales vouchers, just recorded as a return.</li>
+        <li>Enable in F11: "Use debit/credit notes? Yes".</li>
+        <li>Debit Note: press <code>Ctrl+F9</code>, select the supplier and the returned item/amount.</li>
+        <li>Credit Note: press <code>Ctrl+F8</code>, select the customer and the returned item/amount.</li>
       </ul>
-      <pre class="code">Gateway of Tally -> Vouchers -> Alt+F6 (Credit Note)
-Party A/c Name: Ramesh Traders
-Name of Item        Qty   Rate    Amount
-LED Bulb 9W           2    80      160
-Narration: Being 2 defective bulbs returned by customer
-Press Ctrl+A to Save</pre>
+      <pre class="code">Command: Ctrl+F8 (Credit Note)
+Party A/c Name: Meera Book Depot
+Sales Ledger: Sales Accounts
+Item: Notebook   Qty: 5   Rate: 50   Amount: 250   (5 defective notebooks returned)
+Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>25. Sales Order &amp; Purchase Order</h4>
-      <p>Orders record an AGREEMENT to sell/buy in the future &ndash; they do not affect the accounts or stock balances until they are actually converted into a Sales/Purchase voucher later. Useful for tracking pending orders.</p>
+      <h4>29. Sales Order &amp; Purchase Order</h4>
+      <p>Orders record an agreement to buy/sell in the future, before the actual delivery and invoice happen &ndash; they do NOT affect the accounts or stock balance, only track pending commitments.</p>
       <ul class="key-points">
-        <li><b>Sales Order</b> &ndash; shortcut <b>Alt+F5</b> (must be enabled in F11).</li>
-        <li><b>Purchase Order</b> &ndash; shortcut <b>Alt+F4</b> (must be enabled in F11).</li>
-        <li>When the goods are actually delivered/received, the order can be recalled and converted directly into a Sales or Purchase voucher.</li>
-      </ul>
-    </div>
-
-    <h2 class="part-title">Part D &mdash; Inventory Vouchers</h2>
-
-    <div class="topic-note">
-      <h4>26. Stock Journal</h4>
-      <p>Used to record the movement of stock WITHOUT any purchase or sale involved &ndash; for example, converting raw material into a finished product, or transferring stock between godowns.</p>
-      <ul class="key-points">
-        <li>Gateway of Tally &gt; Vouchers &gt; press <b>Alt+F7</b>.</li>
-        <li>Enter the item(s) "Source" (what is consumed) and "Destination" (what is produced/received).</li>
+        <li>Enable in F11: "Allow Purchase Order Processing? Yes" and "Allow Sales Order Processing? Yes".</li>
+        <li>Purchase Order: press <code>Alt+F4</code>. Sales Order: press <code>Alt+F5</code>. Enter the party and expected items/quantities.</li>
+        <li>When goods actually arrive/are delivered, the order can be recalled inside the Purchase/Sales voucher ("Order Details") so it auto-fills from the order and marks it fulfilled.</li>
+        <li>Track pending orders via Display More Reports &gt; Statements of Inventory &gt; Purchase/Sales Order Outstanding.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>27. Physical Stock Voucher</h4>
-      <p>Used to record the ACTUAL quantity of stock counted physically in the godown, when it differs from what Tally's book records show (due to damage, theft, or counting errors). This does not change financial value directly, only quantity records for verification.</p>
+      <h4>30. Voucher Numbering Methods &amp; Voucher Class</h4>
+      <p>Voucher Numbering controls how each voucher gets its serial number, which matters for audit and legal compliance. A Voucher Class is a template that automates repetitive ledger allocations (like GST or freight) within a voucher type, saving time on every single entry.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Vouchers &gt; press <b>Ctrl+F7</b>.</li>
-        <li>Select the item and enter the actual physically counted quantity.</li>
+        <li>Go to Alter &gt; Voucher Type &gt; select a type (e.g. Sales) &ndash; set Numbering Method to Automatic (Tally assigns numbers), Manual (user types each number), or Automatic (Manual Override).</li>
+        <li>To create a Voucher Class: while altering a Voucher Type, enter a Class Name and define default ledgers (e.g. automatically add a "Round Off" or "Output CGST/SGST" ledger every time), so the biller doesn't need to add them manually on every invoice.</li>
+      </ul>
+      <pre class="code">Path: Gateway of Tally -> Alter -> Voucher Type -> Sales
+Method of Numbering: Automatic
+Name of Class: GST Sales
+   Default Accounting Allocation: Output CGST, Output SGST (auto-added on each invoice)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>31. Discounts in Invoices (Trade Discount Column)</h4>
+      <p>A Discount column can be added directly to the Item Invoice so a percentage or flat reduction is applied to each line item's rate before totalling &ndash; common in retail and wholesale billing.</p>
+      <div class="badge-row"><span class="badge job">Retail Billing</span></div>
+      <ul class="key-points">
+        <li>Enable in F12 (Configure) on the invoice screen: "Show column for Discount? Yes" (or enable "Use separate Discount column" in F11 Invoicing features).</li>
+        <li>While billing, simply type a discount percentage or amount in that column against the item; the item's Amount reduces automatically before the total.</li>
+      </ul>
+      <pre class="code">Item: LED Bulb 9W   Qty: 20   Rate: 70   Discount: 10%   Amount: 1,260
+(20 x 70 = 1,400, less 10% discount = 1,260)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>32. Optional &amp; Post-Dated Vouchers</h4>
+      <p>An <b>Optional</b> voucher is saved for reference but does NOT affect any ledger balance or report until it is converted to a Regular voucher &ndash; useful for provisional/draft entries. A <b>Post-Dated</b> voucher is dated in the future and only takes effect in the books once that date arrives &ndash; useful for post-dated cheques.</p>
+      <ul class="key-points">
+        <li>While on any voucher screen, press <code>Ctrl+L</code> to mark it as Optional (or Alt+L in some versions), shown with "Optional" printed on the voucher.</li>
+        <li>To make a voucher Post-Dated, simply enter a future date in the Date field and confirm; Tally will ask to confirm it as post-dated.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part D &mdash; Inventory Vouchers &amp; Stock Management</h2>
+
+    <div class="topic-note">
+      <h4>33. Stock Journal</h4>
+      <p>Used to record internal stock movements that are NOT a sale or purchase &ndash; e.g. transferring stock between godowns, or consuming raw material to produce a finished item.</p>
+      <div class="badge-row"><span class="badge inv">Inventory</span></div>
+      <ul class="key-points">
+        <li>Press <code>Alt+F7</code>. Under "Source (Consumption)", list items/quantities going out; under "Destination (Production)", list items/quantities coming in.</li>
+      </ul>
+      <pre class="code">Command: Alt+F7 (Stock Journal)
+Source (Consumption): Raw Cotton   50 Kg
+Destination (Production): Finished Cloth   45 Meters
+Press Ctrl+A to save.</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>34. Physical Stock Voucher</h4>
+      <p>Used to record the actual, physically counted stock quantity after a manual stock-take, so Tally's book quantity can be corrected to match reality &ndash; a routine monthly/annual task in any stock-handling job.</p>
+      <div class="badge-row"><span class="badge inv">Inventory</span></div>
+      <ul class="key-points">
+        <li>Access via <code>Alt+G</code> (Go To) and type "Physical Stock", or Gateway of Tally &gt; Vouchers &gt; Physical Stock.</li>
+        <li>Enter the actual counted quantity for each item; any difference from the book quantity is called "Shortage" or "Excess" and shows in the Stock Summary until adjusted with a Stock Journal.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>28. Delivery Note &amp; Receipt Note</h4>
-      <p>These record the physical MOVEMENT of goods, separately from the financial Sales/Purchase entry &ndash; useful for tracking dispatch/receipt before an invoice is raised.</p>
+      <h4>35. Delivery Note &amp; Receipt Note</h4>
+      <p>These are inventory-only vouchers used when goods physically move before the financial invoice is raised &ndash; common when dispatch and billing happen on different days. A <b>Delivery Note</b> records goods sent out to a customer; a <b>Receipt Note</b> records goods received in from a supplier.</p>
+      <div class="badge-row"><span class="badge inv">Inventory</span></div>
       <ul class="key-points">
-        <li><b>Delivery Note</b> (<b>Alt+F8</b>) &ndash; records goods physically dispatched to a customer.</li>
-        <li><b>Receipt Note</b> (<b>Alt+F9</b>) &ndash; records goods physically received from a supplier.</li>
-        <li>Both can later be linked to the actual Sales/Purchase voucher when it is raised.</li>
+        <li>Delivery Note: press <code>Alt+F8</code>, select the customer and items dispatched.</li>
+        <li>Receipt Note: press <code>Alt+F9</code>, select the supplier and items received.</li>
+        <li>When the actual Sales/Purchase invoice is later raised, it can pull in ("Track") the Delivery/Receipt Note reference so quantities aren't entered twice.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>29. Godown Transfer</h4>
-      <p>Moves stock quantity from one godown/location to another within the same business, without changing ownership or value &ndash; recorded through the Stock Journal by selecting a different Source and Destination godown for the same item.</p>
+      <h4>36. Godown Transfer</h4>
+      <p>Moves stock from one godown/location to another within the same company, without changing the total quantity owned &ndash; recorded using a Stock Journal with the same item as both source and destination, but different godowns.</p>
+      <div class="badge-row"><span class="badge inv">Inventory</span></div>
+      <pre class="code">Command: Alt+F7 (Stock Journal)
+Source: LED Bulb 9W   30 Nos   Godown: Main Warehouse
+Destination: LED Bulb 9W   30 Nos   Godown: Retail Shop
+Press Ctrl+A to save.</pre>
     </div>
 
-    <h2 class="part-title">Part E &mdash; GST (Goods and Services Tax)</h2>
+    <div class="topic-note">
+      <h4>37. Manufacturing Journal</h4>
+      <p>A special version of the Stock Journal used specifically to produce a finished item using its Bill of Materials (BOM, see Section 20) &ndash; raw materials are automatically consumed in the correct quantities the moment the finished quantity is entered.</p>
+      <div class="badge-row"><span class="badge inv">Manufacturing</span></div>
+      <ul class="key-points">
+        <li>Open Stock Journal (<code>Alt+F7</code>) and change its type to "Manufacturing Journal" (select the finished item that has a BOM set).</li>
+        <li>Enter the quantity of the finished item to be produced; Tally auto-fills the raw materials needed based on the BOM.</li>
+      </ul>
+      <pre class="code">Command: Alt+F7 (Manufacturing Journal)
+Name of Product: Wooden Chair   Quantity: 10
+
+Components (auto-filled from BOM, x10):
+Wood Plank   40 Nos
+Screws       120 Nos
+Varnish      2.5 Ltr
+Press Ctrl+A to save. (Raw materials reduce, 10 Wooden Chairs are added to stock)</pre>
+    </div>
 
     <div class="topic-note">
-      <h4>30. What is GST? &ndash; Quick Basics</h4>
-      <p>GST is a single indirect tax charged on the sale of goods and services in India, replacing earlier separate taxes like VAT and Service Tax. Tally Prime can calculate GST automatically on every sale/purchase once it is set up correctly.</p>
+      <h4>38. POS (Point of Sale) Invoice</h4>
+      <p>A simplified, fast billing screen designed for retail counter sales &ndash; walk-in customers, cash sales, immediate printing &ndash; without needing to select a specific customer ledger for every single sale.</p>
+      <div class="badge-row"><span class="badge job">Retail Jobs</span></div>
       <ul class="key-points">
-        <li><b>CGST</b> (Central GST) and <b>SGST</b> (State GST) &ndash; charged together, split equally, on sales WITHIN the same state.</li>
-        <li><b>IGST</b> (Integrated GST) &ndash; charged as one single tax on sales BETWEEN different states.</li>
-        <li>GST rate slabs commonly used: 0%, 5%, 12%, 18%, 28%.</li>
+        <li>Enable in F11: "Enable POS Invoicing? Yes", then create a POS Voucher Type (Gateway of Tally &gt; Create &gt; Voucher Type, Type = Sales, tick "Use for POS Invoicing").</li>
+        <li>Open the POS Invoice screen via Alt+G, select items and quantities; payment mode (Cash/Card/UPI) is chosen at the end.</li>
+        <li>Prints a compact receipt-style bill suited to a counter printer.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>31. Enabling GST in Tally Prime</h4>
+      <h4>39. Stock Valuation Methods (FIFO, LIFO, Average Cost)</h4>
+      <p>When the same item is purchased at different rates over time, Tally needs a rule to decide which cost to use when it is sold &ndash; this rule is the Stock Valuation Method, and it directly affects the Gross Profit shown in reports.</p>
+      <div class="badge-row"><span class="badge job">Costing / Inventory Jobs</span></div>
       <ul class="key-points">
-        <li>Go to Gateway of Tally &gt; press <b>F11</b> (Company Features).</li>
-        <li>Set "Enable Goods and Services Tax (GST)" to Yes.</li>
-        <li>Enter the company's GSTIN (GST registration number) and the State (this determines whether a sale is Intra-state, using CGST+SGST, or Inter-state, using IGST).</li>
+        <li><b>FIFO (First-In-First-Out)</b> &ndash; assumes the oldest purchased stock is sold first; closing stock is valued at the most recent purchase rates.</li>
+        <li><b>LIFO (Last-In-First-Out)</b> &ndash; assumes the most recently purchased stock is sold first (less commonly used in India for tax reasons).</li>
+        <li><b>Average Cost</b> &ndash; values every unit at the weighted average rate of all purchases.</li>
+        <li>Set this per stock item: Alter &gt; Stock Item &gt; select the Costing Method (under "Set/Modify Standard Rates" or Valuation Method field).</li>
       </ul>
-      <pre class="code">Gateway of Tally -> F11 -> Statutory &amp; Taxation
-Enable Goods and Services Tax (GST)? Yes
-State                                : Telangana
-GSTIN/UIN                           : 36ABCDE1234F1Z5
-Press Ctrl+A to Save</pre>
+      <pre class="code">Example: Item "Steel Rod" purchased twice:
+  Lot 1: 100 units @ Rs.50 = 5,000
+  Lot 2: 100 units @ Rs.60 = 6,000
+  Total 200 units, Total cost 11,000
+
+FIFO: selling 120 units uses all of Lot 1 (100 @ 50) + 20 of Lot 2 (20 @ 60) = 6,200 cost
+Average Cost: 11,000 / 200 = Rs.55 average; 120 units = 6,600 cost</pre>
     </div>
 
     <div class="topic-note">
-      <h4>32. Creating GST Tax Ledgers</h4>
-      <p>Separate ledgers must be created for each type of GST so tax amounts are shown and tracked correctly on invoices and in returns.</p>
+      <h4>40. Godown-wise Stock &amp; Movement Analysis</h4>
+      <p>These reports break down stock quantity and movement history by location, letting a warehouse or store job holder see exactly what is where, and how fast each item is moving.</p>
+      <div class="badge-row"><span class="badge inv">Inventory</span></div>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; Create &gt; Ledger.</li>
-        <li>Group each under "Duties &amp; Taxes"; set Type of Duty/Tax as "GST".</li>
-        <li>Create separate ledgers for CGST, SGST, and IGST.</li>
-      </ul>
-      <pre class="code">Gateway of Tally -> Create -> Ledger
-Name  : CGST
-Under : Duties &amp; Taxes
-Type of Duty/Tax: GST     Tax Type: Central Tax
-Press Ctrl+A to Save
-(repeat similarly for SGST -> State Tax, and IGST -> Integrated Tax)</pre>
-    </div>
-
-    <div class="topic-note">
-      <h4>33. Recording a GST Sales Invoice</h4>
-      <p>Once GST is enabled and the tax ledgers exist, GST sales entry uses the normal Sales voucher (F8) &ndash; Tally calculates the tax automatically based on the item's GST rate.</p>
-      <ul class="key-points">
-        <li>Enter the Sales voucher as usual (Party, Stock Item, Quantity, Rate).</li>
-        <li>After the item line(s), select the CGST and SGST ledgers (for an intra-state sale) &ndash; Tally auto-calculates the tax amount based on the item's configured GST rate.</li>
-      </ul>
-      <pre class="code">Gateway of Tally -> Vouchers -> F8 (Sales)
-Party A/c Name: Ramesh Traders (Telangana - same state as company)
-Name of Item        Qty   Rate    Amount
-LED Bulb 9W          10    80      800
-   CGST @6%    (auto-calculated)     48
-   SGST @6%    (auto-calculated)     48
-                              Total  896</pre>
-    </div>
-
-    <div class="topic-note">
-      <h4>34. Recording a GST Purchase Invoice</h4>
-      <p>Same idea as GST sales, but recorded using the Purchase voucher (F9) with the supplier's GST details, tracking "Input Tax Credit" (tax paid on purchases, which can be claimed back against tax collected on sales).</p>
-      <pre class="code">Gateway of Tally -> Vouchers -> F9 (Purchase)
-Party A/c Name: Suresh Enterprises
-Name of Item        Qty   Rate    Amount
-LED Bulb 9W          50    60     3,000
-   CGST @6%    (auto-calculated)    180
-   SGST @6%    (auto-calculated)    180
-                              Total  3,360</pre>
-    </div>
-
-    <div class="topic-note">
-      <h4>35. GST Reports &ndash; GSTR-1 and GSTR-3B</h4>
-      <p>Tally automatically compiles GST return reports from the vouchers already entered, ready to be filed on the government GST portal.</p>
-      <ul class="key-points">
-        <li><b>GSTR-1</b> &ndash; a report of all outward supplies (sales) made during the period. Path: Gateway of Tally &gt; Display More Reports &gt; Statutory Reports &gt; GST Reports &gt; GSTR-1.</li>
-        <li><b>GSTR-3B</b> &ndash; a monthly summary return showing total tax liability and input tax credit. Same path, select GSTR-3B.</li>
-        <li>Tally highlights any entries with missing GST details in red/exception, so they can be corrected before filing.</li>
+        <li><b>Godown-wise Stock</b> &ndash; Display More Reports &gt; Inventory Reports &gt; Stock Summary &gt; press Alt+G to view "Godown-wise" breakup.</li>
+        <li><b>Movement Analysis</b> &ndash; Display More Reports &gt; Inventory Reports &gt; Movement Analysis, shows every inward/outward transaction for an item, useful for tracing discrepancies.</li>
+        <li><b>Stock Ageing Analysis</b> &ndash; shows how long each batch/quantity has been sitting unsold, helping identify slow-moving or dead stock.</li>
       </ul>
     </div>
 
-    <h2 class="part-title">Part F &mdash; Financial Reports</h2>
+    <h2 class="part-title">Part E &mdash; Bills Management &amp; Outstanding</h2>
 
     <div class="topic-note">
-      <h4>36. Trial Balance</h4>
-      <p>A report listing every ledger with its Debit or Credit closing balance side by side &ndash; used to check that total Debits equal total Credits before preparing final accounts. If the two totals don't match, an entry error exists somewhere.</p>
+      <h4>41. Bill-wise Details in Depth</h4>
+      <p>When "Maintain balances bill-by-bill" is set Yes on a party ledger, Tally tracks each individual invoice separately instead of just one running total &ndash; this is essential in real jobs so it is always clear exactly which invoice a payment is settling.</p>
+      <div class="badge-row"><span class="badge job">Daily Job Task</span></div>
       <ul class="key-points">
-        <li>Path: Gateway of Tally &gt; Display More Reports &gt; Trial Balance.</li>
-        <li>Press <b>Alt+F1</b> for a detailed (group-wise expanded) view.</li>
+        <li><b>New Ref</b> &ndash; used on a Sales/Purchase voucher to create a new, named bill reference (e.g. "Inv-101") that can be tracked and settled later.</li>
+        <li><b>Against Ref</b> &ndash; used on a Receipt/Payment voucher to settle (close) an existing, specific bill reference by selecting it from the list.</li>
+        <li><b>Advance</b> &ndash; used when money is received/paid before any invoice exists yet (e.g. an advance from a customer).</li>
+        <li><b>On Account</b> &ndash; used when a payment/receipt is not linked to any specific bill at all, left as a general balance against the party.</li>
+      </ul>
+      <pre class="code">Sales Voucher (F8) to Meera Book Depot, Amount 2,000:
+  Bill-wise Details: New Ref -> Name: Inv-101 -> Amount: 2,000
+
+Later, Receipt Voucher (F6) when she pays:
+  Account: Cash   Particulars: Meera Book Depot   Amount: 2,000
+  Bill-wise Details: Against Ref -> Inv-101 -> Amount: 2,000  (fully settles that invoice)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>42. Outstanding Receivables &amp; Payables Reports</h4>
+      <p>These are among the most frequently checked reports in any accounts job &ndash; they list exactly who owes the business money (Receivables) and who the business owes money to (Payables), invoice by invoice, with how many days overdue.</p>
+      <div class="badge-row"><span class="badge job">Most-Used Report</span></div>
+      <ul class="key-points">
+        <li>Go to Gateway of Tally &gt; Display More Reports &gt; Statements of Accounts &gt; Outstanding &gt; Receivables (for customers) or Payables (for suppliers).</li>
+        <li>Each row shows the party, the specific pending bill reference, its date, due date, and overdue days &ndash; used daily to decide who to follow up for payment.</li>
+        <li>Press <code>Alt+F1</code> on this report to see a detailed, bill-by-bill breakup instead of just the party total.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>37. Profit &amp; Loss Account</h4>
-      <p>Shows whether the business made a profit or loss over a period, by comparing total Income against total Expenses. All Direct/Indirect Income and Direct/Indirect Expense ledgers automatically flow into this report.</p>
+      <h4>43. Interest Calculation on Outstanding Bills</h4>
+      <p>Tally can automatically calculate interest owed on overdue bills based on a set annual rate, saving the manual calculation a business would otherwise do for late-paying customers.</p>
       <ul class="key-points">
-        <li>Path: Gateway of Tally &gt; Display More Reports &gt; Profit &amp; Loss A/c.</li>
-        <li>Press <b>Alt+F2</b> to change the reporting period/date range.</li>
+        <li>Enable in F11: "Activate Interest Calculation? Yes".</li>
+        <li>On the party ledger (Alter &gt; Ledger), set "Activate Interest Calculation? Yes", enter the annual Rate (e.g. 18%) and the calculation basis (e.g. on Bill-by-Bill balances).</li>
+        <li>View the result in Display More Reports &gt; Statements of Accounts &gt; Interest Calculations, which shows interest accrued on each overdue bill.</li>
+      </ul>
+      <pre class="code">Path: Alter -> Ledger -> Meera Book Depot
+Activate Interest Calculation? Yes
+Rate: 18% per annum   Style: Calculate on Bill-by-Bill balances</pre>
+    </div>
+
+    <h2 class="part-title">Part F &mdash; GST (Goods and Services Tax)</h2>
+
+    <div class="topic-note">
+      <h4>44. What is GST? &ndash; Quick Basics</h4>
+      <p>GST (Goods and Services Tax) is India's indirect tax charged on the sale of goods and services. Handling GST correctly in Tally is one of the most commonly tested skills in Accounts job interviews.</p>
+      <div class="badge-row"><span class="badge gst">GST</span></div>
+      <ul class="key-points">
+        <li><b>CGST</b> (Central GST) and <b>SGST</b> (State GST) &ndash; charged together, in equal halves, on sales WITHIN the same state.</li>
+        <li><b>IGST</b> (Integrated GST) &ndash; charged as one single tax on sales BETWEEN different states (inter-state).</li>
+        <li><b>HSN Code</b> &ndash; a standard numeric code classifying each product, required on GST invoices.</li>
+        <li><b>Input GST</b> (paid on purchases) can generally be claimed as a credit against <b>Output GST</b> (collected on sales), reducing the net tax payable.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>38. Balance Sheet</h4>
-      <p>Shows the financial POSITION of the business on a given date &ndash; what it OWNS (Assets) versus what it OWES (Liabilities and Capital). Assets must always equal Liabilities + Capital.</p>
+      <h4>45. Enabling GST in Tally Prime</h4>
+      <div class="badge-row"><span class="badge gst">GST</span></div>
       <ul class="key-points">
-        <li>Path: Gateway of Tally &gt; Display More Reports &gt; Balance Sheet.</li>
-        <li>The current year's Profit/Loss (from Section 37) automatically appears here under Capital.</li>
+        <li>Go to F11 &gt; Statutory &amp; Taxation &gt; "Enable Goods and Services Tax (GST)? Yes".</li>
+        <li>Enter the company's State (determines whether a sale is intra-state or inter-state) and GSTIN (the 15-digit GST registration number).</li>
+      </ul>
+      <pre class="code">Path: Gateway of Tally -> F11 -> Statutory &amp; Taxation
+Enable GST? Yes
+State: Telangana
+GSTIN/UIN: 36ABCDE1234F1Z5
+Press Ctrl+A to save.</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>46. Creating GST Tax Ledgers</h4>
+      <div class="badge-row"><span class="badge gst">GST</span></div>
+      <ul class="key-points">
+        <li>Create separate ledgers for CGST, SGST, and IGST, all grouped Under "Duties &amp; Taxes", with Type of Duty/Tax set to "GST".</li>
+        <li>Tally then auto-calculates and adds these on every applicable invoice, based on the GST rate set on the stock item and whether the sale is intra- or inter-state.</li>
+      </ul>
+      <pre class="code">Create -> Ledger -> Name: CGST -> Under: Duties &amp; Taxes -> Type: GST -> Tax Type: Central Tax
+Create -> Ledger -> Name: SGST -> Under: Duties &amp; Taxes -> Type: GST -> Tax Type: State Tax
+Create -> Ledger -> Name: IGST -> Under: Duties &amp; Taxes -> Type: GST -> Tax Type: Integrated Tax</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>47. Recording a GST Sales Invoice</h4>
+      <div class="badge-row"><span class="badge gst">GST</span></div>
+      <ul class="key-points">
+        <li>Set the GST rate on the Stock Item once (Section 15) so it auto-applies every time that item is billed.</li>
+        <li>Press <code>F8</code>, select the party, add items with quantity/rate &ndash; Tally automatically adds CGST+SGST (same state) or IGST (different state) rows below.</li>
+      </ul>
+      <pre class="code">Command: F8 (Sales Voucher)
+Party A/c Name: Meera Book Depot (Telangana - same state as company)
+Item: LED Bulb 9W   Qty: 10   Rate: 70   Amount: 700
+CGST @6%  (auto)   42
+SGST @6%  (auto)   42
+                Total  784</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>48. Recording a GST Purchase Invoice</h4>
+      <div class="badge-row"><span class="badge gst">GST</span></div>
+      <p>Works identically to the sales side, but records Input GST (a claimable credit) instead of Output GST.</p>
+      <pre class="code">Command: F9 (Purchase Voucher)
+Party A/c Name: Kiran Stores
+Item: LED Bulb 9W   Qty: 50   Rate: 55   Amount: 2,750
+CGST @6% (Input)   165
+SGST @6% (Input)   165
+                Total  3,080</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>49. GST Reports &ndash; GSTR-1 and GSTR-3B</h4>
+      <div class="badge-row"><span class="badge gst">GST</span></div>
+      <ul class="key-points">
+        <li><b>GSTR-1</b> &ndash; a monthly/quarterly return listing every outward supply (sale) made, used to report sales to the government.</li>
+        <li><b>GSTR-3B</b> &ndash; a summary monthly return showing total tax liability and input credit, used to calculate the actual GST payment due.</li>
+        <li>Access both via Gateway of Tally &gt; Display More Reports &gt; Statutory Reports &gt; GST Reports; Tally shows which vouchers are "Included" vs flagged with errors ("Uncertain Transactions") needing correction before filing.</li>
+        <li>These reports can be exported (JSON format) for direct upload to the GST portal.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>39. Day Book</h4>
-      <p>A chronological (date-wise) list of every single voucher entered on a given day (or date range) &ndash; the fastest way to review or verify all transactions recorded.</p>
+      <h4>50. e-Way Bill &amp; e-Invoice Basics</h4>
+      <p>Two mandatory digital GST compliance requirements for many businesses, both directly generated from within Tally &ndash; a genuinely current, real-world skill expected in GST-related job roles.</p>
+      <div class="badge-row"><span class="badge gst">GST</span><span class="badge job">Current Compliance</span></div>
       <ul class="key-points">
-        <li>Path: Gateway of Tally &gt; Display More Reports &gt; Day Book, or shortcut <b>Alt+G</b> (Go To) &gt; type "Day Book".</li>
-        <li>Press <b>F2</b> to change the date, or <b>Alt+F2</b> to view a date range.</li>
+        <li><b>e-Way Bill</b> &ndash; a mandatory document for transporting goods above a value threshold, containing item, vehicle, and route details. Enable in F11 &gt; GST Details &gt; "e-Way Bill applicable? Yes"; Tally then prompts for transport details on qualifying invoices and can export the JSON to upload on the e-Way Bill portal (or generate directly if API-integrated).</li>
+        <li><b>e-Invoice</b> &ndash; a mandatory Invoice Reference Number (IRN) and QR code that must be generated on the government portal for eligible businesses before an invoice is considered valid. Enable in F11 &gt; GST Details &gt; "e-Invoice applicable? Yes"; Tally exports the invoice JSON for IRN generation, and the returned IRN/QR code can then be recorded against that voucher.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part G &mdash; TDS (Tax Deducted at Source)</h2>
+
+    <div class="topic-note">
+      <h4>51. What is TDS? &ndash; Basics</h4>
+      <p>TDS means that when a business pays certain kinds of expenses (like professional fees, rent, or contractor payments) above a threshold, it must deduct a small percentage as tax right at the time of payment and deposit it with the government on the payee's behalf, rather than paying the government separately later.</p>
+      <div class="badge-row"><span class="badge tds">TDS</span><span class="badge job">Common Interview Topic</span></div>
+      <ul class="key-points">
+        <li>The person/business making the payment is called the <b>Deductor</b>; the one receiving payment (with tax already deducted) is the <b>Deductee</b>.</li>
+        <li>Each expense type has its own "Nature of Payment" and TDS rate, e.g. Professional Fees (Section 194J) at 10%, Rent (Section 194I) at 10%, Contractor Payments (Section 194C) at 1%/2%.</li>
+        <li>The deducted amount is paid to the government using a Challan, and a TDS Certificate (Form 16A) is later issued to the deductee as proof.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>40. Ledger Report (Ledger Voucher Display)</h4>
-      <p>Shows every transaction posted to ONE specific ledger, along with its running balance &ndash; equivalent to a traditional handwritten ledger account page.</p>
+      <h4>52. Enabling TDS &amp; Creating TDS Ledgers</h4>
+      <div class="badge-row"><span class="badge tds">TDS</span></div>
       <ul class="key-points">
-        <li>Path: Gateway of Tally &gt; Display More Reports &gt; Account Books &gt; Ledger &gt; select the ledger name.</li>
+        <li>Enable in F11 &gt; Statutory &amp; Taxation: "Enable Tax Deducted at Source (TDS)? Yes"; enter the company's TAN (Tax Deduction Account Number).</li>
+        <li>Create a TDS duty ledger, e.g. "TDS on Professional Fees", Under "Duties &amp; Taxes", Type of Duty/Tax = TDS, and select its Nature of Payment.</li>
+        <li>On the expense ledger being paid (e.g. "Professional Fees"), and on the party ledger being paid, set "Is TDS Deductable? Yes" and select the applicable Nature of Payment.</li>
+      </ul>
+      <pre class="code">Path: F11 -> Statutory &amp; Taxation -> Enable TDS? Yes -> TAN: HYDA12345B
+
+Create -> Ledger -> Name: TDS on Professional Charges
+Under: Duties &amp; Taxes   Type of Duty/Tax: TDS
+Nature of Payment: Fees for Professional Services (Section 194J)
+
+Alter -> Ledger -> Professional Fees (expense ledger)
+Is TDS Deductable? Yes   Nature of Payment: Fees for Professional Services</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>53. Recording a TDS Transaction</h4>
+      <div class="badge-row"><span class="badge tds">TDS</span></div>
+      <p>When paying an eligible expense, the TDS amount is deducted directly within the same voucher, so only the net amount actually leaves the Cash/Bank account.</p>
+      <ul class="key-points">
+        <li>Use a Payment or Journal voucher, debit the expense for the full amount, then include the TDS ledger for the deducted amount, and credit Bank/Cash for the balancing net amount.</li>
+      </ul>
+      <pre class="code">Example: Professional Fees bill of Rs.20,000, TDS @10% = Rs.2,000
+
+Command: F7 (Journal Voucher)
+Dr  Professional Fees              20,000
+    Cr  TDS on Professional Charges          2,000
+    Cr  CA Consultants (party)               18,000
+Press Ctrl+A to save.
+
+Later, pay the TDS to the government (Payment Voucher, F5):
+Account: Bank   Particulars: TDS on Professional Charges   Amount: 2,000</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>54. TDS Reports</h4>
+      <div class="badge-row"><span class="badge tds">TDS</span></div>
+      <ul class="key-points">
+        <li>Go to Gateway of Tally &gt; Display More Reports &gt; Statutory Reports &gt; TDS Reports.</li>
+        <li><b>Form 26Q</b> &ndash; the quarterly TDS return for non-salary payments, exportable for filing.</li>
+        <li><b>Challan Reconciliation</b> &ndash; matches TDS deducted against the actual challans paid to the government, flagging any not yet reconciled.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part H &mdash; Financial Reports</h2>
+
+    <div class="topic-note">
+      <h4>55. Trial Balance</h4>
+      <p>A list of every ledger's closing balance, split into Debit and Credit columns &ndash; the first check performed before preparing final accounts, since total Debits must always equal total Credits.</p>
+      <ul class="key-points">
+        <li>Gateway of Tally &gt; Display More Reports &gt; Trial Balance.</li>
+        <li>Press <code>Alt+F1</code> to expand every group down to individual ledgers.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>41. Stock Summary</h4>
-      <p>Shows the quantity and value of every stock item currently held, grouped by Stock Group &ndash; the inventory equivalent of the Balance Sheet.</p>
+      <h4>56. Profit &amp; Loss Account</h4>
+      <p>Shows whether the business made a profit or loss over a period, by comparing total Income against total Expenses.</p>
       <ul class="key-points">
-        <li>Path: Gateway of Tally &gt; Display More Reports &gt; Stock Summary.</li>
-        <li>Drill down (press Enter) on any item to see its full movement (purchases in, sales out).</li>
+        <li>Gateway of Tally &gt; Display More Reports &gt; Profit &amp; Loss A/c.</li>
+        <li>Automatically updates in real time as vouchers are entered &ndash; no manual calculation needed.</li>
+        <li>Press <code>Alt+F2</code> to change the period it is calculated over (e.g. month, quarter, full year).</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>42. Cash Book &amp; Bank Book</h4>
-      <p>Specialized Ledger reports (see Section 40) shown specifically for the Cash-in-Hand and Bank ledgers, displaying all receipts and payments through them with a running balance.</p>
+      <h4>57. Balance Sheet</h4>
+      <p>Shows the financial position of the business on a given date &ndash; what it Owns (Assets) versus what it Owes (Liabilities) and the Owner's Capital, which must always balance (Assets = Liabilities + Capital).</p>
       <ul class="key-points">
-        <li>Path: Gateway of Tally &gt; Display More Reports &gt; Account Books &gt; Cash/Bank Book.</li>
+        <li>Gateway of Tally &gt; Display More Reports &gt; Balance Sheet.</li>
+        <li>The Profit/Loss figure from the P&amp;L Account automatically carries into the Balance Sheet under Capital.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>43. Ratio Analysis</h4>
-      <p>Automatically calculates key financial health indicators from the accounting data already entered &ndash; e.g. Current Ratio (ability to pay short-term debts) and Gross Profit %, without needing manual calculation.</p>
+      <h4>58. Day Book</h4>
+      <p>A chronological list of every voucher entered on a given day (or period) &ndash; the fastest way to review or audit everything that was recorded.</p>
       <ul class="key-points">
-        <li>Path: Gateway of Tally &gt; Display More Reports &gt; Ratio Analysis.</li>
-      </ul>
-    </div>
-
-    <h2 class="part-title">Part G &mdash; Banking &amp; Other Features</h2>
-
-    <div class="topic-note">
-      <h4>44. Bank Reconciliation Statement (BRS)</h4>
-      <p>Matches the bank balance as per Tally's books against the balance shown on the actual bank statement, marking off which cheques/transactions have been cleared by the bank and which are still pending &ndash; used to catch missing or duplicate entries.</p>
-      <ul class="key-points">
-        <li>Open the Bank ledger report, then press <b>F5</b> to switch to Reconciliation mode.</li>
-        <li>Enter the actual "Bank Date" (the date it cleared per the bank statement) next to each transaction.</li>
+        <li>Gateway of Tally &gt; Display More Reports &gt; Day Book (or press <code>Alt+G</code> and type "Day Book").</li>
+        <li>Press <code>F2</code> to jump to a different date, or <code>Alt+F2</code> to view a date range.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>45. Cheque Printing</h4>
-      <p>Allows a cheque to be printed directly from Tally when making a Payment voucher through a bank ledger, avoiding manual handwriting of cheques.</p>
+      <h4>59. Ledger Report (Ledger Voucher Display)</h4>
+      <p>Shows every voucher entry affecting one specific ledger, in date order, with a running balance &ndash; used constantly to check "what does this customer/supplier/expense actually show".</p>
       <ul class="key-points">
-        <li>Must first configure the Bank ledger with its Cheque Book details (cheque number range) in the ledger master.</li>
-        <li>While saving a Payment voucher through that bank, choose "Yes" when prompted to print a cheque.</li>
+        <li>Gateway of Tally &gt; Display More Reports &gt; Account Books &gt; Ledger, then select the ledger.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>46. Backup and Restore Company Data</h4>
-      <p>Backup creates a safety copy of company data (protecting against data loss); Restore brings that backup data back into Tally if needed (e.g. on a new computer).</p>
+      <h4>60. Stock Summary</h4>
+      <p>Shows the closing quantity and value of every stock item, grouped by Stock Group &ndash; the inventory equivalent of the Trial Balance.</p>
       <ul class="key-points">
-        <li><b>Backup</b>: Gateway of Tally &gt; press <b>Ctrl+Alt+B</b> (or Alt+K &gt; Backup) &gt; select the company &gt; choose the destination folder.</li>
-        <li><b>Restore</b>: Alt+K &gt; Restore &gt; select the backup source folder &gt; choose destination.</li>
-        <li>It is good practice to take a backup at the end of every working day.</li>
+        <li>Gateway of Tally &gt; Display More Reports &gt; Stock Summary.</li>
+        <li>Drill down (press Enter) into any group to see individual item balances, and further into an item to see its full voucher history.</li>
       </ul>
     </div>
 
     <div class="topic-note">
-      <h4>47. Security Control (Users &amp; Passwords)</h4>
-      <p>Restricts who can access a company's data and what they are allowed to do &ndash; important when multiple staff use the same Tally installation.</p>
+      <h4>61. Cash Book &amp; Bank Book</h4>
+      <p>Specialised ledger reports showing only Cash or only Bank transactions, in date order with a running balance &ndash; used daily to verify how much cash/bank balance the business actually has.</p>
       <ul class="key-points">
-        <li>Gateway of Tally &gt; press <b>F11</b> &gt; set "Enable Security Control?" to Yes.</li>
-        <li>Create user types (e.g. Owner, Data Entry) with different levels of permission, and assign a username/password to each.</li>
+        <li>Gateway of Tally &gt; Display More Reports &gt; Account Books &gt; Cash/Bank Book, select the Cash or Bank ledger.</li>
       </ul>
     </div>
 
-    <h2 class="part-title">Part H &mdash; Payroll</h2>
+    <div class="topic-note">
+      <h4>62. Cash Flow &amp; Funds Flow Statement</h4>
+      <p>The <b>Cash Flow Statement</b> shows how cash moved in and out of the business over a period, split into Operating, Investing, and Financing activities. The <b>Funds Flow Statement</b> shows how working capital changed between two Balance Sheet dates.</p>
+      <ul class="key-points">
+        <li>Gateway of Tally &gt; Display More Reports &gt; Cash Flow Statement / Funds Flow Statement.</li>
+        <li>Both are generated automatically from the same voucher data already entered &ndash; no separate data entry needed.</li>
+      </ul>
+    </div>
 
     <div class="topic-note">
-      <h4>48. Enabling Payroll</h4>
-      <p>Payroll is Tally Prime's module for calculating and recording employee salaries, deductions, and net pay. It must be switched on before any employee or salary data can be entered, just like GST or Inventory.</p>
+      <h4>63. Ratio Analysis</h4>
+      <p>Automatically calculates key financial ratios from the current books &ndash; e.g. Current Ratio, Debtors Turnover, Net Profit %. Useful for quickly assessing business health without manual calculation.</p>
+      <ul class="key-points">
+        <li>Gateway of Tally &gt; Display More Reports &gt; Ratio Analysis.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part I &mdash; Banking &amp; Other Features</h2>
+
+    <div class="topic-note">
+      <h4>64. Bank Reconciliation Statement (BRS)</h4>
+      <p>Matches the bank balance as per the company's books against the balance shown on the actual bank statement, so any difference (e.g. a cheque issued but not yet cleared) is identified &ndash; a routine monthly task in almost every accounts job.</p>
+      <div class="badge-row"><span class="badge job">Monthly Job Task</span></div>
+      <ul class="key-points">
+        <li>Open the Bank ledger &gt; press <code>F5</code> (Bank Reconciliation) on the ledger display screen.</li>
+        <li>Against each transaction, enter the actual date it cleared in the bank statement.</li>
+        <li>Tally shows the reconciled balance and lists any still-unreconciled entries.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>65. Cheque Printing</h4>
+      <p>Prints a formatted cheque directly from a Payment voucher, matching the layout of the actual bank cheque book, avoiding handwritten cheques.</p>
+      <ul class="key-points">
+        <li>Set up the Bank ledger's cheque book details first (Alter &gt; Bank Ledger &gt; Cheque Books).</li>
+        <li>From a saved Payment voucher, press <code>Alt+P</code> (Print), then choose "Cheque" as the print option.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>66. Backup and Restore Company Data</h4>
+      <p>Backup creates a safe copy of the company data outside Tally, protecting against data loss; Restore brings that backup data back into Tally, e.g. on a new computer.</p>
+      <ul class="key-points">
+        <li>Backup: Gateway of Tally &gt; (Company Info menu) &gt; Backup &gt; select the company and a destination folder.</li>
+        <li>Restore: same menu &gt; Restore &gt; select the backup source folder and destination.</li>
+        <li>A regular backup routine (e.g. daily or weekly) is standard professional practice in any accounts role.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>67. Security Control (Users &amp; Passwords) &amp; Tally Vault</h4>
+      <p>Security Control lets an administrator create multiple user logins with different permission levels (e.g. a data-entry operator who cannot view reports, versus a full administrator). Tally Vault is a separate, stronger encryption password that scrambles the entire company data file itself.</p>
+      <ul class="key-points">
+        <li>Enable in F11: "Enable Security Control? Yes", then create Security Levels and Users (with usernames/passwords) under Company Alteration.</li>
+        <li>Tally Vault Password is set at the time of Company Creation (or Alter Company); once set, the data cannot be opened at all without it &ndash; even Tally itself cannot recover a forgotten Vault password, so it must be noted safely.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part J &mdash; Payroll</h2>
+
+    <div class="topic-note">
+      <h4>68. Enabling Payroll</h4>
+      <p>Payroll is Tally Prime's module for calculating and recording employee salaries, deductions, and net pay.</p>
       <div class="badge-row"><span class="badge pay">Payroll</span></div>
       <ul class="key-points">
-        <li>Go to F11 (Company Features) and set "Maintain Payroll? Yes" and "Maintain more than one Payroll / Cost Category? No" (for a single, simple payroll setup).</li>
+        <li>Go to F11 and set "Maintain Payroll? Yes".</li>
         <li>Once enabled, new menu options appear: Employee, Employee Group, Pay Head, Attendance/Production Type, and the Payroll Voucher.</li>
-        <li>Payroll works together with normal accounting &ndash; every salary payment still ultimately reduces the Bank/Cash ledger, just calculated automatically from the employee's pay structure.</li>
       </ul>
       <pre class="code">Path: Gateway of Tally -> F11 (Company Features)
-
-Maintain Payroll?                        : Yes
-Maintain more than one Payroll/Cost Category?: No
+Maintain Payroll? Yes
 Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>49. Creating Employees &amp; Employee Groups</h4>
-      <p>An Employee Group is a category used to organise staff (e.g. by department or branch), just like a ledger Group organises ledgers. An Employee master stores one staff member's personal and employment details.</p>
+      <h4>69. Creating Employees &amp; Employee Groups</h4>
       <div class="badge-row"><span class="badge pay">Payroll</span></div>
       <ul class="key-points">
-        <li>(Optional) Create an Employee Group first, e.g. "Office Staff" or "Factory Workers", if you want to organise employees into departments.</li>
-        <li>Go to Create &gt; Employee. Fill in Name, Employee Group (if used), Date of Joining, Gender, and Designation.</li>
-        <li>Additional details (PAN, bank account for salary transfer, address) can be filled under "Employee Details" for statutory accuracy, though a beginner can leave these blank for practice.</li>
+        <li>(Optional) Create an Employee Group first, e.g. "Office Staff", to organise staff by department.</li>
+        <li>Go to Create &gt; Employee. Fill in Name, Employee Group, Date of Joining, Gender, and Designation.</li>
       </ul>
       <pre class="code">Path: Gateway of Tally -> Create -> Employee
-
-Name             : Suresh Kumar
-Under (Employee Group): Office Staff
-Date of Joining  : 1-Apr-2025
-Designation      : Accounts Assistant
-Function         : Accounts
-Location         : Head Office
-
+Name: Suresh Kumar   Under: Office Staff
+Date of Joining: 1-Apr-2025   Designation: Accounts Assistant
 Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>50. Pay Heads (Earnings &amp; Deductions)</h4>
-      <p>A Pay Head is one component of a salary structure &ndash; for example "Basic Pay" (an Earning) or "Provident Fund" (a Deduction). Each Pay Head defines whether it adds to or subtracts from the employee's pay, and how its amount is calculated (a fixed value, a percentage of another pay head, or based on attendance).</p>
+      <h4>70. Pay Heads (Earnings &amp; Deductions)</h4>
+      <p>A Pay Head is one component of a salary structure &ndash; e.g. "Basic Pay" (an Earning) or "Provident Fund" (a Deduction).</p>
       <div class="badge-row"><span class="badge pay">Payroll</span></div>
       <ul class="key-points">
-        <li><b>Earnings for Employees</b> &ndash; e.g. Basic Pay (flat amount), HRA (often a % of Basic Pay), Conveyance Allowance.</li>
-        <li><b>Deductions from Employees</b> &ndash; e.g. Provident Fund (often 12% of Basic Pay), Professional Tax, Loan Recovery.</li>
-        <li>Go to Create &gt; Pay Head, give it a Name, choose its Pay Head Type (Earnings for Employees / Deductions from Employees), select the Income Type, and set the Calculation Type (Flat Rate, or "On Specified Formula" to calculate as a % of another pay head such as Basic Pay).</li>
+        <li>Go to Create &gt; Pay Head, choose its Type (Earnings for Employees / Deductions from Employees), and set the Calculation Type (Flat Rate, or "On Specified Formula" for a % of another pay head).</li>
       </ul>
-      <pre class="code">Path: Gateway of Tally -> Create -> Pay Head
-
-Name            : Basic Pay
-Pay Head Type   : Earnings for Employees
-Under           : Indirect Expenses
-Calculation Type: Flat Rate
-
-Name            : HRA
-Pay Head Type   : Earnings for Employees
-Calculation Type: On Specified Formula
-Formula         : 40% of Basic Pay
-
-Name            : Provident Fund
-Pay Head Type   : Deductions from Employees
-Calculation Type: On Specified Formula
-Formula         : 12% of Basic Pay
-
-Press Ctrl+A to save each Pay Head.</pre>
+      <pre class="code">Name: Basic Pay   Type: Earnings for Employees   Calculation: Flat Rate
+Name: HRA   Type: Earnings for Employees   Calculation: On Specified Formula -> 40% of Basic Pay
+Name: Provident Fund   Type: Deductions from Employees   Calculation: On Specified Formula -> 12% of Basic Pay</pre>
     </div>
 
     <div class="topic-note">
-      <h4>51. Salary Details &amp; Attendance/Production Types</h4>
-      <p>Salary Details link an employee to the specific Pay Heads that make up their pay structure, with the actual amount for each. Attendance/Production Type records days present, days absent, or units produced, which some Pay Heads (like an attendance-based Basic Pay) use in their calculation.</p>
+      <h4>71. Salary Details &amp; Attendance/Production Types</h4>
+      <p>Salary Details link an employee to their specific Pay Heads with amounts. Attendance/Production Type records days present/absent, which attendance-based Pay Heads use in their calculation.</p>
       <div class="badge-row"><span class="badge pay">Payroll</span></div>
-      <ul class="key-points">
-        <li>Go to Gateway of Tally &gt; Create &gt; Salary Details, select the employee, then add each applicable Pay Head with its amount.</li>
-        <li>For attendance-based pay, go to Create &gt; Attendance/Production Type (e.g. "Present", "Absent", or "Paid Leave") and record daily/monthly attendance through the Attendance Voucher before running payroll.</li>
-      </ul>
       <pre class="code">Path: Gateway of Tally -> Create -> Salary Details -> Suresh Kumar
-
-Pay Head        Amount
-Basic Pay        20,000
-HRA               8,000  (auto = 40% of Basic Pay)
-Provident Fund    2,400  (auto = 12% of Basic Pay, deduction)
-
+Basic Pay: 20,000   HRA: 8,000 (auto)   Provident Fund: 2,400 (auto)
 Press Ctrl+A to save.</pre>
     </div>
 
     <div class="topic-note">
-      <h4>52. Processing Payroll &amp; Generating Payslips</h4>
-      <p>Once employees and their salary structures are set up, the Payroll Voucher is used each pay period to actually calculate and record that month's salary, which Tally can then print or export as a Payslip.</p>
+      <h4>72. Processing Payroll &amp; Generating Payslips</h4>
       <div class="badge-row"><span class="badge pay">Payroll</span></div>
       <ul class="key-points">
-        <li>Press <code>Ctrl+F4</code> (or go to Vouchers &gt; Payroll Voucher) to open a new Payroll Voucher.</li>
-        <li>Select the employee (or "Auto Fill" to process all employees together for the month), and Tally calculates each Pay Head automatically from the Salary Details set up earlier.</li>
-        <li>Save the voucher; the payroll expense is now recorded exactly like any other accounting entry, reducing Bank/Cash when actually paid.</li>
-        <li>View the printable Payslip from Gateway of Tally &gt; Display More Reports &gt; Payroll Reports &gt; Payslip.</li>
+        <li>Press <code>Ctrl+F4</code> to open a new Payroll Voucher; select the employee, and Tally calculates each Pay Head automatically.</li>
+        <li>View the printable Payslip: Display More Reports &gt; Payroll Reports &gt; Payslip.</li>
       </ul>
-      <pre class="code">Path: Gateway of Tally -> Vouchers -> Ctrl+F4 (Payroll Voucher)
-
-Employee           : Suresh Kumar
-Payroll Ledger     : Salary Payable (Under: Current Liabilities)
-Pay Period         : April 2025
-
-Basic Pay   : 20,000  (Earning)
-HRA         :  8,000  (Earning)
-Provident Fund: 2,400 (Deduction)
-Net Pay     : 25,600
-
-Press Ctrl+A to save. Then:
-Gateway of Tally -> Display More Reports -> Payroll Reports -> Payslip
--> select Suresh Kumar -> Print (Alt+P)</pre>
+      <pre class="code">Command: Ctrl+F4 (Payroll Voucher)
+Employee: Suresh Kumar   Pay Period: April 2025
+Basic Pay 20,000 + HRA 8,000 - PF 2,400 = Net Pay 25,600
+Press Ctrl+A to save.</pre>
     </div>
 
-    <h2 class="part-title">Part I &mdash; Advanced Features</h2>
+    <h2 class="part-title">Part K &mdash; Advanced Features</h2>
 
     <div class="topic-note">
-      <h4>53. Cost Centres &amp; Cost Categories</h4>
-      <p>A Cost Centre lets you track income or expense against a specific department, project, or branch (e.g. "Marketing", "Hyderabad Branch"), separate from the ledger it is posted to &ndash; useful for seeing which department is spending or earning what, on top of the normal ledger-wise view. Cost Categories group multiple, parallel sets of cost centres (e.g. tracking both "Department" and "Project" at the same time).</p>
+      <h4>73. Cost Centres &amp; Cost Categories</h4>
+      <p>A Cost Centre tracks income/expense against a department, project, or branch, separate from the ledger it is posted to. Cost Categories group multiple parallel sets of cost centres.</p>
       <ul class="key-points">
-        <li>Enable in F11: "Maintain Cost Centres? Yes".</li>
-        <li>Create Cost Centres (e.g. "Marketing", "Production") under Gateway of Tally &gt; Create &gt; Cost Centre.</li>
-        <li>When entering a voucher (e.g. a Payment for an expense), Tally will now prompt for the Cost Centre to allocate that amount against, in addition to the ledger.</li>
-        <li>View the result in Display More Reports &gt; Statements of Accounts &gt; Cost Centres, which shows totals per cost centre.</li>
+        <li>Enable in F11: "Maintain Cost Centres? Yes"; create Cost Centres via Create &gt; Cost Centre.</li>
+        <li>Every relevant voucher then asks which Cost Centre to allocate the amount against.</li>
+        <li>View totals per cost centre in Display More Reports &gt; Statements of Accounts &gt; Cost Centres.</li>
       </ul>
-      <pre class="code">Path: Gateway of Tally -> F11 -> Maintain Cost Centres? Yes -> Ctrl+A
-
-Path: Gateway of Tally -> Create -> Cost Centre
-Name: Marketing   Under: Primary
-
-Path: Gateway of Tally -> Vouchers -> F5 (Payment)
-Account: Cash   Particulars: Advertisement Expense   Amount: 5,000
-Cost Centre: Marketing   Amount: 5,000   (Tally asks for this automatically)</pre>
     </div>
 
     <div class="topic-note">
-      <h4>54. Budgets &amp; Scenarios</h4>
-      <p>A Budget lets you set a planned spending/income limit for a ledger or group over a period, so Tally can show actual figures against the budgeted figures and highlight variances. A Scenario allows "what-if" reporting using provisional (non-final) vouchers that do not affect the real books until confirmed.</p>
+      <h4>74. Budgets &amp; Scenarios</h4>
+      <p>A Budget sets a planned spending/income limit for a ledger or group, so actual figures can be compared against it. A Scenario allows "what-if" reporting using provisional vouchers that don't affect the real books.</p>
       <ul class="key-points">
-        <li>Go to Gateway of Tally &gt; Create &gt; Budget, give it a name, select the period, and set budgeted amounts against chosen Groups/Ledgers.</li>
-        <li>Compare actual vs budget using Display More Reports &gt; Statements of Accounts &gt; Budget Variance.</li>
+        <li>Create &gt; Budget, set the period and budgeted amounts against Groups/Ledgers.</li>
+        <li>Compare via Display More Reports &gt; Statements of Accounts &gt; Budget Variance.</li>
       </ul>
-      <pre class="code">Path: Gateway of Tally -> Create -> Budget
-
-Name       : Annual Budget 2025-26
-Period     : 1-Apr-2025 to 31-Mar-2026
-Ledger     : Advertisement Expense   Budgeted Amount: 60,000
-
-Path: Display More Reports -> Statements of Accounts -> Budget Variance
-(shows actual spend against the 60,000 budgeted, and the variance)</pre>
     </div>
 
     <div class="topic-note">
-      <h4>55. Multi-Currency</h4>
-      <p>Multi-Currency allows a business to record transactions in a foreign currency (e.g. USD) while Tally automatically converts and reports them in the base currency (e.g. INR) using an exchange rate, essential for import/export businesses.</p>
+      <h4>75. Multi-Currency</h4>
+      <p>Allows recording transactions in a foreign currency while Tally automatically converts and reports them in the base currency using an exchange rate &ndash; essential for import/export businesses.</p>
       <ul class="key-points">
-        <li>Enable in F11: "Enable Multi-Currency? Yes".</li>
-        <li>Create additional Currency masters (Gateway of Tally &gt; Create &gt; Currency) for each foreign currency needed, e.g. USD.</li>
-        <li>Set the exchange rate for that currency on the date of the transaction.</li>
-        <li>When creating a ledger for a foreign party/bank, select the relevant currency; vouchers in that currency then auto-convert to base currency value for reports.</li>
+        <li>Enable in F11: "Enable Multi-Currency? Yes"; create Currency masters (Create &gt; Currency) with their exchange rate.</li>
       </ul>
-      <pre class="code">Path: Gateway of Tally -> F11 -> Enable Multi-Currency? Yes -> Ctrl+A
-
-Path: Gateway of Tally -> Create -> Currency
-Symbol: $   Formal Name: US Dollars
-Exchange Rate (as on date): 1 USD = 83.00 INR</pre>
     </div>
 
     <div class="topic-note">
-      <h4>56. Data Export, Import &amp; Voucher Printing</h4>
-      <p>Tally Prime can send reports/vouchers out to other formats for sharing, and print professional invoices directly from a voucher screen.</p>
+      <h4>76. Data Export, Import &amp; Voucher Printing</h4>
       <ul class="key-points">
-        <li><b>Export</b> &ndash; from any report or voucher, press <code>Alt+E</code>, choose a format (Excel, PDF, XML, JSON), and a save location.</li>
-        <li><b>Import</b> &ndash; used to bring master or voucher data in from another Tally company or an XML/JSON file, via Gateway of Tally &gt; Import Data.</li>
-        <li><b>Print</b> &ndash; press <code>Alt+P</code> from any open voucher or report to print it (e.g. printing a Sales Invoice to hand to a customer, or a Payslip for an employee).</li>
+        <li><b>Export</b> &ndash; press <code>Alt+E</code> on any report/voucher, choose a format (Excel, PDF, XML, JSON).</li>
+        <li><b>Import</b> &ndash; Gateway of Tally &gt; Import Data, to bring in master/voucher data from another company or file.</li>
+        <li><b>Print</b> &ndash; press <code>Alt+P</code> from any open voucher or report.</li>
       </ul>
-      <pre class="code">From an open Sales Voucher:
-Press Alt+P -> Print -> select printer -> Print
-
-From the Trial Balance report:
-Press Alt+E -> Export -> Format: PDF -> Ctrl+A to confirm and save</pre>
     </div>
 
-    <h2 class="part-title">Part J &mdash; Assignments with Full Solutions</h2>
+    <h2 class="part-title">Part L &mdash; Assignments with Full Solutions</h2>
 
     <div class="assign-block">
       <h4>Assignment T1 &mdash; Create a Company and Basic Ledgers</h4>
-      <p><b>Task:</b> Create a company called "Sunrise Traders" (Financial Year starting 1-Apr-2025) and create the ledgers needed for a simple trading business: Cash, Capital Account, and one customer "Kiran Stores".</p>
+      <p><b>Task:</b> Create a company called "Sunrise Traders" (Financial Year starting 1-Apr-2025) and create the ledgers needed for a simple trading business: Capital Account, and one customer "Kiran Stores".</p>
       <span class="solution-label">Solution</span>
       <pre class="code">1. Startup Screen -> Create Company
-   Name: Sunrise Traders
-   Financial Year From: 1-Apr-2025
-   State: Telangana | Base Currency: Indian Rupee
-   Press Ctrl+A to Save
+   Name: Sunrise Traders   Financial Year From: 1-Apr-2025
+   State: Telangana   Press Ctrl+A to Save
 
 2. Gateway of Tally -> Create -> Ledger
    Name: Capital Account   Under: Capital Account   Opening Balance: 1,00,000 Cr
-   Press Ctrl+A to Save
-   (Note: Cash-in-Hand ledger already exists by default under group "Cash-in-Hand")
+   (Note: Cash-in-Hand ledger already exists by default)
 
 3. Gateway of Tally -> Create -> Ledger
-   Name: Kiran Stores   Under: Sundry Debtors   Opening Balance: 0
-   Press Ctrl+A to Save</pre>
+   Name: Kiran Stores   Under: Sundry Debtors   Opening Balance: 0</pre>
     </div>
 
     <div class="assign-block">
       <h4>Assignment T2 &mdash; Record Basic Vouchers</h4>
-      <p><b>Task:</b> In the same company, record the following: (a) Owner invested Rs.1,00,000 cash as capital (b) Paid Rs.5,000 cash as rent (c) Deposited Rs.20,000 cash into HDFC Bank (create the bank ledger first).</p>
+      <p><b>Task:</b> In the same company, record: (a) Owner invested Rs.1,00,000 cash as capital (b) Paid Rs.5,000 cash as rent (c) Deposited Rs.20,000 cash into HDFC Bank (create the bank ledger first).</p>
       <span class="solution-label">Solution</span>
-      <pre class="code">Step 1 - Create the Bank ledger:
-Gateway of Tally -> Create -> Ledger
-Name: HDFC Bank   Under: Bank Accounts   Opening Balance: 0
+      <pre class="code">Step 1 - Create Bank ledger:
+Create -> Ledger -> Name: HDFC Bank -> Under: Bank Accounts
 
-Step 2 - Record capital introduced (Receipt Voucher, F6):
-Account (received into): Cash
-Particulars (received from): Capital Account   Amount: 1,00,000
+Step 2 - Receipt Voucher (F6): capital introduced
+Account: Cash   Particulars: Capital Account   Amount: 1,00,000
 
-Step 3 - Record rent paid (Payment Voucher, F5):
-Account (paid from): Cash
-Particulars: Rent Paid   Amount: 5,000
-(Create "Rent Paid" ledger under Indirect Expenses if it does not already exist,
-using Alt+C directly from this field)
+Step 3 - Payment Voucher (F5): rent paid
+Account: Cash   Particulars: Rent Paid (create via Alt+C)   Amount: 5,000
 
-Step 4 - Record cash deposited into bank (Contra Voucher, F4):
-Account (deposited into): HDFC Bank
-Particulars (from): Cash   Amount: 20,000</pre>
+Step 4 - Contra Voucher (F4): cash deposited into bank
+Account: HDFC Bank   Particulars: Cash   Amount: 20,000</pre>
     </div>
 
     <div class="assign-block">
       <h4>Assignment T3 &mdash; Sales &amp; Purchase with Stock</h4>
-      <p><b>Task:</b> Enable inventory (F11), create a stock item "Notebook" (Unit: Nos, Rate not fixed), then record: purchased 100 Notebooks @ Rs.30 from "Kiran Stores" (F9), then sold 40 Notebooks @ Rs.50 to a new customer "Meera Book Depot" (F8).</p>
+      <p><b>Task:</b> Enable inventory, create a stock item "Notebook" (Unit: Nos), then: purchase 100 Notebooks @ Rs.30 from "Kiran Stores" (F9), then sell 40 Notebooks @ Rs.50 to a new customer "Meera Book Depot" (F8), tracking each as a New Ref bill.</p>
       <span class="solution-label">Solution</span>
-      <pre class="code">Step 1 - Enable inventory:
-Gateway of Tally -> F11 -> Inventory Features -> Maintain Stock? Yes -> Ctrl+A
+      <pre class="code">Step 1 - F11 -> Maintain Stock? Yes
 
-Step 2 - Create Unit:
-Gateway of Tally -> Create -> Unit -> Symbol: Nos -> Formal Name: Numbers
-
-Step 3 - Create Stock Item:
-Gateway of Tally -> Create -> Stock Item
-Name: Notebook   Units: Nos   Opening Balance: 0
+Step 2 - Create -> Unit -> Symbol: Nos -> Formal Name: Numbers
+Step 3 - Create -> Stock Item -> Name: Notebook -> Units: Nos
 
 Step 4 - Purchase Voucher (F9):
-Party A/c Name: Kiran Stores
-Purchase Ledger: Purchase Accounts
-Item: Notebook   Qty: 100   Rate: 30   Amount: 3,000
+Party: Kiran Stores   Item: Notebook   Qty: 100   Rate: 30   Amount: 3,000
+Bill-wise Details: New Ref -> PInv-01 -> 3,000
 
-Step 5 - Create new customer ledger (Alt+C from the Party field):
-Name: Meera Book Depot   Under: Sundry Debtors
+Step 5 - Create Meera Book Depot (Alt+C from Party field, Under: Sundry Debtors)
 
 Step 6 - Sales Voucher (F8):
-Party A/c Name: Meera Book Depot
-Sales Ledger: Sales Accounts
-Item: Notebook   Qty: 40   Rate: 50   Amount: 2,000</pre>
+Party: Meera Book Depot   Item: Notebook   Qty: 40   Rate: 50   Amount: 2,000
+Bill-wise Details: New Ref -> Inv-101 -> 2,000</pre>
     </div>
 
     <div class="assign-block">
       <h4>Assignment T4 &mdash; GST Invoice Entry</h4>
-      <p><b>Task:</b> Enable GST for the company (GSTIN of the company's state), create CGST and SGST ledgers, set the Notebook item's GST rate to 12%, then record a sale of 10 Notebooks @ Rs.50 to Meera Book Depot with GST applied.</p>
+      <div class="badge-row"><span class="badge gst">GST</span></div>
+      <p><b>Task:</b> Enable GST, create CGST and SGST ledgers, set the Notebook item's GST rate to 12%, then record a sale of 10 Notebooks @ Rs.50 to Meera Book Depot with GST applied.</p>
       <span class="solution-label">Solution</span>
-      <pre class="code">Step 1 - Enable GST:
-Gateway of Tally -> F11 -> Statutory &amp; Taxation
-Enable GST? Yes   State: Telangana   GSTIN: 36ABCDE1234F1Z5
+      <pre class="code">Step 1 - F11 -> Statutory &amp; Taxation -> Enable GST? Yes
+State: Telangana   GSTIN: 36ABCDE1234F1Z5
 
 Step 2 - Create tax ledgers:
-Create -> Ledger -> Name: CGST -> Under: Duties &amp; Taxes -> Type: GST -> Central Tax
-Create -> Ledger -> Name: SGST -> Under: Duties &amp; Taxes -> Type: GST -> State Tax
+CGST -> Under: Duties &amp; Taxes -> Type: GST -> Central Tax
+SGST -> Under: Duties &amp; Taxes -> Type: GST -> State Tax
 
-Step 3 - Set GST rate on the item:
-Alter -> Stock Item -> Notebook -> GST Applicable: Applicable -> Rate: 12%
+Step 3 - Alter -> Stock Item -> Notebook -> GST Applicable: Applicable -> Rate: 12%
 
 Step 4 - Sales Voucher (F8):
-Party A/c Name: Meera Book Depot
-Item: Notebook   Qty: 10   Rate: 50   Amount: 500
-   CGST @6%  (auto-calculated)   30
-   SGST @6%  (auto-calculated)   30
-                          Total  560</pre>
+Party: Meera Book Depot   Item: Notebook   Qty: 10   Rate: 50   Amount: 500
+   CGST @6% (auto) 30   SGST @6% (auto) 30   Total: 560</pre>
     </div>
 
     <div class="assign-block">
       <h4>Assignment T5 &mdash; Generate and Read Reports</h4>
-      <p><b>Task:</b> After completing Assignments T1-T4, view the Trial Balance, and check that Cash-in-Hand and Sundry Debtors (Kiran Stores, Meera Book Depot) show correct balances.</p>
+      <p><b>Task:</b> After completing T1-T4, view the Trial Balance, and check that Cash and both party balances show correctly.</p>
       <span class="solution-label">Solution</span>
-      <pre class="code">1. Gateway of Tally -> Display More Reports -> Trial Balance
-   Check: Total Debit column = Total Credit column (they must match)
+      <pre class="code">1. Display More Reports -> Trial Balance
+   Check: Total Debit column = Total Credit column
 
-2. Gateway of Tally -> Display More Reports -> Account Books -> Ledger
-   -> select "Kiran Stores" -> confirm balance = 3,000 Cr (amount owed to them for the purchase)
-   -> select "Meera Book Depot" -> confirm balance = 2,560 Dr (2,000 + 560, amount they owe)
+2. Display More Reports -> Account Books -> Ledger -> Kiran Stores
+   Confirm balance = 3,000 Cr (owed to them for the purchase)
+   -> Meera Book Depot: confirm balance = 2,560 Dr (2,000 + 560)
 
-3. Gateway of Tally -> Display More Reports -> Cash/Bank Book -> Cash
-   -> confirm balance reflects: +1,00,000 (capital) - 5,000 (rent) - 20,000 (bank deposit)
-   = 75,000</pre>
+3. Display More Reports -> Cash/Bank Book -> Cash
+   Confirm: +1,00,000 (capital) - 5,000 (rent) - 20,000 (bank deposit) = 75,000</pre>
     </div>
 
     <div class="assign-block">
       <h4>Assignment T6 &mdash; Full Practice Set (Journal to Trial Balance)</h4>
-      <p><b>Task:</b> A new company "Green Mart" starts business on 1-Apr-2025. Record the following transactions in order, then view the Trial Balance:<br>
-      (1) Started business with Rs.50,000 cash.<br>
-      (2) Purchased furniture for Rs.10,000 cash.<br>
-      (3) Purchased goods worth Rs.15,000 on credit from "Vendor A".<br>
-      (4) Sold goods worth Rs.8,000 for cash.<br>
-      (5) Paid Rs.2,000 cash as electricity bill.<br>
-      (6) Received Rs.6,000 cash from a debtor "Customer B" (create with an opening balance of Rs.6,000 Dr).</p>
+      <p><b>Task:</b> A new company "Green Mart" starts business on 1-Apr-2025. Record: (1) Started business with Rs.50,000 cash. (2) Purchased furniture for Rs.10,000 cash. (3) Purchased goods worth Rs.15,000 on credit from "Vendor A". (4) Sold goods worth Rs.8,000 for cash. (5) Paid Rs.2,000 cash as electricity. (6) Received Rs.6,000 cash from debtor "Customer B" (opening balance Rs.6,000 Dr).</p>
       <span class="solution-label">Solution</span>
       <pre class="code">1. Create Company "Green Mart", FY from 1-Apr-2025.
 
 2. Create Ledgers:
-   Capital Account   Under: Capital Account
-   Furniture         Under: Fixed Assets
-   Purchase Accounts (already exists by default, or create Under: Purchase Accounts)
-   Vendor A          Under: Sundry Creditors
-   Sales Accounts    (already exists by default)
-   Electricity Charges Under: Indirect Expenses
-   Customer B        Under: Sundry Debtors   Opening Balance: 6,000 Dr
+   Capital Account (Under: Capital Account)
+   Furniture (Under: Fixed Assets)
+   Vendor A (Under: Sundry Creditors)
+   Electricity Charges (Under: Indirect Expenses)
+   Customer B (Under: Sundry Debtors, Opening Balance: 6,000 Dr)
 
-3. Transaction 1 - Receipt (F6):
-   Account: Cash   Particulars: Capital Account   Amount: 50,000
+3. Receipt (F6): Cash / Capital Account / 50,000
+4. Payment (F5): Cash / Furniture / 10,000
+5. Purchase (F9), Accounting Invoice mode: Vendor A / Purchase Accounts / 15,000
+6. Sales (F8), Accounting Invoice mode: Cash / Sales Accounts / 8,000
+7. Payment (F5): Cash / Electricity Charges / 2,000
+8. Receipt (F6): Cash / Customer B / 6,000
 
-4. Transaction 2 - Payment (F5):
-   Account: Cash   Particulars: Furniture   Amount: 10,000
-
-5. Transaction 3 - Purchase (F9), Accounting Invoice mode (no stock item needed):
-   Party A/c Name: Vendor A
-   Particulars: Purchase Accounts   Amount: 15,000
-
-6. Transaction 4 - Sales (F8), Accounting Invoice mode:
-   Party A/c Name: Cash (or Cash Sales)
-   Particulars: Sales Accounts   Amount: 8,000
-
-7. Transaction 5 - Payment (F5):
-   Account: Cash   Particulars: Electricity Charges   Amount: 2,000
-
-8. Transaction 6 - Receipt (F6):
-   Account: Cash   Particulars: Customer B   Amount: 6,000
-
-9. View Trial Balance:
-   Gateway of Tally -> Display More Reports -> Trial Balance
-   Confirm Cash balance = 50,000 - 10,000 + 8,000 - 2,000 + 6,000 = 52,000
+9. Trial Balance -> confirm Cash = 50,000-10,000+8,000-2,000+6,000 = 52,000
    Confirm Debit total = Credit total</pre>
     </div>
 
     <div class="assign-block">
       <h4>Assignment T7 &mdash; Payroll: Employee Setup and Salary Processing</h4>
       <div class="badge-row"><span class="badge pay">Payroll</span></div>
-      <p><b>Task:</b> Enable Payroll, create one employee "Anita Rao" (Designation: Sales Executive), set up a salary structure of Basic Pay Rs.15,000 and HRA at 40% of Basic Pay, then process her April 2025 salary and view the payslip.</p>
+      <p><b>Task:</b> Enable Payroll, create employee "Anita Rao" (Sales Executive), set salary structure Basic Pay Rs.15,000 and HRA at 40% of Basic, then process her April 2025 salary and view the payslip.</p>
       <span class="solution-label">Solution</span>
-      <pre class="code">Step 1 - Enable Payroll:
-Gateway of Tally -> F11 -> Maintain Payroll? Yes -> Ctrl+A
+      <pre class="code">Step 1 - F11 -> Maintain Payroll? Yes
 
-Step 2 - Create Employee:
-Gateway of Tally -> Create -> Employee
-Name: Anita Rao   Date of Joining: 1-Apr-2025   Designation: Sales Executive
+Step 2 - Create -> Employee -> Anita Rao -> Designation: Sales Executive
 
 Step 3 - Create Pay Heads:
-Create -> Pay Head -> Name: Basic Pay -> Type: Earnings for Employees -> Calculation: Flat Rate
-Create -> Pay Head -> Name: HRA -> Type: Earnings for Employees
-   -> Calculation Type: On Specified Formula -> Formula: 40% of Basic Pay
+Basic Pay -> Earnings for Employees -> Flat Rate
+HRA -> Earnings for Employees -> On Specified Formula -> 40% of Basic Pay
 
-Step 4 - Salary Details:
-Create -> Salary Details -> Anita Rao
-Basic Pay: 15,000   HRA: 6,000 (auto-calculated = 40% of 15,000)
+Step 4 - Create -> Salary Details -> Anita Rao
+Basic Pay: 15,000   HRA: 6,000 (auto)
 
-Step 5 - Process Payroll Voucher (Ctrl+F4):
+Step 5 - Payroll Voucher (Ctrl+F4):
 Employee: Anita Rao   Pay Period: April 2025
-Basic Pay 15,000 + HRA 6,000 = Net Pay 21,000
-Press Ctrl+A to save.
+Net Pay = 15,000 + 6,000 = 21,000
 
-Step 6 - View Payslip:
-Display More Reports -> Payroll Reports -> Payslip -> select Anita Rao
-Confirm Net Pay shown = 21,000</pre>
+Step 6 - Display More Reports -> Payroll Reports -> Payslip -> Anita Rao
+Confirm Net Pay = 21,000</pre>
     </div>
 
     <div class="assign-block">
       <h4>Assignment T8 &mdash; Cost Centre Tracking for a Branch Expense</h4>
-      <p><b>Task:</b> Enable Cost Centres, create two cost centres "Head Office" and "Branch Office", then record a Rs.3,000 cash payment for Stationery, split Rs.2,000 to Head Office and Rs.1,000 to Branch Office. View the Cost Centre report to confirm the split.</p>
+      <p><b>Task:</b> Enable Cost Centres, create "Head Office" and "Branch Office", record a Rs.3,000 cash payment for Stationery split Rs.2,000/Rs.1,000 between them, then verify the split.</p>
       <span class="solution-label">Solution</span>
-      <pre class="code">Step 1 - Enable Cost Centres:
-Gateway of Tally -> F11 -> Maintain Cost Centres? Yes -> Ctrl+A
+      <pre class="code">Step 1 - F11 -> Maintain Cost Centres? Yes
 
-Step 2 - Create Cost Centres:
-Create -> Cost Centre -> Name: Head Office     Under: Primary
-Create -> Cost Centre -> Name: Branch Office   Under: Primary
+Step 2 - Create -> Cost Centre -> Head Office (Under: Primary)
+         Create -> Cost Centre -> Branch Office (Under: Primary)
 
-Step 3 - Create the expense ledger (if not already present):
-Create -> Ledger -> Name: Stationery Expense -> Under: Indirect Expenses
+Step 3 - Create -> Ledger -> Stationery Expense -> Under: Indirect Expenses
 
-Step 4 - Payment Voucher (F5) with cost centre allocation:
+Step 4 - Payment Voucher (F5):
 Account: Cash   Particulars: Stationery Expense   Amount: 3,000
-   Cost Centre: Head Office     Amount: 2,000
-   Cost Centre: Branch Office   Amount: 1,000
-Press Ctrl+A to save.
+   Cost Centre: Head Office     2,000
+   Cost Centre: Branch Office   1,000
 
-Step 5 - View the split:
-Display More Reports -> Statements of Accounts -> Cost Centres -> Stationery Expense
+Step 5 - Display More Reports -> Statements of Accounts -> Cost Centres -> Stationery Expense
 Confirm: Head Office = 2,000, Branch Office = 1,000, Total = 3,000</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment T9 &mdash; TDS Deduction on a Professional Fee Payment</h4>
+      <div class="badge-row"><span class="badge tds">TDS</span></div>
+      <p><b>Task:</b> Enable TDS, create the required ledgers, then record a Professional Fees bill of Rs.20,000 from "CA Consultants" with 10% TDS deducted, and pay the net amount.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">Step 1 - F11 -> Enable TDS? Yes -> TAN: HYDA12345B
+
+Step 2 - Create Ledgers:
+Professional Fees -> Under: Indirect Expenses -> Is TDS Deductable? Yes
+   -> Nature of Payment: Fees for Professional Services (194J)
+TDS on Professional Charges -> Under: Duties &amp; Taxes -> Type: TDS
+CA Consultants -> Under: Sundry Creditors
+
+Step 3 - Journal Voucher (F7):
+Dr  Professional Fees                20,000
+    Cr  TDS on Professional Charges              2,000  (10% of 20,000)
+    Cr  CA Consultants                          18,000
+
+Step 4 - Payment Voucher (F5): pay the net amount to CA Consultants
+Account: Bank   Particulars: CA Consultants   Amount: 18,000
+
+Step 5 - Payment Voucher (F5): deposit TDS with the government
+Account: Bank   Particulars: TDS on Professional Charges   Amount: 2,000</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment T10 &mdash; Outstanding Bills: Bill-wise Settlement</h4>
+      <p><b>Task:</b> "Ramesh Traders" (Sundry Debtor) is billed twice: Inv-201 for Rs.10,000 and Inv-202 for Rs.7,000. He later pays Rs.10,000, fully settling only Inv-201. Record both invoices and the part-payment, then check the Outstanding Receivables report.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">Step 1 - Sales Voucher (F8): Ramesh Traders, Amount 10,000
+   Bill-wise Details: New Ref -> Inv-201 -> 10,000
+
+Step 2 - Sales Voucher (F8): Ramesh Traders, Amount 7,000
+   Bill-wise Details: New Ref -> Inv-202 -> 7,000
+
+Step 3 - Receipt Voucher (F6):
+Account: Bank   Particulars: Ramesh Traders   Amount: 10,000
+   Bill-wise Details: Against Ref -> Inv-201 -> 10,000  (fully settles Inv-201)
+
+Step 4 - Display More Reports -> Statements of Accounts -> Outstanding -> Receivables
+Confirm: Inv-201 no longer appears (settled); Inv-202 still shows Rs.7,000 pending</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment T11 &mdash; Stock Valuation with Batch-wise Tracking</h4>
+      <div class="badge-row"><span class="badge inv">Inventory</span></div>
+      <p><b>Task:</b> Create a stock item "Paracetamol Tablets" with Batch-wise details and FIFO valuation enabled. Purchase Batch "B001" (Exp: Dec-2026) of 500 units @ Rs.2, then Batch "B002" (Exp: Jun-2027) of 500 units @ Rs.2.50. Sell 600 units and confirm FIFO uses all of B001 first.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">Step 1 - F11 -> Inventory Features -> Maintain Batch-wise Details? Yes
+         -> Track Date of Manufacture/Expiry? Yes
+
+Step 2 - Create -> Stock Item -> Paracetamol Tablets
+Maintain in Batches: Yes   Costing Method: FIFO
+
+Step 3 - Purchase Voucher (F9): 500 units @ Rs.2
+   Batch: B001   Expiry: 31-Dec-2026
+
+Step 4 - Purchase Voucher (F9): 500 units @ Rs.2.50
+   Batch: B002   Expiry: 30-Jun-2027
+
+Step 5 - Sales Voucher (F8): sell 600 units (select batches as prompted)
+   FIFO consumes all 500 units of B001 first, then 100 units of B002
+   Cost of goods sold = (500 x 2) + (100 x 2.50) = 1,000 + 250 = 1,250
+
+Step 6 - Display More Reports -> Inventory Reports -> Batch Summary
+Confirm B001 = 0 remaining, B002 = 400 remaining</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment T12 &mdash; Price List, Discount &amp; POS Billing</h4>
+      <div class="badge-row"><span class="badge job">Retail</span></div>
+      <p><b>Task:</b> Create Price Levels "Wholesale" and "Retail" for item "LED Bulb 9W" (Wholesale Rs.55, Retail Rs.70). Enable the Discount column and POS Invoicing. Bill a wholesale customer for 50 bulbs with an extra 5% discount, then bill a retail walk-in customer for 3 bulbs via POS.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">Step 1 - Create -> Price Level -> Wholesale, Retail
+Step 2 - Create -> Price List -> Wholesale -> LED Bulb 9W -> Rate: 55
+         Create -> Price List -> Retail -> LED Bulb 9W -> Rate: 70
+
+Step 3 - F12 (Configure) on invoice screen -> Show column for Discount? Yes
+
+Step 4 - Sales Voucher (F8), Price Level: Wholesale
+Party: (wholesale customer)   Item: LED Bulb 9W   Qty: 50
+Rate: 55 (auto-filled)   Discount: 5%   Amount: 2,612.50
+
+Step 5 - F11 -> Enable POS Invoicing? Yes
+Create -> Voucher Type -> POS Sales -> Type: Sales -> Use for POS Invoicing? Yes
+
+Step 6 - Open POS Invoice (Alt+G -> "POS Invoice")
+Item: LED Bulb 9W   Qty: 3   Rate: 70 (Retail)   Amount: 210
+Payment Mode: Cash -> Print the receipt</pre>
     </div>
 
     <h3>Quick Shortcut Reference Table</h3>
@@ -1341,38 +1562,42 @@ Confirm: Head Office = 2,000, Branch Office = 1,000, Total = 3,000</pre>
       <table class="quick-ref">
         <tr><th>Shortcut</th><th>Function</th></tr>
         <tr><td>F1</td><td>Select Company (from startup screen)</td></tr>
-        <tr><td>Alt+F1</td><td>Shut Company / Close current report</td></tr>
+        <tr><td>Alt+F1</td><td>Shut Company / close current report</td></tr>
+        <tr><td>Alt+F3</td><td>Alter / manage Company</td></tr>
         <tr><td>F2</td><td>Change voucher / report date</td></tr>
         <tr><td>Alt+F2</td><td>Change report date range (period)</td></tr>
         <tr><td>F4</td><td>Contra Voucher</td></tr>
         <tr><td>F5</td><td>Payment Voucher</td></tr>
         <tr><td>F6</td><td>Receipt Voucher</td></tr>
         <tr><td>F7</td><td>Journal Voucher</td></tr>
-        <tr><td>Alt+F7</td><td>Stock Journal</td></tr>
-        <tr><td>Ctrl+F7</td><td>Physical Stock Voucher</td></tr>
+        <tr><td>Alt+F7</td><td>Stock Journal / Manufacturing Journal</td></tr>
         <tr><td>F8</td><td>Sales Voucher</td></tr>
         <tr><td>Alt+F8</td><td>Delivery Note</td></tr>
         <tr><td>F9</td><td>Purchase Voucher</td></tr>
         <tr><td>Alt+F9</td><td>Receipt Note</td></tr>
         <tr><td>Alt+F4</td><td>Purchase Order</td></tr>
-        <tr><td>Alt+F5</td><td>Sales Order / Debit Note (context dependent)</td></tr>
-        <tr><td>Alt+F6</td><td>Credit Note</td></tr>
+        <tr><td>Alt+F5</td><td>Sales Order</td></tr>
+        <tr><td>Ctrl+F8</td><td>Credit Note</td></tr>
+        <tr><td>Ctrl+F9</td><td>Debit Note</td></tr>
+        <tr><td>Ctrl+F4</td><td>Payroll Voucher</td></tr>
+        <tr><td>Ctrl+H</td><td>Change voucher mode (Item/Accounting Invoice)</td></tr>
+        <tr><td>Ctrl+L</td><td>Mark voucher as Optional</td></tr>
         <tr><td>F11</td><td>Company Features</td></tr>
         <tr><td>F12</td><td>Configuration</td></tr>
-        <tr><td>Alt+C</td><td>Quick-create a master (e.g. ledger) from within a field</td></tr>
+        <tr><td>Alt+C</td><td>Quick-create a master from within a field</td></tr>
         <tr><td>Alt+D</td><td>Delete a voucher or master</td></tr>
         <tr><td>Ctrl+A</td><td>Accept / Save the current screen</td></tr>
         <tr><td>Page Up / Page Down</td><td>View previous / next voucher</td></tr>
-        <tr><td>Alt+G</td><td>"Go To" search box (jump to any report/master)</td></tr>
-        <tr><td>Ctrl+N</td><td>Open the on-screen calculator panel</td></tr>
+        <tr><td>Alt+G</td><td>"Go To" search box (jump to any report/voucher/master)</td></tr>
+        <tr><td>Alt+E</td><td>Export the current report/voucher</td></tr>
+        <tr><td>Alt+P</td><td>Print the current voucher/report</td></tr>
         <tr><td>Ctrl+Alt+B</td><td>Backup company data</td></tr>
-        <tr><td>Ctrl+F4</td><td>Payroll Voucher</td></tr>
         <tr><td>Esc</td><td>Step back to the previous screen</td></tr>
       </table>
     </div>
 
     <div class="notes">
-      <strong>Exam Summary:</strong> Tally Prime work follows a clear order: first understand the accounting Golden Rules, then create a Company, set up Masters (Ledgers under Groups, Stock Items under Stock Groups), record day-to-day transactions through the correct Voucher (Payment, Receipt, Contra, Journal, Sales, Purchase), enable and apply GST where applicable, run Payroll for staff salaries (Employees, Pay Heads, Salary Details, Payslips), use advanced tools like Cost Centres, Budgets, and Multi-Currency where needed, and finally review the results through Reports (Trial Balance, Profit &amp; Loss, Balance Sheet, Stock Summary). Practicing Assignments T1 through T8 in order builds a complete, connected understanding of the entire workflow from company creation to final reports.
+      <strong>Exam Summary:</strong> A job-ready Tally Prime workflow always follows the same order: understand the accounting Golden Rules, create the Company, set up Masters (Ledgers under Groups, Stock Items under Stock Groups, with Price Lists/Batches/BOM as needed), record day-to-day transactions through the correct Voucher, track bills individually and chase Outstanding Receivables/Payables, apply GST and TDS correctly with e-Way Bill/e-Invoice compliance where applicable, run Payroll for staff, use Cost Centres and Budgets for internal control, reconcile the Bank monthly, and finally review results through the Financial Reports. Practicing Assignments T1 through T12 in order builds the same complete, connected workflow that a working Accounts Executive uses every single day.
     </div>
   </div>
 </body>
