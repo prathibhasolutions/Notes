@@ -1,0 +1,2172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selenium with Python Complete Notes - Job-Ready Test Automation</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .meta div span {
+      color: #7c8fa0;
+      font-size: 7.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: #8a5c1f; }
+
+    h2.part-title {
+      margin: 4.5mm 0 2.4mm;
+      font-size: 11.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: linear-gradient(90deg, #0f5f7f, #124a76);
+      border-radius: 1.3mm;
+      padding: 2mm 2.6mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-block ol {
+      margin: 0;
+      padding-left: 5.2mm;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+    }
+
+    .notes {
+      margin-top: 3mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      position: relative;
+      z-index: 1;
+      background: #fafcff;
+      font-size: 9pt;
+    }
+
+    .topic-note {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-note p {
+      margin: 0 0 1.5mm;
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: #304556;
+    }
+
+    .key-points {
+      margin: 1.3mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1mm;
+      font-size: 7.9pt;
+      line-height: 1.4;
+      color: #314759;
+    }
+
+    .code {
+      margin: 1.3mm 0 0;
+      border: 1px solid #d9e5ef;
+      border-left: 2mm solid #0f5f7f;
+      border-radius: 1mm;
+      background: #fffdf8;
+      color: #203040;
+      padding: 2mm;
+      font-size: 7.6pt;
+      line-height: 1.42;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+      margin: 1mm 0 0;
+    }
+
+    .badge {
+      font-size: 7.3pt;
+      color: #0f5f7f;
+      border: 1px solid #bcd7e2;
+      background: #eef7fb;
+      border-radius: 3mm;
+      padding: 0.8mm 2.2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .badge.job { color: #b8590a; border-color: #f0cda3; background: #fff3e6; }
+    .badge.adv { color: #6a3b96; border-color: #d6c2ea; background: #f6f0fb; }
+    .badge.verified { color: #1f7a4d; border-color: #b9dfc7; background: #ecfaf1; }
+
+    .assign-block {
+      border: 1px solid #d6e0ea;
+      border-left: 2mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      background: #fffefb;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .assign-block h4 { color: #8a5c1f; }
+
+    .assign-block .solution-label {
+      display: inline-block;
+      margin: 1.6mm 0 0.8mm;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0f5f7f;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid #bcd7e2;
+      padding-bottom: 0.6mm;
+    }
+
+    .quick-ref {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.6pt;
+      margin-top: 1mm;
+    }
+
+    .quick-ref th, .quick-ref td {
+      border: 1px solid var(--soft);
+      padding: 1mm 1.5mm;
+      text-align: left;
+    }
+
+    .quick-ref th {
+      background: #eef5fa;
+      color: #124a76;
+      text-transform: uppercase;
+      font-size: 7pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">Selenium with Python Complete Notes</div>
+        <div class="subtitle">Web Test Automation &bull; Locators to Frameworks &bull; Job-Ready with Full Code Examples</div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><span>Name</span>&nbsp;</div>
+      <div><span>Class / Roll No.</span>&nbsp;</div>
+      <div><span>Date</span>&nbsp;</div>
+    </div>
+
+    <div class="instructions">
+      <b>Study Note:</b> These notes assume you already know Python and take you to job-ready Selenium test automation &mdash; everything a QA Automation Engineer / SDET uses daily: locating and interacting with elements, waits, browser control, exception handling, the Page Object Model, and pytest-based frameworks. Every topic gives a plain-English <b>definition</b>, <b>complete working code</b>, and clear explanation. Part A includes a small <b>local practice website</b> (plain HTML you create yourself) so every example in these notes can be run and tested with zero dependency on any live external website. <b>Assignments with full, complete code solutions</b> are provided at the end.
+    </div>
+
+    <h2 class="part-title">Part A &mdash; Introduction &amp; Environment Setup</h2>
+
+    <div class="topic-note">
+      <h4>1. What is Selenium, and Why Learn It?</h4>
+      <p>Selenium is a free, open-source tool that controls a real web browser programmatically &ndash; it can open pages, click buttons, fill forms, and read page content exactly as a human user would, but automatically and repeatably. It is the industry-standard tool for automating functional testing of web applications.</p>
+      <div class="badge-row"><span class="badge job">Job Relevance</span></div>
+      <ul class="key-points">
+        <li>Selenium WebDriver (what these notes cover) is the core browser-automation API, used with Python, Java, C#, or JavaScript.</li>
+        <li>It is a mandatory, near-universal skill for QA Automation Engineer, SDET (Software Development Engineer in Test), and Test Automation Developer job roles.</li>
+        <li>Real jobs use Selenium to build automated regression suites that run on every code change, catching bugs before they reach users &ndash; far faster and more reliable than manual re-testing.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>2. Selenium Architecture &amp; Components</h4>
+      <p>"Selenium" is actually a family of tools; understanding how they relate helps make sense of job postings and documentation.</p>
+      <ul class="key-points">
+        <li><b>Selenium WebDriver</b> &ndash; the core library that sends commands directly to a real browser via its native automation driver. This is what "Selenium" means in almost all modern job contexts, and what these notes teach.</li>
+        <li><b>Selenium Grid</b> &ndash; distributes tests to run in parallel across many machines/browsers at once, used for large test suites (see Section 51).</li>
+        <li><b>Selenium IDE</b> &ndash; a browser extension for record-and-playback test creation, mainly used for quick prototyping, not for serious frameworks.</li>
+        <li>WebDriver talks to a browser-specific <b>driver executable</b> (e.g. chromedriver for Chrome, geckodriver for Firefox), which translates commands into real browser actions.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>3. Installing Python Packages: selenium &amp; webdriver-manager</h4>
+      <p>Two packages are needed: <code>selenium</code> itself, and <code>webdriver-manager</code>, which automatically downloads and manages the correct browser driver version for you &ndash; avoiding the old, error-prone process of manually downloading a matching chromedriver.exe.</p>
+      <ul class="key-points">
+        <li>Run both installs from a terminal/command prompt before writing any code.</li>
+        <li>Selenium 4 (the current major version) uses a completely different, simpler API than older Selenium 3 tutorials you may find online &ndash; these notes use Selenium 4 syntax throughout.</li>
+      </ul>
+      <pre class="code">pip install selenium
+pip install webdriver-manager</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>4. Setting Up Your Practice Playground</h4>
+      <p>Rather than depending on a live website (which can change its layout and break every example), create these small local HTML pages once. Every example and assignment in these notes uses them, so your code is guaranteed to work exactly as shown, with no internet dependency.</p>
+      <div class="badge-row"><span class="badge verified">All Locators Verified</span></div>
+      <ul class="key-points">
+        <li>Create a folder named <code>practice_site</code>. Inside it, create the three files below exactly as shown.</li>
+        <li>Every locator (ID, CSS, XPath) used later in these notes has been checked against this exact HTML, so copying it precisely matters.</li>
+      </ul>
+      <pre class="code">--- File: practice_site/login.html ---
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Practice Login Page&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id="page-title"&gt;Login Page&lt;/h1&gt;
+  &lt;form id="login-form"&gt;
+    &lt;label for="username"&gt;Username&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" class="form-control" placeholder="Enter username"&gt;
+    &lt;label for="password"&gt;Password&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" class="form-control" placeholder="Enter password"&gt;
+    &lt;button type="submit" id="login-btn" class="btn btn-primary"&gt;Login&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;a href="https://example.com" id="forgot-link"&gt;Forgot password?&lt;/a&gt;
+  &lt;div id="message" style="display:none;"&gt;Login successful&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+--- File: practice_site/frame-content.html ---
+&lt;!doctype html&gt;
+&lt;html&gt;&lt;body&gt;&lt;p id="frame-text"&gt;This text is inside an iframe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+
+--- File: practice_site/forms.html ---
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Practice Forms Page&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Form Elements Practice&lt;/h1&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Gender&lt;/legend&gt;
+    &lt;input type="radio" id="gender-male" name="gender" value="male"&gt;&lt;label for="gender-male"&gt;Male&lt;/label&gt;
+    &lt;input type="radio" id="gender-female" name="gender" value="female"&gt;&lt;label for="gender-female"&gt;Female&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Hobbies&lt;/legend&gt;
+    &lt;input type="checkbox" id="hobby-reading" name="hobby" value="reading"&gt;&lt;label for="hobby-reading"&gt;Reading&lt;/label&gt;
+    &lt;input type="checkbox" id="hobby-sports" name="hobby" value="sports"&gt;&lt;label for="hobby-sports"&gt;Sports&lt;/label&gt;
+    &lt;input type="checkbox" id="hobby-music" name="hobby" value="music"&gt;&lt;label for="hobby-music"&gt;Music&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;label for="country"&gt;Country&lt;/label&gt;
+  &lt;select id="country" name="country"&gt;
+    &lt;option value=""&gt;-- Select --&lt;/option&gt;
+    &lt;option value="in"&gt;India&lt;/option&gt;
+    &lt;option value="us"&gt;United States&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label for="skills"&gt;Skills (multi-select)&lt;/label&gt;
+  &lt;select id="skills" name="skills" multiple&gt;
+    &lt;option value="python"&gt;Python&lt;/option&gt;
+    &lt;option value="java"&gt;Java&lt;/option&gt;
+    &lt;option value="selenium"&gt;Selenium&lt;/option&gt;
+    &lt;option value="sql"&gt;SQL&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button id="alert-btn" onclick="alert('This is a simple alert')"&gt;Show Alert&lt;/button&gt;
+  &lt;button id="confirm-btn" onclick="confirm('Are you sure?')"&gt;Show Confirm&lt;/button&gt;
+  &lt;button id="prompt-btn" onclick="prompt('Enter your name')"&gt;Show Prompt&lt;/button&gt;
+
+  &lt;a href="login.html" target="_blank" id="new-tab-link"&gt;Open Login in New Tab&lt;/a&gt;
+
+  &lt;iframe id="practice-frame" src="frame-content.html" width="300" height="150"&gt;&lt;/iframe&gt;
+
+  &lt;input type="file" id="file-upload" name="file-upload"&gt;
+
+  &lt;table id="data-table" border="1"&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Role&lt;/th&gt;&lt;th&gt;City&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Asha&lt;/td&gt;&lt;td&gt;QA Engineer&lt;/td&gt;&lt;td&gt;Hyderabad&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Ravi&lt;/td&gt;&lt;td&gt;Developer&lt;/td&gt;&lt;td&gt;Bengaluru&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Kiran&lt;/td&gt;&lt;td&gt;Manager&lt;/td&gt;&lt;td&gt;Chennai&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;div id="dynamic-box"&gt;Loading...&lt;/div&gt;
+  &lt;script&gt;
+    setTimeout(function() {
+      document.getElementById('dynamic-box').innerText = 'Content Loaded';
+    }, 2000);
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>5. Your First Selenium Script</h4>
+      <p>This script opens Chrome, loads your local <code>login.html</code> practice page, prints its title, and closes the browser &ndash; the smallest possible complete Selenium program.</p>
+      <ul class="key-points">
+        <li><code>webdriver.Chrome()</code> launches a new, real Chrome browser window controlled by your script.</li>
+        <li><code>driver.get(url)</code> navigates to a page &ndash; local files use a <code>file://</code> URL.</li>
+        <li><code>driver.quit()</code> closes the browser and ends the session &ndash; always call this when done, ideally in a <code>finally</code> block so the browser closes even if an error occurs.</li>
+      </ul>
+      <pre class="code">from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import pathlib
+
+# Build a file:// URL that works on any operating system
+practice_page = pathlib.Path("practice_site/login.html").resolve().as_uri()
+
+# webdriver-manager downloads/matches the correct chromedriver automatically
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+
+try:
+    driver.get(practice_page)
+    print("Page title is:", driver.title)   # Practice Login Page
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>6. The WebDriver Object &amp; Browser Options</h4>
+      <p>Beyond just launching a plain browser, an Options object lets you configure how the browser starts &ndash; essential for real automation jobs (e.g. running headless on a build server, disabling notification pop-ups that could block clicks).</p>
+      <ul class="key-points">
+        <li>Create a <code>ChromeOptions</code> object, add arguments to it, then pass it into <code>webdriver.Chrome(service=..., options=...)</code>.</li>
+        <li>Common arguments: <code>--start-maximized</code>, <code>--disable-notifications</code>, <code>--incognito</code>, <code>--headless=new</code> (see Section 37).</li>
+      </ul>
+      <pre class="code">from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+options = Options()
+options.add_argument("--start-maximized")
+options.add_argument("--disable-notifications")
+
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=options)
+driver.get("https://example.com")
+print(driver.title)
+driver.quit()</pre>
+    </div>
+
+
+    <div class="topic-note">
+      <h4>7. Browser Navigation Commands</h4>
+      <p>These commands control which page the browser is showing, mimicking the browser's own address bar and back/forward buttons.</p>
+      <ul class="key-points">
+        <li><code>driver.get(url)</code> &ndash; loads a URL and waits for the page to finish loading.</li>
+        <li><code>driver.back()</code> / <code>driver.forward()</code> &ndash; navigate browser history, same as clicking the back/forward buttons.</li>
+        <li><code>driver.refresh()</code> &ndash; reloads the current page.</li>
+      </ul>
+      <pre class="code">from selenium import webdriver
+import pathlib, time
+
+login_page = pathlib.Path("practice_site/login.html").resolve().as_uri()
+
+driver = webdriver.Chrome()
+driver.get(login_page)
+driver.get("https://example.com")
+time.sleep(1)
+driver.back()          # returns to login.html
+time.sleep(1)
+driver.forward()       # goes forward again to example.com
+driver.refresh()       # reloads example.com
+driver.quit()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>8. Browser Information &amp; Window Commands</h4>
+      <p>These commands read information about the current page/browser window, and control the window itself &ndash; used constantly for both automation logic and assertions in tests.</p>
+      <ul class="key-points">
+        <li><code>driver.title</code> &ndash; the current page's title (a property, not a method &ndash; no parentheses).</li>
+        <li><code>driver.current_url</code> &ndash; the current page's URL.</li>
+        <li><code>driver.page_source</code> &ndash; the full raw HTML of the current page as a string.</li>
+        <li><code>driver.maximize_window()</code>, <code>driver.minimize_window()</code>, <code>driver.set_window_size(width, height)</code> &ndash; control the window size.</li>
+        <li><code>driver.close()</code> &ndash; closes only the <em>current</em> tab/window (the browser process may stay open if other tabs remain).</li>
+        <li><code>driver.quit()</code> &ndash; closes ALL windows/tabs and ends the entire WebDriver session &ndash; always use this to properly clean up at the end of a script.</li>
+      </ul>
+      <pre class="code">from selenium import webdriver
+import pathlib
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+
+print("Title:", driver.title)              # Practice Login Page
+print("URL:", driver.current_url)
+print("Page source length:", len(driver.page_source))
+
+driver.quit()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>9. Understanding the DOM &amp; Using Browser DevTools</h4>
+      <p>Selenium locates elements within the page's DOM (Document Object Model) &ndash; the browser's tree structure of every HTML tag. Before writing a locator, a tester must first find that element's ID, class, or structure using the browser's built-in DevTools &ndash; this is a daily, hands-on skill for any automation job.</p>
+      <div class="badge-row"><span class="badge job">Daily Job Skill</span></div>
+      <ul class="key-points">
+        <li>In Chrome, right-click any element on a page and choose "Inspect" (or press <code>F12</code>) to open DevTools and highlight that element's exact HTML.</li>
+        <li>Use <code>Ctrl+F</code> inside the DevTools Elements panel to test a CSS selector or XPath directly in the browser before using it in code &ndash; this instantly confirms if a locator is correct and unique.</li>
+        <li>The Console tab lets you run JavaScript directly, e.g. <code>document.querySelectorAll('.form-control').length</code>, useful for quickly checking how many elements match a selector.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part B &mdash; Locators: Finding Elements</h2>
+
+    <div class="topic-note">
+      <h4>10. What is a Locator? The By Class</h4>
+      <p>A locator is the address Selenium uses to find one specific element on a page. Every locator strategy is used through the same <code>By</code> class combined with <code>find_element()</code> or <code>find_elements()</code>.</p>
+      <ul class="key-points">
+        <li>Import once: <code>from selenium.webdriver.common.by import By</code>.</li>
+        <li>General pattern: <code>driver.find_element(By.STRATEGY, "value")</code>.</li>
+        <li>Choosing the right, most stable locator is one of the most important practical skills in automation &ndash; prefer ID, then CSS Selector, then XPath, in that order of preference when available.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>11. Locating by ID</h4>
+      <p>The fastest and most reliable locator, since an ID should be unique on the page &ndash; always the first choice when available.</p>
+      <pre class="code">from selenium.webdriver.common.by import By
+
+username_field = driver.find_element(By.ID, "username")
+username_field.send_keys("testuser")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>12. Locating by Name</h4>
+      <p>Uses the HTML <code>name</code> attribute &ndash; common on form input fields, especially older or server-rendered websites.</p>
+      <pre class="code">password_field = driver.find_element(By.NAME, "password")
+password_field.send_keys("Secret@123")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>13. Locating by Class Name</h4>
+      <p>Uses the HTML <code>class</code> attribute. Note: only a single class name is allowed here &ndash; if an element has multiple space-separated classes, use a CSS Selector instead (Section 16).</p>
+      <pre class="code">login_btn = driver.find_element(By.CLASS_NAME, "btn")   # NOT "btn btn-primary"
+login_btn.click()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>14. Locating by Tag Name</h4>
+      <p>Locates by the HTML tag itself (e.g. all &lt;a&gt; or &lt;input&gt; elements) &ndash; almost never unique on its own, so it's typically used with <code>find_elements</code> (plural) to get a whole list.</p>
+      <pre class="code">all_inputs = driver.find_elements(By.TAG_NAME, "input")
+print("Number of input fields on page:", len(all_inputs))</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>15. Locating by Link Text &amp; Partial Link Text</h4>
+      <p>Locates an <code>&lt;a&gt;</code> (hyperlink) element by its visible text &ndash; only works on links, never other elements.</p>
+      <ul class="key-points">
+        <li><b>LINK_TEXT</b> &ndash; must match the link's full visible text exactly.</li>
+        <li><b>PARTIAL_LINK_TEXT</b> &ndash; matches if the link's text contains the given substring anywhere.</li>
+      </ul>
+      <pre class="code">forgot_link = driver.find_element(By.LINK_TEXT, "Forgot password?")
+forgot_link.click()
+
+# or, matching just part of the text:
+forgot_link = driver.find_element(By.PARTIAL_LINK_TEXT, "Forgot")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>16. Locating by CSS Selector</h4>
+      <p>CSS Selectors use the same syntax as CSS stylesheets to target elements &ndash; generally faster than XPath and the preferred choice when ID alone is not enough.</p>
+      <ul class="key-points">
+        <li><code>#id</code> &ndash; by ID. <code>.class</code> &ndash; by class. <code>tag</code> &ndash; by tag name.</li>
+        <li><code>tag[attribute='value']</code> &ndash; by any attribute, e.g. <code>input[type='password']</code>.</li>
+        <li><code>parent > child</code> &ndash; direct child. <code>parent descendant</code> (space) &ndash; any descendant.</li>
+        <li><code>.class1.class2</code> (no space) &ndash; element having BOTH classes.</li>
+      </ul>
+      <pre class="code">driver.find_element(By.CSS_SELECTOR, "#username")
+driver.find_element(By.CSS_SELECTOR, ".btn.btn-primary")
+driver.find_element(By.CSS_SELECTOR, "input[type='password']")
+driver.find_element(By.CSS_SELECTOR, "#login-form > button")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>17. Locating by XPath (Absolute &amp; Relative)</h4>
+      <p>XPath navigates the page as a tree using path expressions &ndash; the most powerful and flexible locator, able to select elements by text content or by relationship to other elements, which CSS alone cannot always do.</p>
+      <ul class="key-points">
+        <li><b>Absolute XPath</b> (starts with a single <code>/</code>) &ndash; the full path from the document root, e.g. <code>/html/body/form/input[1]</code>. Very fragile &ndash; breaks if the page structure changes even slightly. Avoid in real projects.</li>
+        <li><b>Relative XPath</b> (starts with <code>//</code>) &ndash; searches anywhere in the document, e.g. <code>//input[@id='username']</code>. This is what should be used in practice.</li>
+        <li><code>//tag[@attribute='value']</code> &ndash; by attribute. <code>//tag[text()='exact text']</code> &ndash; by exact visible text.</li>
+      </ul>
+      <pre class="code">driver.find_element(By.XPATH, "//input[@id='username']")
+driver.find_element(By.XPATH, "//button[text()='Login']")
+driver.find_element(By.XPATH, "//label[text()='Password']/following-sibling::input")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>18. Dynamic XPath &amp; CSS with Functions</h4>
+      <p>Real applications often have IDs/classes that change dynamically (e.g. <code>id="user-4471"</code>) &ndash; these functions locate elements using only a stable, partial piece of an attribute.</p>
+      <ul class="key-points">
+        <li><b>XPath <code>contains()</code></b> &ndash; <code>//input[contains(@id,'user')]</code> matches any ID containing "user".</li>
+        <li><b>XPath <code>starts-with()</code></b> &ndash; <code>//input[starts-with(@id,'user')]</code> matches IDs beginning with "user".</li>
+        <li><b>CSS equivalent</b> &ndash; <code>[id*='user']</code> (contains), <code>[id^='user']</code> (starts with), <code>[id$='field']</code> (ends with).</li>
+      </ul>
+      <pre class="code">driver.find_element(By.XPATH, "//input[contains(@id,'user')]")
+driver.find_element(By.CSS_SELECTOR, "input[id*='user']")
+driver.find_element(By.CSS_SELECTOR, "input[id^='user']")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>19. find_element vs find_elements</h4>
+      <p>The single most important distinction to remember: singular vs plural changes both the return type and the error behaviour.</p>
+      <ul class="key-points">
+        <li><code>find_element(...)</code> &ndash; returns ONE WebElement (the first match). Raises <code>NoSuchElementException</code> if nothing matches.</li>
+        <li><code>find_elements(...)</code> &ndash; returns a Python list of WebElements (possibly empty). Never raises an error if nothing matches &ndash; instead returns an empty list, which is a safe way to check "does this element exist?".</li>
+      </ul>
+      <pre class="code">checkboxes = driver.find_elements(By.NAME, "hobby")
+print("Found", len(checkboxes), "checkboxes")
+
+# Safe existence check pattern (no exception even if missing):
+error_messages = driver.find_elements(By.CLASS_NAME, "error")
+if len(error_messages) == 0:
+    print("No error message displayed - good")</pre>
+    </div>
+
+    <h2 class="part-title">Part C &mdash; Interacting with Web Elements</h2>
+
+    <div class="topic-note">
+      <h4>20. Text Boxes (send_keys, clear)</h4>
+      <p>Text input fields are the most common element type on any form &ndash; typing into them and clearing them is a foundational skill.</p>
+      <ul class="key-points">
+        <li><code>element.send_keys("text")</code> &ndash; types the given text into the field, character by character, exactly like a real user typing.</li>
+        <li><code>element.clear()</code> &ndash; empties any existing text in the field before typing new text, avoiding accidental concatenation with old values.</li>
+      </ul>
+      <pre class="code">username = driver.find_element(By.ID, "username")
+username.clear()
+username.send_keys("qa_tester")
+
+password = driver.find_element(By.ID, "password")
+password.clear()
+password.send_keys("Secure@123")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>21. Buttons (click)</h4>
+      <p>The <code>.click()</code> method simulates a real mouse click on any clickable element &ndash; buttons, links, checkboxes, radio buttons all use the same method.</p>
+      <pre class="code">login_button = driver.find_element(By.ID, "login-btn")
+login_button.click()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>22. Checkboxes</h4>
+      <p>Checkboxes are also clicked with <code>.click()</code>, but since clicking toggles the state, it is best practice to first check whether it is already selected to avoid accidentally un-checking it.</p>
+      <pre class="code">reading_checkbox = driver.find_element(By.ID, "hobby-reading")
+if not reading_checkbox.is_selected():
+    reading_checkbox.click()
+
+music_checkbox = driver.find_element(By.ID, "hobby-music")
+if not music_checkbox.is_selected():
+    music_checkbox.click()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>23. Radio Buttons</h4>
+      <p>Radio buttons work the same as checkboxes, but only one in a group (matching <code>name</code> attribute) can be selected at a time &ndash; clicking one automatically de-selects the others in that group.</p>
+      <pre class="code">female_radio = driver.find_element(By.ID, "gender-female")
+female_radio.click()
+print("Female selected:", female_radio.is_selected())   # True
+male_radio = driver.find_element(By.ID, "gender-male")
+print("Male selected:", male_radio.is_selected())        # False (auto-deselected)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>24. Static Dropdowns (Select Class)</h4>
+      <p>A real HTML <code>&lt;select&gt;</code> dropdown is NOT clicked directly &ndash; Selenium provides a dedicated <code>Select</code> class with purpose-built methods, which is far more reliable than trying to click options manually.</p>
+      <ul class="key-points">
+        <li>Import: <code>from selenium.webdriver.support.ui import Select</code>, then wrap the element: <code>Select(driver.find_element(...))</code>.</li>
+        <li><code>select_by_visible_text("India")</code> &ndash; selects by the text shown to the user.</li>
+        <li><code>select_by_value("in")</code> &ndash; selects by the option's underlying <code>value</code> attribute.</li>
+        <li><code>select_by_index(1)</code> &ndash; selects by position (0-based).</li>
+      </ul>
+      <pre class="code">from selenium.webdriver.support.ui import Select
+
+country_dropdown = Select(driver.find_element(By.ID, "country"))
+country_dropdown.select_by_visible_text("India")
+# equivalent alternatives:
+# country_dropdown.select_by_value("in")
+# country_dropdown.select_by_index(1)
+
+selected = country_dropdown.first_selected_option
+print("Currently selected:", selected.text)   # India</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>25. Multi-Select Dropdowns</h4>
+      <p>Some <code>&lt;select multiple&gt;</code> dropdowns allow choosing several options at once &ndash; the same <code>Select</code> class handles this, simply by calling a select method more than once.</p>
+      <pre class="code">skills_dropdown = Select(driver.find_element(By.ID, "skills"))
+skills_dropdown.select_by_visible_text("Python")
+skills_dropdown.select_by_visible_text("Selenium")
+
+all_selected = skills_dropdown.all_selected_options
+print([opt.text for opt in all_selected])   # ['Python', 'Selenium']
+
+skills_dropdown.deselect_all()   # clears every selection</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>26. Links</h4>
+      <p>Links are just <code>&lt;a&gt;</code> elements, clicked the same way as buttons, but their destination URL can also be read without clicking, using <code>get_attribute("href")</code>.</p>
+      <pre class="code">link = driver.find_element(By.ID, "forgot-link")
+print("Link destination:", link.get_attribute("href"))   # https://example.com/
+link.click()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>27. Reading Text and Attributes</h4>
+      <p>Beyond just interacting with elements, tests constantly need to read what is displayed, to verify the application behaved correctly.</p>
+      <ul class="key-points">
+        <li><code>element.text</code> &ndash; the visible, rendered text inside an element (a property, no parentheses).</li>
+        <li><code>element.get_attribute("attribute_name")</code> &ndash; reads any HTML attribute's value, e.g. <code>"value"</code>, <code>"class"</code>, <code>"placeholder"</code>, <code>"href"</code>.</li>
+      </ul>
+      <pre class="code">heading = driver.find_element(By.ID, "page-title")
+print(heading.text)   # Login Page
+
+username_field = driver.find_element(By.ID, "username")
+print(username_field.get_attribute("placeholder"))   # Enter username
+print(username_field.get_attribute("value"))          # current typed value, if any</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>28. Element State Checks</h4>
+      <p>These methods check the current state of an element, commonly used inside assertions or "if" conditions before deciding what action to take next.</p>
+      <ul class="key-points">
+        <li><code>is_displayed()</code> &ndash; True if the element is visible on the page (not hidden by CSS).</li>
+        <li><code>is_enabled()</code> &ndash; True if the element can be interacted with (not disabled).</li>
+        <li><code>is_selected()</code> &ndash; True if a checkbox/radio/option is currently selected/checked.</li>
+      </ul>
+      <pre class="code">message = driver.find_element(By.ID, "message")
+print("Message visible:", message.is_displayed())   # False (hidden by CSS initially)
+
+login_btn = driver.find_element(By.ID, "login-btn")
+print("Button enabled:", login_btn.is_enabled())     # True</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>29. Working with Lists of Elements</h4>
+      <p>Real pages often have repeated elements (a list of products, table rows, search results) &ndash; <code>find_elements</code> returns them all as a list which can then be looped through with standard Python.</p>
+      <pre class="code">checkboxes = driver.find_elements(By.NAME, "hobby")
+for box in checkboxes:
+    label_text = box.get_attribute("id")
+    print(f"Checkbox '{label_text}' selected: {box.is_selected()}")
+
+# Select all checkboxes on the page in one loop:
+for box in checkboxes:
+    if not box.is_selected():
+        box.click()</pre>
+    </div>
+
+    <h2 class="part-title">Part D &mdash; Advanced User Interactions</h2>
+
+    <div class="topic-note">
+      <h4>30. ActionChains &ndash; Mouse Hover</h4>
+      <p>Some elements (like dropdown menus) only appear when the mouse hovers over a trigger element &ndash; a plain <code>.click()</code> cannot simulate this, so Selenium provides the <code>ActionChains</code> class to build up complex, multi-step mouse/keyboard interactions.</p>
+      <ul class="key-points">
+        <li>Import: <code>from selenium.webdriver.common.action_chains import ActionChains</code>.</li>
+        <li>Build an action, then call <code>.perform()</code> to actually execute it &ndash; nothing happens until <code>.perform()</code> is called.</li>
+      </ul>
+      <pre class="code">from selenium.webdriver.common.action_chains import ActionChains
+
+heading = driver.find_element(By.ID, "page-title")
+actions = ActionChains(driver)
+actions.move_to_element(heading).perform()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>31. ActionChains &ndash; Drag and Drop</h4>
+      <p>Drag-and-drop moves an element from a source location to a target. Add this new file to your <code>practice_site</code> folder for this and the next few topics.</p>
+      <div class="badge-row"><span class="badge job">Common Interview Question</span></div>
+      <ul class="key-points">
+        <li><b>Important, real-world caveat:</b> Selenium's <code>drag_and_drop()</code> reliably works for elements dragged via plain mouse events (as built below), but is well known to <b>fail on native HTML5 drag-and-drop</b> (elements using the <code>draggable="true"</code> attribute with <code>dragstart</code>/<code>drop</code> JavaScript events), because Selenium simulates mouse movement, not HTML5's separate drag-event API. For real HTML5 drag-and-drop widgets, the common workaround is to trigger the drag/drop JavaScript events directly using the JavaScript Executor (Section 48).</li>
+      </ul>
+      <pre class="code">--- File: practice_site/advanced.html (create this new file) ---
+&lt;!doctype html&gt;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Advanced Practice Page&lt;/title&gt;
+&lt;style&gt;
+  #drag-source { width:80px;height:80px;background:#0f5f7f;color:#fff;
+    text-align:center;line-height:80px;cursor:move; }
+  #drop-target { width:150px;height:150px;border:2px dashed #888;
+    margin-top:20px;text-align:center;line-height:150px; }
+  .custom-dropdown { position:relative;width:200px; }
+  .dropdown-toggle { border:1px solid #888;padding:8px;cursor:pointer; }
+  .dropdown-list { display:none;border:1px solid #888;position:absolute;
+    width:100%;background:#fff;list-style:none;margin:0;padding:0; }
+  .dropdown-list.show { display:block; }
+  .dropdown-list div { padding:8px;cursor:pointer; }
+  .filler { height:1500px; }
+&lt;/style&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Advanced Practice Page&lt;/h1&gt;
+
+&lt;h3&gt;Drag and Drop&lt;/h3&gt;
+&lt;div id="drag-source"&gt;DRAG ME&lt;/div&gt;
+&lt;div id="drop-target"&gt;Drop Here&lt;/div&gt;
+&lt;script&gt;
+  var source = document.getElementById('drag-source');
+  var target = document.getElementById('drop-target');
+  var offsetX, offsetY, dragging = false;
+  source.addEventListener('mousedown', function(e) {
+    dragging = true;
+    source.style.position = 'absolute';
+  });
+  document.addEventListener('mousemove', function(e) {
+    if (dragging) {
+      source.style.left = e.pageX - 40 + 'px';
+      source.style.top = e.pageY - 40 + 'px';
+    }
+  });
+  document.addEventListener('mouseup', function(e) {
+    if (dragging) {
+      dragging = false;
+      var t = target.getBoundingClientRect();
+      var s = source.getBoundingClientRect();
+      if (s.left < t.right &amp;&amp; s.right > t.left &amp;&amp; s.top < t.bottom &amp;&amp; s.bottom > t.top) {
+        target.innerText = 'Dropped!';
+        target.style.background = '#d4f7dc';
+      }
+    }
+  });
+&lt;/script&gt;
+
+&lt;h3&gt;Custom Dropdown (not a real &amp;lt;select&amp;gt;)&lt;/h3&gt;
+&lt;div class="custom-dropdown"&gt;
+  &lt;div class="dropdown-toggle" id="custom-dropdown-toggle"&gt;Choose a fruit&lt;/div&gt;
+  &lt;div class="dropdown-list" id="custom-dropdown-list"&gt;
+    &lt;div data-value="apple"&gt;Apple&lt;/div&gt;
+    &lt;div data-value="banana"&gt;Banana&lt;/div&gt;
+    &lt;div data-value="mango"&gt;Mango&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p id="custom-dropdown-result"&gt;Selected: none&lt;/p&gt;
+&lt;script&gt;
+  var toggle = document.getElementById('custom-dropdown-toggle');
+  var list = document.getElementById('custom-dropdown-list');
+  toggle.addEventListener('click', function() { list.classList.toggle('show'); });
+  list.querySelectorAll('div').forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      toggle.innerText = opt.innerText;
+      document.getElementById('custom-dropdown-result').innerText = 'Selected: ' + opt.getAttribute('data-value');
+      list.classList.remove('show');
+    });
+  });
+&lt;/script&gt;
+
+&lt;h3&gt;Date Picker (native)&lt;/h3&gt;
+&lt;label for="dob"&gt;Date of Birth&lt;/label&gt;
+&lt;input type="date" id="dob" name="dob"&gt;
+
+&lt;h3&gt;File Download&lt;/h3&gt;
+&lt;a id="download-link" href="data:text/plain;charset=utf-8,Hello from Selenium"
+   download="sample.txt"&gt;Download Sample File&lt;/a&gt;
+
+&lt;div class="filler"&gt;&lt;/div&gt;
+&lt;h3 id="scroll-target"&gt;You scrolled to the bottom!&lt;/h3&gt;
+&lt;/body&gt;&lt;/html&gt;</pre>
+      <p>Now the actual drag-and-drop code, using this page:</p>
+      <pre class="code">import pathlib
+from selenium.webdriver.common.action_chains import ActionChains
+
+driver.get(pathlib.Path("practice_site/advanced.html").resolve().as_uri())
+
+source = driver.find_element(By.ID, "drag-source")
+target = driver.find_element(By.ID, "drop-target")
+
+ActionChains(driver).drag_and_drop(source, target).perform()
+
+print(target.text)   # Dropped!</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>32. ActionChains &ndash; Right Click &amp; Double Click</h4>
+      <ul class="key-points">
+        <li><code>.context_click(element)</code> &ndash; simulates a right-click, opening any context menu the page defines.</li>
+        <li><code>.double_click(element)</code> &ndash; simulates a double-click, e.g. to trigger inline editing on some UI components.</li>
+      </ul>
+      <pre class="code">heading = driver.find_element(By.ID, "page-title")
+ActionChains(driver).double_click(heading).perform()
+ActionChains(driver).context_click(heading).perform()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>33. Keyboard Actions (Keys Class)</h4>
+      <p>The <code>Keys</code> class provides constants for non-printable keys (Enter, Tab, Escape, Ctrl, arrow keys) so they can be sent through <code>send_keys()</code> just like normal text, either directly on an element or as part of an ActionChains sequence.</p>
+      <pre class="code">from selenium.webdriver.common.keys import Keys
+
+search_box = driver.find_element(By.ID, "username")
+search_box.send_keys("qa_tester")
+search_box.send_keys(Keys.ENTER)          # press Enter, e.g. to submit a form
+
+search_box.send_keys(Keys.CONTROL, "a")   # select all text
+search_box.send_keys(Keys.DELETE)         # then delete it
+
+# Using ActionChains for key combinations:
+ActionChains(driver).key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).perform()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>34. Handling Multiple Windows/Tabs</h4>
+      <p>Clicking a link with <code>target="_blank"</code> opens a new browser tab &ndash; but Selenium's focus stays on the ORIGINAL tab until explicitly switched, since a driver session can only "drive" one window at a time.</p>
+      <ul class="key-points">
+        <li><code>driver.window_handles</code> &ndash; a list of unique IDs, one per currently open window/tab.</li>
+        <li><code>driver.current_window_handle</code> &ndash; the ID of the window Selenium is currently focused on.</li>
+        <li><code>driver.switch_to.window(handle)</code> &ndash; switches control to a specific window/tab by its handle.</li>
+      </ul>
+      <pre class="code">import pathlib
+driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+original_window = driver.current_window_handle
+driver.find_element(By.ID, "new-tab-link").click()   # opens login.html in a new tab
+
+# Wait until a second window exists, then switch to it:
+for handle in driver.window_handles:
+    if handle != original_window:
+        driver.switch_to.window(handle)
+        break
+
+print("Now on:", driver.title)   # Practice Login Page
+
+driver.close()                          # closes only this new tab
+driver.switch_to.window(original_window) # go back to the original tab
+print("Back on:", driver.title)         # Practice Forms Page</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>35. Handling Frames (iframes)</h4>
+      <p>An <code>&lt;iframe&gt;</code> embeds an entirely separate HTML document inside the page. Selenium cannot see elements inside a frame until it explicitly switches its focus into that frame &ndash; a very common beginner mistake is a "NoSuchElementException" simply because the code never switched into the frame first.</p>
+      <ul class="key-points">
+        <li><code>driver.switch_to.frame(locator_or_element_or_index)</code> &ndash; switches focus into a frame, by its ID/name, its WebElement, or its numeric index.</li>
+        <li><code>driver.switch_to.default_content()</code> &ndash; switches focus back out to the main page.</li>
+      </ul>
+      <pre class="code">driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+driver.switch_to.frame("practice-frame")             # switch into the iframe by its id
+frame_text = driver.find_element(By.ID, "frame-text")
+print(frame_text.text)                                 # This text is inside an iframe.
+
+driver.switch_to.default_content()                    # switch back to the main page
+heading = driver.find_element(By.TAG_NAME, "h1")      # now visible again
+print(heading.text)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>36. Handling JavaScript Alerts, Confirms &amp; Prompts</h4>
+      <p>A JavaScript <code>alert()</code>, <code>confirm()</code>, or <code>prompt()</code> is a native browser popup, entirely OUTSIDE the page's HTML &ndash; it cannot be located with <code>find_element</code> at all. Selenium handles these through a separate <code>switch_to.alert</code> interface.</p>
+      <ul class="key-points">
+        <li><code>driver.switch_to.alert</code> &ndash; gets a handle to the currently open popup.</li>
+        <li><code>alert.accept()</code> &ndash; clicks "OK". <code>alert.dismiss()</code> &ndash; clicks "Cancel".</li>
+        <li><code>alert.text</code> &ndash; reads the popup's displayed message.</li>
+        <li><code>alert.send_keys("text")</code> &ndash; types into a <code>prompt()</code> popup's input box before accepting.</li>
+      </ul>
+      <pre class="code">driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+driver.find_element(By.ID, "alert-btn").click()
+alert = driver.switch_to.alert
+print("Alert says:", alert.text)   # This is a simple alert
+alert.accept()
+
+driver.find_element(By.ID, "confirm-btn").click()
+confirm = driver.switch_to.alert
+confirm.dismiss()                  # clicks Cancel
+
+driver.find_element(By.ID, "prompt-btn").click()
+prompt = driver.switch_to.alert
+prompt.send_keys("QA Tester")
+prompt.accept()</pre>
+    </div>
+
+    <h2 class="part-title">Part E &mdash; Headless Execution &amp; Waits</h2>
+
+    <div class="topic-note">
+      <h4>37. Headless Browser Execution</h4>
+      <p>"Headless" means running the browser with no visible window at all &ndash; it still does everything a normal browser does internally, just without drawing anything on screen. This is essential for running tests on a CI/CD build server (Section 68), which usually has no display/monitor at all, and it also runs noticeably faster.</p>
+      <div class="badge-row"><span class="badge job">CI/CD Requirement</span></div>
+      <ul class="key-points">
+        <li>Add the argument <code>--headless=new</code> (the modern headless mode) to <code>ChromeOptions</code> before creating the driver.</li>
+        <li>Always set an explicit window size in headless mode too, since there's no visible window to "maximize" &ndash; some pages render differently at small default sizes.</li>
+        <li>Debug tip: if a headless test fails mysteriously, temporarily remove the headless argument to watch it run visibly, or take a screenshot (Section 46) at the point of failure.</li>
+      </ul>
+      <pre class="code">from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument("--headless=new")
+options.add_argument("--window-size=1920,1080")
+
+driver = webdriver.Chrome(options=options)
+driver.get("https://example.com")
+print(driver.title)   # works exactly the same, just with no visible window
+driver.quit()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>38. Why Waits are Needed (The Synchronization Problem)</h4>
+      <p>A real web page often loads data asynchronously (e.g. via JavaScript/AJAX after the initial page load) &ndash; an element might not exist in the DOM the instant Selenium's script reaches that line. Without a wait, Selenium tries to find the element too early and throws <code>NoSuchElementException</code>, even though the element would have appeared a fraction of a second later. This "synchronization problem" is one of the most common causes of flaky (unreliable) automated tests in real jobs.</p>
+      <div class="badge-row"><span class="badge job">Most Common Interview Topic</span></div>
+      <ul class="key-points">
+        <li><b>Never use <code>time.sleep()</code> in real test code</b> &ndash; it always waits the full fixed time even if the element appeared instantly (wasting time), and still fails if the page happens to be slower than the fixed value (unreliable). Proper waits solve both problems.</li>
+        <li>Selenium provides three professional wait strategies: Implicit Wait, Explicit Wait, and Fluent Wait.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>39. Implicit Wait</h4>
+      <p>A single, global setting applied once per driver session: for every <code>find_element</code> call, Selenium will keep retrying to find the element for up to the given time before giving up and raising an error.</p>
+      <ul class="key-points">
+        <li>Set once, right after creating the driver: <code>driver.implicitly_wait(seconds)</code>.</li>
+        <li>Applies automatically and silently to every single locator call for the rest of the session &ndash; simple, but less precise/flexible than Explicit Wait.</li>
+        <li><b>Never mix Implicit and Explicit Waits</b> in the same script &ndash; this is a well-documented cause of unpredictable, inconsistent wait times, since the two can interact in confusing ways.</li>
+      </ul>
+      <pre class="code">driver = webdriver.Chrome()
+driver.implicitly_wait(10)   # applies to every find_element call for this whole session
+
+driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+dynamic_box = driver.find_element(By.ID, "dynamic-box")   # will retry for up to 10s if not found yet</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>40. Explicit Wait (WebDriverWait + Expected Conditions)</h4>
+      <p>Waits for one SPECIFIC condition to become true, on one specific element, up to a maximum timeout &ndash; far more precise and the industry-standard, recommended approach for real automation frameworks.</p>
+      <ul class="key-points">
+        <li>Import: <code>from selenium.webdriver.support.ui import WebDriverWait</code> and <code>from selenium.webdriver.support import expected_conditions as EC</code>.</li>
+        <li>Pattern: <code>WebDriverWait(driver, timeout).until(EC.some_condition(locator))</code>.</li>
+        <li>Polls (checks) every 0.5 seconds by default, and returns as soon as the condition is true &ndash; much faster than a fixed sleep when the element appears quickly.</li>
+      </ul>
+      <pre class="code">from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+# The #dynamic-box text changes from "Loading..." to "Content Loaded" after 2 seconds -
+# wait explicitly for that exact text to appear instead of guessing a fixed sleep time:
+wait = WebDriverWait(driver, 10)
+wait.until(EC.text_to_be_present_in_element((By.ID, "dynamic-box"), "Content Loaded"))
+
+dynamic_box = driver.find_element(By.ID, "dynamic-box")
+print(dynamic_box.text)   # Content Loaded</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>41. Fluent Wait</h4>
+      <p>A more configurable version of Explicit Wait, letting you control both the polling frequency (how often to re-check) and which exceptions to silently ignore while waiting &ndash; useful when an element occasionally throws a temporary "stale element" error while the page is still updating.</p>
+      <pre class="code">from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
+
+fluent_wait = WebDriverWait(
+    driver,
+    timeout=10,
+    poll_frequency=1,   # check every 1 second instead of the default 0.5
+    ignored_exceptions=[NoSuchElementException, StaleElementReferenceException]
+)
+
+element = fluent_wait.until(lambda d: d.find_element(By.ID, "dynamic-box"))
+print(element.text)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>42. Common Expected Conditions Reference</h4>
+      <p>The <code>expected_conditions</code> module (imported as <code>EC</code>) provides many ready-made conditions for the most common waiting scenarios &ndash; knowing this list well saves having to write custom wait logic.</p>
+      <ul class="key-points">
+        <li><code>EC.presence_of_element_located(locator)</code> &ndash; element exists in the DOM (may still be invisible).</li>
+        <li><code>EC.visibility_of_element_located(locator)</code> &ndash; element exists AND is visible on screen.</li>
+        <li><code>EC.element_to_be_clickable(locator)</code> &ndash; element is visible AND enabled (safe to click).</li>
+        <li><code>EC.invisibility_of_element_located(locator)</code> &ndash; waits for an element (e.g. a loading spinner) to disappear.</li>
+        <li><code>EC.text_to_be_present_in_element(locator, text)</code> &ndash; waits for specific text to appear inside an element.</li>
+        <li><code>EC.alert_is_present()</code> &ndash; waits for a JavaScript alert/confirm/prompt to appear.</li>
+        <li><code>EC.title_contains(text)</code> / <code>EC.url_contains(text)</code> &ndash; waits for the page title/URL to change.</li>
+        <li><code>EC.number_of_windows_to_be(n)</code> &ndash; waits until exactly n windows/tabs are open (useful before switching, see Section 34).</li>
+      </ul>
+      <pre class="code">login_btn = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.ID, "login-btn"))
+)
+login_btn.click()</pre>
+    </div>
+
+    <h2 class="part-title">Part F &mdash; Advanced Browser Automation</h2>
+
+    <div class="topic-note">
+      <h4>43. Handling Web Tables</h4>
+      <p>Data tables are extremely common in real applications (reports, admin panels, search results). There is no special "Table" class in Selenium &ndash; instead, rows and cells are located with normal XPath/CSS and looped through with Python.</p>
+      <pre class="code">driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+rows = driver.find_elements(By.CSS_SELECTOR, "#data-table tbody tr")
+print("Number of rows:", len(rows))
+
+for row in rows:
+    cells = row.find_elements(By.TAG_NAME, "td")
+    name, role, city = [c.text for c in cells]
+    print(f"{name} | {role} | {city}")
+
+# Find a specific row by its text content, then read a value from it, using XPath:
+ravi_role = driver.find_element(
+    By.XPATH, "//table[@id='data-table']//td[text()='Ravi']/following-sibling::td[1]"
+)
+print("Ravi's role:", ravi_role.text)   # Developer</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>44. File Upload</h4>
+      <p>Uploading a file in Selenium does NOT require clicking to open the operating system's file browser dialog (which Selenium cannot see or control) &ndash; instead, simply <code>send_keys()</code> the full absolute file path directly to the hidden <code>&lt;input type="file"&gt;</code> element.</p>
+      <ul class="key-points">
+        <li>This trick works because the browser accepts a typed path into a file input exactly as if the OS dialog had returned it.</li>
+        <li>Always use an absolute path (e.g. built with <code>pathlib</code>), not a relative one, since the browser process's working directory may differ from the script's.</li>
+      </ul>
+      <pre class="code">import pathlib
+
+# Create a small sample file to upload, for practice:
+sample_file = pathlib.Path("sample_upload.txt")
+sample_file.write_text("This is a test file for Selenium upload practice.")
+
+driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+upload_input = driver.find_element(By.ID, "file-upload")
+upload_input.send_keys(str(sample_file.resolve()))   # no click() needed at all</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>45. Handling File Downloads</h4>
+      <p>Selenium cannot see the browser's native "Save As" dialog either &ndash; the standard, reliable approach is to pre-configure Chrome (via Options) to automatically save all downloads to a known folder with no prompt, then simply check that folder with normal Python file operations afterward.</p>
+      <pre class="code">import os, time, pathlib
+from selenium.webdriver.chrome.options import Options
+
+download_dir = str(pathlib.Path("downloads").resolve())
+os.makedirs(download_dir, exist_ok=True)
+
+options = Options()
+options.add_experimental_option("prefs", {
+    "download.default_directory": download_dir,
+    "download.prompt_for_download": False,
+})
+
+driver = webdriver.Chrome(options=options)
+driver.get(pathlib.Path("practice_site/advanced.html").resolve().as_uri())
+driver.find_element(By.ID, "download-link").click()
+
+time.sleep(2)   # brief pause for the (very small) file to finish saving
+downloaded_files = os.listdir(download_dir)
+print("Downloaded files:", downloaded_files)   # ['sample.txt']
+assert "sample.txt" in downloaded_files</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>46. Taking Screenshots</h4>
+      <p>Capturing a screenshot is one of the most valuable debugging tools in test automation &ndash; especially automatically capturing one the moment a test fails, so a human can see exactly what the page looked like (this is built as a PyTest fixture in Section 58).</p>
+      <ul class="key-points">
+        <li><code>driver.save_screenshot("path.png")</code> &ndash; captures the full visible browser window.</li>
+        <li><code>element.screenshot("path.png")</code> &ndash; captures just one specific element.</li>
+      </ul>
+      <pre class="code">driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+driver.save_screenshot("full_page.png")
+
+heading = driver.find_element(By.ID, "page-title")
+heading.screenshot("heading_only.png")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>47. Handling Cookies</h4>
+      <p>Cookies store small pieces of data (like login session tokens) in the browser. Selenium can read, add, and delete them &ndash; commonly used to skip a slow UI login by injecting a valid session cookie directly.</p>
+      <ul class="key-points">
+        <li><code>driver.get_cookies()</code> &ndash; returns a list of all cookies for the current domain.</li>
+        <li><code>driver.add_cookie({"name": "...", "value": "..."})</code> &ndash; adds a cookie (the browser must already be on that domain first).</li>
+        <li><code>driver.delete_all_cookies()</code> &ndash; clears every cookie, useful for resetting state between tests.</li>
+      </ul>
+      <pre class="code">driver.get("https://example.com")
+print(driver.get_cookies())
+
+driver.add_cookie({"name": "session_id", "value": "abc123"})
+driver.delete_all_cookies()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>48. JavaScript Executor</h4>
+      <p>For the rare cases Selenium's normal API cannot handle directly (scrolling precisely, clicking an element blocked by an overlay, reading a JS variable), <code>execute_script()</code> runs raw JavaScript directly inside the browser.</p>
+      <ul class="key-points">
+        <li><code>driver.execute_script("javascript code", optional_arguments...)</code>.</li>
+        <li>Pass a WebElement as an argument and reference it as <code>arguments[0]</code> inside the script.</li>
+        <li>Use sparingly &ndash; it bypasses Selenium's normal waiting/interactability checks, which can hide real bugs in the tested application.</li>
+      </ul>
+      <pre class="code">login_btn = driver.find_element(By.ID, "login-btn")
+
+# Click via JS - a common workaround when a normal .click() is blocked by an overlay:
+driver.execute_script("arguments[0].click();", login_btn)
+
+# Read a value directly from the page's JavaScript:
+title_via_js = driver.execute_script("return document.title;")
+print(title_via_js)
+
+# Set a field's value directly via JS (bypasses real typing - use only when necessary):
+username = driver.find_element(By.ID, "username")
+driver.execute_script("arguments[0].value = 'forced_value';", username)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>49. Scrolling the Page</h4>
+      <p>Some elements must be scrolled into view before Selenium can reliably click them (an element completely off-screen may not be considered "interactable"). The JavaScript Executor is the standard way to scroll precisely.</p>
+      <pre class="code">driver.get(pathlib.Path("practice_site/advanced.html").resolve().as_uri())
+
+# Scroll a specific element into view:
+target = driver.find_element(By.ID, "scroll-target")
+driver.execute_script("arguments[0].scrollIntoView(true);", target)
+
+# Scroll to the absolute bottom of the page:
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+# Scroll by a specific pixel offset:
+driver.execute_script("window.scrollBy(0, 500);")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>50. Handling Calendars / Date Pickers</h4>
+      <p>Date pickers vary hugely between websites &ndash; some are a simple native HTML5 <code>&lt;input type="date"&gt;</code> (which just accepts typed text), while others are complex custom JavaScript pop-up calendars requiring clicking through months/days one at a time.</p>
+      <ul class="key-points">
+        <li><b>Native date input</b> &ndash; simply <code>send_keys()</code> the date, usually in <code>MM/DD/YYYY</code> format for the US locale Chrome typically uses.</li>
+        <li><b>Custom JS calendar widgets</b> &ndash; typically require: click to open the calendar, then use relative XPath (e.g. <code>//td[text()='15']</code>) to click the specific day, sometimes clicking "next month" arrows in a loop first if the target month isn't shown yet.</li>
+      </ul>
+      <pre class="code">driver.get(pathlib.Path("practice_site/advanced.html").resolve().as_uri())
+
+dob_field = driver.find_element(By.ID, "dob")
+dob_field.send_keys("08/15/2025")   # MM/DD/YYYY for a native date input
+
+# General pattern for a custom pop-up calendar (illustrative):
+# driver.find_element(By.ID, "calendar-icon").click()
+# driver.find_element(By.XPATH, "//td[text()='15' and not(contains(@class,'disabled'))]").click()</pre>
+    </div>
+
+    <h2 class="part-title">Part G &mdash; Grid, Custom Widgets &amp; Robustness</h2>
+
+    <div class="topic-note">
+      <h4>51. Selenium Grid Basics</h4>
+      <p>Selenium Grid lets test scripts run on remote machines instead of the local computer, and lets many tests run in parallel across multiple browsers/machines at once &ndash; essential for keeping a large test suite's total run time reasonable in a real company pipeline.</p>
+      <div class="badge-row"><span class="badge adv">Scaling Test Suites</span></div>
+      <ul class="key-points">
+        <li>A Grid has one <b>Hub</b> (the central coordinator that receives test requests) and one or more <b>Nodes</b> (machines that actually run a browser and execute the test).</li>
+        <li>In code, instead of <code>webdriver.Chrome()</code>, connect to the Hub's URL using <code>webdriver.Remote()</code>, specifying which browser/OS is needed &ndash; the Hub then assigns an available matching Node to run it.</li>
+        <li>Modern teams often run Grid using Docker containers (one container per Node) for easy, disposable setup &ndash; a common real-world CI pattern.</li>
+      </ul>
+      <pre class="code">from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+driver = webdriver.Remote(
+    command_executor="http://localhost:4444/wd/hub",   # the Grid Hub's address
+    options=options
+)
+driver.get("https://example.com")
+driver.quit()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>52. Handling Dynamic (Custom) Dropdowns</h4>
+      <p>Not every "dropdown" on a real website is a genuine HTML <code>&lt;select&gt;</code> element &ndash; many are custom-built with <code>&lt;div&gt;</code>s and JavaScript for a fancier look (as seen in many modern UI component libraries). The <code>Select</code> class (Section 24) does NOT work on these &ndash; instead, treat it as a simple click-to-open, click-to-choose sequence like any other elements.</p>
+      <pre class="code">driver.get(pathlib.Path("practice_site/advanced.html").resolve().as_uri())
+
+driver.find_element(By.ID, "custom-dropdown-toggle").click()   # opens the custom list
+
+banana_option = WebDriverWait(driver, 5).until(
+    EC.element_to_be_clickable((By.XPATH, "//div[@data-value='banana']"))
+)
+banana_option.click()
+
+result = driver.find_element(By.ID, "custom-dropdown-result")
+print(result.text)   # Selected: banana</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>53. Common Selenium Exceptions</h4>
+      <p>Recognising these specific exceptions immediately tells an experienced automation engineer what actually went wrong, without needing to debug from scratch &ndash; a frequent, practical interview topic.</p>
+      <ul class="key-points">
+        <li><code>NoSuchElementException</code> &ndash; the locator matched nothing; usually a wrong locator or the element genuinely not loaded yet (missing wait).</li>
+        <li><code>ElementNotInteractableException</code> &ndash; the element exists but cannot currently be interacted with (e.g. hidden, or covered by another element).</li>
+        <li><code>ElementClickInterceptedException</code> &ndash; another element (often a popup/overlay) is visually on top of the target, blocking the click.</li>
+        <li><code>StaleElementReferenceException</code> &ndash; the element was found, but the page then changed/reloaded that part of the DOM, so the old reference is no longer valid; re-locate the element and try again.</li>
+        <li><code>TimeoutException</code> &ndash; an Explicit Wait's condition never became true within its timeout.</li>
+        <li><code>NoAlertPresentException</code> &ndash; tried <code>switch_to.alert</code> when no popup was actually open.</li>
+      </ul>
+      <pre class="code">from selenium.common.exceptions import (
+    NoSuchElementException, TimeoutException, StaleElementReferenceException
+)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>54. Robust Waiting Patterns &amp; Try-Except in Automation</h4>
+      <p>Combining Explicit Waits with targeted try-except blocks makes scripts resilient to the timing issues that cause most "flaky" (inconsistently failing) test suites in real jobs.</p>
+      <pre class="code">from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
+
+def click_with_retry(driver, locator, attempts=3):
+    """Retries a click if the element goes stale between locating and clicking."""
+    for attempt in range(attempts):
+        try:
+            element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(locator))
+            element.click()
+            return
+        except StaleElementReferenceException:
+            continue   # element changed underneath us - just try again
+    raise TimeoutException(f"Could not click {locator} after {attempts} attempts")
+
+click_with_retry(driver, (By.ID, "login-btn"))</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>55. Best Practices for Robust, Stable Scripts</h4>
+      <ul class="key-points">
+        <li>Prefer ID &gt; CSS Selector &gt; XPath, in that order, whenever a stable option exists.</li>
+        <li>Always use Explicit Waits with specific conditions instead of <code>time.sleep()</code>.</li>
+        <li>Never mix Implicit and Explicit Waits in the same script.</li>
+        <li>Always call <code>driver.quit()</code> in a <code>finally</code> block (or a PyTest fixture teardown, Section 58) so the browser closes even if the test fails partway through.</li>
+        <li>Keep locators and page logic separate from test logic using the Page Object Model (Part I).</li>
+        <li>Avoid hard-coded test data inside scripts &ndash; use Parameterized tests (Section 59) or external data files instead.</li>
+        <li>Take a screenshot automatically on failure (Section 58) &ndash; it saves enormous debugging time later.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part H &mdash; Test Automation with PyTest</h2>
+
+    <div class="topic-note">
+      <h4>56. Introduction to PyTest</h4>
+      <p>Selenium only controls the browser &ndash; it has no concept of "tests", "pass/fail", or generating reports. PyTest is Python's most widely used testing framework, and combining it with Selenium is the standard, expected setup for a professional automation job.</p>
+      <div class="badge-row"><span class="badge fw">Framework</span></div>
+      <ul class="key-points">
+        <li>Install: <code>pip install pytest</code>.</li>
+        <li>Any function whose name starts with <code>test_</code>, inside a file whose name starts with <code>test_</code>, is automatically discovered and run as a test.</li>
+        <li>Run all tests in a folder simply by typing <code>pytest</code> in the terminal.</li>
+      </ul>
+      <pre class="code">--- File: test_sample.py ---
+def test_addition():
+    assert 2 + 2 == 4
+
+def test_string_upper():
+    assert "hello".upper() == "HELLO"</pre>
+      <pre class="code">pytest test_sample.py -v
+# -v (verbose) shows each test's name and PASSED/FAILED status individually</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>57. Assertions in PyTest</h4>
+      <p>PyTest uses Python's plain built-in <code>assert</code> keyword &ndash; no special assertion methods to memorise. If the condition is False, PyTest automatically shows a detailed, readable failure message comparing the actual vs expected values.</p>
+      <pre class="code">def test_page_title():
+    # ... (Selenium setup and driver.get(...) here)
+    assert driver.title == "Practice Login Page"
+
+def test_login_button_visible():
+    login_btn = driver.find_element(By.ID, "login-btn")
+    assert login_btn.is_displayed(), "Login button should be visible on the page"</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>58. PyTest Fixtures (Setup/Teardown)</h4>
+      <p>A Fixture is a reusable function that prepares something a test needs (like opening the browser) before the test runs, and cleans it up (like closing the browser) afterward &ndash; avoiding copy-pasting the same setup code into every single test function.</p>
+      <ul class="key-points">
+        <li>Decorate a function with <code>@pytest.fixture</code>; any test function that takes it as a parameter automatically receives its returned value.</li>
+        <li>Code before <code>yield</code> runs as setup; code after <code>yield</code> runs as teardown, even if the test fails or raises an error.</li>
+        <li>Fixtures are usually placed in a special file named <code>conftest.py</code> so they are automatically shared across every test file in the project, with no explicit import needed.</li>
+      </ul>
+      <pre class="code">--- File: conftest.py ---
+import pytest
+from selenium import webdriver
+
+@pytest.fixture
+def driver():
+    drv = webdriver.Chrome()
+    drv.maximize_window()
+    yield drv                 # <-- the test runs at this point, using this driver
+    drv.quit()                # <-- runs after the test finishes, pass or fail
+
+--- File: test_login.py ---
+import pathlib
+from selenium.webdriver.common.by import By
+
+def test_page_title(driver):        # pytest automatically supplies the 'driver' fixture
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    assert driver.title == "Practice Login Page"</pre>
+      <p>A more advanced version that automatically takes a screenshot only when a test fails, using PyTest's built-in hook system:</p>
+      <pre class="code">--- File: conftest.py (extended) ---
+import pytest
+from selenium import webdriver
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    report = outcome.get_result()
+    setattr(item, f"result_{report.when}", report)
+
+@pytest.fixture
+def driver(request):
+    drv = webdriver.Chrome()
+    drv.maximize_window()
+    yield drv
+    failed = getattr(request.node, "result_call", None)
+    if failed is not None and failed.failed:
+        drv.save_screenshot(f"failure_{request.node.name}.png")
+    drv.quit()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>59. Parameterized (Data-Driven) Tests</h4>
+      <p>Data-driven testing runs the exact same test logic multiple times against different input data &ndash; e.g. testing a login form with five different username/password combinations, without writing five separate test functions.</p>
+      <ul class="key-points">
+        <li><code>@pytest.mark.parametrize("arg_names", [list_of_value_tuples])</code> &ndash; PyTest runs the decorated test once per tuple in the list.</li>
+      </ul>
+      <pre class="code">import pytest
+
+@pytest.mark.parametrize("username,password,should_succeed", [
+    ("valid_user", "CorrectPass1", True),
+    ("valid_user", "WrongPass", False),
+    ("", "CorrectPass1", False),
+])
+def test_login_combinations(driver, username, password, should_succeed):
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    driver.find_element(By.ID, "username").send_keys(username)
+    driver.find_element(By.ID, "password").send_keys(password)
+    driver.find_element(By.ID, "login-btn").click()
+    # ... assertion logic comparing actual result to should_succeed would go here
+
+# Running "pytest -v" now shows 3 separate results, one per data row:
+# test_login_combinations[valid_user-CorrectPass1-True] PASSED
+# test_login_combinations[valid_user-WrongPass-False]   PASSED
+# test_login_combinations[-CorrectPass1-False]           PASSED</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>60. Running Tests &amp; Markers</h4>
+      <p>Markers tag tests into categories, so specific subsets can be run instead of the entire suite &ndash; useful for running a fast "smoke" test group frequently, and a full "regression" group less often.</p>
+      <ul class="key-points">
+        <li>Tag a test: <code>@pytest.mark.smoke</code> above the function.</li>
+        <li>Run only that group: <code>pytest -m smoke</code>.</li>
+        <li>Other useful flags: <code>-k "login"</code> (run only tests with "login" in the name), <code>-x</code> (stop after the first failure), <code>--reruns 2</code> (retry failed tests, with the <code>pytest-rerunfailures</code> plugin).</li>
+      </ul>
+      <pre class="code">import pytest
+
+@pytest.mark.smoke
+def test_homepage_loads(driver):
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    assert driver.title == "Practice Login Page"
+
+@pytest.mark.regression
+def test_full_login_flow(driver):
+    pass  # ... longer, more thorough test</pre>
+      <pre class="code">pytest -m smoke -v
+pytest -k "login" -v
+pytest -x</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>61. Generating HTML Reports (pytest-html)</h4>
+      <p>A shareable, visual HTML report is far more useful to a team than reading raw terminal output &ndash; expected in almost every real CI pipeline.</p>
+      <pre class="code">pip install pytest-html
+
+pytest --html=report.html --self-contained-html</pre>
+      <p>This produces a single <code>report.html</code> file showing every test's pass/fail status, duration, and any failure details &ndash; open it directly in a browser.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>62. Logging Test Execution</h4>
+      <p>Print statements are fine for quick debugging, but a real framework uses Python's <code>logging</code> module so every run produces a timestamped, filterable log file &ndash; essential when diagnosing a test that failed overnight on a CI server with no one watching.</p>
+      <pre class="code">import logging
+
+logging.basicConfig(
+    filename="test_run.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+def test_login(driver):
+    logger.info("Starting login test")
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    logger.info("Page loaded: %s", driver.title)
+    driver.find_element(By.ID, "username").send_keys("qa_tester")
+    logger.info("Username entered")</pre>
+    </div>
+
+    <h2 class="part-title">Part I &mdash; Framework Design: Page Object Model</h2>
+
+    <div class="topic-note">
+      <h4>63. What is the Page Object Model (POM)?</h4>
+      <p>POM is the industry-standard design pattern for structuring a real automation project: every web page (or major component) gets its own Python class, containing that page's locators and the actions a user can perform on it. Test files then only call these actions, never touching raw locators directly. This is asked about in nearly every automation job interview.</p>
+      <div class="badge-row"><span class="badge job">Standard Interview Topic</span></div>
+      <ul class="key-points">
+        <li><b>Without POM</b> &ndash; every test file repeats the same locators; if the application's HTML changes, every test file must be updated individually.</li>
+        <li><b>With POM</b> &ndash; locators live in exactly one place (the page class); if the HTML changes, only that one class needs updating, and every test automatically benefits.</li>
+        <li>Makes tests dramatically more readable: <code>login_page.enter_username("bob")</code> instead of <code>driver.find_element(By.ID, "username").send_keys("bob")</code>.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>64. Building a Page Object Class</h4>
+      <p>A Page Object class typically stores the <code>driver</code> in its constructor, defines locators as class-level constants, and exposes one method per user action.</p>
+      <pre class="code">--- File: pages/login_page.py ---
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+class LoginPage:
+    # Locators - defined once, in exactly one place
+    USERNAME_FIELD = (By.ID, "username")
+    PASSWORD_FIELD = (By.ID, "password")
+    LOGIN_BUTTON = (By.ID, "login-btn")
+    PAGE_HEADING = (By.ID, "page-title")
+
+    def __init__(self, driver):
+        self.driver = driver
+        self.wait = WebDriverWait(driver, 10)
+
+    def enter_username(self, username):
+        self.driver.find_element(*self.USERNAME_FIELD).send_keys(username)
+
+    def enter_password(self, password):
+        self.driver.find_element(*self.PASSWORD_FIELD).send_keys(password)
+
+    def click_login(self):
+        self.wait.until(EC.element_to_be_clickable(self.LOGIN_BUTTON)).click()
+
+    def login(self, username, password):
+        """A higher-level action combining the three steps above."""
+        self.enter_username(username)
+        self.enter_password(password)
+        self.click_login()
+
+    def get_heading_text(self):
+        return self.driver.find_element(*self.PAGE_HEADING).text</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>65. Combining POM with PyTest</h4>
+      <p>The test file becomes short and highly readable &ndash; it describes WHAT is being tested, not HOW each click/type is performed, since that detail lives inside the Page Object.</p>
+      <pre class="code">--- File: test_login_pom.py ---
+import pathlib
+from pages.login_page import LoginPage
+
+def test_login_page_loads(driver):
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    login_page = LoginPage(driver)
+    assert login_page.get_heading_text() == "Login Page"
+
+def test_can_enter_credentials(driver):
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    login_page = LoginPage(driver)
+    login_page.login("qa_tester", "Secure@123")
+    # ... further assertions on the resulting page state would go here</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>66. Recommended Framework Folder Structure</h4>
+      <p>A consistent, professional folder layout, expandable as the project grows &ndash; matching what most real companies' automation repositories look like.</p>
+      <pre class="code">selenium_project/
+  conftest.py              # shared fixtures (driver setup/teardown)
+  pytest.ini               # pytest configuration (markers, default options)
+  requirements.txt         # selenium, pytest, pytest-html, webdriver-manager
+  practice_site/
+    login.html
+    forms.html
+    advanced.html
+    frame-content.html
+  pages/
+    __init__.py
+    login_page.py
+    forms_page.py
+  tests/
+    __init__.py
+    test_login.py
+    test_forms.py
+  utils/
+    __init__.py
+    logger.py             # shared logging configuration</pre>
+    </div>
+
+    <h2 class="part-title">Part J &mdash; Cross-Browser Testing &amp; CI/CD</h2>
+
+    <div class="topic-note">
+      <h4>67. Cross-Browser Testing</h4>
+      <p>A real application must work correctly on multiple browsers (Chrome, Firefox, Edge). Rather than hard-coding <code>webdriver.Chrome()</code> everywhere, a professional framework makes the browser choice a configurable parameter.</p>
+      <pre class="code">from selenium import webdriver
+
+def get_driver(browser_name="chrome"):
+    if browser_name == "chrome":
+        return webdriver.Chrome()
+    elif browser_name == "firefox":
+        return webdriver.Firefox()
+    elif browser_name == "edge":
+        return webdriver.Edge()
+    else:
+        raise ValueError(f"Unsupported browser: {browser_name}")
+
+# Combined with a fixture, the browser can then be chosen from the command line:
+# pytest --browser=firefox</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>68. CI/CD Overview</h4>
+      <p>Continuous Integration means automated tests run automatically every time code is pushed, without a human manually triggering them &ndash; catching bugs immediately rather than days later. Understanding this workflow, even at a basic level, is expected in modern automation job interviews.</p>
+      <div class="badge-row"><span class="badge job">Modern Job Expectation</span></div>
+      <ul class="key-points">
+        <li>Common CI tools: Jenkins, GitHub Actions, GitLab CI, Azure DevOps &ndash; all follow the same basic idea: run a defined set of commands automatically on a trigger (e.g. every push to the main branch).</li>
+        <li>The CI server runs tests in Headless mode (Section 37), since it has no display, and often produces the HTML report (Section 61) as a build artifact.</li>
+      </ul>
+      <pre class="code">--- File: .github/workflows/tests.yml (a GitHub Actions example) ---
+name: Run Selenium Tests
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: pytest --html=report.html --self-contained-html</pre>
+    </div>
+
+    <h2 class="part-title">Part K &mdash; Assignments with Complete Code Solutions</h2>
+
+    <div class="assign-block">
+      <h4>Assignment S1 &mdash; Basic Navigation and Title Verification</h4>
+      <p><b>Task:</b> Open <code>login.html</code>, print its title and URL, verify the title is exactly "Practice Login Page" using an assertion, then close the browser safely even if the assertion fails.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+try:
+    login_page = pathlib.Path("practice_site/login.html").resolve().as_uri()
+    driver.get(login_page)
+
+    print("Title:", driver.title)
+    print("URL:", driver.current_url)
+
+    assert driver.title == "Practice Login Page", f"Unexpected title: {driver.title}"
+    print("Title verification PASSED")
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S2 &mdash; Login Form Automation with Assertions</h4>
+      <p><b>Task:</b> Enter a username and password into the login form, click Login, then verify each field held the correct value before submitting (using <code>get_attribute("value")</code>).</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+try:
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+
+    username_field = driver.find_element(By.ID, "username")
+    password_field = driver.find_element(By.ID, "password")
+
+    username_field.send_keys("qa_tester")
+    password_field.send_keys("Secure@123")
+
+    assert username_field.get_attribute("value") == "qa_tester"
+    assert password_field.get_attribute("value") == "Secure@123"
+    print("Field values verified correctly")
+
+    driver.find_element(By.ID, "login-btn").click()
+    print("Login button clicked")
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S3 &mdash; Checkbox, Radio Button &amp; Dropdown Handling</h4>
+      <p><b>Task:</b> On <code>forms.html</code>: select the "Female" radio button, check both "Reading" and "Music" checkboxes (but not "Sports"), select "United Kingdom" from the Country dropdown, and print a summary of every choice made.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
+driver = webdriver.Chrome()
+try:
+    driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+    driver.find_element(By.ID, "gender-female").click()
+
+    driver.find_element(By.ID, "hobby-reading").click()
+    driver.find_element(By.ID, "hobby-music").click()
+    # deliberately leave hobby-sports unchecked
+
+    country = Select(driver.find_element(By.ID, "country"))
+    country.select_by_visible_text("United Kingdom")
+
+    print("Female selected:", driver.find_element(By.ID, "gender-female").is_selected())
+    print("Reading checked:", driver.find_element(By.ID, "hobby-reading").is_selected())
+    print("Sports checked:", driver.find_element(By.ID, "hobby-sports").is_selected())
+    print("Music checked:", driver.find_element(By.ID, "hobby-music").is_selected())
+    print("Country selected:", country.first_selected_option.text)
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S4 &mdash; Extract and Print Data from an HTML Table</h4>
+      <p><b>Task:</b> Read every row of the employee table on <code>forms.html</code> into a list of Python dictionaries, then print only the rows where the Role is "Developer" or "Manager".</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+try:
+    driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+    rows = driver.find_elements(By.CSS_SELECTOR, "#data-table tbody tr")
+    employees = []
+    for row in rows:
+        cells = row.find_elements(By.TAG_NAME, "td")
+        employees.append({
+            "name": cells[0].text,
+            "role": cells[1].text,
+            "city": cells[2].text,
+        })
+
+    print("All employees:", employees)
+
+    filtered = [e for e in employees if e["role"] in ("Developer", "Manager")]
+    print("\nDevelopers and Managers only:")
+    for emp in filtered:
+        print(f"  {emp['name']} - {emp['role']} - {emp['city']}")
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S5 &mdash; Multi-Tab Window Handling</h4>
+      <p><b>Task:</b> From <code>forms.html</code>, click the link that opens <code>login.html</code> in a new tab, switch to it, verify its title, close it, then confirm focus correctly returns to the original tab.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+
+driver = webdriver.Chrome()
+try:
+    driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+    original_window = driver.current_window_handle
+
+    driver.find_element(By.ID, "new-tab-link").click()
+    WebDriverWait(driver, 10).until(lambda d: len(d.window_handles) == 2)
+
+    for handle in driver.window_handles:
+        if handle != original_window:
+            driver.switch_to.window(handle)
+            break
+
+    assert driver.title == "Practice Login Page"
+    print("New tab title verified:", driver.title)
+
+    driver.close()
+    driver.switch_to.window(original_window)
+    assert driver.title == "Practice Forms Page"
+    print("Successfully returned to original tab:", driver.title)
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S6 &mdash; Alert, Confirm &amp; Prompt Handling</h4>
+      <p><b>Task:</b> On <code>forms.html</code>, trigger and accept the simple alert, trigger and dismiss the confirm dialog, then trigger the prompt, type a name into it, and accept it &ndash; printing each popup's message before handling it.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+try:
+    driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+    driver.find_element(By.ID, "alert-btn").click()
+    alert = driver.switch_to.alert
+    print("Alert text:", alert.text)
+    alert.accept()
+
+    driver.find_element(By.ID, "confirm-btn").click()
+    confirm = driver.switch_to.alert
+    print("Confirm text:", confirm.text)
+    confirm.dismiss()
+
+    driver.find_element(By.ID, "prompt-btn").click()
+    prompt = driver.switch_to.alert
+    print("Prompt text:", prompt.text)
+    prompt.send_keys("QA Tester")
+    prompt.accept()
+
+    print("All three popups handled successfully")
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S7 &mdash; File Upload Automation</h4>
+      <p><b>Task:</b> Create a text file on disk with Python, upload it through the file input on <code>forms.html</code>, and verify the input field now shows the correct file name.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+sample_file = pathlib.Path("sample_upload.txt")
+sample_file.write_text("Sample content for the upload assignment.")
+
+driver = webdriver.Chrome()
+try:
+    driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+    upload_input = driver.find_element(By.ID, "file-upload")
+    upload_input.send_keys(str(sample_file.resolve()))
+
+    uploaded_value = upload_input.get_attribute("value")
+    print("Upload field now shows:", uploaded_value)
+    assert "sample_upload.txt" in uploaded_value
+    print("File upload verified successfully")
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S8 &mdash; Explicit Wait Practice on a Dynamic Element</h4>
+      <p><b>Task:</b> On <code>forms.html</code>, the <code>#dynamic-box</code> shows "Loading..." and changes to "Content Loaded" after 2 seconds. Write a script that waits properly (no <code>time.sleep()</code>) for the final text, and measure/print how long the wait actually took.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib, time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+driver = webdriver.Chrome()
+try:
+    driver.get(pathlib.Path("practice_site/forms.html").resolve().as_uri())
+
+    dynamic_box = driver.find_element(By.ID, "dynamic-box")
+    print("Immediately after page load:", dynamic_box.text)   # Loading...
+
+    start_time = time.time()
+    WebDriverWait(driver, 10).until(
+        EC.text_to_be_present_in_element((By.ID, "dynamic-box"), "Content Loaded")
+    )
+    elapsed = time.time() - start_time
+
+    print("Final text:", driver.find_element(By.ID, "dynamic-box").text)
+    print(f"Explicit wait took approximately {elapsed:.2f} seconds")
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S9 &mdash; Drag and Drop + Custom Dropdown</h4>
+      <p><b>Task:</b> On <code>advanced.html</code>, drag the "DRAG ME" box into the drop target and verify it shows "Dropped!", then open the custom dropdown and select "Mango", verifying the result text updates correctly.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pathlib
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+driver = webdriver.Chrome()
+try:
+    driver.get(pathlib.Path("practice_site/advanced.html").resolve().as_uri())
+
+    source = driver.find_element(By.ID, "drag-source")
+    target = driver.find_element(By.ID, "drop-target")
+    ActionChains(driver).drag_and_drop(source, target).perform()
+    assert target.text == "Dropped!"
+    print("Drag and drop verified:", target.text)
+
+    driver.find_element(By.ID, "custom-dropdown-toggle").click()
+    mango_option = WebDriverWait(driver, 5).until(
+        EC.element_to_be_clickable((By.XPATH, "//div[@data-value='mango']"))
+    )
+    mango_option.click()
+
+    result = driver.find_element(By.ID, "custom-dropdown-result")
+    assert result.text == "Selected: mango"
+    print("Custom dropdown verified:", result.text)
+finally:
+    driver.quit()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S10 &mdash; Data-Driven Login Test with PyTest</h4>
+      <p><b>Task:</b> Build a PyTest fixture for the driver, and a parameterized test that runs the login flow with three different username/password pairs, printing which combination is being tested each time.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">--- File: conftest.py ---
+import pytest
+from selenium import webdriver
+
+@pytest.fixture
+def driver():
+    drv = webdriver.Chrome()
+    drv.maximize_window()
+    yield drv
+    drv.quit()
+
+--- File: test_data_driven_login.py ---
+import pathlib
+import pytest
+from selenium.webdriver.common.by import By
+
+@pytest.mark.parametrize("username,password", [
+    ("alice", "Password1"),
+    ("bob", "Password2"),
+    ("charlie", "Password3"),
+])
+def test_login_with_multiple_users(driver, username, password):
+    print(f"\nTesting with username='{username}', password='{password}'")
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+
+    driver.find_element(By.ID, "username").send_keys(username)
+    driver.find_element(By.ID, "password").send_keys(password)
+
+    assert driver.find_element(By.ID, "username").get_attribute("value") == username
+    driver.find_element(By.ID, "login-btn").click()</pre>
+      <pre class="code">pytest test_data_driven_login.py -v -s
+# -s shows the print() output alongside the pass/fail results</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S11 &mdash; Page Object Model Mini Framework</h4>
+      <p><b>Task:</b> Build a proper 3-file mini framework: a Page Object for the login page, a shared PyTest fixture, and a test file that uses only the Page Object's methods (no raw locators inside the test file).</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">--- File: pages/login_page.py ---
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+class LoginPage:
+    USERNAME_FIELD = (By.ID, "username")
+    PASSWORD_FIELD = (By.ID, "password")
+    LOGIN_BUTTON = (By.ID, "login-btn")
+    PAGE_HEADING = (By.ID, "page-title")
+
+    def __init__(self, driver):
+        self.driver = driver
+        self.wait = WebDriverWait(driver, 10)
+
+    def enter_username(self, username):
+        self.driver.find_element(*self.USERNAME_FIELD).send_keys(username)
+        return self
+
+    def enter_password(self, password):
+        self.driver.find_element(*self.PASSWORD_FIELD).send_keys(password)
+        return self
+
+    def click_login(self):
+        self.wait.until(EC.element_to_be_clickable(self.LOGIN_BUTTON)).click()
+        return self
+
+    def login(self, username, password):
+        return self.enter_username(username).enter_password(password).click_login()
+
+    def get_heading_text(self):
+        return self.driver.find_element(*self.PAGE_HEADING).text
+
+--- File: conftest.py ---
+import pytest
+from selenium import webdriver
+
+@pytest.fixture
+def driver():
+    drv = webdriver.Chrome()
+    yield drv
+    drv.quit()
+
+--- File: tests/test_login_framework.py ---
+import pathlib
+from pages.login_page import LoginPage
+
+def test_login_page_heading(driver):
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    login_page = LoginPage(driver)
+    assert login_page.get_heading_text() == "Login Page"
+
+def test_full_login_flow(driver):
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    login_page = LoginPage(driver)
+    login_page.login("qa_tester", "Secure@123")
+    # method chaining above (return self) makes this equally valid:
+    # login_page.enter_username("qa_tester").enter_password("Secure@123").click_login()</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment S12 &mdash; Screenshot on Failure + HTML Report</h4>
+      <p><b>Task:</b> Extend the conftest.py fixture so it automatically saves a screenshot when any test fails, write one test that deliberately fails (a wrong assertion) and one that passes, then generate a shareable HTML report and confirm the screenshot was created only for the failing test.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">--- File: conftest.py ---
+import pytest
+from selenium import webdriver
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    report = outcome.get_result()
+    setattr(item, f"result_{report.when}", report)
+
+@pytest.fixture
+def driver(request):
+    drv = webdriver.Chrome()
+    drv.maximize_window()
+    yield drv
+    failed = getattr(request.node, "result_call", None)
+    if failed is not None and failed.failed:
+        drv.save_screenshot(f"failure_{request.node.name}.png")
+        print(f"\nScreenshot saved: failure_{request.node.name}.png")
+    drv.quit()
+
+--- File: test_failure_demo.py ---
+import pathlib
+from selenium.webdriver.common.by import By
+
+def test_this_should_pass(driver):
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    assert driver.title == "Practice Login Page"
+
+def test_this_should_fail_on_purpose(driver):
+    driver.get(pathlib.Path("practice_site/login.html").resolve().as_uri())
+    assert driver.title == "This Title Does Not Exist"   # deliberately wrong</pre>
+      <pre class="code">pytest test_failure_demo.py -v --html=report.html --self-contained-html
+
+# Expected result:
+# test_this_should_pass PASSED - no screenshot created
+# test_this_should_fail_on_purpose FAILED - failure_test_this_should_fail_on_purpose.png created
+# report.html opens in a browser showing both results with the failure's traceback</pre>
+    </div>
+
+    <h3>Quick Reference Table</h3>
+    <div class="topic-note">
+      <table class="quick-ref">
+        <tr><th>Category</th><th>Item</th><th>Purpose</th></tr>
+        <tr><td>Locator</td><td>By.ID</td><td>Fastest, most reliable - use first when available</td></tr>
+        <tr><td>Locator</td><td>By.NAME</td><td>Locate by the name attribute</td></tr>
+        <tr><td>Locator</td><td>By.CLASS_NAME</td><td>Single class only (no spaces)</td></tr>
+        <tr><td>Locator</td><td>By.TAG_NAME</td><td>Usually used with find_elements</td></tr>
+        <tr><td>Locator</td><td>By.LINK_TEXT / PARTIAL_LINK_TEXT</td><td>Links only, by visible text</td></tr>
+        <tr><td>Locator</td><td>By.CSS_SELECTOR</td><td>Fast, flexible - preferred over XPath</td></tr>
+        <tr><td>Locator</td><td>By.XPATH</td><td>Most powerful - text() and axis navigation</td></tr>
+        <tr><td>Wait</td><td>implicitly_wait(sec)</td><td>Global, applies to every find_element call</td></tr>
+        <tr><td>Wait</td><td>WebDriverWait + EC</td><td>Explicit, condition-specific - preferred</td></tr>
+        <tr><td>Wait</td><td>Fluent Wait</td><td>Custom polling frequency + ignored exceptions</td></tr>
+        <tr><td>EC</td><td>presence_of_element_located</td><td>Exists in DOM (may be invisible)</td></tr>
+        <tr><td>EC</td><td>visibility_of_element_located</td><td>Exists AND visible</td></tr>
+        <tr><td>EC</td><td>element_to_be_clickable</td><td>Visible AND enabled</td></tr>
+        <tr><td>EC</td><td>alert_is_present</td><td>Popup alert/confirm/prompt is open</td></tr>
+        <tr><td>Exception</td><td>NoSuchElementException</td><td>Locator matched nothing</td></tr>
+        <tr><td>Exception</td><td>ElementNotInteractableException</td><td>Element exists but can't be interacted with</td></tr>
+        <tr><td>Exception</td><td>ElementClickInterceptedException</td><td>Another element is blocking the click</td></tr>
+        <tr><td>Exception</td><td>StaleElementReferenceException</td><td>DOM changed - re-locate the element</td></tr>
+        <tr><td>Exception</td><td>TimeoutException</td><td>Explicit Wait condition never became true</td></tr>
+        <tr><td>Method</td><td>find_element / find_elements</td><td>One element (raises error) / list (never raises)</td></tr>
+        <tr><td>Method</td><td>click() / send_keys() / clear()</td><td>Click, type, empty a field</td></tr>
+        <tr><td>Method</td><td>get_attribute() / .text</td><td>Read an HTML attribute / visible text</td></tr>
+        <tr><td>Method</td><td>is_displayed / is_enabled / is_selected</td><td>Check element state</td></tr>
+        <tr><td>Window</td><td>window_handles / switch_to.window()</td><td>List tabs / switch between them</td></tr>
+        <tr><td>Frame</td><td>switch_to.frame() / default_content()</td><td>Enter / exit an iframe</td></tr>
+        <tr><td>Alert</td><td>switch_to.alert / accept() / dismiss()</td><td>Handle JS popups</td></tr>
+        <tr><td>PyTest</td><td>@pytest.fixture</td><td>Reusable setup/teardown</td></tr>
+        <tr><td>PyTest</td><td>@pytest.mark.parametrize</td><td>Data-driven, repeated test runs</td></tr>
+        <tr><td>PyTest</td><td>@pytest.mark.&lt;name&gt;</td><td>Tag tests to run selectively (-m)</td></tr>
+      </table>
+    </div>
+
+    <div class="notes">
+      <strong>Exam Summary:</strong> A job-ready Selenium automation engineer follows the same overall workflow every time: locate elements using the most stable strategy available (ID &gt; CSS &gt; XPath), interact with them through Selenium's element methods, always synchronize with Explicit Waits instead of fixed sleeps, handle the special cases (frames, alerts, multiple windows, dynamic dropdowns) with their dedicated APIs, and wrap everything into a maintainable framework using PyTest fixtures, parameterized data-driven tests, and the Page Object Model so locators live in exactly one place. Practicing Assignments S1 through S12 in order takes you from a single script to a real, structured mini test-automation framework with failure screenshots and HTML reporting &mdash; exactly what an SDET or QA Automation Engineer builds and maintains on the job.
+    </div>
+  </div>
+</body>
+</html>
