@@ -1,0 +1,2058 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Certified Cloud Practitioner (CLF-C02) Complete Exam Notes</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .meta div span {
+      color: #7c8fa0;
+      font-size: 7.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: #8a5c1f; }
+
+    h2.part-title {
+      margin: 4.5mm 0 2.4mm;
+      font-size: 11.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: linear-gradient(90deg, #0f5f7f, #124a76);
+      border-radius: 1.3mm;
+      padding: 2mm 2.6mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-block ol {
+      margin: 0;
+      padding-left: 5.2mm;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+    }
+
+    .notes {
+      margin-top: 3mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      position: relative;
+      z-index: 1;
+      background: #fafcff;
+      font-size: 9pt;
+    }
+
+    .topic-note {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-note p {
+      margin: 0 0 1.5mm;
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: #304556;
+    }
+
+    .key-points {
+      margin: 1.3mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1mm;
+      font-size: 7.9pt;
+      line-height: 1.4;
+      color: #314759;
+    }
+
+    .code {
+      margin: 1.3mm 0 0;
+      border: 1px solid #d9e5ef;
+      border-left: 2mm solid #0f5f7f;
+      border-radius: 1mm;
+      background: #fffdf8;
+      color: #203040;
+      padding: 2mm;
+      font-size: 7.7pt;
+      line-height: 1.44;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+      margin: 1mm 0 0;
+    }
+
+    .badge {
+      font-size: 7.3pt;
+      color: #0f5f7f;
+      border: 1px solid #bcd7e2;
+      background: #eef7fb;
+      border-radius: 3mm;
+      padding: 0.8mm 2.2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .badge.d1 { color: #1f7a4d; border-color: #b9dfc7; background: #ecfaf1; }
+    .badge.d2 { color: #a13a3a; border-color: #e8b9b9; background: #fdf1f1; }
+    .badge.d3 { color: #124a76; border-color: #bcd7e2; background: #eef5fa; }
+    .badge.d4 { color: #8a5c1f; border-color: #e3cfa8; background: #fdf6ea; }
+    .badge.exam { color: #6a3b96; border-color: #d6c2ea; background: #f6f0fb; }
+
+    .assign-block {
+      border: 1px solid #d6e0ea;
+      border-left: 2mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      background: #fffefb;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .assign-block h4 { color: #8a5c1f; }
+
+    .assign-block .solution-label {
+      display: inline-block;
+      margin: 1.6mm 0 0.8mm;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0f5f7f;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid #bcd7e2;
+      padding-bottom: 0.6mm;
+    }
+
+    .qbox {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+      font-size: 8.3pt;
+    }
+
+    .qbox .qtext { font-weight: 700; color: #12303f; margin-bottom: 1mm; }
+    .qbox .qoptions { margin: 0 0 1mm; padding-left: 4.5mm; color: #304556; }
+    .qbox .qoptions li { border-bottom: none; margin: 0 0 0.6mm; font-size: 8.1pt; }
+    .qbox .qanswer { color: #1f7a4d; font-weight: 700; font-size: 7.9pt; }
+    .qbox .qexplain { color: #425768; font-size: 7.8pt; margin-top: 0.8mm; line-height: 1.4; }
+
+    .quick-ref {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.5pt;
+      margin-top: 1mm;
+    }
+
+    .quick-ref th, .quick-ref td {
+      border: 1px solid var(--soft);
+      padding: 1mm 1.5mm;
+      text-align: left;
+    }
+
+    .quick-ref th {
+      background: #eef5fa;
+      color: #124a76;
+      text-transform: uppercase;
+      font-size: 7pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">AWS Certified Cloud Practitioner</div>
+        <div class="subtitle">CLF-C02 Complete Exam Notes &bull; All 4 Domains &bull; Practice Questions Included</div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><span>Name</span>&nbsp;</div>
+      <div><span>Class / Roll No.</span>&nbsp;</div>
+      <div><span>Date</span>&nbsp;</div>
+    </div>
+
+    <div class="instructions">
+      <b>Study Note:</b> These notes cover the complete official AWS Certified Cloud Practitioner (CLF-C02) exam guide, organized by its four scored domains. Every topic gives the exact facts and figures the exam tests &mdash; not just concepts. Sample IAM policies, comparison tables, and a full bank of practice questions (with explained answers) are included at the end so that studying and practicing these notes end-to-end genuinely prepares you to sit and pass the real exam.
+    </div>
+
+    <h2 class="part-title">Exam Overview</h2>
+
+    <div class="topic-note">
+      <h4>1. About the AWS Certified Cloud Practitioner Exam</h4>
+      <ul class="key-points">
+        <li><b>Exam code:</b> CLF-C02. <b>Format:</b> 65 questions (50 scored + 15 unscored, mixed in randomly and indistinguishable), multiple choice and multiple response.</li>
+        <li><b>Duration:</b> 90 minutes. <b>Cost:</b> $100 USD. <b>Delivery:</b> Pearson VUE testing center or online proctored.</li>
+        <li><b>Scoring:</b> Scaled score from 100-1000; <b>passing score is 700</b>. There is no penalty for wrong answers, so always answer every question.</li>
+        <li><b>Prerequisites:</b> None required, though AWS recommends 6 months of exposure to the AWS Cloud in any role (technical, managerial, sales, purchasing, or financial).</li>
+        <li><b>Validity:</b> The certification is valid for 3 years, after which it must be renewed by re-taking the exam or a higher-level exam.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>2. Exam Domains &amp; Weightings</h4>
+      <p>Study time should roughly match these weightings &ndash; Domain 3 and Domain 2 together make up nearly two-thirds of the exam.</p>
+      <table class="quick-ref">
+        <tr><th>Domain</th><th>Name</th><th>Weight</th></tr>
+        <tr><td>Domain 1</td><td>Cloud Concepts</td><td>24%</td></tr>
+        <tr><td>Domain 2</td><td>Security and Compliance</td><td>30%</td></tr>
+        <tr><td>Domain 3</td><td>Cloud Technology and Services</td><td>34%</td></tr>
+        <tr><td>Domain 4</td><td>Billing, Pricing, and Support</td><td>12%</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>3. How to Use These Notes</h4>
+      <ul class="key-points">
+        <li>Read each Part in order &ndash; later Parts (especially services in Domain 3) build on concepts introduced early (e.g. Regions and Availability Zones, introduced in Part B, are referenced throughout).</li>
+        <li>Pay special attention to any specific numbers (durability percentages, default limits, number of AZs, support plan response times) &ndash; the real exam frequently tests exact figures, not just general concepts.</li>
+        <li>After finishing all Parts, complete every assignment in Part L, then take the full Practice Question Bank under timed conditions (aim to finish 50 questions in under 70 minutes) before your real exam.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part A &mdash; Domain 1: Cloud Concepts (24%)</h2>
+
+    <div class="topic-note">
+      <h4>4. What is Cloud Computing?</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <p>Cloud computing is the on-demand delivery of IT resources (compute power, storage, databases, networking) over the internet, with pay-as-you-go pricing &ndash; instead of buying, owning, and maintaining physical data centers and servers.</p>
+      <ul class="key-points">
+        <li>Resources are provisioned in minutes via self-service, rather than weeks/months of procurement and setup for physical hardware.</li>
+        <li>You pay only for what you use, when you use it, with no long-term contracts required for most services.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>5. Deployment Models</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <ul class="key-points">
+        <li><b>Cloud (All-in)</b> &ndash; the application runs entirely in the cloud; all components/infrastructure are hosted on AWS.</li>
+        <li><b>Hybrid</b> &ndash; cloud resources are connected to on-premises infrastructure, allowing gradual migration or integration (e.g. via AWS Direct Connect or AWS Outposts).</li>
+        <li><b>On-Premises (Private Cloud)</b> &ndash; resources are deployed using virtualization and resource management tools to increase resource utilization within an organization's own data center.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>6. Six Advantages of Cloud Computing</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span><span class="badge exam">Frequently Tested</span></div>
+      <p>These six advantages, as officially defined by AWS, are a very commonly tested list &ndash; know all six by name.</p>
+      <ul class="key-points">
+        <li><b>1. Trade capital expense for variable expense</b> &ndash; pay only for compute resources you consume, instead of investing heavily in data centers upfront.</li>
+        <li><b>2. Benefit from massive economies of scale</b> &ndash; AWS's large aggregate usage across all customers achieves lower pay-as-you-go prices than any single company could get on its own.</li>
+        <li><b>3. Stop guessing capacity</b> &ndash; scale up or down as needed, eliminating the guesswork of pre-provisioning for peak load.</li>
+        <li><b>4. Increase speed and agility</b> &ndash; new IT resources are available in minutes, dramatically increasing developer experimentation and innovation speed.</li>
+        <li><b>5. Stop spending money running and maintaining data centers</b> &ndash; focus on projects that differentiate the business, not on racking and stacking servers.</li>
+        <li><b>6. Go global in minutes</b> &ndash; deploy an application in multiple AWS Regions around the world with just a few clicks, providing lower latency to users globally.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>7. Cloud Service Models (IaaS, PaaS, SaaS)</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <ul class="key-points">
+        <li><b>IaaS (Infrastructure as a Service)</b> &ndash; provides the basic building blocks: networking, compute, storage. Maximum flexibility and control. Example: Amazon EC2.</li>
+        <li><b>PaaS (Platform as a Service)</b> &ndash; removes the need to manage underlying infrastructure, letting you focus on deploying and managing applications. Example: AWS Elastic Beanstalk.</li>
+        <li><b>SaaS (Software as a Service)</b> &ndash; a complete, ready-to-use product run and managed by the service provider; you just use it. Example: Gmail, or Amazon QuickSight for the end user.</li>
+        <li>As you move from IaaS &rarr; PaaS &rarr; SaaS, you manage less infrastructure yourself, but also get less low-level control.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>8. Total Cost of Ownership (TCO)</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <p>TCO is the estimated financial benefit of moving to AWS, comparing the cost of running an application in a customer's own data center versus on AWS, accounting for both direct and indirect costs.</p>
+      <ul class="key-points">
+        <li>On-premises TCO includes hidden/indirect costs often overlooked: power, cooling, physical security, real estate, IT labor to maintain hardware.</li>
+        <li><b>AWS Pricing Calculator</b> &ndash; a free tool to estimate the cost of AWS services for a planned architecture.</li>
+        <li><b>AWS TCO Calculator</b> (part of Migration Evaluator) &ndash; compares the cost of an existing on-premises environment against running the equivalent workload on AWS.</li>
+        <li><b>CapEx vs OpEx:</b> On-premises data centers are largely Capital Expenditure (large upfront investment); AWS Cloud is Operational Expenditure (pay-as-you-go, variable cost).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>9. AWS Well-Architected Framework Overview</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span><span class="badge exam">Frequently Tested</span></div>
+      <p>A framework of best practices to help evaluate and design cloud architectures, structured around six equally-important "pillars". Each pillar is tested individually on the exam, so know all six names and their core focus.</p>
+      <ul class="key-points">
+        <li>Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability.</li>
+        <li>Available as a free, self-service <b>AWS Well-Architected Tool</b> in the AWS Console, which reviews your architecture against these pillars and gives improvement recommendations.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>10. Pillar 1: Operational Excellence</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <p>Focuses on running and monitoring systems to deliver business value, and continually improving processes and procedures.</p>
+      <ul class="key-points">
+        <li>Perform operations as code (e.g. Infrastructure as Code); make frequent, small, reversible changes; anticipate failure; learn from operational failures.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>11. Pillar 2: Security</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <p>Focuses on protecting information, systems, and assets while delivering business value through risk assessments and mitigation strategies.</p>
+      <ul class="key-points">
+        <li>Implement a strong identity foundation; enable traceability; apply security at all layers; automate security best practices; protect data in transit and at rest.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>12. Pillar 3: Reliability</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <p>Focuses on the ability of a system to recover from failures, dynamically acquire computing resources to meet demand, and mitigate disruptions.</p>
+      <ul class="key-points">
+        <li>Automatically recover from failure; test recovery procedures; scale horizontally to increase aggregate system availability; stop guessing capacity.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>13. Pillar 4: Performance Efficiency</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <p>Focuses on using computing resources efficiently to meet requirements, and maintaining that efficiency as demand changes and technologies evolve.</p>
+      <ul class="key-points">
+        <li>Democratize advanced technologies (use managed services instead of building expertise from scratch); go global in minutes; use serverless architectures; experiment more often.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>14. Pillar 5: Cost Optimization</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <p>Focuses on avoiding unnecessary costs, understanding spending over time, and scaling to meet business needs without overspending.</p>
+      <ul class="key-points">
+        <li>Adopt a consumption model (pay only for what you use); measure overall efficiency; stop spending on undifferentiated heavy lifting (data center operations); analyze and attribute expenditure.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>15. Pillar 6: Sustainability</h4>
+      <div class="badge-row"><span class="badge d1">Domain 1</span></div>
+      <p>The newest pillar (added 2021), focused on minimizing the environmental impact of running cloud workloads.</p>
+      <ul class="key-points">
+        <li>Understand your impact; establish sustainability goals; maximize utilization; use managed services (which are shared across many customers, improving overall efficiency); reduce the downstream impact of your workloads.</li>
+      </ul>
+    </div>
+
+
+    <h2 class="part-title">Part B &mdash; AWS Global Infrastructure</h2>
+
+    <div class="topic-note">
+      <h4>16. Regions</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <p>A Region is a physical, geographically isolated location in the world containing multiple, fully independent Availability Zones. As of the current exam version, AWS has over 30 Regions worldwide.</p>
+      <ul class="key-points">
+        <li>Each Region is completely independent of other Regions, providing fault tolerance, stability, and data sovereignty (data does not leave a Region unless you explicitly configure it to).</li>
+        <li>Not all AWS services are available in all Regions &ndash; newer/specialized services often launch in a limited set of Regions first.</li>
+        <li>Pricing varies by Region due to differing local costs (electricity, real estate, labor, taxes).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>17. Availability Zones (AZs)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <p>An Availability Zone is one or more discrete data centers with redundant power, networking, and connectivity, housed in separate facilities. Every AWS Region has a <b>minimum of 3 Availability Zones</b>.</p>
+      <ul class="key-points">
+        <li>AZs within a Region are interconnected with high-bandwidth, low-latency networking, but are physically separated (miles apart) to isolate them from failures like fires, floods, or power outages in any one location.</li>
+        <li>Designing an application to use multiple AZs is a core best practice for high availability and fault tolerance.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>18. Edge Locations &amp; Points of Presence</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>Edge locations are sites that Amazon CloudFront (AWS's Content Delivery Network) uses to cache copies of content closer to end users for lower latency &ndash; there are far more Edge locations than Regions (hundreds worldwide).</p>
+      <ul class="key-points">
+        <li>Used by CloudFront and AWS Global Accelerator to serve cached content quickly, without every request needing to travel back to the origin Region.</li>
+        <li>A "Point of Presence" is a collective term for both Edge locations and Regional Edge Caches.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>19. Choosing a Region</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <p>The exam often presents a scenario and asks which factor should determine the Region choice. Four official factors:</p>
+      <ul class="key-points">
+        <li><b>Compliance</b> &ndash; data governance and legal requirements may mandate data stay within specific geographic/legal boundaries.</li>
+        <li><b>Latency</b> &ndash; choose a Region physically close to your users to minimize response time.</li>
+        <li><b>Pricing</b> &ndash; costs for the same service can differ meaningfully between Regions.</li>
+        <li><b>Service availability</b> &ndash; not every AWS service or feature is available in every Region.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>20. Ways to Access/Interact with AWS</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <ul class="key-points">
+        <li><b>AWS Management Console</b> &ndash; a web-based visual interface for managing AWS resources.</li>
+        <li><b>AWS Command Line Interface (CLI)</b> &ndash; a unified tool to manage AWS services by typing commands in a terminal, ideal for scripting and automation.</li>
+        <li><b>AWS Software Development Kits (SDKs)</b> &ndash; libraries for programming languages (Python, Java, JavaScript, etc.) that let applications call AWS services directly from code.</li>
+      </ul>
+      <pre class="code"># Example AWS CLI command - list all S3 buckets
+aws s3 ls
+
+# Example AWS CLI command - list running EC2 instances
+aws ec2 describe-instances --filters "Name=instance-state-name,Values=running"</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>21. Infrastructure as Code with AWS CloudFormation</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>AWS CloudFormation lets you define your entire AWS infrastructure (servers, databases, networking) as a text file (JSON or YAML template), which can then be version-controlled and deployed repeatably &ndash; instead of manually clicking through the Console every time.</p>
+      <ul class="key-points">
+        <li>A "stack" is the collection of AWS resources created and managed together from one template.</li>
+        <li>Enables consistent, repeatable, and automated infrastructure deployment &ndash; a core practice of the Operational Excellence pillar.</li>
+        <li>Free to use &ndash; you only pay for the underlying AWS resources the template creates.</li>
+      </ul>
+      <pre class="code"># A minimal CloudFormation template (YAML) that creates one S3 bucket
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-example-bucket-12345</pre>
+    </div>
+
+    <h2 class="part-title">Part C &mdash; Domain 2: Security and Compliance (30%)</h2>
+
+    <div class="topic-note">
+      <h4>22. The Shared Responsibility Model</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span><span class="badge exam">Most Tested Single Topic</span></div>
+      <p>This is arguably the single most frequently tested concept on the entire exam. It defines exactly which security tasks AWS handles versus which the customer must handle.</p>
+      <ul class="key-points">
+        <li><b>AWS is responsible for "Security OF the Cloud"</b> &ndash; protecting the infrastructure that runs all AWS services: hardware, software, networking, and the physical facilities.</li>
+        <li><b>The customer is responsible for "Security IN the Cloud"</b> &ndash; this varies by service, but generally includes: customer data, IAM configuration, operating system/network/firewall configuration (for EC2), platform and application management, encryption of data (client-side and server-side).</li>
+        <li><b>Rule of thumb:</b> for managed services (like RDS, S3, DynamoDB), AWS manages more of the underlying stack; for unmanaged/IaaS services (like EC2), the customer manages more (e.g. patching the guest OS is always the customer's job on EC2).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>23. AWS Compliance Programs &amp; AWS Artifact</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>AWS undergoes independent, third-party audits against many global compliance standards, and makes the resulting reports available to customers as proof for their own compliance audits.</p>
+      <ul class="key-points">
+        <li>Examples of compliance programs AWS participates in: <b>ISO 27001, SOC 1/2/3, PCI DSS, HIPAA, GDPR, FedRAMP</b>.</li>
+        <li><b>AWS Artifact</b> &ndash; a free, self-service portal in the Console to download AWS's compliance reports (e.g. SOC reports) and agreements (e.g. Business Associate Addendum for HIPAA), on demand, at no cost.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>24. IAM: Users, Groups, Roles</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span><span class="badge exam">Frequently Tested</span></div>
+      <p>AWS Identity and Access Management (IAM) controls who can do what within an AWS account. IAM is a global service (not tied to any one Region) and is free to use.</p>
+      <ul class="key-points">
+        <li><b>IAM User</b> &ndash; represents one person or application, with its own credentials (password and/or access keys).</li>
+        <li><b>IAM Group</b> &ndash; a collection of IAM users; permissions attached to a Group apply to every user in it &ndash; the recommended way to manage permissions for many similar users at once.</li>
+        <li><b>IAM Role</b> &ndash; a set of permissions that can be temporarily assumed by a user, application, or AWS service (e.g. an EC2 instance) &ndash; does not have permanent long-term credentials, unlike a User. Best practice for granting an AWS service (like EC2 or Lambda) permission to access other AWS services.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>25. IAM Policies</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span><span class="badge exam">Frequently Tested</span></div>
+      <p>A Policy is a JSON document that explicitly defines permissions &ndash; it is attached to a User, Group, or Role to grant (or deny) access to specific AWS actions and resources.</p>
+      <ul class="key-points">
+        <li><b>Effect</b> &ndash; "Allow" or "Deny". <b>Action</b> &ndash; the specific API operation(s), e.g. <code>s3:GetObject</code>. <b>Resource</b> &ndash; the specific AWS resource(s) the policy applies to, identified by its ARN.</li>
+        <li>By default, an IAM user/role has NO permissions (implicit deny) &ndash; permissions must be explicitly granted.</li>
+        <li>An explicit "Deny" in any applicable policy always overrides an "Allow" from another policy.</li>
+        <li><b>Principle of Least Privilege</b> &ndash; grant only the minimum permissions required to perform a task, nothing more; a core, heavily-tested security best practice.</li>
+      </ul>
+      <p>Example: this policy allows reading and uploading objects, but ONLY inside <code>my-example-bucket</code>, and grants no permission to delete objects or access any other bucket:</p>
+      <pre class="code">{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::my-example-bucket/*"
+    }
+  ]
+}</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>26. MFA &amp; Root Account Best Practices</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span><span class="badge exam">Frequently Tested</span></div>
+      <p>Multi-Factor Authentication (MFA) requires a second, independent proof of identity (a one-time code from a device) in addition to a password &ndash; a critical, heavily-tested security layer.</p>
+      <ul class="key-points">
+        <li>The <b>Root user</b> is created automatically when an AWS account is opened, has unrestricted access to everything, and cannot have its permissions restricted &ndash; it should almost never be used for day-to-day work.</li>
+        <li><b>Best practice:</b> enable MFA on the root user immediately, then create an individual IAM user (or use IAM Identity Center) with appropriate permissions for daily administrative tasks, and lock the root credentials away securely.</li>
+        <li>MFA devices supported: virtual MFA apps (e.g. an authenticator app), hardware MFA key fobs, and security keys.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>27. AWS Organizations &amp; Service Control Policies (SCPs)</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>AWS Organizations lets you centrally manage and govern multiple AWS accounts as a single organization &ndash; e.g. separate accounts per department or environment (dev/test/prod).</p>
+      <ul class="key-points">
+        <li><b>Service Control Policies (SCPs)</b> &ndash; set the maximum available permissions for accounts within an Organization; they do NOT grant permissions themselves, only restrict what IAM policies within that account can allow.</li>
+        <li>Also enables <b>Consolidated Billing</b> (Section 82) &ndash; a single, combined bill across all member accounts, plus volume pricing discounts calculated across the combined usage.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>28. Security Groups vs Network ACLs</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span><span class="badge exam">Frequently Tested</span></div>
+      <p>Two different layers of network-level firewall inside a VPC (Part G) &ndash; a very commonly tested comparison.</p>
+      <table class="quick-ref">
+        <tr><th>Feature</th><th>Security Group</th><th>Network ACL (NACL)</th></tr>
+        <tr><td>Operates at</td><td>Instance (ENI) level</td><td>Subnet level</td></tr>
+        <tr><td>Rule types</td><td>Allow rules only</td><td>Allow AND Deny rules</td></tr>
+        <tr><td>State</td><td>Stateful (return traffic auto-allowed)</td><td>Stateless (return traffic must be explicitly allowed)</td></tr>
+        <tr><td>Rule evaluation</td><td>All rules evaluated before deciding</td><td>Rules processed in number order, first match applies</td></tr>
+        <tr><td>Applies to</td><td>Only instances explicitly associated with it</td><td>All instances in the associated subnet, automatically</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>29. AWS Key Management Service (KMS)</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>A managed service to create and control encryption keys used to encrypt data across AWS services (S3, EBS, RDS, etc.), without needing to build your own key management infrastructure.</p>
+      <ul class="key-points">
+        <li>Integrates directly with most AWS storage/database services for transparent "encryption at rest".</li>
+        <li>Supports both AWS-managed keys (created automatically) and Customer-managed keys (full control over key policy and rotation).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>30. AWS Shield</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>A managed service protecting against Distributed Denial of Service (DDoS) attacks.</p>
+      <ul class="key-points">
+        <li><b>AWS Shield Standard</b> &ndash; automatically enabled at no additional cost for ALL AWS customers, protecting against the most common, frequently occurring network/transport layer DDoS attacks.</li>
+        <li><b>AWS Shield Advanced</b> &ndash; a paid subscription offering enhanced protections for larger/more sophisticated attacks, 24/7 access to a DDoS Response Team, and cost protection for scaling charges incurred during an attack.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>31. AWS WAF (Web Application Firewall)</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>Protects web applications from common web exploits by letting you define rules that filter/block malicious HTTP/HTTPS traffic (e.g. SQL injection, cross-site scripting), before it reaches your application.</p>
+      <ul class="key-points">
+        <li>Deployed in front of CloudFront, Application Load Balancer, or API Gateway.</li>
+        <li>Operates at Layer 7 (application layer), complementing Shield's network-layer protection.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>32. Amazon GuardDuty</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>An intelligent threat detection service that continuously monitors for malicious activity and unauthorized behavior, using machine learning, anomaly detection, and threat intelligence feeds &ndash; analyzing account/network activity logs (like CloudTrail and VPC Flow Logs) automatically.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>33. Amazon Inspector</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>An automated security assessment service that scans EC2 instances and container images for software vulnerabilities and unintended network exposure.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>34. Amazon Macie</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>Uses machine learning to automatically discover, classify, and protect sensitive data (like personally identifiable information, PII) stored in Amazon S3.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>35. AWS Security Hub</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>A central dashboard that aggregates, organizes, and prioritizes security findings/alerts from multiple AWS security services (GuardDuty, Inspector, Macie) and third-party tools into one consolidated view.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>36. AWS Config</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>Records and tracks the configuration history of AWS resources over time, and can evaluate resource configurations against desired rules &ndash; used for configuration compliance auditing (e.g. "flag any S3 bucket that becomes publicly readable").</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>37. AWS CloudTrail</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span><span class="badge exam">Frequently Tested</span></div>
+      <p>Records every API call/action made within an AWS account (who did what, when, and from where) &ndash; essential for governance, compliance auditing, and security investigation.</p>
+      <ul class="key-points">
+        <li><b>Exam distinction:</b> CloudTrail logs API activity/actions (the "who did what"); CloudWatch (Section 74) monitors performance metrics and logs application/system behavior (the "how is it performing"). This distinction is commonly tested.</li>
+        <li>Enabled by default for the last 90 days of account activity, viewable in the Console at no charge; can be configured to deliver logs to S3 for long-term retention.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>38. Amazon Cognito</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span></div>
+      <p>Provides authentication, authorization, and user management specifically for customer-facing web and mobile applications &ndash; distinct from IAM, which manages access for AWS account administrators/resources, not app end-users.</p>
+      <ul class="key-points">
+        <li>Supports sign-up/sign-in directly, plus federation with social identity providers (Google, Facebook) and enterprise identity providers (SAML, OIDC).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>39. AWS Security Best Practices Summary</h4>
+      <div class="badge-row"><span class="badge d2">Domain 2</span><span class="badge exam">Frequently Tested</span></div>
+      <ul class="key-points">
+        <li>Enable MFA on the root account and all IAM users, especially privileged ones.</li>
+        <li>Follow the Principle of Least Privilege for every IAM policy.</li>
+        <li>Use IAM Roles (not long-term access keys) to grant AWS services access to other AWS services.</li>
+        <li>Never share or hard-code root account credentials or access keys in application code.</li>
+        <li>Enable CloudTrail across all Regions for full auditability.</li>
+        <li>Encrypt sensitive data at rest (via KMS) and in transit (via TLS/SSL).</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part D &mdash; Compute Services</h2>
+
+    <div class="topic-note">
+      <h4>40. Amazon EC2 Basics</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Core Service</span></div>
+      <p>Amazon Elastic Compute Cloud (EC2) provides resizable virtual servers ("instances") in the cloud &ndash; the foundational IaaS compute service.</p>
+      <ul class="key-points">
+        <li>Launched from an <b>AMI (Amazon Machine Image)</b> &ndash; a template containing the OS and any pre-installed software.</li>
+        <li>The customer manages the guest OS, applications, and data (per the Shared Responsibility Model); AWS manages the underlying physical hardware and virtualization layer.</li>
+        <li><b>EBS (Elastic Block Store)</b> volumes provide persistent block storage that survives instance stop/termination (unlike "instance store" volumes, which are physically attached and lost when the instance stops).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>41. EC2 Instance Types</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>Instance types are grouped into families optimized for different workload characteristics &ndash; know the general family letter meanings, not exact specs.</p>
+      <ul class="key-points">
+        <li><b>General Purpose (e.g. T, M families)</b> &ndash; balanced compute, memory, and networking; good default choice for web servers, small databases.</li>
+        <li><b>Compute Optimized (C family)</b> &ndash; high-performance processors; good for batch processing, media transcoding, high-performance computing.</li>
+        <li><b>Memory Optimized (R, X families)</b> &ndash; fast performance for memory-intensive workloads like large in-memory databases.</li>
+        <li><b>Storage Optimized (I, D families)</b> &ndash; high, fast, local storage I/O for data warehousing, distributed file systems.</li>
+        <li><b>Accelerated Computing (P, G families)</b> &ndash; use hardware GPU accelerators, for machine learning and graphics-intensive workloads.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>42. EC2 Pricing Options</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge d4">Domain 4</span><span class="badge exam">Frequently Tested</span></div>
+      <p>One of the most heavily tested topics on the exam &ndash; know which pricing model fits which use case.</p>
+      <ul class="key-points">
+        <li><b>On-Demand</b> &ndash; pay by the second/hour with no long-term commitment; best for short-term, unpredictable, or spiky workloads, or for applications being developed/tested for the first time.</li>
+        <li><b>Reserved Instances (RI)</b> &ndash; commit to a 1 or 3-year term for a significant discount (up to ~75%) versus On-Demand; best for steady-state, predictable usage.</li>
+        <li><b>Savings Plans</b> &ndash; commit to a consistent amount of compute usage ($/hour) for 1 or 3 years, in exchange for lower prices, with more flexibility across instance families/Regions than Reserved Instances.</li>
+        <li><b>Spot Instances</b> &ndash; bid on unused EC2 capacity for up to ~90% off On-Demand price; AWS can reclaim the instance with only a 2-minute warning, so best for fault-tolerant, flexible workloads (batch jobs, big data processing) &ndash; NEVER for critical/persistent workloads.</li>
+        <li><b>Dedicated Hosts</b> &ndash; a physical server fully dedicated to one customer's use, often required for licensing that is tied to physical cores/sockets, or strict compliance needs.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>43. Amazon EC2 Auto Scaling</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>Automatically adds or removes EC2 instances according to demand, based on defined conditions (e.g. CPU utilization), to maintain application availability and control cost by not over-provisioning.</p>
+      <ul class="key-points">
+        <li>Configured with a minimum, desired, and maximum number of instances.</li>
+        <li>Directly supports the Reliability pillar (Section 12) and Cost Optimization pillar (Section 14) of the Well-Architected Framework.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>44. Elastic Load Balancing (ELB)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>Automatically distributes incoming application traffic across multiple targets (EC2 instances, containers) in one or more Availability Zones, increasing fault tolerance.</p>
+      <ul class="key-points">
+        <li><b>Application Load Balancer (ALB)</b> &ndash; operates at Layer 7 (HTTP/HTTPS), supports content-based routing.</li>
+        <li><b>Network Load Balancer (NLB)</b> &ndash; operates at Layer 4 (TCP/UDP), for extreme performance and low latency.</li>
+        <li><b>Gateway Load Balancer (GWLB)</b> &ndash; for deploying/scaling third-party virtual network appliances.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>45. AWS Lambda</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Core Service</span></div>
+      <p>A serverless compute service that runs code in response to events, without provisioning or managing any servers at all.</p>
+      <ul class="key-points">
+        <li><b>Pricing</b> &ndash; pay only for the compute time actually consumed (billed per millisecond), with no charge when code is not running &ndash; a very commonly tested pricing distinction versus EC2 (which bills for the whole instance running, whether used or idle).</li>
+        <li>Automatically scales by running more instances of the function in parallel as needed &ndash; no capacity planning required.</li>
+        <li>Ideal for short-running, event-driven tasks (e.g. resizing an image the moment it's uploaded to S3).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>46. Containers: Amazon ECS, Amazon EKS &amp; AWS Fargate</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <ul class="key-points">
+        <li><b>Amazon ECS (Elastic Container Service)</b> &ndash; AWS's own, native container orchestration service for running and managing Docker containers.</li>
+        <li><b>Amazon EKS (Elastic Kubernetes Service)</b> &ndash; a managed service for running the popular open-source Kubernetes container orchestration platform on AWS.</li>
+        <li><b>AWS Fargate</b> &ndash; a serverless compute engine for containers, usable with both ECS and EKS, which removes the need to provision or manage the underlying EC2 instances that containers run on.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>47. AWS Elastic Beanstalk</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>A PaaS offering: simply upload your application code, and Elastic Beanstalk automatically handles the deployment details &ndash; capacity provisioning, load balancing, auto scaling, and health monitoring &ndash; while still giving you access to the underlying resources if needed.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>48. Amazon Lightsail</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>The simplest way to get started on AWS &ndash; bundles compute, storage, and networking into a single, low, predictable monthly price, aimed at simple web applications, blogs, or for those new to AWS who don't need the full flexibility of EC2.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>49. AWS Outposts &amp; Hybrid Compute</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>AWS Outposts extends AWS infrastructure, services, and tools to virtually any on-premises data center or co-location space &ndash; physical AWS-designed hardware racks are installed on-site, running the same APIs and tools as the AWS Cloud, for workloads needing extremely low latency to on-premises systems or local data processing requirements.</p>
+    </div>
+
+    <h2 class="part-title">Part E &mdash; Storage Services</h2>
+
+    <div class="topic-note">
+      <h4>50. Amazon S3</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Core Service</span></div>
+      <p>Amazon Simple Storage Service (S3) is object storage built to store and retrieve any amount of data from anywhere &ndash; one of the most heavily tested services on the exam.</p>
+      <ul class="key-points">
+        <li>Data is stored as "objects" inside "buckets"; bucket names must be globally unique across all of AWS.</li>
+        <li><b>Durability: 99.999999999% ("11 nines")</b> &ndash; designed so that if you store 10,000,000 objects, you can expect to lose one object roughly once every 10,000 years.</li>
+        <li><b>Availability: 99.99%</b> for the S3 Standard storage class &ndash; note durability and availability are different, commonly confused figures.</li>
+        <li>Not a file system or a block storage device &ndash; accessed via a simple web API (HTTP GET/PUT), not mounted like a drive.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>51. S3 Storage Classes</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <p>Different classes trade off retrieval speed/availability against storage cost &ndash; know which class fits which access pattern.</p>
+      <table class="quick-ref">
+        <tr><th>Storage Class</th><th>Best For</th></tr>
+        <tr><td>S3 Standard</td><td>Frequently accessed data; milliseconds access</td></tr>
+        <tr><td>S3 Intelligent-Tiering</td><td>Unknown/changing access patterns; auto-moves data between tiers</td></tr>
+        <tr><td>S3 Standard-IA (Infrequent Access)</td><td>Accessed less often, but needs rapid access when needed; lower storage cost, retrieval fee applies</td></tr>
+        <tr><td>S3 One Zone-IA</td><td>Same as Standard-IA but stored in only ONE AZ (lower cost, less resilient)</td></tr>
+        <tr><td>S3 Glacier Instant Retrieval</td><td>Archive data needing milliseconds retrieval, accessed ~once a quarter</td></tr>
+        <tr><td>S3 Glacier Flexible Retrieval</td><td>Archive data, retrieval in minutes to hours, accessed 1-2x per year</td></tr>
+        <tr><td>S3 Glacier Deep Archive</td><td>Lowest cost; long-term retention (7-10+ years); retrieval within 12 hours</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>52. S3 Versioning, Lifecycle Policies &amp; Replication</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <ul class="key-points">
+        <li><b>Versioning</b> &ndash; keeps every version of an object when overwritten or deleted, protecting against accidental deletion/overwrite and enabling recovery to a prior version. Once enabled, it cannot be fully disabled, only suspended.</li>
+        <li><b>Lifecycle Policies</b> &ndash; automatically transition objects to cheaper storage classes, or delete them, after a defined number of days &ndash; e.g. move to Glacier after 90 days, delete after 365 days.</li>
+        <li><b>Cross-Region Replication (CRR)</b> &ndash; automatically and asynchronously copies objects to a bucket in a different Region, for compliance, lower-latency access, or disaster recovery.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>53. Amazon EBS (Elastic Block Store)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>Provides persistent, high-performance block storage volumes that attach to a single EC2 instance &ndash; like a virtual hard drive.</p>
+      <ul class="key-points">
+        <li>Data persists independently from the life of the instance (unlike instance store volumes).</li>
+        <li>An EBS volume is tied to a specific Availability Zone &ndash; it can only attach to instances within that same AZ.</li>
+        <li>Supports point-in-time snapshots, stored in S3, which can be used to create new volumes or copy data across AZs/Regions.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>54. Amazon EFS (Elastic File System)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>A fully managed, scalable NFS (Network File System) that can be mounted concurrently by MANY EC2 instances at the same time, across multiple Availability Zones &ndash; the key distinction from EBS, which attaches to only one instance at a time.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>55. AWS Storage Gateway</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>A hybrid cloud storage service connecting an on-premises environment to AWS storage &ndash; presents cloud storage using standard on-premises storage protocols (NFS, SMB, iSCSI), letting existing on-premises applications use S3 without any code changes.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>56. AWS Snow Family</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>Physical devices for transferring very large amounts of data into or out of AWS, or for edge computing in disconnected/remote locations &ndash; used when network transfer would be too slow or costly.</p>
+      <ul class="key-points">
+        <li><b>AWS Snowcone</b> &ndash; smallest device, for edge computing/data transfer in limited spaces.</li>
+        <li><b>AWS Snowball</b> &ndash; a ruggedized physical device, shipped to your location, to transfer up to petabytes of data.</li>
+        <li><b>AWS Snowmobile</b> &ndash; an entire shipping container on a truck, for exabyte-scale data transfers.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part F &mdash; Database Services</h2>
+
+    <div class="topic-note">
+      <h4>57. Amazon RDS (Relational Database Service)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Core Service</span></div>
+      <p>A managed service for relational (SQL) databases &ndash; AWS handles routine tasks like patching, backups, and hardware provisioning, so you focus on the data and queries.</p>
+      <ul class="key-points">
+        <li>Supports multiple database engines: MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, and Amazon Aurora.</li>
+        <li><b>Multi-AZ deployment</b> &ndash; automatically maintains a synchronous standby replica in a different AZ for high availability/failover, NOT for read scaling.</li>
+        <li><b>Read Replicas</b> &ndash; asynchronous, read-only copies used to scale out READ-heavy workloads, can be in the same or different Regions &ndash; a commonly tested distinction from Multi-AZ.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>58. Amazon Aurora</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>AWS's own cloud-native relational database engine, compatible with MySQL and PostgreSQL, offering up to 5x the throughput of standard MySQL and 3x that of standard PostgreSQL, at a fraction of the cost of commercial databases &ndash; runs as an option within RDS.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>59. Amazon DynamoDB</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Core Service</span></div>
+      <p>A fully managed, serverless NoSQL (key-value and document) database, delivering consistent single-digit millisecond performance at any scale.</p>
+      <ul class="key-points">
+        <li><b>Exam distinction:</b> RDS/Aurora = SQL/relational (structured tables with defined schemas, relationships); DynamoDB = NoSQL (flexible schema, key-value/document access patterns) &ndash; know when a scenario calls for each.</li>
+        <li>Automatically scales throughput and storage with no server management at all.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>60. Amazon Redshift</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>A fully managed data warehouse service, used for large-scale analytics and business intelligence &ndash; optimized for complex queries across massive datasets (petabyte scale), NOT for everyday transactional application queries.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>61. Amazon ElastiCache</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>A managed in-memory caching service (supporting Redis or Memcached engines), used to dramatically speed up application performance by retrieving frequently-accessed data from fast memory instead of a slower disk-based database.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>62. AWS Database Migration Service (DMS)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>Helps migrate databases into AWS quickly and securely &ndash; the source database remains fully operational during the migration, minimizing downtime for applications relying on it. Can also migrate between different database engines (e.g. Oracle to Aurora) using the related AWS Schema Conversion Tool.</p>
+    </div>
+
+    <h2 class="part-title">Part G &mdash; Networking Services</h2>
+
+    <div class="topic-note">
+      <h4>63. Amazon VPC (Virtual Private Cloud)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Core Service</span></div>
+      <p>A logically isolated, private virtual network within AWS where you launch resources, with complete control over IP address ranges, subnets, and routing &ndash; the foundation of AWS networking.</p>
+      <ul class="key-points">
+        <li>Each VPC is isolated from other VPCs by default, unless explicitly connected (e.g. via VPC Peering or Transit Gateway).</li>
+        <li>A default VPC is automatically created in every Region for every AWS account, ready to use immediately.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>64. Subnets, Route Tables &amp; Gateways</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <ul class="key-points">
+        <li><b>Subnet</b> &ndash; a range of IP addresses within a VPC, always located entirely within a single Availability Zone.</li>
+        <li><b>Public Subnet</b> &ndash; has a route to an Internet Gateway, so resources within it can be reached from the internet.</li>
+        <li><b>Private Subnet</b> &ndash; has NO route to an Internet Gateway, keeping resources (like a database) isolated from direct internet access.</li>
+        <li><b>Internet Gateway (IGW)</b> &ndash; allows communication between resources in a VPC and the internet; one per VPC.</li>
+        <li><b>NAT Gateway</b> &ndash; allows instances in a PRIVATE subnet to initiate outbound internet connections (e.g. for software updates) while still preventing the internet from initiating inbound connections to them.</li>
+        <li><b>Route Table</b> &ndash; a set of rules determining where network traffic from a subnet is directed.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>65. Amazon Route 53</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>A highly available and scalable Domain Name System (DNS) web service &ndash; translates human-readable domain names (like example.com) into IP addresses.</p>
+      <ul class="key-points">
+        <li>Can also register new domain names directly, and perform health checks to route traffic away from unhealthy endpoints.</li>
+        <li>The name "53" refers to the standard port number DNS uses.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>66. Amazon CloudFront</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <p>AWS's Content Delivery Network (CDN) &ndash; caches copies of content (web pages, videos, images) at Edge Locations (Section 18) around the world, close to end users, to reduce latency.</p>
+      <ul class="key-points">
+        <li>The origin (source of the original content) can be S3, an EC2 instance, an Elastic Load Balancer, or any custom HTTP server.</li>
+        <li>Also integrates with AWS Shield and AWS WAF for edge-level security protection.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>67. AWS Direct Connect &amp; VPN</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <ul class="key-points">
+        <li><b>AWS Direct Connect</b> &ndash; establishes a DEDICATED, private, physical network connection from an on-premises data center directly into AWS, bypassing the public internet entirely &ndash; provides more consistent network performance and can reduce bandwidth costs; takes time (weeks) to provision the physical link.</li>
+        <li><b>AWS Site-to-Site VPN</b> &ndash; creates an encrypted connection between an on-premises network and a VPC OVER the public internet &ndash; much faster to set up than Direct Connect, but with less consistent performance since it traverses the public internet.</li>
+        <li><b>AWS Client VPN</b> &ndash; allows individual users to securely connect to AWS resources and their on-premises network from any location using an OpenVPN-based client.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>68. AWS Transit Gateway</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>Acts as a central hub that simplifies network connections between multiple VPCs and on-premises networks &ndash; instead of creating individual peering connections between every pair of VPCs (which grows complex quickly), each VPC connects once to the Transit Gateway.</p>
+    </div>
+
+    <h2 class="part-title">Part H &mdash; App Integration, Analytics &amp; Management</h2>
+
+    <div class="topic-note">
+      <h4>69. Amazon SNS (Simple Notification Service)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <p>A fully managed pub/sub (publish/subscribe) messaging service &ndash; a message published to a "topic" is instantly pushed out to every subscriber of that topic (email, SMS, Lambda, SQS queues, mobile push) at once.</p>
+      <ul class="key-points">
+        <li><b>Fan-out pattern:</b> one message, many simultaneous recipients &ndash; the key exam distinction from SQS (below), which delivers to consumers pulling from a single queue, not broadcasting to many at once.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>70. Amazon SQS (Simple Queue Service)</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <p>A fully managed message queuing service that lets you decouple and scale distributed application components &ndash; a producer places messages onto a queue, and a consumer retrieves and processes them independently, at its own pace.</p>
+      <ul class="key-points">
+        <li><b>Standard Queue</b> &ndash; nearly unlimited throughput, "best-effort" ordering, and at-least-once delivery (a message could rarely be delivered more than once).</li>
+        <li><b>FIFO Queue</b> &ndash; preserves strict First-In-First-Out message order and exactly-once processing, with somewhat lower throughput than Standard.</li>
+        <li><b>SNS vs SQS (very commonly tested):</b> SNS pushes a message out to MANY subscribers at once (fan-out); SQS holds messages in a queue for ONE (or a pool of) consumer(s) to pull and process at their own pace. They are very often used together: SNS fans a message out to multiple SQS queues.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>71. Amazon API Gateway</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>A fully managed service to create, publish, secure, and monitor APIs at any scale &ndash; commonly used as the front door for serverless applications, routing incoming HTTP requests to AWS Lambda functions.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>72. AWS Step Functions &amp; Amazon EventBridge</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <ul class="key-points">
+        <li><b>AWS Step Functions</b> &ndash; a visual workflow service to coordinate multiple AWS services (especially Lambda functions) into a defined sequence of steps, handling retries, error handling, and state management automatically.</li>
+        <li><b>Amazon EventBridge</b> &ndash; a serverless event bus that connects applications together using data from your own apps, AWS services, and SaaS applications, routing events to targets based on defined rules.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>73. Analytics Overview: Athena &amp; QuickSight</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <ul class="key-points">
+        <li><b>Amazon Athena</b> &ndash; an interactive, serverless query service to analyze data directly in S3 using standard SQL, with no infrastructure to manage and no data loading required.</li>
+        <li><b>Amazon QuickSight</b> &ndash; a serverless business intelligence (BI) service to build interactive dashboards and visualizations from AWS data sources.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>74. Amazon CloudWatch</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge exam">Frequently Tested</span></div>
+      <p>A monitoring and observability service that collects metrics, logs, and events from AWS resources and applications, providing dashboards, alarms, and automated actions.</p>
+      <ul class="key-points">
+        <li><b>CloudWatch Metrics</b> &ndash; numeric data points over time (e.g. EC2 CPU utilization).</li>
+        <li><b>CloudWatch Alarms</b> &ndash; watch a metric and trigger an action (e.g. send a notification via SNS, or trigger Auto Scaling) when a threshold is breached.</li>
+        <li><b>CloudWatch Logs</b> &ndash; centralized storage and analysis for log files from applications and AWS services.</li>
+        <li><b>Exam distinction (repeated for emphasis):</b> CloudWatch = performance/operational monitoring ("how is it running"); CloudTrail (Section 37) = API activity auditing ("who did what").</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>75. AWS Systems Manager</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span></div>
+      <p>A unified operations hub to view operational data and automate operational tasks across AWS resources &ndash; e.g. patching EC2 instances at scale, running commands remotely, or securely storing configuration data/secrets (Parameter Store).</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>76. AWS Trusted Advisor</h4>
+      <div class="badge-row"><span class="badge d3">Domain 3</span><span class="badge d4">Domain 4</span><span class="badge exam">Frequently Tested</span></div>
+      <p>An automated service that inspects your AWS environment and provides real-time recommendations across five categories, following AWS best practices.</p>
+      <ul class="key-points">
+        <li>The five checks: <b>Cost Optimization, Performance, Security, Fault Tolerance, and Service Limits</b>.</li>
+        <li><b>Basic and Developer Support plans</b> get access only to a limited set of core security and service-limit checks.</li>
+        <li><b>Business, Enterprise On-Ramp, and Enterprise Support plans</b> get access to the FULL set of Trusted Advisor checks across all five categories, plus the ability to set up CloudWatch alarms based on check status.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part I &mdash; Domain 4: Billing, Pricing, and Support (12%)</h2>
+
+    <div class="topic-note">
+      <h4>77. AWS Free Tier</h4>
+      <div class="badge-row"><span class="badge d4">Domain 4</span></div>
+      <p>Lets new (and some existing) customers use certain AWS services free, up to specified limits, to gain hands-on experience.</p>
+      <ul class="key-points">
+        <li><b>12 Months Free</b> &ndash; a set of offers valid for 12 months after account sign-up (e.g. 750 hours/month of a t2.micro/t3.micro EC2 instance, 5GB of S3 Standard storage).</li>
+        <li><b>Always Free</b> &ndash; offers that never expire, available to all customers (e.g. Lambda's first 1 million requests per month).</li>
+        <li><b>Trials</b> &ndash; short-term free trials starting from the date a specific service is first activated, regardless of account age.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>78. Pricing Models Overview</h4>
+      <div class="badge-row"><span class="badge d4">Domain 4</span><span class="badge exam">Frequently Tested</span></div>
+      <p>Three fundamental AWS pricing principles apply across virtually all services.</p>
+      <ul class="key-points">
+        <li><b>Pay for what you use</b> &ndash; no upfront investment, no long-term commitments required (though committing can lower the price, e.g. Reserved Instances).</li>
+        <li><b>Pay less when you reserve/commit</b> &ndash; Reserved Instances and Savings Plans lower cost in exchange for a usage commitment.</li>
+        <li><b>Pay less with volume, when you use more</b> &ndash; e.g. S3 storage price per GB decreases as total stored volume increases (tiered pricing).</li>
+        <li>Data Transfer: transferring data INTO AWS is generally free; transferring data OUT to the internet is generally charged (and is often the largest, most overlooked cost in an AWS bill).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>79. AWS Budgets</h4>
+      <div class="badge-row"><span class="badge d4">Domain 4</span></div>
+      <p>Lets you set custom cost and usage budgets that alert you (via email/SNS) when actual or forecasted spend exceeds (or is about to exceed) your defined threshold.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>80. AWS Cost Explorer</h4>
+      <div class="badge-row"><span class="badge d4">Domain 4</span></div>
+      <p>A free tool to visualize, understand, and manage AWS costs and usage over time, with default reports and the ability to filter by service, linked account, tag, and more &ndash; can also forecast likely future spend based on historical patterns.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>81. AWS Cost and Usage Report (CUR)</h4>
+      <div class="badge-row"><span class="badge d4">Domain 4</span></div>
+      <p>The most comprehensive, granular set of AWS cost and usage data available &ndash; a detailed line-item CSV/Parquet report delivered to an S3 bucket, used for in-depth, custom cost analysis (e.g. loaded into Redshift or Athena for querying).</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>82. Consolidated Billing</h4>
+      <div class="badge-row"><span class="badge d4">Domain 4</span></div>
+      <p>A feature of AWS Organizations (Section 27) that combines usage from all member accounts to receive volume pricing discounts, and delivers ONE single bill for the whole Organization, while still allowing cost visibility broken down per individual account.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>83. AWS Support Plans</h4>
+      <div class="badge-row"><span class="badge d4">Domain 4</span><span class="badge exam">Frequently Tested</span></div>
+      <p>Five tiers, escalating in price and level of support &ndash; know the response-time figures and which plan first includes a Technical Account Manager (TAM), both commonly tested.</p>
+      <table class="quick-ref">
+        <tr><th>Plan</th><th>Cost</th><th>Key Feature / Fastest Response Time</th></tr>
+        <tr><td>Basic</td><td>Free (included for all)</td><td>Customer Service &amp; limited Trusted Advisor checks only; no technical support</td></tr>
+        <tr><td>Developer</td><td>From $29/month</td><td>Business hours email access to Cloud Support Associates; response in &lt;24 hrs (general guidance)</td></tr>
+        <tr><td>Business</td><td>From $100/month</td><td>24/7 phone/chat/email; &lt;1 hour response for production system down; full Trusted Advisor</td></tr>
+        <tr><td>Enterprise On-Ramp</td><td>From $5,500/month</td><td>&lt;30 min response for business-critical down; a pool of Technical Account Managers (TAM)</td></tr>
+        <tr><td>Enterprise</td><td>From $15,000/month</td><td>&lt;15 min response for business-critical down; a dedicated Technical Account Manager (TAM); Concierge support team</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>84. AWS Marketplace</h4>
+      <div class="badge-row"><span class="badge d4">Domain 4</span></div>
+      <p>A digital catalog of third-party software listings that run on AWS &ndash; customers can find, buy, and immediately deploy software (with pricing often integrated directly into their existing AWS bill), without needing a separate procurement/licensing process.</p>
+    </div>
+
+    <h2 class="part-title">Part J &mdash; Exam-Ready Quick Reference</h2>
+
+    <div class="topic-note">
+      <h4>85. Compute Services Comparison</h4>
+      <div class="badge-row"><span class="badge exam">Exam Reference</span></div>
+      <table class="quick-ref">
+        <tr><th>Service</th><th>Type</th><th>Best For</th></tr>
+        <tr><td>EC2</td><td>IaaS - Virtual Machines</td><td>Full control over OS/server; long-running, custom workloads</td></tr>
+        <tr><td>Lambda</td><td>Serverless Functions</td><td>Short, event-driven tasks; pay only per execution</td></tr>
+        <tr><td>ECS / EKS</td><td>Container Orchestration</td><td>Running Docker/Kubernetes containers at scale</td></tr>
+        <tr><td>Fargate</td><td>Serverless Containers</td><td>Run containers without managing any EC2 instances</td></tr>
+        <tr><td>Elastic Beanstalk</td><td>PaaS</td><td>Upload code, AWS handles deployment/scaling details</td></tr>
+        <tr><td>Lightsail</td><td>Simplified VPS</td><td>Simple apps/websites; predictable low monthly price</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>86. Storage Services Comparison</h4>
+      <div class="badge-row"><span class="badge exam">Exam Reference</span></div>
+      <table class="quick-ref">
+        <tr><th>Service</th><th>Type</th><th>Key Fact</th></tr>
+        <tr><td>S3</td><td>Object storage</td><td>Accessed via API, not mounted; 11 nines durability</td></tr>
+        <tr><td>EBS</td><td>Block storage</td><td>Attaches to ONE EC2 instance; tied to one AZ</td></tr>
+        <tr><td>EFS</td><td>File storage (NFS)</td><td>Mounted by MANY instances at once, across AZs</td></tr>
+        <tr><td>Storage Gateway</td><td>Hybrid storage</td><td>Connects on-premises apps to S3 using NFS/SMB/iSCSI</td></tr>
+        <tr><td>Snow Family</td><td>Physical transfer devices</td><td>Moving very large data volumes offline</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>87. Database Services Comparison</h4>
+      <div class="badge-row"><span class="badge exam">Exam Reference</span></div>
+      <table class="quick-ref">
+        <tr><th>Service</th><th>Type</th><th>Best For</th></tr>
+        <tr><td>RDS</td><td>Managed SQL (relational)</td><td>Structured data, joins, transactions (MySQL, PostgreSQL, etc.)</td></tr>
+        <tr><td>Aurora</td><td>Managed SQL (AWS-native)</td><td>MySQL/PostgreSQL-compatible, higher performance</td></tr>
+        <tr><td>DynamoDB</td><td>Serverless NoSQL</td><td>Key-value/document data, massive scale, single-digit ms latency</td></tr>
+        <tr><td>Redshift</td><td>Data warehouse</td><td>Large-scale analytics/BI queries, not transactional apps</td></tr>
+        <tr><td>ElastiCache</td><td>In-memory cache</td><td>Speeding up reads for a slower backing database</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>88. Security Services Comparison</h4>
+      <div class="badge-row"><span class="badge exam">Exam Reference</span></div>
+      <table class="quick-ref">
+        <tr><th>Service</th><th>Protects Against / Used For</th></tr>
+        <tr><td>IAM</td><td>Controls WHO can access WHAT within an AWS account</td></tr>
+        <tr><td>AWS Shield</td><td>DDoS attacks (network/transport layer)</td></tr>
+        <tr><td>AWS WAF</td><td>Web exploits like SQL injection, XSS (application layer)</td></tr>
+        <tr><td>GuardDuty</td><td>Threat detection via anomaly/ML analysis of account activity</td></tr>
+        <tr><td>Inspector</td><td>Vulnerability scanning of EC2/containers</td></tr>
+        <tr><td>Macie</td><td>Discovering sensitive data (PII) in S3</td></tr>
+        <tr><td>KMS</td><td>Creating/managing encryption keys</td></tr>
+        <tr><td>CloudTrail</td><td>Auditing WHO did WHAT (API call history)</td></tr>
+        <tr><td>Config</td><td>Tracking resource configuration changes/compliance</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>89. "Which AWS Service Should I Use?" Decision Guide</h4>
+      <div class="badge-row"><span class="badge exam">Exam Reference</span></div>
+      <ul class="key-points">
+        <li><b>Need to run code without managing servers, triggered by an event?</b> &rarr; AWS Lambda</li>
+        <li><b>Need to broadcast one message to many different subscribers at once?</b> &rarr; Amazon SNS</li>
+        <li><b>Need to decouple two application components with a message queue?</b> &rarr; Amazon SQS</li>
+        <li><b>Need a relational database with joins/transactions?</b> &rarr; Amazon RDS or Aurora</li>
+        <li><b>Need a NoSQL database at massive scale with low latency?</b> &rarr; Amazon DynamoDB</li>
+        <li><b>Need to run complex analytics queries over huge datasets?</b> &rarr; Amazon Redshift</li>
+        <li><b>Need to cache database results for speed?</b> &rarr; Amazon ElastiCache</li>
+        <li><b>Need to distribute content globally with low latency?</b> &rarr; Amazon CloudFront</li>
+        <li><b>Need a dedicated, private, high-performance link to AWS?</b> &rarr; AWS Direct Connect</li>
+        <li><b>Need a quick, encrypted connection to AWS over the internet?</b> &rarr; AWS Site-to-Site VPN</li>
+        <li><b>Need to track every API call made in your account?</b> &rarr; AWS CloudTrail</li>
+        <li><b>Need to monitor performance metrics and set alarms?</b> &rarr; Amazon CloudWatch</li>
+        <li><b>Need to estimate cost of a planned architecture before building it?</b> &rarr; AWS Pricing Calculator</li>
+        <li><b>Need a single combined bill across many AWS accounts?</b> &rarr; AWS Organizations (Consolidated Billing)</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>90. Common Exam Traps &amp; Tips</h4>
+      <div class="badge-row"><span class="badge exam">Exam Reference</span></div>
+      <ul class="key-points">
+        <li>If a question describes a scenario needing "security OF the cloud" vs "security IN the cloud", it is testing the Shared Responsibility Model (Section 22) &ndash; re-read carefully to identify which side is being asked about.</li>
+        <li>Questions mentioning "no upfront cost, pay only for what you use, no long-term commitment" almost always point to <b>On-Demand</b> pricing or a serverless service like Lambda.</li>
+        <li>Questions mentioning "steady, predictable, long-running workload, wants to save money" point to <b>Reserved Instances</b> or <b>Savings Plans</b>.</li>
+        <li>Questions mentioning "interruptible, fault-tolerant, flexible timing, wants cheapest possible price" point to <b>Spot Instances</b>.</li>
+        <li>If a question is about scaling READS from a database, think <b>Read Replicas</b>; if about HIGH AVAILABILITY/failover, think <b>Multi-AZ</b>.</li>
+        <li>If a question is about broadcasting to MANY subscribers, think <b>SNS</b>; if about ONE queue being processed by a worker, think <b>SQS</b>.</li>
+        <li>There is no penalty for guessing &ndash; never leave a question unanswered.</li>
+        <li>Eliminate obviously wrong answers first (often 1-2 options are clearly incorrect), then choose between the remaining plausible ones.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part K &mdash; Assignments</h2>
+
+    <div class="assign-block">
+      <h4>Assignment 1 &mdash; Write an IAM Policy for a Scenario</h4>
+      <p><b>Task:</b> A company has a "read-only-auditor" role that must be able to LIST and READ objects in the bucket "company-reports" only, but must NEVER be able to delete or upload objects, and must have no access to any other bucket.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::company-reports",
+        "arn:aws:s3:::company-reports/*"
+      ]
+    }
+  ]
+}</pre>
+      <p><b>Explanation:</b> Only <code>s3:ListBucket</code> and <code>s3:GetObject</code> are allowed (read-only actions) &ndash; no <code>PutObject</code> or <code>DeleteObject</code> action is granted, so uploads/deletes are automatically denied (implicit deny). The Resource is restricted to exactly this one bucket (and objects within it), so no other bucket is accessible. This follows the Principle of Least Privilege (Section 25).</p>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 2 &mdash; Choose the Right Pricing Model</h4>
+      <p><b>Task:</b> For each scenario below, name the best-fit EC2 pricing model and justify it in one line.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">(a) A batch video-rendering job that can pause and resume anytime, and just needs
+    to finish sometime today at the lowest possible cost.
+    -> SPOT INSTANCES: fault-tolerant, flexible timing, cheapest option; can handle
+       a 2-minute interruption warning without issue.
+
+(b) A company's core production database server that will run 24/7 for the next 3 years.
+    -> RESERVED INSTANCES (3-year term) or SAVINGS PLANS: steady, predictable, long-term
+       usage qualifies for the largest possible discount.
+
+(c) A brand-new startup testing an MVP application with completely unknown, unpredictable
+    traffic for the next few months.
+    -> ON-DEMAND: no commitment needed while usage patterns are still unknown; can switch
+       to Reserved/Savings Plans later once usage becomes predictable.
+
+(d) A software vendor whose licensing is tied to physical CPU sockets/cores.
+    -> DEDICATED HOSTS: provides a full physical server, satisfying socket/core-based
+       licensing requirements.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 3 &mdash; Design a Basic Two-Tier VPC Architecture</h4>
+      <p><b>Task:</b> Describe the VPC components needed for a simple, secure web application: a public-facing web server and a private backend database that should never be directly reachable from the internet, but which still needs outbound internet access for software updates.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Create one VPC (e.g. CIDR 10.0.0.0/16).
+
+2. Create a PUBLIC subnet (e.g. 10.0.1.0/24) for the web server:
+   - Attach an Internet Gateway (IGW) to the VPC.
+   - Add a route in this subnet's route table: 0.0.0.0/0 -> IGW.
+   - Launch the EC2 web server here, with a Security Group allowing inbound
+     HTTP/HTTPS (80/443) from the internet.
+
+3. Create a PRIVATE subnet (e.g. 10.0.2.0/24) for the database:
+   - Do NOT attach a route to the Internet Gateway (keeps it unreachable from outside).
+   - Launch the RDS database here, with a Security Group allowing inbound traffic
+     ONLY from the web server's Security Group (not from the internet).
+
+4. Add a NAT Gateway in the public subnet, and add a route in the private
+   subnet's route table: 0.0.0.0/0 -> NAT Gateway.
+   -> This lets the private database instance reach the internet OUTBOUND
+      (e.g. to download OS patches) without ever being reachable INBOUND
+      from the internet.
+
+5. (Best practice) Repeat steps 2-3 in a second Availability Zone, and place
+   an Elastic Load Balancer in front of the web servers, for high availability.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 4 &mdash; Match Services to Use-Case Scenarios</h4>
+      <p><b>Task:</b> Identify the single best AWS service for each scenario.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">(a) Automatically resize any image the instant it's uploaded to a bucket.
+    -> AWS Lambda (triggered by an S3 event)
+
+(b) Serve a company's static website with low latency to users on 5 continents.
+    -> Amazon S3 (static website hosting) + Amazon CloudFront
+
+(c) Run a legacy application that requires full OS-level control and custom software.
+    -> Amazon EC2
+
+(d) Store session data for a game with extremely high read/write throughput and
+    single-digit millisecond latency at any scale.
+    -> Amazon DynamoDB
+
+(e) Give a data analytics team the ability to run ad-hoc SQL queries directly on
+    log files already sitting in S3, without setting up any servers.
+    -> Amazon Athena
+
+(f) Ensure an application automatically fails over to a healthy database if the
+    primary database instance becomes unavailable.
+    -> Amazon RDS Multi-AZ deployment
+
+(g) Get a single, combined AWS bill across 12 separate departmental AWS accounts.
+    -> AWS Organizations (Consolidated Billing)
+
+(h) Discover which S3 buckets in an account contain unprotected personal data.
+    -> Amazon Macie</pre>
+    </div>
+
+    <h2 class="part-title">Part L &mdash; Full Practice Question Bank (50 Questions)</h2>
+
+    <div class="instructions">
+      <b>Instructions:</b> 50 questions below, weighted to match the real exam's domain percentages (Domain 1: 12, Domain 2: 15, Domain 3: 17, Domain 4: 6). Attempt all 50 under timed conditions (aim for under 70 minutes) before checking answers. The answer and a short explanation are given directly below each question.
+    </div>
+
+    <h3>Domain 1: Cloud Concepts (Questions 1-12)</h3>
+
+    <div class="qbox">
+      <div class="qtext">Q1. Which of the following is NOT one of the AWS six advantages of cloud computing?</div>
+      <ul class="qoptions">
+        <li>A. Trade capital expense for variable expense</li>
+        <li>B. Increase speed and agility</li>
+        <li>C. Guarantee zero application downtime</li>
+        <li>D. Go global in minutes</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">AWS never guarantees "zero downtime" as a general advantage. The six official advantages are: trade CapEx for OpEx, benefit from economies of scale, stop guessing capacity, increase speed and agility, stop spending on data centers, and go global in minutes.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q2. A company wants to run some workloads in its own data center and some in AWS, connected together. Which deployment model is this?</div>
+      <ul class="qoptions">
+        <li>A. All-in cloud</li>
+        <li>B. Hybrid</li>
+        <li>C. On-premises</li>
+        <li>D. Multi-cloud</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">A Hybrid deployment connects on-premises infrastructure with cloud resources, which is exactly this scenario.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q3. Which service model gives a customer the LEAST amount of control, but requires the LEAST management effort?</div>
+      <ul class="qoptions">
+        <li>A. IaaS</li>
+        <li>B. PaaS</li>
+        <li>C. SaaS</li>
+        <li>D. On-premises</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">SaaS is a fully complete, ready-to-use product; the customer simply uses it with no infrastructure or platform management, but also has the least low-level control.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q4. Which AWS Well-Architected Framework pillar focuses specifically on minimizing the environmental impact of workloads?</div>
+      <ul class="qoptions">
+        <li>A. Cost Optimization</li>
+        <li>B. Performance Efficiency</li>
+        <li>C. Sustainability</li>
+        <li>D. Operational Excellence</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">Sustainability is the sixth, newest pillar, focused on reducing environmental impact.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q5. Which tool would BEST help a company estimate the cost savings of moving an existing on-premises workload to AWS?</div>
+      <ul class="qoptions">
+        <li>A. AWS Trusted Advisor</li>
+        <li>B. AWS TCO Calculator</li>
+        <li>C. AWS Budgets</li>
+        <li>D. AWS Config</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">The TCO Calculator (part of Migration Evaluator) is specifically designed to compare existing on-premises costs against running the same workload on AWS.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q6. A company wants a free, self-service tool to review its architecture against AWS best practices across all six pillars. What should it use?</div>
+      <ul class="qoptions">
+        <li>A. AWS Config</li>
+        <li>B. AWS Well-Architected Tool</li>
+        <li>C. AWS Trusted Advisor</li>
+        <li>D. Amazon Inspector</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">The AWS Well-Architected Tool is a free, self-service tool that reviews architectures against the six Well-Architected Framework pillars.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q7. Which pillar of the Well-Architected Framework focuses on the ability of a system to recover from failures and dynamically acquire resources to meet demand?</div>
+      <ul class="qoptions">
+        <li>A. Reliability</li>
+        <li>B. Security</li>
+        <li>C. Performance Efficiency</li>
+        <li>D. Operational Excellence</li>
+      </ul>
+      <div class="qanswer">Answer: A</div>
+      <div class="qexplain">Reliability covers recovering from failure and dynamically acquiring computing resources to meet demand.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q8. On-premises data center spending is typically classified as which type of expense?</div>
+      <ul class="qoptions">
+        <li>A. Operational Expenditure (OpEx)</li>
+        <li>B. Capital Expenditure (CapEx)</li>
+        <li>C. Variable expenditure</li>
+        <li>D. Deferred expenditure</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">On-premises data centers require a large upfront investment, classified as CapEx. AWS Cloud usage is OpEx (pay-as-you-go, variable).</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q9. Which advantage of cloud computing explains why AWS can offer lower pay-as-you-go prices than a single company running its own data center?</div>
+      <ul class="qoptions">
+        <li>A. Stop guessing capacity</li>
+        <li>B. Benefit from massive economies of scale</li>
+        <li>C. Go global in minutes</li>
+        <li>D. Increase speed and agility</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Economies of scale means AWS's aggregated usage across all customers drives down costs further than any single company could achieve alone.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q10. A retail company wants to deploy its application to multiple countries with low latency for local users, quickly, without building new data centers. Which advantage does this best demonstrate?</div>
+      <ul class="qoptions">
+        <li>A. Go global in minutes</li>
+        <li>B. Stop guessing capacity</li>
+        <li>C. Trade capital expense for variable expense</li>
+        <li>D. Economies of scale</li>
+      </ul>
+      <div class="qanswer">Answer: A</div>
+      <div class="qexplain">"Go global in minutes" specifically describes deploying to multiple Regions worldwide quickly and easily.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q11. Which Well-Architected pillar would recommend using managed services and serverless architectures to reduce operational burden?</div>
+      <ul class="qoptions">
+        <li>A. Security</li>
+        <li>B. Performance Efficiency</li>
+        <li>C. Reliability</li>
+        <li>D. Sustainability</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Performance Efficiency recommends using serverless architectures and "democratizing" advanced technology via managed services.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q12. A company wants to make frequent, small, reversible infrastructure changes and treat operations as code. Which pillar does this align with?</div>
+      <ul class="qoptions">
+        <li>A. Cost Optimization</li>
+        <li>B. Operational Excellence</li>
+        <li>C. Performance Efficiency</li>
+        <li>D. Reliability</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Operational Excellence specifically recommends performing operations as code and making frequent, small, reversible changes.</div>
+    </div>
+
+    <h3>Domain 2: Security and Compliance (Questions 13-27)</h3>
+
+    <div class="qbox">
+      <div class="qtext">Q13. Under the Shared Responsibility Model, who is responsible for patching the guest operating system on an EC2 instance?</div>
+      <ul class="qoptions">
+        <li>A. AWS</li>
+        <li>B. The customer</li>
+        <li>C. Neither - AWS patches it automatically and silently</li>
+        <li>D. AWS Support, upon request</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">For EC2 (IaaS), the customer is always responsible for the guest OS, including patching, since AWS only manages the underlying physical infrastructure.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q14. Which AWS service should be used to download AWS's SOC 2 compliance report?</div>
+      <ul class="qoptions">
+        <li>A. AWS Config</li>
+        <li>B. AWS Artifact</li>
+        <li>C. AWS Trusted Advisor</li>
+        <li>D. AWS CloudTrail</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">AWS Artifact is the self-service portal for downloading AWS compliance reports and agreements.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q15. What is the recommended way to grant an EC2 instance permission to read from an S3 bucket?</div>
+      <ul class="qoptions">
+        <li>A. Store an IAM user's access keys on the instance</li>
+        <li>B. Attach an IAM Role to the instance</li>
+        <li>C. Make the S3 bucket public</li>
+        <li>D. Share the root account credentials with the instance</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">IAM Roles are the best-practice way to grant AWS services permissions, since they use temporary credentials rather than long-term stored keys.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q16. In an IAM policy, if one attached policy has an explicit Allow and another attached policy has an explicit Deny for the same action, what is the result?</div>
+      <ul class="qoptions">
+        <li>A. Allow always wins</li>
+        <li>B. Deny always wins</li>
+        <li>C. The most recently attached policy wins</li>
+        <li>D. The action is undefined/random</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">An explicit Deny always overrides any Allow in IAM policy evaluation logic.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q17. Which service continuously analyzes account activity using machine learning to detect malicious or unauthorized behavior?</div>
+      <ul class="qoptions">
+        <li>A. Amazon Inspector</li>
+        <li>B. Amazon GuardDuty</li>
+        <li>C. AWS Config</li>
+        <li>D. Amazon Macie</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">GuardDuty is the intelligent threat detection service using ML and anomaly detection on account/network activity.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q18. Which service should be used to automatically discover and classify personally identifiable information (PII) stored in S3?</div>
+      <ul class="qoptions">
+        <li>A. Amazon Macie</li>
+        <li>B. Amazon Inspector</li>
+        <li>C. AWS Shield</li>
+        <li>D. AWS WAF</li>
+      </ul>
+      <div class="qanswer">Answer: A</div>
+      <div class="qexplain">Amazon Macie uses machine learning specifically to discover and classify sensitive data like PII in S3.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q19. Which service records a history of every API call made in an AWS account, showing who did what and when?</div>
+      <ul class="qoptions">
+        <li>A. Amazon CloudWatch</li>
+        <li>B. AWS CloudTrail</li>
+        <li>C. AWS Config</li>
+        <li>D. AWS Trusted Advisor</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">CloudTrail logs API activity (who did what); CloudWatch monitors performance metrics - a commonly confused distinction.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q20. A company needs protection against a large-scale DDoS attack, plus 24/7 access to a DDoS response team. Which should they use?</div>
+      <ul class="qoptions">
+        <li>A. AWS Shield Standard</li>
+        <li>B. AWS Shield Advanced</li>
+        <li>C. AWS WAF</li>
+        <li>D. Amazon GuardDuty</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Shield Standard is free and automatic but basic; Shield Advanced (paid) adds enhanced protection and 24/7 DDoS Response Team access.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q21. What is the KEY behavioral difference between a Security Group and a Network ACL?</div>
+      <ul class="qoptions">
+        <li>A. Security Groups support Deny rules; NACLs do not</li>
+        <li>B. Security Groups are stateful; NACLs are stateless</li>
+        <li>C. NACLs operate at the instance level; Security Groups at the subnet level</li>
+        <li>D. There is no difference; they are interchangeable</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Security Groups are stateful (return traffic auto-allowed) and instance-level, Allow-only. NACLs are stateless, subnet-level, and support both Allow and Deny.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q22. Which feature should be enabled immediately on the AWS account root user for security?</div>
+      <ul class="qoptions">
+        <li>A. S3 bucket versioning</li>
+        <li>B. Multi-Factor Authentication (MFA)</li>
+        <li>C. VPC Flow Logs</li>
+        <li>D. AWS Config rules</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">MFA should be enabled on the root user immediately as one of the most critical account security best practices.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q23. Which AWS Organizations feature sets the maximum available permissions for accounts within an organization, without granting any permissions itself?</div>
+      <ul class="qoptions">
+        <li>A. IAM Policy</li>
+        <li>B. Service Control Policy (SCP)</li>
+        <li>C. Resource Policy</li>
+        <li>D. Trust Policy</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">SCPs set permission guardrails/ceilings for member accounts but never grant permissions on their own.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q24. A mobile app needs to let end users sign up and log in, including via Google/Facebook. Which service fits best?</div>
+      <ul class="qoptions">
+        <li>A. AWS IAM</li>
+        <li>B. Amazon Cognito</li>
+        <li>C. AWS Directory Service</li>
+        <li>D. AWS Organizations</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Amazon Cognito is built specifically for customer-facing app authentication, including social identity federation - IAM is for AWS account access, not app end users.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q25. Which service should be used to create and manage encryption keys used to encrypt data across AWS services?</div>
+      <ul class="qoptions">
+        <li>A. AWS KMS</li>
+        <li>B. AWS Secrets Manager</li>
+        <li>C. AWS Certificate Manager</li>
+        <li>D. AWS Shield</li>
+      </ul>
+      <div class="qanswer">Answer: A</div>
+      <div class="qexplain">AWS Key Management Service (KMS) is used to create and control encryption keys.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q26. Which security service aggregates and prioritizes findings from GuardDuty, Inspector, and Macie into a single dashboard?</div>
+      <ul class="qoptions">
+        <li>A. AWS Config</li>
+        <li>B. AWS Security Hub</li>
+        <li>C. AWS Trusted Advisor</li>
+        <li>D. Amazon CloudWatch</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">AWS Security Hub is the central aggregation dashboard for findings across multiple AWS security services.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q27. What best describes the IAM Principle of Least Privilege?</div>
+      <ul class="qoptions">
+        <li>A. Every user should have Administrator access by default for convenience</li>
+        <li>B. Grant only the minimum permissions required to perform a task, nothing more</li>
+        <li>C. All permissions should be granted at the Organization root level</li>
+        <li>D. Only the root user should ever have any permissions</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Least Privilege means granting the minimum necessary access - a core, frequently tested security best practice.</div>
+    </div>
+
+    <h3>Domain 3: Cloud Technology and Services (Questions 28-44)</h3>
+
+    <div class="qbox">
+      <div class="qtext">Q28. What is the minimum number of Availability Zones guaranteed in every AWS Region?</div>
+      <ul class="qoptions">
+        <li>A. 1</li>
+        <li>B. 2</li>
+        <li>C. 3</li>
+        <li>D. 5</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">Every AWS Region has a minimum of 3 Availability Zones.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q29. A company must keep all customer data within a specific country for legal reasons. Which factor is driving their Region choice?</div>
+      <ul class="qoptions">
+        <li>A. Latency</li>
+        <li>B. Compliance</li>
+        <li>C. Pricing</li>
+        <li>D. Service availability</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Data governance/legal residency requirements are a Compliance consideration when choosing a Region.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q30. Which storage service is object storage, accessed via an API rather than mounted as a drive?</div>
+      <ul class="qoptions">
+        <li>A. Amazon EBS</li>
+        <li>B. Amazon EFS</li>
+        <li>C. Amazon S3</li>
+        <li>D. Amazon FSx</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">S3 is object storage accessed via web API (GET/PUT); EBS and EFS are block/file storage that attach or mount to instances.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q31. Which S3 durability figure is correct?</div>
+      <ul class="qoptions">
+        <li>A. 99.9%</li>
+        <li>B. 99.99%</li>
+        <li>C. 99.999999999% (11 nines)</li>
+        <li>D. 100%</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">S3 is designed for 99.999999999% (11 nines) durability. 99.99% is the availability figure for S3 Standard - a commonly confused pair.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q32. Which S3 storage class offers the LOWEST storage cost, with retrieval taking up to 12 hours?</div>
+      <ul class="qoptions">
+        <li>A. S3 Standard-IA</li>
+        <li>B. S3 Glacier Instant Retrieval</li>
+        <li>C. S3 Glacier Deep Archive</li>
+        <li>D. S3 Intelligent-Tiering</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">S3 Glacier Deep Archive is the lowest-cost class, meant for long-term archival with retrieval up to 12 hours.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q33. Which storage service can be mounted concurrently by many EC2 instances across multiple Availability Zones at once?</div>
+      <ul class="qoptions">
+        <li>A. Amazon EBS</li>
+        <li>B. Amazon EFS</li>
+        <li>C. Instance Store</li>
+        <li>D. Amazon S3 Glacier</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">EFS is a shared file system mountable by many instances at once across AZs; EBS attaches to only one instance at a time within one AZ.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q34. Which EC2 pricing option offers up to ~90% savings but can be reclaimed by AWS with only a 2-minute warning?</div>
+      <ul class="qoptions">
+        <li>A. Reserved Instances</li>
+        <li>B. Savings Plans</li>
+        <li>C. Spot Instances</li>
+        <li>D. On-Demand Instances</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">Spot Instances offer the deepest discounts but can be reclaimed with only a 2-minute warning - suitable only for fault-tolerant, flexible workloads.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q35. Which compute service lets you run code without provisioning or managing any servers, billed per millisecond of execution?</div>
+      <ul class="qoptions">
+        <li>A. Amazon EC2</li>
+        <li>B. AWS Lambda</li>
+        <li>C. Amazon Lightsail</li>
+        <li>D. AWS Elastic Beanstalk</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Lambda is the serverless compute service billed per millisecond of actual execution time, with no charge when idle.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q36. What is the PRIMARY purpose of an RDS Multi-AZ deployment?</div>
+      <ul class="qoptions">
+        <li>A. To scale out read traffic across multiple copies</li>
+        <li>B. To provide high availability and automatic failover</li>
+        <li>C. To reduce storage costs</li>
+        <li>D. To enable NoSQL queries</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Multi-AZ maintains a synchronous standby in a different AZ for high availability/failover - NOT for read scaling (that's what Read Replicas are for).</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q37. A gaming application needs a NoSQL database with single-digit millisecond latency at any scale, with no servers to manage. Which service fits?</div>
+      <ul class="qoptions">
+        <li>A. Amazon RDS</li>
+        <li>B. Amazon Redshift</li>
+        <li>C. Amazon DynamoDB</li>
+        <li>D. Amazon Aurora</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">DynamoDB is the fully managed, serverless NoSQL database built for this exact use case.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q38. Which service is purpose-built for large-scale data warehousing and business intelligence analytics queries?</div>
+      <ul class="qoptions">
+        <li>A. Amazon RDS</li>
+        <li>B. Amazon Redshift</li>
+        <li>C. Amazon DynamoDB</li>
+        <li>D. Amazon ElastiCache</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Redshift is the managed data warehouse service optimized for complex analytics queries across massive datasets.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q39. Which networking component allows instances in a PRIVATE subnet to make outbound internet connections, without allowing inbound connections from the internet?</div>
+      <ul class="qoptions">
+        <li>A. Internet Gateway</li>
+        <li>B. NAT Gateway</li>
+        <li>C. Virtual Private Gateway</li>
+        <li>D. Transit Gateway</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">A NAT Gateway allows outbound-only internet access for private subnet resources.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q40. Which service provides a DEDICATED, private, physical network connection between an on-premises data center and AWS?</div>
+      <ul class="qoptions">
+        <li>A. AWS Site-to-Site VPN</li>
+        <li>B. AWS Direct Connect</li>
+        <li>C. AWS Client VPN</li>
+        <li>D. Amazon CloudFront</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Direct Connect establishes a dedicated physical link bypassing the public internet; VPN uses an encrypted connection OVER the public internet.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q41. Which messaging service should be used to broadcast one message out to many different subscribers simultaneously (fan-out)?</div>
+      <ul class="qoptions">
+        <li>A. Amazon SQS</li>
+        <li>B. Amazon SNS</li>
+        <li>C. AWS Step Functions</li>
+        <li>D. Amazon EventBridge</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">SNS is the pub/sub service designed for fan-out to many subscribers at once; SQS is a queue for one/pooled consumers pulling messages.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q42. Which service should be used to run and monitor performance metrics/alarms for AWS resources?</div>
+      <ul class="qoptions">
+        <li>A. AWS CloudTrail</li>
+        <li>B. Amazon CloudWatch</li>
+        <li>C. AWS Config</li>
+        <li>D. AWS Artifact</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">CloudWatch handles performance monitoring/metrics/alarms; CloudTrail handles API activity auditing.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q43. Which service lets developers define entire AWS infrastructure as a version-controlled JSON/YAML template for repeatable deployment?</div>
+      <ul class="qoptions">
+        <li>A. AWS Systems Manager</li>
+        <li>B. AWS CloudFormation</li>
+        <li>C. AWS Config</li>
+        <li>D. AWS OpsWorks</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">CloudFormation is AWS's Infrastructure as Code service using JSON/YAML templates.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q44. A company needs to run containers without managing any underlying EC2 instances at all. Which should they use?</div>
+      <ul class="qoptions">
+        <li>A. Amazon EC2 with Docker installed manually</li>
+        <li>B. AWS Fargate</li>
+        <li>C. Amazon EFS</li>
+        <li>D. AWS Snowball</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">AWS Fargate is the serverless compute engine for containers, removing the need to provision/manage the underlying instances.</div>
+    </div>
+
+    <h3>Domain 4: Billing, Pricing, and Support (Questions 45-50)</h3>
+
+    <div class="qbox">
+      <div class="qtext">Q45. A production system is down and the company needs a guaranteed response time under 1 hour. What is the MINIMUM support plan that provides this?</div>
+      <ul class="qoptions">
+        <li>A. Basic</li>
+        <li>B. Developer</li>
+        <li>C. Business</li>
+        <li>D. Enterprise On-Ramp</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">The Business plan guarantees under 1 hour response for a production system down; Developer only offers general guidance response times, with no such guarantee.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q46. Which support plan is the first to include a dedicated Technical Account Manager (TAM)?</div>
+      <ul class="qoptions">
+        <li>A. Business</li>
+        <li>B. Developer</li>
+        <li>C. Enterprise</li>
+        <li>D. Basic</li>
+      </ul>
+      <div class="qanswer">Answer: C</div>
+      <div class="qexplain">The Enterprise plan is the first to include a dedicated TAM (Enterprise On-Ramp includes a pool of TAMs, not one dedicated TAM).</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q47. Which free tool lets you visualize and forecast AWS cost and usage trends over time?</div>
+      <ul class="qoptions">
+        <li>A. AWS Budgets</li>
+        <li>B. AWS Cost Explorer</li>
+        <li>C. AWS Cost and Usage Report</li>
+        <li>D. AWS Pricing Calculator</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Cost Explorer is the free tool to visualize, analyze, and forecast AWS cost/usage over time.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q48. What generally happens to the price of AWS data transfer INTO AWS versus OUT of AWS to the internet?</div>
+      <ul class="qoptions">
+        <li>A. Both are always free</li>
+        <li>B. Transfer IN is generally free; transfer OUT is generally charged</li>
+        <li>C. Transfer OUT is generally free; transfer IN is generally charged</li>
+        <li>D. Both are always charged at the same rate</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Data transfer into AWS is typically free; data transfer out to the internet is typically charged, and is often an overlooked cost.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q49. Which AWS Organizations feature provides a single combined bill and volume pricing discounts across multiple member accounts?</div>
+      <ul class="qoptions">
+        <li>A. Service Control Policies</li>
+        <li>B. Consolidated Billing</li>
+        <li>C. AWS Budgets</li>
+        <li>D. Cost Explorer</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">Consolidated Billing combines usage across member accounts for volume discounts and delivers one combined bill.</div>
+    </div>
+
+    <div class="qbox">
+      <div class="qtext">Q50. Which AWS Free Tier category includes offers that NEVER expire, such as Lambda's first 1 million requests per month?</div>
+      <ul class="qoptions">
+        <li>A. 12 Months Free</li>
+        <li>B. Always Free</li>
+        <li>C. Trials</li>
+        <li>D. Enterprise Free Tier</li>
+      </ul>
+      <div class="qanswer">Answer: B</div>
+      <div class="qexplain">"Always Free" offers never expire and are available to all customers regardless of account age.</div>
+    </div>
+
+    <div class="notes">
+      <strong>Exam Summary:</strong> The AWS Certified Cloud Practitioner exam rewards knowing exact facts as much as broad concepts: the Shared Responsibility Model split, the six advantages of cloud computing, S3's 11-nines durability, the minimum of 3 AZs per Region, the EC2 pricing model trade-offs, and the SNS-vs-SQS and CloudTrail-vs-CloudWatch distinctions are among the most frequently repeated exam patterns. Work through every Part in order, complete all four assignments in Part K, then sit the full 50-question Practice Bank in Part L under timed conditions. Review any domain where you scored below 80% before booking the real exam &mdash; a 700/1000 passing score means you can afford a handful of misses, but the domains above should feel genuinely familiar, not just recognizable, before exam day.
+    </div>
+  </div>
+</body>
+</html>
