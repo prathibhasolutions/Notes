@@ -1,0 +1,1636 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power BI Complete Notes - Beginner to Job-Ready</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .meta div span {
+      color: #7c8fa0;
+      font-size: 7.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: #8a5c1f; }
+
+    h2.part-title {
+      margin: 4.5mm 0 2.4mm;
+      font-size: 11.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: linear-gradient(90deg, #0f5f7f, #124a76);
+      border-radius: 1.3mm;
+      padding: 2mm 2.6mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-block ol {
+      margin: 0;
+      padding-left: 5.2mm;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+    }
+
+    .notes {
+      margin-top: 3mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      position: relative;
+      z-index: 1;
+      background: #fafcff;
+      font-size: 9pt;
+    }
+
+    .topic-note {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-note p {
+      margin: 0 0 1.5mm;
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: #304556;
+    }
+
+    .key-points {
+      margin: 1.3mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1mm;
+      font-size: 7.9pt;
+      line-height: 1.4;
+      color: #314759;
+    }
+
+    .code {
+      margin: 1.3mm 0 0;
+      border: 1px solid #d9e5ef;
+      border-left: 2mm solid #0f5f7f;
+      border-radius: 1mm;
+      background: #fffdf8;
+      color: #203040;
+      padding: 2mm;
+      font-size: 7.8pt;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+      margin: 1mm 0 0;
+    }
+
+    .badge {
+      font-size: 7.3pt;
+      color: #0f5f7f;
+      border: 1px solid #bcd7e2;
+      background: #eef7fb;
+      border-radius: 3mm;
+      padding: 0.8mm 2.2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .badge.dax { color: #8a5c1f; border-color: #e3cfa8; background: #fdf6ea; }
+    .badge.pq { color: #1f7a4d; border-color: #b9dfc7; background: #ecfaf1; }
+    .badge.viz { color: #6a3b96; border-color: #d6c2ea; background: #f6f0fb; }
+    .badge.job { color: #b8590a; border-color: #f0cda3; background: #fff3e6; }
+    .badge.exam { color: #a13a3a; border-color: #e8b9b9; background: #fdf1f1; }
+
+    .assign-block {
+      border: 1px solid #d6e0ea;
+      border-left: 2mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      background: #fffefb;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .assign-block h4 { color: #8a5c1f; }
+
+    .assign-block .solution-label {
+      display: inline-block;
+      margin: 1.6mm 0 0.8mm;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0f5f7f;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid #bcd7e2;
+      padding-bottom: 0.6mm;
+    }
+
+    .quick-ref {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.6pt;
+      margin-top: 1mm;
+    }
+
+    .quick-ref th, .quick-ref td {
+      border: 1px solid var(--soft);
+      padding: 1mm 1.5mm;
+      text-align: left;
+    }
+
+    .quick-ref th {
+      background: #eef5fa;
+      color: #124a76;
+      text-transform: uppercase;
+      font-size: 7pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">Power BI Complete Notes</div>
+        <div class="subtitle">Power Query &bull; Data Modeling &bull; DAX &bull; Visualizations &bull; Power BI Service</div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><span>Name</span>&nbsp;</div>
+      <div><span>Class / Roll No.</span>&nbsp;</div>
+      <div><span>Date</span>&nbsp;</div>
+    </div>
+
+    <div class="instructions">
+      <b>Study Note:</b> These notes take a complete beginner through the entire Power BI syllabus: connecting to data, cleaning and shaping it in Power Query, building a proper data model, writing DAX formulas, building every major visual type, formatting and interactivity, and publishing/sharing through the Power BI Service. Every topic includes a plain-English <b>definition</b>, the exact <b>steps or formula</b>, and a <b>worked example</b>. Hands-on <b>assignments with full solutions</b> are provided at the end, building toward one complete real-world sales dashboard, from raw data all the way to a published, secured report.
+    </div>
+
+    <h2 class="part-title">Part A &mdash; Introduction to Power BI</h2>
+
+    <div class="topic-note">
+      <h4>1. What is Business Intelligence?</h4>
+      <p>Business Intelligence (BI) is the process of collecting raw business data from various sources, transforming it into meaningful information, and presenting it through reports and visuals so that people can make informed, data-driven decisions instead of relying on guesswork.</p>
+      <ul class="key-points">
+        <li>Raw data (e.g. sales transactions in a spreadsheet) on its own is hard to interpret at a glance.</li>
+        <li>BI tools turn that raw data into charts, dashboards, and KPIs that instantly show trends, patterns, and outliers.</li>
+        <li>Power BI, Tableau, and Qlik are the three most widely used BI tools in the industry today.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>2. What is Power BI?</h4>
+      <p>Power BI is Microsoft's Business Intelligence and data visualization tool, used to connect to many different data sources, clean and shape that data, build a data model, and create interactive reports and dashboards &ndash; all without needing to write traditional programming code for most tasks.</p>
+      <ul class="key-points">
+        <li>Free to start (Power BI Desktop is completely free to download and use for building reports).</li>
+        <li>Deeply integrated with other Microsoft products: Excel, SQL Server, Azure, SharePoint, Teams.</li>
+        <li>One of the most in-demand skills for Data Analyst roles worldwide.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>3. Power BI Components</h4>
+      <div class="badge-row"><span class="badge job">Job Relevance</span></div>
+      <p>"Power BI" is actually a suite of related products working together &ndash; know what each one is for.</p>
+      <ul class="key-points">
+        <li><b>Power BI Desktop</b> &ndash; the free Windows application used to connect to data, transform it, build the data model, write DAX, and design reports. This is where almost all report-building work happens.</li>
+        <li><b>Power BI Service (app.powerbi.com)</b> &ndash; the cloud-based platform where finished reports are published, organized into workspaces, combined into dashboards, and shared with others.</li>
+        <li><b>Power BI Mobile</b> &ndash; apps for iOS/Android/Windows to view reports and dashboards on the go.</li>
+        <li><b>Power BI Report Server</b> &ndash; an on-premises alternative to the Power BI Service, for organizations that cannot store data in the cloud.</li>
+        <li><b>Power BI Gateway</b> &ndash; a bridge that lets the cloud-based Power BI Service securely refresh data from on-premises data sources (Section 83).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>4. Installing Power BI Desktop</h4>
+      <ul class="key-points">
+        <li>Download free from the Microsoft Store, or from powerbi.microsoft.com &ndash; no license/payment needed for Desktop.</li>
+        <li>Requires Windows; there is no native Power BI Desktop for macOS or Linux (a Windows virtual machine or the browser-based Service can be used as workarounds).</li>
+        <li>Sign in with a free Microsoft account to unlock publishing and sharing features (optional for just building reports locally).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>5. Power BI Desktop Interface Overview</h4>
+      <ul class="key-points">
+        <li><b>Report View</b> &ndash; the main canvas where visuals are placed and arranged into pages, the default view when opening Power BI Desktop.</li>
+        <li><b>Data View</b> &ndash; shows the actual rows and columns of every loaded table, like a spreadsheet grid &ndash; used to inspect data and write calculated columns.</li>
+        <li><b>Model View</b> &ndash; shows all loaded tables and the relationships (lines) connecting them &ndash; used to build and manage the data model (Part D).</li>
+        <li><b>Fields Pane</b> (right side) &ndash; lists every table and column/measure available to drag onto visuals.</li>
+        <li><b>Visualizations Pane</b> (right side) &ndash; the gallery of chart types, and the formatting options for whichever visual is selected.</li>
+        <li>Switch between these three views using the icons on the far-left vertical toolbar.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>6. The Power BI Workflow</h4>
+      <p>Every Power BI project follows the same overall sequence &ndash; understanding this flow makes the rest of these notes click into place.</p>
+      <ul class="key-points">
+        <li><b>1. Get Data</b> &ndash; connect to one or more data sources (Part B).</li>
+        <li><b>2. Transform</b> &ndash; clean and reshape the data in Power Query Editor (Part C).</li>
+        <li><b>3. Model</b> &ndash; build relationships between tables (Part D).</li>
+        <li><b>4. Calculate</b> &ndash; write DAX measures and columns for custom calculations (Part E).</li>
+        <li><b>5. Visualize</b> &ndash; build charts, tables, and cards onto report pages (Parts F-G).</li>
+        <li><b>6. Publish &amp; Share</b> &ndash; push the finished report to the Power BI Service and share it with others (Part H).</li>
+      </ul>
+    </div>
+
+
+    <h2 class="part-title">Part B &mdash; Connecting to Data Sources</h2>
+
+    <div class="topic-note">
+      <h4>7. Data Source Types Overview</h4>
+      <p>Power BI can connect to well over 100 different data source types &ndash; from simple files to enterprise databases and cloud services.</p>
+      <ul class="key-points">
+        <li><b>Files</b> &ndash; Excel, CSV, Text, XML, JSON, PDF, Folder (importing many files at once).</li>
+        <li><b>Databases</b> &ndash; SQL Server, MySQL, PostgreSQL, Oracle, and many more.</li>
+        <li><b>Online Services</b> &ndash; SharePoint, Salesforce, Google Analytics, Dynamics 365.</li>
+        <li><b>Other</b> &ndash; Web pages, OData feeds, Azure services, blank tables typed manually.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>8. Connecting to Excel Files</h4>
+      <div class="badge-row"><span class="badge job">Most Common Beginner Source</span></div>
+      <p>The most common starting point for beginners, since most business data already lives in Excel spreadsheets.</p>
+      <ul class="key-points">
+        <li>Home tab &gt; Get Data &gt; Excel Workbook &gt; browse to the file.</li>
+        <li>The Navigator window then shows every sheet and named table in the file &ndash; tick the checkboxes for the ones needed.</li>
+        <li>Click <b>Transform Data</b> to open Power Query Editor first (recommended, to clean data before loading), or <b>Load</b> to import it directly as-is.</li>
+      </ul>
+      <pre class="code">Home tab -> Get Data -> Excel Workbook
+Browse to: SalesData.xlsx
+Navigator: check "Sales" sheet, check "Products" sheet
+Click "Transform Data"</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>9. Connecting to CSV/Text Files</h4>
+      <ul class="key-points">
+        <li>Home tab &gt; Get Data &gt; Text/CSV &gt; browse to the file.</li>
+        <li>A preview window shows the detected delimiter (comma, tab, semicolon) and column data types &ndash; these can be adjusted before loading.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>10. Connecting to a Folder</h4>
+      <p>Combines many files with an identical structure (e.g. one CSV exported per month) into a single, unified table automatically &ndash; extremely useful for recurring reports.</p>
+      <ul class="key-points">
+        <li>Home tab &gt; Get Data &gt; Folder &gt; select the folder containing all the files.</li>
+        <li>Power BI lists every file found, then offers a "Combine &amp; Transform" option that automatically appends them all into one table.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>11. Connecting to Web Data Sources</h4>
+      <ul class="key-points">
+        <li>Home tab &gt; Get Data &gt; Web &gt; paste the URL of a page containing a data table.</li>
+        <li>Power BI scans the page and lists every HTML table it detected, ready to import.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>12. Connecting to Databases (SQL Server Example)</h4>
+      <div class="badge-row"><span class="badge job">Common in Real Jobs</span></div>
+      <ul class="key-points">
+        <li>Home tab &gt; Get Data &gt; SQL Server &gt; enter the Server name and Database name.</li>
+        <li>Choose <b>Import</b> mode (loads a copy of the data into Power BI) or <b>DirectQuery</b> mode (queries the live database every time a visual refreshes, see next topic).</li>
+        <li>Can connect directly with a typed SQL query for full control over exactly what is retrieved.</li>
+      </ul>
+      <pre class="code">Home tab -> Get Data -> SQL Server
+Server: sql-prod-server.company.com
+Database: SalesDB
+Data Connectivity mode: Import
+(optional) Advanced options -> SQL statement:
+  SELECT OrderID, CustomerName, OrderDate, Amount FROM Orders WHERE OrderDate >= '2024-01-01'</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>13. Import vs DirectQuery vs Live Connection</h4>
+      <div class="badge-row"><span class="badge exam">Frequently Asked</span></div>
+      <p>Three fundamentally different ways Power BI can relate to a data source &ndash; a very common interview question.</p>
+      <table class="quick-ref">
+        <tr><th>Mode</th><th>How it Works</th><th>Best For</th></tr>
+        <tr><td>Import</td><td>Copies data into Power BI's own fast internal engine; needs manual/scheduled refresh to update</td><td>Most reports; fastest performance; full DAX/modeling support</td></tr>
+        <tr><td>DirectQuery</td><td>No data copied; every visual sends a live query to the source database</td><td>Very large datasets that can't fit in memory, or when data must always be 100% real-time</td></tr>
+        <tr><td>Live Connection</td><td>Connects directly to an existing Power BI dataset or Analysis Services model (no local model built)</td><td>Reusing/sharing a centrally-managed data model across many reports</td></tr>
+      </table>
+    </div>
+
+    <h2 class="part-title">Part C &mdash; Power Query Editor: Data Transformation</h2>
+
+    <div class="topic-note">
+      <h4>14. What is Power Query?</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Power Query is Power BI's data-cleaning and transformation engine &ndash; almost every real-world dataset has issues (blank rows, wrong data types, inconsistent text, unwanted columns) that must be fixed BEFORE building visuals, and Power Query is where that cleanup happens.</p>
+      <ul class="key-points">
+        <li>Every action taken (removing a column, changing a type, filtering rows) is recorded as a numbered, reorderable, undoable "Applied Step" &ndash; nothing is destructive to the original source file.</li>
+        <li>Behind every action is generated code in the <b>M language</b> (technically "Power Query M"), which can also be written or edited directly for advanced control.</li>
+        <li>The same Power Query engine is also used inside Excel's "Get &amp; Transform" feature.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>15. Power Query Editor Interface</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <ul class="key-points">
+        <li>Open it via Home tab &gt; Transform Data (or right-click a query and choose Edit).</li>
+        <li><b>Queries pane</b> (left) &ndash; lists every table/query loaded into the model.</li>
+        <li><b>Data preview</b> (center) &ndash; shows the current state of the selected query's data.</li>
+        <li><b>Applied Steps pane</b> (right) &ndash; the ordered list of every transformation applied so far; click any step to see the data at that point in time, or click the gear icon to edit a step's settings.</li>
+        <li><b>Formula Bar</b> (top, may need enabling via View tab) &ndash; shows the actual M code for the currently selected step.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>16. Removing Columns and Rows</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <ul class="key-points">
+        <li><b>Remove Columns</b> &ndash; right-click a column header &gt; Remove, or select multiple columns and use Home &gt; Remove Columns. Removing unneeded columns keeps the model smaller and faster.</li>
+        <li><b>Remove Rows</b> &ndash; Home &gt; Remove Rows offers: Remove Top Rows, Remove Bottom Rows, Remove Duplicates, Remove Blank Rows, and Remove Errors.</li>
+      </ul>
+      <pre class="code">// M code generated by removing two columns:
+= Table.RemoveColumns(#"Previous Step", {"Notes", "InternalID"})
+
+// M code generated by removing duplicate rows:
+= Table.Distinct(#"Previous Step")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>17. Changing Data Types</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span><span class="badge job">Very Common Beginner Fix</span></div>
+      <p>Power BI needs to know if a column is Text, Whole Number, Decimal, Date, or True/False &ndash; a wrong data type (e.g. a date stored as text) silently breaks sorting, filtering, and DAX calculations.</p>
+      <ul class="key-points">
+        <li>Click the small type icon in the column header (e.g. "ABC" or "1.2") to change it, or right-click &gt; Change Type.</li>
+        <li>Common types: Text, Whole Number, Decimal Number, Currency, Date, Date/Time, True/False.</li>
+      </ul>
+      <pre class="code">// M code generated by changing "OrderDate" to Date type:
+= Table.TransformColumnTypes(#"Previous Step", {{"OrderDate", type date}})</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>18. Renaming Columns and Queries</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <ul class="key-points">
+        <li>Double-click a column header (or right-click &gt; Rename) to rename it &ndash; use clear, business-friendly names since these appear directly in the Fields pane for report building.</li>
+        <li>Right-click a query name in the Queries pane &gt; Rename, to give the whole table a clearer name.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>19. Filtering Rows</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Click the small dropdown arrow in any column header to filter, just like an Excel AutoFilter &ndash; filtering here permanently removes rows from the loaded data, unlike a report-level filter which only hides them from one visual.</p>
+      <pre class="code">// M code generated by filtering to only orders from 2024:
+= Table.SelectRows(#"Previous Step", each Date.Year([OrderDate]) = 2024)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>20. Sorting Data</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Use the sort arrows in a column header's dropdown to sort ascending/descending &ndash; useful during data cleaning to visually spot issues, though final report sorting is usually controlled separately in the report visuals (Section 77).</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>21. Split Column</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Breaks one column into multiple columns &ndash; e.g. splitting a "Full Name" column into separate "First Name" and "Last Name" columns.</p>
+      <ul class="key-points">
+        <li>Select the column &gt; Home (or Transform) tab &gt; Split Column &gt; By Delimiter (e.g. a space) or By Number of Characters.</li>
+      </ul>
+      <pre class="code">// M code generated by splitting "Full Name" on the space character:
+= Table.SplitColumn(#"Previous Step", "Full Name",
+    Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"First Name", "Last Name"})</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>22. Merge Columns</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>The reverse of Split Column &ndash; combines two or more columns into one, with an optional separator (e.g. combining "City" and "State" into "City, State").</p>
+      <ul class="key-points">
+        <li>Select the columns (Ctrl+click for multiple) &gt; Transform tab &gt; Merge Columns.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>23. Group By</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Aggregates rows into summary rows based on one or more grouping columns &ndash; similar to a GROUP BY in SQL or a Pivot Table summary.</p>
+      <ul class="key-points">
+        <li>Home tab &gt; Group By &gt; choose the column(s) to group by, and the aggregation (Sum, Average, Count Rows, Min, Max) to calculate per group.</li>
+      </ul>
+      <pre class="code">// M code generated grouping by "Region", summing "SalesAmount":
+= Table.Group(#"Previous Step", {"Region"}, {{"Total Sales", each List.Sum([SalesAmount]), type number}})</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>24. Pivot and Unpivot Columns</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span><span class="badge job">Very Common Real-World Fix</span></div>
+      <p>Real-world spreadsheets are very often exported in "wide" format (e.g. one column per month: Jan, Feb, Mar...), but Power BI works far better with "tall/long" format (one row per Month + Value pair). Unpivot is one of the most useful, frequently-needed transformations for beginners to master.</p>
+      <ul class="key-points">
+        <li><b>Unpivot Columns</b> &ndash; select the columns to unpivot (e.g. Jan, Feb, Mar) &gt; Transform tab &gt; Unpivot Columns &ndash; turns them into two new columns: "Attribute" (the original column name) and "Value".</li>
+        <li><b>Pivot Column</b> &ndash; the reverse operation, turning unique values from one column into new separate columns.</li>
+      </ul>
+      <pre class="code">// Before Unpivot:  Product | Jan | Feb | Mar
+//                  Widget  | 100 | 120 | 90
+
+// M code generated by unpivoting Jan, Feb, Mar:
+= Table.UnpivotOtherColumns(#"Previous Step", {"Product"}, "Month", "Sales")
+
+// After Unpivot:   Product | Month | Sales
+//                  Widget  | Jan   | 100
+//                  Widget  | Feb   | 120
+//                  Widget  | Mar   | 90</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>25. Append Queries</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Stacks two or more tables with the SAME columns on top of each other into one combined table &ndash; e.g. combining "Sales_Jan" and "Sales_Feb" tables into one "Sales_All" table. Equivalent to a SQL UNION.</p>
+      <ul class="key-points">
+        <li>Home tab &gt; Append Queries &gt; choose "Two Tables" or "Three or More Tables".</li>
+      </ul>
+      <pre class="code">// M code generated appending "Sales_Feb" onto "Sales_Jan":
+= Table.Combine({Sales_Jan, Sales_Feb})</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>26. Merge Queries (Joins)</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span><span class="badge job">Very Common Real-World Fix</span></div>
+      <p>Combines two tables SIDE BY SIDE, matching rows based on a common column &ndash; the Power Query equivalent of a SQL JOIN. Different from Append (which stacks rows), Merge adds columns.</p>
+      <ul class="key-points">
+        <li>Home tab &gt; Merge Queries &gt; select the second table, then click the matching column in both tables.</li>
+        <li><b>Join Kind</b> options: Left Outer (all rows from first table, matches from second), Right Outer, Full Outer, Inner (only matching rows in both), Left Anti (only rows from first table with NO match), Right Anti.</li>
+      </ul>
+      <pre class="code">// M code generated merging "Sales" with "Products" on "ProductID", Left Outer join:
+= Table.NestedJoin(Sales, {"ProductID"}, Products, {"ProductID"}, "Products", JoinKind.LeftOuter)
+// After this step, expand the new "Products" column to pull in specific columns like "ProductName"</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>27. Conditional Column</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Creates a new column using simple if/then/else logic built through a visual dialog &ndash; no M code writing required, ideal for beginners.</p>
+      <ul class="key-points">
+        <li>Add Column tab &gt; Conditional Column &gt; define one or more "If [column] [operator] [value] Then [output]" rules, with a final Else.</li>
+      </ul>
+      <pre class="code">// M code generated by a conditional column categorizing sales amount:
+= Table.AddColumn(#"Previous Step", "Sales Category", each
+    if [SalesAmount] >= 10000 then "High"
+    else if [SalesAmount] >= 5000 then "Medium"
+    else "Low")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>28. Custom Column (M Formula)</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Creates a new column using a typed M formula, for logic beyond what the Conditional Column dialog can express &ndash; the natural next step once comfortable with basic Power Query.</p>
+      <ul class="key-points">
+        <li>Add Column tab &gt; Custom Column &gt; give it a name and type the M formula, referencing other columns with square brackets.</li>
+      </ul>
+      <pre class="code">// Custom Column formula calculating profit:
+= [SalesAmount] - [CostAmount]
+
+// Custom Column formula combining two text columns:
+= [FirstName] &amp; " " &amp; [LastName]</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>29. Replace Values &amp; Fill Down/Up</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <ul class="key-points">
+        <li><b>Replace Values</b> &ndash; right-click a column &gt; Replace Values, to find-and-replace specific values (e.g. replacing "N/A" with null, or fixing a misspelled category name).</li>
+        <li><b>Fill Down / Fill Up</b> &ndash; Transform tab &gt; Fill &ndash; copies a value downward (or upward) to replace blank cells below it, common when cleaning data exported from merged Excel cells (e.g. a Region name only appearing on the first row of each group).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>30. Query Parameters</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <p>Reusable values (e.g. a file path, a start date, a server name) that can be referenced inside multiple queries &ndash; changing the parameter once updates every query using it, instead of editing each query's source individually.</p>
+      <ul class="key-points">
+        <li>Home tab &gt; Manage Parameters &gt; New Parameter &ndash; define its name, type, and current value.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>31. Applied Steps &amp; Query Dependencies</h4>
+      <div class="badge-row"><span class="badge pq">Power Query</span></div>
+      <ul class="key-points">
+        <li>Every transformation is a separate, named step in the Applied Steps pane &ndash; steps can be renamed, reordered (drag), or deleted (click the X) individually.</li>
+        <li>Click the gear icon next to a step to reopen its settings dialog and edit it without redoing the action.</li>
+        <li>A query can reference another query as its source (right-click &gt; Reference), building a chain of dependent queries &ndash; useful for reusing a common cleaning step across multiple final tables.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part D &mdash; Data Modeling</h2>
+
+    <div class="topic-note">
+      <h4>32. What is Data Modeling?</h4>
+      <p>Data Modeling is the process of connecting multiple loaded tables together through relationships, so that Power BI understands how they relate &ndash; enabling one visual to combine data from several tables correctly and automatically.</p>
+      <ul class="key-points">
+        <li>Without a correct model, filtering by one table (e.g. selecting a Region) will not correctly filter another related table (e.g. Sales), producing wrong totals.</li>
+        <li>A good model is the foundation everything else (DAX, visuals) depends on &ndash; time invested here pays off throughout the whole report.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>33. Star Schema vs Snowflake Schema</h4>
+      <div class="badge-row"><span class="badge job">Best Practice</span></div>
+      <p>Two common ways to organize a data model &ndash; Power BI is specifically optimized for, and Microsoft explicitly recommends, the Star Schema.</p>
+      <ul class="key-points">
+        <li><b>Star Schema</b> &ndash; one central Fact table connected directly to several surrounding Dimension tables, forming a star shape. Simpler, faster, and easier to write DAX against &ndash; the recommended standard.</li>
+        <li><b>Snowflake Schema</b> &ndash; dimension tables are further broken down into related sub-dimension tables (e.g. Product &rarr; Category &rarr; Department), creating a more normalized but more complex web of relationships.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>34. Fact Tables vs Dimension Tables</h4>
+      <div class="badge-row"><span class="badge job">Frequently Tested Concept</span></div>
+      <ul class="key-points">
+        <li><b>Fact Table</b> &ndash; contains the measurable, numeric business events/transactions (e.g. a Sales table with OrderDate, ProductID, CustomerID, Quantity, SalesAmount). Usually the largest table, with many rows.</li>
+        <li><b>Dimension Table</b> &ndash; contains descriptive attributes used to filter and group the facts (e.g. a Products table with ProductID, ProductName, Category; or a Customers table; or a Date table). Usually smaller, with fewer rows.</li>
+        <li>Rule of thumb: if a column is something you'd SUM or COUNT, it likely belongs in a Fact table; if it's something you'd filter or group BY, it likely belongs in a Dimension table.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>35. Creating Relationships</h4>
+      <p>A relationship links two tables together using a common column (a key), so filtering one table correctly filters the other.</p>
+      <ul class="key-points">
+        <li>Switch to Model View &gt; drag a field from one table directly onto the matching field in another table to create the relationship visually.</li>
+        <li>Or use Home tab &gt; Manage Relationships &gt; New, and select the two tables and matching columns from dropdowns.</li>
+        <li>Power BI often auto-detects and creates relationships automatically when tables are first loaded, based on matching column names &ndash; always verify these are correct rather than assuming.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>36. Cardinality (One-to-Many, Many-to-Many, One-to-One)</h4>
+      <div class="badge-row"><span class="badge exam">Frequently Tested</span></div>
+      <p>Cardinality describes how many matching rows exist on each side of a relationship.</p>
+      <ul class="key-points">
+        <li><b>One-to-Many (1:*)</b> &ndash; the most common type; one row in a Dimension table (e.g. one Product) relates to many rows in the Fact table (e.g. many Sales of that product).</li>
+        <li><b>Many-to-Many (*:*)</b> &ndash; both tables can have multiple matching rows on each side; supported but should be used carefully, as it can produce ambiguous or unexpected results if not designed deliberately.</li>
+        <li><b>One-to-One (1:1)</b> &ndash; each row in one table matches exactly one row in the other; relatively rare, often signals the two tables could simply be merged into one.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>37. Cross Filter Direction</h4>
+      <div class="badge-row"><span class="badge exam">Frequently Tested</span></div>
+      <p>Controls which direction filtering "flows" across a relationship.</p>
+      <ul class="key-points">
+        <li><b>Single direction</b> (the default, and generally recommended) &ndash; filtering the "one" side (Dimension table) filters the "many" side (Fact table), but not the reverse.</li>
+        <li><b>Both directions (bi-directional)</b> &ndash; filtering flows both ways; needed for some specific scenarios (e.g. certain many-to-many designs), but can cause performance issues or ambiguous filtering if overused &ndash; use only when genuinely required.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>38. Managing Relationships</h4>
+      <ul class="key-points">
+        <li>Home tab &gt; Manage Relationships shows every relationship in the model in one list, allowing edits, deletion, or activation/deactivation.</li>
+        <li>Only ONE relationship between a given pair of tables can be "Active" (solid line in Model View) at a time; any additional relationships between the same two tables are "Inactive" (dashed line) and must be explicitly invoked in DAX using <code>USERELATIONSHIP</code>.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>39. Hierarchies</h4>
+      <p>A Hierarchy groups related columns into a drill-down structure, e.g. Year &rarr; Quarter &rarr; Month &rarr; Day, or Country &rarr; State &rarr; City &ndash; letting a report user drill from a high-level summary down into more and more detail on the same visual.</p>
+      <ul class="key-points">
+        <li>In the Fields pane, right-click a column &gt; "Create Hierarchy", then drag additional columns into it in the desired drill order.</li>
+        <li>Power BI automatically creates a built-in Date Hierarchy (Year/Quarter/Month/Day) for any column formatted as a Date.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part E &mdash; DAX Fundamentals</h2>
+
+    <div class="topic-note">
+      <h4>40. What is DAX?</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <p>DAX (Data Analysis Expressions) is Power BI's formula language, used to create custom calculations on top of the data model &ndash; similar in appearance to Excel formulas, but designed to work across entire tables and relationships rather than individual cells.</p>
+      <ul class="key-points">
+        <li>Every DAX formula returns a single value or a table, built from functions, operators, and references to columns/tables.</li>
+        <li>DAX is arguably the single most important, and most challenging, skill for a beginner to master in Power BI &ndash; this Part builds it up function by function.</li>
+        <li>All examples in this Part assume a <code>Sales</code> table (OrderDate, ProductID, CustomerID, Region, Quantity, UnitPrice, SalesAmount) related to <code>Products</code> and <code>Customers</code> dimension tables, following the star schema from Part D.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>41. Calculated Columns vs Measures</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span><span class="badge exam">Frequently Tested</span></div>
+      <p>The most important distinction in all of DAX &ndash; choosing the wrong one is the most common beginner mistake.</p>
+      <ul class="key-points">
+        <li><b>Calculated Column</b> &ndash; computed ROW BY ROW, at the time data is loaded/refreshed, and stored physically in the table (taking up memory). Used when you need a new column to filter, group, or slice by (e.g. categorizing each sale as "High" or "Low" value).</li>
+        <li><b>Measure</b> &ndash; computed ON THE FLY, only when used in a visual, based on whatever filters are currently applied (e.g. from slicers, other visuals). Not stored in the table &ndash; far more memory-efficient. Used for almost all aggregations (totals, averages, ratios).</li>
+        <li><b>Rule of thumb:</b> if the result should change depending on what's selected/filtered in a report, use a Measure. If it's a fixed, row-level classification, use a Calculated Column.</li>
+      </ul>
+      <pre class="code">-- Calculated Column example (creates a new column with a value per row):
+Order Year = YEAR(Sales[OrderDate])
+
+-- Measure example (creates a single aggregated value, sensitive to filters):
+Total Sales = SUM(Sales[SalesAmount])</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>42. Basic Aggregation Functions</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <p>The most commonly used functions, summarizing a column across many rows into one number &ndash; nearly every report uses several of these as Measures.</p>
+      <pre class="code">Total Sales = SUM(Sales[SalesAmount])
+Average Sale = AVERAGE(Sales[SalesAmount])
+Total Orders = COUNTROWS(Sales)              -- counts rows in the table
+Customer Count = DISTINCTCOUNT(Sales[CustomerID])
+Max Sale = MAX(Sales[SalesAmount])
+Min Sale = MIN(Sales[SalesAmount])
+Non-Blank Notes = COUNTA(Sales[Notes])       -- counts non-blank cells (any type)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>43. Logical Functions (IF, AND, OR, SWITCH)</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <pre class="code">-- IF: basic conditional logic
+Sale Size = IF(Sales[SalesAmount] > 1000, "Large", "Small")
+
+-- Nested IF using AND / OR for multiple conditions
+Priority = IF(
+    AND(Sales[SalesAmount] > 1000, Sales[Region] = "East"),
+    "High Priority",
+    "Normal"
+)
+
+-- SWITCH: cleaner than many nested IFs when checking one value against several options
+Size Category = SWITCH(
+    TRUE(),
+    Sales[SalesAmount] < 100, "Small",
+    Sales[SalesAmount] < 1000, "Medium",
+    "Large"
+)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>44. Text Functions</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <pre class="code">Full Name = Customers[FirstName] &amp; " " &amp; Customers[LastName]   -- &amp; concatenates text
+Full Name Alt = CONCATENATE(Customers[FirstName], Customers[LastName])
+Upper Region = UPPER(Sales[Region])
+Lower Region = LOWER(Sales[Region])
+First 3 Chars = LEFT(Customers[CustomerID], 3)
+Last 4 Chars = RIGHT(Customers[Phone], 4)
+Middle Chars = MID(Customers[Code], 2, 3)     -- starts at position 2, takes 3 characters
+Trimmed = TRIM(Customers[City])                -- removes extra leading/trailing spaces
+Text Length = LEN(Customers[FirstName])</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>45. Date &amp; Time Functions</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <pre class="code">Current Date = TODAY()
+Order Year = YEAR(Sales[OrderDate])
+Order Month = MONTH(Sales[OrderDate])
+Order Month Name = FORMAT(Sales[OrderDate], "MMMM")
+Days Since Order = DATEDIFF(Sales[OrderDate], TODAY(), DAY)
+Order Quarter = "Q" &amp; QUARTER(Sales[OrderDate])</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>46. Creating a Date Table</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span><span class="badge exam">Best Practice</span></div>
+      <p>A dedicated Date table (one row per calendar day, related to every date column in the model) is a Power BI best practice, required for Time Intelligence functions (Section 52) to work correctly.</p>
+      <ul class="key-points">
+        <li>Create with a DAX table function, then mark it as the official "Date Table" (Table Tools &gt; Mark as Date Table) so time intelligence functions know to use it.</li>
+      </ul>
+      <pre class="code">DateTable = CALENDAR(DATE(2023,1,1), DATE(2025,12,31))
+
+-- Then add helper columns for grouping/filtering:
+Year = YEAR(DateTable[Date])
+Month Name = FORMAT(DateTable[Date], "MMMM")
+Month Number = MONTH(DateTable[Date])</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>47. The CALCULATE Function</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span><span class="badge exam">Most Important DAX Function</span></div>
+      <p>CALCULATE is the single most powerful and important function in all of DAX &ndash; it evaluates an expression while overriding or adding filters to the current filter context. Nearly every advanced DAX formula uses CALCULATE somewhere.</p>
+      <ul class="key-points">
+        <li>Syntax: <code>CALCULATE(expression, filter1, filter2, ...)</code> &ndash; the expression is usually an aggregation; the filters add or replace the current context.</li>
+      </ul>
+      <pre class="code">-- Total sales, but ONLY for the East region, regardless of what's selected in the report:
+East Sales = CALCULATE(
+    SUM(Sales[SalesAmount]),
+    Sales[Region] = "East"
+)
+
+-- Total sales for the current selection, but ALWAYS in year 2024:
+Sales 2024 = CALCULATE(
+    SUM(Sales[SalesAmount]),
+    DateTable[Year] = 2024
+)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>48. The FILTER Function</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <p>FILTER returns a TABLE containing only the rows that meet a condition &ndash; used inside CALCULATE (or other functions expecting a table) when a simple column comparison isn't enough (e.g. comparing two columns to each other).</p>
+      <pre class="code">-- Total sales only from orders where Quantity is greater than 5:
+Bulk Order Sales = CALCULATE(
+    SUM(Sales[SalesAmount]),
+    FILTER(Sales, Sales[Quantity] > 5)
+)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>49. ALL &amp; ALLEXCEPT Functions</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <p>Used to deliberately REMOVE filters, most commonly to calculate a "% of total" that doesn't get affected by the very filters being applied to the current row/visual.</p>
+      <pre class="code">-- Grand total sales, ignoring any Region/Product filters currently applied:
+Grand Total Sales = CALCULATE(
+    SUM(Sales[SalesAmount]),
+    ALL(Sales)
+)
+
+-- % of Total: this row's sales divided by the grand total
+Percent of Total = DIVIDE(SUM(Sales[SalesAmount]), [Grand Total Sales])
+
+-- ALLEXCEPT: remove all filters EXCEPT the ones on the listed column(s)
+Sales by Region Only = CALCULATE(
+    SUM(Sales[SalesAmount]),
+    ALLEXCEPT(Sales, Sales[Region])
+)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>50. RELATED &amp; RELATEDTABLE Functions</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <ul class="key-points">
+        <li><b>RELATED</b> &ndash; pulls a single value from a related table on the "one" side of a relationship, into a calculated column on the "many" side. Used in calculated columns.</li>
+        <li><b>RELATEDTABLE</b> &ndash; the reverse: pulls the related rows from the "many" side into an expression on the "one" side, returning a table.</li>
+      </ul>
+      <pre class="code">-- In the Sales table (many side), pull the Category from the related Products table (one side):
+Product Category = RELATED(Products[Category])
+
+-- In the Products table (one side), count how many sales rows relate to each product:
+Times Sold = COUNTROWS(RELATEDTABLE(Sales))</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>51. Variables in DAX (VAR / RETURN)</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span><span class="badge exam">Best Practice</span></div>
+      <p>Variables store the result of an expression under a name, which can then be reused later in the same formula &ndash; making complex DAX both easier to read and faster to calculate (since the value is computed only once, not repeated).</p>
+      <pre class="code">Profit Margin % =
+VAR TotalRevenue = SUM(Sales[SalesAmount])
+VAR TotalCost = SUM(Sales[Cost])
+VAR Profit = TotalRevenue - TotalCost
+RETURN
+    DIVIDE(Profit, TotalRevenue)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>52. Time Intelligence Functions</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span><span class="badge exam">Frequently Tested</span></div>
+      <p>A family of built-in functions for common date-based comparisons, which require a proper Date Table (Section 46) marked and related to work correctly.</p>
+      <pre class="code">-- Year-to-Date total:
+Sales YTD = TOTALYTD(SUM(Sales[SalesAmount]), DateTable[Date])
+
+-- Same period, one year earlier (for year-over-year comparison):
+Sales LY = CALCULATE(
+    SUM(Sales[SalesAmount]),
+    SAMEPERIODLASTYEAR(DateTable[Date])
+)
+
+-- Generic shift by any interval, using DATEADD:
+Sales Prior Month = CALCULATE(
+    SUM(Sales[SalesAmount]),
+    DATEADD(DateTable[Date], -1, MONTH)
+)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>53. Common DAX Patterns</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span><span class="badge exam">Interview Favorite</span></div>
+      <p>Three patterns that combine the functions above and appear constantly in real dashboards and interviews.</p>
+      <pre class="code">-- Year-over-Year Growth %:
+YoY Growth % =
+VAR CurrentSales = SUM(Sales[SalesAmount])
+VAR PriorYearSales = CALCULATE(SUM(Sales[SalesAmount]), SAMEPERIODLASTYEAR(DateTable[Date]))
+RETURN
+    DIVIDE(CurrentSales - PriorYearSales, PriorYearSales)
+
+-- Running Total (cumulative sum over time):
+Running Total =
+CALCULATE(
+    SUM(Sales[SalesAmount]),
+    FILTER(ALL(DateTable), DateTable[Date] <= MAX(DateTable[Date]))
+)
+
+-- Rank within the current context (e.g. rank products by sales):
+Product Rank =
+RANKX(ALL(Products[ProductName]), [Total Sales])</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>54. DAX Context: Row Context vs Filter Context</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span><span class="badge exam">Conceptually Hardest Topic</span></div>
+      <p>Understanding "context" is what separates a beginner from an intermediate DAX writer &ndash; every DAX formula is evaluated within one (or both) of these two contexts.</p>
+      <ul class="key-points">
+        <li><b>Row Context</b> &ndash; exists when a formula is evaluated one row at a time (as in a Calculated Column, or inside iterator functions like FILTER/SUMX). DAX "knows" which row it's currently on.</li>
+        <li><b>Filter Context</b> &ndash; the set of filters currently applied to a calculation (from slicers, visual rows/columns, or CALCULATE) when a Measure is evaluated. This is why the same Measure formula shows a different number in every cell of a Matrix visual.</li>
+        <li>CALCULATE's special power is that it can transform Row Context into Filter Context &ndash; this is precisely why it's so central to advanced DAX.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part F &mdash; Visualizations</h2>
+
+    <div class="topic-note">
+      <h4>55. Introduction to Visualizations</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>A visual is any chart, table, or card placed on a report page. Building one always follows the same basic pattern: click a visual type in the Visualizations pane, then drag fields from the Fields pane into its Values/Axis/Legend wells.</p>
+      <ul class="key-points">
+        <li>Choosing the RIGHT visual for the data and question being asked is as important as building it correctly &ndash; this Part covers when to use each type.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>56. Bar &amp; Column Charts</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>The most common and easiest-to-read chart for comparing values across categories.</p>
+      <ul class="key-points">
+        <li><b>Clustered/Stacked Column Chart</b> &ndash; vertical bars; best for comparing values across a small-to-medium number of categories, especially over time (left-to-right reads naturally as a timeline).</li>
+        <li><b>Clustered/Stacked Bar Chart</b> &ndash; horizontal bars; best when category names are long (they read left-to-right without being squeezed), or when there are many categories to list.</li>
+        <li>"Stacked" shows parts of a whole within each bar; "Clustered" shows separate side-by-side bars per category, easier for direct comparison between series.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>57. Line Charts</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Best for showing a trend over a continuous range, almost always time (e.g. Sales by Month) &ndash; the connecting line emphasizes the direction and rate of change, which bars do not show as clearly.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>58. Pie &amp; Donut Charts</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Show each category's proportion of a whole. Best practice: use only with a SMALL number of categories (5 or fewer) &ndash; with many slices, a bar chart is almost always easier to read accurately.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>59. Tables and Matrix</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <ul class="key-points">
+        <li><b>Table</b> &ndash; a simple flat grid of rows and columns, like a spreadsheet; good for showing detailed, row-level data.</li>
+        <li><b>Matrix</b> &ndash; like a Pivot Table in Excel; supports both rows AND columns as groupings, with automatic subtotals, and supports drill-down (Section 72) into hierarchies.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>60. Cards &amp; KPI Visuals</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <ul class="key-points">
+        <li><b>Card</b> &ndash; displays one single number prominently (e.g. Total Sales), great for headline metrics at the top of a dashboard.</li>
+        <li><b>Multi-row Card</b> &ndash; displays several single values together in a list.</li>
+        <li><b>KPI Visual</b> &ndash; displays one value against a target/goal, with a trend indicator (arrow up/down) and a small trendline showing progress over time.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>61. Maps</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <ul class="key-points">
+        <li><b>Map (bubble map)</b> &ndash; plots data as sized circles/bubbles at geographic points (e.g. cities, countries).</li>
+        <li><b>Filled Map (Choropleth)</b> &ndash; shades entire geographic regions (e.g. states/countries) by color intensity based on a value.</li>
+        <li>Requires a geographic column (Country, State, City, Postal Code) recognized by Power BI's geocoding &ndash; setting the column's Data Category (right-click &gt; Data Category) improves accuracy.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>62. Treemap</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Shows hierarchical, proportional data as nested rectangles &ndash; rectangle size represents value, making it easy to spot the largest contributors at a glance, similar in purpose to a pie chart but scaling better to more categories.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>63. Scatter Chart</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Plots two numeric measures against each other (X and Y axis) to reveal correlation or clustering patterns &ndash; can add a third measure as bubble size, and a category as "Play Axis" to animate change over time.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>64. Waterfall Chart</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Shows how a starting value is increased and decreased by a sequence of positive/negative changes to reach a final value &ndash; ideal for showing profit bridges (Revenue &rarr; minus Costs &rarr; equals Profit) or month-over-month changes.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>65. Gauge Chart</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Shows a single value against a minimum, maximum, and target, displayed as a needle on a dial &ndash; commonly used for goal-tracking metrics like "% of Sales Target Achieved".</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>66. Slicers</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>A visual filter control placed directly on the report canvas, letting the report VIEWER interactively filter every other visual on the page by clicking a value (e.g. a Region slicer with buttons for East/West/North/South).</p>
+      <ul class="key-points">
+        <li>Can be a list, dropdown, or (for numeric/date fields) a between-range slider.</li>
+        <li>Slicers can be synced to apply across multiple report pages at once (Section 76).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>67. Custom Visuals from AppSource</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Beyond the built-in visual types, thousands of additional visuals (word clouds, advanced charts, custom KPI cards) are available free from Microsoft AppSource.</p>
+      <ul class="key-points">
+        <li>Visualizations pane &gt; "..." (Get more visuals) &gt; search AppSource, or import a downloaded <code>.pbiviz</code> file directly.</li>
+        <li>Use official/well-reviewed visuals when possible, since custom visuals can carry data privacy or performance considerations in a corporate environment.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part G &mdash; Formatting &amp; Interactivity</h2>
+
+    <div class="topic-note">
+      <h4>68. Formatting Visuals</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Every visual has a Format pane (the paint-roller icon in Visualizations) with extensive options to make it clear and presentable.</p>
+      <ul class="key-points">
+        <li><b>Title</b> &ndash; text, font, size, background, alignment.</li>
+        <li><b>Data Labels</b> &ndash; toggle on to show the actual value on/near each bar, point, or slice.</li>
+        <li><b>Colors</b> &ndash; set per-series or per-data-point colors under "Data colors".</li>
+        <li><b>Axis</b> &ndash; control gridlines, min/max range, axis title visibility.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>69. Conditional Formatting</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Automatically changes a visual's appearance (background color, font color, data bars, icons) based on the underlying value &ndash; makes tables and matrices far easier to scan for outliers at a glance.</p>
+      <ul class="key-points">
+        <li>On a Table/Matrix column: click the column's formatting options &gt; Conditional Formatting &gt; choose Background Color, Font Color, Data Bars, or Icons.</li>
+        <li>Rules can be based on a color scale (e.g. red-yellow-green by value), fixed rules, or another measure entirely.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>70. Tooltips</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>The popup that appears when hovering over a data point &ndash; can be customized to show extra fields beyond the default, or replaced entirely with a custom mini-report page ("Report Page Tooltip") for a richer hover preview.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>71. Visual-Level, Page-Level &amp; Report-Level Filters</h4>
+      <div class="badge-row"><span class="badge exam">Frequently Tested</span></div>
+      <p>The Filters pane has three sections, controlling the SCOPE a filter applies to &ndash; a commonly tested distinction.</p>
+      <ul class="key-points">
+        <li><b>Filters on this visual</b> &ndash; applies only to the one selected visual.</li>
+        <li><b>Filters on this page</b> &ndash; applies to every visual on the current report page.</li>
+        <li><b>Filters on all pages</b> &ndash; applies across the entire report, every page.</li>
+        <li>Filters can be locked (so report viewers can't change them) or left open for interactive exploration.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>72. Drill Down &amp; Drill Up</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>When a visual uses a Hierarchy (Section 39), small drill arrows appear, letting a viewer click into the next level of detail (e.g. from Year down to Quarter, then Month) directly within the same visual, without navigating to a different page.</p>
+      <ul class="key-points">
+        <li>The double-down-arrow icon enables "drill down one level for all"; the single-down-arrow drills into just the clicked data point.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>73. Drillthrough Pages</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>A special report page configured to show detailed information about ONE specific selected item (e.g. right-click a Product in a summary chart &gt; Drillthrough &gt; "Product Details" page, which then filters entirely to that one product).</p>
+      <ul class="key-points">
+        <li>Set up by dragging a field into the "Drillthrough" well in the Format pane of the target page.</li>
+        <li>A "Back" button is added automatically, to return to the originating page.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>74. Bookmarks &amp; Selection Pane</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <ul class="key-points">
+        <li><b>Bookmarks</b> &ndash; save the exact current state of a report page (filter selections, which visuals are visible, sort order) so it can be instantly recalled later, e.g. by a button &ndash; used to build guided, presentation-style navigation through a report.</li>
+        <li><b>Selection Pane</b> &ndash; lists every object on the page and lets you show/hide them individually, useful for building bookmark-driven "toggle" effects (e.g. switching between two different chart views on the same spot).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>75. Buttons &amp; Navigation</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Buttons can be added (Insert tab &gt; Buttons) and configured with an Action (e.g. "Page Navigation", "Bookmark", or "Back") to build a custom, app-like navigation experience across report pages.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>76. Syncing Slicers Across Pages</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>By default, a slicer only filters visuals on its own page. The Sync Slicers pane (View tab &gt; Sync Slicers) allows one slicer's selection to apply across multiple (or all) report pages at once, keeping filter selections consistent as a viewer navigates the report.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>77. Sorting Visuals</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p>Every visual can be sorted independently of how the underlying data was cleaned/sorted in Power Query &ndash; this is the "final report sorting" controlled directly on each visual, referenced back in Section 20.</p>
+      <ul class="key-points">
+        <li>Select a visual &gt; click the "..." (More options) menu &gt; "Sort by" &gt; choose the field, then toggle ascending/descending.</li>
+        <li>For a chart/table axis, this determines the left-to-right or top-to-bottom order of categories &ndash; e.g. sorting a bar chart by the measure value (largest first) instead of alphabetically by category name.</li>
+        <li>A column can also be sorted "by another column" (right-click a column in the Fields pane &gt; Sort by Column) &ndash; e.g. sorting "Month Name" (Jan, Feb, Mar...) chronologically instead of alphabetically, by linking it to a numeric Month Number column.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part H &mdash; Power BI Service (Cloud)</h2>
+
+    <div class="topic-note">
+      <h4>78. Introduction to Power BI Service</h4>
+      <div class="badge-row"><span class="badge service">Service</span></div>
+      <p>The Power BI Service (app.powerbi.com) is the cloud platform where reports built in Desktop are published, so they can be viewed in a browser, shared with colleagues, refreshed on a schedule, and combined into dashboards &ndash; Desktop is for BUILDING, the Service is for SHARING and CONSUMING.</p>
+      <ul class="key-points">
+        <li>A free Power BI account allows creating a personal workspace; sharing content with others generally requires a Power BI Pro license (or Premium capacity for the organization).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>79. Publishing Reports to the Service</h4>
+      <div class="badge-row"><span class="badge service">Service</span></div>
+      <ul class="key-points">
+        <li>In Power BI Desktop: Home tab &gt; Publish &gt; sign in &gt; choose the destination workspace.</li>
+        <li>This uploads both the report (the visuals/pages) AND the underlying dataset (the data model) as a linked pair to the Service.</li>
+      </ul>
+      <pre class="code">Home tab -> Publish
+Select a destination: "Sales Analytics" workspace
+Click "Select" -> wait for upload to complete -> click the link to open in browser</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>80. Workspaces</h4>
+      <div class="badge-row"><span class="badge service">Service</span></div>
+      <p>A Workspace is a container in the Service for organizing related reports, datasets, and dashboards &ndash; similar to a folder, but with its own set of members and permission levels.</p>
+      <ul class="key-points">
+        <li><b>My Workspace</b> &ndash; a personal, private area every user gets automatically, for individual work.</li>
+        <li><b>App Workspaces</b> &ndash; shared, collaborative workspaces for a team or department, with defined roles: Admin, Member, Contributor, Viewer.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>81. Dashboards vs Reports</h4>
+      <div class="badge-row"><span class="badge service">Service</span><span class="badge exam">Frequently Tested</span></div>
+      <p>Two related but distinct concepts, only in the Service (Desktop only has Reports) &ndash; a commonly tested distinction.</p>
+      <ul class="key-points">
+        <li><b>Report</b> &ndash; the multi-page, fully interactive set of visuals built in Desktop, with working filters/slicers/drillthrough &ndash; exists in both Desktop and the Service.</li>
+        <li><b>Dashboard</b> &ndash; a SINGLE page, built only in the Service, composed of "tiles" PINNED from one or more different reports (even from different datasets) &ndash; a single-screen, high-level summary view. Dashboard tiles are mostly static (click one to jump to the full underlying report).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>82. Sharing Reports &amp; Dashboards</h4>
+      <div class="badge-row"><span class="badge service">Service</span></div>
+      <ul class="key-points">
+        <li><b>Share</b> &ndash; grants specific individuals or groups direct access to view (and optionally edit) a report/dashboard.</li>
+        <li><b>Publish to Web</b> &ndash; generates a public, embeddable link viewable by anyone with the URL, with NO login required &ndash; use with caution, only for genuinely public, non-sensitive data.</li>
+        <li>Workspace-level access (Section 80) is often preferred over sharing individual reports, for easier ongoing permission management.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>83. Power BI Gateway (On-Premises Data Gateway)</h4>
+      <div class="badge-row"><span class="badge service">Service</span></div>
+      <p>A small application installed on a machine within an organization's own network, acting as a secure bridge that lets the cloud Power BI Service refresh data from on-premises sources (a local SQL Server, an on-premises file share) that the cloud cannot reach directly.</p>
+      <ul class="key-points">
+        <li><b>Personal Gateway</b> &ndash; for one user's own scheduled refreshes on their own machine.</li>
+        <li><b>Standard (Enterprise) Gateway</b> &ndash; a shared, centrally managed gateway supporting many users and data sources across an organization.</li>
+        <li>Without a Gateway, a dataset connected to any on-premises source can only be refreshed manually within Desktop, not automatically in the cloud.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>84. Scheduled Refresh</h4>
+      <div class="badge-row"><span class="badge service">Service</span></div>
+      <p>Automatically re-imports the latest data from the source(s) on a defined schedule (e.g. daily at 6 AM), so a published report stays up to date without anyone manually republishing it.</p>
+      <ul class="key-points">
+        <li>Configured in the Service: Dataset &gt; Settings &gt; Scheduled Refresh &ndash; set frequency and time(s) of day.</li>
+        <li>Refresh frequency limits depend on license: Pro allows up to 8 refreshes/day; Premium capacity allows up to 48/day.</li>
+        <li>Only relevant for "Import" mode datasets (Section 13) &ndash; DirectQuery/Live Connection datasets query the source live, so there's nothing to "refresh" in the same sense.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>85. Row-Level Security (RLS)</h4>
+      <div class="badge-row"><span class="badge service">Service</span><span class="badge exam">Frequently Tested</span></div>
+      <p>Restricts which ROWS of data different users can see within the SAME published report, based on their identity &ndash; e.g. a Regional Manager for "East" only sees East region data, while an Admin sees everything, all from one single report.</p>
+      <ul class="key-points">
+        <li>Defined in Desktop: Modeling tab &gt; Manage Roles &gt; create a role (e.g. "East Manager") with a DAX filter expression, e.g. <code>[Region] = "East"</code>.</li>
+        <li>After publishing, assign specific users/groups to each role in the Service: Dataset &gt; Security.</li>
+      </ul>
+      <pre class="code">-- RLS DAX filter expression for a role named "East Manager", applied to the Sales table:
+[Region] = "East"
+
+-- A more dynamic version using the logged-in user's email, matched against a mapping table:
+[UserEmail] = USERPRINCIPALNAME()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>86. Power BI Mobile App</h4>
+      <div class="badge-row"><span class="badge service">Service</span></div>
+      <p>The mobile apps (iOS/Android/Windows) let users view published reports and dashboards, receive data-driven alerts (e.g. notify me if Sales drops below a threshold), and even annotate/share a visual directly from their phone.</p>
+    </div>
+
+    <div class="topic-note">
+      <h4>87. Power BI Apps (Packaged App Workspaces)</h4>
+      <div class="badge-row"><span class="badge service">Service</span></div>
+      <p>A "distribution" feature that packages the reports/dashboards from a Workspace into a clean, read-only, app-like experience for end users to install &ndash; hiding the editing/workspace clutter and presenting only a polished, organized set of content, ideal for distributing finished reports company-wide.</p>
+    </div>
+
+    <h2 class="part-title">Part I &mdash; Best Practices &amp; Performance</h2>
+
+    <div class="topic-note">
+      <h4>88. Data Modeling Best Practices</h4>
+      <div class="badge-row"><span class="badge exam">Best Practice</span></div>
+      <ul class="key-points">
+        <li>Always aim for a Star Schema (Section 33) &ndash; keep dimension tables small and simple, and put all measurable numbers in one central fact table.</li>
+        <li>Remove columns you don't actually need in Power Query (Section 16) BEFORE loading &ndash; every unused column still consumes memory and slows down refresh.</li>
+        <li>Use a dedicated Date Table (Section 46) rather than relying only on the auto-generated date hierarchies, especially once Time Intelligence is needed.</li>
+        <li>Prefer Measures over Calculated Columns whenever the result depends on filtering (Section 41) &ndash; Measures are calculated on demand and don't bloat the model's stored size.</li>
+        <li>Set correct data types for every column (Section 17) &ndash; a numeric column stored as Text cannot be summed and will silently produce wrong/blank results in visuals.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>89. DAX Performance Tips</h4>
+      <div class="badge-row"><span class="badge exam">Best Practice</span></div>
+      <ul class="key-points">
+        <li>Use <code>DIVIDE(numerator, denominator)</code> instead of a plain <code>/</code> division &ndash; DIVIDE gracefully returns blank (or a specified alternate value) instead of an error when dividing by zero.</li>
+        <li>Use Variables (Section 51) to avoid recalculating the same expression multiple times within one formula.</li>
+        <li>Avoid using bi-directional cross-filtering (Section 37) unless genuinely necessary &ndash; it can slow down calculations across a large model.</li>
+        <li>Prefer <code>COUNTROWS(table)</code> over <code>COUNT(column)</code> when simply counting rows &ndash; it's a lighter, more direct operation.</li>
+        <li>Avoid calculated columns that could instead be done once in Power Query (during data load) &ndash; Power Query transformations are generally more efficient than row-by-row DAX calculated columns for the same result.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>90. Report Design Best Practices</h4>
+      <div class="badge-row"><span class="badge exam">Best Practice</span></div>
+      <ul class="key-points">
+        <li>Keep each report page focused on one clear question or audience &ndash; avoid cramming every possible chart onto a single page.</li>
+        <li>Place the most important KPI Cards at the top-left, since that's where a viewer's eye naturally goes first.</li>
+        <li>Use consistent colors for the same category across every visual in the report (e.g. "East" region is always the same shade of blue everywhere).</li>
+        <li>Avoid pie charts with more than 5 slices (Section 58) &ndash; use a bar chart instead for easier comparison.</li>
+        <li>Always add clear titles and axis labels &ndash; a chart with no context is not self-explanatory to a viewer seeing it for the first time.</li>
+        <li>Test the report's slicers and filters as an actual end user would, not just as the report's own designer, to catch confusing or broken interactions.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part J &mdash; Quick Reference</h2>
+
+    <div class="topic-note">
+      <h4>DAX Function Cheat Sheet</h4>
+      <table class="quick-ref">
+        <tr><th>Category</th><th>Function</th><th>Purpose</th></tr>
+        <tr><td>Aggregation</td><td>SUM, AVERAGE, MIN, MAX</td><td>Basic column aggregation</td></tr>
+        <tr><td>Aggregation</td><td>COUNTROWS, COUNT, COUNTA, DISTINCTCOUNT</td><td>Counting rows/values</td></tr>
+        <tr><td>Logical</td><td>IF, SWITCH, AND, OR</td><td>Conditional logic</td></tr>
+        <tr><td>Text</td><td>CONCATENATE, LEFT, RIGHT, MID, UPPER, LOWER, TRIM</td><td>Text manipulation</td></tr>
+        <tr><td>Date</td><td>TODAY, YEAR, MONTH, DATEDIFF, FORMAT</td><td>Date extraction/formatting</td></tr>
+        <tr><td>Filter Context</td><td>CALCULATE, FILTER</td><td>Modify/apply filter context</td></tr>
+        <tr><td>Filter Removal</td><td>ALL, ALLEXCEPT, ALLSELECTED</td><td>Remove existing filters</td></tr>
+        <tr><td>Relationships</td><td>RELATED, RELATEDTABLE, USERELATIONSHIP</td><td>Navigate/activate relationships</td></tr>
+        <tr><td>Time Intelligence</td><td>TOTALYTD, SAMEPERIODLASTYEAR, DATEADD</td><td>Period-based comparisons</td></tr>
+        <tr><td>Safety</td><td>DIVIDE</td><td>Division with safe zero-handling</td></tr>
+        <tr><td>Ranking</td><td>RANKX</td><td>Rank values within a context</td></tr>
+        <tr><td>Table Creation</td><td>CALENDAR, CALENDARAUTO</td><td>Build a Date table</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>Power Query vs DAX: When to Use Which</h4>
+      <table class="quick-ref">
+        <tr><th>Task</th><th>Best Tool</th><th>Why</th></tr>
+        <tr><td>Removing duplicate rows</td><td>Power Query</td><td>Data-shaping task, done once at load time</td></tr>
+        <tr><td>Combining two tables permanently</td><td>Power Query (Merge/Append)</td><td>Structural change to the data itself</td></tr>
+        <tr><td>A running total that changes with filters</td><td>DAX (Measure)</td><td>Must respond dynamically to report interaction</td></tr>
+        <tr><td>Fixed row-level classification (e.g. "Large"/"Small")</td><td>Either - but DAX Calculated Column if it needs relationships</td><td>Power Query is generally lighter if no relationship is needed</td></tr>
+        <tr><td>Year-over-Year growth %</td><td>DAX (Measure)</td><td>Depends entirely on current filter/selection context</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>Visual Selection Guide</h4>
+      <table class="quick-ref">
+        <tr><th>You want to show...</th><th>Use this visual</th></tr>
+        <tr><td>Comparison across categories</td><td>Bar or Column Chart</td></tr>
+        <tr><td>Trend over time</td><td>Line Chart</td></tr>
+        <tr><td>Proportion of a whole (few categories)</td><td>Pie or Donut Chart</td></tr>
+        <tr><td>Proportion of a whole (many categories)</td><td>Treemap</td></tr>
+        <tr><td>One headline number</td><td>Card</td></tr>
+        <tr><td>Progress toward a target</td><td>Gauge or KPI Visual</td></tr>
+        <tr><td>Detailed row-level data</td><td>Table</td></tr>
+        <tr><td>Cross-tabulated summary with subtotals</td><td>Matrix</td></tr>
+        <tr><td>Geographic distribution</td><td>Map or Filled Map</td></tr>
+        <tr><td>Correlation between two numeric measures</td><td>Scatter Chart</td></tr>
+        <tr><td>A value increasing/decreasing in steps to a total</td><td>Waterfall Chart</td></tr>
+      </table>
+    </div>
+
+    <h2 class="part-title">Part K &mdash; Assignments with Full Solutions</h2>
+
+    <div class="instructions">
+      <b>Practice Dataset:</b> All assignments below use the same simple scenario introduced in Part E: a <code>Sales</code> table (OrderDate, ProductID, CustomerID, Region, Quantity, UnitPrice, SalesAmount, Cost) related to a <code>Products</code> table (ProductID, ProductName, Category) and a <code>Customers</code> table (CustomerID, CustomerName, Region, Email). Recreate this as a simple Excel workbook with 3 sheets to follow along, or substitute any similar sales dataset you have.
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 1 &mdash; Import &amp; Clean Data with Power Query</h4>
+      <div class="badge-row"><span class="badge query">Power Query</span></div>
+      <p><b>Task:</b> Import the Sales sheet. Remove any completely blank rows, ensure OrderDate is a proper Date type and SalesAmount is Decimal, rename "Qty" to "Quantity", and add a Custom Column "Total Before Discount" as Quantity &times; UnitPrice.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Home tab -> Get Data -> Excel Workbook -> select SalesData.xlsx
+   -> Navigator: check "Sales" -> click "Transform Data"
+
+2. In Power Query Editor:
+   Home tab -> Remove Rows -> Remove Blank Rows
+
+3. Click the OrderDate column header's data type icon -> select "Date"
+   Click the SalesAmount column header's data type icon -> select "Decimal Number"
+
+4. Right-click the "Qty" column header -> Rename -> type "Quantity"
+
+5. Add Column tab -> Custom Column
+   New column name: Total Before Discount
+   Formula: = [Quantity] * [UnitPrice]
+   Click OK
+
+6. Home tab -> Close &amp; Apply</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 2 &mdash; Build a Star Schema Data Model</h4>
+      <div class="badge-row"><span class="badge query">Data Modeling</span></div>
+      <p><b>Task:</b> After loading Sales, Products, and Customers, build the correct relationships so that filtering by Product Category or Customer Region correctly filters the Sales table. Verify cardinality and cross-filter direction are set appropriately.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Switch to Model View (left-side icons).
+
+2. Drag ProductID from the Products table onto ProductID in the Sales table.
+   -> A relationship line appears. Double-click it to confirm:
+      Cardinality: One to Many (1 Product : Many Sales rows)
+      Cross filter direction: Single (Products filters Sales)
+
+3. Drag CustomerID from the Customers table onto CustomerID in the Sales table.
+   -> Confirm the same way: One to Many, Single direction.
+
+4. Result: Sales sits in the middle as the Fact table, with Products and
+   Customers as Dimension tables around it - a correct Star Schema.
+
+5. Test it: go to Report View, add a Table visual with Products[Category]
+   and a "Total Sales" measure - each category should show its own correct
+   total, proving the relationship filters correctly.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 3 &mdash; Write Core DAX Measures for a Sales Dashboard</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <p><b>Task:</b> Write measures for Total Sales, Total Cost, Profit, Profit Margin %, Average Order Value, and Total Orders.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">Total Sales = SUM(Sales[SalesAmount])
+
+Total Cost = SUM(Sales[Cost])
+
+Total Profit = [Total Sales] - [Total Cost]
+
+Profit Margin % = DIVIDE([Total Profit], [Total Sales])
+
+Total Orders = COUNTROWS(Sales)
+
+Average Order Value = DIVIDE([Total Sales], [Total Orders])
+
+-- Test each by adding them to Card visuals, then add a Region slicer
+-- and confirm every card's number updates correctly when a Region is selected.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 4 &mdash; Time Intelligence: YTD and YoY Growth</h4>
+      <div class="badge-row"><span class="badge dax">DAX</span></div>
+      <p><b>Task:</b> Create a proper Date table, mark it as the official date table, then write measures for Year-to-Date Sales and Year-over-Year Growth %.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Create the Date table:
+   New Table = CALENDAR(DATE(2023,1,1), DATE(2025,12,31))
+
+2. Add helper columns to it:
+   Year = YEAR('New Table'[Date])
+   Month Name = FORMAT('New Table'[Date], "MMMM")
+
+3. Rename the table to "DateTable". In Model View, relate
+   DateTable[Date] (one side) to Sales[OrderDate] (many side).
+
+4. Select DateTable -> Table Tools tab -> Mark as Date Table -> choose the Date column.
+
+5. Write the measures:
+Sales YTD = TOTALYTD([Total Sales], DateTable[Date])
+
+Sales Same Period Last Year =
+CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DateTable[Date]))
+
+YoY Growth % =
+VAR CurrentSales = [Total Sales]
+VAR PriorYear = [Sales Same Period Last Year]
+RETURN
+    DIVIDE(CurrentSales - PriorYear, PriorYear)
+
+6. Test by adding DateTable[Year] and DateTable[Month Name] to a Matrix
+   row, with all three measures as values - Sales YTD should accumulate
+   within each year and reset at the next.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 5 &mdash; Build a Complete One-Page Sales Dashboard</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p><b>Task:</b> Using the measures from Assignments 3-4, build one polished report page with: 3 KPI Cards at the top (Total Sales, Total Profit, Profit Margin %), a Line Chart of Sales by Month, a Bar Chart of Sales by Product Category, a Map of Sales by Region, and a Region Slicer that filters everything.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. Insert 3 Card visuals along the top of the page:
+   Card 1: [Total Sales]      Card 2: [Total Profit]      Card 3: [Profit Margin %]
+
+2. Insert a Line Chart below them:
+   Axis: DateTable[Month Name] (or the Date Hierarchy)   Values: [Total Sales]
+
+3. Insert a Clustered Bar Chart next to it:
+   Axis: Products[Category]   Values: [Total Sales]
+   "..." menu -> Sort by -> Total Sales -> Descending (Section 77)
+
+4. Insert a Filled Map:
+   Location: Customers[Region]   Color saturation: [Total Sales]
+
+5. Insert a Slicer:
+   Field: Sales[Region] (or Customers[Region])
+   Place it on the left side of the page, spanning the full height
+
+6. Click each visual and confirm clicking a value in the Region slicer
+   updates all 5 other visuals simultaneously - this cross-filtering
+   is automatic once the data model relationships (Assignment 2) are correct.
+
+7. Format tab: add a report title text box "Sales Performance Dashboard"
+   at the very top, and apply a consistent color theme (View tab -> Themes).</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 6 &mdash; Set Up Row-Level Security</h4>
+      <div class="badge-row"><span class="badge service">Power BI Service</span></div>
+      <p><b>Task:</b> Configure Row-Level Security so that a "East Manager" role only ever sees Sales data for the East region, while an unrestricted "Admin" role sees everything.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">1. In Power BI Desktop: Modeling tab -> Manage Roles -> Create
+
+2. Role name: East Manager
+   Table: Sales
+   DAX filter expression: [Region] = "East"
+   Click Save
+
+3. (No role/filter needed for unrestricted access - simply don't assign
+   any users needing full access to a restricted role.)
+
+4. Modeling tab -> View As -> tick "East Manager" -> OK
+   -> Confirm every visual on the report now shows ONLY East region data,
+      even though no slicer is selecting it - this proves RLS is working
+      at the data model level, beneath the report visuals.
+
+5. Publish to the Service, then in app.powerbi.com:
+   Go to the Workspace -> find the dataset -> "..." -> Security
+   -> next to "East Manager", add the specific email addresses/group that
+      should be restricted to East-only data -> Save</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 7 &mdash; Drillthrough Page and Bookmark Navigation</h4>
+      <div class="badge-row"><span class="badge viz">Visuals</span></div>
+      <p><b>Task:</b> Build a "Product Details" drillthrough page that a user reaches by right-clicking any product in the main dashboard, then add two bookmark-driven buttons that toggle between showing the Bar Chart view and the Table view of the same data.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">-- Drillthrough page:
+1. Insert a new report page, rename it "Product Details".
+2. Add a Table visual showing Sales[OrderDate], Sales[Quantity], Sales[SalesAmount]
+   for the drilled-into product, plus a Card showing [Total Sales].
+3. In the Filters pane for this page, drag Products[ProductName] into the
+   "Drillthrough" well (under Format pane -> Page Information, or the
+   Drillthrough section directly in the Filters pane).
+4. Go back to the main dashboard -> right-click any bar in the Product
+   Category chart -> Drillthrough -> "Product Details" should now appear
+   as an option, filtered to that exact product.
+
+-- Bookmark toggle buttons:
+1. On the main dashboard, place both the Bar Chart and the Table visual
+   in the exact same position, overlapping.
+2. View tab -> Bookmarks pane -> select only the Table -> in the Selection
+   pane, hide the Bar Chart (eye icon) -> click "Add" in Bookmarks,
+   name it "Table View".
+3. Now hide the Table and show the Bar Chart instead -> click "Add" again,
+   name it "Chart View".
+4. Insert two Buttons (Insert tab -> Buttons -> Blank), label them
+   "Table View" and "Chart View".
+5. Select each button -> Format pane -> Action -> Type: Bookmark
+   -> Bookmark: choose the matching bookmark for that button.
+6. Test: clicking each button should now instantly swap between the
+   Table and the Bar Chart in the same spot on the page.</pre>
+    </div>
+
+    <div class="notes">
+      <strong>Study Summary:</strong> Power BI mastery follows the same six-step workflow every time (Section 6): Get Data, Transform in Power Query, Model relationships as a Star Schema, Calculate with DAX, Visualize with the right chart for each question, and Publish &amp; Share through the Service. The hardest concept for beginners is almost always DAX context (Section 54) and the CALCULATE function (Section 47) &ndash; revisit those sections and Assignments 3-4 until writing a measure feels natural, since everything else in Power BI builds on that foundation. Complete all seven assignments in Part K in order, each building on the last, to end with a fully working, securely shared, professional sales dashboard exactly like one built in a real Data Analyst role.
+    </div>
+  </div>
+</body>
+</html>
