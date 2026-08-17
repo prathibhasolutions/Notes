@@ -1,0 +1,2172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI &amp; Machine Learning Complete Notes - Beginner to Job-Ready</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .meta div span {
+      color: #7c8fa0;
+      font-size: 7.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: #8a5c1f; }
+
+    h2.part-title {
+      margin: 4.5mm 0 2.4mm;
+      font-size: 11.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: linear-gradient(90deg, #0f5f7f, #124a76);
+      border-radius: 1.3mm;
+      padding: 2mm 2.6mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-block ol {
+      margin: 0;
+      padding-left: 5.2mm;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+    }
+
+    .notes {
+      margin-top: 3mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      position: relative;
+      z-index: 1;
+      background: #fafcff;
+      font-size: 9pt;
+    }
+
+    .topic-note {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-note p {
+      margin: 0 0 1.5mm;
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: #304556;
+    }
+
+    .key-points {
+      margin: 1.3mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1mm;
+      font-size: 7.9pt;
+      line-height: 1.4;
+      color: #314759;
+    }
+
+    .code {
+      margin: 1.3mm 0 0;
+      border: 1px solid #d9e5ef;
+      border-left: 2mm solid #0f5f7f;
+      border-radius: 1mm;
+      background: #fffdf8;
+      color: #203040;
+      padding: 2mm;
+      font-size: 7.6pt;
+      line-height: 1.42;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+      margin: 1mm 0 0;
+    }
+
+    .badge {
+      font-size: 7.3pt;
+      color: #0f5f7f;
+      border: 1px solid #bcd7e2;
+      background: #eef7fb;
+      border-radius: 3mm;
+      padding: 0.8mm 2.2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .badge.math { color: #8a5c1f; border-color: #e3cfa8; background: #fdf6ea; }
+    .badge.code { color: #1f7a4d; border-color: #b9dfc7; background: #ecfaf1; }
+    .badge.dl { color: #6a3b96; border-color: #d6c2ea; background: #f6f0fb; }
+    .badge.job { color: #a13a3a; border-color: #e8b9b9; background: #fdf1f1; }
+
+    .assign-block {
+      border: 1px solid #d6e0ea;
+      border-left: 2mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      background: #fffefb;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .assign-block h4 { color: #8a5c1f; }
+
+    .assign-block .solution-label {
+      display: inline-block;
+      margin: 1.6mm 0 0.8mm;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0f5f7f;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid #bcd7e2;
+      padding-bottom: 0.6mm;
+    }
+
+    .quick-ref {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.5pt;
+      margin-top: 1mm;
+    }
+
+    .quick-ref th, .quick-ref td {
+      border: 1px solid var(--soft);
+      padding: 1mm 1.5mm;
+      text-align: left;
+    }
+
+    .quick-ref th {
+      background: #eef5fa;
+      color: #124a76;
+      text-transform: uppercase;
+      font-size: 7pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">AI &amp; Machine Learning Complete Notes</div>
+        <div class="subtitle">From Python Basics to Deep Learning &bull; Beginner to Job-Ready &bull; Full Code + Assignments</div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><span>Name</span>&nbsp;</div>
+      <div><span>Class / Roll No.</span>&nbsp;</div>
+      <div><span>Date</span>&nbsp;</div>
+    </div>
+
+    <div class="instructions">
+      <b>Study Note:</b> These notes take a complete beginner (assumed to know basic Python) all the way to job-ready in Machine Learning: math and statistics foundations, data preprocessing, every major supervised and unsupervised algorithm, model evaluation, neural networks and deep learning, NLP, and model deployment. Every topic includes a plain-English <b>definition</b>, complete <b>runnable Python code</b> using real, verified libraries (NumPy, Pandas, Scikit-learn, TensorFlow/Keras), and an explanation of what it does and why it matters. A full set of <b>coding assignments with complete solutions</b> is provided at the end, culminating in a guided end-to-end project exactly like one built for a Data Scientist / ML Engineer job application.
+    </div>
+
+    <h2 class="part-title">Part A &mdash; Foundations: What is AI/ML?</h2>
+
+    <div class="topic-note">
+      <h4>1. What is AI, ML, and Deep Learning?</h4>
+      <p>These three terms are related but distinct, nested inside one another &ndash; a very common interview question is simply to explain the difference clearly.</p>
+      <ul class="key-points">
+        <li><b>Artificial Intelligence (AI)</b> &ndash; the broadest field: building systems that can perform tasks normally requiring human intelligence (reasoning, understanding language, recognizing images).</li>
+        <li><b>Machine Learning (ML)</b> &ndash; a SUBSET of AI: systems that learn patterns from DATA, rather than being explicitly programmed with fixed rules for every scenario.</li>
+        <li><b>Deep Learning (DL)</b> &ndash; a SUBSET of ML: uses multi-layered artificial neural networks specifically, well suited to large, complex, unstructured data like images, audio, and text.</li>
+        <li>Relationship: AI &sup; ML &sup; Deep Learning (each is nested inside the one before it).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>2. Types of Machine Learning</h4>
+      <div class="badge-row"><span class="badge job">Core Interview Concept</span></div>
+      <ul class="key-points">
+        <li><b>Supervised Learning</b> &ndash; the model learns from labeled data (input paired with the correct output), e.g. house features &rarr; house price. Covers Regression (Part E) and Classification (Part F).</li>
+        <li><b>Unsupervised Learning</b> &ndash; the model finds patterns in UNLABELED data with no "correct answer" given, e.g. grouping customers into segments. Covers Clustering and Dimensionality Reduction (Part G).</li>
+        <li><b>Reinforcement Learning</b> &ndash; an agent learns by taking actions in an environment and receiving rewards/penalties, e.g. a game-playing AI learning through trial and error (briefly covered, Section 74).</li>
+        <li><b>Semi-Supervised Learning</b> &ndash; uses a small amount of labeled data combined with a large amount of unlabeled data, common when labeling data is expensive/slow.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>3. AI/ML Job Roles &amp; Career Paths</h4>
+      <div class="badge-row"><span class="badge job">Job Relevance</span></div>
+      <ul class="key-points">
+        <li><b>Data Analyst</b> &ndash; focuses on exploring data and building reports/dashboards; usually the entry point, light on ML modeling.</li>
+        <li><b>Data Scientist</b> &ndash; builds and evaluates ML models to solve business problems; needs strong stats + ML + some software engineering.</li>
+        <li><b>Machine Learning Engineer</b> &ndash; focuses on building, deploying, and maintaining ML models in production systems; needs strong software engineering + ML.</li>
+        <li><b>AI/Deep Learning Engineer</b> &ndash; specializes in neural networks for vision, speech, or language tasks.</li>
+        <li><b>MLOps Engineer</b> &ndash; focuses on the infrastructure, pipelines, and monitoring that keep ML models running reliably in production (Part K).</li>
+        <li>This course builds the core skills for all of these, with a Data Scientist / ML Engineer emphasis.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>4. Setting Up the Environment</h4>
+      <ul class="key-points">
+        <li><b>Python</b> &ndash; the standard language for ML; install Python 3.9+ from python.org, or use the Anaconda distribution which bundles Python with most data science libraries pre-installed.</li>
+        <li><b>Jupyter Notebook</b> &ndash; the standard interactive coding environment for ML/data science, letting you run code cell-by-cell and see outputs (tables, charts) inline &ndash; installed via <code>pip install notebook</code>, launched by typing <code>jupyter notebook</code> in a terminal.</li>
+        <li><b>Google Colab</b> &ndash; a free, browser-based alternative to Jupyter requiring zero local installation, and provides free (limited) GPU access &ndash; excellent for beginners and for the Deep Learning sections (Part I).</li>
+        <li><b>Virtual environments</b> &ndash; use <code>python -m venv ml_env</code> to keep each project's package versions isolated, exactly as in general Python best practice.</li>
+      </ul>
+      <pre class="code">pip install numpy pandas matplotlib seaborn scikit-learn jupyter
+
+# Launch Jupyter Notebook:
+jupyter notebook</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>5. Essential Python Libraries Overview</h4>
+      <div class="badge-row"><span class="badge code">Tools</span></div>
+      <table class="quick-ref">
+        <tr><th>Library</th><th>Purpose</th></tr>
+        <tr><td>NumPy</td><td>Fast numerical arrays and math operations - the foundation everything else builds on</td></tr>
+        <tr><td>Pandas</td><td>Loading, cleaning, and exploring tabular data (DataFrames)</td></tr>
+        <tr><td>Matplotlib</td><td>Basic data visualization (line, bar, scatter plots)</td></tr>
+        <tr><td>Seaborn</td><td>Statistical visualization built on Matplotlib, nicer defaults</td></tr>
+        <tr><td>Scikit-learn</td><td>The standard library for classical ML algorithms, preprocessing, and evaluation</td></tr>
+        <tr><td>TensorFlow / Keras</td><td>Building and training deep neural networks</td></tr>
+        <tr><td>PyTorch</td><td>An alternative deep learning framework, very popular in research</td></tr>
+        <tr><td>NLTK / spaCy</td><td>Natural Language Processing tools (Part J)</td></tr>
+      </table>
+    </div>
+
+
+    <h2 class="part-title">Part B &mdash; Python for Data Science Refresher</h2>
+
+    <div class="instructions">
+      <b>Practice Dataset:</b> Every code example from this point on uses one consistent dataset: a Student Performance dataset with columns StudyHours, Attendance, PrevScore, FinalScore, and Passed (1/0). Create it yourself with the code below, or substitute any similar dataset.
+    </div>
+
+    <div class="topic-note">
+      <h4>6. NumPy Basics</h4>
+      <div class="badge-row"><span class="badge code">Python</span></div>
+      <p>NumPy (Numerical Python) provides the fast, memory-efficient array object that almost every other data/ML library is built on top of.</p>
+      <pre class="code">import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)              # [1 2 3 4 5]
+print(arr.shape)        # (5,)
+print(arr.mean())       # 3.0
+
+matrix = np.array([[1, 2], [3, 4]])
+print(matrix.shape)     # (2, 2)
+
+zeros = np.zeros((2, 3))          # a 2x3 array of zeros
+ones = np.ones((2, 3))            # a 2x3 array of ones
+rng = np.arange(0, 10, 2)         # [0 2 4 6 8]
+lin = np.linspace(0, 1, 5)        # [0. 0.25 0.5 0.75 1.]
+
+# Vectorized operations - no loop needed, applies to every element at once:
+doubled = arr * 2                 # [2 4 6 8 10]
+filtered = arr[arr > 2]           # [3 4 5] - boolean mask filtering</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>7. Pandas Basics: DataFrames and Series</h4>
+      <div class="badge-row"><span class="badge code">Python</span></div>
+      <p>Pandas is the standard library for working with tabular (spreadsheet-like) data in Python, built around two core objects.</p>
+      <ul class="key-points">
+        <li><b>Series</b> &ndash; a single labeled column of data (like one column of a spreadsheet).</li>
+        <li><b>DataFrame</b> &ndash; a full 2D table made of multiple Series, with row and column labels &ndash; the primary object used throughout ML data preparation.</li>
+      </ul>
+      <pre class="code">import pandas as pd
+
+data = {
+    "StudyHours": [4.4, 9.6, 7.6],
+    "FinalScore": [53.3, 77.6, 67.6]
+}
+df = pd.DataFrame(data)
+print(df)
+
+print(df["StudyHours"])          # a single column, returned as a Series
+print(df.loc[0])                  # first row, by label
+print(df.iloc[0])                 # first row, by integer position</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>8. Loading &amp; Exploring Data</h4>
+      <div class="badge-row"><span class="badge code">Python</span></div>
+      <p>The first step of any real project: load the data and get a quick feel for its shape, types, and basic statistics before doing anything else.</p>
+      <pre class="code">import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+
+print(df.head())          # first 5 rows
+print(df.shape)            # (200, 5) - (rows, columns)
+print(df.columns.tolist()) # list of column names
+print(df.info())           # column data types and non-null counts
+print(df.describe())       # count, mean, std, min, max, quartiles for numeric columns
+print(df.isnull().sum())   # count of missing values per column
+print(df["Passed"].value_counts())  # count of each unique value in a column</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>9. Data Visualization with Matplotlib</h4>
+      <div class="badge-row"><span class="badge code">Python</span></div>
+      <p>Matplotlib is the foundational Python plotting library &ndash; verbose but fully customizable; most other plotting libraries (including Seaborn) are built on top of it.</p>
+      <pre class="code">import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+
+plt.figure(figsize=(6, 4))
+plt.scatter(df["StudyHours"], df["FinalScore"])
+plt.xlabel("Study Hours")
+plt.ylabel("Final Score")
+plt.title("Study Hours vs Final Score")
+plt.show()
+
+plt.figure(figsize=(6, 4))
+plt.hist(df["FinalScore"], bins=15)
+plt.title("Distribution of Final Scores")
+plt.show()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>10. Data Visualization with Seaborn</h4>
+      <div class="badge-row"><span class="badge code">Python</span></div>
+      <p>Seaborn is built on top of Matplotlib, offering nicer default styling and built-in statistical plot types especially useful for exploring relationships in ML datasets before modeling.</p>
+      <pre class="code">import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+
+# Scatter plot colored by category - reveals how Passed splits the data
+sns.scatterplot(data=df, x="StudyHours", y="FinalScore", hue="Passed")
+plt.show()
+
+# Correlation heatmap - shows how strongly every pair of columns relates
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm")
+plt.show()
+
+# Box plot - compares the distribution of FinalScore across Passed/Failed groups
+sns.boxplot(data=df, x="Passed", y="FinalScore")
+plt.show()</pre>
+    </div>
+
+    <h2 class="part-title">Part C &mdash; Math &amp; Statistics Foundations</h2>
+
+    <div class="topic-note">
+      <h4>11. Linear Algebra Basics</h4>
+      <div class="badge-row"><span class="badge math">Math</span></div>
+      <p>ML algorithms internally represent data as vectors and matrices, and many core operations (like a neural network's forward pass) are literally matrix multiplication &ndash; a working grasp of these operations demystifies what's happening "under the hood".</p>
+      <ul class="key-points">
+        <li><b>Vector</b> &ndash; a 1D list of numbers (e.g. one data row's features). <b>Matrix</b> &ndash; a 2D grid of numbers (e.g. an entire dataset).</li>
+        <li><b>Dot product</b> &ndash; multiplies corresponding elements of two vectors and sums the result; the core operation behind how a linear model combines inputs and weights.</li>
+      </ul>
+      <pre class="code">import numpy as np
+
+v1 = np.array([1, 2, 3])
+v2 = np.array([4, 5, 6])
+print(np.dot(v1, v2))          # 32  (1*4 + 2*5 + 3*6)
+
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+print(np.matmul(A, B))         # matrix multiplication
+print(A.T)                     # transpose (flips rows and columns)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>12. Descriptive Statistics</h4>
+      <div class="badge-row"><span class="badge math">Math</span></div>
+      <ul class="key-points">
+        <li><b>Mean</b> &ndash; the average value. <b>Median</b> &ndash; the middle value when sorted (less sensitive to outliers than the mean). <b>Mode</b> &ndash; the most frequently occurring value.</li>
+        <li><b>Variance</b> &ndash; the average squared distance of each point from the mean, measuring spread. <b>Standard Deviation</b> &ndash; the square root of variance, in the same units as the original data (easier to interpret).</li>
+      </ul>
+      <pre class="code">import numpy as np
+from scipy import stats
+
+data = np.array([4.4, 9.6, 7.6, 6.4, 2.4, 2.4, 1.5, 8.8, 6.4, 7.4])
+
+print("Mean:", np.mean(data))
+print("Median:", np.median(data))
+print("Mode:", stats.mode(data, keepdims=True))
+print("Variance:", np.var(data))
+print("Std Dev:", np.std(data))</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>13. Probability Basics</h4>
+      <div class="badge-row"><span class="badge math">Math</span></div>
+      <p>Probability quantifies uncertainty &ndash; the foundation underneath every classification model's predictions (e.g. logistic regression outputs an actual probability, not just a label).</p>
+      <ul class="key-points">
+        <li><b>Probability</b> &ndash; a value between 0 (impossible) and 1 (certain), representing the likelihood of an event.</li>
+        <li><b>Independent events</b> &ndash; the outcome of one does not affect the other (e.g. two separate coin flips).</li>
+        <li><b>Conditional probability P(A|B)</b> &ndash; the probability of A occurring GIVEN that B has already occurred; the basis of Naive Bayes (Section 36).</li>
+      </ul>
+      <pre class="code">import random
+random.seed(1)
+
+coin_flips = [random.choice(["H", "T"]) for _ in range(1000)]
+p_heads = coin_flips.count("H") / len(coin_flips)
+print("Empirical P(Heads):", p_heads)   # approaches 0.5 as sample size grows</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>14. The Normal Distribution</h4>
+      <div class="badge-row"><span class="badge math">Math</span></div>
+      <p>The bell-curve distribution that appears constantly in real-world data (heights, test scores, measurement errors) and underlies many statistical assumptions in ML.</p>
+      <ul class="key-points">
+        <li>Defined by its mean (center) and standard deviation (spread/width).</li>
+        <li><b>68-95-99.7 rule</b> &ndash; about 68% of data falls within 1 standard deviation of the mean, 95% within 2, and 99.7% within 3.</li>
+      </ul>
+      <pre class="code">import numpy as np
+
+normal_data = np.random.normal(loc=70, scale=10, size=1000)   # mean=70, std=10
+print("Sample mean:", normal_data.mean())
+print("Sample std:", normal_data.std())</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>15. Correlation &amp; Covariance</h4>
+      <div class="badge-row"><span class="badge math">Math</span></div>
+      <p>Both measure how two variables move together, but on different scales &ndash; used constantly during data exploration to spot which features might be useful predictors.</p>
+      <ul class="key-points">
+        <li><b>Covariance</b> &ndash; direction of the relationship (positive/negative), but its magnitude is hard to interpret since it depends on the variables' units.</li>
+        <li><b>Correlation</b> &ndash; a standardized version of covariance, always between -1 and +1, making strength directly comparable across any pair of variables. +1 = perfect positive relationship, -1 = perfect negative, 0 = no linear relationship.</li>
+        <li><b>Important caveat (frequently tested):</b> correlation does NOT imply causation &ndash; two variables can be strongly correlated without one causing the other.</li>
+      </ul>
+      <pre class="code">import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+print(df["StudyHours"].corr(df["FinalScore"]))   # 0.78 - strong positive correlation
+print(df[["StudyHours", "FinalScore"]].cov())</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>16. Hypothesis Testing Basics</h4>
+      <div class="badge-row"><span class="badge math">Math</span></div>
+      <p>A statistical method to test whether an observed difference (e.g. between two groups) is likely real, or could just be due to random chance.</p>
+      <ul class="key-points">
+        <li><b>Null Hypothesis (H&#8320;)</b> &ndash; the default assumption of "no real difference/effect".</li>
+        <li><b>p-value</b> &ndash; the probability of seeing a result this extreme if the null hypothesis were actually true. A common threshold is <b>p &lt; 0.05</b>, meaning "reject the null hypothesis" &ndash; the difference is considered statistically significant.</li>
+        <li><b>t-test</b> &ndash; a common test comparing the means of two groups.</li>
+      </ul>
+      <pre class="code">from scipy import stats
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+group_pass = df[df["Passed"] == 1]["StudyHours"]
+group_fail = df[df["Passed"] == 0]["StudyHours"]
+
+t_stat, p_value = stats.ttest_ind(group_pass, group_fail)
+print("t-statistic:", t_stat)
+print("p-value:", p_value)
+# p-value here is far below 0.05, confirming StudyHours genuinely
+# differs between students who passed and those who did not.</pre>
+    </div>
+
+    <h2 class="part-title">Part D &mdash; Data Preprocessing</h2>
+
+    <div class="topic-note">
+      <h4>17. Handling Missing Data</h4>
+      <div class="badge-row"><span class="badge code">Preprocessing</span></div>
+      <p>Real-world data almost always has gaps &ndash; most ML algorithms cannot handle missing values directly and will error out, so this must be addressed before modeling.</p>
+      <ul class="key-points">
+        <li><b>Drop</b> &ndash; remove rows (or columns) with missing values entirely; simplest, but loses data and can introduce bias if missingness isn't random.</li>
+        <li><b>Impute</b> &ndash; fill missing values with the column's mean/median (numeric) or mode (categorical); preserves the dataset's size.</li>
+      </ul>
+      <pre class="code">import pandas as pd
+import numpy as np
+
+df = pd.read_csv("student_performance.csv")
+df.loc[0:5, "StudyHours"] = np.nan   # simulate some missing values
+
+print(df["StudyHours"].isnull().sum())   # 6
+
+# Option 1: fill with the mean
+df["StudyHours"] = df["StudyHours"].fillna(df["StudyHours"].mean())
+
+# Option 2: drop rows with any missing values
+df_dropped = df.dropna()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>18. Handling Outliers</h4>
+      <div class="badge-row"><span class="badge code">Preprocessing</span></div>
+      <p>Outliers (extreme, unusual values) can distort statistics like the mean and heavily skew certain models (especially linear regression) &ndash; the IQR (Interquartile Range) method is a common, simple way to detect them.</p>
+      <pre class="code">import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+
+Q1 = df["FinalScore"].quantile(0.25)
+Q3 = df["FinalScore"].quantile(0.75)
+IQR = Q3 - Q1
+lower_bound = Q1 - 1.5 * IQR
+upper_bound = Q3 + 1.5 * IQR
+
+outliers = df[(df["FinalScore"] < lower_bound) | (df["FinalScore"] > upper_bound)]
+print("Number of outliers:", len(outliers))
+
+df_clean = df[(df["FinalScore"] >= lower_bound) &amp; (df["FinalScore"] <= upper_bound)]</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>19. Feature Scaling</h4>
+      <div class="badge-row"><span class="badge code">Preprocessing</span></div>
+      <p>Many algorithms (KNN, SVM, neural networks, anything using distance or gradient descent) perform poorly if input features are on very different scales (e.g. Attendance 0-100 vs a ratio 0-1) &ndash; scaling puts every feature on a comparable range.</p>
+      <ul class="key-points">
+        <li><b>Standardization (StandardScaler)</b> &ndash; rescales to mean 0, standard deviation 1. The most common default choice.</li>
+        <li><b>Normalization (MinMaxScaler)</b> &ndash; rescales to a fixed range, usually 0 to 1.</li>
+        <li><b>Important:</b> always fit the scaler on the TRAINING data only, then use that same fitted scaler to transform the test data &ndash; never fit on the full dataset before splitting (this "leaks" test data information into training).</li>
+      </ul>
+      <pre class="code">from sklearn.preprocessing import StandardScaler, MinMaxScaler
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+
+scaler = StandardScaler()
+scaled = scaler.fit_transform(df[["StudyHours", "Attendance", "PrevScore"]])
+print(scaled.mean(axis=0).round(5))   # ~0 for every column
+print(scaled.std(axis=0).round(5))    # ~1 for every column
+
+minmax = MinMaxScaler()
+minmax_scaled = minmax.fit_transform(df[["StudyHours"]])
+print(minmax_scaled.min(), minmax_scaled.max())   # 0.0 1.0</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>20. Encoding Categorical Variables</h4>
+      <div class="badge-row"><span class="badge code">Preprocessing</span></div>
+      <p>ML algorithms need numbers, not text &ndash; categorical (text) columns must be converted to a numeric representation before modeling.</p>
+      <ul class="key-points">
+        <li><b>Label Encoding</b> &ndash; assigns each category an integer (A=0, B=1, C=2). Simple, but implies a false numeric ORDER between categories &ndash; only appropriate for genuinely ordered categories (e.g. Low/Medium/High).</li>
+        <li><b>One-Hot Encoding</b> &ndash; creates a separate binary (0/1) column for each category. No false ordering implied &ndash; the standard, safe default for unordered categories.</li>
+      </ul>
+      <pre class="code">import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+df_cat = pd.DataFrame({"Grade": ["A", "B", "A", "C", "B"]})
+
+# Label Encoding
+le = LabelEncoder()
+df_cat["Grade_encoded"] = le.fit_transform(df_cat["Grade"])
+print(df_cat)
+
+# One-Hot Encoding (the pandas shortcut)
+df_onehot = pd.get_dummies(df_cat, columns=["Grade"])
+print(df_onehot)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>21. Train-Test Split</h4>
+      <div class="badge-row"><span class="badge code">Preprocessing</span><span class="badge job">Universal First Step</span></div>
+      <p>Before training any model, the data is split into a TRAINING set (used to fit the model) and a TEST set (held back, used only to evaluate performance on unseen data) &ndash; without this split, there is no honest way to know if a model actually generalizes.</p>
+      <ul class="key-points">
+        <li>A common split is 80% train / 20% test, though this varies by dataset size.</li>
+        <li><code>random_state</code> fixes the random shuffling so the split is reproducible every time the code runs.</li>
+      </ul>
+      <pre class="code">from sklearn.model_selection import train_test_split
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]   # features (input)
+y = df["FinalScore"]                                  # target (output to predict)
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+print(X_train.shape, X_test.shape)   # (160, 3) (40, 3)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>22. Feature Engineering Basics</h4>
+      <div class="badge-row"><span class="badge code">Preprocessing</span></div>
+      <p>Creating new, more informative features from existing ones &ndash; often the single highest-leverage activity in an ML project; a well-engineered feature can outperform switching to a fancier algorithm.</p>
+      <pre class="code">import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+
+# A new ratio feature: how much score gained per hour studied
+df["StudyEfficiency"] = df["FinalScore"] / df["StudyHours"]
+
+# A new binary "flag" feature from a threshold:
+df["HighAttendance"] = (df["Attendance"] > 90).astype(int)
+
+print(df[["StudyHours", "FinalScore", "StudyEfficiency", "HighAttendance"]].head())</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>23. Feature Selection</h4>
+      <div class="badge-row"><span class="badge code">Preprocessing</span></div>
+      <p>Choosing which features to actually feed into the model &ndash; too many irrelevant/redundant features can hurt performance, slow training, and make a model harder to interpret.</p>
+      <pre class="code">from sklearn.feature_selection import SelectKBest, f_regression
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+y = df["FinalScore"]
+
+selector = SelectKBest(score_func=f_regression, k=2)
+X_selected = selector.fit_transform(X, y)
+
+selected_columns = X.columns[selector.get_support()]
+print("Top 2 features:", list(selected_columns))   # ['StudyHours', 'PrevScore']</pre>
+    </div>
+
+    <h2 class="part-title">Part E &mdash; Supervised Learning: Regression</h2>
+
+    <div class="topic-note">
+      <h4>24. What is Regression?</h4>
+      <div class="badge-row"><span class="badge job">Core Algorithm Category</span></div>
+      <p>Regression is a supervised learning task where the target being predicted is a CONTINUOUS numeric value (e.g. a price, a score, a temperature) &ndash; as opposed to Classification (Part F), which predicts a category.</p>
+      <ul class="key-points">
+        <li>Example question this Part answers: "given a student's study hours, attendance, and previous score, what Final Score will they get?"</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>25. Simple Linear Regression</h4>
+      <div class="badge-row"><span class="badge code">Regression</span></div>
+      <p>Fits a straight line (y = mx + b) through the data, finding the line that minimizes the total squared distance between the line and every actual data point &ndash; the simplest, most interpretable regression model, using just ONE input feature.</p>
+      <pre class="code">from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours"]]     # features must be 2D, hence double brackets
+y = df["FinalScore"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+print("Coefficient (slope):", model.coef_)      # ~3.72 - each extra study hour adds ~3.72 points
+print("Intercept:", model.intercept_)            # ~44.37 - predicted score at 0 study hours
+
+predictions = model.predict(X_test)
+print(predictions[:5])</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>26. Multiple Linear Regression</h4>
+      <div class="badge-row"><span class="badge code">Regression</span></div>
+      <p>The same idea as Simple Linear Regression, but using MULTIPLE input features at once &ndash; almost always more accurate than a single feature, since real outcomes usually depend on several factors together.</p>
+      <pre class="code">from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+y = df["FinalScore"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+print("Coefficients:", model.coef_)   # one coefficient per feature
+predictions = model.predict(X_test)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>27. Polynomial Regression</h4>
+      <div class="badge-row"><span class="badge code">Regression</span></div>
+      <p>Fits a curved line instead of a straight one, by adding polynomial terms (x&sup2;, x&sup3;, ...) as extra features &ndash; useful when the true relationship between input and output is curved rather than linear, while still using ordinary Linear Regression underneath.</p>
+      <pre class="code">from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+
+poly = PolynomialFeatures(degree=2)          # adds squared terms
+X_poly_train = poly.fit_transform(X_train)
+X_poly_test = poly.transform(X_test)
+
+poly_model = LinearRegression()
+poly_model.fit(X_poly_train, y_train)
+predictions = poly_model.predict(X_poly_test)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>28. Regularization: Ridge &amp; Lasso Regression</h4>
+      <div class="badge-row"><span class="badge code">Regression</span><span class="badge job">Frequently Tested</span></div>
+      <p>Both add a "penalty" to the standard linear regression formula that discourages excessively large coefficients, helping prevent overfitting (Section 44) &ndash; especially useful with many features.</p>
+      <ul class="key-points">
+        <li><b>Ridge Regression (L2)</b> &ndash; shrinks coefficients toward zero, but rarely all the way to exactly zero.</li>
+        <li><b>Lasso Regression (L1)</b> &ndash; can shrink coefficients all the way to exactly zero, effectively performing automatic feature selection by eliminating unimportant features entirely.</li>
+        <li><code>alpha</code> controls the strength of the penalty &ndash; higher alpha means stronger regularization (simpler model, more bias, less variance).</li>
+      </ul>
+      <pre class="code">from sklearn.linear_model import Ridge, Lasso
+
+ridge = Ridge(alpha=1.0)
+ridge.fit(X_train, y_train)
+
+lasso = Lasso(alpha=1.0)
+lasso.fit(X_train, y_train)
+
+print("Ridge coefficients:", ridge.coef_)
+print("Lasso coefficients:", lasso.coef_)   # some may be exactly 0.0</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>29. Evaluating Regression Models</h4>
+      <div class="badge-row"><span class="badge code">Regression</span><span class="badge job">Frequently Tested</span></div>
+      <p>Since regression predicts a continuous number (not a right/wrong category), accuracy doesn't apply &ndash; these metrics measure how close predictions are to actual values instead.</p>
+      <ul class="key-points">
+        <li><b>MAE (Mean Absolute Error)</b> &ndash; average absolute difference between predicted and actual; easy to interpret in the original units.</li>
+        <li><b>MSE (Mean Squared Error)</b> &ndash; average of the SQUARED differences; penalizes large errors much more heavily than small ones.</li>
+        <li><b>RMSE (Root Mean Squared Error)</b> &ndash; square root of MSE, bringing the units back to match the original target &ndash; the most commonly reported regression metric.</li>
+        <li><b>R&sup2; (R-squared)</b> &ndash; the proportion of variance in the target explained by the model, from 0 to 1 (higher is better); an R&sup2; of 0.90 means the model explains 90% of the variation in the outcome.</li>
+      </ul>
+      <pre class="code">from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+import numpy as np
+
+mae = mean_absolute_error(y_test, predictions)
+mse = mean_squared_error(y_test, predictions)
+rmse = np.sqrt(mse)
+r2 = r2_score(y_test, predictions)
+
+print(f"MAE={mae:.2f}  MSE={mse:.2f}  RMSE={rmse:.2f}  R2={r2:.3f}")
+# Example output: MAE=3.53  MSE=17.29  RMSE=4.16  R2=0.902</pre>
+    </div>
+
+    <h2 class="part-title">Part F &mdash; Supervised Learning: Classification</h2>
+
+    <div class="topic-note">
+      <h4>30. What is Classification?</h4>
+      <div class="badge-row"><span class="badge job">Core Algorithm Category</span></div>
+      <p>Classification is a supervised learning task where the target is a CATEGORY (a discrete label), not a continuous number &ndash; e.g. Pass/Fail, Spam/Not Spam, or one of several classes.</p>
+      <ul class="key-points">
+        <li><b>Binary classification</b> &ndash; exactly two possible classes (e.g. Passed = 1 or 0).</li>
+        <li><b>Multi-class classification</b> &ndash; three or more possible classes (e.g. Low/Medium/High risk).</li>
+        <li>Example question this Part answers: "given a student's study hours, attendance, and previous score, will they Pass or Fail?"</li>
+      </ul>
+      <pre class="code">from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+y = df["Passed"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+# stratify=y keeps the same Pass/Fail proportion in both train and test sets
+
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>31. Logistic Regression</h4>
+      <div class="badge-row"><span class="badge code">Classification</span></div>
+      <p>Despite the name, Logistic Regression is a CLASSIFICATION algorithm &ndash; it predicts the PROBABILITY of belonging to a class using a sigmoid (S-shaped) function, then applies a threshold (usually 0.5) to produce a final class label. A simple, fast, highly interpretable baseline model.</p>
+      <pre class="code">from sklearn.linear_model import LogisticRegression
+
+logreg = LogisticRegression()
+logreg.fit(X_train_scaled, y_train)
+
+predictions = logreg.predict(X_test_scaled)             # class labels (0 or 1)
+probabilities = logreg.predict_proba(X_test_scaled)      # probability of each class
+
+print(predictions[:5])
+print(probabilities[:5])   # [P(class 0), P(class 1)] for each row</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>32. K-Nearest Neighbors (KNN)</h4>
+      <div class="badge-row"><span class="badge code">Classification</span></div>
+      <p>Classifies a new point by looking at the "k" closest points in the training data and taking a majority vote of their classes &ndash; simple and intuitive, with no real "training" phase (it just stores the data), but can be slow to predict on large datasets since it must compare against every stored point.</p>
+      <ul class="key-points">
+        <li>Requires feature scaling (Section 19) &ndash; since it relies on distance, features with larger ranges would otherwise dominate the distance calculation.</li>
+        <li>Choosing "k" matters: too small (k=1) overfits to noise; too large underfits, blurring the decision boundary.</li>
+      </ul>
+      <pre class="code">from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier(n_neighbors=5)
+knn.fit(X_train_scaled, y_train)
+predictions = knn.predict(X_test_scaled)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>33. Decision Trees</h4>
+      <div class="badge-row"><span class="badge code">Classification</span></div>
+      <p>Builds a tree of yes/no questions about the features (e.g. "Is StudyHours &gt; 5?"), splitting the data at each node to make it progressively more "pure" (mostly one class), until reaching a final prediction at the leaves.</p>
+      <ul class="key-points">
+        <li>Highly interpretable &ndash; the tree can be visualized and directly explains its own reasoning, unlike many other models ("black boxes").</li>
+        <li>Prone to overfitting if allowed to grow too deep (Section 44) &ndash; <code>max_depth</code> limits tree size to control this.</li>
+        <li>Does NOT require feature scaling &ndash; it splits on raw threshold values, unaffected by scale.</li>
+      </ul>
+      <pre class="code">from sklearn.tree import DecisionTreeClassifier
+
+dt = DecisionTreeClassifier(max_depth=4, random_state=42)
+dt.fit(X_train, y_train)          # no scaling needed for trees
+predictions = dt.predict(X_test)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>34. Random Forest</h4>
+      <div class="badge-row"><span class="badge code">Classification</span><span class="badge job">Widely Used in Industry</span></div>
+      <p>An ENSEMBLE of many Decision Trees (Section 48), each trained on a random subset of the data and features, with the final prediction decided by majority vote across all trees &ndash; almost always more accurate and less prone to overfitting than any single Decision Tree.</p>
+      <pre class="code">from sklearn.ensemble import RandomForestClassifier
+
+rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+predictions = rf.predict(X_test)
+
+# Feature importance - which features drove predictions the most:
+print(rf.feature_importances_)
+# e.g. [0.486, 0.259, 0.254] -> StudyHours was the most influential feature</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>35. Support Vector Machines (SVM)</h4>
+      <div class="badge-row"><span class="badge code">Classification</span></div>
+      <p>Finds the optimal boundary (hyperplane) that separates classes with the MAXIMUM possible margin (gap) between the closest points of each class &ndash; those closest points are called "support vectors". Can use "kernel" functions to separate classes that aren't linearly separable.</p>
+      <ul class="key-points">
+        <li><code>kernel='linear'</code> &ndash; a straight-line boundary. <code>kernel='rbf'</code> (Radial Basis Function) &ndash; a flexible, curved boundary, a common default.</li>
+        <li>Requires feature scaling, like KNN, since it's also distance-based.</li>
+      </ul>
+      <pre class="code">from sklearn.svm import SVC
+
+svm = SVC(kernel='rbf', probability=True)
+svm.fit(X_train_scaled, y_train)
+predictions = svm.predict(X_test_scaled)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>36. Naive Bayes</h4>
+      <div class="badge-row"><span class="badge code">Classification</span></div>
+      <p>Applies Bayes' Theorem (conditional probability, Section 13) to calculate the probability of each class given the input features, "naively" assuming every feature is independent of every other (rarely perfectly true, but works surprisingly well in practice, especially for text classification).</p>
+      <ul class="key-points">
+        <li>Extremely fast to train, works well even with relatively little data &ndash; a common baseline for spam detection and sentiment analysis (Part J).</li>
+      </ul>
+      <pre class="code">from sklearn.naive_bayes import GaussianNB
+
+nb = GaussianNB()
+nb.fit(X_train, y_train)
+predictions = nb.predict(X_test)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>37. Evaluating Classification Models</h4>
+      <div class="badge-row"><span class="badge job">Frequently Tested</span></div>
+      <p>Unlike regression, classification has several distinct metrics, each answering a different question &ndash; picking the wrong one can be seriously misleading, especially on imbalanced data (Section 50).</p>
+      <ul class="key-points">
+        <li><b>Confusion Matrix</b> &ndash; a table of True Positives, True Negatives, False Positives, and False Negatives; the foundation every other metric below is calculated from.</li>
+        <li><b>Accuracy</b> &ndash; % of all predictions that were correct. Misleading on imbalanced data (e.g. 95% accuracy is meaningless if 95% of the data is one class already).</li>
+        <li><b>Precision</b> &ndash; of everything predicted POSITIVE, what % actually was positive? Important when false positives are costly (e.g. flagging a valid email as spam).</li>
+        <li><b>Recall (Sensitivity)</b> &ndash; of everything that was ACTUALLY positive, what % did the model correctly catch? Important when false negatives are costly (e.g. missing a disease diagnosis).</li>
+        <li><b>F1-Score</b> &ndash; the harmonic mean of Precision and Recall, balancing both into one number; useful when you need a single overall metric.</li>
+      </ul>
+      <pre class="code">from sklearn.metrics import (confusion_matrix, accuracy_score, precision_score,
+                               recall_score, f1_score, classification_report)
+
+cm = confusion_matrix(y_test, predictions)
+print(cm)
+# [[ 3  3]     <- 3 correctly predicted Fail, 3 incorrectly predicted Pass (should be Fail)
+#  [ 0 34]]    <- 0 incorrectly predicted Fail, 34 correctly predicted Pass
+
+print("Accuracy:", accuracy_score(y_test, predictions))    # 0.925
+print("Precision:", precision_score(y_test, predictions))  # 0.919
+print("Recall:", recall_score(y_test, predictions))        # 1.000
+print("F1-Score:", f1_score(y_test, predictions))          # 0.958
+print(classification_report(y_test, predictions))          # all metrics per class, at once</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>38. ROC Curve &amp; AUC</h4>
+      <div class="badge-row"><span class="badge job">Frequently Tested</span></div>
+      <p>The ROC (Receiver Operating Characteristic) curve plots the True Positive Rate against the False Positive Rate across every possible classification threshold, visualizing the trade-off between catching positives and generating false alarms. AUC (Area Under the Curve) condenses this into one number.</p>
+      <ul class="key-points">
+        <li><b>AUC = 1.0</b> &ndash; a perfect classifier. <b>AUC = 0.5</b> &ndash; no better than random guessing.</li>
+        <li>AUC is especially useful for comparing models independent of any one chosen threshold.</li>
+      </ul>
+      <pre class="code">from sklearn.metrics import roc_curve, roc_auc_score
+import matplotlib.pyplot as plt
+
+probabilities = logreg.predict_proba(X_test_scaled)[:, 1]   # probability of class 1
+fpr, tpr, thresholds = roc_curve(y_test, probabilities)
+auc = roc_auc_score(y_test, probabilities)
+print("AUC:", auc)   # 1.0 in this small example dataset
+
+plt.plot(fpr, tpr, label=f"AUC = {auc:.2f}")
+plt.plot([0, 1], [0, 1], linestyle="--", label="Random guess")
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.legend()
+plt.show()</pre>
+    </div>
+
+    <h2 class="part-title">Part G &mdash; Unsupervised Learning</h2>
+
+    <div class="topic-note">
+      <h4>39. What is Unsupervised Learning?</h4>
+      <div class="badge-row"><span class="badge job">Core Algorithm Category</span></div>
+      <p>Unlike Regression/Classification, Unsupervised Learning works with UNLABELED data &ndash; there is no "correct answer" column to learn from. Instead, the algorithm finds hidden structure or patterns in the data on its own.</p>
+      <ul class="key-points">
+        <li><b>Clustering</b> &ndash; groups similar data points together (Sections 40-41).</li>
+        <li><b>Dimensionality Reduction</b> &ndash; reduces the number of features while preserving as much information as possible (Section 42).</li>
+        <li>Common real use cases: customer segmentation, anomaly detection, and data compression/visualization.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>40. K-Means Clustering</h4>
+      <div class="badge-row"><span class="badge code">Clustering</span></div>
+      <p>Groups data into "k" clusters by repeatedly: (1) assigning each point to its nearest cluster center, then (2) moving each center to the average position of its assigned points &ndash; repeating until the centers stop moving.</p>
+      <ul class="key-points">
+        <li>The number of clusters "k" must be chosen in advance &ndash; the "Elbow Method" (plotting inertia vs k, looking for where improvement sharply levels off) is a common way to choose it.</li>
+        <li>Requires feature scaling, since it's distance-based like KNN and SVM.</li>
+      </ul>
+      <pre class="code">from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+X_scaled = StandardScaler().fit_transform(X)
+
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+clusters = kmeans.fit_predict(X_scaled)
+df["Cluster"] = clusters
+
+print(df["Cluster"].value_counts())     # how many students landed in each cluster
+print(kmeans.cluster_centers_)          # the center point of each cluster
+print(kmeans.inertia_)                  # sum of squared distances to nearest center (lower = tighter clusters)
+
+# Elbow Method - run K-Means for a range of k values and plot inertia:
+inertias = []
+for k in range(1, 8):
+    km = KMeans(n_clusters=k, random_state=42, n_init=10)
+    km.fit(X_scaled)
+    inertias.append(km.inertia_)
+# Plot k (1-7) against inertias, and pick k at the "elbow" where the drop levels off</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>41. Hierarchical Clustering</h4>
+      <div class="badge-row"><span class="badge code">Clustering</span></div>
+      <p>Builds a tree of nested clusters (a "dendrogram") by progressively merging the closest pairs of points/clusters together, one step at a time &ndash; unlike K-Means, the number of clusters does NOT need to be decided in advance; it can be chosen afterward by "cutting" the tree at any level.</p>
+      <pre class="code">from sklearn.cluster import AgglomerativeClustering
+from scipy.cluster.hierarchy import dendrogram, linkage
+import matplotlib.pyplot as plt
+
+hc = AgglomerativeClustering(n_clusters=3)
+hc_labels = hc.fit_predict(X_scaled)
+print(pd.Series(hc_labels).value_counts())
+
+# Visualize the full merge tree:
+linked = linkage(X_scaled, method='ward')
+dendrogram(linked, truncate_mode='lastp', p=10)
+plt.show()</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>42. Dimensionality Reduction: PCA</h4>
+      <div class="badge-row"><span class="badge code">Dimensionality Reduction</span></div>
+      <p>Principal Component Analysis (PCA) compresses many correlated features into a smaller number of new, uncorrelated "principal components" that capture as much of the original variance (information) as possible &ndash; used to speed up training, reduce noise, and visualize high-dimensional data in 2D/3D.</p>
+      <pre class="code">from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+
+print(X_pca.shape)                       # (200, 2) - reduced from 3 original features to 2
+print(pca.explained_variance_ratio_)     # e.g. [0.375, 0.339] -> these 2 components
+                                          # capture about 71% of the original information</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>43. Association Rule Mining (Brief Overview)</h4>
+      <div class="badge-row"><span class="badge code">Clustering</span></div>
+      <p>A different kind of unsupervised technique that finds relationships between items in transactional data &ndash; the classic example is "market basket analysis": discovering that customers who buy bread also frequently buy butter.</p>
+      <ul class="key-points">
+        <li><b>Apriori Algorithm</b> &ndash; the most common algorithm for this, measuring rules by Support (how often the itemset appears), Confidence (how often the rule holds true), and Lift (how much more likely the association is than random chance).</li>
+        <li>Common real applications: retail recommendation engines, cross-selling analysis.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part H &mdash; Model Selection &amp; Improvement</h2>
+
+    <div class="topic-note">
+      <h4>44. Overfitting &amp; Underfitting</h4>
+      <div class="badge-row"><span class="badge job">Core Interview Concept</span></div>
+      <p>The two fundamental failure modes every ML model can fall into &ndash; recognizing and fixing them is a daily part of real ML work.</p>
+      <ul class="key-points">
+        <li><b>Overfitting</b> &ndash; the model learns the training data too precisely, including its noise/quirks, and performs great on training data but POORLY on new/test data. Signs: very high training accuracy, much lower test accuracy.</li>
+        <li><b>Underfitting</b> &ndash; the model is too simple to capture the real pattern, performing poorly on BOTH training and test data.</li>
+        <li><b>Fixes for overfitting:</b> get more training data, simplify the model, add regularization (Section 28), use cross-validation, use ensemble methods.</li>
+        <li><b>Fixes for underfitting:</b> use a more complex model, add more/better features, reduce regularization strength.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>45. Bias-Variance Tradeoff</h4>
+      <div class="badge-row"><span class="badge job">Core Interview Concept</span></div>
+      <p>A theoretical framework explaining WHY overfitting and underfitting happen &ndash; a very frequently asked interview question.</p>
+      <ul class="key-points">
+        <li><b>Bias</b> &ndash; error from overly simplistic assumptions; high bias means the model is too simple (underfitting).</li>
+        <li><b>Variance</b> &ndash; error from excessive sensitivity to small fluctuations in the training data; high variance means the model is too complex (overfitting).</li>
+        <li>The "tradeoff": reducing bias (making a model more flexible) tends to increase variance, and vice versa &ndash; the goal is finding the sweet spot that minimizes TOTAL error on new data.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>46. Cross-Validation</h4>
+      <div class="badge-row"><span class="badge code">Model Selection</span></div>
+      <p>A single train-test split gives just one performance estimate, which can vary depending on which rows happened to land in the test set by chance. K-Fold Cross-Validation splits the data into "k" equal folds, trains/tests k times (each time using a different fold as the test set), and averages the results for a more reliable performance estimate.</p>
+      <pre class="code">from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(random_state=42)
+scores = cross_val_score(model, X_train, y_train, cv=5)   # 5-fold cross-validation
+
+print(scores.round(3))        # [0.875 0.812 0.844 0.875 0.938] - one score per fold
+print(scores.mean().round(3)) # 0.869 - the reliable, averaged estimate</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>47. Hyperparameter Tuning</h4>
+      <div class="badge-row"><span class="badge code">Model Selection</span></div>
+      <p>Hyperparameters (like <code>n_estimators</code> or <code>max_depth</code>) are settings chosen BEFORE training, not learned from the data itself &ndash; tuning them systematically usually improves performance over just guessing default values.</p>
+      <ul class="key-points">
+        <li><b>GridSearchCV</b> &ndash; exhaustively tries EVERY combination of specified hyperparameter values, using cross-validation to score each; guaranteed to find the best combination within the grid, but can be slow with many options.</li>
+        <li><b>RandomizedSearchCV</b> &ndash; tries a random sample of combinations instead of every single one; much faster, and often finds a nearly-as-good result, especially useful with large search spaces.</li>
+      </ul>
+      <pre class="code">from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
+from sklearn.ensemble import RandomForestClassifier
+
+param_grid = {"n_estimators": [50, 100], "max_depth": [3, 5, None]}
+
+grid = GridSearchCV(RandomForestClassifier(random_state=42), param_grid, cv=3)
+grid.fit(X_train, y_train)
+print("Best params:", grid.best_params_)   # e.g. {'max_depth': None, 'n_estimators': 50}
+print("Best CV score:", round(grid.best_score_, 3))
+
+random_search = RandomizedSearchCV(
+    RandomForestClassifier(random_state=42), param_grid, n_iter=3, cv=3, random_state=42
+)
+random_search.fit(X_train, y_train)
+print("Random search best:", random_search.best_params_)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>48. Ensemble Learning: Bagging &amp; Boosting</h4>
+      <div class="badge-row"><span class="badge code">Model Selection</span><span class="badge job">Widely Used in Industry</span></div>
+      <p>Ensemble methods combine MANY individual models to produce a single, usually more accurate and stable prediction than any one model alone.</p>
+      <ul class="key-points">
+        <li><b>Bagging (Bootstrap Aggregating)</b> &ndash; trains many models INDEPENDENTLY and in PARALLEL, each on a random subset of the data, then averages/votes their predictions. Random Forest (Section 34) is the most well-known bagging algorithm. Reduces variance/overfitting.</li>
+        <li><b>Boosting</b> &ndash; trains models SEQUENTIALLY, where each new model specifically focuses on correcting the errors made by the previous ones. Reduces bias, often achieving higher accuracy than bagging, but can be more prone to overfitting if not tuned carefully.</li>
+      </ul>
+      <pre class="code">from sklearn.ensemble import BaggingClassifier, GradientBoostingClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+bagging = BaggingClassifier(estimator=DecisionTreeClassifier(), n_estimators=50, random_state=42)
+bagging.fit(X_train, y_train)
+print("Bagging accuracy:", bagging.score(X_test, y_test))   # 0.95
+
+boosting = GradientBoostingClassifier(random_state=42)
+boosting.fit(X_train, y_train)
+print("Boosting accuracy:", boosting.score(X_test, y_test)) # 0.90</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>49. Gradient Boosting with XGBoost</h4>
+      <div class="badge-row"><span class="badge code">Model Selection</span><span class="badge job">Very Common in Industry/Kaggle</span></div>
+      <p>XGBoost (Extreme Gradient Boosting) is a highly optimized, extremely popular implementation of gradient boosting &ndash; consistently one of the top-performing algorithms on structured/tabular data competitions and real business datasets.</p>
+      <pre class="code">from xgboost import XGBClassifier
+
+xgb_model = XGBClassifier(random_state=42, eval_metric='logloss')
+xgb_model.fit(X_train, y_train)
+print("XGBoost accuracy:", xgb_model.score(X_test, y_test))   # 0.925</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>50. Handling Imbalanced Datasets</h4>
+      <div class="badge-row"><span class="badge code">Model Selection</span><span class="badge job">Frequently Tested</span></div>
+      <p>When one class vastly outnumbers another (e.g. 168 "Passed" vs 32 "Failed" in our dataset), a model can achieve high accuracy just by always predicting the majority class &ndash; making Accuracy a misleading metric here (Section 37), and requiring specific techniques to fix.</p>
+      <ul class="key-points">
+        <li><b>SMOTE (Synthetic Minority Over-sampling Technique)</b> &ndash; generates new, synthetic examples of the minority class (rather than just duplicating existing ones), balancing the training set.</li>
+        <li>Other approaches: under-sampling the majority class, using <code>class_weight='balanced'</code> (supported by many sklearn models), or focusing evaluation on Precision/Recall/F1 instead of Accuracy.</li>
+      </ul>
+      <pre class="code">from imblearn.over_sampling import SMOTE
+
+print(y_train.value_counts().to_dict())   # {1: 134, 0: 26} - imbalanced
+
+smote = SMOTE(random_state=42)
+X_resampled, y_resampled = smote.fit_resample(X_train, y_train)
+
+print(y_resampled.value_counts().to_dict())   # {0: 134, 1: 134} - now balanced
+# Train the model on X_resampled, y_resampled instead of the original imbalanced data</pre>
+    </div>
+
+    <h2 class="part-title">Part I &mdash; Neural Networks &amp; Deep Learning</h2>
+
+    <div class="topic-note">
+      <h4>51. What is a Neural Network?</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span></div>
+      <p>A neural network is a model loosely inspired by the brain: layers of connected "neurons" that each take weighted inputs, sum them, and pass the result through an activation function &ndash; stacking many such layers lets the network learn increasingly complex, non-linear patterns that simpler models (like linear regression) cannot capture.</p>
+      <ul class="key-points">
+        <li><b>Input layer</b> &ndash; receives the raw features. <b>Hidden layer(s)</b> &ndash; intermediate layers that learn internal representations. <b>Output layer</b> &ndash; produces the final prediction.</li>
+        <li>"Deep" Learning simply means a network with multiple (often many) hidden layers.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>52. The Perceptron &amp; Activation Functions</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span></div>
+      <p>A single Perceptron (one neuron) computes a weighted sum of its inputs, adds a bias, and passes the result through an activation function to produce its output &ndash; a single-layer perceptron with a sigmoid activation is mathematically equivalent to Logistic Regression (Section 31).</p>
+      <ul class="key-points">
+        <li><b>Sigmoid</b> &ndash; squashes output to between 0 and 1; used for binary classification output layers.</li>
+        <li><b>ReLU (Rectified Linear Unit)</b> &ndash; outputs the input directly if positive, else 0; the most common choice for hidden layers, since it trains faster and avoids certain mathematical issues older activations had.</li>
+        <li><b>Softmax</b> &ndash; converts a vector of numbers into probabilities that sum to 1; used for multi-class classification output layers.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>53. Forward Propagation &amp; Backpropagation</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span><span class="badge job">Core Interview Concept</span></div>
+      <p>The two-step process by which a neural network makes predictions and then learns from its mistakes &ndash; a very common interview topic to explain conceptually.</p>
+      <ul class="key-points">
+        <li><b>Forward Propagation</b> &ndash; input data flows through the network layer by layer, each computing its output, until the final prediction emerges at the output layer.</li>
+        <li><b>Loss Function</b> &ndash; measures how wrong that prediction was compared to the actual answer (Section 55).</li>
+        <li><b>Backpropagation</b> &ndash; the error is propagated BACKWARD through the network, calculating how much each individual weight contributed to the error (using calculus/gradients), so each weight can be adjusted to reduce the error next time.</li>
+        <li>This forward-then-backward cycle repeats for many "epochs" (full passes through the training data) until the model's predictions stop meaningfully improving.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>54. Building a Neural Network with Keras/TensorFlow</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span></div>
+      <p>Keras (built into TensorFlow) is the standard, beginner-friendly high-level API for defining and training neural networks in just a few lines of code.</p>
+      <pre class="code">import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+y = df["Passed"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+scaler = StandardScaler()
+X_train_s = scaler.fit_transform(X_train)
+X_test_s = scaler.transform(X_test)
+
+# A simple multi-layer network: 3 inputs -> 16 neurons -> 8 neurons -> 1 output
+model = keras.Sequential([
+    keras.Input(shape=(3,)),
+    layers.Dense(16, activation='relu'),
+    layers.Dense(8, activation='relu'),
+    layers.Dense(1, activation='sigmoid')
+])
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+model.summary()
+
+history = model.fit(X_train_s, y_train, epochs=50, verbose=0, validation_split=0.1)
+
+loss, accuracy = model.evaluate(X_test_s, y_test, verbose=0)
+print("Test accuracy:", round(accuracy, 3))   # 0.875
+
+predictions = model.predict(X_test_s)
+print(predictions[:5].flatten().round(3))     # probabilities, e.g. [0.822 0.978 0.934 0.809 0.582]
+
+# Save and reload the trained model:
+model.save("student_model.keras")
+loaded_model = keras.models.load_model("student_model.keras")</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>55. Loss Functions &amp; Optimizers</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span></div>
+      <ul class="key-points">
+        <li><b>Loss Function</b> &ndash; the formula that measures prediction error, which the network tries to minimize during training.</li>
+        <li><code>binary_crossentropy</code> &ndash; for binary classification. <code>categorical_crossentropy</code> &ndash; for multi-class classification. <code>mean_squared_error</code> &ndash; for regression.</li>
+        <li><b>Optimizer</b> &ndash; the algorithm that adjusts the network's weights to reduce the loss, based on the gradients computed during backpropagation.</li>
+        <li><code>Adam</code> &ndash; the most commonly used, well-performing default optimizer for most problems. <code>SGD</code> (Stochastic Gradient Descent) &ndash; the classic, simpler optimizer many others are built from.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>56. Convolutional Neural Networks (CNN)</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span></div>
+      <p>CNNs are the standard architecture for image data &ndash; instead of treating every pixel as a separate, unrelated input (like a plain Dense network would), Convolutional layers slide small filters across the image to detect local patterns (edges, textures, shapes), building up to recognizing complex objects in deeper layers.</p>
+      <ul class="key-points">
+        <li><b>Conv2D layer</b> &ndash; applies learnable filters across the image to produce "feature maps".</li>
+        <li><b>MaxPooling2D layer</b> &ndash; reduces the spatial size of feature maps, keeping the strongest signals and reducing computation.</li>
+        <li><b>Flatten layer</b> &ndash; converts the final 2D feature maps into a 1D vector, ready for standard Dense layers to make the final classification.</li>
+      </ul>
+      <pre class="code">from tensorflow import keras
+from tensorflow.keras import layers
+
+# A CNN for 28x28 grayscale images (e.g. handwritten digit classification), 10 classes:
+cnn = keras.Sequential([
+    keras.Input(shape=(28, 28, 1)),
+    layers.Conv2D(32, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Flatten(),
+    layers.Dense(64, activation='relu'),
+    layers.Dense(10, activation='softmax')   # 10 output classes
+])
+
+cnn.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+cnn.summary()
+# cnn.fit(X_images, y_labels, epochs=10)   # X_images shape: (num_samples, 28, 28, 1)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>57. Recurrent Neural Networks (RNN) &amp; LSTM</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span></div>
+      <p>RNNs are designed for SEQUENTIAL data (time series, text, audio) &ndash; unlike a standard network, an RNN maintains a "memory" of previous inputs in the sequence, letting it learn patterns that depend on order and context.</p>
+      <ul class="key-points">
+        <li><b>LSTM (Long Short-Term Memory)</b> &ndash; the most commonly used RNN variant, specifically designed to remember information over LONGER sequences (plain RNNs tend to "forget" earlier context in long sequences).</li>
+        <li>Common uses: stock price prediction, text generation, speech recognition &ndash; though Transformer architectures (Section 64) have now overtaken RNNs for most large-scale NLP tasks.</li>
+      </ul>
+      <pre class="code">from tensorflow import keras
+from tensorflow.keras import layers
+
+# An LSTM for sequence data: 10 timesteps, 1 feature per timestep, binary output
+rnn = keras.Sequential([
+    keras.Input(shape=(10, 1)),
+    layers.LSTM(32),
+    layers.Dense(1, activation='sigmoid')
+])
+
+rnn.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+# rnn.fit(X_sequences, y_labels, epochs=10)   # X_sequences shape: (num_samples, 10, 1)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>58. Transfer Learning</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span><span class="badge job">Widely Used in Industry</span></div>
+      <p>Instead of training a large network from scratch (which requires huge datasets and compute), Transfer Learning takes a model already pre-trained on a massive dataset (e.g. ImageNet, millions of images) and re-uses/fine-tunes it for a new, related, smaller task &ndash; dramatically reducing the data and training time needed.</p>
+      <ul class="key-points">
+        <li>Common pattern: keep the pre-trained model's early layers frozen (they've already learned general features like edges and shapes), and only retrain the final few layers for your specific task.</li>
+        <li>Popular pre-trained image models: ResNet, VGG, MobileNet &ndash; all available directly in <code>keras.applications</code>.</li>
+        <li>The equivalent for NLP is using pre-trained language models like BERT or GPT (Section 64) rather than training a language model from scratch.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part J &mdash; Natural Language Processing (NLP)</h2>
+
+    <div class="topic-note">
+      <h4>59. Introduction to NLP</h4>
+      <div class="badge-row"><span class="badge dl">NLP</span></div>
+      <p>Natural Language Processing is the branch of AI focused on enabling computers to understand, interpret, and generate human language &ndash; powering applications like sentiment analysis, chatbots, translation, and search.</p>
+      <ul class="key-points">
+        <li>The core challenge: raw text is unstructured and must be converted into a numeric form ML models can actually use &ndash; this Part builds that pipeline step by step.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>60. Text Preprocessing</h4>
+      <div class="badge-row"><span class="badge dl">NLP</span></div>
+      <p>Raw text is cleaned and standardized before any modeling, using the NLTK (Natural Language Toolkit) library.</p>
+      <ul class="key-points">
+        <li><b>Tokenization</b> &ndash; splitting text into individual words/tokens.</li>
+        <li><b>Stopword removal</b> &ndash; removing very common, low-information words ("the", "is", "and") that add noise without much meaning.</li>
+        <li><b>Stemming</b> &ndash; crudely chopping words down to a root form (e.g. "studying" &rarr; "studi") &ndash; fast, but the result isn't always a real word.</li>
+        <li><b>Lemmatization</b> &ndash; reduces words to their proper dictionary base form (e.g. "studying" &rarr; "studying" stays, but grammatically-aware) &ndash; slower than stemming, but more linguistically accurate.</li>
+      </ul>
+      <pre class="code">import nltk
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+text = "The students are studying machine learning algorithms very carefully."
+
+tokens = word_tokenize(text)
+print(tokens)
+# ['The', 'students', 'are', 'studying', 'machine', 'learning', 'algorithms', 'very', 'carefully', '.']
+
+stop_words = set(stopwords.words('english'))
+filtered = [w for w in tokens if w.lower() not in stop_words and w.isalpha()]
+print(filtered)
+# ['students', 'studying', 'machine', 'learning', 'algorithms', 'carefully']
+
+stemmer = PorterStemmer()
+print([stemmer.stem(w) for w in filtered])
+# ['student', 'studi', 'machin', 'learn', 'algorithm', 'care']
+
+lemmatizer = WordNetLemmatizer()
+print([lemmatizer.lemmatize(w) for w in filtered])
+# ['student', 'studying', 'machine', 'learning', 'algorithm', 'carefully']</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>61. Bag of Words &amp; TF-IDF</h4>
+      <div class="badge-row"><span class="badge dl">NLP</span></div>
+      <p>Two classic ways to convert cleaned text into numeric feature vectors an ML model can use.</p>
+      <ul class="key-points">
+        <li><b>Bag of Words (BoW)</b> &ndash; represents each document as a vector counting how many times each word in the overall vocabulary appears, ignoring grammar and word order entirely.</li>
+        <li><b>TF-IDF (Term Frequency-Inverse Document Frequency)</b> &ndash; like BoW, but down-weights words that appear in MANY documents (less distinctive, e.g. "movie" in a set of movie reviews) and up-weights words that are rarer and more distinctive to a specific document &ndash; generally a better default than plain BoW.</li>
+      </ul>
+      <pre class="code">from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+
+documents = [
+    "The movie was excellent and thrilling",
+    "I loved this film, great acting",
+    "Terrible movie, waste of time",
+]
+
+# Bag of Words
+cv = CountVectorizer()
+X_bow = cv.fit_transform(documents)
+print(X_bow.shape)              # (3, vocabulary_size)
+print(cv.vocabulary_)           # maps each word to its column index
+
+# TF-IDF
+tfidf = TfidfVectorizer()
+X_tfidf = tfidf.fit_transform(documents)
+print(X_tfidf.shape)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>62. Sentiment Analysis Example</h4>
+      <div class="badge-row"><span class="badge dl">NLP</span><span class="badge job">Common Portfolio Project</span></div>
+      <p>A complete, small end-to-end NLP pipeline: TF-IDF vectorization feeding into Naive Bayes (Section 36), a very common and effective classical combination for text classification.</p>
+      <pre class="code">from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+documents = [
+    "The movie was excellent and thrilling",
+    "I loved this film, great acting and story",
+    "Amazing storyline and great direction",
+    "Fantastic movie, wonderful performance",
+    "Brilliant film with a heartwarming story",
+    "One of the best movies I have seen",
+    "Terrible movie, waste of time",
+    "Worst film I have ever seen",
+    "Boring and poorly made movie",
+    "Awful acting and a dull plot",
+    "I did not enjoy this film at all",
+    "Bad movie with a weak story",
+]
+labels = [1,1,1,1,1,1, 0,0,0,0,0,0]   # 1 = positive, 0 = negative
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(documents)
+
+model = MultinomialNB()
+model.fit(X, labels)
+
+# Predict on brand-new, unseen sentences:
+new_sentences = [
+    "This film was fantastic and amazing",
+    "This was a terrible waste of time",
+    "A wonderful and brilliant story"
+]
+new_vec = vectorizer.transform(new_sentences)
+predictions = model.predict(new_vec)
+
+for sentence, pred in zip(new_sentences, predictions):
+    label = "Positive" if pred == 1 else "Negative"
+    print(f"'{sentence}' -> {label}")
+
+# Output:
+# 'This film was fantastic and amazing' -> Positive
+# 'This was a terrible waste of time' -> Negative
+# 'A wonderful and brilliant story' -> Positive</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>63. Word Embeddings</h4>
+      <div class="badge-row"><span class="badge dl">NLP</span></div>
+      <p>Both Bag of Words and TF-IDF treat words as unrelated, independent symbols &ndash; they have no notion that "good" and "great" are similar in meaning. Word Embeddings solve this by representing each word as a dense vector of numbers, learned so that words with SIMILAR MEANINGS end up with similar (nearby) vectors.</p>
+      <ul class="key-points">
+        <li><b>Word2Vec</b> &ndash; a classic technique that learns embeddings by predicting a word from its surrounding context (or vice versa) across a huge text corpus.</li>
+        <li><b>GloVe</b> &ndash; another popular pre-trained embedding technique, based on global word co-occurrence statistics.</li>
+        <li>Famous property of good embeddings: vector arithmetic captures meaning, e.g. <code>king - man + woman &asymp; queen</code>.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>64. Introduction to Transformers &amp; LLMs</h4>
+      <div class="badge-row"><span class="badge dl">NLP</span><span class="badge job">Current Industry Standard</span></div>
+      <p>The Transformer architecture (introduced in 2017) replaced RNNs (Section 57) as the dominant approach for NLP, and is the foundation of every modern Large Language Model (LLM) like GPT and BERT.</p>
+      <ul class="key-points">
+        <li><b>Attention mechanism</b> &ndash; the key innovation: lets the model weigh the importance of every other word in a sentence when processing each word, capturing long-range context far better than RNNs could, and processing an entire sequence in parallel (much faster to train).</li>
+        <li><b>Pre-training + Fine-tuning</b> &ndash; LLMs are pre-trained on massive amounts of general text, then fine-tuned (or simply prompted) for specific tasks &ndash; the NLP equivalent of Transfer Learning (Section 58).</li>
+        <li>For most practical job tasks today, using a pre-trained model via an API (e.g. Hugging Face's <code>transformers</code> library, or an LLM API) is far more common than training a Transformer from scratch.</li>
+      </ul>
+      <pre class="code"># Example: using a pre-trained Hugging Face model for sentiment analysis
+# (requires: pip install transformers)
+
+from transformers import pipeline
+
+classifier = pipeline("sentiment-analysis")
+result = classifier("I absolutely loved this course, it was fantastic!")
+print(result)
+# [{'label': 'POSITIVE', 'score': 0.9998}]</pre>
+    </div>
+
+    <h2 class="part-title">Part K &mdash; Model Deployment &amp; MLOps Basics</h2>
+
+    <div class="topic-note">
+      <h4>65. Saving &amp; Loading Models</h4>
+      <div class="badge-row"><span class="badge job">Job-Ready Skill</span></div>
+      <p>A trained model only lives in memory until the script ends &ndash; to actually USE a model later (e.g. in an API), it must be saved to disk and reloaded.</p>
+      <ul class="key-points">
+        <li><b>joblib</b> &ndash; the recommended way to save scikit-learn models; efficient with the large NumPy arrays inside them.</li>
+        <li><b>pickle</b> &ndash; Python's general-purpose object serializer; also works, though joblib is usually preferred for ML models specifically.</li>
+        <li>Deep learning models (Keras) use their own <code>.save()</code> / <code>keras.models.load_model()</code> methods, shown already in Section 54.</li>
+      </ul>
+      <pre class="code">import joblib
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+# Save
+joblib.dump(model, "student_model.joblib")
+
+# Load (e.g. in a completely different script/session)
+loaded_model = joblib.load("student_model.joblib")
+print(loaded_model.score(X_test, y_test))   # works identically to the original</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>66. Building a Simple API with Flask</h4>
+      <div class="badge-row"><span class="badge job">Job-Ready Skill</span></div>
+      <p>A trained model becomes genuinely USEFUL to other applications once it's wrapped in an API &ndash; Flask is a lightweight Python web framework commonly used to quickly expose a model as a web service that accepts input and returns predictions.</p>
+      <pre class="code">from flask import Flask, request, jsonify
+import joblib
+import pandas as pd
+
+app = Flask(__name__)
+model = joblib.load("student_model.joblib")
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    data = request.get_json()
+    sample = pd.DataFrame([{
+        "StudyHours": data["StudyHours"],
+        "Attendance": data["Attendance"],
+        "PrevScore": data["PrevScore"]
+    }])
+    prediction = model.predict(sample)[0]
+    probability = model.predict_proba(sample)[0][1]
+    return jsonify({
+        "prediction": int(prediction),
+        "probability": round(float(probability), 3)
+    })
+
+if __name__ == "__main__":
+    app.run(port=5000)</pre>
+      <p>Test it by sending a POST request (e.g. from a terminal, or another script) once the server is running:</p>
+      <pre class="code">import requests
+
+response = requests.post(
+    "http://127.0.0.1:5000/predict",
+    json={"StudyHours": 7, "Attendance": 85, "PrevScore": 70}
+)
+print(response.json())
+# {'prediction': 1, 'probability': 0.95}
+
+response2 = requests.post(
+    "http://127.0.0.1:5000/predict",
+    json={"StudyHours": 1, "Attendance": 50, "PrevScore": 40}
+)
+print(response2.json())
+# {'prediction': 0, 'probability': 0.16}</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>67. Introduction to MLOps</h4>
+      <div class="badge-row"><span class="badge job">Job Relevance</span></div>
+      <p>MLOps (Machine Learning Operations) applies DevOps-style practices to the ML lifecycle &ndash; ensuring models are not just built once, but reliably developed, deployed, monitored, and updated over time in a real production system.</p>
+      <ul class="key-points">
+        <li>Key concerns: reproducibility (can you retrain the exact same model later?), automated testing/deployment pipelines, model versioning, and monitoring for performance degradation over time.</li>
+        <li><b>Model Drift</b> &ndash; when a model's real-world performance degrades over time because the live data distribution has changed since training (e.g. customer behavior shifts) &ndash; a key reason production models need ongoing monitoring, not just a one-time deployment.</li>
+        <li>Common tools in this space: MLflow (experiment tracking), Docker (packaging models consistently), Kubernetes (orchestrating deployed services at scale).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>68. Version Control for ML with Git</h4>
+      <div class="badge-row"><span class="badge job">Job-Ready Skill</span></div>
+      <p>Git (and hosting it on GitHub) is essential for any ML job &ndash; both for collaborating on code and for building the public portfolio that employers actually check (Section 70).</p>
+      <pre class="code">git init
+git add train_model.py requirements.txt
+git commit -m "Add initial student performance model"
+git remote add origin https://github.com/yourusername/student-performance-model.git
+git push -u origin main
+
+# Best practice: add a .gitignore to exclude large model files and datasets
+# from version control (use Git LFS or a separate storage solution for those)</pre>
+      <ul class="key-points">
+        <li>A clean <code>requirements.txt</code> (listing exact package versions) is essential so anyone (including your future self, or an interviewer) can reproduce your environment exactly.</li>
+      </ul>
+      <pre class="code">pip freeze > requirements.txt</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>69. Model Monitoring Basics</h4>
+      <div class="badge-row"><span class="badge job">Job Relevance</span></div>
+      <p>Once deployed, a model needs ongoing observation to catch problems early &ndash; a model that was 95% accurate at launch can quietly degrade to 70% months later without anyone noticing, unless it's actively monitored.</p>
+      <ul class="key-points">
+        <li>Track prediction distributions over time &ndash; a sudden shift can signal data drift.</li>
+        <li>Log predictions and (when available) actual outcomes, to periodically recalculate real-world accuracy/precision/recall.</li>
+        <li>Set up alerts for anomalies: unusual input values, a spike in a particular prediction class, or missing/null input fields.</li>
+        <li>Plan for periodic retraining on fresh data as part of the normal ML lifecycle, not as an afterthought.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part L &mdash; Job Readiness</h2>
+
+    <div class="topic-note">
+      <h4>70. Building an ML Portfolio</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <p>For ML roles, a portfolio of real, documented projects on GitHub is often weighted as heavily as (or more than) a degree, since it directly demonstrates practical ability.</p>
+      <ul class="key-points">
+        <li>Aim for 3-5 solid, varied projects rather than many shallow ones &ndash; e.g. one regression project, one classification project, one clustering/unsupervised project, and one deep learning or NLP project.</li>
+        <li>Every project's GitHub repo should have a clear README: the problem, the dataset, your approach, key results/metrics, and what you'd improve with more time.</li>
+        <li>Use real or realistic datasets (Section 72) rather than only toy/tutorial datasets, to show you can handle messy, real-world data.</li>
+        <li>Include your data cleaning and exploration process, not just the final model &ndash; this is often what interviewers actually want to discuss.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>71. Common Interview Questions &amp; Concepts</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <p>A checklist of concepts from this course that are asked about constantly in ML interviews &ndash; be able to explain each in plain English, not just recite a definition.</p>
+      <ul class="key-points">
+        <li>"Explain the bias-variance tradeoff" (Section 45) &ndash; "Explain overfitting and how to prevent it" (Section 44).</li>
+        <li>"When would you use Precision vs Recall?" (Section 37) &ndash; "What is a confusion matrix?"</li>
+        <li>"Explain the difference between bagging and boosting" (Section 48) &ndash; "How does Random Forest work?" (Section 34).</li>
+        <li>"What is regularization and why is it used?" (Section 28) &ndash; "L1 vs L2 regularization?"</li>
+        <li>"How would you handle an imbalanced dataset?" (Section 50) &ndash; "How would you handle missing data?" (Section 17).</li>
+        <li>"Explain how a neural network learns (forward/backpropagation)" (Section 53).</li>
+        <li>"Walk me through your typical ML project workflow" &ndash; be ready to narrate: define the problem &rarr; explore data &rarr; clean/preprocess &rarr; engineer features &rarr; train/tune multiple models &rarr; evaluate &rarr; deploy/communicate results.</li>
+        <li>Practical/coding interview rounds often ask you to build a full pipeline live (load data &rarr; clean &rarr; model &rarr; evaluate) in 30-45 minutes &ndash; practice doing exactly that, fast and from memory.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>72. Kaggle &amp; Practice Datasets</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <p>Kaggle is the most well-known platform for finding real datasets, entering ML competitions, and studying other practitioners' published solutions ("Notebooks") &ndash; an excellent, free source of both practice and portfolio material.</p>
+      <ul class="key-points">
+        <li>Classic beginner-friendly Kaggle datasets: Titanic (classification), House Prices (regression), Iris (classification).</li>
+        <li>After building your own solution, read a few of the top-voted public Notebooks for the same dataset &ndash; comparing your approach against others is one of the fastest ways to improve.</li>
+        <li>UCI Machine Learning Repository is another long-standing, reliable source of classic practice datasets.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>73. Resume Tips for ML Roles</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <ul class="key-points">
+        <li>Quantify results wherever possible: "improved model accuracy from 82% to 91% by engineering three new features" is far stronger than "built a machine learning model".</li>
+        <li>List specific tools/libraries actually used (Python, Pandas, Scikit-learn, TensorFlow, SQL) &ndash; many companies filter resumes by keyword match for these.</li>
+        <li>Link directly to your GitHub portfolio (Section 70) and, if you have one, a deployed live demo (e.g. the Flask API from Section 66, or a simple Streamlit app).</li>
+        <li>For an entry-level role, coursework/certifications and strong personal projects can substitute for formal work experience &ndash; present them with the same seriousness as a job.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>74. Final End-to-End Project Guide</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <p>A checklist summarizing the complete workflow taught across this entire course &ndash; follow this exact sequence for the capstone Assignment (Part M) and for any future project, in interviews or on the job.</p>
+      <ol>
+        <li>Define the problem: is it regression, classification, or unsupervised? What does "success" (a good metric) look like?</li>
+        <li>Load and explore the data (Sections 6-10) &ndash; understand shape, types, missing values, and initial patterns.</li>
+        <li>Clean and preprocess (Part D): handle missing data, outliers, scaling, encoding.</li>
+        <li>Split into train/test sets BEFORE any further fitting (Section 21), to avoid data leakage.</li>
+        <li>Engineer and select features (Sections 22-23).</li>
+        <li>Train several candidate models (Parts E/F/G), not just one &ndash; compare them fairly using cross-validation (Section 46).</li>
+        <li>Tune the most promising model's hyperparameters (Section 47).</li>
+        <li>Evaluate the final model on the held-out test set, using metrics appropriate to the problem (Sections 29, 37-38).</li>
+        <li>Save the final model (Section 65) and, if relevant, wrap it in an API (Section 66).</li>
+        <li>Document everything clearly in a README/report, written for someone who wasn't there while you built it (Section 70).</li>
+      </ol>
+      <p>Note: brief mention of Reinforcement Learning, referenced back in Section 2 &ndash; this course does not cover it in depth, since it is a specialized field (used in robotics, game-playing agents like AlphaGo, and some recommendation systems) built on a fundamentally different training loop (an agent, an environment, and reward signals) rather than a fixed labeled/unlabeled dataset; it is typically studied as a dedicated follow-on topic after the supervised/unsupervised foundations in this course are solid.</p>
+    </div>
+
+    <h2 class="part-title">Part M &mdash; Assignments with Full Code Solutions</h2>
+
+    <div class="instructions">
+      <b>Practice Dataset:</b> Assignments 1-5 use the same Student Performance dataset built in Part B (StudyHours, Attendance, PrevScore, FinalScore, Passed). Assignment 6 uses a small text dataset. The Capstone Project uses a real, well-known dataset built directly into scikit-learn, so it runs with zero extra downloads.
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 1 &mdash; Data Exploration &amp; Cleaning</h4>
+      <div class="badge-row"><span class="badge code">Preprocessing</span></div>
+      <p><b>Task:</b> Introduce some missing values and one outlier into the dataset, then detect and fix both, printing before/after statistics at each step.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pandas as pd
+import numpy as np
+
+df = pd.read_csv("student_performance.csv")
+
+# Simulate messy data
+df.loc[[3, 7, 15], "Attendance"] = np.nan
+df.loc[190, "FinalScore"] = 250   # an impossible outlier value
+
+print("Missing values before:", df.isnull().sum().sum())        # 3
+df["Attendance"] = df["Attendance"].fillna(df["Attendance"].median())
+print("Missing values after:", df.isnull().sum().sum())          # 0
+
+Q1 = df["FinalScore"].quantile(0.25)
+Q3 = df["FinalScore"].quantile(0.75)
+IQR = Q3 - Q1
+upper_bound = Q3 + 1.5 * IQR
+print("Upper outlier bound:", round(upper_bound, 1))             # 101.65
+
+outliers = df[df["FinalScore"] > upper_bound]
+print("Outliers found:", len(outliers))                          # 1
+
+df_clean = df[df["FinalScore"] <= upper_bound]
+print("Shape after cleaning:", df_clean.shape)                   # (199, 5)</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 2 &mdash; Compare Three Regression Models</h4>
+      <div class="badge-row"><span class="badge code">Regression</span></div>
+      <p><b>Task:</b> Train Linear Regression, Ridge Regression, and Random Forest Regressor to predict FinalScore, then compare their RMSE and R&sup2; to pick the best one.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, Ridge
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+y = df["FinalScore"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+models = {
+    "Linear Regression": LinearRegression(),
+    "Ridge Regression": Ridge(alpha=1.0),
+    "Random Forest Regressor": RandomForestRegressor(n_estimators=100, random_state=42)
+}
+
+results = {}
+for name, model in models.items():
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    rmse = np.sqrt(mean_squared_error(y_test, preds))
+    r2 = r2_score(y_test, preds)
+    results[name] = rmse
+    print(f"{name}: RMSE={rmse:.2f}, R2={r2:.3f}")
+
+best_model_name = min(results, key=results.get)
+print("\nBest model (lowest RMSE):", best_model_name)
+
+# Output:
+# Linear Regression: RMSE=4.16, R2=0.902
+# Ridge Regression: RMSE=4.16, R2=0.902
+# Random Forest Regressor: RMSE=5.41, R2=0.833
+# Best model (lowest RMSE): Linear Regression
+# (On this small, mostly-linear dataset, the simpler linear model wins -
+#  a good reminder that more complex models aren't always better.)</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 3 &mdash; Compare Three Classification Models</h4>
+      <div class="badge-row"><span class="badge code">Classification</span></div>
+      <p><b>Task:</b> Train Logistic Regression, Decision Tree, and Random Forest to predict Passed, printing Accuracy, Precision, Recall, F1, and the Confusion Matrix for each.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+y = df["Passed"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+scaler = StandardScaler()
+X_train_s = scaler.fit_transform(X_train)
+X_test_s = scaler.transform(X_test)
+
+models = {
+    "Logistic Regression": (LogisticRegression(), X_train_s, X_test_s),
+    "Decision Tree": (DecisionTreeClassifier(max_depth=4, random_state=42), X_train, X_test),
+    "Random Forest": (RandomForestClassifier(n_estimators=100, random_state=42), X_train, X_test),
+}
+
+for name, (model, xtr, xte) in models.items():
+    model.fit(xtr, y_train)
+    preds = model.predict(xte)
+    print(f"\n{name}")
+    print(f"  Accuracy={accuracy_score(y_test, preds):.3f}  "
+          f"Precision={precision_score(y_test, preds):.3f}  "
+          f"Recall={recall_score(y_test, preds):.3f}  "
+          f"F1={f1_score(y_test, preds):.3f}")
+    print("  Confusion Matrix:\n", confusion_matrix(y_test, preds))</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 4 &mdash; K-Means Clustering &amp; Cluster Interpretation</h4>
+      <div class="badge-row"><span class="badge code">Clustering</span></div>
+      <p><b>Task:</b> Cluster students into 3 groups using K-Means, then interpret what each cluster represents by examining its average feature values.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+X_scaled = StandardScaler().fit_transform(X)
+
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+df["Cluster"] = kmeans.fit_predict(X_scaled)
+
+summary = df.groupby("Cluster")[["StudyHours", "Attendance", "PrevScore", "FinalScore"]].mean().round(1)
+print(summary)
+print(df["Cluster"].value_counts())
+
+# Example output and interpretation:
+#          StudyHours  Attendance  PrevScore  FinalScore
+# Cluster
+# 0               5.2        60.0       81.1        63.6   <- strong prior scores, low attendance
+# 1               3.4        86.8       71.2        60.8   <- high attendance, lower study hours
+# 2               7.3        76.8       55.6        68.3   <- highest study hours, weaker prior scores
+#                                                              but still achieves the best final scores
+#                                                              (effort compensates for a weaker starting point)</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 5 &mdash; Neural Network vs Classical Model</h4>
+      <div class="badge-row"><span class="badge dl">Deep Learning</span></div>
+      <p><b>Task:</b> Train a small Keras neural network to predict Passed, and compare its accuracy directly against Logistic Regression on the same train/test split.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pandas as pd
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+
+tf.random.set_seed(7)
+
+df = pd.read_csv("student_performance.csv")
+X = df[["StudyHours", "Attendance", "PrevScore"]]
+y = df["Passed"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+scaler = StandardScaler()
+X_train_s = scaler.fit_transform(X_train)
+X_test_s = scaler.transform(X_test)
+
+logreg = LogisticRegression()
+logreg.fit(X_train_s, y_train)
+print("Logistic Regression accuracy:", logreg.score(X_test_s, y_test))   # 0.925
+
+nn = keras.Sequential([
+    keras.Input(shape=(3,)),
+    layers.Dense(16, activation='relu'),
+    layers.Dense(8, activation='relu'),
+    layers.Dense(1, activation='sigmoid')
+])
+nn.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+nn.fit(X_train_s, y_train, epochs=50, verbose=0, validation_split=0.1)
+
+loss, accuracy = nn.evaluate(X_test_s, y_test, verbose=0)
+print("Neural Network accuracy:", round(accuracy, 3))   # 0.95
+
+# On a small, simple dataset like this one, a neural network often performs
+# similarly to (or only slightly better than) Logistic Regression - the real
+# advantage of neural networks shows up on much larger, more complex datasets
+# (images, text, audio) where classical models struggle to capture the patterns.</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 6 &mdash; Build a Sentiment Classifier</h4>
+      <div class="badge-row"><span class="badge dl">NLP</span></div>
+      <p><b>Task:</b> Using the sentiment analysis pipeline from Section 62, add 4 more of your own example sentences to the training data, retrain, and test the model on 2 completely new sentences you write yourself.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+documents = [
+    "The movie was excellent and thrilling",
+    "I loved this film, great acting and story",
+    "Amazing storyline and great direction",
+    "Fantastic movie, wonderful performance",
+    "Brilliant film with a heartwarming story",
+    "One of the best movies I have seen",
+    "A truly inspiring and beautiful film",       # added
+    "Superb writing and excellent pacing",        # added
+    "Terrible movie, waste of time",
+    "Worst film I have ever seen",
+    "Boring and poorly made movie",
+    "Awful acting and a dull plot",
+    "I did not enjoy this film at all",
+    "Bad movie with a weak story",
+    "A dull, forgettable, and disappointing film", # added
+    "Painfully slow with a weak ending",           # added
+]
+labels = [1,1,1,1,1,1,1,1, 0,0,0,0,0,0,0,0]
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(documents)
+
+model = MultinomialNB()
+model.fit(X, labels)
+
+new_sentences = [
+    "An absolutely brilliant and touching experience",
+    "I regret watching this, it was dreadful"
+]
+new_vec = vectorizer.transform(new_sentences)
+predictions = model.predict(new_vec)
+
+for sentence, pred in zip(new_sentences, predictions):
+    print(f"'{sentence}' -> {'Positive' if pred == 1 else 'Negative'}")</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Capstone Project &mdash; Full End-to-End ML Pipeline</h4>
+      <div class="badge-row"><span class="badge job">Job-Ready Capstone</span></div>
+      <p><b>Task:</b> Following the checklist in Section 74, build a complete pipeline on the real Breast Cancer Wisconsin dataset (built into scikit-learn, 569 samples, 30 real medical features, binary malignant/benign target): explore, preprocess, train a baseline AND a tuned model, evaluate thoroughly, and save the final model.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">import pandas as pd
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import joblib
+
+# 1. Load and explore
+data = load_breast_cancer()
+X = pd.DataFrame(data.data, columns=data.feature_names)
+y = pd.Series(data.target, name="target")
+
+print("Shape:", X.shape)                              # (569, 30)
+print("Target distribution:", y.value_counts().to_dict())   # {1: 357, 0: 212}
+print("Missing values:", X.isnull().sum().sum())       # 0 - this dataset is already clean
+
+# 2. Split BEFORE any fitting
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+
+# 3. Preprocess: scale features
+scaler = StandardScaler()
+X_train_s = scaler.fit_transform(X_train)
+X_test_s = scaler.transform(X_test)
+
+# 4. Train a simple baseline model first
+baseline = LogisticRegression(max_iter=5000)
+baseline.fit(X_train_s, y_train)
+print("Baseline Logistic Regression accuracy:",
+      accuracy_score(y_test, baseline.predict(X_test_s)))   # 0.982
+
+# 5. Train and tune a stronger model
+param_grid = {"n_estimators": [100, 200], "max_depth": [5, 10, None]}
+grid = GridSearchCV(RandomForestClassifier(random_state=42), param_grid, cv=5)
+grid.fit(X_train, y_train)
+print("Best hyperparameters:", grid.best_params_)
+
+best_model = grid.best_estimator_
+predictions = best_model.predict(X_test)
+
+# 6. Evaluate thoroughly
+print("Tuned Random Forest accuracy:", accuracy_score(y_test, predictions))
+print(classification_report(y_test, predictions, target_names=data.target_names))
+print(confusion_matrix(y_test, predictions))
+
+# 7. Save the final model for deployment (Section 65-66)
+joblib.dump(best_model, "capstone_model.joblib")
+joblib.dump(scaler, "capstone_scaler.joblib")
+print("Model saved successfully.")
+
+# Actual verified results from this exact code:
+# Baseline Logistic Regression accuracy: 0.982
+# Best hyperparameters: {'max_depth': 10, 'n_estimators': 200}
+# Tuned Random Forest accuracy: 0.956
+#               precision    recall  f1-score   support
+#    malignant       0.95      0.93      0.94        42
+#       benign       0.96      0.97      0.97        72
+#     accuracy                           0.96       114
+#
+# Interesting real-world lesson: the simpler baseline (Logistic Regression)
+# actually slightly outperformed the tuned Random Forest here - a genuine,
+# common occurrence that reinforces Section 44's lesson: always compare
+# against a simple baseline, and don't assume a more complex model wins.</pre>
+      <p><b>Next step for a real portfolio:</b> wrap <code>capstone_model.joblib</code> in the Flask API pattern from Section 66, push the project to GitHub with a clear README (Section 70), and you have a complete, demonstrable, end-to-end ML project ready to discuss in an interview.</p>
+    </div>
+
+    <h2 class="part-title">Part N &mdash; Quick Reference</h2>
+
+    <div class="topic-note">
+      <h4>Algorithm Selection Guide</h4>
+      <table class="quick-ref">
+        <tr><th>You want to...</th><th>Use this algorithm</th></tr>
+        <tr><td>Predict a continuous number, simple/interpretable</td><td>Linear Regression (Section 25)</td></tr>
+        <tr><td>Predict a continuous number, avoid overfitting with many features</td><td>Ridge / Lasso Regression (Section 28)</td></tr>
+        <tr><td>Predict a category, need probability output, interpretable</td><td>Logistic Regression (Section 31)</td></tr>
+        <tr><td>Predict a category, need a human-readable decision path</td><td>Decision Tree (Section 33)</td></tr>
+        <tr><td>Predict a category, want strong accuracy with less tuning</td><td>Random Forest (Section 34)</td></tr>
+        <tr><td>Predict a category, want maximum accuracy, structured data</td><td>XGBoost / Gradient Boosting (Section 49)</td></tr>
+        <tr><td>Group similar records with no labels, known number of groups</td><td>K-Means Clustering (Section 40)</td></tr>
+        <tr><td>Group similar records, unsure how many groups exist</td><td>Hierarchical Clustering (Section 41)</td></tr>
+        <tr><td>Reduce many correlated features to fewer, for speed/visualization</td><td>PCA (Section 42)</td></tr>
+        <tr><td>Model images</td><td>Convolutional Neural Network / CNN (Section 56)</td></tr>
+        <tr><td>Model sequences/time series/text (classical approach)</td><td>RNN / LSTM (Section 57)</td></tr>
+        <tr><td>Model language at a high level (current best practice)</td><td>Pre-trained Transformer / LLM (Section 64)</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>Evaluation Metric Cheat Sheet</h4>
+      <table class="quick-ref">
+        <tr><th>Task</th><th>Metric</th><th>Use When</th></tr>
+        <tr><td>Regression</td><td>RMSE</td><td>Standard default; same units as the target</td></tr>
+        <tr><td>Regression</td><td>R&sup2;</td><td>Need a 0-1 "how much variance explained" summary</td></tr>
+        <tr><td>Classification</td><td>Accuracy</td><td>Classes are roughly balanced</td></tr>
+        <tr><td>Classification</td><td>Precision</td><td>False positives are costly (e.g. spam filter)</td></tr>
+        <tr><td>Classification</td><td>Recall</td><td>False negatives are costly (e.g. disease detection)</td></tr>
+        <tr><td>Classification</td><td>F1-Score</td><td>Need one balanced number, imbalanced classes</td></tr>
+        <tr><td>Classification</td><td>AUC</td><td>Comparing models independent of a chosen threshold</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>Library Import Cheat Sheet</h4>
+      <pre class="code">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.linear_model import LinearRegression, LogisticRegression, Ridge, Lasso
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor, GradientBoostingClassifier
+from sklearn.svm import SVC
+from sklearn.naive_bayes import GaussianNB
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from sklearn.metrics import mean_squared_error, r2_score
+
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+
+import joblib</pre>
+    </div>
+
+    <div class="notes">
+      <strong>Course Summary:</strong> Every ML project, regardless of algorithm, follows the same core pipeline taught in this course: understand the problem &rarr; explore and clean the data (Parts B-D) &rarr; choose and train an appropriate model (Parts E-G) &rarr; evaluate it honestly using the right metric (Sections 29, 37-38) &rarr; improve it through validation and tuning (Part H) &rarr; and, for a real job, deploy and monitor it (Part K) while building the portfolio and interview fluency to prove you can do all of this independently (Part L). Deep Learning and NLP (Parts I-J) extend the same fundamental workflow to more complex data types. Complete every assignment in Part M in order, finishing with the Capstone Project, and you will have both the conceptual understanding and a concrete, working, end-to-end project to show for it &mdash; exactly what separates a job-ready candidate from someone who has only read about machine learning.
+    </div>
+  </div>
+</body>
+</html>
