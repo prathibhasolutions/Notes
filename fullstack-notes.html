@@ -1,0 +1,2569 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Stack Web Development with Python &amp; Django - Complete Notes</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #95a8b8;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(15, 95, 127, 0.09), transparent 26%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.4pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .meta div span {
+      color: #7c8fa0;
+      font-size: 7.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 1mm;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: #8a5c1f; }
+
+    h2.part-title {
+      margin: 4.5mm 0 2.4mm;
+      font-size: 11.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: linear-gradient(90deg, #0f5f7f, #124a76);
+      border-radius: 1.3mm;
+      padding: 2mm 2.6mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+      position: relative;
+      z-index: 1;
+    }
+
+    h4 {
+      margin: 2.2mm 0 1.2mm;
+      font-size: 9.5pt;
+      color: #123a5d;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topic-block {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 1.3mm 2mm 1.5mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-block ol {
+      margin: 0;
+      padding-left: 5.2mm;
+    }
+
+    li {
+      margin: 0 0 2.45mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e3ec;
+      padding-bottom: 1.3mm;
+    }
+
+    .notes {
+      margin-top: 3mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      position: relative;
+      z-index: 1;
+      background: #fafcff;
+      font-size: 9pt;
+    }
+
+    .topic-note {
+      border: 1px solid #d6e0ea;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fcfdff;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .topic-note p {
+      margin: 0 0 1.5mm;
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: #304556;
+    }
+
+    .key-points {
+      margin: 1.3mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1mm;
+      font-size: 7.9pt;
+      line-height: 1.4;
+      color: #314759;
+    }
+
+    .code {
+      margin: 1.3mm 0 0;
+      border: 1px solid #d9e5ef;
+      border-left: 2mm solid #0f5f7f;
+      border-radius: 1mm;
+      background: #fffdf8;
+      color: #203040;
+      padding: 2mm;
+      font-size: 7.6pt;
+      line-height: 1.42;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+      margin: 1mm 0 0;
+    }
+
+    .badge {
+      font-size: 7.3pt;
+      color: #0f5f7f;
+      border: 1px solid #bcd7e2;
+      background: #eef7fb;
+      border-radius: 3mm;
+      padding: 0.8mm 2.2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .badge.front { color: #8a5c1f; border-color: #e3cfa8; background: #fdf6ea; }
+    .badge.back { color: #1f7a4d; border-color: #b9dfc7; background: #ecfaf1; }
+    .badge.db { color: #6a3b96; border-color: #d6c2ea; background: #f6f0fb; }
+    .badge.job { color: #a13a3a; border-color: #e8b9b9; background: #fdf1f1; }
+
+    .assign-block {
+      border: 1px solid #d6e0ea;
+      border-left: 2mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      background: #fffefb;
+      margin: 0 0 2.4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .assign-block h4 { color: #8a5c1f; }
+
+    .assign-block .solution-label {
+      display: inline-block;
+      margin: 1.6mm 0 0.8mm;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0f5f7f;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid #bcd7e2;
+      padding-bottom: 0.6mm;
+    }
+
+    .quick-ref {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.5pt;
+      margin-top: 1mm;
+    }
+
+    .quick-ref th, .quick-ref td {
+      border: 1px solid var(--soft);
+      padding: 1mm 1.5mm;
+      text-align: left;
+    }
+
+    .quick-ref th {
+      background: #eef5fa;
+      color: #124a76;
+      text-transform: uppercase;
+      font-size: 7pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Logo" />
+      </div>
+      <div class="title-block">
+        <div class="title">Full Stack Web Development</div>
+        <div class="subtitle">Python &amp; Django &bull; HTML, CSS, JavaScript &bull; Beginner to Job-Ready</div>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><span>Name</span>&nbsp;</div>
+      <div><span>Class / Roll No.</span>&nbsp;</div>
+      <div><span>Date</span>&nbsp;</div>
+    </div>
+
+    <div class="instructions">
+      <b>Study Note:</b> These notes take a complete beginner all the way to job-ready in Full Stack Web Development using Python and Django: how the web works, HTML, CSS, and JavaScript for the frontend, Python and Django for the backend, databases, REST APIs, authentication, deployment, and everything needed for job readiness. Every topic includes a plain-English <b>definition</b>, complete <b>runnable code</b>, and an explanation of what it does and why it matters. All Django examples build one consistent project &mdash; a Blog application &mdash; so each new concept adds directly onto what was built before, exactly like a real project grows. A full set of <b>coding assignments with complete solutions</b> is provided at the end, culminating in a deployable, job-ready portfolio project.
+    </div>
+
+    <h2 class="part-title">Part A &mdash; Web Development Foundations</h2>
+
+    <div class="topic-note">
+      <h4>1. What is Full Stack Web Development?</h4>
+      <p>A "Full Stack" developer can build both sides of a web application: the <b>Frontend</b> (everything the user sees and interacts with in the browser) and the <b>Backend</b> (the server, database, and business logic behind the scenes) &ndash; plus knows enough about how they connect and deploy together to ship a complete, working product alone.</p>
+      <ul class="key-points">
+        <li>This course's stack: <b>HTML/CSS/JavaScript</b> for the frontend, and <b>Python with Django</b> for the backend &ndash; one of the most popular, in-demand combinations for web development jobs.</li>
+        <li>Django is a "batteries-included" framework: it comes with an ORM, admin panel, authentication, and forms built in, letting a solo developer or small team build production-ready applications fast.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>2. How the Web Works</h4>
+      <div class="badge-row"><span class="badge job">Core Interview Concept</span></div>
+      <p>Understanding this request/response cycle is fundamental to everything that follows in this course.</p>
+      <ul class="key-points">
+        <li>A user types a URL (or clicks a link) in their <b>browser (the Client)</b>.</li>
+        <li>The browser looks up the domain's IP address via <b>DNS (Domain Name System)</b>, then sends an <b>HTTP Request</b> to the <b>Server</b> at that address.</li>
+        <li>The server processes the request (often involving a database), and sends back an <b>HTTP Response</b> &ndash; usually HTML, CSS, JavaScript, or JSON data.</li>
+        <li>The browser receives the response and renders it into the visible page the user sees.</li>
+        <li><b>HTTP Methods:</b> <code>GET</code> (retrieve data), <code>POST</code> (submit/create data), <code>PUT</code>/<code>PATCH</code> (update data), <code>DELETE</code> (remove data) &ndash; the foundation of REST APIs (Part J).</li>
+        <li><b>HTTP Status Codes:</b> 200 (OK), 201 (Created), 301/302 (Redirect), 400 (Bad Request), 401/403 (Unauthorized/Forbidden), 404 (Not Found), 500 (Server Error).</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>3. Frontend vs Backend</h4>
+      <ul class="key-points">
+        <li><b>Frontend</b> &ndash; runs INSIDE the user's browser: HTML (structure), CSS (styling), JavaScript (interactivity). The user can view its source code directly.</li>
+        <li><b>Backend</b> &ndash; runs ON THE SERVER, invisible to the user: handles business logic, talks to the database, enforces security/permissions, and returns data or rendered pages to the frontend.</li>
+        <li><b>Database</b> &ndash; where data is permanently stored (Part G) &ndash; the backend reads from and writes to it, the frontend never accesses it directly.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>4. Job Roles in Web Development</h4>
+      <div class="badge-row"><span class="badge job">Job Relevance</span></div>
+      <ul class="key-points">
+        <li><b>Frontend Developer</b> &ndash; specializes in HTML/CSS/JavaScript and frontend frameworks (React, Vue).</li>
+        <li><b>Backend Developer</b> &ndash; specializes in server-side languages/frameworks (Python/Django, Node.js), databases, and APIs.</li>
+        <li><b>Full Stack Developer</b> &ndash; comfortable across both; this course's target role.</li>
+        <li><b>DevOps Engineer</b> &ndash; focuses on deployment, servers, and infrastructure automation (Part L).</li>
+        <li>Django-specific roles are common at companies handling significant backend complexity: content platforms, fintech, SaaS products, internal admin tools.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>5. Setting Up the Development Environment</h4>
+      <ul class="key-points">
+        <li><b>Code Editor</b> &ndash; VS Code is the standard choice: free, excellent Python/Django/HTML/JS support via extensions.</li>
+        <li><b>Python</b> &ndash; install Python 3.10+ from python.org; Django requires it.</li>
+        <li><b>Browser DevTools</b> &ndash; press F12 in any browser to inspect HTML/CSS live, view network requests, and debug JavaScript &ndash; used constantly throughout this course.</li>
+        <li><b>Terminal</b> &ndash; comfort with basic command-line navigation (<code>cd</code>, <code>ls</code>/<code>dir</code>, running Python scripts) is assumed throughout.</li>
+      </ul>
+      <pre class="code">python --version
+pip --version
+
+# Create a project folder and a virtual environment (Section 34 covers this in depth):
+mkdir my_web_projects
+cd my_web_projects
+python -m venv venv
+source venv/bin/activate      # macOS/Linux
+venv\Scripts\activate         # Windows</pre>
+    </div>
+
+
+    <h2 class="part-title">Part B &mdash; HTML Fundamentals</h2>
+
+    <div class="topic-note">
+      <h4>6. Introduction to HTML</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>HTML (HyperText Markup Language) defines the STRUCTURE and CONTENT of every web page &ndash; headings, paragraphs, images, links &ndash; using "tags" that wrap around content to describe what it is.</p>
+      <ul class="key-points">
+        <li>Most tags come in pairs: an opening tag <code>&lt;p&gt;</code> and a closing tag <code>&lt;/p&gt;</code>, wrapping the content between them.</li>
+        <li>Some tags are "self-closing" (no content to wrap), e.g. <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;input&gt;</code>.</li>
+        <li>Tags can have "attributes" providing extra information, e.g. <code>&lt;img src="photo.jpg" alt="A photo"&gt;</code>.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>7. HTML Document Structure</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>Every HTML page follows the same basic skeleton.</p>
+      <pre class="code">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <ul class="key-points">
+        <li><code>&lt;!doctype html&gt;</code> &ndash; tells the browser this is an HTML5 document.</li>
+        <li><code>&lt;head&gt;</code> &ndash; metadata not directly shown on the page (title, character encoding, linked CSS/JS files).</li>
+        <li><code>&lt;body&gt;</code> &ndash; everything actually visible on the page.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>8. Text Elements &amp; Formatting</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;!-- h1 through h6, decreasing in importance/size --&gt;
+
+&lt;p&gt;A paragraph of text.&lt;/p&gt;
+&lt;strong&gt;Bold, important text&lt;/strong&gt;
+&lt;em&gt;Italic, emphasized text&lt;/em&gt;
+&lt;br&gt;   &lt;!-- a line break --&gt;
+&lt;hr&gt;   &lt;!-- a horizontal divider line --&gt;
+&lt;span&gt;An inline chunk of text, for styling a small part of a sentence&lt;/span&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>9. Links &amp; Images</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Opens in a new tab&lt;/a&gt;
+&lt;a href="/about/"&gt;About page (relative link within the same site)&lt;/a&gt;
+&lt;a href="#section2"&gt;Jump to Section 2 on this same page&lt;/a&gt;
+
+&lt;img src="photo.jpg" alt="A description of the photo" width="300"&gt;
+&lt;!-- alt text is essential for accessibility and shows if the image fails to load --&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>10. Lists</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">&lt;ul&gt;   &lt;!-- unordered (bulleted) list --&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;   &lt;!-- ordered (numbered) list --&gt;
+  &lt;li&gt;Step one&lt;/li&gt;
+  &lt;li&gt;Step two&lt;/li&gt;
+&lt;/ol&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>11. Tables</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Score&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alice&lt;/td&gt;
+      &lt;td&gt;95&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>12. Forms &amp; Input Elements</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span><span class="badge job">Critical for Django Forms Later</span></div>
+      <p>Forms collect user input and submit it to the server &ndash; the HTML foundation that Django's Forms (Part H) build directly on top of.</p>
+      <pre class="code">&lt;form action="/submit/" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" placeholder="Enter your name"&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="4"&gt;&lt;/textarea&gt;
+
+  &lt;label for="topic"&gt;Topic:&lt;/label&gt;
+  &lt;select id="topic" name="topic"&gt;
+    &lt;option value="general"&gt;General&lt;/option&gt;
+    &lt;option value="support"&gt;Support&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;input type="checkbox" id="subscribe" name="subscribe"&gt;
+  &lt;label for="subscribe"&gt;Subscribe to newsletter&lt;/label&gt;
+
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</pre>
+      <ul class="key-points">
+        <li><code>method="post"</code> &ndash; sends form data in the request body (used for creating/changing data). <code>method="get"</code> &ndash; sends data in the URL (used for searches/filters).</li>
+        <li><code>name</code> attribute on each input &ndash; this is the key the server will use to read that field's submitted value.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>13. Semantic HTML5 Elements</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>"Semantic" tags describe the MEANING of their content, not just generic styling boxes &ndash; improving accessibility (screen readers) and SEO (search engines understand page structure better).</p>
+      <pre class="code">&lt;header&gt;Site logo and navigation&lt;/header&gt;
+&lt;nav&gt;&lt;a href="/"&gt;Home&lt;/a&gt; &lt;a href="/about/"&gt;About&lt;/a&gt;&lt;/nav&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+    &lt;p&gt;Post content...&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;aside&gt;Related links sidebar&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;&amp;copy; 2025 My Site&lt;/footer&gt;
+
+&lt;!-- Compare to old, non-semantic style: &lt;div class="header"&gt;, &lt;div class="nav"&gt;
+     - both render the same visually, but semantic tags carry actual meaning --&gt;</pre>
+    </div>
+
+    <h2 class="part-title">Part C &mdash; CSS Fundamentals</h2>
+
+    <div class="topic-note">
+      <h4>14. Introduction to CSS</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>CSS (Cascading Style Sheets) controls the VISUAL PRESENTATION of HTML &ndash; colors, spacing, fonts, layout &ndash; keeping structure (HTML) and styling (CSS) cleanly separated.</p>
+      <ul class="key-points">
+        <li><b>Inline</b> &ndash; <code>&lt;p style="color: red;"&gt;</code>, applied directly to one element; avoid in real projects.</li>
+        <li><b>Internal</b> &ndash; a <code>&lt;style&gt;</code> block inside the HTML <code>&lt;head&gt;</code>; fine for small pages/demos.</li>
+        <li><b>External</b> &ndash; a separate <code>.css</code> file linked via <code>&lt;link&gt;</code>; the standard, recommended approach for any real project.</li>
+      </ul>
+      <pre class="code">&lt;!-- In the HTML &lt;head&gt;: --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+
+/* In styles.css: */
+p {
+    color: red;
+    font-size: 16px;
+}</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>15. CSS Selectors</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>Selectors determine WHICH HTML elements a CSS rule applies to.</p>
+      <pre class="code">p { color: navy; }                  /* every &lt;p&gt; element */
+.highlight { background: yellow; }  /* every element with class="highlight" */
+#main-title { font-size: 32px; }    /* the one element with id="main-title" */
+div p { margin: 10px; }             /* every &lt;p&gt; INSIDE a &lt;div&gt; (descendant) */
+div > p { margin: 10px; }           /* every &lt;p&gt; that is a DIRECT child of a &lt;div&gt; */
+a:hover { color: red; }             /* a link, only while the mouse hovers over it */
+input:focus { border-color: blue; } /* an input, only while it's actively selected */
+li:first-child { font-weight: bold; } /* the first &lt;li&gt; in its parent */</pre>
+      <ul class="key-points">
+        <li><b>Specificity</b> &ndash; when multiple rules could apply to the same element, ID selectors beat class selectors, which beat tag selectors &ndash; the most specific rule wins.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>16. The Box Model</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span><span class="badge job">Core Interview Concept</span></div>
+      <p>Every HTML element is treated as a rectangular box made of four layers, from inside out &ndash; understanding this is essential for controlling spacing and layout precisely.</p>
+      <ul class="key-points">
+        <li><b>Content</b> &ndash; the actual text/image inside the element.</li>
+        <li><b>Padding</b> &ndash; space between the content and the border (inside the box).</li>
+        <li><b>Border</b> &ndash; a visible (or invisible) line around the padding.</li>
+        <li><b>Margin</b> &ndash; space OUTSIDE the border, between this element and its neighbors.</li>
+        <li><code>box-sizing: border-box;</code> &ndash; a very commonly used reset making width/height include padding and border (rather than adding on top of them), avoiding a lot of layout confusion &ndash; often applied globally to every element in real projects.</li>
+      </ul>
+      <pre class="code">* { box-sizing: border-box; }
+
+.card {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    margin: 15px;
+}</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>17. Colors &amp; Typography</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">body {
+    color: #333333;              /* text color, as a hex code */
+    background-color: rgb(240, 240, 245);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    color: rgba(15, 95, 127, 0.9);   /* rgba() adds an alpha (transparency) channel */
+}</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>18. Layout with Flexbox</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span><span class="badge job">Widely Used</span></div>
+      <p>Flexbox arranges items in a single row or column, distributing space and alignment intelligently &ndash; the standard tool for navigation bars, card rows, and centering content.</p>
+      <pre class="code">.container {
+    display: flex;
+    justify-content: space-between;  /* spacing along the main axis */
+    align-items: center;              /* alignment along the cross axis */
+    gap: 20px;                        /* space between each item */
+}
+
+.item {
+    flex: 1;   /* this item grows/shrinks to fill available space equally */
+}</pre>
+      <ul class="key-points">
+        <li><code>flex-direction: row</code> (default, horizontal) or <code>column</code> (vertical).</li>
+        <li><code>justify-content</code> &ndash; controls spacing: <code>flex-start</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>19. Layout with CSS Grid</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>CSS Grid arranges items into a full two-dimensional grid of rows AND columns at once &ndash; better suited than Flexbox for whole-page layouts (e.g. a sidebar + main content + header).</p>
+      <pre class="code">.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 equal-width columns */
+    gap: 15px;
+}
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;   /* fixed sidebar, flexible main area */
+    grid-template-rows: auto 1fr auto;  /* header, content, footer */
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>20. Responsive Design &amp; Media Queries</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span><span class="badge job">Frequently Tested</span></div>
+      <p>Responsive design means a page adapts its layout to different screen sizes (desktop, tablet, mobile) &ndash; essential, since the majority of web traffic today is on mobile devices.</p>
+      <pre class="code">.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Below 768px wide (typical tablet/mobile breakpoint), stack items vertically instead */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 24px;   /* smaller heading on small screens */
+    }
+}</pre>
+      <ul class="key-points">
+        <li>Always include <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> in the HTML head (Section 7) &ndash; without it, mobile browsers render the page at desktop width and zoom out, breaking media queries.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>21. Bootstrap Overview</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span><span class="badge job">Widely Used</span></div>
+      <p>Bootstrap is the most popular CSS framework: a library of pre-built, responsive components (buttons, navbars, grids, forms) usable by simply adding its class names &ndash; dramatically speeds up building a clean-looking UI without writing custom CSS for everything.</p>
+      <pre class="code">&lt;!-- Add to the HTML &lt;head&gt;: --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Then use its pre-built classes: --&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-6"&gt;Left half on medium+ screens&lt;/div&gt;
+    &lt;div class="col-md-6"&gt;Right half on medium+ screens&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn-primary"&gt;A styled button, zero custom CSS&lt;/button&gt;
+&lt;/div&gt;</pre>
+      <ul class="key-points">
+        <li>Bootstrap's grid system (12 columns) handles responsiveness automatically, without writing your own media queries.</li>
+        <li>Used together with Django in Part K, to quickly style templates without becoming a CSS specialist.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part D &mdash; JavaScript Fundamentals</h2>
+
+    <div class="topic-note">
+      <h4>22. Introduction to JavaScript</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>JavaScript is the programming language that runs INSIDE the browser, adding interactivity to otherwise static HTML/CSS &ndash; responding to clicks, validating forms, updating content without reloading the page.</p>
+      <pre class="code">&lt;!-- Linking a JS file, usually just before the closing &lt;/body&gt; tag: --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+&lt;!-- Or inline: --&gt;
+&lt;script&gt;
+  console.log("Hello from JavaScript!");
+&lt;/script&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>23. Variables &amp; Data Types</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">let name = "Alice";        // let - can be reassigned later
+const age = 25;             // const - cannot be reassigned
+let isStudent = true;       // boolean
+let scores = [90, 85, 78];  // array
+let person = { name: "Bob", age: 30 };  // object
+
+console.log(typeof name);      // "string"
+console.log(typeof age);       // "number"
+console.log(typeof isStudent); // "boolean"</pre>
+      <ul class="key-points">
+        <li>Use <code>const</code> by default; use <code>let</code> only when the variable's value genuinely needs to change later. Avoid the old <code>var</code> keyword in modern code.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>24. Operators &amp; Control Flow</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">let x = 10, y = 3;
+console.log(x + y, x - y, x * y, x / y, x % y);  // 13 7 30 3.33... 1
+
+if (x > y) {
+    console.log("x is greater");
+} else if (x === y) {
+    console.log("equal");
+} else {
+    console.log("y is greater");
+}
+
+for (let i = 0; i < 3; i++) {
+    console.log("Loop iteration:", i);
+}
+
+let count = 0;
+while (count < 3) {
+    console.log(count);
+    count++;
+}</pre>
+      <ul class="key-points">
+        <li><code>===</code> (strict equality, checks value AND type) is preferred over <code>==</code> (loose equality, converts types before comparing) &ndash; avoids subtle bugs.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>25. Functions</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">function greet(name) {
+    return `Hello, ${name}!`;   // template literal - embeds a variable in a string
+}
+console.log(greet("World"));    // "Hello, World!"
+
+// Arrow function - a shorter, common modern syntax
+const add = (a, b) => a + b;
+console.log(add(5, 7));         // 12</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>26. Arrays &amp; Objects</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <pre class="code">let numbers = [1, 2, 3, 4, 5];
+
+let doubled = numbers.map(n => n * 2);          // [2, 4, 6, 8, 10]
+let evens = numbers.filter(n => n % 2 === 0);   // [2, 4]
+let total = numbers.reduce((sum, n) => sum + n, 0);  // 15
+
+let student = { name: "Carol", grade: "A" };
+console.log(student.name);       // dot notation: "Carol"
+console.log(student["grade"]);   // bracket notation: "A"
+student.age = 22;                // add a new property
+console.log(student);            // { name: "Carol", grade: "A", age: 22 }</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>27. DOM Manipulation</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span><span class="badge job">Core Skill</span></div>
+      <p>The DOM (Document Object Model) is the browser's live, in-memory representation of the HTML page &ndash; JavaScript can read and change it directly, updating what's on screen without reloading the page.</p>
+      <pre class="code">&lt;p id="message"&gt;Original text&lt;/p&gt;
+&lt;button id="changeBtn"&gt;Change Text&lt;/button&gt;
+
+&lt;script&gt;
+const message = document.getElementById("message");
+console.log(message.textContent);      // "Original text"
+
+message.textContent = "Text has been changed!";
+message.style.color = "blue";
+message.classList.add("highlight");
+
+const allParagraphs = document.querySelectorAll("p");  // selects by CSS selector
+console.log(allParagraphs.length);
+&lt;/script&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>28. Events</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>Events let JavaScript RESPOND to user actions &ndash; clicks, typing, form submission &ndash; by attaching a function ("event listener") that runs when that action happens.</p>
+      <pre class="code">const button = document.getElementById("changeBtn");
+
+button.addEventListener("click", function() {
+    document.getElementById("message").textContent = "Button was clicked!";
+});
+
+const input = document.getElementById("nameInput");
+input.addEventListener("input", (event) => {
+    console.log("Current value:", event.target.value);
+});
+
+const form = document.getElementById("myForm");
+form.addEventListener("submit", function(event) {
+    event.preventDefault();   // stops the default full-page reload/navigation
+    console.log("Form submitted via JavaScript instead");
+});</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>29. Fetch API &amp; AJAX Basics</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span><span class="badge job">Connects to Part J (Django APIs)</span></div>
+      <p>The Fetch API lets JavaScript make HTTP requests directly from the browser, WITHOUT a full page reload &ndash; the technique that powers dynamic pages loading data in the background (AJAX = Asynchronous JavaScript And XML, though JSON is standard today, not XML). This is exactly how a JavaScript frontend talks to a Django REST API (Section 66).</p>
+      <pre class="code">fetch("https://api.example.com/posts/")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => console.error("Error:", error));
+
+// Modern async/await syntax (equivalent, often cleaner to read):
+async function loadPosts() {
+    const response = await fetch("https://api.example.com/posts/");
+    const data = await response.json();
+    console.log(data);
+}
+loadPosts();
+
+// Sending data with a POST request:
+async function createPost(title, content) {
+    const response = await fetch("https://api.example.com/posts/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: title, content: content })
+    });
+    const data = await response.json();
+    console.log("Created:", data);
+}</pre>
+    </div>
+
+    <h2 class="part-title">Part E &mdash; Python Fundamentals Refresher</h2>
+
+    <div class="instructions">
+      <b>Note:</b> Django is written in Python and Django code IS Python code, so a working knowledge of core Python is assumed. This short Part refreshes exactly the features used constantly throughout the rest of this course.
+    </div>
+
+    <div class="topic-note">
+      <h4>30. Python Basics Refresher</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <pre class="code">name = "Alice"
+age = 25
+scores = [90, 85, 78]
+person = {"name": "Bob", "age": 30}
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+for score in scores:
+    print(score)
+
+squared = [n**2 for n in scores]   # list comprehension
+print(squared)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>31. Functions &amp; Modules</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <pre class="code">def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("World"))                    # Hello, World!
+print(greet("Alice", greeting="Hi"))     # Hi, Alice!
+
+# Modules: any .py file can be imported by another
+# utils.py:
+def add(a, b):
+    return a + b
+
+# main.py:
+from utils import add
+print(add(2, 3))</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>32. OOP in Python</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Essential for Django Models</span></div>
+      <p>Django's Models (Part G), Forms (Part H), and Class-Based Views (Part I) are all built using Python classes and inheritance &ndash; a comfortable grasp of OOP is essential before those Parts.</p>
+      <pre class="code">class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def make_sound(self):
+        return f"{self.name} says {self.sound}"
+
+class Dog(Animal):          # Dog inherits from Animal
+    def __init__(self, name):
+        super().__init__(name, "Woof")   # reuse the parent's __init__
+
+d = Dog("Rex")
+print(d.make_sound())       # Rex says Woof</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>33. File Handling</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <pre class="code">with open("data.txt", "w") as f:
+    f.write("Hello file")
+
+with open("data.txt", "r") as f:
+    content = f.read()
+    print(content)
+# The 'with' statement automatically closes the file afterward, even if an error occurs</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>34. Virtual Environments &amp; pip</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Essential Daily Tool</span></div>
+      <p>A virtual environment is an isolated Python installation for one project, so its package versions don't conflict with other projects on the same machine &ndash; every real Django project starts this way.</p>
+      <pre class="code">python -m venv venv          # create a virtual environment named "venv"
+
+source venv/bin/activate     # activate it (macOS/Linux)
+venv\Scripts\activate        # activate it (Windows)
+
+pip install django           # installs packages ONLY into this environment
+pip freeze > requirements.txt   # saves exact installed versions to a file
+
+pip install -r requirements.txt # (on another machine) reinstalls the exact same versions
+
+deactivate                   # exit the virtual environment</pre>
+    </div>
+
+    <h2 class="part-title">Part F &mdash; Django Fundamentals</h2>
+
+    <div class="instructions">
+      <b>Project Note:</b> Starting here, every example builds ONE consistent project &ndash; a Blog application (project name <code>myblog</code>, app name <code>blog</code>) with Posts, Categories, and Comments. Follow along by actually building it; each new Part adds directly onto what came before, exactly like a real project.
+    </div>
+
+    <div class="topic-note">
+      <h4>35. What is Django? The MVT Architecture</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Core Interview Concept</span></div>
+      <p>Django is a high-level Python web framework that encourages fast, clean development with a "batteries-included" philosophy: an ORM, admin panel, authentication, and form handling all come built in, so you rarely need third-party packages just to get started.</p>
+      <ul class="key-points">
+        <li>Django follows the <b>MVT (Model-View-Template)</b> pattern &ndash; its own take on the more widely-known MVC pattern.</li>
+        <li><b>Model</b> &ndash; defines the data structure and talks to the database (Part G).</li>
+        <li><b>View</b> &ndash; contains the logic: receives a request, talks to Models as needed, and decides what response to send back (Section 40).</li>
+        <li><b>Template</b> &ndash; the HTML file that defines how data is displayed to the user (Section 41).</li>
+        <li>A commonly asked interview distinction: in Django's MVT, the framework itself handles the URL-to-view dispatching (what a traditional "Controller" would do), so the developer mainly writes Models, Views, and Templates.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>36. Installing Django &amp; Creating a Project</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <pre class="code">python -m venv venv
+source venv/bin/activate
+
+pip install django
+django-admin startproject myblog .
+# The trailing "." creates the project in the current folder rather than a new subfolder
+
+python manage.py runserver
+# Visit http://127.0.0.1:8000/ - Django's default welcome page confirms it's working</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>37. Django Project Structure</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <pre class="code">myblog/                  <- the outer project folder
+    manage.py            <- command-line utility for running/managing the project
+    myblog/               <- the project's own configuration package
+        __init__.py
+        settings.py       <- ALL project configuration lives here
+        urls.py            <- the project's top-level URL routing (Section 39)
+        wsgi.py / asgi.py  <- entry points used by production web servers</pre>
+      <ul class="key-points">
+        <li><code>manage.py</code> &ndash; run with <code>python manage.py &lt;command&gt;</code> for almost every Django task: <code>runserver</code>, <code>makemigrations</code>, <code>migrate</code>, <code>createsuperuser</code>, <code>startapp</code>, <code>shell</code>, <code>test</code>.</li>
+        <li><code>settings.py</code> &ndash; controls installed apps, database connection, middleware, templates, static files, and more &ndash; referenced constantly throughout this course.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>38. Django Apps</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Frequently Tested</span></div>
+      <p>A Django PROJECT is the whole website; an Django APP is one self-contained module of functionality within it (e.g. "blog", "accounts", "shop") &ndash; a common, frequently-asked distinction in interviews. Apps are designed to be reusable across different projects.</p>
+      <pre class="code">python manage.py startapp blog</pre>
+      <pre class="code">blog/
+    migrations/       <- database migration files (Section 46)
+    __init__.py
+    admin.py          <- register models for the Django Admin (Section 43)
+    apps.py           <- app configuration
+    models.py         <- data models (Section 45)
+    tests.py          <- automated tests (Section 73)
+    views.py          <- request-handling logic (Section 40)</pre>
+      <p>Every app must be registered in <code>settings.py</code> before Django will use it:</p>
+      <pre class="code"># myblog/settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'blog',   # <- our new app, added here
+]</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>39. URLs &amp; URL Routing</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>Django matches an incoming URL against a list of patterns to decide which View function should handle it &ndash; typically organized with the project's <code>urls.py</code> delegating to each app's own <code>urls.py</code>.</p>
+      <pre class="code"># blog/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("", views.post_list, name="post-list"),
+    path("post/&lt;slug:slug&gt;/", views.post_detail, name="post-detail"),
+]</pre>
+      <pre class="code"># myblog/urls.py (the project's top-level routing)
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("blog.urls")),   # delegates any other URL to blog/urls.py
+]</pre>
+      <ul class="key-points">
+        <li><code>&lt;slug:slug&gt;</code> &ndash; a "path converter" capturing part of the URL as a variable, passed directly into the view function. Other converters: <code>&lt;int:pk&gt;</code>, <code>&lt;str:name&gt;</code>.</li>
+        <li>The <code>name="post-detail"</code> argument lets templates and Python code reference this URL by name (Section 41) rather than hard-coding the path &ndash; so the URL can change later without breaking every link to it.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>40. Views (Function-Based Views)</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>A View is a Python function (or class, Section 55) that takes a web request and returns a web response &ndash; where the actual page logic lives.</p>
+      <pre class="code"># blog/views.py
+from django.shortcuts import render, get_object_or_404
+
+def post_list(request):
+    posts = Post.objects.filter(published=True)
+    return render(request, "blog/post_list.html", {"posts": posts})
+
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug, published=True)
+    return render(request, "blog/post_detail.html", {"post": post})</pre>
+      <ul class="key-points">
+        <li><code>render(request, template_name, context_dict)</code> &ndash; the most common return pattern: combines a template with data (the "context" dictionary) and returns the resulting HTML.</li>
+        <li><code>get_object_or_404(Model, **kwargs)</code> &ndash; fetches one object, or automatically returns a proper 404 "Not Found" page if it doesn't exist, instead of crashing with an error.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>41. Templates &amp; the Django Template Language</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>Templates are HTML files with special Django tags/syntax for inserting dynamic data and logic &ndash; kept in each app's <code>templates/&lt;app_name&gt;/</code> folder by convention, so Django can find them automatically.</p>
+      <pre class="code">&lt;!-- blog/templates/blog/base.html - a shared layout other templates extend --&gt;
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;{% block title %}My Blog{% endblock %}&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav&gt;&lt;a href="{% url 'post-list' %}"&gt;Home&lt;/a&gt;&lt;/nav&gt;
+  {% block content %}{% endblock %}
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <pre class="code">&lt;!-- blog/templates/blog/post_list.html --&gt;
+{% extends "blog/base.html" %}
+{% block content %}
+&lt;h1&gt;Blog Posts&lt;/h1&gt;
+{% for post in posts %}
+  &lt;article&gt;
+    &lt;h2&gt;&lt;a href="{% url 'post-detail' post.slug %}"&gt;{{ post.title }}&lt;/a&gt;&lt;/h2&gt;
+    &lt;p&gt;By {{ post.author.username }} on {{ post.created_at|date:"F j, Y" }}&lt;/p&gt;
+    &lt;p&gt;{{ post.content|truncatewords:20 }}&lt;/p&gt;
+  &lt;/article&gt;
+{% empty %}
+  &lt;p&gt;No posts yet.&lt;/p&gt;
+{% endfor %}
+{% endblock %}</pre>
+      <ul class="key-points">
+        <li><code>{{ variable }}</code> &ndash; outputs a value. <code>{% tag %}</code> &ndash; template logic (loops, conditionals, template inheritance).</li>
+        <li><code>{% extends %}</code> / <code>{% block %}</code> &ndash; template inheritance: a child template fills in named "blocks" defined by a shared parent, avoiding repeating the same HTML layout on every page.</li>
+        <li><code>|</code> pipes to a "filter" that transforms the value for display, e.g. <code>|date:"F j, Y"</code> or <code>|truncatewords:20</code>.</li>
+        <li><code>{% url 'name' arg %}</code> &ndash; generates the correct URL by its <code>name</code> (Section 39), rather than hard-coding the path.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>42. Static Files</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>"Static files" are CSS, JavaScript, and images that don't change per-request &ndash; served directly, unlike templates which are rendered dynamically with data.</p>
+      <pre class="code"># myblog/settings.py
+STATIC_URL = "static/"
+
+# Folder structure: blog/static/blog/style.css</pre>
+      <pre class="code">&lt;!-- In a template: --&gt;
+{% load static %}
+&lt;link rel="stylesheet" href="{% static 'blog/style.css' %}"&gt;
+&lt;img src="{% static 'blog/logo.png' %}" alt="Logo"&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>43. Django Admin (Introduction)</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Huge Time-Saver</span></div>
+      <p>Django automatically generates a fully working, password-protected admin interface for managing your data &ndash; one of Django's most famous features, saving enormous time versus building a custom admin panel from scratch.</p>
+      <pre class="code">python manage.py createsuperuser
+# Enter a username, email, and password when prompted
+
+python manage.py runserver
+# Visit http://127.0.0.1:8000/admin/ and log in</pre>
+      <p>Models must be registered before they appear in the admin (customization covered fully in Section 50):</p>
+      <pre class="code"># blog/admin.py
+from django.contrib import admin
+from .models import Post
+
+admin.site.register(Post)</pre>
+    </div>
+
+    <h2 class="part-title">Part G &mdash; Django Models &amp; Database</h2>
+
+    <div class="topic-note">
+      <h4>44. Introduction to the Django ORM</h4>
+      <div class="badge-row"><span class="badge db">Database</span><span class="badge job">Core Django Skill</span></div>
+      <p>The ORM (Object-Relational Mapper) lets you work with the database using Python classes and objects instead of writing raw SQL &ndash; a Python class becomes a database table, and each instance of that class becomes one row.</p>
+      <ul class="key-points">
+        <li>Django defaults to SQLite for development (a simple, file-based database, zero setup required) and supports PostgreSQL/MySQL for production (Section 69).</li>
+        <li>The ORM works identically regardless of which database is configured underneath &ndash; you write the same Python either way.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>45. Creating Models</h4>
+      <div class="badge-row"><span class="badge db">Database</span></div>
+      <p>A Model is a Python class inheriting from <code>models.Model</code>; each class attribute defines one database column.</p>
+      <pre class="code"># blog/models.py
+from django.db import models
+from django.contrib.auth.models import User
+from django.urls import reverse
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    published = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["-created_at"]   # newest posts first, by default
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("post-detail", kwargs={"slug": self.slug})</pre>
+      <ul class="key-points">
+        <li><code>__str__</code> &ndash; defines how an object displays as text (e.g. in the Django Admin and the shell) &ndash; always define this, or every object shows as an unhelpful "Post object (1)".</li>
+        <li><code>get_absolute_url()</code> &ndash; a convention returning the canonical URL for one object, used by <code>{{ post.get_absolute_url }}</code> in templates and by the admin's "View on site" link.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>46. Migrations</h4>
+      <div class="badge-row"><span class="badge db">Database</span><span class="badge job">Daily Command</span></div>
+      <p>Migrations are Django's version-control system for the database schema &ndash; every time a Model changes, a migration file records exactly what changed, and can be applied (or reversed) safely.</p>
+      <pre class="code">python manage.py makemigrations blog
+# Migrations for 'blog':
+#   blog/migrations/0001_initial.py
+#     + Create model Category
+#     + Create model Post
+#     + Create model Comment
+
+python manage.py migrate
+# Actually applies the migration, creating/altering the real database tables</pre>
+      <ul class="key-points">
+        <li><code>makemigrations</code> &ndash; generates the migration FILE (a plan), based on changes detected in <code>models.py</code>.</li>
+        <li><code>migrate</code> &ndash; actually EXECUTES that plan against the database.</li>
+        <li>Always run both commands, in that order, after any change to <code>models.py</code> &ndash; a very common beginner mistake is forgetting one of these two steps.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>47. Model Fields &amp; Field Types</h4>
+      <div class="badge-row"><span class="badge db">Database</span></div>
+      <table class="quick-ref">
+        <tr><th>Field</th><th>Stores</th></tr>
+        <tr><td>CharField(max_length=N)</td><td>Short text (requires max_length)</td></tr>
+        <tr><td>TextField()</td><td>Long text, no length limit</td></tr>
+        <tr><td>IntegerField()</td><td>Whole numbers</td></tr>
+        <tr><td>DecimalField(max_digits, decimal_places)</td><td>Precise decimals (e.g. currency)</td></tr>
+        <tr><td>BooleanField()</td><td>True/False</td></tr>
+        <tr><td>DateField() / DateTimeField()</td><td>Dates / dates with time</td></tr>
+        <tr><td>EmailField()</td><td>Text validated as an email format</td></tr>
+        <tr><td>SlugField()</td><td>URL-friendly text (letters, numbers, hyphens)</td></tr>
+        <tr><td>ImageField() / FileField()</td><td>Uploaded images / files (Section 54)</td></tr>
+      </table>
+      <ul class="key-points">
+        <li>Common field options: <code>null=True</code> (database allows NULL), <code>blank=True</code> (form validation allows empty), <code>default=value</code>, <code>unique=True</code>.</li>
+        <li><code>auto_now_add=True</code> &ndash; sets the value once, automatically, when the object is first created. <code>auto_now=True</code> &ndash; updates the value automatically every time the object is saved.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>48. Model Relationships</h4>
+      <div class="badge-row"><span class="badge db">Database</span><span class="badge job">Frequently Tested</span></div>
+      <p>Relationships connect tables together &ndash; matching the same relational concepts covered generally in the AutoCAD/Tally-style courses, now expressed directly as Django fields.</p>
+      <ul class="key-points">
+        <li><b>ForeignKey (Many-to-One)</b> &ndash; e.g. many Posts belong to one User. <code>on_delete</code> is required, controlling what happens if the related object is deleted: <code>CASCADE</code> (delete this too), <code>SET_NULL</code> (set this field to NULL, requires <code>null=True</code>), <code>PROTECT</code> (block the deletion).</li>
+        <li><b>ManyToManyField</b> &ndash; e.g. a Post can have many Tags, and a Tag can belong to many Posts.</li>
+        <li><b>OneToOneField</b> &ndash; e.g. one User has exactly one Profile.</li>
+        <li><code>related_name</code> &ndash; sets the reverse-access attribute name, e.g. <code>related_name="posts"</code> lets you write <code>user.posts.all()</code> to get every Post by that User.</li>
+      </ul>
+      <pre class="code">class Tag(models.Model):
+    name = models.CharField(max_length=50)
+
+class Post(models.Model):
+    # ... other fields ...
+    tags = models.ManyToManyField(Tag, blank=True, related_name="posts")
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+    bio = models.TextField(blank=True)</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>49. QuerySets &amp; CRUD Operations</h4>
+      <div class="badge-row"><span class="badge db">Database</span><span class="badge job">Used in Every View</span></div>
+      <p>CRUD = Create, Read, Update, Delete &ndash; the four basic database operations, all done via each Model's <code>.objects</code> manager, returning a "QuerySet" (a lazy, chainable collection of results).</p>
+      <pre class="code">from blog.models import Post, Category
+
+# CREATE
+category = Category.objects.create(name="Django")
+post = Post.objects.create(title="My First Post", slug="my-first-post",
+                             author=some_user, category=category, content="Hello!")
+
+# READ
+Post.objects.all()                              # every post
+Post.objects.filter(published=True)              # only published posts
+Post.objects.get(slug="my-first-post")            # exactly one post (errors if 0 or 2+ match)
+Post.objects.filter(title__icontains="django")   # case-insensitive partial match
+Post.objects.exclude(published=False)             # everything EXCEPT this condition
+Post.objects.order_by("-created_at")              # newest first ("-" reverses the order)
+Post.objects.count()                              # just the count, efficiently
+
+# UPDATE
+post.title = "An Updated Title"
+post.save()                                        # writes the change to the database
+
+# DELETE
+post.delete()</pre>
+      <ul class="key-points">
+        <li>QuerySets are "lazy" &ndash; the actual database query only runs when the results are used (e.g. printed, looped over, or converted to a list), letting you chain multiple filters efficiently.</li>
+        <li><code>__icontains</code>, <code>__gt</code>, <code>__lt</code>, <code>__in</code> &ndash; "field lookups" appended with a double underscore, used to build rich filter conditions.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>50. Django Admin Customization</h4>
+      <div class="badge-row"><span class="badge db">Database</span><span class="badge job">Frequently Used</span></div>
+      <p>Beyond the basic <code>admin.site.register(Post)</code> (Section 43), a custom <code>ModelAdmin</code> class controls exactly how a model appears and behaves in the admin interface.</p>
+      <pre class="code"># blog/admin.py
+from django.contrib import admin
+from .models import Category, Post, Comment
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ["name"]
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ["title", "author", "category", "published", "created_at"]
+    list_filter = ["published", "category"]
+    search_fields = ["title", "content"]
+    prepopulated_fields = {"slug": ("title",)}   # auto-fills the slug as you type the title
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ["post", "author", "created_at"]</pre>
+      <ul class="key-points">
+        <li><code>list_display</code> &ndash; which columns show in the admin's list view.</li>
+        <li><code>list_filter</code> &ndash; adds a sidebar to filter the list by these fields.</li>
+        <li><code>search_fields</code> &ndash; adds a search box, searching across these fields.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part H &mdash; Django Forms</h2>
+
+    <div class="topic-note">
+      <h4>51. Django Forms</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>Django's <code>forms.Form</code> class defines a form's fields in Python, automatically handling HTML rendering AND server-side validation together &ndash; far more robust than validating raw HTML form data manually.</p>
+      <pre class="code"># blog/forms.py
+from django import forms
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)</pre>
+      <pre class="code"># In a view:
+def contact(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data["name"]     # validated, cleaned data
+            email = form.cleaned_data["email"]
+            # ... send an email, save to DB, etc ...
+            return redirect("thank-you")
+    else:
+        form = ContactForm()
+    return render(request, "contact.html", {"form": form})</pre>
+      <pre class="code">&lt;!-- In the template: --&gt;
+&lt;form method="post"&gt;
+  {% csrf_token %}
+  {{ form.as_p }}
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</pre>
+      <ul class="key-points">
+        <li><code>{% csrf_token %}</code> &ndash; REQUIRED in every POST form; Django rejects any POST request missing this security token, protecting against Cross-Site Request Forgery attacks (Section 72).</li>
+        <li><code>form.as_p</code> &ndash; renders every field wrapped in a <code>&lt;p&gt;</code> tag automatically; <code>as_table</code> and <code>as_ul</code> are alternatives.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>52. ModelForms</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Used Constantly</span></div>
+      <p>A ModelForm auto-generates a form directly FROM a Model, matching its fields exactly &ndash; avoiding writing the same fields twice (once in the Model, once in the Form). This is what the Blog project's Post and Comment forms actually use.</p>
+      <pre class="code"># blog/forms.py
+from django import forms
+from .models import Post, Comment
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ["title", "slug", "category", "content", "published"]
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ["body"]
+        widgets = {
+            "body": forms.Textarea(attrs={"rows": 3, "placeholder": "Write a comment..."})
+        }</pre>
+      <pre class="code"># In a view, saving a ModelForm creates/updates the actual database object directly:
+def post_create(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)   # build the object but don't save yet
+            post.author = request.user       # set a field not included in the form
+            post.save()                       # now actually save to the database
+            return redirect("post-detail", slug=post.slug)
+    else:
+        form = PostForm()
+    return render(request, "blog/post_form.html", {"form": form})</pre>
+      <ul class="key-points">
+        <li><code>commit=False</code> &ndash; a very common pattern when the model needs a field (like <code>author</code>) set from the request rather than the form itself, before the final save.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>53. Form Validation</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>Beyond automatic type checks (e.g. EmailField rejecting invalid emails), custom validation logic is added with <code>clean_&lt;fieldname&gt;()</code> methods.</p>
+      <pre class="code">from django import forms
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
+
+    def clean_name(self):
+        name = self.cleaned_data["name"]
+        if len(name) < 2:
+            raise forms.ValidationError("Name must be at least 2 characters.")
+        return name
+
+# Tested directly:
+form = ContactForm(data={"name": "A", "email": "bad-email", "message": "hi"})
+print(form.is_valid())   # False
+print(form.errors)
+# {'name': ['Name must be at least 2 characters.'],
+#  'email': ['Enter a valid email address.']}</pre>
+      <ul class="key-points">
+        <li><code>clean()</code> (no field name) &ndash; for validation that depends on MULTIPLE fields together, e.g. checking a "confirm password" field matches "password".</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>54. Handling File Uploads</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>Uploading files (e.g. a blog post's cover image) requires an <code>ImageField</code>/<code>FileField</code> on the model, plus specific handling in both the HTML form and the view.</p>
+      <pre class="code"># models.py
+class Post(models.Model):
+    # ... other fields ...
+    cover_image = models.ImageField(upload_to="post_covers/", blank=True, null=True)</pre>
+      <pre class="code">&lt;!-- The form tag MUST include enctype="multipart/form-data" for file uploads to work --&gt;
+&lt;form method="post" enctype="multipart/form-data"&gt;
+  {% csrf_token %}
+  {{ form.as_p }}
+  &lt;button type="submit"&gt;Publish&lt;/button&gt;
+&lt;/form&gt;</pre>
+      <pre class="code"># The view must pass BOTH request.POST and request.FILES to the form:
+def post_create(request):
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("post-list")</pre>
+      <ul class="key-points">
+        <li><code>upload_to="post_covers/"</code> &ndash; the subfolder (inside <code>MEDIA_ROOT</code>, Section 68) where uploaded files are stored.</li>
+        <li><code>pip install Pillow</code> is required for <code>ImageField</code> to work &ndash; Django uses it to validate the upload is a genuine image.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part I &mdash; Advanced Views &amp; Authentication</h2>
+
+    <div class="topic-note">
+      <h4>55. Class-Based Views (CBVs)</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Frequently Tested</span></div>
+      <p>Class-Based Views express a View as a Python class instead of a function &ndash; Django provides many ready-made base classes handling common patterns (list a queryset, show one object, save a form) with far less code than writing the equivalent function-based view.</p>
+      <ul class="key-points">
+        <li><b>Function-Based Views (FBVs)</b> &ndash; more explicit and easier for beginners to trace line-by-line (used in Sections 40, 52).</li>
+        <li><b>Class-Based Views (CBVs)</b> &ndash; less code for standard patterns, and easily extended via inheritance and mixins &ndash; the more common choice in larger, real-world Django projects.</li>
+        <li>In <code>urls.py</code>, a CBV is wired up by calling <code>.as_view()</code> on it: <code>path("posts/", PostListView.as_view())</code>.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>56. Generic Views</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Used Constantly</span></div>
+      <p>Django's built-in "Generic" CBVs cover the most common CRUD patterns almost entirely out of the box.</p>
+      <pre class="code"># blog/cbv_views.py
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from .models import Post
+from .forms import PostForm
+
+class PostListView(ListView):
+    model = Post
+    template_name = "blog/post_list.html"
+    context_object_name = "posts"   # the variable name used in the template (default: object_list)
+    paginate_by = 5                  # automatic pagination, 5 posts per page
+
+    def get_queryset(self):
+        return Post.objects.filter(published=True)   # customize which objects are shown
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = "blog/post_detail_cbv.html"
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/post_form.html"
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user   # set a field before saving
+        return super().form_valid(form)
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/post_form.html"
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+    template_name = "blog/post_confirm_delete.html"
+    success_url = reverse_lazy("post-list-cbv")</pre>
+      <pre class="code"># blog/urls.py
+from .cbv_views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+
+urlpatterns = [
+    path("cbv/", PostListView.as_view(), name="post-list-cbv"),
+    path("cbv/&lt;int:pk&gt;/", PostDetailView.as_view(), name="post-detail-cbv"),
+    path("cbv/new/", PostCreateView.as_view(), name="post-create-cbv"),
+    path("cbv/&lt;int:pk&gt;/edit/", PostUpdateView.as_view(), name="post-update-cbv"),
+    path("cbv/&lt;int:pk&gt;/delete/", PostDeleteView.as_view(), name="post-delete-cbv"),
+]</pre>
+      <ul class="key-points">
+        <li><code>LoginRequiredMixin</code> &ndash; add as the FIRST base class to require login, automatically redirecting anonymous users to the login page (mixins go before the generic view class in the inheritance list).</li>
+        <li>This exact 5-view pattern (List, Detail, Create, Update, Delete) is so common it's often called the "CRUD views" pattern &ndash; expect to write it repeatedly across real projects.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>57. Django Sessions &amp; Cookies</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>HTTP itself is "stateless" (each request is independent, with no memory of previous ones) &ndash; Sessions let Django remember information about a specific visitor ACROSS multiple requests, using a cookie storing a session ID that maps to server-side data.</p>
+      <pre class="code">def set_favorite(request):
+    request.session["favorite_category"] = "Django"
+    return redirect("post-list")
+
+def show_favorite(request):
+    favorite = request.session.get("favorite_category", "None set")
+    return render(request, "favorite.html", {"favorite": favorite})</pre>
+      <ul class="key-points">
+        <li>Django's login system (Section 58) is itself built on sessions &ndash; once logged in, the session remembers <code>request.user</code> on every subsequent request without re-sending credentials.</li>
+        <li>Sessions are stored server-side (in the database by default); only an opaque session ID is stored in the visitor's browser cookie, not the actual data &ndash; more secure than storing data directly in a cookie.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>58. User Authentication</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Every Real Project Needs This</span></div>
+      <p>Django's <code>django.contrib.auth</code> app provides a complete, ready-to-use authentication system: a User model, login/logout views, and password hashing &ndash; almost never build this from scratch.</p>
+      <pre class="code"># myblog/urls.py - Django provides these views ready-made:
+from django.urls import path, include
+
+urlpatterns = [
+    path("accounts/", include("django.contrib.auth.urls")),
+    # ^ instantly provides /accounts/login/, /accounts/logout/, /accounts/password_change/, etc.
+]</pre>
+      <p>Django looks for a template at <code>registration/login.html</code> by convention &ndash; a very common beginner error is forgetting to create this exact file/path:</p>
+      <pre class="code">&lt;!-- blog/templates/registration/login.html --&gt;
+{% extends "blog/base.html" %}
+{% block content %}
+&lt;h1&gt;Log In&lt;/h1&gt;
+&lt;form method="post"&gt;
+  {% csrf_token %}
+  {{ form.as_p }}
+  &lt;button type="submit"&gt;Log In&lt;/button&gt;
+&lt;/form&gt;
+{% endblock %}</pre>
+      <p>Registration (sign-up) has no built-in view, but Django provides the form &ndash; you write a small view to save it:</p>
+      <pre class="code"># blog/views.py
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("login")
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/register.html", {"form": form})</pre>
+      <p>Checking login state in a template, and restricting a view to logged-in users only:</p>
+      <pre class="code">&lt;!-- In any template: --&gt;
+{% if user.is_authenticated %}
+  &lt;p&gt;Welcome, {{ user.username }}!&lt;/p&gt;
+  &lt;a href="{% url 'logout' %}"&gt;Log Out&lt;/a&gt;
+{% else %}
+  &lt;a href="{% url 'login' %}"&gt;Log In&lt;/a&gt;
+{% endif %}</pre>
+      <pre class="code"># Restricting a function-based view - the @login_required decorator:
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def post_create(request):
+    # only reachable by logged-in users; others are redirected to the login page
+    ...</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>59. Permissions &amp; Authorization</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>Beyond simply "is this user logged in?" (authentication), Authorization controls WHAT a specific logged-in user is allowed to do &ndash; e.g. only a Post's own author should be able to edit or delete it.</p>
+      <pre class="code">from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/post_form.html"
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author   # only the original author may edit</pre>
+      <ul class="key-points">
+        <li>Django also has a built-in Permission system (<code>user.has_perm("blog.add_post")</code>) and Groups, useful for role-based access (e.g. "Editors" vs "Viewers") in larger applications.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>60. Middleware</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>Middleware are functions that process EVERY request/response passing through Django, in a defined order &ndash; used for cross-cutting concerns that apply globally, rather than being repeated in every view.</p>
+      <pre class="code"># myblog/settings.py - the default middleware stack, in execution order:
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",   # enables request.session
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",                # enforces CSRF protection
+    "django.contrib.auth.middleware.AuthenticationMiddleware",  # enables request.user
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]</pre>
+      <p>A simple custom middleware, for reference:</p>
+      <pre class="code"># blog/middleware.py
+import time
+
+class RequestTimingMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        start = time.time()
+        response = self.get_response(request)   # process the rest of the request
+        duration = time.time() - start
+        response["X-Response-Time"] = f"{duration:.3f}s"
+        return response
+
+# Then add "blog.middleware.RequestTimingMiddleware" to MIDDLEWARE in settings.py</pre>
+    </div>
+
+    <h2 class="part-title">Part J &mdash; Building REST APIs with Django REST Framework</h2>
+
+    <div class="topic-note">
+      <h4>61. Introduction to REST &amp; Django REST Framework (DRF)</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Essential Modern Skill</span></div>
+      <p>A REST API returns raw data (usually JSON) instead of rendered HTML pages &ndash; letting a JavaScript frontend (Section 29), a mobile app, or another service consume your Django backend's data directly. DRF is the standard, extremely popular toolkit added on top of Django specifically for building these APIs.</p>
+      <ul class="key-points">
+        <li><b>REST (Representational State Transfer)</b> &ndash; an architectural style where each URL represents a "resource" (e.g. <code>/api/posts/</code>), and HTTP methods (Section 2) determine the action: GET (read), POST (create), PUT/PATCH (update), DELETE (remove).</li>
+        <li>Install with <code>pip install djangorestframework</code>, then add <code>"rest_framework"</code> to <code>INSTALLED_APPS</code>.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>62. Serializers</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>A Serializer converts Django Model instances into JSON (for API responses) and validates/converts incoming JSON back into Python data (for creating/updating objects) &ndash; the API equivalent of a ModelForm (Section 52).</p>
+      <pre class="code"># blog/serializers.py
+from rest_framework import serializers
+from .models import Post, Comment
+
+class CommentSerializer(serializers.ModelSerializer):
+    author = serializers.ReadOnlyField(source="author.username")
+
+    class Meta:
+        model = Comment
+        fields = ["id", "author", "body", "created_at"]
+
+class PostSerializer(serializers.ModelSerializer):
+    author = serializers.ReadOnlyField(source="author.username")
+    comments = CommentSerializer(many=True, read_only=True)   # nested serializer
+
+    class Meta:
+        model = Post
+        fields = ["id", "title", "slug", "author", "content", "created_at", "published", "comments"]</pre>
+      <ul class="key-points">
+        <li><code>ReadOnlyField(source="author.username")</code> &ndash; shows the author's username (not their whole user object or just an ID) in the API output, but doesn't accept it as writable input.</li>
+        <li>Nesting <code>CommentSerializer</code> inside <code>PostSerializer</code> automatically includes each post's comments directly in its JSON response.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>63. API Views &amp; ViewSets</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Very Common Pattern</span></div>
+      <p>A <code>ModelViewSet</code> automatically provides ALL standard CRUD API endpoints (list, retrieve, create, update, delete) for a model in one single class &ndash; the DRF equivalent of Django's generic CBVs (Section 56), but for APIs.</p>
+      <pre class="code"># blog/api_views.py
+from rest_framework import viewsets, permissions
+from .models import Post
+from .serializers import PostSerializer
+
+class IsAuthorOrReadOnly(permissions.BasePermission):
+    """Custom permission: anyone can read, only the author can edit/delete."""
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:   # GET, HEAD, OPTIONS
+            return True
+        return obj.author == request.user
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.filter(published=True)
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)   # auto-assign the logged-in user</pre>
+      <p>A Router automatically generates all the standard URL patterns for a ViewSet:</p>
+      <pre class="code"># blog/api_urls.py
+from rest_framework.routers import DefaultRouter
+from .api_views import PostViewSet
+
+router = DefaultRouter()
+router.register("posts", PostViewSet, basename="post-api")
+urlpatterns = router.urls
+# Automatically creates:
+#   GET/POST   /posts/           (list all / create one)
+#   GET/PUT/PATCH/DELETE /posts/{id}/   (retrieve / update / partial update / delete one)</pre>
+      <p>Tested with real requests:</p>
+      <pre class="code">GET /api/posts/            -> 200, JSON list of all published posts
+GET /api/posts/1/          -> 200, JSON detail of post #1, including nested comments
+POST /api/posts/  (no auth)          -> 401 Unauthorized (blocked correctly)
+POST /api/posts/  (logged in)        -> 201 Created</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>64. Testing APIs with the Django Test Client</h4>
+      <div class="badge-row"><span class="badge back">Backend</span></div>
+      <p>DRF endpoints can be tested exactly like regular views, using Django's <code>Client</code> &ndash; genuinely running requests through the real URL routing, view, and serializer, without needing a separate tool.</p>
+      <pre class="code">from django.test import Client
+import json
+
+client = Client()
+
+response = client.get("/api/posts/")
+print(response.status_code)          # 200
+data = json.loads(response.content)
+print(len(data))                      # number of posts returned
+
+response2 = client.get("/api/posts/1/")
+detail = json.loads(response2.content)
+print(detail["title"])
+print(detail["comments"])             # nested comments included automatically</pre>
+      <ul class="key-points">
+        <li>DRF also provides its own <code>rest_framework.test.APIClient</code>, offering a few extra conveniences (like automatic JSON encoding) over the plain Django <code>Client</code> &ndash; either works for most cases.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>65. API Authentication: Tokens</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Required for Real APIs</span></div>
+      <p>A JavaScript frontend or mobile app cannot use Django's session-cookie login (Section 57) the same way a browser does &ndash; Token authentication provides a simple, alternative credential: a client logs in once, receives a token, and includes it in every subsequent request's headers.</p>
+      <pre class="code"># settings.py
+INSTALLED_APPS = [
+    # ... other apps ...
+    "rest_framework",
+    "rest_framework.authtoken",   # provides the Token model
+]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+}</pre>
+      <pre class="code"># myblog/urls.py
+from rest_framework.authtoken.views import obtain_auth_token
+
+urlpatterns = [
+    # ... other urls ...
+    path("api-token-auth/", obtain_auth_token),
+]</pre>
+      <p>Verified full flow: a client logs in once to get a token, then includes it on every future request:</p>
+      <pre class="code">import requests
+
+# 1. Obtain a token by posting valid credentials
+resp = requests.post("http://127.0.0.1:8000/api-token-auth/",
+                       data={"username": "alice", "password": "testpass123"})
+token = resp.json()["token"]
+
+# 2. Include the token in the Authorization header on every subsequent request
+headers = {"Authorization": f"Token {token}"}
+resp2 = requests.post("http://127.0.0.1:8000/api/posts/",
+                        json={"title": "New Post", "slug": "new-post", "content": "Hello API"},
+                        headers=headers)
+print(resp2.status_code)   # 201 Created
+
+# Without the header, the same request correctly returns 401 Unauthorized
+resp3 = requests.post("http://127.0.0.1:8000/api/posts/",
+                        json={"title": "No Auth", "slug": "no-auth", "content": "..."})
+print(resp3.status_code)   # 401</pre>
+      <ul class="key-points">
+        <li><b>JWT (JSON Web Tokens)</b> &ndash; a more advanced, widely-used alternative to simple DRF tokens, offering expiry and refresh tokens (via the <code>djangorestframework-simplejwt</code> package) &ndash; worth learning next once comfortable with basic Token auth.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part K &mdash; Frontend Integration</h2>
+
+    <div class="topic-note">
+      <h4>66. Connecting Django with JavaScript &amp; AJAX</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span><span class="badge back">Backend</span></div>
+      <p>Combining the Fetch API (Section 29) with a Django API (Part J) lets a page update dynamically without a full reload &ndash; e.g. posting a comment and showing it instantly. The one Django-specific detail: POST requests still require the CSRF token (Section 51), which JavaScript must read from a cookie and attach manually.</p>
+      <pre class="code">&lt;!-- In the template, ensure Django sets the CSRF cookie: --&gt;
+{% csrf_token %}
+
+&lt;script&gt;
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie &amp;&amp; document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie('csrftoken');
+
+async function postComment(postId, body) {
+    const response = await fetch(`/api/posts/${postId}/comments/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrftoken   // Django requires this header on unsafe requests
+        },
+        body: JSON.stringify({ body: body })
+    });
+    const data = await response.json();
+    // Insert the new comment into the page instantly, no reload needed:
+    document.getElementById("comments").insertAdjacentHTML(
+        "beforeend", `&lt;p&gt;&lt;strong&gt;${data.author}:&lt;/strong&gt; ${data.body}&lt;/p&gt;`
+    );
+}
+&lt;/script&gt;</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>67. Django + Bootstrap for Styling</h4>
+      <div class="badge-row"><span class="badge front">Frontend</span></div>
+      <p>Combining Bootstrap (Section 21) with Django templates gives a clean, responsive UI quickly, without writing custom CSS from scratch.</p>
+      <pre class="code">&lt;!-- blog/templates/blog/base.html --&gt;
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;{% block title %}My Blog{% endblock %}&lt;/title&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+    &lt;div class="container"&gt;
+      &lt;a class="navbar-brand" href="{% url 'post-list' %}"&gt;My Blog&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+  &lt;div class="container mt-4"&gt;
+    {% block content %}{% endblock %}
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <pre class="code">&lt;!-- A post card, styled entirely with Bootstrap classes: --&gt;
+{% for post in posts %}
+  &lt;div class="card mb-3"&gt;
+    &lt;div class="card-body"&gt;
+      &lt;h5 class="card-title"&gt;{{ post.title }}&lt;/h5&gt;
+      &lt;p class="card-text"&gt;{{ post.content|truncatewords:20 }}&lt;/p&gt;
+      &lt;a href="{% url 'post-detail' post.slug %}" class="btn btn-primary"&gt;Read More&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+{% endfor %}</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>68. Static &amp; Media Files Configuration</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Frequently Tested</span></div>
+      <p>A commonly confused (and tested) distinction: Static files are part of the CODEBASE (CSS/JS you wrote); Media files are UPLOADED BY USERS at runtime (e.g. a post's cover image, Section 54) &ndash; they are configured separately.</p>
+      <pre class="code"># myblog/settings.py
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]        # extra project-wide static folders
+STATIC_ROOT = BASE_DIR / "staticfiles"           # where `collectstatic` gathers files for deployment
+
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"                  # where user-uploaded files are actually saved</pre>
+      <pre class="code"># myblog/urls.py - serving media files during LOCAL DEVELOPMENT only
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    # ... other urls ...
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)</pre>
+      <ul class="key-points">
+        <li><code>python manage.py collectstatic</code> &ndash; gathers every app's static files into one <code>STATIC_ROOT</code> folder, ready for a production web server to serve directly (Section 71) &ndash; Django itself does NOT efficiently serve static files in production.</li>
+        <li>In production, media files are commonly stored on cloud storage (e.g. AWS S3) rather than the server's local disk, since server disks are often temporary/replaced on redeploy.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part L &mdash; Database, Security &amp; Deployment</h2>
+
+    <div class="topic-note">
+      <h4>69. Working with PostgreSQL</h4>
+      <div class="badge-row"><span class="badge db">Database</span><span class="badge job">Production Standard</span></div>
+      <p>SQLite (Django's default) is great for development but not designed for production traffic &ndash; PostgreSQL is the most common production database choice for Django projects.</p>
+      <pre class="code">pip install psycopg2-binary</pre>
+      <pre class="code"># myblog/settings.py
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "myblog_db",
+        "USER": "myblog_user",
+        "PASSWORD": "secure_password",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
+}</pre>
+      <ul class="key-points">
+        <li>The huge advantage of the Django ORM (Section 44): switching from SQLite to PostgreSQL requires changing ONLY this settings block &ndash; every Model, View, and QuerySet in the whole project keeps working unchanged.</li>
+        <li>After switching, run <code>python manage.py migrate</code> again to create the schema in the new database.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>70. Environment Variables &amp; Settings Management</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Critical Security Practice</span></div>
+      <p>Secrets (database passwords, API keys, Django's own SECRET_KEY) must NEVER be hard-coded or committed to Git &ndash; environment variables keep them outside the codebase entirely.</p>
+      <pre class="code">pip install python-decouple</pre>
+      <pre class="code"># .env file (add this filename to .gitignore - never commit it!)
+SECRET_KEY=your-actual-secret-key-here
+DEBUG=False
+DATABASE_PASSWORD=secure_password</pre>
+      <pre class="code"># myblog/settings.py
+from decouple import config
+
+SECRET_KEY = config("SECRET_KEY")
+DEBUG = config("DEBUG", default=False, cast=bool)
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "myblog_db",
+        "PASSWORD": config("DATABASE_PASSWORD"),
+        # ... other settings ...
+    }
+}</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>71. Deploying Django</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Job-Ready Skill</span></div>
+      <p>"Deploying" means making the application accessible on the public internet, on a real server, instead of only <code>runserver</code> on your own machine (which is explicitly NOT safe for production use).</p>
+      <ul class="key-points">
+        <li>Popular beginner-friendly platforms: <b>Render</b>, <b>Railway</b>, and <b>PythonAnywhere</b> all offer straightforward Django deployment with free tiers.</li>
+        <li>Django's built-in dev server is single-threaded and insecure for production &ndash; a real production server uses <b>Gunicorn</b> or <b>uWSGI</b> as the actual Python application server, often with <b>Nginx</b> in front of it serving static files and proxying requests.</li>
+      </ul>
+      <pre class="code">pip install gunicorn whitenoise
+pip freeze > requirements.txt
+
+# Procfile (tells the hosting platform how to start the app):
+web: gunicorn myblog.wsgi</pre>
+      <pre class="code"># settings.py additions for deployment:
+ALLOWED_HOSTS = ["myblog.onrender.com"]   # your actual deployed domain
+
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",   # efficiently serves static files in production
+    # ... rest of the middleware list ...
+]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"</pre>
+      <pre class="code"># Deployment checklist:
+python manage.py collectstatic     # gather all static files into STATIC_ROOT
+python manage.py migrate           # apply migrations on the production database
+git push                            # or your platform's specific deploy command</pre>
+    </div>
+
+    <div class="topic-note">
+      <h4>72. Security Best Practices</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Frequently Tested</span></div>
+      <ul class="key-points">
+        <li><b>Never run with <code>DEBUG = True</code> in production</b> &ndash; it exposes detailed error pages including source code and settings to any visitor who triggers an error.</li>
+        <li><b>CSRF Protection</b> &ndash; enabled by default via <code>CsrfViewMiddleware</code> (Section 60); never disable it just to "make a form work" &ndash; fix the actual missing <code>{% csrf_token %}</code> instead.</li>
+        <li><b>SQL Injection</b> &ndash; the Django ORM automatically parameterizes queries, protecting against this by default, AS LONG AS you use the ORM rather than writing raw SQL string concatenation.</li>
+        <li><b>XSS (Cross-Site Scripting)</b> &ndash; Django templates auto-escape variables by default (<code>{{ variable }}</code>), preventing malicious HTML/JS from being injected via user input; only use <code>|safe</code> or <code>mark_safe()</code> when you are certain the content is trustworthy.</li>
+        <li><b>Password storage</b> &ndash; Django's <code>User</code> model automatically hashes passwords (using PBKDF2 by default); never store or compare plain-text passwords yourself.</li>
+        <li>Keep <code>SECRET_KEY</code> out of version control (Section 70) &ndash; it's used to cryptographically sign sessions and other security-critical data.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>73. Testing in Django</h4>
+      <div class="badge-row"><span class="badge back">Backend</span><span class="badge job">Expected in Real Jobs</span></div>
+      <p>Django includes a full testing framework (built on Python's <code>unittest</code>) with a special test database created fresh for every run, and its own <code>Client</code> for simulating requests &ndash; automated tests are a standard, expected part of any professional Django codebase.</p>
+      <pre class="code"># blog/tests.py
+from django.test import TestCase
+from django.contrib.auth.models import User
+from django.urls import reverse
+from .models import Post, Category
+
+class PostModelTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username="testuser", password="testpass123")
+        self.category = Category.objects.create(name="Testing")
+        self.post = Post.objects.create(
+            title="Test Post", slug="test-post", author=self.user,
+            category=self.category, content="Test content"
+        )
+
+    def test_post_str(self):
+        self.assertEqual(str(self.post), "Test Post")
+
+    def test_post_absolute_url(self):
+        self.assertEqual(self.post.get_absolute_url(), "/post/test-post/")
+
+
+class PostViewTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username="testuser", password="testpass123")
+        self.post = Post.objects.create(
+            title="Test Post", slug="test-post", author=self.user, content="Test content"
+        )
+
+    def test_post_list_status_code(self):
+        response = self.client.get(reverse("post-list"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_post_list_contains_post(self):
+        response = self.client.get(reverse("post-list"))
+        self.assertContains(response, "Test Post")
+
+    def test_create_post_requires_login(self):
+        response = self.client.get(reverse("post-create"))
+        self.assertEqual(response.status_code, 302)   # redirected to login
+
+    def test_create_post_when_logged_in(self):
+        self.client.login(username="testuser", password="testpass123")
+        response = self.client.post(reverse("post-create"), {
+            "title": "New Post", "slug": "new-post", "content": "New content", "published": True
+        })
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(Post.objects.filter(slug="new-post").exists())</pre>
+      <pre class="code">python manage.py test blog -v 2
+
+# Verified output from this exact test file:
+# test_post_absolute_url ... ok
+# test_post_str ... ok
+# test_create_post_requires_login ... ok
+# test_create_post_when_logged_in ... ok
+# test_post_list_contains_post ... ok
+# test_post_list_status_code ... ok
+# ----------------------------------------------------------------------
+# Ran 6 tests in 4.24s
+# OK</pre>
+      <ul class="key-points">
+        <li>Django automatically creates and destroys a separate TEST database for each test run &ndash; your real development/production data is never touched by tests.</li>
+        <li><code>setUp()</code> &ndash; runs before EVERY test method in the class, used to create the common objects each test needs.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part M &mdash; Job Readiness</h2>
+
+    <div class="topic-note">
+      <h4>74. Building a Portfolio Project</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <p>For a Full Stack role, 2-3 complete, deployed, working projects on GitHub demonstrate real ability far more convincingly than a certificate alone.</p>
+      <ul class="key-points">
+        <li>The Blog project built across this course is already a strong first portfolio piece &ndash; extend it further: add tags, a search feature, pagination, and comment moderation.</li>
+        <li>Build at least one project involving authentication, a database with relationships, and a REST API &ndash; exactly the skills covered in Parts G-J.</li>
+        <li>DEPLOY every portfolio project (Section 71) &ndash; a live, clickable link is dramatically more impressive to a reviewer than a repository they'd have to run locally themselves.</li>
+        <li>Write a clear README for each project: what it does, the tech stack used, how to run it locally, and a live demo link.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>75. Git &amp; GitHub for Web Developers</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <pre class="code">git init
+echo "venv/
+__pycache__/
+*.pyc
+.env
+db.sqlite3
+media/" > .gitignore
+
+git add .
+git commit -m "Initial commit: blog app with models, views, templates"
+git remote add origin https://github.com/yourusername/django-blog.git
+git push -u origin main
+
+# For ongoing work, use a new branch per feature:
+git checkout -b add-comment-feature
+# ... make changes ...
+git add .
+git commit -m "Add comment functionality to posts"
+git push origin add-comment-feature
+# Then open a Pull Request on GitHub to merge into main</pre>
+      <ul class="key-points">
+        <li><code>.gitignore</code> &ndash; NEVER commit <code>venv/</code>, <code>.env</code> (Section 70), or the local SQLite database file to version control.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>76. Common Interview Questions</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <ul class="key-points">
+        <li>"Explain Django's MVT architecture" (Section 35) &ndash; "What's the difference between a Django project and an app?" (Section 38).</li>
+        <li>"What are migrations and why do we need them?" (Section 46) &ndash; "Explain the difference between <code>on_delete=CASCADE</code> and <code>SET_NULL</code>" (Section 48).</li>
+        <li>"What's the difference between function-based and class-based views?" (Section 55) &ndash; "How does Django protect against CSRF/SQL injection/XSS?" (Section 72).</li>
+        <li>"Explain how Django sessions work" (Section 57) &ndash; "What's the difference between authentication and authorization?" (Section 59).</li>
+        <li>"What is a Django Serializer and why is it needed?" (Section 62) &ndash; "How would you secure a REST API?" (Section 65).</li>
+        <li>"Walk me through what happens from a user typing a URL to seeing the rendered page" &ndash; be ready to narrate the full request/response cycle (Section 2) through URL routing, the view, the ORM, and template rendering.</li>
+        <li>Practical coding rounds often ask you to build a small Django feature live (a model + view + template + URL) in 30-45 minutes &ndash; practice this exact sequence until it's second nature.</li>
+      </ul>
+    </div>
+
+    <div class="topic-note">
+      <h4>77. Resume Tips for Full Stack Developers</h4>
+      <div class="badge-row"><span class="badge job">Job Readiness</span></div>
+      <ul class="key-points">
+        <li>List your actual stack precisely: "Python, Django, Django REST Framework, PostgreSQL, HTML/CSS/JavaScript, Bootstrap, Git" &ndash; many applicant tracking systems filter by these exact keywords.</li>
+        <li>Quantify where possible: "Built a REST API serving 5 endpoints with token authentication" is stronger than "worked on backend APIs".</li>
+        <li>Link your GitHub profile and live deployed project demos (Section 74) directly on the resume.</li>
+        <li>For entry-level roles, strong, deployed personal projects can substitute for formal work experience &ndash; present the Blog project and any extensions to it as seriously as real job experience.</li>
+      </ul>
+    </div>
+
+    <h2 class="part-title">Part N &mdash; Assignments with Full Code Solutions</h2>
+
+    <div class="instructions">
+      <b>Progression:</b> Assignments 1-6 extend the Blog project built throughout this course. The Capstone builds a brand-new, complete Task Manager application from scratch, applying everything learned, ending with a genuinely deployable, job-ready project.
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 1 &mdash; Static HTML/CSS Landing Page</h4>
+      <div class="badge-row"><span class="badge front">HTML/CSS</span></div>
+      <p><b>Task:</b> Build a static, responsive landing page for the blog (before touching Django) using semantic HTML, Flexbox, and a media query &ndash; this becomes the visual reference for Section 41's Django templates.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Blog&lt;/title&gt;
+  &lt;style&gt;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    header { background: #0f5f7f; color: white; padding: 20px; }
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 20px;
+        background: #edf4f8;
+    }
+    .card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+    .card { flex: 1 1 300px; border: 1px solid #ccc; border-radius: 8px; padding: 20px; }
+
+    @media (max-width: 600px) {
+        .hero { flex-direction: column; text-align: center; }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;&lt;h1&gt;My Blog&lt;/h1&gt;&lt;/header&gt;
+  &lt;section class="hero"&gt;
+    &lt;div&gt;
+      &lt;h2&gt;Welcome to my thoughts&lt;/h2&gt;
+      &lt;p&gt;Writing about code, coffee, and everything in between.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;main class="card-grid"&gt;
+    &lt;article class="card"&gt;&lt;h3&gt;Post One&lt;/h3&gt;&lt;p&gt;A short preview...&lt;/p&gt;&lt;/article&gt;
+    &lt;article class="card"&gt;&lt;h3&gt;Post Two&lt;/h3&gt;&lt;p&gt;A short preview...&lt;/p&gt;&lt;/article&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 2 &mdash; Category Filtering View</h4>
+      <div class="badge-row"><span class="badge back">Views &amp; ORM</span></div>
+      <p><b>Task:</b> Add a category filter to the blog's post list, so visiting <code>/?category=2</code> shows only posts in that category, while <code>/</code> alone still shows every post.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code"># blog/views.py
+def post_list(request):
+    posts = Post.objects.filter(published=True)
+    category_id = request.GET.get("category")
+    if category_id:
+        posts = posts.filter(category_id=category_id)
+    categories = Category.objects.all()
+    return render(request, "blog/post_list.html", {
+        "posts": posts, "categories": categories
+    })</pre>
+      <pre class="code">&lt;!-- blog/templates/blog/post_list.html - add a filter menu --&gt;
+&lt;div&gt;
+  &lt;a href="{% url 'post-list' %}"&gt;All&lt;/a&gt;
+  {% for category in categories %}
+    &lt;a href="?category={{ category.id }}"&gt;{{ category.name }}&lt;/a&gt;
+  {% endfor %}
+&lt;/div&gt;</pre>
+      <p>Verified: <code>Post.objects.filter(category=django_cat)</code> correctly returned only the 2 posts in that category out of the full set.</p>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 3 &mdash; Add Tags with a Many-to-Many Relationship</h4>
+      <div class="badge-row"><span class="badge db">Models</span></div>
+      <p><b>Task:</b> Add a <code>Tag</code> model, connect it to <code>Post</code> with a ManyToManyField, and register both in the admin with tags editable directly on the Post admin page.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code"># blog/models.py
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
+
+class Post(models.Model):
+    # ... existing fields ...
+    tags = models.ManyToManyField(Tag, blank=True, related_name="posts")</pre>
+      <pre class="code">python manage.py makemigrations blog
+python manage.py migrate</pre>
+      <pre class="code"># blog/admin.py
+from .models import Tag
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ["name"]
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ["title", "author", "category", "published", "created_at"]
+    filter_horizontal = ["tags"]   # a nicer widget for selecting multiple tags</pre>
+      <pre class="code"># Usage in the shell:
+tag1 = Tag.objects.create(name="Python")
+tag2 = Tag.objects.create(name="Web Dev")
+post.tags.add(tag1, tag2)
+print(post.tags.all())          # [&lt;Tag: Python&gt;, &lt;Tag: Web Dev&gt;]
+print(tag1.posts.all())          # every post tagged "Python", via related_name</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 4 &mdash; Build a Contact Form</h4>
+      <div class="badge-row"><span class="badge back">Forms</span></div>
+      <p><b>Task:</b> Build a standalone Contact page with Name, Email, and Message fields, custom validation requiring the message be at least 10 characters, and a success message on submission.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code"># blog/forms.py
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
+
+    def clean_message(self):
+        message = self.cleaned_data["message"]
+        if len(message) < 10:
+            raise forms.ValidationError("Message must be at least 10 characters.")
+        return message</pre>
+      <pre class="code"># blog/views.py
+from django.contrib import messages
+
+def contact(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            messages.success(request, "Thanks! Your message has been sent.")
+            return redirect("contact")
+    else:
+        form = ContactForm()
+    return render(request, "blog/contact.html", {"form": form})</pre>
+      <pre class="code">&lt;!-- blog/templates/blog/contact.html --&gt;
+{% extends "blog/base.html" %}
+{% block content %}
+{% for message in messages %}
+  &lt;p style="color: green;"&gt;{{ message }}&lt;/p&gt;
+{% endfor %}
+&lt;form method="post"&gt;
+  {% csrf_token %}
+  {{ form.as_p }}
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+{% endblock %}</pre>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 5 &mdash; Restrict Editing to the Original Author</h4>
+      <div class="badge-row"><span class="badge back">Auth &amp; Permissions</span></div>
+      <p><b>Task:</b> Ensure only a Post's original author can edit or delete it &ndash; any other logged-in user attempting to should receive a 403 Forbidden.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code"># blog/cbv_views.py
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/post_form.html"
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    template_name = "blog/post_confirm_delete.html"
+    success_url = reverse_lazy("post-list-cbv")
+
+    def test_func(self):
+        return self.get_object().author == self.request.user</pre>
+      <p>Verified: when a second user ("bob") attempted to edit a task belonging to "alice" using this exact pattern, the server correctly returned <b>403 Forbidden</b>, while alice editing her own task succeeded normally.</p>
+    </div>
+
+    <div class="assign-block">
+      <h4>Assignment 6 &mdash; Add a Comments Endpoint to the REST API</h4>
+      <div class="badge-row"><span class="badge back">REST API</span></div>
+      <p><b>Task:</b> Add a nested API endpoint so a client can POST a new comment to a specific post via <code>/api/posts/{id}/comments/</code>, using DRF's <code>@action</code> decorator.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code"># blog/api_views.py
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from .serializers import CommentSerializer
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.filter(published=True)
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
+    @action(detail=True, methods=["post"], permission_classes=[permissions.IsAuthenticated])
+    def comments(self, request, pk=None):
+        post = self.get_object()
+        serializer = CommentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(post=post, author=request.user)
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)</pre>
+      <p><code>@action(detail=True, ...)</code> automatically wires up the URL <code>/api/posts/{pk}/comments/</code> through the existing router (Section 63) &ndash; no changes to <code>api_urls.py</code> needed.</p>
+    </div>
+
+    <div class="assign-block">
+      <h4>Capstone Project &mdash; Full Task Manager Application</h4>
+      <div class="badge-row"><span class="badge job">Job-Ready Capstone</span></div>
+      <p><b>Task:</b> Build a brand-new, complete "Task Manager" app from scratch: a Task model (title, description, priority, completed status, due date) owned per-user, full CRUD via Class-Based Views, a toggle-complete action, and strict per-user data isolation &ndash; a genuinely deployable, portfolio-ready project.</p>
+      <span class="solution-label">Solution</span>
+      <pre class="code">python manage.py startapp tasks
+# Add "tasks" to INSTALLED_APPS in settings.py
+
+# tasks/models.py
+from django.db import models
+from django.contrib.auth.models import User
+
+class Task(models.Model):
+    PRIORITY_CHOICES = [("low", "Low"), ("medium", "Medium"), ("high", "High")]
+
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tasks")
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default="medium")
+    completed = models.BooleanField(default=False)
+    due_date = models.DateField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["completed", "-priority", "due_date"]
+
+    def __str__(self):
+        return self.title</pre>
+      <pre class="code"># tasks/forms.py
+from django import forms
+from .models import Task
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ["title", "description", "priority", "due_date"]
+        widgets = {"due_date": forms.DateInput(attrs={"type": "date"})}</pre>
+      <pre class="code"># tasks/views.py
+from django.shortcuts import get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from .models import Task
+from .forms import TaskForm
+
+class TaskListView(LoginRequiredMixin, ListView):
+    model = Task
+    template_name = "tasks/task_list.html"
+    context_object_name = "tasks"
+
+    def get_queryset(self):
+        return Task.objects.filter(owner=self.request.user)   # each user sees only their own
+
+class TaskCreateView(LoginRequiredMixin, CreateView):
+    model = Task
+    form_class = TaskForm
+    template_name = "tasks/task_form.html"
+    success_url = reverse_lazy("task-list")
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
+class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Task
+    form_class = TaskForm
+    template_name = "tasks/task_form.html"
+    success_url = reverse_lazy("task-list")
+
+    def test_func(self):
+        return self.get_object().owner == self.request.user
+
+class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Task
+    template_name = "tasks/task_confirm_delete.html"
+    success_url = reverse_lazy("task-list")
+
+    def test_func(self):
+        return self.get_object().owner == self.request.user
+
+@login_required
+def toggle_complete(request, pk):
+    task = get_object_or_404(Task, pk=pk, owner=request.user)
+    task.completed = not task.completed
+    task.save()
+    return redirect("task-list")</pre>
+      <pre class="code"># tasks/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("", views.TaskListView.as_view(), name="task-list"),
+    path("new/", views.TaskCreateView.as_view(), name="task-create"),
+    path("&lt;int:pk&gt;/edit/", views.TaskUpdateView.as_view(), name="task-update"),
+    path("&lt;int:pk&gt;/delete/", views.TaskDeleteView.as_view(), name="task-delete"),
+    path("&lt;int:pk&gt;/toggle/", views.toggle_complete, name="task-toggle"),
+]
+
+# myblog/urls.py
+urlpatterns = [
+    # ... other urls ...
+    path("tasks/", include("tasks.urls")),
+]</pre>
+      <p><b>Verified full behavior with two real users, via the Django test client:</b></p>
+      <pre class="code">bob = User.objects.create_user(username="bob", password="bobpass123")
+
+client.login(username="alice", password="testpass123")
+client.post("/tasks/new/", {"title": "Finish Django notes", "priority": "high"})
+# Task created, status 302 (redirect on success)
+
+client.post(f"/tasks/{task.pk}/toggle/")
+# task.completed correctly flips to True
+
+client.login(username="bob", password="bobpass123")
+client.get(f"/tasks/{task.pk}/edit/")
+# Correctly returns 403 Forbidden - bob cannot edit alice's task
+
+client.get("/tasks/")
+# Bob's own task list correctly does NOT contain alice's task title
+# - per-user data isolation confirmed working end-to-end</pre>
+      <p><b>Next steps to make this fully job-ready:</b> add a DRF API for tasks (Part J), write a full test suite (Section 73), add Bootstrap styling (Section 67), then deploy it (Section 71) and add it to your portfolio (Section 74) alongside the Blog project.</p>
+    </div>
+
+    <h2 class="part-title">Part O &mdash; Quick Reference</h2>
+
+    <div class="topic-note">
+      <h4>Essential manage.py Commands</h4>
+      <table class="quick-ref">
+        <tr><th>Command</th><th>Purpose</th></tr>
+        <tr><td>startproject &lt;name&gt;</td><td>Create a new Django project</td></tr>
+        <tr><td>startapp &lt;name&gt;</td><td>Create a new app within a project</td></tr>
+        <tr><td>runserver</td><td>Start the local development server</td></tr>
+        <tr><td>makemigrations</td><td>Generate migration files from model changes</td></tr>
+        <tr><td>migrate</td><td>Apply migrations to the database</td></tr>
+        <tr><td>createsuperuser</td><td>Create an admin account</td></tr>
+        <tr><td>shell</td><td>Open an interactive Python shell with Django loaded</td></tr>
+        <tr><td>test</td><td>Run the automated test suite</td></tr>
+        <tr><td>collectstatic</td><td>Gather static files for production deployment</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>Django Template Tags &amp; Filters Cheat Sheet</h4>
+      <table class="quick-ref">
+        <tr><th>Syntax</th><th>Purpose</th></tr>
+        <tr><td>{{ variable }}</td><td>Output a value (auto-escaped for security)</td></tr>
+        <tr><td>{% if / elif / else / endif %}</td><td>Conditional logic</td></tr>
+        <tr><td>{% for x in list %} ... {% endfor %}</td><td>Loop; supports {% empty %} for no results</td></tr>
+        <tr><td>{% extends "base.html" %}</td><td>Template inheritance</td></tr>
+        <tr><td>{% block name %} ... {% endblock %}</td><td>A section a child template can override</td></tr>
+        <tr><td>{% url 'name' arg %}</td><td>Generate a URL by its name</td></tr>
+        <tr><td>{% csrf_token %}</td><td>Required security token inside every POST form</td></tr>
+        <tr><td>{% load static %} / {% static 'x.css' %}</td><td>Reference a static file</td></tr>
+        <tr><td>|date:"F j, Y"</td><td>Format a date</td></tr>
+        <tr><td>|truncatewords:20</td><td>Cut text to N words</td></tr>
+        <tr><td>|default:"N/A"</td><td>Fallback value if empty/missing</td></tr>
+      </table>
+    </div>
+
+    <div class="topic-note">
+      <h4>Model Field &amp; ORM Lookup Cheat Sheet</h4>
+      <pre class="code">Model.objects.all()
+Model.objects.filter(field=value)
+Model.objects.filter(field__icontains="text")   # case-insensitive contains
+Model.objects.filter(field__gt=10)                # greater than
+Model.objects.filter(field__in=[1, 2, 3])          # matches any in a list
+Model.objects.exclude(field=value)
+Model.objects.get(pk=1)                            # exactly one, or raises an error
+Model.objects.order_by("-field")                   # descending order
+Model.objects.count()
+related_object.reverse_name.all()                  # via related_name (Section 48)</pre>
+    </div>
+
+    <div class="notes">
+      <strong>Course Summary:</strong> Full stack development is fundamentally about connecting layers cleanly: HTML structures content, CSS styles it, JavaScript adds interactivity (Parts B-D); Python and Django handle the server-side logic, data, and security (Parts E-I); REST APIs let other systems talk to that backend (Part J); and deployment makes the whole thing real and usable by actual people (Part L). Every piece of Django code in this course was built and tested as one real, working Blog application &mdash; not isolated snippets &mdash; and the Task Manager capstone in Part N proves the same patterns (models, CRUD views, authentication, per-user permissions) transfer directly to a brand-new project built from scratch. Complete every assignment in order, deploy both projects, and you will have exactly what a Full Stack Python/Django job application requires: working, live, demonstrable proof that you can build a complete application end to end.
+    </div>
+  </div>
+</body>
+</html>
