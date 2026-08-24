@@ -1,0 +1,331 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Beginners Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b { color: #113f68; }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .code {
+      display: block;
+      white-space: pre;
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.8pt;
+      line-height: 1.27;
+      margin-top: 0.9mm;
+      background: #f5f9fd;
+      border: 1px solid #d8e2ec;
+      border-radius: 1mm;
+      padding: 1.45mm 1.8mm;
+      tab-size: 4;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+      .print-tip { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Python Beginners Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha-institute-logo.png" alt="Institute Logo" width="14" height="14" />
+      </div>
+      <div>
+        <div class="title">Python Beginners - Question Paper</div>
+        <div class="subtitle">Basics, Conditionals, Loops, Functions, Recursion, Classes, Inheritance</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 180 Minutes</div>
+      <div><b>Total Marks:</b> 100</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill-in-the-blanks, and Section C has 10 programming questions. Write neat answers with proper syntax, logic, and output wherever applicable.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which statement is used to make a decision in Python?
+        <span class="opts">A) for<br>B) if<br>C) def<br>D) class</span>
+      </li>
+      <li>
+        Which keyword is used with if to check another condition?
+        <span class="opts">A) else if<br>B) elif<br>C) elseif<br>D) then</span>
+      </li>
+      <li>
+        Which loop is commonly used to repeat a block for a fixed number of times?
+        <span class="opts">A) if<br>B) for<br>C) class<br>D) def</span>
+      </li>
+      <li>
+        Which keyword is used to define a function?
+        <span class="opts">A) function<br>B) fun<br>C) def<br>D) define</span>
+      </li>
+      <li>
+        What is recursion?
+        <span class="opts">A) A loop without a condition<br>B) A function calling itself<br>C) A class calling a function<br>D) A function without arguments</span>
+      </li>
+      <li>
+        Which keyword is used to create a class in Python?
+        <span class="opts">A) object<br>B) class<br>C) struct<br>D) define</span>
+      </li>
+      <li>
+        In inheritance, which class gives its properties and methods to another class?
+        <span class="opts">A) Child class<br>B) Derived class<br>C) Parent class<br>D) Object class</span>
+      </li>
+      <li>
+        Which statement is used to stop a loop immediately?
+        <span class="opts">A) stop<br>B) exit<br>C) break<br>D) end</span>
+      </li>
+      <li>
+        Which Python statement is used for multiple-choice decision making?
+        <span class="opts">A) switch<br>B) match<br>C) choose<br>D) case</span>
+      </li>
+      <li>
+        What will range(3) generate?
+        <span class="opts">A) 1, 2, 3<br>B) 0, 1, 2<br>C) 0, 1, 2, 3<br>D) 3, 2, 1</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill in the Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="single-col">
+      <li>The keyword used to check a condition in Python is <span class="blank">__________</span>.</li>
+      <li>The keyword used when the if condition is false is <span class="blank">__________</span>.</li>
+      <li>The keyword used to define a function is <span class="blank">__________</span>.</li>
+      <li>A function that calls itself is called a <span class="blank">__________</span> function.</li>
+      <li>The <span class="blank">__________</span> statement is used to repeat a block of code for each item in a sequence.</li>
+      <li>The <span class="blank">__________</span> statement is used to repeat code while a condition is true.</li>
+      <li>The keyword used to create a class is <span class="blank">__________</span>.</li>
+      <li>The process of creating a new class from an existing class is called <span class="blank">__________</span>.</li>
+      <li>The <span class="blank">__________</span> statement is used to handle multiple choices in modern Python.</li>
+      <li>The <span class="blank">__________</span> statement is used to exit a loop immediately.</li>
+    </ol>
+
+    <h3>Section C: Programming Questions (10 x 8 = 80 Marks)</h3>
+    <ol class="single-col">
+      <li>Write a program to check whether a number is positive, negative, or zero using if-elif-else.<br><span class="sample">Example Input: 5<br>Example Output: Positive number</span></li>
+      <li>Write a program to check whether a person is eligible to vote using if-else.<br><span class="sample">Example Input: 20<br>Example Output: Eligible to vote</span></li>
+      <li>Write a program using match to display the name of a day for a number from 1 to 7.<br><span class="sample">Example Input: 3<br>Example Output: Wednesday</span></li>
+      <li>Write a program to print the numbers from 1 to 10 using a for loop.<br><span class="sample">Example Output: 1 2 3 4 5 6 7 8 9 10</span></li>
+      <li>Write a program to print the even numbers from 1 to 20 using a loop.<br><span class="sample">Example Output: 2 4 6 8 10 12 14 16 18 20</span></li>
+      <li>Write a program to find the sum of numbers from 1 to 10 using a while loop.<br><span class="sample">Example Output: 55</span></li>
+      <li>Write a function that accepts two numbers and returns their sum.<br><span class="sample">Example Input: 5 7<br>Example Output: 12</span></li>
+      <li>Write a function to check whether a number is even or odd.<br><span class="sample">Example Input: 8<br>Example Output: Even</span></li>
+      <li>Write a recursive function to find the factorial of a number.<br><span class="sample">Example Input: 5<br>Example Output: 120</span></li>
+      <li>Create a class Student with attributes name and marks, and create a method to display them. Then create a child class Result that inherits from Student and displays whether the student has passed or failed.<br><span class="sample">Example Input: Name: Ravi, Marks: 75<br>Example Output: Ravi - 75 marks, Result: Pass</span></li>
+    </ol>
+
+    <div class="footer">Prepared for Classroom / Practical Examination</div>
+  </section>
+</body>
+</html>
