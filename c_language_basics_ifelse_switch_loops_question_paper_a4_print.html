@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C Language Basics If-Else Switch Loops Question Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page { size: A4; margin: 9mm; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr auto;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .logo img { width: 100%; height: 100%; object-fit: contain; }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.8pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .paper-stamp {
+      border: 1px solid #9db0c3;
+      background: linear-gradient(180deg, #fff 0%, #e8eef5 100%);
+      color: var(--accent);
+      padding: 1.4mm 2.2mm;
+      font-size: 8.4pt;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b { color: #113f68; }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .section-note {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+      background: #f4f8fc;
+      border: 1px solid var(--soft);
+      padding: 1.2mm 1.8mm;
+      border-radius: 1mm;
+    }
+
+    /* two-column list for MCQ and blanks */
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.4pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    /* single column for programs */
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.4pt;
+      line-height: 1.38;
+    }
+
+    .single-col li { margin: 0 0 2mm; padding-bottom: 1mm; }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.35;
+    }
+
+    .code {
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.6pt;
+      white-space: pre-wrap;
+      background: linear-gradient(180deg, #f7fafd 0%, #f1f6fb 100%);
+      border: 1px solid #d7e1ea;
+      border-left: 1.5mm solid #9db8d3;
+      padding: 1.5mm 1.8mm;
+      margin: 0.8mm 0 0.6mm;
+      line-height: 1.28;
+      border-radius: 1mm;
+      display: block;
+    }
+
+    .ic {
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.6pt;
+      background: #f4f8fc;
+      border: 1px solid #d6e1ec;
+      padding: 0.1mm 0.9mm;
+      border-radius: 0.7mm;
+    }
+
+    .sample {
+      display: block;
+      margin-top: 0.7mm;
+      font-size: 8.2pt;
+      line-height: 1.3;
+      color: #2c4860;
+      background: #f5f9fd;
+      border: 1px solid #d5e0ea;
+      border-left: 1.2mm solid #7aa5c8;
+      padding: 1mm 1.5mm;
+      border-radius: 0 1mm 1mm 0;
+    }
+
+    .sample b { color: #103a60; }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 7.6pt;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.2mm 1.4mm;
+      border-radius: 999px;
+      margin-right: 1mm;
+      letter-spacing: 0.2px;
+      vertical-align: middle;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+        padding: 6mm 6mm;
+      }
+      .print-tip { display: none; }
+      .two-col { font-size: 9pt; line-height: 1.3; }
+      .single-col { font-size: 9pt; line-height: 1.3; }
+      .single-col li { margin: 0 0 1.5mm; }
+      .sample { font-size: 7.9pt; }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="C Language Question Paper">
+
+    <!-- ══ HEADER ══ -->
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">C Language &mdash; Question Paper</div>
+        <div class="subtitle">Syllabus: Basics &middot; If-Else &middot; Switch &middot; While Loop &middot; For Loop</div>
+      </div>
+      <div class="paper-stamp">Set &ndash; I</div>
+    </header>
+
+    <!-- ══ META ══ -->
+    <section class="meta">
+      <div><b>Time:</b> 90 Minutes</div>
+      <div><b>Total Marks:</b> 50</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <!-- ══ INSTRUCTIONS ══ -->
+    <section class="instructions">
+      <b>General Instructions:</b>
+      1. Answer all questions in Section A and B.&nbsp;
+      2. Section C has 6 programs; attempt any 5.&nbsp;
+      3. Section A and B carry 1 mark each.&nbsp;
+      4. Each program in Section C carries 6 marks.&nbsp;
+      5. Write C programs with proper <span class="ic">#include</span> and <span class="ic">main()</span>.
+    </section>
+
+    <!-- ══════════════ SECTION A ══════════════ -->
+    <h3>Section A &mdash; Multiple Choice Questions &nbsp;(10 &times; 1 = 10 Marks)</h3>
+    <ol class="two-col">
+
+      <li>What is the output of the following code?
+        <span class="code">int x = 17, y = 5;
+printf("%d %d", x / y, x % y);</span>
+        <span class="opts">A) 3 2 &nbsp; B) 3.4 2 &nbsp; C) 3 3 &nbsp; D) Error</span>
+      </li>
+
+      <li>What does the following code print?
+        <span class="code">int a = 15;
+if (a % 3 == 0 &amp;&amp; a % 5 == 0)
+    printf("FizzBuzz");
+else if (a % 3 == 0)
+    printf("Fizz");
+else if (a % 5 == 0)
+    printf("Buzz");
+else
+    printf("None");</span>
+        <span class="opts">A) Fizz &nbsp; B) Buzz &nbsp; C) FizzBuzz &nbsp; D) None</span>
+      </li>
+
+      <li>What is the output? (observe missing <span class="ic">break</span>)
+        <span class="code">int n = 2;
+switch(n) {
+    case 1: printf("one ");
+    case 2: printf("two ");
+    case 3: printf("three ");
+    default: printf("done");
+}</span>
+        <span class="opts">A) two &nbsp; B) two three &nbsp; C) two three done &nbsp; D) one two three done</span>
+      </li>
+
+      <li>What is the value printed?
+        <span class="code">int i = 1, sum = 0;
+while (i &lt;= 5) {
+    if (i % 2 != 0)
+        sum += i;
+    i++;
+}
+printf("%d", sum);</span>
+        <span class="opts">A) 15 &nbsp; B) 9 &nbsp; C) 6 &nbsp; D) 8</span>
+      </li>
+
+      <li>What is the value of <span class="ic">s</span>?
+        <span class="code">int s = 0;
+for (int i = 10; i &gt;= 1; i -= 3)
+    s += i;
+printf("%d", s);</span>
+        <span class="opts">A) 19 &nbsp; B) 25 &nbsp; C) 22 &nbsp; D) 28</span>
+      </li>
+
+      <li>What is printed?
+        <span class="code">int x = 1;
+while (x &lt; 100)
+    x *= 3;
+printf("%d", x);</span>
+        <span class="opts">A) 81 &nbsp; B) 100 &nbsp; C) 243 &nbsp; D) 27</span>
+      </li>
+
+      <li>What does this loop print?
+        <span class="code">for (int i = 1; i &lt;= 6; i++) {
+    if (i % 2 == 0) continue;
+    printf("%d ", i);
+}</span>
+        <span class="opts">A) 2 4 6 &nbsp; B) 1 2 3 4 5 6 &nbsp; C) 1 3 5 &nbsp; D) 1 3 5 6</span>
+      </li>
+
+      <li>What is the value of <span class="ic">5 &gt; 3 &amp;&amp; 2 &lt; 4 || 0</span> in C?
+        <span class="opts">A) 0 &nbsp; B) 2 &nbsp; C) 1 &nbsp; D) Compilation Error</span>
+      </li>
+
+      <li>What is output?
+        <span class="code">int n = 25;
+if (n &gt; 0 &amp;&amp; n % 5 == 0)
+    if (n &gt; 20)
+        printf("A");
+    else
+        printf("B");
+else
+    printf("C");</span>
+        <span class="opts">A) A &nbsp; B) B &nbsp; C) C &nbsp; D) AB</span>
+      </li>
+
+      <li>How many times is <span class="ic">Hi</span> printed?
+        <span class="code">for (int i = 0; i &lt; 10; i++) {
+    if (i % 3 == 0) continue;
+    if (i == 7) break;
+    printf("Hi\n");
+}</span>
+        <span class="opts">A) 10 &nbsp; B) 6 &nbsp; C) 5 &nbsp; D) 4</span>
+      </li>
+
+    </ol>
+
+    <!-- ══════════════ SECTION B ══════════════ -->
+    <h3>Section B &mdash; Fill in the Blanks &nbsp;(10 &times; 1 = 10 Marks)</h3>
+    <ol class="two-col">
+
+      <li>In C, the operator <span class="ic">%</span> gives the <span class="blank">__________</span> of a division.</li>
+
+      <li>A <span class="ic">switch</span> statement can test expressions of integer or <span class="blank">__________</span> type.</li>
+
+      <li>A <span class="ic">while</span> loop checks its condition <span class="blank">__________</span> executing the body.</li>
+
+      <li>The keyword to immediately exit a loop or switch block is <span class="blank">__________</span>.</li>
+
+      <li>The output of <span class="ic">printf("%d", 7 / 2);</span> in C is <span class="blank">__________</span>.</li>
+
+      <li>In a <span class="ic">switch</span> statement, if no case matches, the <span class="blank">__________</span> block executes.</li>
+
+      <li>A <span class="ic">do-while</span> loop always executes its body at least <span class="blank">__________</span> time(s).</li>
+
+      <li>The relational operator to check <b>inequality</b> in C is <span class="blank">__________</span>.</li>
+
+      <li>The expression <span class="ic">10 % 4 + 3 * 2</span> evaluates to <span class="blank">__________</span>.</li>
+
+      <li>The <span class="ic">for</span> loop <span class="ic">for(i=1; i&lt;=n; i++)</span> has three parts: initialization, condition, and <span class="blank">__________</span>.</li>
+
+    </ol>
+
+    <!-- ══════════════ SECTION C ══════════════ -->
+    <h3>Section C &mdash; Programs &nbsp;(Attempt Any 5 &mdash; 5 &times; 6 = 30 Marks)</h3>
+    <div class="section-note">Write complete C programs with <span class="ic">#include &lt;stdio.h&gt;</span> and <span class="ic">main()</span>. Attempt any 5.</div>
+    <ol class="single-col">
+
+      <li><span class="tag">if / else</span>
+        Read three sides <span class="ic">a</span>, <span class="ic">b</span>, <span class="ic">c</span> of a triangle (positive integers). First check whether they can form a valid triangle (sum of any two sides must be greater than the third side). If not valid, print <span class="ic">Not a Triangle</span>. If valid, classify and print:
+        <ul style="margin:0.8mm 0 0.6mm; padding-left:4mm; font-size:9.1pt; line-height:1.4;">
+          <li>Equilateral &mdash; all three sides equal</li>
+          <li>Isosceles &mdash; exactly two sides equal</li>
+          <li>Scalene &mdash; all sides different</li>
+        </ul>
+        Use only <span class="ic">if / else if / else</span> (no loops needed).
+        <span class="sample">
+          <b>Sample 1 &mdash; Input:</b> 5 5 5 &nbsp;&nbsp;<b>Output:</b> Valid Triangle - Equilateral<br />
+          <b>Sample 2 &mdash; Input:</b> 5 5 8 &nbsp;&nbsp;<b>Output:</b> Valid Triangle - Isosceles<br />
+          <b>Sample 3 &mdash; Input:</b> 3 4 5 &nbsp;&nbsp;<b>Output:</b> Valid Triangle - Scalene<br />
+          <b>Sample 4 &mdash; Input:</b> 1 2 10 &nbsp;<b>Output:</b> Not a Triangle
+        </span>
+      </li>
+
+      <li><span class="tag">switch</span>
+        Read a day number <span class="ic">d</span> (1&ndash;7, where 1 = Monday). Using a <span class="ic">switch</span> statement, print the full name of the day. Also print whether it is a <b>Weekday</b> (Mon&ndash;Fri) or a <b>Weekend</b> (Sat, Sun). For any number outside 1&ndash;7, print <span class="ic">Invalid day number</span>.
+        <span class="sample">
+          <b>Sample 1 &mdash; Input:</b> 3 &nbsp;<b>Output:</b> Wednesday - Weekday<br />
+          <b>Sample 2 &mdash; Input:</b> 6 &nbsp;<b>Output:</b> Saturday - Weekend<br />
+          <b>Sample 3 &mdash; Input:</b> 9 &nbsp;<b>Output:</b> Invalid day number
+        </span>
+      </li>
+
+      <li><span class="tag">while</span>
+        Read two positive integers <span class="ic">a</span> and <span class="ic">b</span>. Using a <span class="ic">while</span> loop, find their <b>GCD (Greatest Common Divisor)</b> using the Euclidean algorithm: repeatedly replace the larger number with the remainder of dividing the larger by the smaller, until the remainder is zero. Print the GCD and also compute and print the LCM using the formula <span class="ic">LCM = (a * b) / GCD</span>.
+        <span class="sample">
+          <b>Sample 1 &mdash; Input:</b> 48 18 &nbsp;<b>Output:</b> GCD = 6, LCM = 144<br />
+          <b>Sample 2 &mdash; Input:</b> 100 75 &nbsp;<b>Output:</b> GCD = 25, LCM = 300
+        </span>
+      </li>
+
+      <li><span class="tag">while</span>
+        Read a positive integer <span class="ic">n</span>. Using a <span class="ic">while</span> loop and arithmetic operators only, check whether <span class="ic">n</span> is a <b>perfect number</b>. A perfect number equals the sum of all its proper divisors (divisors excluding itself). Print <span class="ic">Perfect</span> or <span class="ic">Not Perfect</span>. Also print the list of proper divisors found.
+        <span class="sample">
+          <b>Sample 1 &mdash; Input:</b> 6 &nbsp;&nbsp;<b>Output:</b> Divisors: 1 2 3 &nbsp; Sum = 6 &nbsp; Perfect<br />
+          <b>Sample 2 &mdash; Input:</b> 12 &nbsp;<b>Output:</b> Divisors: 1 2 3 4 6 &nbsp; Sum = 16 &nbsp; Not Perfect
+        </span>
+      </li>
+
+      <li><span class="tag">for</span>
+        Read a positive integer <span class="ic">n</span>. Using a single <span class="ic">for</span> loop, compute and print the sum of squares series:
+        <span class="code">S = 1&sup2; + 2&sup2; + 3&sup2; + ... + n&sup2;</span>
+        Print each term on the same line separated by <span class="ic">+</span>, then print the final sum on the next line.
+        <span class="sample">
+          <b>Sample 1 &mdash; Input:</b> 5<br />
+          <b>Output:</b> 1 + 4 + 9 + 16 + 25 = 55<br />
+          <b>Sample 2 &mdash; Input:</b> 3<br />
+          <b>Output:</b> 1 + 4 + 9 = 14
+        </span>
+      </li>
+
+      <li><span class="tag">for</span>
+        Read three integers: first term <span class="ic">a</span>, common ratio <span class="ic">r</span>, and number of terms <span class="ic">n</span>. Using a single <span class="ic">for</span> loop, print the first <span class="ic">n</span> terms of the <b>Geometric Progression (GP)</b> series. Also compute and print the sum of the series. Do <b>not</b> use <span class="ic">pow()</span>; multiply term by <span class="ic">r</span> in each iteration.
+        <span class="sample">
+          <b>Sample 1 &mdash; Input:</b> a=2 r=3 n=5<br />
+          <b>Output:</b> 2 6 18 54 162 &nbsp; Sum = 242<br />
+          <b>Sample 2 &mdash; Input:</b> a=5 r=2 n=4<br />
+          <b>Output:</b> 5 10 20 40 &nbsp; Sum = 75
+        </span>
+      </li>
+
+    </ol>
+
+    <p class="footer">End of Question Paper &mdash; All the Best!</p>
+  </section>
+
+  <p class="print-tip">Print tip: set scale to 100% and disable browser header/footer.</p>
+</body>
+</html>
