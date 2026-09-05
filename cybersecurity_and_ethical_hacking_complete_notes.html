@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity &amp; Ethical Hacking - Day 1: Basics of Linux</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #0f1c24;
+      --muted: #3d5060;
+      --line: #8fa5b8;
+      --soft: #d3e1ed;
+      --accent: #0b5070;
+      --accent-2: #8a3c1b;
+      --accent-green: #1a7a4c;
+      --accent-purple: #5c2d91;
+      --bg-top: #ecf3f8;
+      --bg-bottom: #dde7ef;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      line-height: 1.55;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: auto;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #c4d4e2;
+      border-top: 3.5mm solid var(--accent);
+      box-shadow: 0 4mm 15mm rgba(12, 28, 44, 0.18);
+      padding: 9mm 8mm 10mm;
+      position: relative;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.8mm;
+      padding: 3.5mm 4mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 18mm 1fr;
+      gap: 4mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 17mm;
+      height: 17mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.4mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 14.5pt;
+      font-weight: 700;
+      letter-spacing: 0.35px;
+      color: #0b3c60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1.2mm;
+      text-align: center;
+      font-size: 9.2pt;
+      color: #3b5066;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.8mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2.2mm;
+      font-size: 9.2pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      min-height: 8.8mm;
+      padding: 2mm 2.4mm;
+      background: #fff;
+    }
+
+    .meta div span {
+      color: #768a9c;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      display: block;
+      margin-bottom: 0.8mm;
+      font-weight: bold;
+    }
+
+    .instructions {
+      margin-top: 2.8mm;
+      border: 1px solid var(--soft);
+      border-left: 2.5mm solid var(--accent-2);
+      border-radius: 0 1.4mm 1.4mm 0;
+      padding: 2.4mm 2.8mm;
+      font-size: 9pt;
+      line-height: 1.45;
+      color: #273b4e;
+      background: #fbfdff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .instructions b { color: var(--accent-2); }
+
+    h2.part-title {
+      margin: 6mm 0 3mm;
+      font-size: 12pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: linear-gradient(90deg, #0b5070, #103a60);
+      border-radius: 1.4mm;
+      padding: 2.5mm 3.2mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    .day-block {
+      border: 1px solid #d4dfe8;
+      border-radius: 1.4mm;
+      padding: 3mm 3.2mm;
+      background: #fcfdff;
+      margin: 0 0 4mm;
+      position: relative;
+      z-index: 1;
+      page-break-inside: avoid;
+    }
+
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5mm;
+      border-bottom: 1.5px solid #d8e5ee;
+      padding-bottom: 1.5mm;
+    }
+
+    .day-header h3 {
+      margin: 0;
+      font-size: 10.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #0b4570;
+      font-weight: 700;
+    }
+
+    .topic-section {
+      margin-bottom: 4mm;
+      border-left: 2px solid #b8d4e5;
+      padding-left: 3.2mm;
+    }
+
+    .topic-title {
+      font-size: 9.6pt;
+      font-weight: bold;
+      color: #103454;
+      margin-bottom: 1.2mm;
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .topic-title::before {
+      content: "▶";
+      color: #0b5070;
+      font-size: 8pt;
+    }
+
+    .topic-desc {
+      font-size: 8.8pt;
+      line-height: 1.5;
+      color: #243848;
+      margin: 0 0 1.8mm 0;
+      text-align: justify;
+    }
+
+    .subtopic-heading {
+      font-size: 8.9pt;
+      font-weight: 700;
+      color: #0b5070;
+      margin: 2mm 0 1mm 0;
+      text-decoration: underline;
+    }
+
+    .key-points {
+      margin: 1.2mm 0 1.8mm 0;
+      padding-left: 5mm;
+    }
+
+    .key-points li {
+      margin: 0 0 1.4mm;
+      font-size: 8.5pt;
+      line-height: 1.46;
+      color: #2b3f52;
+    }
+
+    .key-points li b {
+      color: #103454;
+    }
+
+    .code {
+      margin: 1.8mm 0 2mm 0;
+      border: 1px solid #d4e2ed;
+      border-left: 2.8mm solid var(--accent);
+      border-radius: 1.2mm;
+      background: #f8fbfe;
+      color: #1a2c3d;
+      padding: 2.5mm 2.8mm;
+      font-size: 7.9pt;
+      line-height: 1.48;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+    }
+
+    .badge {
+      font-size: 7.4pt;
+      color: #0b5070;
+      border: 1px solid #b8d4e2;
+      background: #edf6fb;
+      border-radius: 3mm;
+      padding: 0.8mm 2.4mm;
+      text-transform: uppercase;
+      letter-spacing: 0.25px;
+      font-weight: bold;
+    }
+
+    .badge.linux { color: #8a3c1b; border-color: #e5cdbe; background: #fdf6f0; }
+    .badge.core { color: #104a76; border-color: #b8d4e5; background: #eef6fc; }
+    .badge.arch { color: #5c2d91; border-color: #d8c4ee; background: #f7f1fc; }
+    .badge.sec { color: #1a7a4c; border-color: #b7e2cb; background: #ecfaf2; }
+
+    .quick-ref {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+      margin-top: 1.8mm;
+      margin-bottom: 2.5mm;
+    }
+
+    .quick-ref th, .quick-ref td {
+      border: 1px solid #cbd8e4;
+      padding: 1.6mm 2mm;
+      text-align: left;
+      line-height: 1.4;
+    }
+
+    .quick-ref th {
+      background: #eef5fa;
+      color: #0b4570;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .quick-ref tr:nth-child(even) td {
+      background: #fbfdff;
+    }
+
+    .analogy {
+      border-left: 2.2mm solid #e09f3e;
+      background: #fffdf5;
+      padding: 1.6mm 2.4mm;
+      margin: 1.4mm 0 1.8mm 0;
+      font-size: 8.5pt;
+      color: #5a4010;
+      border-radius: 0 1.2mm 1.2mm 0;
+      line-height: 1.45;
+    }
+
+    .qa-box {
+      border: 1px solid #d5e0eb;
+      border-left: 2.8mm solid var(--accent-green);
+      border-radius: 0 1.4mm 1.4mm 0;
+      padding: 2.4mm 2.8mm;
+      background: #f8fdfa;
+      margin: 2mm 0 2.4mm 0;
+      page-break-inside: avoid;
+    }
+
+    .qa-box .q {
+      font-weight: 700;
+      color: #0d5432;
+      font-size: 8.8pt;
+      margin-bottom: 1.2mm;
+    }
+
+    .qa-box .a {
+      font-size: 8.4pt;
+      color: #243d30;
+      line-height: 1.48;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 7.6pt;
+      color: #6a7f92;
+      margin-top: 8mm;
+      padding-top: 3mm;
+      border-top: 1px solid #d4dfe8;
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Prathibha Solutions Logo" onerror="this.src='prathibha-institute-logo.png'" />
+      </div>
+      <div>
+        <div class="title">Cybersecurity &amp; Ethical Hacking Master Notes</div>
+        <div class="subtitle">Module 1: Operating Systems and Networking Fundamentals &bull; Day 1: Basics of Linux</div>
+      </div>
+    </div>
+
+    <!-- Metadata -->
+    <div class="meta">
+      <div><span>Curriculum Unit</span>Day 1: Basics of Linux</div>
+      <div><span>Core Focus</span>OS Concepts, Linux Kernels, Distros &amp; Architecture</div>
+      <div><span>Target Audience</span>Beginners to Advanced Cybersecurity Students</div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions">
+      <b>Day 1 Overview:</b> This document provides exhaustive, in-depth technical notes covering every topic prescribed for <b>Day 1</b> of the Cybersecurity and Ethical Hacking curriculum. Every concept is explained with formal definitions, intuitive analogies, architectural breakdowns, comparison matrices, terminal commands, security perspectives, and interview preparation questions.
+    </div>
+
+    <!-- MAIN DAY 1 CONTENT -->
+    <h2 class="part-title">Day 1: Basics of Linux — Comprehensive Study Notes</h2>
+
+    <div class="day-block">
+      <div class="day-header">
+        <h3>Syllabus Topics Covered in Detail</h3>
+        <div class="badge-row">
+          <span class="badge linux">Linux Fundamentals</span>
+          <span class="badge core">OS Internals</span>
+          <span class="badge arch">System Architecture</span>
+          <span class="badge sec">Security Foundations</span>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- TOPIC 1: WHAT IS AN OPERATING SYSTEM?     -->
+      <!-- ========================================== -->
+      <div class="topic-section">
+        <div class="topic-title">Topic 1: What is an Operating System (OS)?</div>
+        
+        <div class="topic-desc">
+          An <b>Operating System (OS)</b> is the foundational system software that acts as an intermediary, controller, and abstraction layer between the raw physical computer hardware (CPU, Memory, Storage Drives, Network Interface Cards, Input/Output peripherals) and user applications (Web Browsers, Database Servers, Compilers, Security Auditing Tools).
+        </div>
+
+        <div class="analogy">
+          <b>Real-World Analogy:</b> Think of an Operating System like the General Manager of a massive luxury hotel:
+          <br>&bull; <b>Hardware (The Hotel Building):</b> The rooms, elevators, power grid, and water supply.
+          <br>&bull; <b>Applications (The Hotel Guests):</b> Different guests wanting to sleep, order food, and use amenities at the same time.
+          <br>&bull; <b>The Operating System (The General Manager):</b> Allocates rooms (Memory Management), decides who gets elevator access without colliding (CPU Scheduling), ensures guests cannot unlock other guests' rooms (Security &amp; Access Control), and coordinates food deliveries (Device Drivers &amp; I/O Management).
+        </div>
+
+        <div class="subtopic-heading">1. Core Responsibilities &amp; Functions of an Operating System</div>
+        <ul class="key-points">
+          <li>
+            <b>1. Process Management &amp; Scheduling:</b> A process is a program in active execution. The OS creates, schedules, pauses, and terminates processes. The CPU scheduler decides which process gets CPU execution time (using algorithms like Round Robin, Priority Scheduling, or Linux CFS) and performs <i>Context Switching</i> (saving and restoring CPU registers and state).
+          </li>
+          <li>
+            <b>2. Memory Management:</b> Manages physical RAM and Virtual Memory. The OS tracks every byte of memory (allocated vs. free), performs <i>Paging</i> and <i>Segmentation</i>, maps virtual addresses to physical RAM via the MMU (Memory Management Unit), and prevents unauthorized processes from reading or writing into another process's private memory space.
+          </li>
+          <li>
+            <b>3. File System &amp; Storage Management:</b> Organizes data into structured files and hierarchical directories. Manages disk blocks, file metadata (creation timestamps, file sizes, inode tables), and enforces file access control lists (Read, Write, Execute).
+          </li>
+          <li>
+            <b>4. Device &amp; I/O Management:</b> Provides standardized software interfaces known as <i>Device Drivers</i> so applications can interact with diverse hardware (USB controllers, NVMe SSDs, Ethernet cards) without needing hardware-specific low-level code.
+          </li>
+          <li>
+            <b>5. Security, Protection &amp; Access Control:</b> Authenticates users, enforces multi-user privilege boundaries, logs administrative events, and isolates untrusted user-mode software from critical kernel data.
+          </li>
+        </ul>
+
+        <div class="subtopic-heading">2. CPU Execution Modes: Kernel Space vs. User Space</div>
+        <div class="topic-desc">
+          Modern computer processors (such as x86_64 and ARM) implement hardware-level privilege rings to guarantee system stability and security:
+        </div>
+        <table class="quick-ref">
+          <tr>
+            <th>Attribute</th>
+            <th>Kernel Space (Ring 0 — Supervisor Mode)</th>
+            <th>User Space (Ring 3 — User Mode)</th>
+          </tr>
+          <tr>
+            <td><b>Privilege Level</b></td>
+            <td>Highest Privilege (Unrestricted hardware access)</td>
+            <td>Lowest Privilege (Restricted sandbox environment)</td>
+          </tr>
+          <tr>
+            <td><b>What Runs Here?</b></td>
+            <td>Core OS Kernel, Memory Managers, Device Drivers, Hardware Interrupt Handlers</td>
+            <td>User applications (Web Browsers, Bash Shell, Python interpreter, Nmap, Text editors)</td>
+          </tr>
+          <tr>
+            <td><b>Memory Access</b></td>
+            <td>Can read and write to all physical and virtual memory addresses</td>
+            <td>Can only access its own explicitly assigned virtual memory space</td>
+          </tr>
+          <tr>
+            <td><b>Crash Impact</b></td>
+            <td>A fatal error or crash here causes a Kernel Panic (Linux) or Blue Screen of Death (Windows)</td>
+            <td>A crash only terminates that single application without bringing down the OS</td>
+          </tr>
+          <tr>
+            <td><b>Hardware Interaction</b></td>
+            <td>Executes privileged CPU instructions directly (`cli`, `sti`, `in`, `out`)</td>
+            <td>Must execute a <b>System Call</b> to request hardware access from the Kernel</td>
+          </tr>
+        </table>
+
+        <div class="subtopic-heading">3. What is a System Call (Syscall)?</div>
+        <div class="topic-desc">
+          A <b>System Call</b> is the programmatic interface and secure gateway through which an unprivileged user-space program requests a service from the privileged OS kernel.
+          <br>When an application wants to open a file (`open`), send network packets (`socket`, `sendto`), create a new process (`fork`), or allocate memory (`brk`, `mmap`), it triggers a software interrupt (e.g., `syscall` instruction in x86_64). The CPU temporarily switches from Ring 3 to Ring 0, the kernel validates the request and permissions, executes the action on the hardware, and returns the result back to user space.
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- TOPIC 2: LINUX OPERATING SYSTEM           -->
+      <!-- ========================================== -->
+      <div class="topic-section">
+        <div class="topic-title">Topic 2: Linux Operating System</div>
+        
+        <div class="topic-desc">
+          <b>Linux</b> is a free, open-source, Unix-like operating system kernel developed by Linus Torvalds in 1991. When combined with the GNU Project's system utilities, compilers, and libraries (founded by Richard Stallman in 1983), it forms the complete <b>GNU/Linux Operating System</b>.
+        </div>
+
+        <div class="subtopic-heading">1. History &amp; Origin of Linux</div>
+        <ul class="key-points">
+          <li>
+            <b>1969 — UNIX Created:</b> Developed at AT&amp;T Bell Labs by Ken Thompson and Dennis Ritchie in the C language, establishing modern OS concepts like multitasking and file streams.
+          </li>
+          <li>
+            <b>1983 — GNU Project:</b> Richard Stallman launched GNU (GNU's Not Unix) to build a completely free software operating system, creating essential tools like `GCC` (C Compiler), `GDB`, and Bash, but lacking a working kernel.
+          </li>
+          <li>
+            <b>1991 — Linus Torvalds:</b> A 21-year-old Finnish computer science student created a free kernel for 80386 PCs and released it on the internet with the historic message: <i>"I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu)..."</i>
+          </li>
+          <li>
+            <b>GPL Licensing:</b> Linux was licensed under the GNU General Public License (GPLv2), guaranteeing that anyone can freely view, modify, and redistribute the source code.
+          </li>
+        </ul>
+
+        <div class="subtopic-heading">2. The Core Unix / Linux Philosophy</div>
+        <ul class="key-points">
+          <li><b>1. "Everything is a File":</b> In Linux, everything from text documents, hard drives (`/dev/sda`), physical memory (`/dev/mem`), running processes (`/proc/[pid]`), and network communication sockets is represented as a file descriptor that can be read or written.</li>
+          <li><b>2. "Write programs that do one thing and do it well":</b> Modular utilities (`grep`, `sort`, `uniq`, `awk`) focus on specific functions.</li>
+          <li><b>3. "Write programs to work together via text streams":</b> Programs output plain text that can be seamlessly piped (`|`) as input into other programs.</li>
+        </ul>
+
+        <div class="subtopic-heading">3. Why Linux Dominates Cybersecurity &amp; Ethical Hacking</div>
+        <table class="quick-ref">
+          <tr>
+            <th>Security Advantage</th>
+            <th>Technical Explanation &amp; Industry Impact</th>
+          </tr>
+          <tr>
+            <td><b>Full Open Source Transparency</b></td>
+            <td>Security researchers can audit every single line of kernel C code. There are no hidden backdoors or proprietary black-box APIs.</td>
+          </tr>
+          <tr>
+            <td><b>Granular Network Packet Control</b></td>
+            <td>Linux allows raw socket creation (`AF_PACKET`, `SOCK_RAW`) and wireless card monitor mode packet injection (used by `aircrack-ng` and `tcpdump`).</td>
+          </tr>
+          <tr>
+            <td><b>Fine-Grained Permissions &amp; MAC</b></td>
+            <td>Enforces strict POSIX file permissions, SUID separation, and kernel-level Mandatory Access Control frameworks (SELinux, AppArmor).</td>
+          </tr>
+          <tr>
+            <td><b>Scriptability &amp; Automation</b></td>
+            <td>Every single administrative and offensive task can be completely automated via Bash scripts, Python, or shell pipelines.</td>
+          </tr>
+          <tr>
+            <td><b>Global Server &amp; Cloud Dominance</b></td>
+            <td>Over 90% of cloud workloads (AWS, Azure, Google Cloud), supercomputers, web servers, and IoT firmware run Linux. Securing cyberspace means mastering Linux.</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- TOPIC 3: LINUX DISTRIBUTIONS (DISTROS)     -->
+      <!-- ========================================== -->
+      <div class="topic-section">
+        <div class="topic-title">Topic 3: Linux Distributions (Distros)</div>
+        
+        <div class="topic-desc">
+          A <b>Linux Distribution (Distro)</b> is a complete, deployable operating system built by packaging the <b>Linux Kernel</b> with GNU system utilities, a package management system, system initialization daemons (such as `systemd`), graphical desktop environments (such as GNOME, KDE, XFCE), and specialized application software suites tailored for specific user groups.
+        </div>
+
+        <div class="subtopic-heading">1. Major Linux Distribution Families</div>
+        
+        <p><b>A. The Debian Family:</b></p>
+        <ul class="key-points">
+          <li>
+            <b>Debian:</b> Known as the "Universal Operating System". Famed for rock-solid stability, strict free-software principles, and using the `.deb` package format managed by `dpkg` and `apt`.
+          </li>
+          <li>
+            <b>Ubuntu:</b> Built on Debian. Highly accessible, user-friendly, and the default standard for global enterprise web hosting and cloud infrastructure.
+          </li>
+          <li>
+            <b>Kali Linux:</b> The premier security distribution developed and maintained by Offensive Security. Pre-installed with over 600 penetration testing, vulnerability analysis, and digital forensics tools, featuring custom-patched kernels for wireless injection.
+          </li>
+          <li>
+            <b>Parrot Security OS:</b> A lightweight, Debian-based alternative to Kali Linux featuring privacy tools and development sandboxes.
+          </li>
+        </ul>
+
+        <p><b>B. The Red Hat Enterprise Linux (RHEL) Family:</b></p>
+        <ul class="key-points">
+          <li>
+            <b>RHEL (Red Hat Enterprise Linux):</b> The global corporate enterprise standard, backed by commercial commercial support. Uses `.rpm` (Red Hat Package Manager) format managed via `dnf` / `yum`. Heavily enforces SELinux (Security-Enhanced Linux).
+          </li>
+          <li>
+            <b>Fedora:</b> The fast-paced, cutting-edge community upstream distribution sponsored by Red Hat. Introduces new Linux innovations and kernel features first.
+          </li>
+          <li>
+            <b>CentOS / Rocky Linux / AlmaLinux:</b> Free, community-driven, 1-to-1 binary compatible clones of RHEL used extensively in production corporate servers.
+          </li>
+        </ul>
+
+        <p><b>C. The Arch Linux Family:</b></p>
+        <ul class="key-points">
+          <li>
+            <b>Arch Linux:</b> A minimalist, rolling-release distribution targeted at advanced users. Follows the "Keep It Simple, Stupid" (KISS) principle, allowing users to build their system component-by-component using the `pacman` package manager.
+          </li>
+          <li>
+            <b>BlackArch:</b> An Arch-based penetration testing distribution containing over 2,800 security tools designed for security researchers and elite hackers.
+          </li>
+        </ul>
+
+        <p><b>D. Specialized Privacy &amp; Anonymity Distributions:</b></p>
+        <ul class="key-points">
+          <li>
+            <b>Tails OS (The Amnesic Incognito Live System):</b> A bootable live OS designed to preserve privacy and anonymity. It runs completely from computer RAM, routes 100% of network traffic through the Tor anonymity network, and leaves zero forensic traces on the hard disk after shutdown.
+          </li>
+          <li>
+            <b>Qubes OS:</b> An ultra-secure operating system based on "Security by Compartmentalization" using the Xen bare-metal hypervisor to isolate programs in separate virtualized sandboxes (e.g., untrusted personal browsing vs. trusted banking).
+          </li>
+        </ul>
+
+        <div class="subtopic-heading">2. Comprehensive Distribution Comparison Matrix</div>
+        <table class="quick-ref">
+          <tr>
+            <th>Distribution</th>
+            <th>Base Family</th>
+            <th>Package Manager</th>
+            <th>Release Model</th>
+            <th>Primary Use Case &amp; Target Domain</th>
+          </tr>
+          <tr>
+            <td><b>Kali Linux</b></td>
+            <td>Debian</td>
+            <td>`apt` (`.deb`)</td>
+            <td>Rolling Release</td>
+            <td>Offensive Penetration Testing &amp; Security Auditing</td>
+          </tr>
+          <tr>
+            <td><b>Ubuntu Server</b></td>
+            <td>Debian</td>
+            <td>`apt` (`.deb`) / `snap`</td>
+            <td>Fixed / LTS (5 Yrs)</td>
+            <td>Cloud Servers, Enterprise Web Backends, DevOps</td>
+          </tr>
+          <tr>
+            <td><b>RHEL</b></td>
+            <td>Red Hat</td>
+            <td>`dnf` / `rpm`</td>
+            <td>Fixed (10 Yrs)</td>
+            <td>Corporate Enterprise, Banking, Government Infrastructure</td>
+          </tr>
+          <tr>
+            <td><b>Arch Linux</b></td>
+            <td>Independent</td>
+            <td>`pacman`</td>
+            <td>Rolling Release</td>
+            <td>Advanced Desktop Customization, Bleeding-edge Kernel Testing</td>
+          </tr>
+          <tr>
+            <td><b>Tails OS</b></td>
+            <td>Debian</td>
+            <td>`apt`</td>
+            <td>Live Amnesic</td>
+            <td>High-Risk Investigative Journalism, Anonymity &amp; Anti-Surveillance</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- TOPIC 4: LINUX ARCHITECTURE               -->
+      <!-- ========================================== -->
+      <div class="topic-section">
+        <div class="topic-title">Topic 4: Linux Architecture</div>
+        
+        <div class="topic-desc">
+          The architecture of Linux is structured into clean, concentric layers that separate low-level physical hardware control from high-level user applications. This multi-layered structure ensures high system performance, stability, modularity, and security isolation.
+        </div>
+
+        <div class="subtopic-heading">1. Detailed Breakdown of Architectural Layers</div>
+        
+        <div class="code">=============================================================================
+                      LINUX ARCHITECTURAL LAYERS
+=============================================================================
+[ USER SPACE ]
+   +-----------------------------------------------------------------------+
+   |   User Applications & Daemons (Web Browsers, Python, Nmap, SSH, Bash) |
+   +-----------------------------------------------------------------------+
+                                      |
+   +-----------------------------------------------------------------------+
+   |   GNU C Standard Library (glibc - printf, malloc, fopen wrappers)     |
+   +-----------------------------------------------------------------------+
+                                      |
+                           SYSTEM CALL INTERFACE (SCI)
+                     [ Transitions from Ring 3 to Ring 0 ]
+                                      |
+[ KERNEL SPACE ]                      v
+   +-----------------------------------------------------------------------+
+   |                         LINUX KERNEL                                  |
+   |  +-------------------+  +-------------------+  +-------------------+  |
+   |  | Process Scheduler |  | Memory Management |  | Virtual File Sys  |  |
+   |  | (CFS / Multitask) |  | (RAM / Paging/MMU)|  | (VFS: ext4, xfs)  |  |
+   |  +-------------------+  +-------------------+  +-------------------+  |
+   |  +-------------------+  +------------------------------------------+  |
+   |  | Network Stack     |  | Device Drivers (Loadable Kernel Modules) |  |
+   |  | (TCP/IP, Sockets) |  | (Graphics, Network, USB, Storage Drives) |  |
+   |  +-------------------+  +------------------------------------------+  |
+   +-----------------------------------------------------------------------+
+                                      |
+[ HARDWARE LAYER ]                    v
+   +-----------------------------------------------------------------------+
+   |   Physical Hardware (CPU, RAM, Disks, Network Interface Cards, Periph)|
+   +-----------------------------------------------------------------------+</div>
+
+        <ul class="key-points">
+          <li>
+            <b>Layer 1: Physical Hardware:</b> The physical electronic silicon chips: CPU (executing instructions), RAM (volatile temporary storage), Storage drives (NVMe/SATA holding persistent files), and NICs (sending/receiving Ethernet/Wi-Fi frames).
+          </li>
+          <li>
+            <b>Layer 2: The Linux Kernel (Ring 0):</b> The beating heart of the operating system:
+            <br>&bull; <b>Process Scheduler:</b> Uses the <i>Completely Fair Scheduler (CFS)</i> to allocate CPU execution slices to running threads.
+            <br>&bull; <b>Memory Management Subsystem:</b> Allocates virtual address spaces to processes, handles physical page translation, enforces Memory Protection, and manages Swap space.
+            <br>&bull; <b>Virtual File System (VFS):</b> An abstraction layer that allows Linux to read and write to dozens of different file systems (ext4, XFS, Btrfs, NTFS, FAT32, NFS) using the identical standard API (`read()`, `write()`).
+            <br>&bull; <b>Network Stack:</b> Implements the complete TCP/IP protocol suite directly inside kernel memory for maximum packet throughput.
+            <br>&bull; <b>Device Drivers &amp; LKMs:</b> Controls hardware devices. Linux uses <i>Loadable Kernel Modules (LKMs)</i> (`.ko` files) that can be loaded into memory dynamically on-the-fly (`insmod`, `modprobe`) without rebooting the system.
+          </li>
+          <li>
+            <b>Layer 3: System Call Interface (SCI):</b> The secure software bridge. When a user program needs disk or network access, it places syscall arguments into CPU registers and triggers a hardware trap (`syscall`), transitioning CPU privilege into Kernel Mode.
+          </li>
+          <li>
+            <b>Layer 4: GNU C Library (`glibc`):</b> Provides standard POSIX wrapper functions. Instead of writing raw assembly syscalls, C/Python programs call convenient functions like `printf()` (which calls `sys_write`) or `malloc()` (which calls `sys_brk` / `sys_mmap`).
+          </li>
+          <li>
+            <b>Layer 5: Shell &amp; User Space (Ring 3):</b> The interactive environment where developers, penetration testers, and users run command-line shells (Bash, Zsh) and execution binaries (Nmap, Wireshark, Metasploit, Web Servers).
+          </li>
+        </ul>
+
+        <div class="subtopic-heading">2. Kernel Architecture Types: Monolithic vs. Microkernel vs. Hybrid</div>
+        <table class="quick-ref">
+          <tr>
+            <th>Architecture Type</th>
+            <th>Design Characteristics</th>
+            <th>Advantages</th>
+            <th>Disadvantages</th>
+            <th>Example Operating Systems</th>
+          </tr>
+          <tr>
+            <td><b>Monolithic Kernel</b></td>
+            <td>All OS services (Scheduler, Memory, VFS, Network, Device Drivers) execute inside a single large privileged address space (Ring 0).</td>
+            <td>Maximum raw execution speed; zero overhead in inter-module communication.</td>
+            <td>A single bug or crash in any device driver can crash the entire operating system.</td>
+            <td><b>Linux</b>, Traditional Unix (BSD, Solaris)</td>
+          </tr>
+          <tr>
+            <td><b>Microkernel</b></td>
+            <td>Only the absolute bare minimum (IPC, basic scheduling, low-level memory) runs in Ring 0. Drivers and File Systems run in unprivileged User Space.</td>
+            <td>Extremely modular, stable, and highly secure. Driver crashes do not crash the kernel.</td>
+            <td>Slower performance due to continuous IPC message-passing context switches.</td>
+            <td><b>MINIX</b>, QNX (Automotive/Medical OS), seL4</td>
+          </tr>
+          <tr>
+            <td><b>Hybrid Kernel</b></td>
+            <td>Combines monolithic performance with microkernel modularity, running core services and drivers in kernel space for speed.</td>
+            <td>Good balance of driver compatibility and performance.</td>
+            <td>Complex codebase; still susceptible to kernel-mode driver instability.</td>
+            <td><b>Windows NT</b> (Windows 10/11), <b>macOS XNU</b></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- TOPIC 5: PRACTICAL VERIFICATION COMMANDS   -->
+      <!-- ========================================== -->
+      <div class="topic-section">
+        <div class="topic-title">Practical Lab: Verifying Your Linux System &amp; Architecture via CLI</div>
+        <div class="topic-desc">
+          As a cybersecurity practitioner, the very first step upon obtaining a shell on a target machine is conducting local system architecture reconnaissance using these foundational commands:
+        </div>
+        <div class="code"># 1. Print full Kernel Version and CPU Architecture
+uname -a
+# Example Output: Linux kali 6.1.0-kali9-amd64 #1 SMP PREEMPT_DYNAMIC Debian x86_64 GNU/Linux
+
+# 2. Inspect Linux Distribution Release Information
+cat /etc/os-release
+# Output reveals exact OS name (Kali / Ubuntu / RHEL), Version ID, and Upstream Base
+
+# 3. View CPU Architecture Hardware Details
+lscpu
+# Output reveals CPU Op-mode (32-bit, 64-bit), Core count, Virtualization features, and Byte Order (Little Endian)
+
+# 4. Check System RAM & Memory Allocation Status
+free -h
+# Displays Total, Used, Free, Shared, Buff/Cache, and Swap memory in human-readable gigabytes
+
+# 5. Inspect Block Storage Drives and Partitions
+lsblk
+# Displays physical disks (sda, nvme0n1), partition layouts, sizes, and mount points (/, /boot, /home)
+
+# 6. Read Kernel Ring Buffer Boot Messages
+dmesg | head -n 25
+# Inspects early hardware initialization logs, CPU microcode status, and detected hardware peripherals</div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- DAY 1 INTERVIEW QUESTIONS & ASSESSMENT    -->
+      <!-- ========================================== -->
+      <div class="topic-section">
+        <div class="topic-title">Day 1 Review: Technical Interview Questions &amp; Model Answers</div>
+
+        <div class="qa-box">
+          <div class="q">Q1: Explain the difference between Kernel Space (Ring 0) and User Space (Ring 3), and why this distinction is critical for security.</div>
+          <div class="a"><b>Answer:</b> <b>Kernel Space (Ring 0)</b> is the privileged execution mode where the core OS kernel and device drivers have unrestricted access to all CPU instructions, physical memory addresses, and hardware registers. <b>User Space (Ring 3)</b> is an unprivileged, restricted sandbox where regular user applications execute. This hardware-enforced separation is critical because it prevents malicious or buggy user software (e.g., a crashing web browser or an exploit payload) from overwriting kernel memory, reading another user's private data, or crashing the entire physical machine. To interact with hardware, User Space must explicitly request permission via audited <b>System Calls</b>.</div>
+        </div>
+
+        <div class="qa-box">
+          <div class="q">Q2: What is the difference between the Linux Kernel and a Linux Distribution?</div>
+          <div class="a"><b>Answer:</b> The <b>Linux Kernel</b> is strictly the core software engine created by Linus Torvalds that manages CPU scheduling, RAM allocation, device drivers, and system calls; by itself, the kernel cannot provide a usable operating environment. A <b>Linux Distribution (Distro)</b> takes the Linux Kernel and packages it with GNU core utilities, a package manager (`apt`, `dnf`), system initialization daemons (`systemd`), command-line shells (Bash), desktop environments, and pre-compiled software collections (such as Kali Linux bundling 600+ penetration testing tools).</div>
+        </div>
+
+        <div class="qa-box">
+          <div class="q">Q3: Why is Linux structured as a Monolithic Kernel, and how does it maintain modularity without rebooting?</div>
+          <div class="a"><b>Answer:</b> Linux uses a <b>Monolithic Kernel</b> architecture because running the process scheduler, virtual memory, file systems, and network stack together inside the same privileged address space provides maximum execution speed without inter-process message-passing overhead. It maintains modularity through <b>Loadable Kernel Modules (LKMs)</b> (`.ko` files). LKMs allow device drivers and kernel features to be dynamically loaded into (`modprobe`, `insmod`) or unloaded from kernel memory at runtime without needing to recompile the kernel or reboot the machine.</div>
+        </div>
+
+        <div class="qa-box">
+          <div class="q">Q4: What does the Unix principle "Everything is a file" mean in Linux? Give two security-relevant examples.</div>
+          <div class="a"><b>Answer:</b> It means that in Linux, physical hardware, processes, and network communication channels are abstracted as file descriptors that can be manipulated using standard file input/output operations (`read()`, `write()`, `open()`, `close()`).
+          <br><b>Security Examples:</b>
+          <br>1. <b>Process Memory Inspection:</b> A process's runtime memory map and command-line arguments are exposed as files under `/proc/[PID]/maps` and `/proc/[PID]/cmdline`, allowing security auditing and debugging tools to inspect live processes.
+          <br>2. <b>Raw Device Access:</b> Hard drives are represented as device files under `/dev/sda`, enabling forensic examiners to create bit-by-bit raw forensic disk images using commands like `dd if=/dev/sda of=evidence.img`.</div>
+        </div>
+
+        <div class="qa-box">
+          <div class="q">Q5: Why do cybersecurity and ethical hacking professionals prefer Kali Linux over general-purpose operating systems?</div>
+          <div class="a"><b>Answer:</b> Kali Linux is engineered specifically for offensive security and auditing: 1. It comes pre-installed and pre-configured with over 600 industry-standard tools categorized across all pentesting disciplines (Reconnaissance, Exploitation, Web, Wireless, Forensics, Reversing). &bull; 2. It features custom-patched Linux kernels supporting wireless packet injection. &bull; 3. It includes a forensic live-boot mode that leaves zero write footprint on target disks. &bull; 4. It provides immediate access to specialized wordlists (`rockyou.txt`) and Metasploit modules without configuration overhead.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-note">
+      &copy; Prathibha Solutions &bull; Cybersecurity &amp; Ethical Hacking Complete Master Curriculum Handbook &bull; Day 1: Basics of Linux
+    </div>
+  </div>
+</body>
+</html>
