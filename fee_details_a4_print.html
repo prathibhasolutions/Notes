@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Fee Details - Prathibha Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0f2c59;
+      --primary-dark: #071933;
+      --primary-light: #1b447e;
+      --accent: #c59b27;
+      --accent-soft: #fbf8ee;
+      --accent-border: #dfc880;
+      --ink: #1e293b;
+      --ink-muted: #526071;
+      --line: #cbd5e1;
+      --line-light: #e2e8f0;
+      --box-border: #64748b;
+      --box-bg: #ffffff;
+      --section-bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 8mm 10mm 8mm 10mm;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #e9eef5;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    /* Screen toolbar */
+    .screen-toolbar {
+      position: fixed;
+      top: 16px;
+      right: 24px;
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+      background: rgba(15, 44, 89, 0.95);
+      padding: 9px 18px;
+      border-radius: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-action {
+      background: var(--accent);
+      color: #071933;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover {
+      background: #dfb239;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--primary);
+    }
+    .btn-secondary:hover {
+      background: #f1f5f9;
+    }
+
+    /* A4 Paper Container */
+    .a4-sheet {
+      width: 210mm;
+      max-width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      margin: 12px auto;
+      background: #ffffff;
+      padding: 8mm 10mm 8mm 10mm;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Formal outer frame */
+    .sheet-frame {
+      border: 1.8px solid var(--primary);
+      border-radius: 8px;
+      height: 100%;
+      padding: 8mm 9mm 7mm 9mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      background: #ffffff;
+    }
+
+    .sheet-frame::before {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border: 1px solid var(--accent-border);
+      border-radius: 5px;
+      pointer-events: none;
+    }
+
+    /* Watermark */
+    .watermark {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 380px;
+      height: 380px;
+      opacity: 0.038;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header Section */
+    .header-wrapper {
+      position: relative;
+      z-index: 1;
+      border-bottom: 2.2px solid var(--primary);
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo-container {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .institute-info {
+      flex: 1;
+      text-align: center;
+    }
+
+    .institute-title {
+      font-family: 'Cinzel', serif, Georgia;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 2px;
+      margin: 0;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .institute-tagline {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 2.5px;
+      margin: 4px 0 6px 0;
+      text-transform: uppercase;
+    }
+
+    .contact-strip {
+      font-size: 10px;
+      color: #1e293b;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 5px;
+      margin-top: 4px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Document Title Bar */
+    .doc-title-bar {
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 60%, var(--primary) 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .doc-title-text {
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      flex: 1;
+      text-align: center;
+    }
+
+    .doc-ref-text {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .header-inline-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1.2px solid rgba(255, 255, 255, 0.8);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 700;
+      outline: none;
+      width: 95px;
+      padding: 0 2px;
+    }
+
+    /* Section Headings */
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      margin-top: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-head-badge {
+      background: var(--primary);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2.5px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-head-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .section-head-line {
+      flex: 1;
+      height: 1.2px;
+      background: linear-gradient(90deg, var(--line) 0%, transparent 100%);
+    }
+
+    /* Course Overview Card */
+    .course-overview-card {
+      border: 1.4px solid var(--primary);
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 2.2fr 1.1fr 1.2fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .course-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .course-field-lbl {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Blank write/type box */
+    .write-box {
+      border: 1.3px solid var(--box-border);
+      border-radius: 4px;
+      background: #ffffff;
+      height: 34px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      transition: border-color 0.2s ease;
+    }
+
+    .write-box:focus-within {
+      border-color: var(--primary-light);
+    }
+
+    .write-box.large {
+      height: 38px;
+    }
+
+    .write-box.gold-accent {
+      border: 1.8px solid var(--accent);
+      background: #fffdf8;
+    }
+
+    .write-input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      color: #0f172a;
+      padding: 0;
+    }
+
+    .write-input.course-title-font {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .write-input.duration-font {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .mode-checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 34px;
+      padding: 0 2px;
+    }
+
+    .check-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 9.5px;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .custom-checkbox {
+      width: 15px;
+      height: 15px;
+      border: 1.4px solid var(--primary);
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      margin: 0;
+      outline: none;
+    }
+
+    .custom-checkbox:checked {
+      background: var(--primary);
+      position: relative;
+    }
+
+    .custom-checkbox:checked::after {
+      content: "✔";
+      font-size: 10px;
+      color: #ffffff;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    /* 3 Payment Options Container */
+    .plans-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .plan-card {
+      border: 1.4px solid var(--line);
+      border-radius: 6px;
+      background: #ffffff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan-card.option-1 {
+      border-color: var(--accent-border);
+    }
+
+    .plan-card.option-2 {
+      border-color: #93c5fd;
+    }
+
+    .plan-card.option-3 {
+      border-color: #86efac;
+    }
+
+    .plan-card-head {
+      padding: 6px 10px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .plan-card-head.gold {
+      background: linear-gradient(90deg, #9b720b 0%, #c59b27 100%);
+    }
+
+    .plan-card-head.blue {
+      background: var(--primary);
+    }
+
+    .plan-card-head.green {
+      background: #15803d;
+    }
+
+    .plan-card-body {
+      padding: 10px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .plan-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .plan-field-lbl {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .amount-box-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      width: 100%;
+    }
+
+    .rupee-lbl {
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--primary);
+    }
+
+    .plan-badge-sub {
+      font-size: 8px;
+      color: var(--ink-muted);
+      font-style: italic;
+      line-height: 1.25;
+      margin-top: 2px;
+    }
+
+    /* Custom Installments Detail Section */
+    .custom-inst-section {
+      border: 1.4px solid var(--primary-light);
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .custom-inst-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      border-bottom: 1.2px solid var(--line-light);
+      padding-bottom: 6px;
+    }
+
+    .custom-inst-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .custom-row-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .inst-single-box {
+      border: 1.2px solid var(--line);
+      border-radius: 5px;
+      background: var(--section-bg);
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .inst-single-lbl {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+
+    /* Bottom Footer Bar */
+    .footer-bar {
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 8.5px;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 5px;
+      font-weight: 500;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: transparent !important;
+        font-size: 11.5px !important;
+      }
+
+      .screen-toolbar {
+        display: none !important;
+      }
+
+      .a4-sheet {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .write-box:focus-within {
+        box-shadow: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Toolbar for Printing and Resetting -->
+  <div class="screen-toolbar no-print">
+    <button class="btn-action" onclick="window.print()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+      Print / Save as PDF
+    </button>
+    <button class="btn-action btn-secondary" onclick="clearAllFields()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+      Clear Fields
+    </button>
+  </div>
+
+  <!-- A4 Printable Sheet -->
+  <div class="a4-sheet">
+    <div class="sheet-frame">
+      
+      <!-- Watermark Logo -->
+      <img src="prathibha_logo.png" alt="Watermark" class="watermark" />
+
+      <!-- Top Header Section (Mobile & Website Only) -->
+      <div class="header-wrapper">
+        <div class="header-top">
+          <!-- Logo -->
+          <div class="logo-container">
+            <img src="prathibha_logo.png" alt="Prathibha Institute Logo" class="logo-img" />
+          </div>
+
+          <!-- Central Brand Details -->
+          <div class="institute-info">
+            <h1 class="institute-title">PRATHIBHA INSTITUTE</h1>
+            <div class="institute-tagline">LEARN. THRIVE. SUCCEED.</div>
+            <div class="contact-strip">
+              <span class="contact-item">
+                📞 <strong>Mobile:</strong> 9030941099
+              </span>
+              <span class="contact-item">
+                🌐 <strong>Website:</strong> www.prathibhainstitutions.com
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Title Bar -->
+      <div class="doc-title-bar">
+        <span style="width: 80px;"></span>
+        <span class="doc-title-text">COURSE FEE STRUCTURE & PAYMENT OPTIONS</span>
+        <span class="doc-ref-text">
+          DATE: <input type="text" class="header-inline-input" style="width: 80px;" />
+        </span>
+      </div>
+
+      <!-- Section 1: Course & Program Details -->
+      <div>
+        <div class="section-head">
+          <span class="section-head-badge">PART 1</span>
+          <span class="section-head-title">Course & Program Information</span>
+          <div class="section-head-line"></div>
+        </div>
+
+        <div class="course-overview-card">
+          <!-- Course Name Box -->
+          <div class="course-field">
+            <div class="course-field-lbl">Name of the Course / Program :</div>
+            <div class="write-box large gold-accent">
+              <input type="text" class="write-input course-title-font" />
+            </div>
+          </div>
+
+          <!-- Duration Box -->
+          <div class="course-field">
+            <div class="course-field-lbl">Course Duration :</div>
+            <div class="write-box large">
+              <input type="text" class="write-input duration-font" />
+            </div>
+          </div>
+
+          <!-- Mode of Training -->
+          <div class="course-field">
+            <div class="course-field-lbl">Mode of Training :</div>
+            <div class="mode-checkbox-group">
+              <label class="check-item"><input type="checkbox" class="custom-checkbox" /> Classroom</label>
+              <label class="check-item"><input type="checkbox" class="custom-checkbox" /> Online</label>
+              <label class="check-item"><input type="checkbox" class="custom-checkbox" /> Hybrid</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: 3 Payment Options Breakdown -->
+      <div>
+        <div class="section-head">
+          <span class="section-head-badge">PART 2</span>
+          <span class="section-head-title">Available Fee Payment Options</span>
+          <div class="section-head-line"></div>
+        </div>
+
+        <div class="plans-container">
+          <!-- Option 1: Single Payment -->
+          <div class="plan-card option-1">
+            <div class="plan-card-head gold">
+              <span>★ OPTION 1: SINGLE PAYMENT</span>
+            </div>
+            <div class="plan-card-body">
+              <div class="plan-field-group">
+                <div class="plan-field-lbl">Total Course Fee (Lump Sum):</div>
+                <div class="amount-box-wrapper">
+                  <span class="rupee-lbl" style="color: #9b720b;">₹</span>
+                  <div class="write-box gold-accent" style="height: 32px;">
+                    <input type="text" class="write-input" style="font-weight: 800; font-size: 13px; color: #9b720b;" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-field-group">
+                <div class="plan-field-lbl">Valid Up To / Due Date:</div>
+                <div class="write-box" style="height: 30px;">
+                  <input type="text" class="write-input" />
+                </div>
+              </div>
+
+              <div class="plan-badge-sub">
+                • One-time full settlement at the time of admission.
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 2: Two Installments -->
+          <div class="plan-card option-2">
+            <div class="plan-card-head blue">
+              <span>★ OPTION 2: TWO INSTALLMENTS</span>
+            </div>
+            <div class="plan-card-body">
+              <div class="plan-field-group">
+                <div class="plan-field-lbl">1st Installment (At Admission):</div>
+                <div class="amount-box-wrapper">
+                  <span class="rupee-lbl">₹</span>
+                  <div class="write-box" style="height: 32px;">
+                    <input type="text" class="write-input" style="font-weight: 700; font-size: 13px;" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-field-group">
+                <div class="plan-field-lbl">2nd Installment Amount:</div>
+                <div class="amount-box-wrapper">
+                  <span class="rupee-lbl">₹</span>
+                  <div class="write-box" style="height: 32px;">
+                    <input type="text" class="write-input" style="font-weight: 700; font-size: 13px;" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-badge-sub">
+                • 1st at admission & 2nd installment within 30-45 days.
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 3: Customised Installments Summary -->
+          <div class="plan-card option-3">
+            <div class="plan-card-head green">
+              <span>★ OPTION 3: CUSTOM INSTALLMENTS</span>
+            </div>
+            <div class="plan-card-body">
+              <div class="plan-field-group">
+                <div class="plan-field-lbl">Number of Payments:</div>
+                <div class="write-box" style="height: 30px;">
+                  <input type="text" class="write-input" style="font-weight: 700;" />
+                </div>
+              </div>
+
+              <div class="plan-field-group">
+                <div class="plan-field-lbl">Each Installment Amount:</div>
+                <div class="amount-box-wrapper">
+                  <span class="rupee-lbl" style="color: #15803d;">₹</span>
+                  <div class="write-box" style="height: 32px; border-color: #86efac; background: #f0fdf4;">
+                    <input type="text" class="write-input" style="font-weight: 800; font-size: 13px; color: #15803d;" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-badge-sub">
+                • Flexible installment plan as mutually scheduled.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Customised Installment Amounts Breakdown (Simple Boxes) -->
+      <div>
+        <div class="custom-inst-section">
+          <div class="custom-inst-header">
+            <span class="custom-inst-title">Customised Installment Amounts Breakdown (If Applicable)</span>
+            <span style="font-size: 8.5px; color: var(--ink-muted); font-weight: 600;">Enter amounts for each scheduled installment</span>
+          </div>
+
+          <div class="custom-row-grid">
+            <div class="inst-single-box">
+              <span class="inst-single-lbl">1st Installment:</span>
+              <div class="amount-box-wrapper">
+                <span class="rupee-lbl">₹</span>
+                <div class="write-box" style="height: 30px;">
+                  <input type="text" class="write-input" style="font-weight: 700;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="inst-single-box">
+              <span class="inst-single-lbl">2nd Installment:</span>
+              <div class="amount-box-wrapper">
+                <span class="rupee-lbl">₹</span>
+                <div class="write-box" style="height: 30px;">
+                  <input type="text" class="write-input" style="font-weight: 700;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="inst-single-box">
+              <span class="inst-single-lbl">3rd Installment:</span>
+              <div class="amount-box-wrapper">
+                <span class="rupee-lbl">₹</span>
+                <div class="write-box" style="height: 30px;">
+                  <input type="text" class="write-input" style="font-weight: 700;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="inst-single-box">
+              <span class="inst-single-lbl">4th Installment:</span>
+              <div class="amount-box-wrapper">
+                <span class="rupee-lbl">₹</span>
+                <div class="write-box" style="height: 30px;">
+                  <input type="text" class="write-input" style="font-weight: 700;" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Reference Bar -->
+      <div class="footer-bar">
+        <span>Prathibha Institute • Official Course Fee Proforma</span>
+        <span>Valid for 15 days from issue date • Page 1 of 1 (A4)</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function clearAllFields() {
+      const textInputs = document.querySelectorAll('input[type="text"]');
+      textInputs.forEach(input => input.value = '');
+      
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(cb => cb.checked = false);
+    }
+  </script>
+
+</body>
+</html>
