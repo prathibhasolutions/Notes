@@ -1,0 +1,2222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DCA Complete Notes - Computer Basics &amp; MS Office - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #12212d;
+      --muted: #425768;
+      --line: #9db3c4;
+      --soft: #d8e2ec;
+      --accent: #0f5f7f;
+      --accent-2: #8a5c1f;
+      --bg-top: #edf4f8;
+      --bg-bottom: #e1ebf2;
+      --table-head: #164e6b;
+      --table-alt: #f7fbfd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm 10mm 12mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: 10pt;
+      line-height: 1.35;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .toolbar {
+      width: var(--paper-w);
+      margin: 6mm auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9pt;
+      color: #3a5064;
+    }
+
+    .toolbar button {
+      background: linear-gradient(180deg, #1a6a8f, #0f4a68);
+      color: #fff;
+      border: none;
+      padding: 2.2mm 5mm;
+      border-radius: 999px;
+      font-size: 9.4pt;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 1.2mm 3mm rgba(12, 40, 60, 0.28);
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 4mm auto 8mm;
+      background: #fff;
+      border: 1px solid #c9d7e2;
+      border-top: 2.4mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm 7mm;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 1.6mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.6mm 2mm;
+      background: #fff;
+    }
+
+    .meta b {
+      color: var(--accent);
+      display: block;
+      font-size: 7.4pt;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent-2);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.4;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #8a5c1f;
+    }
+
+    h3 {
+      margin: 3.4mm 0 1.6mm;
+      font-size: 10.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.4mm 2mm;
+      background: #f7fbff;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    h4 {
+      margin: 2.6mm 0 1.1mm;
+      font-size: 10pt;
+      color: #14395c;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .module > h2 {
+      margin: 0 0 2.6mm;
+      padding: 2.2mm 2.6mm;
+      background: linear-gradient(90deg, #0f5f7f 0%, #17647f 100%);
+      color: #fff;
+      font-size: 12.4pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 1.4mm;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .module > h2 .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 999px;
+      font-size: 7.6pt;
+      padding: 0.6mm 2.4mm;
+      margin-right: 2.4mm;
+      vertical-align: 1.2px;
+      letter-spacing: 0.6px;
+    }
+
+    p {
+      margin: 1.3mm 0;
+      text-align: justify;
+    }
+
+    p.lead {
+      margin: 2.2mm 0 1mm;
+      color: #0f4b6b;
+      font-weight: 700;
+    }
+
+    ul, ol {
+      margin: 1mm 0 1.6mm;
+      padding-left: 5.4mm;
+    }
+
+    li {
+      margin: 0.5mm 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    ul ul, ol ul, ul ol, ol ol {
+      margin: 0.5mm 0 0.8mm;
+      padding-left: 4.6mm;
+    }
+
+    ul ul li {
+      list-style: none;
+      position: relative;
+    }
+
+    ul ul li::before {
+      content: "\2013";
+      position: absolute;
+      left: -3.4mm;
+      color: var(--accent);
+    }
+
+    b {
+      color: #0d3550;
+    }
+
+    .table-wrap {
+      margin: 1.6mm 0 2.4mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      overflow: hidden;
+      background: #fff;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      line-height: 1.25;
+    }
+
+    th, td {
+      border: 1px solid #cfdbe5;
+      padding: 1.25mm 1.4mm;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--table-head);
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      font-size: 8pt;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: var(--table-alt);
+    }
+
+    .toc {
+      margin-top: 2.6mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.4mm;
+      padding: 2.4mm 3mm 2mm;
+      background: #fbfdff;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .toc-title {
+      font-size: 9.6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #124a76;
+      border-bottom: 1px solid var(--soft);
+      padding-bottom: 1.2mm;
+      margin-bottom: 1.4mm;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      columns: 2;
+      column-gap: 6mm;
+    }
+
+    .toc li {
+      margin: 0.7mm 0;
+      font-size: 8.8pt;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: #24485f;
+      text-decoration: none;
+      display: block;
+    }
+
+    .toc a span {
+      display: inline-block;
+      width: 9mm;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .toc .toc-h2 {
+      margin-top: 1.4mm;
+      font-size: 9.2pt;
+      font-weight: 700;
+    }
+
+    .toc .toc-h3 {
+      padding-left: 4mm;
+      color: #4a6377;
+    }
+
+    .note {
+      margin: 2mm 0;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      background: #f7fbff;
+      padding: 1.8mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.38;
+      color: #234356;
+    }
+
+    .footer {
+      margin-top: 4mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.6mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-top: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .toolbar,
+      .print-tip {
+        display: none;
+      }
+
+      .module {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .cover-module {
+        break-before: auto;
+        page-break-before: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <span>DCA Complete Notes &mdash; A4 printable</span>
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <section class="paper" aria-label="DCA Complete Notes">
+  <section class="module cover-module">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Diploma in Computer Applications (DCA)</div>
+        <div class="subtitle">Prathibha Institute &bull; Complete A4 Study Notes</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Notes Metadata">
+      <div><b>Course</b>DCA - Computer Applications</div>
+      <div><b>Modules</b>5 Units in these notes</div>
+      <div><b>Covers</b>Basics, Word, Excel, PPT</div>
+      <div><b>Format</b>A4 Print / PDF Ready</div>
+    </section>
+
+    <section class="instructions" aria-label="How to use">
+      <b>How to use these notes:</b> Read Module 1 for computer fundamentals, Module 2 for MS Office (Word, Excel and PowerPoint), Module 3 for internet and email, and Module 4 and Module 5 as exam revision material. Every topic is written in simple language with definitions, lists, tables and formulas so the material can be read, revised and copied easily.
+    </section>
+
+    <h3>Syllabus At A Glance</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 26mm;">Unit</th>
+            <th>Topic</th>
+            <th style="width: 62mm;">Key Contents</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Module 1</b></td><td>Fundamentals of Computers</td><td>Computer, generations, hardware, software, input/output devices, memory, number systems, operating system</td></tr>
+          <tr><td><b>Module 2</b></td><td>Microsoft Office Suite</td><td>MS Word, MS Excel, MS PowerPoint - interface, formatting, formulas, charts, tables, mail merge, slides</td></tr>
+          <tr><td><b>Module 3</b></td><td>Internet and Email</td><td>Internet basics, browsers, search engines, email, internet security, online services</td></tr>
+          <tr><td><b>Module 4</b></td><td>Conclusion</td><td>Summary of the course and revision pointers</td></tr>
+          <tr><td><b>Module 5</b></td><td>Quick Revision Reference</td><td>Shortcut keys, formula patterns, file extensions and viva answers</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="toc" aria-label="Table of Contents">
+      <div class="toc-title">Table of Contents</div>
+      <ul>
+__TOC__
+      </ul>
+    </div>
+
+    <div class="note">
+      <b>Print setting:</b> A4 portrait, margins default, scale 100%. Enable browser header/footer if page numbers are required. Press Ctrl + P (or use the Print button) and choose "Save as PDF" for a digital copy.
+    </div>
+  </section>
+
+
+</section>
+
+  <section class="module">
+<h2 id="mod1"><span class="badge">Module 1</span>Fundamentals of Computers</h2>
+<h3 id="sec1-1">1.1 &nbsp;Introduction to Computers</h3>
+<h4>1.1.1 &nbsp;What is a Computer?</h4>
+<p>A computer is an electronic device that accepts data as input, processes it according to a set of instructions (program), and produces information as output. The term "computer" is derived from the Latin word "computare" which means to calculate.</p>
+<p class="lead"><b>Key Characteristics of Computers:</b></p>
+<ul>
+<li><b>Speed:</b> Computers can process millions of instructions per second
+<li><b>Accuracy:</b> Computers perform calculations with near-perfect accuracy
+<li><b>Storage:</b> Large amounts of data can be stored and retrieved quickly
+<li><b>Automation:</b> Can perform tasks automatically without human intervention
+<li><b>Versatility:</b> Can perform various types of tasks
+<li><b>Diligence:</b> Can work continuously without fatigue
+</li>
+</ul>
+<h4>1.1.2 &nbsp;History of Computers</h4>
+<p class="lead"><b>Generations of Computers:</b></p>
+<ol>
+<li><b>First Generation (1940-1956): Vacuum Tubes</b>
+<ul>
+<li>Technology: Vacuum tubes for circuitry, magnetic drums for memory
+<li>Examples: ENIAC, UNIVAC, EDVAC
+<li>Characteristics: Very large in size, consumed lot of electricity, generated excessive heat, slow in speed, less reliable
+</li>
+</ul>
+<li><b>Second Generation (1956-1963): Transistors</b>
+<ul>
+<li>Technology: Transistors replaced vacuum tubes
+<li>Examples: IBM 1401, CDC 1604
+<li>Characteristics: Smaller, faster, more reliable, less heat generation, less power consumption
+<li>Programming: Assembly language, high-level languages like COBOL, FORTRAN
+</li>
+</ul>
+<li><b>Third Generation (1964-1971): Integrated Circuits</b>
+<ul>
+<li>Technology: Integrated Circuits (ICs) - transistors on silicon chips
+<li>Examples: IBM 360 series, Honeywell-6000 series
+<li>Characteristics: Smaller size, faster, more reliable, affordable, commercial production started
+<li>Development: Operating systems, multiprogramming
+</li>
+</ul>
+<li><b>Fourth Generation (1971-Present): Microprocessors</b>
+<ul>
+<li>Technology: VLSI (Very Large Scale Integration) - thousands of ICs on single chip
+<li>Examples: IBM PC, Apple Macintosh, modern desktop computers
+<li>Characteristics: Portable, reliable, cheap, general-purpose
+<li>Development: GUI, internet, multimedia
+</li>
+</ul>
+<li><b>Fifth Generation (Present-Future): Artificial Intelligence</b>
+<ul>
+<li>Technology: ULSI (Ultra Large Scale Integration), AI, parallel processing
+<li>Focus: Voice recognition, natural language processing, expert systems
+<li>Examples: AI systems, quantum computers (in development)
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="sec1-2">1.2 &nbsp;Computer Hardware and Software</h3>
+<h4>1.2.1 &nbsp;Hardware</h4>
+<p>Hardware refers to the physical components of a computer system that you can touch and see.</p>
+<p class="lead"><b>Categories of Hardware:</b></p>
+<ol>
+<li><b>Input Devices:</b> Devices used to enter data
+<li><b>Output Devices:</b> Devices that display or output information
+<li><b>Processing Unit:</b> CPU (Central Processing Unit)
+<li><b>Storage Devices:</b> Devices that store data
+</li>
+</ol>
+<h4>1.2.2 &nbsp;Software</h4>
+<p>Software is a set of programs, procedures, and documentation that performs specific tasks on a computer system.</p>
+<p class="lead"><b>Types of Software:</b></p>
+<ol>
+<li><b>System Software:</b>
+<ul>
+<li>Operating Systems (Windows, Linux, macOS)
+<li>Device Drivers
+<li>Utility Programs (Antivirus, Disk Cleanup)
+<li>Language Translators (Compilers, Interpreters)
+</li>
+</ul>
+<li><b>Application Software:</b>
+<ul>
+<li>Word Processors (MS Word)
+<li>Spreadsheets (MS Excel)
+<li>Database Management Systems (MS Access, Oracle)
+<li>Graphics Software (Photoshop, CorelDraw)
+<li>Web Browsers (Chrome, Firefox)
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="sec1-3">1.3 &nbsp;Input and Output Devices</h3>
+<h4>1.3.1 &nbsp;Input Devices</h4>
+<p>Input devices are used to enter data and instructions into the computer.</p>
+<div class="table-wrap"><table>
+<thead><tr><th><b>Device</b></th><th><b>Description and Usage</b></th></tr></thead>
+<tbody>
+<tr><td><b>Keyboard</b></td><td>Most common input device with alphanumeric keys, function keys (F1-F12), cursor control keys, special keys. Used for typing text and commands.</td></tr>
+<tr><td><b>Mouse</b></td><td>Pointing device with left, right, and scroll buttons. Used to point, click, drag, and select items on screen.</td></tr>
+<tr><td><b>Scanner</b></td><td>Converts printed documents and images into digital format. Types: Flatbed, Handheld, Drum scanners.</td></tr>
+<tr><td><b>Microphone</b></td><td>Input device for voice and audio. Used for voice recording, video conferencing, voice commands.</td></tr>
+<tr><td><b>Webcam</b></td><td>Captures video and images. Used for video conferencing, online meetings, photography.</td></tr>
+<tr><td><b>Joystick</b></td><td>Gaming input device. Used for playing games, controlling cursors in 3D environments.</td></tr>
+<tr><td><b>Light Pen</b></td><td>Pen-shaped pointing device. Used for drawing on screen, selecting menu items.</td></tr>
+<tr><td><b>Touch Screen</b></td><td>Display screen sensitive to touch. Used in smartphones, tablets, ATMs, kiosks.</td></tr>
+<tr><td><b>Digital Camera</b></td><td>Captures photographs in digital format. Used for photography, video recording.</td></tr>
+<tr><td><b>Barcode Reader</b></td><td>Reads barcodes on products. Used in supermarkets, libraries, inventory management.</td></tr>
+<tr><td><b>OCR</b></td><td>Optical Character Recognition - converts scanned documents to editable text.</td></tr>
+<tr><td><b>OMR</b></td><td>Optical Mark Recognition - reads marked data from forms. Used in examination answer sheets.</td></tr>
+<tr><td><b>MICR</b></td><td>Magnetic Ink Character Recognition - reads magnetic ink characters. Used in banks for check processing.</td></tr>
+<tr><td><b>Biometric</b></td><td>Fingerprint scanner, iris scanner, face recognition. Used for authentication and security.</td></tr>
+</tbody></table></div>
+<h4>1.3.2 &nbsp;Output Devices</h4>
+<p>Output devices display or output the processed information.</p>
+<div class="table-wrap"><table>
+<thead><tr><th><b>Device</b></th><th><b>Description and Usage</b></th></tr></thead>
+<tbody>
+<tr><td><b>Monitor</b></td><td>Visual display unit (VDU). Types: CRT, LCD, LED, OLED. Displays text, images, videos. Resolution measured in pixels.</td></tr>
+<tr><td><b>Printer</b></td><td>Produces hard copy (printed) output. <b>Impact Printers:</b> Dot Matrix (uses pins to strike ribbon) <b>Non-Impact:</b> Inkjet (sprays ink), Laser (uses laser beam and toner), Thermal (uses heat)</td></tr>
+<tr><td><b>Speakers</b></td><td>Output audio and sound. Used for music, system sounds, multimedia.</td></tr>
+<tr><td><b>Headphones</b></td><td>Personal audio output device. Used for private listening.</td></tr>
+<tr><td><b>Projector</b></td><td>Projects computer output onto large screen. Used in presentations, classrooms, theaters.</td></tr>
+<tr><td><b>Plotter</b></td><td>Prints large format graphics. Used for architectural drawings, engineering designs.</td></tr>
+</tbody></table></div>
+<h3 id="sec1-4">1.4 &nbsp;Computer Memory</h3>
+<h4>1.4.1 &nbsp;Memory Hierarchy</h4>
+<p>Computer memory is organized in a hierarchy based on speed, cost, and capacity.</p>
+<p class="lead"><b>Primary Memory (Main Memory):</b></p>
+<ol>
+<li><b>RAM (Random Access Memory)</b>
+<ul>
+<li>Volatile memory - loses data when power is off
+<li>Faster access speed
+<li>Used for storing currently running programs and data
+<li>Types: DRAM (Dynamic RAM), SRAM (Static RAM), DDR RAM
+<li>Capacity: Typically 4GB to 32GB in modern computers
+</li>
+</ul>
+<li><b>ROM (Read Only Memory)</b>
+<ul>
+<li>Non-volatile memory - retains data when power is off
+<li>Stores permanent instructions (BIOS, firmware)
+<li>Types: PROM (Programmable), EPROM (Erasable Programmable), EEPROM (Electrically Erasable Programmable)
+</li>
+</ul>
+<li><b>Cache Memory</b>
+<ul>
+<li>Very fast memory between CPU and RAM
+<li>Stores frequently accessed data
+<li>Levels: L1 (fastest, smallest), L2, L3 (slowest, largest)
+</li>
+</ul>
+</li>
+</ol>
+<p class="lead"><b>Secondary Memory (Storage Devices):</b></p>
+<div class="table-wrap"><table>
+<thead><tr><th><b>Storage Device</b></th><th><b>Characteristics</b></th></tr></thead>
+<tbody>
+<tr><td><b>Hard Disk Drive (HDD)</b></td><td>Magnetic storage, 500GB to 10TB capacity, slower than SSD, cheaper per GB, used for mass storage</td></tr>
+<tr><td><b>Solid State Drive (SSD)</b></td><td>Flash memory based, faster than HDD, more expensive, no moving parts, more durable</td></tr>
+<tr><td><b>Optical Discs</b></td><td>CD (700MB), DVD (4.7GB), Blu-ray (25GB), uses laser technology, portable</td></tr>
+<tr><td><b>USB Flash Drive</b></td><td>Portable, 4GB to 256GB+, plug and play, uses flash memory</td></tr>
+<tr><td><b>Memory Card</b></td><td>SD Card, MicroSD, used in cameras, phones, tablets</td></tr>
+<tr><td><b>External HDD/SSD</b></td><td>Portable external storage, USB connection, backup purposes</td></tr>
+<tr><td><b>Cloud Storage</b></td><td>Online storage (Google Drive, Dropbox, OneDrive), accessible from anywhere</td></tr>
+</tbody></table></div>
+<h4>1.4.2 &nbsp;Memory Units</h4>
+<p>Understanding data measurement units:</p>
+<ul>
+<li><b>Bit:</b> Smallest unit (0 or 1)
+<li><b>Nibble:</b> 4 bits
+<li><b>Byte:</b> 8 bits (can represent one character)
+<li><b>Kilobyte (KB):</b> 1024 bytes
+<li><b>Megabyte (MB):</b> 1024 KB
+<li><b>Gigabyte (GB):</b> 1024 MB
+<li><b>Terabyte (TB):</b> 1024 GB
+<li><b>Petabyte (PB):</b> 1024 TB
+</li>
+</ul>
+<h3 id="sec1-5">1.5 &nbsp;Number Systems</h3>
+<h4>1.5.1 &nbsp;Types of Number Systems</h4>
+<ol>
+<li><b>Decimal Number System (Base 10)</b>
+<ul>
+<li>Uses digits: 0-9
+<li>Most commonly used by humans
+<li>Example: 125, 456, 789
+</li>
+</ul>
+<li><b>Binary Number System (Base 2)</b>
+<ul>
+<li>Uses digits: 0, 1
+<li>Used by computers internally
+<li>Example: 1010, 1101, 11110
+</li>
+</ul>
+<li><b>Octal Number System (Base 8)</b>
+<ul>
+<li>Uses digits: 0-7
+<li>Used in computer programming
+<li>Example: 12, 45, 77
+</li>
+</ul>
+<li><b>Hexadecimal Number System (Base 16)</b>
+<ul>
+<li>Uses digits: 0-9 and A-F (A=10, B=11, C=12, D=13, E=14, F=15)
+<li>Used in memory addresses, color codes
+<li>Example: 1A, FF, A5
+</li>
+</ul>
+</li>
+</ol>
+<h4>1.5.2 &nbsp;Number System Conversions</h4>
+<p class="lead"><b>Decimal to Binary:</b></p>
+<ul>
+<li>Divide decimal number by 2
+<li>Note the remainder
+<li>Repeat until quotient becomes 0
+<li>Write remainders in reverse order
+<li>Example: (25)<sub>10</sub> = (11001)<sub>2</sub>
+</li>
+</ul>
+<p class="lead"><b>Binary to Decimal:</b></p>
+<ul>
+<li>Multiply each bit by 2<sup>position</sup>
+<li>Sum all values
+<li>Example: (1101)<sub>2</sub> = 1×2³ + 1×2² + 0×2¹ + 1×2⁰ = 8 + 4 + 0 + 1 = (13)<sub>10</sub>
+</li>
+</ul>
+<p class="lead"><b>Decimal to Octal:</b></p>
+<ul>
+<li>Divide by 8, note remainders
+<li>Example: (65)<sub>10</sub> = (101)<sub>8</sub>
+</li>
+</ul>
+<p class="lead"><b>Decimal to Hexadecimal:</b></p>
+<ul>
+<li>Divide by 16, note remainders
+<li>Example: (255)<sub>10</sub> = (FF)<sub>16</sub>
+</li>
+</ul>
+<h3 id="sec1-6">1.6 &nbsp;Operating System Basics</h3>
+<h4>1.6.1 &nbsp;What is an Operating System?</h4>
+<p>An Operating System (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. It acts as an interface between the user and computer hardware.</p>
+<p class="lead"><b>Functions of Operating System:</b></p>
+<ol>
+<li><b>Process Management:</b> Managing running programs
+<li><b>Memory Management:</b> Allocating and deallocating memory
+<li><b>File Management:</b> Organizing files and directories
+<li><b>Device Management:</b> Managing input/output devices
+<li><b>Security:</b> Protecting system from unauthorized access
+<li><b>User Interface:</b> Providing interface for user interaction
+</li>
+</ol>
+<h4>1.6.2 &nbsp;Types of Operating Systems</h4>
+<ol>
+<li><b>Single User, Single Tasking:</b> MS-DOS
+<li><b>Single User, Multi Tasking:</b> Windows, macOS
+<li><b>Multi User:</b> Unix, Linux
+<li><b>Real Time OS:</b> Used in embedded systems, industrial control
+<li><b>Mobile OS:</b> Android, iOS
+<li><b>Network OS:</b> Windows Server, Linux Server
+</li>
+</ol>
+<h4>1.6.3 &nbsp;Popular Operating Systems</h4>
+<p class="lead"><b>Windows:</b></p>
+<ul>
+<li>Developed by Microsoft
+<li>User-friendly GUI
+<li>Versions: Windows 7, 8, 10, 11
+<li>Widely used for desktop computers
+</li>
+</ul>
+<p class="lead"><b>Linux:</b></p>
+<ul>
+<li>Open-source OS
+<li>Free to use and modify
+<li>Distributions: Ubuntu, Fedora, Debian, CentOS
+<li>Popular in servers and programming
+</li>
+</ul>
+<p class="lead"><b>macOS:</b></p>
+<ul>
+<li>Developed by Apple
+<li>Used in Apple Mac computers
+<li>Known for design and performance
+</li>
+</ul>
+<p class="lead"><b>Mobile Operating Systems:</b></p>
+<ul>
+<li><b>Android:</b> Open-source, Google, most popular mobile OS
+<li><b>iOS:</b> Apple, used in iPhone and iPad
+</li>
+</ul>
+<h4>1.6.4 &nbsp;Basic OS Operations</h4>
+<p class="lead"><b>File Management:</b></p>
+<ul>
+<li>Creating, copying, moving, deleting files and folders
+<li>File naming conventions
+<li>File extensions (.txt, .doc, .pdf, .jpg, etc.)
+<li>File compression (ZIP, RAR)
+</li>
+</ul>
+<p class="lead"><b>Control Panel / Settings:</b></p>
+<ul>
+<li>System settings configuration
+<li>User account management
+<li>Display settings
+<li>Network configuration
+<li>Software installation/uninstallation
+</li>
+</ul>
+</section>
+
+  <section class="module">
+<h2 id="mod2"><span class="badge">Module 2</span>Microsoft Office Suite</h2>
+<h3 id="sec2-1">2.1 &nbsp;Introduction to MS Office</h3>
+<p>Microsoft Office is a suite of productivity applications developed by Microsoft. It includes various programs for creating documents, spreadsheets, presentations, and managing emails.</p>
+<p class="lead"><b>Main Components:</b></p>
+<ul>
+<li>MS Word - Word Processing
+<li>MS Excel - Spreadsheet
+<li>MS PowerPoint - Presentations
+<li>MS Access - Database Management
+<li>MS Outlook - Email and Calendar
+<li>MS OneNote - Note-taking
+</li>
+</ul>
+<h3 id="sec2-2">2.2 &nbsp;Microsoft Word</h3>
+<h4>2.2.1 &nbsp;Introduction to MS Word</h4>
+<p>MS Word is a word processing application used for creating, editing, formatting, and printing documents.</p>
+<p class="lead"><b>Starting MS Word:</b></p>
+<ul>
+<li>Start Menu → Microsoft Office → Word
+<li>Or search "Word" in Windows search
+</li>
+</ul>
+<h4>2.2.2 &nbsp;MS Word Interface</h4>
+<p class="lead"><b>Components of Word Window:</b></p>
+<ol>
+<li><b>Title Bar:</b> Shows document name
+<li><b>Menu Bar/Ribbon:</b> Contains tabs (Home, Insert, Design, Layout, References, Mailings, Review, View)
+<li><b>Quick Access Toolbar:</b> Frequently used commands (Save, Undo, Redo)
+<li><b>Ruler:</b> Shows margins and tab stops
+<li><b>Work Area:</b> Where you type document content
+<li><b>Status Bar:</b> Shows page number, word count, zoom
+<li><b>Scroll Bars:</b> Navigate through document
+</li>
+</ol>
+<h4>2.2.3 &nbsp;Document Creation and Basic Operations</h4>
+<p class="lead"><b>Creating a New Document:</b></p>
+<ul>
+<li>File → New → Blank Document
+<li>Or Ctrl + N
+</li>
+</ul>
+<p class="lead"><b>Saving a Document:</b></p>
+<ul>
+<li>File → Save (Ctrl + S)
+<li>Choose location and file name
+<li>File formats: .docx (default), .doc, .pdf, .txt
+</li>
+</ul>
+<p class="lead"><b>Opening a Document:</b></p>
+<ul>
+<li>File → Open (Ctrl + O)
+<li>Browse and select file
+</li>
+</ul>
+<p class="lead"><b>Basic Editing:</b></p>
+<ul>
+<li><b>Select Text:</b> Click and drag, or Shift + Arrow keys
+<li><b>Cut:</b> Ctrl + X
+<li><b>Copy:</b> Ctrl + C
+<li><b>Paste:</b> Ctrl + V
+<li><b>Undo:</b> Ctrl + Z
+<li><b>Redo:</b> Ctrl + Y
+<li><b>Find:</b> Ctrl + F
+<li><b>Replace:</b> Ctrl + H
+</li>
+</ul>
+<h4>2.2.4 &nbsp;Text Formatting</h4>
+<p class="lead"><b>Font Formatting:</b></p>
+<ul>
+<li><b>Font Type:</b> Times New Roman, Arial, Calibri, etc.
+<li><b>Font Size:</b> 8, 10, 12, 14, 16, 18, etc.
+<li><b>Font Style:</b> Bold (Ctrl + B), Italic (Ctrl + I), Underline (Ctrl + U)
+<li><b>Font Color:</b> Change text color
+<li><b>Highlight:</b> Background color for text
+<li><b>Effects:</b> Strikethrough, Subscript, Superscript, Small Caps
+</li>
+</ul>
+<p class="lead"><b>Paragraph Formatting:</b></p>
+<ul>
+<li><b>Alignment:</b> Left (Ctrl + L), Center (Ctrl + E), Right (Ctrl + R), Justify (Ctrl + J)
+<li><b>Line Spacing:</b> Single, 1.5, Double
+<li><b>Indentation:</b> Left indent, Right indent, First line indent
+<li><b>Bullets:</b> Create bulleted lists
+<li><b>Numbering:</b> Create numbered lists
+<li><b>Borders and Shading:</b> Add borders and background colors
+</li>
+</ul>
+<h4>2.2.5 &nbsp;Page Setup and Layout</h4>
+<p class="lead"><b>Page Setup (Layout Tab):</b></p>
+<ul>
+<li><b>Margins:</b> Normal, Narrow, Wide, Custom
+<li><b>Orientation:</b> Portrait, Landscape
+<li><b>Size:</b> A4, Letter, Legal, Custom
+<li><b>Columns:</b> Single column, Two columns, Three columns
+</li>
+</ul>
+<p class="lead"><b>Headers and Footers:</b></p>
+<ul>
+<li>Insert → Header/Footer
+<li>Add page numbers, date, document title
+<li>Different first page option
+<li>Different odd/even pages
+</li>
+</ul>
+<h4>2.2.6 &nbsp;Inserting Objects</h4>
+<p class="lead"><b>Insert Tab Options:</b></p>
+<ol>
+<li><b>Pictures:</b> Insert images from computer
+<li><b>Online Pictures:</b> Search and insert images from web
+<li><b>Shapes:</b> Rectangles, circles, arrows, callouts
+<li><b>SmartArt:</b> Visual diagrams and graphics
+<li><b>Charts:</b> Insert graphs and charts
+<li><b>Table:</b> Create tables
+<li><b>WordArt:</b> Decorative text
+<li><b>Symbols:</b> Special characters and symbols
+<li><b>Equation:</b> Mathematical equations
+<li><b>Hyperlink:</b> Link to websites or documents
+</li>
+</ol>
+<h4>2.2.7 &nbsp;Working with Tables</h4>
+<p class="lead"><b>Creating Tables:</b></p>
+<ul>
+<li>Insert → Table → Select rows and columns
+<li>Or Insert → Table → Insert Table (specify dimensions)
+<li>Or Insert → Table → Draw Table
+</li>
+</ul>
+<p class="lead"><b>Table Operations:</b></p>
+<ul>
+<li><b>Insert Rows/Columns:</b> Right-click → Insert
+<li><b>Delete Rows/Columns:</b> Right-click → Delete
+<li><b>Merge Cells:</b> Combine multiple cells into one
+<li><b>Split Cells:</b> Divide cell into multiple cells
+<li><b>Table Styles:</b> Apply predefined table designs
+<li><b>Borders and Shading:</b> Customize table appearance
+<li><b>AutoFit:</b> Automatically adjust column width
+</li>
+</ul>
+<h4>2.2.8 &nbsp;Mail Merge</h4>
+<p>Mail Merge is used to create personalized letters, labels, envelopes, or emails to multiple recipients.</p>
+<p class="lead"><b>Steps for Mail Merge:</b></p>
+<ol>
+<li><b>Create Main Document:</b> Letter with placeholders
+<li><b>Create Data Source:</b> Excel file or Word table with recipient information
+<li><b>Start Mail Merge:</b> Mailings → Start Mail Merge → Letters
+<li><b>Select Recipients:</b> Mailings → Select Recipients → Use Existing List
+<li><b>Insert Merge Fields:</b> Insert fields like Name, Address, City
+<li><b>Preview Results:</b> Check how documents will look
+<li><b>Finish &amp; Merge:</b> Create individual documents or print
+</li>
+</ol>
+<p class="lead"><b>Applications of Mail Merge:</b></p>
+<ul>
+<li>Personalized invitation letters
+<li>Salary slips
+<li>Certificates
+<li>Mailing labels
+<li>Email campaigns
+</li>
+</ul>
+<h4>2.2.9 &nbsp;Advanced Features</h4>
+<p class="lead"><b>Styles and Themes:</b></p>
+<ul>
+<li>Apply consistent formatting throughout document
+<li>Heading styles (Heading 1, 2, 3)
+<li>Paragraph styles
+<li>Themes for color and font coordination
+</li>
+</ul>
+<p class="lead"><b>Table of Contents:</b></p>
+<ul>
+<li>Automatically generate from headings
+<li>References → Table of Contents
+<li>Update table when content changes
+</li>
+</ul>
+<p class="lead"><b>Page Breaks and Section Breaks:</b></p>
+<ul>
+<li><b>Page Break:</b> Start new page (Ctrl + Enter)
+<li><b>Section Break:</b> Different formatting in different sections
+</li>
+</ul>
+<p class="lead"><b>Track Changes and Comments:</b></p>
+<ul>
+<li>Review → Track Changes: Record all edits
+<li>Review → New Comment: Add comments
+<li>Accept or reject changes
+<li>Useful for collaborative editing
+</li>
+</ul>
+<h3 id="sec2-3">2.3 &nbsp;Microsoft Excel</h3>
+<h4>2.3.1 &nbsp;Introduction to MS Excel</h4>
+<p>MS Excel is a spreadsheet application used for calculations, data analysis, creating charts, and managing data in tabular form.</p>
+<p class="lead"><b>Uses of Excel:</b></p>
+<ul>
+<li>Financial calculations and budgeting
+<li>Data analysis and reporting
+<li>Statistical analysis
+<li>Creating charts and graphs
+<li>Database management
+<li>Project management
+</li>
+</ul>
+<h4>2.3.2 &nbsp;Excel Interface</h4>
+<p class="lead"><b>Components of Excel Window:</b></p>
+<ol>
+<li><b>Title Bar:</b> Shows workbook name
+<li><b>Ribbon:</b> Tabs (Home, Insert, Page Layout, Formulas, Data, Review, View)
+<li><b>Name Box:</b> Shows active cell reference
+<li><b>Formula Bar:</b> Displays/edits cell contents
+<li><b>Worksheet Area:</b> Grid of cells
+<li><b>Column Headers:</b> A, B, C... (up to XFD)
+<li><b>Row Headers:</b> 1, 2, 3... (up to 1,048,576)
+<li><b>Sheet Tabs:</b> Navigate between worksheets
+<li><b>Status Bar:</b> Shows calculations (Sum, Average, Count)
+</li>
+</ol>
+<h4>2.3.3 &nbsp;Basic Excel Concepts</h4>
+<p class="lead"><b>Terminology:</b></p>
+<ul>
+<li><b>Cell:</b> Intersection of row and column (e.g., A1, B5)
+<li><b>Cell Reference:</b> Address of a cell
+<li><b>Range:</b> Group of cells (e.g., A1:D10)
+<li><b>Worksheet/Sheet:</b> Single spreadsheet page
+<li><b>Workbook:</b> Excel file containing multiple worksheets
+<li><b>Active Cell:</b> Currently selected cell
+</li>
+</ul>
+<p class="lead"><b>Data Types in Excel:</b></p>
+<ol>
+<li><b>Text:</b> Alphabetic and alphanumeric data
+<li><b>Numbers:</b> Numeric values
+<li><b>Dates:</b> Date and time values
+<li><b>Formulas:</b> Start with = sign
+</li>
+</ol>
+<h4>2.3.4 &nbsp;Basic Operations</h4>
+<p class="lead"><b>Entering Data:</b></p>
+<ul>
+<li>Click on cell and type
+<li>Press Enter to move to next row
+<li>Press Tab to move to next column
+<li>AutoFill: Drag fill handle to copy/continue series
+</li>
+</ul>
+<p class="lead"><b>Editing Data:</b></p>
+<ul>
+<li>Double-click cell or press F2 to edit
+<li>Delete key to clear contents
+<li>Edit in formula bar
+</li>
+</ul>
+<p class="lead"><b>Selection Techniques:</b></p>
+<ul>
+<li>Click and drag to select range
+<li>Ctrl + A: Select all
+<li>Click column header to select entire column
+<li>Click row header to select entire row
+<li>Ctrl + Click: Select non-adjacent cells
+</li>
+</ul>
+<p class="lead"><b>Cut, Copy, Paste:</b></p>
+<ul>
+<li>Cut: Ctrl + X
+<li>Copy: Ctrl + C
+<li>Paste: Ctrl + V
+<li>Paste Special: Paste values only, formulas only, formats only
+</li>
+</ul>
+<h4>2.3.5 &nbsp;Formatting in Excel</h4>
+<p class="lead"><b>Cell Formatting:</b></p>
+<ul>
+<li><b>Number Format:</b> General, Number, Currency, Accounting, Date, Time, Percentage
+<li><b>Font:</b> Type, size, color, bold, italic, underline
+<li><b>Alignment:</b> Horizontal and vertical alignment, merge cells
+<li><b>Borders:</b> Add borders to cells
+<li><b>Fill Color:</b> Background color
+<li><b>Cell Styles:</b> Predefined formatting styles
+</li>
+</ul>
+<p class="lead"><b>Row and Column Operations:</b></p>
+<ul>
+<li><b>Insert:</b> Right-click → Insert
+<li><b>Delete:</b> Right-click → Delete
+<li><b>Hide/Unhide:</b> Right-click → Hide/Unhide
+<li><b>Adjust Width/Height:</b> Drag border or double-click to auto-fit
+</li>
+</ul>
+<h4>2.3.6 &nbsp;Formulas and Functions</h4>
+<p class="lead"><b>Creating Formulas:</b></p>
+<ul>
+<li>Start with = sign
+<li>Basic operators: + (add), - (subtract), * (multiply), / (divide), ^{} (power)
+<li>Example: =A1+A2, =B1*C1, =D1/E1
+</li>
+</ul>
+<p class="lead"><b>Cell References:</b></p>
+<ol>
+<li><b>Relative Reference:</b> A1 (changes when copied)
+<li><b>Absolute Reference:</b> $A$1 (doesn't change when copied)
+<li><b>Mixed Reference:</b> $A1 or A$1 (partially fixed)
+</li>
+</ol>
+<p class="lead"><b>Important Functions:</b></p>
+<div class="table-wrap"><table>
+<thead><tr><th><b>Function</b></th><th><b>Syntax</b></th><th><b>Description</b></th></tr></thead>
+<tbody>
+<tr><td>SUM</td><td>=SUM(range)</td><td>Adds all numbers in range</td></tr>
+<tr><td>AVERAGE</td><td>=AVERAGE(range)</td><td>Calculates average</td></tr>
+<tr><td>MAX</td><td>=MAX(range)</td><td>Returns maximum value</td></tr>
+<tr><td>MIN</td><td>=MIN(range)</td><td>Returns minimum value</td></tr>
+<tr><td>COUNT</td><td>=COUNT(range)</td><td>Counts numbers in range</td></tr>
+<tr><td>COUNTA</td><td>=COUNTA(range)</td><td>Counts non-empty cells</td></tr>
+<tr><td>IF</td><td>=IF(condition, value_if_true, value_if_false)</td><td>Logical test</td></tr>
+<tr><td>SUMIF</td><td>=SUMIF(range, criteria, sum_range)</td><td>Sum based on condition</td></tr>
+<tr><td>COUNTIF</td><td>=COUNTIF(range, criteria)</td><td>Count based on condition</td></tr>
+<tr><td>VLOOKUP</td><td>=VLOOKUP(value, table, col_num, FALSE)</td><td>Vertical lookup</td></tr>
+<tr><td>HLOOKUP</td><td>=HLOOKUP(value, table, row_num, FALSE)</td><td>Horizontal lookup</td></tr>
+<tr><td>CONCATENATE</td><td>=CONCATENATE(text1, text2, ...)</td><td>Joins text strings</td></tr>
+<tr><td>TODAY</td><td>=TODAY()</td><td>Current date</td></tr>
+<tr><td>NOW</td><td>=NOW()</td><td>Current date and time</td></tr>
+<tr><td>LEFT</td><td>=LEFT(text, num_chars)</td><td>Extracts characters from left</td></tr>
+<tr><td>RIGHT</td><td>=RIGHT(text, num_chars)</td><td>Extracts characters from right</td></tr>
+<tr><td>MID</td><td>=MID(text, start, num_chars)</td><td>Extracts characters from middle</td></tr>
+<tr><td>ROUND</td><td>=ROUND(number, decimals)</td><td>Rounds number</td></tr>
+<tr><td>PMT</td><td>=PMT(rate, nper, pv)</td><td>Calculates loan payment</td></tr>
+</tbody></table></div>
+<p class="lead"><b>Function Examples:</b></p>
+<ul>
+<li>=SUM(A1:A10) - Adds values from A1 to A10
+<li>=AVERAGE(B1:B20) - Average of B1 to B20
+<li>=IF(A1$&gt;$50, "Pass", "Fail") - Shows Pass if A1$&gt;$50, else Fail
+<li>=VLOOKUP(A2, D1:E10, 2, FALSE) - Looks up A2 in D1:D10, returns value from column E
+</li>
+</ul>
+<h4>2.3.7 &nbsp;Charts and Graphs</h4>
+<p class="lead"><b>Creating Charts:</b></p>
+<ol>
+<li>Select data range
+<li>Insert → Charts
+<li>Choose chart type
+<li>Customize chart
+</li>
+</ol>
+<p class="lead"><b>Types of Charts:</b></p>
+<ul>
+<li><b>Column Chart:</b> Vertical bars for comparing values
+<li><b>Bar Chart:</b> Horizontal bars
+<li><b>Line Chart:</b> Shows trends over time
+<li><b>Pie Chart:</b> Shows proportions/percentages
+<li><b>Area Chart:</b> Similar to line chart with filled area
+<li><b>Scatter Chart:</b> Shows relationship between two variables
+<li><b>Combo Chart:</b> Combines different chart types
+</li>
+</ul>
+<p class="lead"><b>Chart Elements:</b></p>
+<ul>
+<li>Chart Title
+<li>Axis Titles (X-axis, Y-axis)
+<li>Legend
+<li>Data Labels
+<li>Gridlines
+</li>
+</ul>
+<h4>2.3.8 &nbsp;Data Management</h4>
+<p class="lead"><b>Sorting Data:</b></p>
+<ul>
+<li>Select data → Data → Sort
+<li>Sort A to Z (ascending) or Z to A (descending)
+<li>Sort by multiple columns
+</li>
+</ul>
+<p class="lead"><b>Filtering Data:</b></p>
+<ul>
+<li>Select data → Data → Filter
+<li>Click dropdown arrow in column header
+<li>Select values to display
+<li>Custom filters (greater than, less than, contains, etc.)
+</li>
+</ul>
+<p class="lead"><b>Data Validation:</b></p>
+<ul>
+<li>Data → Data Validation
+<li>Restrict input to specific values
+<li>Create dropdown lists
+<li>Set number ranges
+<li>Custom validation rules
+</li>
+</ul>
+<h4>2.3.9 &nbsp;Pivot Tables</h4>
+<p class="lead"><b>What is a Pivot Table?</b></p>
+<p>Pivot Table is a powerful tool for summarizing, analyzing, and presenting large amounts of data.</p>
+<p class="lead"><b>Creating Pivot Table:</b></p>
+<ol>
+<li>Select data range
+<li>Insert → PivotTable
+<li>Choose where to place pivot table
+<li>Drag fields to:
+<ul>
+<li>Rows: Categories to group by
+<li>Columns: Sub-categories
+<li>Values: Numerical data to calculate
+<li>Filters: Filter entire table
+</li>
+</ul>
+</li>
+</ol>
+<p class="lead"><b>Pivot Table Operations:</b></p>
+<ul>
+<li>Summarize by: Sum, Average, Count, Max, Min
+<li>Group data: By date, number ranges
+<li>Refresh: Update when source data changes
+<li>Pivot Chart: Visual representation of pivot table
+</li>
+</ul>
+<h4>2.3.10 &nbsp;Print Settings</h4>
+<p class="lead"><b>Page Setup:</b></p>
+<ul>
+<li>Page Layout → Page Setup
+<li>Orientation: Portrait or Landscape
+<li>Paper Size: A4, Letter, Legal
+<li>Scaling: Fit to page
+<li>Margins: Normal, Wide, Narrow, Custom
+</li>
+</ul>
+<p class="lead"><b>Print Area:</b></p>
+<ul>
+<li>Select range → Page Layout → Print Area → Set Print Area
+<li>Print only selected cells
+</li>
+</ul>
+<p class="lead"><b>Headers and Footers:</b></p>
+<ul>
+<li>Insert → Header &amp; Footer
+<li>Add page numbers, date, file path
+</li>
+</ul>
+<p class="lead"><b>Print Titles:</b></p>
+<ul>
+<li>Page Layout → Print Titles
+<li>Repeat rows/columns on every printed page
+</li>
+</ul>
+<h3 id="sec2-4">2.4 &nbsp;Microsoft PowerPoint</h3>
+<h4>2.4.1 &nbsp;Introduction to MS PowerPoint</h4>
+<p>MS PowerPoint is a presentation software used to create slide shows for business presentations, educational purposes, and training sessions.</p>
+<p class="lead"><b>Uses of PowerPoint:</b></p>
+<ul>
+<li>Business presentations
+<li>Educational lectures
+<li>Training materials
+<li>Product demonstrations
+<li>Conference presentations
+<li>Marketing pitches
+</li>
+</ul>
+<h4>2.4.2 &nbsp;PowerPoint Interface</h4>
+<p class="lead"><b>Components:</b></p>
+<ol>
+<li><b>Slide Pane:</b> Shows current slide
+<li><b>Thumbnail Pane:</b> Shows all slides in presentation
+<li><b>Notes Pane:</b> Add speaker notes
+<li><b>Ribbon:</b> Tabs (Home, Insert, Design, Transitions, Animations, Slide Show, Review, View)
+<li><b>Status Bar:</b> Slide number, theme, view options
+</li>
+</ol>
+<h4>2.4.3 &nbsp;Creating Presentations</h4>
+<p class="lead"><b>Starting New Presentation:</b></p>
+<ul>
+<li>File → New → Blank Presentation
+<li>Or choose from templates
+</li>
+</ul>
+<p class="lead"><b>Adding Slides:</b></p>
+<ul>
+<li>Home → New Slide
+<li>Or Ctrl + M
+<li>Choose slide layout (Title Slide, Title and Content, Two Content, etc.)
+</li>
+</ul>
+<p class="lead"><b>Slide Layouts:</b></p>
+<ul>
+<li>Title Slide: For presentation title
+<li>Title and Content: Text with bullet points
+<li>Two Content: Two columns of content
+<li>Comparison: Compare two items
+<li>Blank: Empty slide for custom design
+</li>
+</ul>
+<h4>2.4.4 &nbsp;Working with Text</h4>
+<p class="lead"><b>Text Boxes:</b></p>
+<ul>
+<li>Insert → Text Box
+<li>Click and drag to create
+<li>Type or paste text
+</li>
+</ul>
+<p class="lead"><b>Formatting Text:</b></p>
+<ul>
+<li>Font, size, color, bold, italic, underline
+<li>Bullets and numbering
+<li>Line spacing
+<li>Alignment
+<li>WordArt for decorative text
+</li>
+</ul>
+<p class="lead"><b>Best Practices for Text:</b></p>
+<ul>
+<li>Use large, readable fonts (minimum 24pt)
+<li>Limit text per slide (6 lines, 6 words per line rule)
+<li>Use bullet points instead of paragraphs
+<li>High contrast between text and background
+<li>Consistent font throughout presentation
+</li>
+</ul>
+<h4>2.4.5 &nbsp;Inserting Objects</h4>
+<p class="lead"><b>Pictures and Images:</b></p>
+<ul>
+<li>Insert → Pictures → This Device
+<li>Or Insert → Online Pictures
+<li>Resize, crop, adjust
+<li>Picture styles and effects
+</li>
+</ul>
+<p class="lead"><b>Shapes:</b></p>
+<ul>
+<li>Insert → Shapes
+<li>Rectangles, circles, arrows, flowchart symbols
+<li>Customize fill color, outline, effects
+<li>Group/ungroup shapes
+</li>
+</ul>
+<p class="lead"><b>SmartArt:</b></p>
+<ul>
+<li>Insert → SmartArt
+<li>Visual diagrams: Process, Hierarchy, Cycle, Relationship, Matrix
+<li>Convert text to SmartArt
+<li>Change colors and styles
+</li>
+</ul>
+<p class="lead"><b>Charts:</b></p>
+<ul>
+<li>Insert → Chart
+<li>Column, Bar, Line, Pie charts
+<li>Edit data in Excel worksheet
+<li>Customize chart design
+</li>
+</ul>
+<p class="lead"><b>Tables:</b></p>
+<ul>
+<li>Insert → Table
+<li>Specify rows and columns
+<li>Format with table styles
+<li>Add/delete rows and columns
+</li>
+</ul>
+<p class="lead"><b>Audio and Video:</b></p>
+<ul>
+<li>Insert → Audio/Video
+<li>From computer or online
+<li>Playback options (automatically, on click)
+<li>Trim audio/video
+</li>
+</ul>
+<h4>2.4.6 &nbsp;Design and Themes</h4>
+<p class="lead"><b>Applying Themes:</b></p>
+<ul>
+<li>Design → Themes
+<li>Predefined color schemes and fonts
+<li>Variants: Different color variations
+<li>Consistent look throughout presentation
+</li>
+</ul>
+<p class="lead"><b>Slide Background:</b></p>
+<ul>
+<li>Design → Format Background
+<li>Solid fill, gradient, picture, texture
+<li>Apply to one slide or all slides
+</li>
+</ul>
+<p class="lead"><b>Master Slide:</b></p>
+<ul>
+<li>View → Slide Master
+<li>Edit master layout
+<li>Changes apply to all slides
+<li>Add logo, footer on every slide
+</li>
+</ul>
+<h4>2.4.7 &nbsp;Transitions</h4>
+<p class="lead"><b>What are Transitions?</b></p>
+<p>Transitions are effects that occur when moving from one slide to another.</p>
+<p class="lead"><b>Applying Transitions:</b></p>
+<ul>
+<li>Transitions → Choose effect (Fade, Push, Wipe, etc.)
+<li>Set duration (time for transition)
+<li>Sound options
+<li>Apply to one slide or all
+<li>Advance slide: On mouse click or automatically after time
+</li>
+</ul>
+<p class="lead"><b>Popular Transitions:</b></p>
+<ul>
+<li>Fade
+<li>Push
+<li>Wipe
+<li>Split
+<li>Reveal
+<li>Morph (PowerPoint 2016+)
+</li>
+</ul>
+<h4>2.4.8 &nbsp;Animations</h4>
+<p class="lead"><b>What are Animations?</b></p>
+<p>Animations are effects applied to individual objects on a slide.</p>
+<p class="lead"><b>Types of Animations:</b></p>
+<ol>
+<li><b>Entrance:</b> How object appears (Fade In, Fly In, Zoom)
+<li><b>Emphasis:</b> Draw attention to object (Pulse, Spin, Grow)
+<li><b>Exit:</b> How object disappears (Fade Out, Fly Out)
+<li><b>Motion Paths:</b> Object moves along path
+</li>
+</ol>
+<p class="lead"><b>Applying Animations:</b></p>
+<ul>
+<li>Select object
+<li>Animations → Choose effect
+<li>Set duration and delay
+<li>Start: On click, with previous, after previous
+<li>Animation Pane: Manage all animations on slide
+</li>
+</ul>
+<p class="lead"><b>Animation Tips:</b></p>
+<ul>
+<li>Use animations sparingly
+<li>Don't distract from content
+<li>Be consistent
+<li>Time animations appropriately
+</li>
+</ul>
+<h4>2.4.9 &nbsp;Slide Show</h4>
+<p class="lead"><b>Running Slide Show:</b></p>
+<ul>
+<li>Slide Show → From Beginning (F5)
+<li>Slide Show → From Current Slide (Shift + F5)
+<li>Click or press arrow keys to navigate
+<li>Press Esc to exit
+</li>
+</ul>
+<p class="lead"><b>Slide Show Options:</b></p>
+<ul>
+<li>Presenter View: See notes, timer, next slide
+<li>Rehearse Timings: Practice presentation with timer
+<li>Record Slide Show: Record audio narration
+<li>Set Up Show: Kiosk mode, loop continuously
+</li>
+</ul>
+<p class="lead"><b>Presentation Tips:</b></p>
+<ul>
+<li>Practice beforehand
+<li>Know your audience
+<li>Maintain eye contact
+<li>Speak clearly and confidently
+<li>Use pointer/laser pen
+<li>Be prepared for questions
+</li>
+</ul>
+<h4>2.4.10 &nbsp;Saving and Sharing</h4>
+<p class="lead"><b>Save Formats:</b></p>
+<ul>
+<li>.pptx - PowerPoint Presentation (editable)
+<li>.ppsx - PowerPoint Show (opens directly in slide show)
+<li>.pdf - PDF format (non-editable)
+<li>.mp4 - Video format
+</li>
+</ul>
+<p class="lead"><b>Sharing Options:</b></p>
+<ul>
+<li>Email as attachment
+<li>OneDrive/SharePoint sharing
+<li>Export as video
+<li>Export as handouts (PDF with multiple slides per page)
+<li>Print slides, notes, or handouts
+</li>
+</ul>
+<h4>2.4.11 &nbsp;Advanced Features</h4>
+<p class="lead"><b>Hyperlinks and Action Buttons:</b></p>
+<ul>
+<li>Link to other slides
+<li>Link to external websites
+<li>Link to files
+<li>Interactive navigation
+</li>
+</ul>
+<p class="lead"><b>Sections:</b></p>
+<ul>
+<li>Organize slides into sections
+<li>Collapse/expand sections
+<li>Easy navigation in large presentations
+</li>
+</ul>
+<p class="lead"><b>Collaboration:</b></p>
+<ul>
+<li>Review → Comments
+<li>Share via OneDrive
+<li>Co-author in real-time
+<li>Track changes
+</li>
+</ul>
+</section>
+
+  <section class="module">
+<h2 id="mod3"><span class="badge">Module 3</span>Internet and Email</h2>
+<h3 id="sec3-1">3.1 &nbsp;Introduction to Internet</h3>
+<h4>3.1.1 &nbsp;What is Internet?</h4>
+<p>The Internet is a global network of billions of computers and electronic devices connected together. It allows users to access information, communicate, and share data across the world.</p>
+<p class="lead"><b>Key Features:</b></p>
+<ul>
+<li>Global connectivity
+<li>Information sharing
+<li>Communication platform
+<li>Resource sharing
+<li>24/7 availability
+</li>
+</ul>
+<p class="lead"><b>History of Internet:</b></p>
+<ul>
+<li><b>1969:</b> ARPANET created (first network)
+<li><b>1983:</b> TCP/IP protocol adopted
+<li><b>1989:</b> Tim Berners-Lee invented World Wide Web (WWW)
+<li><b>1990s:</b> Internet became public and commercial
+<li><b>2000s:</b> Broadband, social media, mobile internet
+<li><b>Present:</b> IoT, cloud computing, 5G
+</li>
+</ul>
+<h4>3.1.2 &nbsp;Internet Terminology</h4>
+<div class="table-wrap"><table>
+<thead><tr><th><b>Term</b></th><th><b>Definition</b></th></tr></thead>
+<tbody>
+<tr><td><b>WWW</b></td><td>World Wide Web - system of interlinked hypertext documents accessed via Internet</td></tr>
+<tr><td><b>Website</b></td><td>Collection of web pages under one domain name</td></tr>
+<tr><td><b>Web Page</b></td><td>Single document on the web, written in HTML</td></tr>
+<tr><td><b>URL</b></td><td>Uniform Resource Locator - web address (e.g., https://www.example.com)</td></tr>
+<tr><td><b>HTTP/HTTPS</b></td><td>Hypertext Transfer Protocol / Secure - protocol for web communication</td></tr>
+<tr><td><b>Browser</b></td><td>Software to access web pages (Chrome, Firefox, Edge)</td></tr>
+<tr><td><b>Search Engine</b></td><td>Website to search information (Google, Bing, Yahoo)</td></tr>
+<tr><td><b>Domain Name</b></td><td>Unique name identifying website (google.com, facebook.com)</td></tr>
+<tr><td><b>IP Address</b></td><td>Numerical address of device on network (192.168.1.1)</td></tr>
+<tr><td><b>ISP</b></td><td>Internet Service Provider - company providing internet connection</td></tr>
+<tr><td><b>Bandwidth</b></td><td>Amount of data transmitted per unit time</td></tr>
+<tr><td><b>Download</b></td><td>Transferring data from internet to computer</td></tr>
+<tr><td><b>Upload</b></td><td>Transferring data from computer to internet</td></tr>
+<tr><td><b>Homepage</b></td><td>Main page of website</td></tr>
+<tr><td><b>Hyperlink</b></td><td>Clickable link to another web page</td></tr>
+<tr><td><b>Cookie</b></td><td>Small data file stored by website on your computer</td></tr>
+<tr><td><b>Cache</b></td><td>Temporary storage of web pages for faster loading</td></tr>
+</tbody></table></div>
+<h3 id="sec3-2">3.2 &nbsp;Internet Connectivity</h3>
+<h4>3.2.1 &nbsp;Types of Internet Connections</h4>
+<ol>
+<li><b>Dial-Up Connection</b>
+<ul>
+<li>Uses telephone line and modem
+<li>Speed: 56 Kbps (very slow)
+<li>Cannot use phone and internet simultaneously
+<li>Obsolete technology
+</li>
+</ul>
+<li><b>Broadband Connection</b>
+<ul>
+<li><b>DSL (Digital Subscriber Line):</b> Uses telephone line, faster than dial-up, 1-100 Mbps
+<li><b>Cable:</b> Uses cable TV infrastructure, 10-500 Mbps
+<li><b>Fiber Optic:</b> Uses fiber optic cables, 100-1000 Mbps (1 Gbps), fastest
+</li>
+</ul>
+<li><b>Wireless Connection</b>
+<ul>
+<li><b>Wi-Fi:</b> Wireless local area network, range 30-50 meters
+<li><b>Mobile Data:</b> 3G, 4G, 5G cellular networks
+<li><b>Satellite:</b> Internet via satellite, for remote areas
+</li>
+</ul>
+</li>
+</ol>
+<h4>3.2.2 &nbsp;Required Equipment</h4>
+<ul>
+<li><b>Computer/Device:</b> PC, laptop, smartphone, tablet
+<li><b>Modem:</b> Converts digital signals to analog and vice versa
+<li><b>Router:</b> Distributes internet connection to multiple devices
+<li><b>ISP Account:</b> Subscription from Internet Service Provider
+<li><b>Browser:</b> Software to access websites
+</li>
+</ul>
+<h3 id="sec3-3">3.3 &nbsp;Web Browsers</h3>
+<h4>3.3.1 &nbsp;What is a Web Browser?</h4>
+<p>A web browser is software that allows users to access, retrieve, and display content from the World Wide Web.</p>
+<p class="lead"><b>Popular Web Browsers:</b></p>
+<ul>
+<li><b>Google Chrome:</b> Fast, most popular, developed by Google
+<li><b>Mozilla Firefox:</b> Open-source, privacy-focused
+<li><b>Microsoft Edge:</b> Built into Windows, Chromium-based
+<li><b>Safari:</b> Default browser for Apple devices
+<li><b>Opera:</b> Fast, built-in VPN
+<li><b>Brave:</b> Privacy-focused, blocks ads and trackers
+</li>
+</ul>
+<h4>3.3.2 &nbsp;Browser Features and Functions</h4>
+<p class="lead"><b>Address Bar:</b></p>
+<ul>
+<li>Enter website URL
+<li>Search directly from address bar
+<li>Shows secure connection (padlock icon for HTTPS)
+</li>
+</ul>
+<p class="lead"><b>Navigation Buttons:</b></p>
+<ul>
+<li><b>Back:</b> Go to previous page
+<li><b>Forward:</b> Go to next page
+<li><b>Refresh/Reload:</b> Reload current page
+<li><b>Home:</b> Go to homepage
+<li><b>Stop:</b> Stop loading page
+</li>
+</ul>
+<p class="lead"><b>Bookmarks/Favorites:</b></p>
+<ul>
+<li>Save frequently visited websites
+<li>Organize in folders
+<li>Sync across devices
+<li>Shortcut: Ctrl + D (add bookmark)
+</li>
+</ul>
+<p class="lead"><b>Tabs:</b></p>
+<ul>
+<li>Open multiple websites in one window
+<li>Ctrl + T: New tab
+<li>Ctrl + W: Close tab
+<li>Ctrl + Tab: Switch between tabs
+</li>
+</ul>
+<p class="lead"><b>History:</b></p>
+<ul>
+<li>View recently visited websites
+<li>Search browsing history
+<li>Clear history for privacy
+<li>Ctrl + H: Open history
+</li>
+</ul>
+<p class="lead"><b>Downloads:</b></p>
+<ul>
+<li>View downloaded files
+<li>Resume/pause downloads
+<li>Open download location
+<li>Ctrl + J: Open downloads
+</li>
+</ul>
+<p class="lead"><b>Incognito/Private Mode:</b></p>
+<ul>
+<li>Browse without saving history
+<li>No cookies stored
+<li>Ctrl + Shift + N (Chrome/Edge)
+<li>Ctrl + Shift + P (Firefox)
+</li>
+</ul>
+<p class="lead"><b>Extensions/Add-ons:</b></p>
+<ul>
+<li>Additional features for browser
+<li>Ad blockers, password managers, translators
+<li>Download from browser's extension store
+</li>
+</ul>
+<p class="lead"><b>Settings:</b></p>
+<ul>
+<li>Default search engine
+<li>Homepage settings
+<li>Privacy and security
+<li>Clear browsing data
+<li>Manage passwords
+</li>
+</ul>
+<h3 id="sec3-4">3.4 &nbsp;Search Engines</h3>
+<h4>3.4.1 &nbsp;What is a Search Engine?</h4>
+<p>A search engine is a web-based tool that helps users find information on the internet by searching for keywords or phrases.</p>
+<p class="lead"><b>Popular Search Engines:</b></p>
+<ul>
+<li><b>Google:</b> Most popular, 90%+ market share
+<li><b>Bing:</b> Microsoft's search engine
+<li><b>Yahoo:</b> Older search engine, still in use
+<li><b>DuckDuckGo:</b> Privacy-focused, no tracking
+<li><b>Yandex:</b> Popular in Russia
+<li><b>Baidu:</b> Popular in China
+</li>
+</ul>
+<h4>3.4.2 &nbsp;How to Use Search Engines</h4>
+<p class="lead"><b>Basic Search:</b></p>
+<ul>
+<li>Type keywords in search box
+<li>Press Enter or click Search button
+<li>Browse search results
+</li>
+</ul>
+<p class="lead"><b>Search Tips:</b></p>
+<ul>
+<li>Use specific keywords
+<li>Use multiple keywords for better results
+<li>Check spelling
+<li>Use quotation marks for exact phrases: "climate change"
+<li>Use minus sign to exclude words: jaguar -car
+<li>Use site: to search specific website: site:wikipedia.org python
+<li>Use filetype: to find specific files: filetype:pdf resume template
+<li>Use OR for alternatives: laptop OR notebook
+</li>
+</ul>
+<p class="lead"><b>Search Results:</b></p>
+<ul>
+<li>Blue link: Website title (clickable)
+<li>Green URL: Website address
+<li>Description: Preview of content
+<li>Sponsored/Ad: Paid advertisements
+</li>
+</ul>
+<h4>3.4.3 &nbsp;Types of Searches</h4>
+<ul>
+<li><b>Web Search:</b> General web pages
+<li><b>Image Search:</b> Photos and images
+<li><b>Video Search:</b> Videos
+<li><b>News Search:</b> Latest news articles
+<li><b>Maps:</b> Location and directions
+<li><b>Shopping:</b> Products and prices
+</li>
+</ul>
+<h3 id="sec3-5">3.5 &nbsp;Email (Electronic Mail)</h3>
+<h4>3.5.1 &nbsp;Introduction to Email</h4>
+<p>Email (Electronic Mail) is a method of exchanging messages between people using electronic devices over the internet.</p>
+<p class="lead"><b>Advantages of Email:</b></p>
+<ul>
+<li>Instant delivery
+<li>Cost-effective (free)
+<li>24/7 accessibility
+<li>Can send to multiple recipients
+<li>Attach files and documents
+<li>Maintain record of communication
+<li>Professional communication
+</li>
+</ul>
+<p class="lead"><b>Popular Email Services:</b></p>
+<ul>
+<li><b>Gmail:</b> Google's email service
+<li><b>Outlook:</b> Microsoft's email (formerly Hotmail)
+<li><b>Yahoo Mail:</b> Yahoo's email service
+<li><b>ProtonMail:</b> Encrypted, privacy-focused
+<li><b>iCloud Mail:</b> Apple's email service
+</li>
+</ul>
+<h4>3.5.2 &nbsp;Email Address Structure</h4>
+<p>An email address has two parts separated by @ symbol:</p>
+<p><b>Format:</b> username@domain.com</p>
+<ul>
+<li><b>Username:</b> Unique identifier (e.g., john.doe, student123)
+<li><b>@ Symbol:</b> Separates username and domain
+<li><b>Domain:</b> Email service provider (gmail.com, outlook.com)
+</li>
+</ul>
+<p class="lead"><b>Examples:</b></p>
+<ul>
+<li>john.doe@gmail.com
+<li>student123@outlook.com
+<li>contact@prathibhainstitute.com
+</li>
+</ul>
+<h4>3.5.3 &nbsp;Creating Email Account</h4>
+<p class="lead"><b>Steps to Create Gmail Account:</b></p>
+<ol>
+<li>Go to www.gmail.com
+<li>Click "Create account"
+<li>Enter personal information:
+<ul>
+<li>First name and Last name
+<li>Choose username (email address)
+<li>Create strong password
+</li>
+</ul>
+<li>Verify phone number
+<li>Add recovery email (optional but recommended)
+<li>Enter date of birth and gender
+<li>Agree to terms and conditions
+<li>Complete verification
+</li>
+</ol>
+<p class="lead"><b>Password Guidelines:</b></p>
+<ul>
+<li>Minimum 8 characters
+<li>Mix of uppercase and lowercase letters
+<li>Include numbers
+<li>Include special characters (@, #, $, etc.)
+<li>Don't use personal information
+<li>Don't use common words
+</li>
+</ul>
+<h4>3.5.4 &nbsp;Email Interface (Gmail)</h4>
+<p class="lead"><b>Main Components:</b></p>
+<ol>
+<li><b>Compose Button:</b> Create new email
+<li><b>Inbox:</b> Received emails
+<li><b>Starred:</b> Important emails marked with star
+<li><b>Sent:</b> Emails you have sent
+<li><b>Drafts:</b> Emails saved but not sent
+<li><b>Spam:</b> Unwanted/junk emails
+<li><b>Trash:</b> Deleted emails
+<li><b>Labels/Folders:</b> Organize emails
+<li><b>Search Box:</b> Search emails
+<li><b>Settings:</b> Configure email preferences
+</li>
+</ol>
+<h4>3.5.5 &nbsp;Composing and Sending Email</h4>
+<p class="lead"><b>Steps to Send Email:</b></p>
+<ol>
+<li>Click "Compose" button
+<li>Email compose window opens
+<li>Fill in details:
+<ul>
+<li><b>To:</b> Recipient's email address
+<li><b>Cc (Carbon Copy):</b> Send copy to others (everyone sees)
+<li><b>Bcc (Blind Carbon Copy):</b> Send copy to others (hidden from other recipients)
+<li><b>Subject:</b> Brief description of email
+<li><b>Body:</b> Main message content
+</li>
+</ul>
+<li>Format text (bold, italic, underline, font, color)
+<li>Attach files if needed
+<li>Click "Send"
+</li>
+</ol>
+<p class="lead"><b>Email Writing Tips:</b></p>
+<ul>
+<li>Clear and descriptive subject line
+<li>Professional greeting (Dear Sir/Madam, Hi John)
+<li>Keep message concise and clear
+<li>Use proper grammar and spelling
+<li>Professional tone for formal emails
+<li>End with appropriate closing (Regards, Best wishes, Thank you)
+<li>Include signature if needed
+<li>Proofread before sending
+</li>
+</ul>
+<h4>3.5.6 &nbsp;Email Attachments</h4>
+<p class="lead"><b>Attaching Files:</b></p>
+<ul>
+<li>Click attachment icon (paperclip)
+<li>Browse and select file from computer
+<li>Multiple files can be attached
+<li>Wait for upload to complete
+<li>Maximum size limit: 25MB (Gmail)
+</li>
+</ul>
+<p class="lead"><b>Supported File Types:</b></p>
+<ul>
+<li>Documents: .doc, .docx, .pdf, .txt
+<li>Spreadsheets: .xls, .xlsx
+<li>Presentations: .ppt, .pptx
+<li>Images: .jpg, .png, .gif
+<li>Compressed files: .zip, .rar
+</li>
+</ul>
+<p class="lead"><b>Large File Sharing:</b></p>
+<ul>
+<li>Use Google Drive (up to 15GB free)
+<li>Share link instead of attachment
+<li>Use file sharing services (Dropbox, OneDrive, WeTransfer)
+</li>
+</ul>
+<h4>3.5.7 &nbsp;Managing Emails</h4>
+<p class="lead"><b>Reading Emails:</b></p>
+<ul>
+<li>Click on email in inbox to open
+<li>Read content
+<li>Download attachments if any
+<li>Reply, Forward, or Delete
+</li>
+</ul>
+<p class="lead"><b>Reply and Forward:</b></p>
+<ul>
+<li><b>Reply:</b> Send response to sender
+<li><b>Reply All:</b> Send response to all recipients
+<li><b>Forward:</b> Send email to someone else
+</li>
+</ul>
+<p class="lead"><b>Organizing Emails:</b></p>
+<ul>
+<li><b>Star:</b> Mark important emails
+<li><b>Labels:</b> Categorize emails (Work, Personal, Important)
+<li><b>Archive:</b> Remove from inbox but keep in account
+<li><b>Delete:</b> Move to trash
+<li><b>Mark as Read/Unread:</b> Change read status
+</li>
+</ul>
+<p class="lead"><b>Filters and Rules:</b></p>
+<ul>
+<li>Automatically organize incoming emails
+<li>Apply labels automatically
+<li>Forward emails automatically
+<li>Delete spam automatically
+</li>
+</ul>
+<p class="lead"><b>Search Emails:</b></p>
+<ul>
+<li>Use search box
+<li>Search by sender: from:john@example.com
+<li>Search by subject: subject:meeting
+<li>Search with attachment: has:attachment
+<li>Advanced search options
+</li>
+</ul>
+<h4>3.5.8 &nbsp;Email Settings</h4>
+<p class="lead"><b>Important Settings:</b></p>
+<ul>
+<li><b>Display Name:</b> How your name appears to recipients
+<li><b>Signature:</b> Auto-added text at end of emails
+<li><b>Vacation Responder:</b> Auto-reply when away
+<li><b>Forwarding:</b> Forward emails to another account
+<li><b>Theme:</b> Change appearance
+<li><b>Inbox Type:</b> Default, Important first, Unread first
+<li><b>Conversation View:</b> Group related emails
+</li>
+</ul>
+<h3 id="sec3-6">3.6 &nbsp;Internet Security and Safety</h3>
+<h4>3.6.1 &nbsp;Online Threats</h4>
+<ol>
+<li><b>Virus:</b> Malicious program that replicates and damages system
+<li><b>Malware:</b> Software designed to harm computer
+<li><b>Phishing:</b> Fake emails/websites to steal information
+<li><b>Spam:</b> Unwanted bulk emails
+<li><b>Ransomware:</b> Locks files and demands payment
+<li><b>Spyware:</b> Secretly monitors user activity
+<li><b>Identity Theft:</b> Stealing personal information
+<li><b>Hacking:</b> Unauthorized access to systems
+</li>
+</ol>
+<h4>3.6.2 &nbsp;Security Best Practices</h4>
+<p class="lead"><b>Password Security:</b></p>
+<ul>
+<li>Use strong, unique passwords
+<li>Don't share passwords
+<li>Change passwords regularly
+<li>Use password manager
+<li>Enable two-factor authentication (2FA)
+</li>
+</ul>
+<p class="lead"><b>Safe Browsing:</b></p>
+<ul>
+<li>Check website security (HTTPS, padlock icon)
+<li>Don't click suspicious links
+<li>Avoid downloading from untrusted sites
+<li>Use secure Wi-Fi networks
+<li>Clear browser cache and cookies regularly
+</li>
+</ul>
+<p class="lead"><b>Email Security:</b></p>
+<ul>
+<li>Don't open emails from unknown senders
+<li>Don't click links in suspicious emails
+<li>Verify sender before sharing information
+<li>Don't download unknown attachments
+<li>Report spam and phishing
+</li>
+</ul>
+<p class="lead"><b>Protection Tools:</b></p>
+<ul>
+<li>Install antivirus software (Windows Defender, Norton, McAfee)
+<li>Keep software updated
+<li>Use firewall
+<li>Regular system scans
+<li>Backup important data
+</li>
+</ul>
+<p class="lead"><b>Personal Information:</b></p>
+<ul>
+<li>Don't share personal details publicly
+<li>Be cautious on social media
+<li>Read privacy policies
+<li>Use privacy settings
+<li>Monitor bank and credit card statements
+</li>
+</ul>
+<h3 id="sec3-7">3.7 &nbsp;Internet Applications and Services</h3>
+<h4>3.7.1 &nbsp;E-Commerce</h4>
+<p>Online buying and selling of products and services.</p>
+<ul>
+<li>Amazon, Flipkart, eBay
+<li>Online payment: Credit/Debit cards, UPI, Net Banking
+<li>Benefits: Convenience, comparison shopping, home delivery
+</li>
+</ul>
+<h4>3.7.2 &nbsp;Social Media</h4>
+<p>Platforms for social networking and content sharing.</p>
+<ul>
+<li>Facebook, Instagram, Twitter, LinkedIn
+<li>Sharing photos, videos, thoughts
+<li>Connecting with friends and professionals
+</li>
+</ul>
+<h4>3.7.3 &nbsp;Online Banking</h4>
+<p>Managing bank accounts through internet.</p>
+<ul>
+<li>Check balance, transaction history
+<li>Transfer money
+<li>Pay bills
+<li>Available 24/7
+</li>
+</ul>
+<h4>3.7.4 &nbsp;Video Conferencing</h4>
+<p>Real-time video communication over internet.</p>
+<ul>
+<li>Zoom, Microsoft Teams, Google Meet
+<li>Online meetings, classes, webinars
+<li>Screen sharing, recording
+</li>
+</ul>
+<h4>3.7.5 &nbsp;Cloud Storage</h4>
+<p>Store files online and access from anywhere.</p>
+<ul>
+<li>Google Drive, Dropbox, OneDrive
+<li>Automatic backup
+<li>File sharing and collaboration
+</li>
+</ul>
+<h4>3.7.6 &nbsp;Streaming Services</h4>
+<p>Watch videos and listen to music online.</p>
+<ul>
+<li>YouTube, Netflix, Amazon Prime, Spotify
+<li>On-demand content
+<li>No downloading required
+</li>
+</ul>
+<h4>3.7.7 &nbsp;Online Education</h4>
+<p>Learning through internet platforms.</p>
+<ul>
+<li>Coursera, Udemy, Khan Academy
+<li>Online courses, tutorials, certifications
+<li>Distance learning, e-learning
+</li>
+</ul>
+<h3 id="sec3-8">3.8 &nbsp;Internet Etiquette (Netiquette)</h3>
+<p class="lead"><b>Guidelines for Online Behavior:</b></p>
+<ul>
+<li>Be respectful and courteous
+<li>Use appropriate language
+<li>Don't type in ALL CAPS (considered shouting)
+<li>Respect others' privacy
+<li>Don't spam or send chain letters
+<li>Give credit for others' work
+<li>Think before posting
+<li>Don't spread false information
+<li>Respect copyright laws
+<li>Be patient with beginners
+</li>
+</ul>
+</section>
+
+  <section class="module">
+<h2 id="mod4">Conclusion</h2>
+<p>These comprehensive notes cover the fundamental topics of the DCA course:</p>
+<ul>
+<li><b>Computer Fundamentals:</b> Understanding hardware, software, memory, number systems, and operating systems
+<li><b>MS Office:</b> Proficiency in Word (documents), Excel (spreadsheets, formulas, charts), and PowerPoint (presentations)
+<li><b>Internet &amp; Email:</b> Using browsers, search engines, email communication, and online safety
+</li>
+</ul>
+<p>These skills form the foundation of computer literacy and are essential for both academic and professional success. Regular practice with these applications will enhance your proficiency and productivity.</p>
+<p class="lead"><b>For more information, contact:</b></p>
+<p class="lead"><b>Prathibha Institute</b></p>
+<p>Computer Training Center</p>
+<p><i>End of Notes - Part 1</i></p>
+  </section>
+
+
+  <section class="module" id="mod5">
+    <h2><span class="badge">Module 5</span>Quick Revision Reference</h2>
+
+    <h3 id="sec5-1">5.1 &nbsp;MS Word Shortcut Keys</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width: 40mm;">Shortcut</th><th>Action</th><th style="width: 40mm;">Shortcut</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Ctrl + N</b></td><td>New document</td><td><b>Ctrl + C</b></td><td>Copy</td></tr>
+          <tr><td><b>Ctrl + O</b></td><td>Open document</td><td><b>Ctrl + V</b></td><td>Paste</td></tr>
+          <tr><td><b>Ctrl + S</b></td><td>Save document</td><td><b>Ctrl + X</b></td><td>Cut</td></tr>
+          <tr><td><b>Ctrl + P</b></td><td>Print document</td><td><b>Ctrl + A</b></td><td>Select all</td></tr>
+          <tr><td><b>Ctrl + Z</b></td><td>Undo</td><td><b>Ctrl + Y</b></td><td>Redo</td></tr>
+          <tr><td><b>Ctrl + F</b></td><td>Find</td><td><b>Ctrl + H</b></td><td>Replace</td></tr>
+          <tr><td><b>Ctrl + B / I / U</b></td><td>Bold / Italic / Underline</td><td><b>Ctrl + K</b></td><td>Insert hyperlink</td></tr>
+          <tr><td><b>Ctrl + L / E / R / J</b></td><td>Left / Center / Right / Justify</td><td><b>Ctrl + Enter</b></td><td>Insert page break</td></tr>
+          <tr><td><b>Shift + F3</b></td><td>Change case (upper/lower/title)</td><td><b>Ctrl + Shift + S</b></td><td>Save As</td></tr>
+          <tr><td><b>Ctrl + Home / End</b></td><td>Start / end of document</td><td><b>Ctrl + G</b></td><td>Go To page or section</td></tr>
+          <tr><td><b>Ctrl + Alt + 1 / 2 / 3</b></td><td>Apply Heading 1, 2 or 3</td><td><b>Alt + F7</b></td><td>Spelling and grammar check</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="sec5-2">5.2 &nbsp;MS Excel Shortcut Keys</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width: 40mm;">Shortcut</th><th>Action</th><th style="width: 40mm;">Shortcut</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Ctrl + N / O / S / P</b></td><td>New, open, save, print</td><td><b>F2</b></td><td>Edit the active cell</td></tr>
+          <tr><td><b>Ctrl + Z / Y</b></td><td>Undo / Redo</td><td><b>F4</b></td><td>Toggle reference type (A1 to $A$1)</td></tr>
+          <tr><td><b>Ctrl + X / C / V</b></td><td>Cut / Copy / Paste</td><td><b>Ctrl + 1</b></td><td>Format Cells dialog</td></tr>
+          <tr><td><b>Ctrl + F / H</b></td><td>Find / Replace</td><td><b>Alt + =</b></td><td>AutoSum</td></tr>
+          <tr><td><b>Ctrl + B / I / U</b></td><td>Bold / Italic / Underline</td><td><b>Ctrl + T</b></td><td>Format as Excel Table</td></tr>
+          <tr><td><b>Ctrl + D / R</b></td><td>Fill down / fill right</td><td><b>Ctrl + Shift + L</b></td><td>Turn AutoFilter on or off</td></tr>
+          <tr><td><b>Ctrl + Space</b></td><td>Select the entire column</td><td><b>Shift + Space</b></td><td>Select the entire row</td></tr>
+          <tr><td><b>Ctrl + ;</b></td><td>Insert current date</td><td><b>Ctrl + Shift + ;</b></td><td>Insert current time</td></tr>
+          <tr><td><b>Ctrl + Shift + $</b></td><td>Currency format</td><td><b>Ctrl + Shift + %</b></td><td>Percentage format</td></tr>
+          <tr><td><b>Ctrl + Page Down / Up</b></td><td>Next / previous worksheet</td><td><b>F11</b></td><td>Insert a chart</td></tr>
+          <tr><td><b>Alt + Enter</b></td><td>New line inside the same cell</td><td><b>Ctrl + Arrow keys</b></td><td>Jump to the edge of the data range</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="sec5-3">5.3 &nbsp;MS PowerPoint Shortcut Keys</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width: 40mm;">Shortcut</th><th>Action</th><th style="width: 40mm;">Shortcut</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Ctrl + N / O / S / P</b></td><td>New, open, save, print</td><td><b>Ctrl + M</b></td><td>New slide</td></tr>
+          <tr><td><b>Ctrl + D</b></td><td>Duplicate the selected slide</td><td><b>Ctrl + Z / Y</b></td><td>Undo / Redo</td></tr>
+          <tr><td><b>F5</b></td><td>Start slide show from the beginning</td><td><b>Shift + F5</b></td><td>Start from the current slide</td></tr>
+          <tr><td><b>Ctrl + B / I / U</b></td><td>Bold / Italic / Underline</td><td><b>Ctrl + K</b></td><td>Insert hyperlink</td></tr>
+          <tr><td><b>Ctrl + G</b></td><td>Group selected objects</td><td><b>Ctrl + Shift + G</b></td><td>Ungroup objects</td></tr>
+          <tr><td><b>Tab / Esc</b></td><td>Select next object / deselect</td><td><b>Ctrl + A</b></td><td>Select all objects on the slide</td></tr>
+          <tr><td><b>Home / End</b></td><td>First / last slide</td><td><b>Delete</b></td><td>Delete the selected object</td></tr>
+          <tr><td><b>Alt + Shift + Right / Left</b></td><td>Promote / demote bullet level</td><td><b>Alt, H, N</b></td><td>Key tips: Home &gt; New slide</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="sec5-4">5.4 &nbsp;Excel Formula Patterns</h3>
+    <p class="lead">Commonly asked formulas (assume headers in row 1 and data from row 2):</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width: 56mm;">Formula</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>=SUM(B2:B20)</b></td><td>Adds all the values in the range</td></tr>
+          <tr><td><b>=AVERAGE(B2:B20)</b></td><td>Calculates the average of the range</td></tr>
+          <tr><td><b>=MAX(B2:B20)</b> / <b>=MIN(B2:B20)</b></td><td>Returns the highest / lowest value</td></tr>
+          <tr><td><b>=COUNT(B2:B20)</b> / <b>=COUNTA(B2:B20)</b></td><td>Counts numbers / counts non-empty cells</td></tr>
+          <tr><td><b>=IF(H2&gt;=35,"Pass","Fail")</b></td><td>Displays a result based on a condition</td></tr>
+          <tr><td><b>=SUMIF(D2:D20,"Sales",H2:H20)</b></td><td>Sums values where the condition is true</td></tr>
+          <tr><td><b>=COUNTIF(D2:D20,"Sales")</b></td><td>Counts the cells that match a condition</td></tr>
+          <tr><td><b>=SUMIFS(H2:H20,D2:D20,"Sales",E2:E20,"Pune")</b></td><td>Sums values using two or more conditions</td></tr>
+          <tr><td><b>=AVERAGEIF(D2:D20,"Sales",H2:H20)</b></td><td>Conditional average</td></tr>
+          <tr><td><b>=VLOOKUP(A3,PriceList,3,FALSE)</b></td><td>Looks up a value in a table and returns a matching value</td></tr>
+          <tr><td><b>=HLOOKUP(A3,PriceList,2,FALSE)</b></td><td>Horizontal lookup</td></tr>
+          <tr><td><b>=INDEX(C2:C20,MATCH(A3,A2:A20,0))</b></td><td>INDEX with MATCH - the most flexible lookup</td></tr>
+          <tr><td><b>=IFERROR(VLOOKUP(A3,PriceList,3,FALSE),"Not found")</b></td><td>Removes the #N/A error when a record is missing</td></tr>
+          <tr><td><b>=LEFT(B2,3)</b>, <b>=RIGHT(B2,4)</b>, <b>=MID(B2,2,4)</b></td><td>Extracts characters from left, right or middle of text</td></tr>
+          <tr><td><b>=UPPER(B2)</b>, <b>=LOWER(B2)</b>, <b>=PROPER(B2)</b></td><td>Changes the case of text</td></tr>
+          <tr><td><b>=TRIM(C2)</b> and <b>=LEN(B2)</b></td><td>Removes extra spaces and counts characters</td></tr>
+          <tr><td><b>=CONCATENATE(B2," ",C2)</b> or <b>=B2&amp;" "&amp;C2</b></td><td>Joins two or more text values</td></tr>
+          <tr><td><b>=TODAY()</b>, <b>=NOW()</b>, <b>=DATE(2026,4,1)</b></td><td>Current date, current date with time, and a specific date</td></tr>
+          <tr><td><b>=YEAR(F2)</b>, <b>=MONTH(F2)</b>, <b>=DAY(F2)</b></td><td>Extracts the year, month and day from a date</td></tr>
+          <tr><td><b>=ROUND(G2,2)</b></td><td>Rounds a number to the given decimal places</td></tr>
+          <tr><td><b>=RANK.EQ(H2,H2:H20,0)</b></td><td>Gives the rank of a value in a list</td></tr>
+          <tr><td><b>=PMT(0.1/12,60,500000)</b></td><td>Calculates the loan (EMI) payment</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="sec5-5">5.5 &nbsp;Important File Extensions</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width: 28mm;">Extension</th><th style="width: 40mm;">Name</th><th>Used For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>.docx</b></td><td>Word Document</td><td>MS Word text document</td></tr>
+          <tr><td><b>.xlsx</b></td><td>Excel Workbook</td><td>MS Excel spreadsheet</td></tr>
+          <tr><td><b>.pptx</b></td><td>PowerPoint Presentation</td><td>MS PowerPoint slides</td></tr>
+          <tr><td><b>.pdf</b></td><td>Portable Document</td><td>Fixed layout document, cannot be edited easily</td></tr>
+          <tr><td><b>.txt</b></td><td>Text File</td><td>Plain text without formatting</td></tr>
+          <tr><td><b>.csv</b></td><td>Comma Separated Values</td><td>Exchanging data between programs</td></tr>
+          <tr><td><b>.jpg / .png</b></td><td>Image Files</td><td>Photographs and pictures</td></tr>
+          <tr><td><b>.zip</b></td><td>Compressed File</td><td>Reducing the size of a folder</td></tr>
+          <tr><td><b>.mp3 / .mp4</b></td><td>Audio / Video</td><td>Sound and movie files</td></tr>
+          <tr><td><b>.html</b></td><td>Web Page</td><td>Website document</td></tr>
+          <tr><td><b>.exe</b></td><td>Executable</td><td>Program file</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="sec5-6">5.6 &nbsp;One-Line Viva Answers</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width: 52mm;">Question</th><th>Short Answer</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>What is a computer?</td><td>An electronic device that accepts data, processes it and produces information.</td></tr>
+          <tr><td>What is system software?</td><td>Software that manages the computer hardware, for example an operating system.</td></tr>
+          <tr><td>What is RAM and ROM?</td><td>RAM is temporary (volatile) working memory; ROM is permanent (non-volatile) memory.</td></tr>
+          <tr><td>What is the use of the formula bar in Excel?</td><td>It displays and allows editing of the contents of the active cell.</td></tr>
+          <tr><td>What is a cell range?</td><td>A group of selected cells such as A1:D10.</td></tr>
+          <tr><td>What does a spreadsheet cell reference look like?</td><td>Column letter with row number, for example B7.</td></tr>
+          <tr><td>What is mail merge?</td><td>A Word feature that creates personalised letters or labels for many recipients from one main document.</td></tr>
+          <tr><td>What is a pivot table?</td><td>An Excel summary table that quickly groups and totals large data sets.</td></tr>
+          <tr><td>Difference between transition and animation?</td><td>A transition moves from one slide to the next; an animation moves an object inside a slide.</td></tr>
+          <tr><td>What is a slide master?</td><td>The master slide that controls the background, fonts and layout of all slides.</td></tr>
+          <tr><td>What is a browser?</td><td>Software used to open and view web pages, for example Chrome or Edge.</td></tr>
+          <tr><td>Full form of URL, WWW, ISP, MICR, OCR?</td><td>Uniform Resource Locator, World Wide Web, Internet Service Provider, Magnetic Ink Character Recognition, Optical Character Recognition.</td></tr>
+          <tr><td>What is phishing?</td><td>A fake email or website used to steal personal information.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+    <div class="footer">End of Notes &bull; Diploma in Computer Applications &bull; Prathibha Institute</div>
+  </section>
+
+  <p class="print-tip">Print tip: A4 portrait, margins default, scale 100%, enable browser header/footer for page numbers.</p>
+</body>
+</html>
