@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPI Fee Payment QR - Prathibha Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f2c59;
+      --primary-dark: #071933;
+      --primary-light: #1b447e;
+      --accent: #c59b27;
+      --accent-soft: #fbf8ee;
+      --accent-border: #dfc880;
+      --ink: #1e293b;
+      --ink-muted: #526071;
+      --line: #cbd5e1;
+      --line-light: #e2e8f0;
+      --section-bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #e9eef5;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    /* Screen-only toolbar */
+    .screen-toolbar {
+      position: fixed;
+      top: 16px;
+      right: 24px;
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+      background: rgba(15, 44, 89, 0.95);
+      padding: 9px 18px;
+      border-radius: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-action {
+      background: var(--accent);
+      color: #071933;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-action:hover {
+      background: #dfb239;
+      transform: translateY(-1px);
+    }
+
+    /* A4 sheet */
+    .a4-sheet {
+      width: 210mm;
+      height: 297mm;
+      margin: 12px auto;
+      background: #ffffff;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sheet-frame {
+      border: 1.8px solid var(--primary);
+      border-radius: 8px;
+      margin: 8mm;
+      padding: 8mm 9mm 7mm 9mm;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      position: relative;
+      background: #ffffff;
+    }
+
+    .sheet-frame::before {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border: 1px solid var(--accent-border);
+      border-radius: 5px;
+      pointer-events: none;
+    }
+
+    /* Watermark */
+    .watermark {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 380px;
+      height: 380px;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header */
+    .header-wrapper {
+      position: relative;
+      z-index: 1;
+      border-bottom: 2.2px solid var(--primary);
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo-container {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .institute-info {
+      flex: 1;
+      text-align: center;
+    }
+
+    .institute-title {
+      font-family: 'Cinzel', serif, Georgia;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 2px;
+      margin: 0;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .institute-tagline {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 2.5px;
+      margin: 4px 0 6px 0;
+      text-transform: uppercase;
+    }
+
+    .contact-strip {
+      font-size: 10px;
+      color: #1e293b;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 5px;
+      margin-top: 4px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Doc title bar */
+    .doc-title-bar {
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 60%, var(--primary) 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .doc-title-text {
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Main content grid */
+    .content-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 12mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* QR panel */
+    .qr-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1.4px solid var(--primary);
+      border-radius: 8px;
+      padding: 10px 14px 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+    }
+
+    .qr-panel-cap {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--accent-border);
+      margin-bottom: 12px;
+    }
+
+    .qr-panel-cap h2 {
+      margin: 0;
+      font-family: 'Cinzel', serif, Georgia;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+
+    .qr-panel-cap p {
+      margin: 5px 0 0;
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    .qr-shell {
+      width: 100%;
+      max-width: 128mm;
+      text-align: center;
+      background: #fff;
+      border: 1px solid var(--line-light);
+      border-radius: 8px;
+      padding: 6mm;
+    }
+
+    .qr-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .payee-info {
+      width: 100%;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .payee-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .upi-pill {
+      display: inline-block;
+      margin-top: 9px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-border);
+      background: var(--accent-soft);
+      font-size: 14.5px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--primary-dark);
+      word-break: break-all;
+    }
+
+    .payee-note {
+      margin: 10px 0 0;
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    /* Right column */
+    .info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      min-height: 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .section-head-badge {
+      background: var(--primary);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2.5px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-head-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .section-head-line {
+      flex: 1;
+      height: 1.2px;
+      background: linear-gradient(90deg, var(--line) 0%, transparent 100%);
+    }
+
+    .highlight-card {
+      border: 1.4px solid var(--accent-border);
+      border-radius: 6px;
+      background: var(--accent-soft);
+      padding: 10px 12px;
+    }
+
+    .highlight-card strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .highlight-card p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: start;
+      border: 1.2px solid var(--line-light);
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 9px 10px;
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin: 1px 0 3px;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .step p {
+      margin: 0;
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: var(--ink-muted);
+    }
+
+    .accept-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .accept-row span {
+      padding: 7px 4px;
+      border-radius: 5px;
+      text-align: center;
+      border: 1.1px solid var(--line-light);
+      background: #fff;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    .footer-bar {
+      margin-top: 10px;
+      border-top: 1.6px solid var(--primary);
+      padding-top: 6px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .footer-principal {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .footer-sub {
+      margin-top: 3px;
+      font-size: 9px;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    /* Print */
+    @media print {
+      body {
+        background: transparent !important;
+      }
+
+      .screen-toolbar {
+        display: none !important;
+      }
+
+      .a4-sheet {
+        margin: 0 !important;
+        box-shadow: none !important;
+        width: 210mm !important;
+        height: 297mm !important;
+      }
+
+      .sheet-frame {
+        border-radius: 8px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen-toolbar no-print">
+    <button class="btn-action" onclick="window.print()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="a4-sheet">
+    <div class="sheet-frame">
+
+      <img src="prathibha_logo.png" alt="Watermark" class="watermark" />
+
+      <!-- Header: Institute details -->
+      <div class="header-wrapper">
+        <div class="header-top">
+          <div class="logo-container">
+          </div>
+          <div class="institute-info">
+            <h1 class="institute-title">DTPL ACADEMY</h1>
+            <div class="institute-tagline">Learn. Thrive. Succeed.</div>
+            <div class="contact-strip">
+              <span class="contact-item">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <strong>Mobile:</strong> 9010823355  ,9010823344 
+              </span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Title bar -->
+      <div class="doc-title-bar">
+        <span class="doc-title-text">Official Digital Fee Payment - Scan &amp; Pay via UPI</span>
+      </div>
+
+      <!-- Main content -->
+      <div class="content-grid">
+
+        <!-- QR panel -->
+        <section class="qr-panel">
+          <div class="qr-panel-cap">
+            <h2>Scan &amp; Pay</h2>
+            <p>Point your UPI camera at this QR code to pay the fees</p>
+          </div>
+
+          <div class="qr-shell">
+            <img class="qr-image" src="upi_qr_9014820867_ybl.svg" alt="UPI QR code for fee payment" />
+          </div>
+
+          <div class="payee-info">
+            <div class="payee-name">Manne Tejaswini</div>
+            <div class="upi-pill">9014820867@ybl</div>
+            <p class="payee-note">
+              Please verify the payee name as <strong>manne tejaswini</strong>
+              before confirming payment, and keep the transaction receipt for reference.
+            </p>
+          </div>
+        </section>
+
+        <!-- Instructions -->
+        <aside class="info-col">
+          <div class="section-head">
+            <span class="section-head-badge">How to Pay</span>
+            <span class="section-head-title">Online Fee Payment</span>
+            <div class="section-head-line"></div>
+          </div>
+
+          <div class="highlight-card">
+            <strong>Digital fee collection - parent friendly</strong>
+            <p>
+              Pay course fees securely from home, anytime. No cash handling, instant
+              confirmation, and the amount is credited directly to the institute UPI account.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <h3>Open any UPI app</h3>
+                <p>PhonePe, Google Pay, Paytm, BHIM or any bank app that supports UPI.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div>
+                <h3>Scan the QR code</h3>
+                <p>Scan the QR above steadily and confirm the payee name and UPI ID.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div>
+                <h3>Enter amount &amp; pay</h3>
+                <p>Enter the fee amount, authorize the transaction and save the receipt.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-head">
+            <span class="section-head-badge">Accepted</span>
+            <span class="section-head-title">UPI Apps</span>
+            <div class="section-head-line"></div>
+          </div>
+
+          <div class="accept-row">
+            <span>PhonePe</span>
+            <span>GPay</span>
+            <span>Paytm</span>
+            <span>BHIM</span>
+            <span>CRED</span>
+            <span>Amazon Pay</span>
+            <span>WhatsApp Pay</span>
+            <span>MobiKwik</span>
+          </div>
+          <p style="margin:2px 0 0; font-size:9px; color:var(--ink-muted); font-weight:600;">
+            Works with any UPI-enabled app - banking apps such as YONO, iMobile &amp; PayZapp too.
+          </p>
+        </aside>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-bar">
+        <div class="footer-principal">DTPL ACADEMY &bull; Nizamabad</div>
+        
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
