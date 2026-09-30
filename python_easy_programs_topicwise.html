@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Easy Programs - Topic Wise (50 Programs)</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #14222f;
+      --muted: #4b5f72;
+      --line: #9db1c3;
+      --soft: #d9e3ec;
+      --accent: #14558a;
+      --bg-top: #e9eff6;
+      --bg-bottom: #dce7f2;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Georgia, serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 12.5pt;
+      font-weight: 700;
+      color: #0f3f66;
+      text-transform: uppercase;
+      line-height: 1.15;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.8pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.34px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 4mm 0 1.8mm;
+      font-size: 10.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.42px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2.5mm;
+      background: #f0f6fc;
+    }
+
+    .q-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.2mm;
+    }
+
+    .q-card {
+      border: 1px solid #dbe5ee;
+      border-radius: 1.2mm;
+      padding: 2mm 2.2mm;
+      background: #fff;
+      break-inside: avoid;
+    }
+
+    .q-title {
+      margin: 0 0 0.7mm;
+      font-size: 9.8pt;
+      color: #103f67;
+      font-weight: 700;
+    }
+
+    .q-desc {
+      margin: 0;
+      font-size: 9.15pt;
+      line-height: 1.33;
+      color: #223c52;
+    }
+
+    pre {
+      margin: 1mm 0 0;
+      padding: 2mm 2.4mm;
+      background: #f4f7fa;
+      border: 1px solid #dfe7ef;
+      border-radius: 1mm;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 8.6pt;
+      line-height: 1.35;
+      color: #1a2e40;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .output {
+      margin: 0.8mm 0 0;
+      font-size: 8.8pt;
+      color: #3a6d8c;
+      font-style: italic;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <p class="print-tip">Press Ctrl + P to print</p>
+
+  <section class="paper" aria-label="Python Easy Programs Topic Wise">
+
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Python Easy Programs - Topic Wise</div>
+        <div class="subtitle">50 Beginner Programs with Output</div>
+      </div>
+    </header>
+
+    <!-- ========== 1. VARIABLES ========== -->
+    <h3>1. Variables (Programs 1-5)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">1) Print Variables</h4>
+        <p class="q-desc">Assign values to variables and print them.</p>
+<pre>name = "Akhilesh"
+age = 22
+city = "Hyderabad"
+print("Name:", name)
+print("Age:", age)
+print("City:", city)</pre>
+        <p class="output">Output: Name: Akhilesh / Age: 22 / City: Hyderabad</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">2) Swap Two Variables</h4>
+        <p class="q-desc">Swap values of two variables without a temp variable.</p>
+<pre>a = 10
+b = 25
+print("Before swap: a =", a, "b =", b)
+a, b = b, a
+print("After swap: a =", a, "b =", b)</pre>
+        <p class="output">Output: Before swap: a = 10 b = 25 / After swap: a = 25 b = 10</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">3) Type of Variables</h4>
+        <p class="q-desc">Check the data type of different variables.</p>
+<pre>x = 10
+y = 3.14
+z = "Hello"
+print(type(x))
+print(type(y))
+print(type(z))</pre>
+        <p class="output">Output: &lt;class 'int'&gt; / &lt;class 'float'&gt; / &lt;class 'str'&gt;</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">4) Simple Calculator - Add Two Numbers</h4>
+        <p class="q-desc">Take two numbers and print their sum.</p>
+<pre>a = 15
+b = 27
+sum = a + b
+print("Sum =", sum)</pre>
+        <p class="output">Output: Sum = 42</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">5) Celsius to Fahrenheit</h4>
+        <p class="q-desc">Convert temperature from Celsius to Fahrenheit.</p>
+<pre>celsius = 37
+fahrenheit = (celsius * 9/5) + 32
+print(celsius, "C =", fahrenheit, "F")</pre>
+        <p class="output">Output: 37 C = 98.6 F</p>
+      </article>
+    </section>
+
+    <!-- ========== 2. IF-ELSE ========== -->
+    <h3>2. If-Else (Programs 6-10)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">6) Even or Odd</h4>
+        <p class="q-desc">Check if a number is even or odd.</p>
+<pre>num = 7
+if num % 2 == 0:
+    print(num, "is Even")
+else:
+    print(num, "is Odd")</pre>
+        <p class="output">Output: 7 is Odd</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">7) Positive, Negative or Zero</h4>
+        <p class="q-desc">Check if a number is positive, negative or zero.</p>
+<pre>num = -4
+if num > 0:
+    print("Positive")
+elif num < 0:
+    print("Negative")
+else:
+    print("Zero")</pre>
+        <p class="output">Output: Negative</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">8) Largest of Three Numbers</h4>
+        <p class="q-desc">Find the largest among three numbers.</p>
+<pre>a, b, c = 10, 25, 18
+if a >= b and a >= c:
+    print("Largest:", a)
+elif b >= a and b >= c:
+    print("Largest:", b)
+else:
+    print("Largest:", c)</pre>
+        <p class="output">Output: Largest: 25</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">9) Leap Year</h4>
+        <p class="q-desc">Check if a year is a leap year.</p>
+<pre>year = 2024
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print(year, "is a Leap Year")
+else:
+    print(year, "is not a Leap Year")</pre>
+        <p class="output">Output: 2024 is a Leap Year</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">10) Grade from Marks</h4>
+        <p class="q-desc">Print grade based on marks scored.</p>
+<pre>marks = 85
+if marks >= 90:
+    print("Grade: A+")
+elif marks >= 80:
+    print("Grade: A")
+elif marks >= 70:
+    print("Grade: B")
+elif marks >= 60:
+    print("Grade: C")
+else:
+    print("Grade: F")</pre>
+        <p class="output">Output: Grade: A</p>
+      </article>
+    </section>
+
+    <!-- ========== 3. MATCH (PYTHON 3.10+) ========== -->
+    <h3>3. Match Case (Programs 11-15)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">11) Day of Week</h4>
+        <p class="q-desc">Print day name using match case.</p>
+<pre>day = 3
+match day:
+    case 1: print("Monday")
+    case 2: print("Tuesday")
+    case 3: print("Wednesday")
+    case 4: print("Thursday")
+    case 5: print("Friday")
+    case 6: print("Saturday")
+    case 7: print("Sunday")
+    case _: print("Invalid")</pre>
+        <p class="output">Output: Wednesday</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">12) Traffic Light</h4>
+        <p class="q-desc">Print action based on traffic light color.</p>
+<pre>light = "Green"
+match light:
+    case "Red":    print("Stop")
+    case "Yellow": print("Slow Down")
+    case "Green":  print("Go")
+    case _:        print("Invalid Light")</pre>
+        <p class="output">Output: Go</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">13) Simple Calculator using Match</h4>
+        <p class="q-desc">Perform operation using match case.</p>
+<pre>op = "+"
+a, b = 10, 5
+match op:
+    case "+": result = a + b
+    case "-": result = a - b
+    case "*": result = a * b
+    case "/": result = a / b
+    case _:   result = "Invalid"
+print("Result:", result)</pre>
+        <p class="output">Output: Result: 15</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">14) Season from Month Number</h4>
+        <p class="q-desc">Print season based on month number.</p>
+<pre>month = 7
+match month:
+    case 12 | 1 | 2:  print("Winter")
+    case 3 | 4 | 5:   print("Spring")
+    case 6 | 7 | 8:   print("Summer")
+    case 9 | 10 | 11: print("Autumn")
+    case _:            print("Invalid")</pre>
+        <p class="output">Output: Summer</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">15) Vowel or Consonant</h4>
+        <p class="q-desc">Check if a character is a vowel or consonant.</p>
+<pre>ch = "e"
+match ch.lower():
+    case "a" | "e" | "i" | "o" | "u":
+        print(ch, "is a Vowel")
+    case _:
+        print(ch, "is a Consonant")</pre>
+        <p class="output">Output: e is a Vowel</p>
+      </article>
+    </section>
+
+    <!-- ========== 4. WHILE LOOP ========== -->
+    <h3>4. While Loop (Programs 16-20)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">16) Print 1 to 10</h4>
+        <p class="q-desc">Print numbers from 1 to 10 using while loop.</p>
+<pre>i = 1
+while i <= 10:
+    print(i, end=" ")
+    i += 1</pre>
+        <p class="output">Output: 1 2 3 4 5 6 7 8 9 10</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">17) Sum of First N Numbers</h4>
+        <p class="q-desc">Find sum of first N natural numbers.</p>
+<pre>n = 10
+total = 0
+i = 1
+while i <= n:
+    total += i
+    i += 1
+print("Sum =", total)</pre>
+        <p class="output">Output: Sum = 55</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">18) Factorial of a Number</h4>
+        <p class="q-desc">Calculate factorial using while loop.</p>
+<pre>n = 5
+fact = 1
+i = 1
+while i <= n:
+    fact *= i
+    i += 1
+print("Factorial =", fact)</pre>
+        <p class="output">Output: Factorial = 120</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">19) Reverse a Number</h4>
+        <p class="q-desc">Reverse digits of a number using while loop.</p>
+<pre>num = 1234
+rev = 0
+while num > 0:
+    rev = rev * 10 + num % 10
+    num //= 10
+print("Reversed =", rev)</pre>
+        <p class="output">Output: Reversed = 4321</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">20) Multiplication Table</h4>
+        <p class="q-desc">Print multiplication table of a number.</p>
+<pre>num = 7
+i = 1
+while i <= 10:
+    print(num, "x", i, "=", num * i)
+    i += 1</pre>
+        <p class="output">Output: 7 x 1 = 7 ... 7 x 10 = 70</p>
+      </article>
+    </section>
+
+    <!-- ========== 5. FOR LOOP ========== -->
+    <h3>5. For Loop (Programs 21-25)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">21) Print Even Numbers 1-20</h4>
+        <p class="q-desc">Print all even numbers from 1 to 20.</p>
+<pre>for i in range(1, 21):
+    if i % 2 == 0:
+        print(i, end=" ")</pre>
+        <p class="output">Output: 2 4 6 8 10 12 14 16 18 20</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">22) Sum of List Elements</h4>
+        <p class="q-desc">Find sum of all elements in a list.</p>
+<pre>numbers = [10, 20, 30, 40, 50]
+total = 0
+for num in numbers:
+    total += num
+print("Sum =", total)</pre>
+        <p class="output">Output: Sum = 150</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">23) Count Vowels in a String</h4>
+        <p class="q-desc">Count the number of vowels in a string.</p>
+<pre>text = "Hello World"
+count = 0
+for ch in text.lower():
+    if ch in "aeiou":
+        count += 1
+print("Vowels =", count)</pre>
+        <p class="output">Output: Vowels = 3</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">24) Print Table using For Loop</h4>
+        <p class="q-desc">Print multiplication table using for loop.</p>
+<pre>num = 5
+for i in range(1, 11):
+    print(num, "x", i, "=", num * i)</pre>
+        <p class="output">Output: 5 x 1 = 5 ... 5 x 10 = 50</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">25) Find Maximum in List</h4>
+        <p class="q-desc">Find the largest element in a list.</p>
+<pre>nums = [34, 12, 56, 78, 23, 90]
+max_val = nums[0]
+for n in nums:
+    if n > max_val:
+        max_val = n
+print("Maximum =", max_val)</pre>
+        <p class="output">Output: Maximum = 90</p>
+      </article>
+    </section>
+
+    <!-- ========== 6. FUNCTIONS ========== -->
+    <h3>6. Functions (Programs 26-30)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">26) Add Two Numbers Function</h4>
+        <p class="q-desc">Write a function to add two numbers.</p>
+<pre>def add(a, b):
+    return a + b
+
+result = add(10, 25)
+print("Sum =", result)</pre>
+        <p class="output">Output: Sum = 35</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">27) Check Even or Odd Function</h4>
+        <p class="q-desc">Write a function that checks even or odd.</p>
+<pre>def check_even(num):
+    if num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+print(check_even(12))
+print(check_even(7))</pre>
+        <p class="output">Output: Even / Odd</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">28) Factorial Function</h4>
+        <p class="q-desc">Write a function to find factorial.</p>
+<pre>def factorial(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact *= i
+    return fact
+
+print("5! =", factorial(5))
+print("3! =", factorial(3))</pre>
+        <p class="output">Output: 5! = 120 / 3! = 6</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">29) Function with Default Parameter</h4>
+        <p class="q-desc">Use default argument in a function.</p>
+<pre>def greet(name, msg="Good Morning"):
+    print("Hello", name, ",", msg)
+
+greet("Akhilesh")
+greet("Priya", "Good Evening")</pre>
+        <p class="output">Output: Hello Akhilesh , Good Morning / Hello Priya , Good Evening</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">30) Function with Multiple Return Values</h4>
+        <p class="q-desc">Return multiple values from a function.</p>
+<pre>def calc(a, b):
+    return a + b, a - b, a * b
+
+s, d, m = calc(10, 4)
+print("Sum =", s)
+print("Diff =", d)
+print("Mul =", m)</pre>
+        <p class="output">Output: Sum = 14 / Diff = 6 / Mul = 40</p>
+      </article>
+    </section>
+
+    <!-- ========== 7. FILE HANDLING ========== -->
+    <h3>7. File Handling (Programs 31-35)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">31) Write to a File</h4>
+        <p class="q-desc">Create a file and write text into it.</p>
+<pre>f = open("demo.txt", "w")
+f.write("Hello Python\n")
+f.write("File Handling is Easy\n")
+f.close()
+print("File written successfully")</pre>
+        <p class="output">Output: File written successfully</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">32) Read a File</h4>
+        <p class="q-desc">Read and print content of a file.</p>
+<pre>f = open("demo.txt", "r")
+content = f.read()
+print(content)
+f.close()</pre>
+        <p class="output">Output: Hello Python / File Handling is Easy</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">33) Read File Line by Line</h4>
+        <p class="q-desc">Read file content line by line using for loop.</p>
+<pre>f = open("demo.txt", "r")
+for line in f:
+    print(line.strip())
+f.close()</pre>
+        <p class="output">Output: Hello Python / File Handling is Easy</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">34) Append to a File</h4>
+        <p class="q-desc">Add new content to an existing file.</p>
+<pre>f = open("demo.txt", "a")
+f.write("This is appended line\n")
+f.close()
+print("Content appended")</pre>
+        <p class="output">Output: Content appended</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">35) Count Lines and Words in File</h4>
+        <p class="q-desc">Count number of lines and words in a file.</p>
+<pre>f = open("demo.txt", "r")
+lines = 0
+words = 0
+for line in f:
+    lines += 1
+    words += len(line.split())
+f.close()
+print("Lines:", lines)
+print("Words:", words)</pre>
+        <p class="output">Output: Lines: 3 / Words: 9</p>
+      </article>
+    </section>
+
+    <!-- ========== 8. LISTS ========== -->
+    <h3>8. Lists (Programs 36-40)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">36) List Operations - Create, Access, Append</h4>
+        <p class="q-desc">Basic list operations.</p>
+<pre>fruits = ["apple", "banana", "cherry"]
+print("List:", fruits)
+print("First:", fruits[0])
+fruits.append("mango")
+print("After append:", fruits)</pre>
+        <p class="output">Output: ['apple','banana','cherry'] / First: apple / After append: ['apple','banana','cherry','mango']</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">37) Find Smallest and Largest in List</h4>
+        <p class="q-desc">Find min and max using loops.</p>
+<pre>nums = [45, 12, 78, 34, 89]
+smallest = nums[0]
+largest = nums[0]
+for n in nums:
+    if n < smallest: smallest = n
+    if n > largest: largest = n
+print("Smallest:", smallest)
+print("Largest:", largest)</pre>
+        <p class="output">Output: Smallest: 12 / Largest: 89</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">38) Reverse a List</h4>
+        <p class="q-desc">Reverse a list without using reverse() method.</p>
+<pre>original = [1, 2, 3, 4, 5]
+reversed_list = []
+for i in original:
+    reversed_list.insert(0, i)
+print("Reversed:", reversed_list)</pre>
+        <p class="output">Output: Reversed: [5, 4, 3, 2, 1]</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">39) Remove Duplicates from List</h4>
+        <p class="q-desc">Remove duplicate elements from a list.</p>
+<pre>nums = [1, 2, 2, 3, 4, 4, 5]
+unique = []
+for n in nums:
+    if n not in unique:
+        unique.append(n)
+print("Unique:", unique)</pre>
+        <p class="output">Output: Unique: [1, 2, 3, 4, 5]</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">40) List Comprehension - Squares</h4>
+        <p class="q-desc">Generate list of squares using list comprehension.</p>
+<pre>squares = [x**2 for x in range(1, 11)]
+print("Squares:", squares)</pre>
+        <p class="output">Output: Squares: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</p>
+      </article>
+    </section>
+
+    <!-- ========== 9. DICTIONARIES ========== -->
+    <h3>9. Dictionaries (Programs 41-45)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">41) Create and Access Dictionary</h4>
+        <p class="q-desc">Basic dictionary creation and access.</p>
+<pre>student = {"name": "Akhilesh", "age": 22, "city": "Hyderabad"}
+print("Name:", student["name"])
+print("Age:", student["age"])
+print("Full dict:", student)</pre>
+        <p class="output">Output: Name: Akhilesh / Age: 22 / Full dict: {...}</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">42) Add and Update Dictionary</h4>
+        <p class="q-desc">Add new keys and update existing values.</p>
+<pre>person = {"name": "Ravi"}
+person["age"] = 25
+person["city"] = "Delhi"
+person["age"] = 26
+print(person)</pre>
+        <p class="output">Output: {'name': 'Ravi', 'age': 26, 'city': 'Delhi'}</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">43) Count Character Frequency</h4>
+        <p class="q-desc">Count frequency of each character using dictionary.</p>
+<pre>text = "hello"
+freq = {}
+for ch in text:
+    if ch in freq:
+        freq[ch] += 1
+    else:
+        freq[ch] = 1
+print("Frequency:", freq)</pre>
+        <p class="output">Output: Frequency: {'h': 1, 'e': 1, 'l': 2, 'o': 1}</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">44) Iterate Dictionary</h4>
+        <p class="q-desc">Loop through dictionary keys and values.</p>
+<pre>marks = {"Math": 90, "Science": 85, "English": 78}
+for subject, score in marks.items():
+    print(subject, "->", score)</pre>
+        <p class="output">Output: Math -> 90 / Science -> 85 / English -> 78</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">45) Dictionary Comprehension</h4>
+        <p class="q-desc">Create dictionary of numbers and their squares.</p>
+<pre>squares = {x: x**2 for x in range(1, 6)}
+print("Squares dict:", squares)</pre>
+        <p class="output">Output: Squares dict: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}</p>
+      </article>
+    </section>
+
+    <!-- ========== 10. MODULES ========== -->
+    <h3>10. Modules (Programs 46-50)</h3>
+    <section class="q-grid">
+      <article class="q-card">
+        <h4 class="q-title">46) Math Module - Factorial and Square Root</h4>
+        <p class="q-desc">Use math module functions.</p>
+<pre>import math
+
+print("Factorial of 5:", math.factorial(5))
+print("Square root of 144:", math.sqrt(144))
+print("Pi value:", math.pi)</pre>
+        <p class="output">Output: Factorial of 5: 120 / Square root of 144: 12.0 / Pi value: 3.14159...</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">47) Random Module - Random Number</h4>
+        <p class="q-desc">Generate random numbers using random module.</p>
+<pre>import random
+
+print("Random int (1-100):", random.randint(1, 100))
+print("Random choice:", random.choice(["apple", "banana", "cherry"]))
+print("Random float:", random.random())</pre>
+        <p class="output">Output: Random int (1-100): 42 / Random choice: banana / Random float: 0.73...</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">48) DateTime Module - Current Date</h4>
+        <p class="q-desc">Get current date and time using datetime module.</p>
+<pre>from datetime import datetime
+
+now = datetime.now()
+print("Current Date:", now.strftime("%d-%m-%Y"))
+print("Current Time:", now.strftime("%H:%M:%S"))</pre>
+        <p class="output">Output: Current Date: 31-08-2026 / Current Time: 14:30:00</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">49) OS Module - Get Current Directory</h4>
+        <p class="q-desc">Use os module to get current working directory.</p>
+<pre>import os
+
+cwd = os.getcwd()
+print("Current Directory:", cwd)
+print("Files:", os.listdir(".")[:5])</pre>
+        <p class="output">Output: Current Directory: C:/Users/... / Files: [...]</p>
+      </article>
+
+      <article class="q-card">
+        <h4 class="q-title">50) Custom Module Import</h4>
+        <p class="q-desc">Create and use a custom module.</p>
+<pre># Save this as mymodule.py:
+def greet(name):
+    return f"Hello {name}!"
+def add(a, b):
+    return a + b
+
+# In main file:
+import mymodule
+print(mymodule.greet("Python"))
+print(mymodule.add(10, 20))</pre>
+        <p class="output">Output: Hello Python! / 30</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      Python Easy Programs - Topic Wise | 50 Programs | Beginner Level
+    </footer>
+  </section>
+
+</body>
+</html>
