@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Final Exam Paper - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.2pt;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.9pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.55pt;
+      line-height: 1.37;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.5pt;
+      line-height: 1.38;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 9pt;
+      line-height: 1.33;
+    }
+
+    .code {
+      display: block;
+      white-space: pre;
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.8pt;
+      line-height: 1.27;
+      margin-top: 0.9mm;
+      background: #f5f9fd;
+      border: 1px solid #d8e2ec;
+      border-radius: 1mm;
+      padding: 1.45mm 1.8mm;
+      tab-size: 4;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Python Final Exam Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Python - Final Exam Paper</div>
+        <div class="subtitle">Syllabus: If-Else, Match, Loops, Functions, File Handling, OOP</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 90 Minutes</div>
+      <div><b>Total Marks:</b> 100</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs (output guessing included), Section B has 10 fill in the blanks, and Section C has 12 programs. Attempt any <b>8 out of 10</b> programs in Section C.
+    </section>
+
+    <!-- ==================== SECTION A: MCQs ==================== -->
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        What is the output of the following code?
+        <span class="code">num = 7
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")</span>
+        <span class="opts">A) Even  B) Odd  C) Error  D) 7</span>
+      </li>
+      <li>
+        What is the output of the following code?
+        <span class="code">day = 3
+match day:
+    case 1: print("Mon")
+    case 2: print("Tue")
+    case 3: print("Wed")
+    case _: print("Invalid")</span>
+        <span class="opts">A) Mon  B) Tue  C) Wed  D) Invalid</span>
+      </li>
+      <li>
+        What is the output of the following code?
+        <span class="code">i = 1
+while i <= 5:
+    print(i, end=" ")
+    i += 2</span>
+        <span class="opts">A) 1 2 3 4 5  B) 1 3 5  C) 2 4  D) 1 2 3</span>
+      </li>
+      <li>
+        What is the output of the following code?
+        <span class="code">def add(a, b):
+    return a + b
+print(add(3, 7))</span>
+        <span class="opts">A) 37  B) 10  C) (3, 7)  D) Error</span>
+      </li>
+      <li>
+        What is the output of the following code?
+        <span class="code">text = "Hello"
+count = 0
+for ch in text:
+    if ch in "aeiou":
+        count += 1
+print(count)</span>
+        <span class="opts">A) 5  B) 2  C) 3  D) 1</span>
+      </li>
+      <li>
+        What does the mode <b>"w"</b> do when opening an existing file?
+        <span class="opts">A) Reads the file  B) Overwrites the content  C) Appends to the content  D) Creates a new folder</span>
+      </li>
+      <li>
+        What is the output of the following code?
+        <span class="code">n = 4
+fact = 1
+i = 1
+while i <= n:
+    fact *= i
+    i += 1
+print(fact)</span>
+        <span class="opts">A) 24  B) 120  C) 10  D) 4</span>
+      </li>
+      <li>
+        Which keyword is used to define a function in Python?
+        <span class="opts">A) function  B) func  C) def  D) define</span>
+      </li>
+      <li>
+        What is the output of the following code?
+        <span class="code">num = 1234
+rev = 0
+while num > 0:
+    rev = rev * 10 + num % 10
+    num //= 10
+print(rev)</span>
+        <span class="opts">A) 1234  B) 4321  C) 1243  D) 4231</span>
+      </li>
+      <li>
+        What is the output of the following code?
+        <span class="code">light = "Red"
+match light:
+    case "Red":    print("Stop")
+    case "Yellow": print("Slow Down")
+    case "Green":  print("Go")
+    case _:        print("Invalid")</span>
+        <span class="opts">A) Go  B) Slow Down  C) Stop  D) Invalid</span>
+      </li>
+    </ol>
+
+    <!-- ==================== SECTION B: FILL IN THE BLANKS ==================== -->
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>The keyword used to define a function in Python is <span class="blank">__________</span>.</li>
+      <li>The mode <b>"a"</b> is used to <span class="blank">__________</span> content to a file.</li>
+      <li>The <span class="blank">__________</span> and <b>case</b> keywords are used for pattern matching in Python 3.10+.</li>
+      <li>A <span class="blank">__________</span> loop executes as long as the condition is True.</li>
+      <li>The <b>return</b> statement is used to send a value back from a <span class="blank">__________</span>.</li>
+      <li>The file mode <b>"r"</b> stands for <span class="blank">__________</span> mode.</li>
+      <li>The <span class="blank">__________</span> case in a match statement matches any value that is not handled by previous cases.</li>
+      <li>The <b>for</b> loop in Python iterates over a <span class="blank">__________</span> (such as a list, string, or range).</li>
+      <li>The <span class="blank">__________</span> method is used to close an opened file in Python.</li>
+      <li>A function that calls itself is known as a <span class="blank">__________</span> function.</li>
+    </ol>
+
+    <!-- ==================== SECTION C: PROGRAMS ==================== -->
+    <h3>Section C: Programs (Attempt Any 8 out of 10) (8 x 10 = 80 Marks)</h3>
+    <p class="marks">Write complete Python programs for any 7 of the following 12 questions. Each program carries approximately 11.4 marks.</p>
+    <ol class="single-col">
+      <li>
+        Check if a number is positive, negative or zero.
+      </li>
+      <li>
+        Print multiplication table of a number.
+      </li>
+      <li>
+        Calculate factorial using while loop.
+      </li>
+      <li>
+        Write a function that checks even or odd.
+      </li>
+      <li>
+        Count the number of vowels in a string.
+      </li>
+      <li>
+        Create a file and write text into it.
+      </li>
+      <li>
+        Find sum of all elements in a list.
+      </li>
+      <li>
+        Write a function to add two numbers.
+      </li>
+  
+      <li>
+        Write a Python program to create a class <b>Student</b> with instance variables <b>name</b>, <b>roll_no</b>, and <b>marks</b>. Use a constructor to initialize the values and create a method to display the student details.
+      </li>
+      <li>
+        Write a Python program to create an <b>Employee</b> class having instance variables <b>name</b> and <b>salary</b>, and a class variable <b>company</b>. Create multiple objects and display their details.
+      </li>
+    </ol>
+
+    <div class="footer">End of Paper | All the Best!</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>
