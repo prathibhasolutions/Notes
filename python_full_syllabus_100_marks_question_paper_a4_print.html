@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Full Syllabus Question Paper - 100 Marks - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --page-margin: 11mm;
+      --ink: #14202b;
+      --muted: #52606d;
+      --line: #233445;
+      --soft-line: #bac5cf;
+      --panel: #f6f8fb;
+      --panel-strong: #e8eef5;
+      --accent: #143f6b;
+      --accent-soft: #2a628f;
+      --paper-edge: #d5dde6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #e6ebf1 0%, #dce4ec 100%);
+      font-family: "Times New Roman", Georgia, serif;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      margin: 8mm auto;
+      background: #fff;
+      min-height: 297mm;
+      padding: var(--page-margin);
+      border: 1px solid var(--paper-edge);
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 3mm 8mm rgba(17, 30, 44, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .paper + .paper {
+      page-break-before: always;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at top right, rgba(20, 63, 107, 0.08), transparent 27%), linear-gradient(135deg, rgba(15, 76, 129, 0.04) 0%, rgba(15, 76, 129, 0) 38%);
+      pointer-events: none;
+    }
+
+    .header {
+      border: 1.2px solid var(--line);
+      background: linear-gradient(180deg, var(--panel) 0%, #ffffff 100%);
+      padding: 3.4mm 3.6mm;
+      display: grid;
+      grid-template-columns: 18mm 1fr auto;
+      gap: 3.4mm;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      border-radius: 2mm;
+    }
+
+    .logo {
+      width: 15mm;
+      height: 15mm;
+      border: 1px solid #9caaba;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 1.6mm;
+      box-shadow: inset 0 0 0 1px #eef2f6;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title-block {
+      text-align: left;
+      line-height: 1.15;
+    }
+
+    .institute {
+      font-size: 12.6pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #0f2943;
+    }
+
+    .exam-title {
+      margin-top: 0.9mm;
+      font-size: 14.3pt;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .subject-line {
+      margin-top: 0.9mm;
+      font-size: 9pt;
+      color: #425263;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+    }
+
+    .paper-stamp {
+      border: 1px solid #9db0c3;
+      background: linear-gradient(180deg, #ffffff 0%, var(--panel-strong) 100%);
+      color: var(--accent);
+      padding: 1.6mm 2.4mm;
+      font-size: 8.6pt;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .meta {
+      margin-top: 3mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.4pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta div {
+      padding: 2.1mm 2.4mm;
+      min-height: 9.2mm;
+      border: 1px solid var(--soft-line);
+      background: #fff;
+      border-radius: 1.6mm;
+      box-shadow: inset 0 0 0 1px #f7f9fb;
+    }
+
+    .rule-box {
+      margin-top: 3mm;
+      border: 1px solid var(--soft-line);
+      border-left: 2.2mm solid var(--accent);
+      padding: 2.4mm 2.6mm;
+      font-size: 9pt;
+      line-height: 1.45;
+      position: relative;
+      z-index: 1;
+      background: #fbfdff;
+      border-radius: 0 1.6mm 1.6mm 0;
+    }
+
+    .rule-box b {
+      color: #0d3559;
+      display: inline-block;
+      margin-bottom: 0.7mm;
+    }
+
+    .rule-box ol {
+      padding-left: 5mm;
+      margin: 0.6mm 0 0 0;
+    }
+
+    h3 {
+      margin: 4mm 0 1.8mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid var(--soft-line);
+      background: linear-gradient(180deg, var(--panel) 0%, #ffffff 100%);
+      color: var(--accent);
+      padding: 1.8mm 2.3mm;
+      position: relative;
+      z-index: 1;
+      border-radius: 1.5mm;
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 5.4mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    li {
+      margin: 0 0 2.1mm;
+      line-height: 1.42;
+      font-size: 9.35pt;
+      padding: 0 0 1.3mm 0.3mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d9e1e8;
+    }
+
+    .code {
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.9pt;
+      white-space: pre-wrap;
+      background: linear-gradient(180deg, #f7fafd 0%, #f1f6fb 100%);
+      border: 1px solid #d7e1ea;
+      border-left: 1.6mm solid #9db8d3;
+      padding: 1.7mm 2mm;
+      margin-top: 1mm;
+      line-height: 1.3;
+      border-radius: 1.2mm;
+    }
+
+    .inline-code {
+      font-family: "Courier New", Consolas, monospace;
+      font-size: 8.9pt;
+      background: #f4f8fc;
+      border: 1px solid #d6e1ec;
+      padding: 0.2mm 1mm;
+      border-radius: 0.8mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.8mm;
+      font-size: 9.1pt;
+      color: #1c3348;
+    }
+
+    .marks {
+      font-size: 8.7pt;
+      color: #3b556d;
+      margin-top: 1mm;
+      margin-bottom: 2.4mm;
+      position: relative;
+      z-index: 1;
+      background: #f6f9fc;
+      border: 1px solid #d8e1ea;
+      padding: 1.5mm 2mm;
+      border-radius: 1.3mm;
+    }
+
+    .example {
+      margin-top: 0.9mm;
+      font-size: 8.7pt;
+      color: #35506a;
+      background: #f8fbfe;
+      border: 1px solid #dbe4ec;
+      border-left: 1.2mm solid #86a7c5;
+      padding: 1.1mm 1.7mm;
+      border-radius: 1.1mm;
+      line-height: 1.35;
+    }
+
+    .example b {
+      color: #173f66;
+    }
+
+    .sub {
+      margin: 1.4mm 0 1.4mm 2mm;
+      padding: 1.2mm 1.6mm;
+      border-left: 1.2mm solid #9db8d3;
+      background: #fafcfe;
+      font-size: 9.1pt;
+      line-height: 1.4;
+      break-inside: avoid;
+    }
+
+    .sub b {
+      color: #163d63;
+    }
+
+    .tag {
+      float: right;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #1c4d78;
+      border: 1px solid #b9cfe0;
+      background: #eef5fb;
+      padding: 0.3mm 1.4mm;
+      border-radius: 999px;
+      margin-left: 2mm;
+    }
+
+    table.tbl {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.4mm;
+      font-size: 8.8pt;
+      position: relative;
+      z-index: 1;
+    }
+
+    table.tbl th,
+    table.tbl td {
+      border: 1px solid #cbd7e2;
+      padding: 1.1mm 1.4mm;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    table.tbl th {
+      background: #eef3f9;
+      color: #13395c;
+      font-weight: 700;
+    }
+
+    table.tbl tr {
+      break-inside: avoid;
+    }
+
+    .footer-note {
+      margin-top: 3mm;
+      border-top: 1px dashed #98a5b2;
+      padding-top: 1.8mm;
+      font-size: 8.6pt;
+      color: #4f5c68;
+      text-align: center;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 8mm;
+      text-align: right;
+      color: #44515d;
+      font-size: 9pt;
+      font-family: Georgia, serif;
+    }
+
+    .key-grid {
+      margin-top: 3mm;
+      columns: 2;
+      column-gap: 6mm;
+      font-size: 9.1pt;
+      line-height: 1.4;
+      position: relative;
+      z-index: 1;
+    }
+
+    .key-item {
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e1ea;
+      padding: 0.7mm 0;
+    }
+
+    .key-item b {
+      color: #13395c;
+    }
+
+    .key-note {
+      font-size: 8.4pt;
+      color: #4a5b6b;
+    }
+
+    .banner {
+      margin-top: 2.5mm;
+      border: 1.2px solid #9db0c3;
+      border-radius: 1.5mm;
+      background: linear-gradient(180deg, #fff 0%, var(--panel-strong) 100%);
+      color: var(--accent);
+      padding: 2mm 2.6mm;
+      font-size: 9.4pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        box-shadow: none;
+        border: 1px solid var(--paper-edge);
+        border-top: 2.2mm solid var(--accent);
+        min-height: calc(297mm - 20mm);
+        page-break-after: auto;
+      }
+
+      .paper + .paper {
+        page-break-before: always;
+      }
+
+      .header,
+      .meta div,
+      .rule-box,
+      h3,
+      .marks,
+      .code,
+      .inline-code,
+      .banner {
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Python Full Syllabus Question Paper">
+    <header class="header">
+      <div class="logo" aria-label="Institute Logo">
+        <img src="prathibha_logo.png" alt="Institute logo" />
+      </div>
+      <div class="title-block">
+        <div class="institute">Prathibha Institute</div>
+        <div class="exam-title">Python Full Syllabus Examination</div>
+        <div class="subject-line">Programming in Python &mdash; 100 Marks &mdash; Difficult Level</div>
+      </div>
+      <div class="paper-stamp">Question Paper</div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 3 Hours</div>
+      <div><b>Maximum Marks:</b> 100</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="rule-box" aria-label="Instructions">
+      <b>General Instructions:</b>
+      <ol>
+        <li>Section A and Section B are compulsory and carry 1 mark each.</li>
+        <li>Section C: Answer any <b>5</b> questions out of 9. Each question carries <b>4</b> marks.</li>
+        <li>Section D: Answer any <b>3</b> programs out of 4. Each program carries <b>20</b> marks, split into sub-parts as shown.</li>
+        <li>Write the <span class="inline-code">def</span> / <span class="inline-code">class</span> header, the complete logic and the output. Rough work is allowed only on the answer sheet.</li>
+        <li>Programs must be tested with valid input. Programs containing syntax errors will be awarded marks only for the correct approach shown in the logic part.</li>
+        <li>Answers to Section A and Section B should be written in the OMR answer sheet provided.</li>
+      </ol>
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 &times; 1 = 10 Marks)</h3>
+    <ol>
+      <li>What is printed by the following code?<span class="tag">1 Mark</span>
+        <div class="code">def add(x, items=[]):
+    items.append(x)
+    return items
+
+print(add(1), add(2))</div>
+        <span class="opts">A) [1] [1, 2] &nbsp;&nbsp; B) [1, 2] [1, 2] &nbsp;&nbsp; C) [1] [1] &nbsp;&nbsp; D) [1, 2] [1]</span>
+      </li>
+      <li>What is printed by the following code?<span class="tag">1 Mark</span>
+        <div class="code">fns = [lambda: i for i in range(3)]
+print([f() for f in fns])</div>
+        <span class="opts">A) [0, 1, 2] &nbsp;&nbsp; B) [2, 2, 2] &nbsp;&nbsp; C) [0, 0, 0] &nbsp;&nbsp; D) SyntaxError</span>
+      </li>
+      <li>What happens when the following code is executed?<span class="tag">1 Mark</span>
+        <div class="code">class Point:
+    __slots__ = ('x', 'y')
+
+p = Point()
+p.z = 10
+print(p.z)</div>
+        <span class="opts">A) Prints 10 &nbsp;&nbsp; B) Raises AttributeError &nbsp;&nbsp; C) Raises TypeError &nbsp;&nbsp; D) Raises SyntaxError</span>
+      </li>
+      <li>What is printed by the following code?<span class="tag">1 Mark</span>
+        <div class="code">class A: pass
+class B(A): pass
+class C(A): pass
+class D(B, C): pass
+
+print([c.__name__ for c in D.__mro__])</div>
+        <span class="opts">A) ['D', 'B', 'C', 'A', 'object'] &nbsp;&nbsp; B) ['D', 'C', 'B', 'A', 'object'] &nbsp;&nbsp; C) ['D', 'A', 'B', 'C', 'object'] &nbsp;&nbsp; D) ['D', 'B', 'A', 'C', 'object']</span>
+      </li>
+      <li>What is printed by the following code?<span class="tag">1 Mark</span>
+        <div class="code">a = "py"
+b = "".join(["p", "y"])
+print(a == b, a is b)</div>
+        <span class="opts">A) True True &nbsp;&nbsp; B) True False &nbsp;&nbsp; C) False True &nbsp;&nbsp; D) False False</span>
+      </li>
+      <li>What value of <span class="inline-code">x</span> is printed at the end?<span class="tag">1 Mark</span>
+        <div class="code">x = 0
+try:
+    x = 1
+    raise KeyError("k")
+except LookupError:
+    x = 2
+finally:
+    x += 10
+print(x)</div>
+        <span class="opts">A) 1 &nbsp;&nbsp; B) 2 &nbsp;&nbsp; C) 12 &nbsp;&nbsp; D) 11</span>
+      </li>
+      <li>What is printed by the following code?<span class="tag">1 Mark</span>
+        <div class="code">data = [1, 2, 3, 4]
+res = [y for x in data if (y := x * 2) &gt; 4]
+print(res)</div>
+        <span class="opts">A) [6, 8] &nbsp;&nbsp; B) [2, 4, 6, 8] &nbsp;&nbsp; C) [1, 2, 3, 4] &nbsp;&nbsp; D) SyntaxError</span>
+      </li>
+      <li>What is printed by the following code?<span class="tag">1 Mark</span>
+        <div class="code">class A:
+    def show(self): print("A", end=" ")
+
+class B(A):
+    def show(self):
+        super().show()
+        print("B", end=" ")
+
+class C(A):
+    def show(self):
+        super().show()
+        print("C", end=" ")
+
+class D(B, C):
+    def show(self):
+        super().show()
+        print("D", end=" ")
+
+D().show()</div>
+        <span class="opts">A) A B C D &nbsp;&nbsp; B) A C B D &nbsp;&nbsp; C) A B D C &nbsp;&nbsp; D) D B C A</span>
+      </li>
+      <li>What is the output of the following code?<span class="tag">1 Mark</span>
+        <div class="code">class Item:
+    def __init__(self, n): self.n = n
+    def __eq__(self, other): return self.n == other.n
+
+i1 = Item(5)
+i2 = Item(5)
+print(i1 == i2)
+print(hash(i1) == hash(i2))</div>
+        <span class="opts">A) Prints True, then raises TypeError &nbsp;&nbsp; B) Prints True then False &nbsp;&nbsp; C) Prints True then True &nbsp;&nbsp; D) Raises SyntaxError</span>
+      </li>
+      <li>What is printed by the following code?<span class="tag">1 Mark</span>
+        <div class="code">def squares(n):
+    for i in range(n):
+        yield i * i
+
+g = squares(4)
+print(next(g))
+print(list(g))
+print(list(g))</div>
+        <span class="opts">A) 0 then [1, 4, 9] then [1, 4, 9] &nbsp;&nbsp; B) 0 then [1, 4, 9] then [] &nbsp;&nbsp; C) 0 then [] then [] &nbsp;&nbsp; D) 1 then [4, 9] then []</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 &times; 1 = 10 Marks)</h3>
+    <ol>
+      <li>A function whose body contains the <span class="inline-code">yield</span> statement is automatically converted into a <span class="inline-code">__________</span> function.</li>
+      <li>Inside a nested function, the keyword used to create a binding to a variable of the <span class="inline-code">enclosing</span> function is <span class="inline-code">__________</span>.</li>
+      <li>The clause of a <span class="inline-code">try</span> statement that runs <b>only</b> when the <span class="inline-code">try</span> block completes without raising an exception is <span class="inline-code">__________</span>.</li>
+      <li>The clause that is executed <b>always</b> &mdash; even after a <span class="inline-code">return</span>, <span class="inline-code">break</span> or a raised exception &mdash; is the <span class="inline-code">__________</span> clause.</li>
+      <li>To guarantee that a file object is closed automatically even if an exception occurs while reading it, the file must be opened using the <span class="inline-code">__________</span> statement.</li>
+      <li>To declare a method that subclasses are forced to override, decorate it with <span class="inline-code">@abc.__________</span>.</li>
+      <li>The special method that Python calls automatically when an object is about to be destroyed is <span class="inline-code">__________</span>.</li>
+      <li>The <span class="inline-code">zip(a, b)</span> function stops when the <span class="inline-code">__________</span> of the given sequences is reached.</li>
+      <li>If a class defines <span class="inline-code">__eq__</span> but does not define <span class="inline-code">__hash__</span>, its instances become <span class="inline-code">__________</span> and cannot be used as dictionary keys or set elements.</li>
+      <li>The <span class="inline-code">__________</span> attribute of a normal class instance stores its instance attributes in a dictionary.</li>
+    </ol>
+
+    <h3>Section C: Theory Questions (Answer Any 5 Questions, 5 &times; 4 = 20 Marks)</h3>
+    <div class="marks">Answer any five questions only. Each question carries 4 marks. Write the answer in your own words; diagrams are accepted for 1 mark.</div>
+    <ol>
+      <li><span class="tag">4 Marks</span> Explain the difference between <span class="inline-code">break</span>, <span class="inline-code">continue</span> and <span class="inline-code">pass</span> with a code example for each. What is the purpose of the <span class="inline-code">else</span> clause of a <span class="inline-code">for</span> loop, and how does it differ from the <span class="inline-code">else</span> clause of a <span class="inline-code">try</span> statement?</li>
+      <li><span class="tag">4 Marks</span> What are mutable and immutable objects? Give two examples of each type. Why is using a list as a default value of a function parameter considered a mistake? Show the corrected form of the function <span class="inline-code">def add(x, lst=[])</span>.</li>
+      <li><span class="tag">4 Marks</span> Explain <b>local</b>, <b>global</b> and <b>nonlocal</b> scopes with one code snippet containing all three. What is the <b>LEGB</b> rule used by Python to resolve a name?</li>
+      <li><span class="tag">4 Marks</span> What is recursion? Explain the two compulsory parts of a recursive function with a code example. Write a recursive function to find the <span class="inline-code">n</span>th Fibonacci number and show why the same function written iteratively is faster. What is memoisation?</li>
+      <li><span class="tag">4 Marks</span> Explain the four pillars of object-oriented programming (encapsulation, abstraction, inheritance, polymorphism) with one Python example each. How does Python provide <b>encapsulation</b> when it has no true <span class="inline-code">private</span> keyword? Differentiate a <b>class variable</b> from an <b>instance variable</b>.</li>
+      <li><span class="tag">4 Marks</span> Explain the five types of inheritance with a small diagram for each. In multiple inheritance, how is the <b>MRO</b> (Method Resolution Order) computed? Trace the order in which <span class="inline-code">__init__</span> is executed in a diamond inheritance using <span class="inline-code">super()</span>.</li>
+      <li><span class="tag">4 Marks</span> What is polymorphism in Python? Explain <b>duck typing</b>, <b>method overriding</b> and <b>operator overloading</b>. Write a class that overloads <span class="inline-code">__add__</span>, <span class="inline-code">__eq__</span>, <span class="inline-code">__lt__</span> and <span class="inline-code">__len__</span>. How is the <span class="inline-code">abc</span> module used to enforce polymorphism?</li>
+      <li><span class="tag">4 Marks</span> Explain the file modes <span class="inline-code">r</span>, <span class="inline-code">w</span>, <span class="inline-code">a</span>, <span class="inline-code">x</span>, <span class="inline-code">+</span> and <span class="inline-code">b</span> using a table. Why is the <span class="inline-code">with</span> statement preferred over <span class="inline-code">open()</span>? Explain <span class="inline-code">read()</span>, <span class="inline-code">readline()</span>, <span class="inline-code">readlines()</span>, <span class="inline-code">write()</span>, <span class="inline-code">writelines()</span>, <span class="inline-code">seek()</span> and <span class="inline-code">tell()</span>.</li>
+      <li><span class="tag">4 Marks</span> Explain <span class="inline-code">try</span> / <span class="inline-code">except</span> / <span class="inline-code">else</span> / <span class="inline-code">finally</span> with a code example. How do you raise a built-in exception and a <b>custom</b> exception? What is the purpose of <span class="inline-code">raise ... from ...</span>? Name any four built-in exceptions and their uses.</li>
+    </ol>
+
+    <h3>Section D: Programs (Answer Any 3 Programs, 3 &times; 20 = 60 Marks)</h3>
+    <div class="marks">Answer any three programs. Each program carries 20 marks and is split into sub-parts. Write complete, tested programs.</div>
+    <ol>
+      <li><span class="tag">20 Marks</span> <b>Functions, Nested Loops, Recursion and Exception Handling.</b>
+        <div class="sub">
+          <b>(a) Nested loops &mdash; 5 marks.</b> Write a function <span class="inline-code">show_pyramid(n)</span> that uses only nested <span class="inline-code">for</span> loops (no string multiplication) to print a numbered pyramid. Row <span class="inline-code">r</span> prints the row number, then <span class="inline-code">n - r</span> spaces, then <span class="inline-code">2*r - 1</span> stars. Call the function for <span class="inline-code">n = 4</span>.
+          <div class="example"><b>Example Output:</b><br />1&nbsp;&nbsp;&nbsp;*<br />2&nbsp;&nbsp;***<br />3&nbsp;&nbsp;*****<br />4*******</div>
+        </div>
+        <div class="sub">
+          <b>(b) Recursion &mdash; 8 marks.</b> The Pell sequence is defined as <span class="inline-code">P(0) = 0</span>, <span class="inline-code">P(1) = 1</span>, <span class="inline-code">P(n) = 2*P(n-1) + P(n-2)</span>. Write <b>(i)</b> a recursive function <span class="inline-code">pell_rec(n)</span>, <b>(ii)</b> an iterative function <span class="inline-code">pell_iter(n)</span> using a loop, and <b>(iii)</b> a recursive function <span class="inline-code">pell_sum(n)</span> that returns <span class="inline-code">P(0) + P(1) + ... + P(n)</span> by calling <span class="inline-code">pell_rec()</span> itself. Print a table of <span class="inline-code">n</span>, <span class="inline-code">pell_rec(n)</span> and <span class="inline-code">pell_iter(n)</span> for <span class="inline-code">n = 0</span> to <span class="inline-code">12</span> and confirm both match. Use a <span class="inline-code">try / except</span> block to reject a negative <span class="inline-code">n</span> with a meaningful message.
+        </div>
+        <div class="sub">
+          <b>(c) Input validation with a custom exception &mdash; 7 marks.</b> Define <span class="inline-code">class InvalidNumberError(Exception)</span> with a custom message. Write <span class="inline-code">read_number()</span> that keeps asking the user for a <b>positive integer</b>; it must <span class="inline-code">raise</span> <span class="inline-code">InvalidNumberError</span> for a non-numeric input or a value &lt;= 0, and <span class="inline-code">except</span> it to print the error and re-prompt. If the user fails 3 times, print a final message and end the program. Demonstrate the function with valid and invalid inputs.
+        </div>
+      </li>
+      <li><span class="tag">20 Marks</span> <b>Abstract Base Classes, Inheritance, Polymorphism and File Handling.</b>
+        <div class="sub">
+          <b>(a) Abstract base class &mdash; 6 marks.</b> Using the <span class="inline-code">abc</span> module, create an abstract base class <span class="inline-code">Shape</span> with an <span class="inline-code">__init__</span> that stores a <span class="inline-code">name</span>, an abstract method <span class="inline-code">area()</span>, an abstract method <span class="inline-code">perimeter()</span> and a <span class="inline-code">__str__</span> that returns the name and the area. Implement three subclasses: <span class="inline-code">Rectangle(length, width)</span>, <span class="inline-code">Circle(radius)</span> (use <span class="inline-code">math.pi</span>) and <span class="inline-code">Triangle(a, b, c)</span> (area by Heron's formula). Show that <span class="inline-code">Shape()</span> itself raises <span class="inline-code">TypeError</span>.
+        </div>
+        <div class="sub">
+          <b>(b) Runtime polymorphism &mdash; 6 marks.</b> Create a list containing at least five shapes of <b>different</b> classes. Sort the list in descending order of area using <span class="inline-code">sorted(key=..., reverse=True)</span>. Print each shape by relying only on <span class="inline-code">print(shape)</span> (polymorphic call to <span class="inline-code">__str__</span>), and print the total area computed with <span class="inline-code">sum()</span> and a lambda.
+        </div>
+        <div class="sub">
+          <b>(c) File handling &mdash; 8 marks.</b> Write the name, area (rounded to 2 decimals) and perimeter of every shape to a file <span class="inline-code">shapes.csv</span> using <span class="inline-code">with open("shapes.csv", "w", newline="")</span> and the <span class="inline-code">csv</span> module. Then read the file back line by line with <span class="inline-code">open()</span> in read mode, convert the area field to <span class="inline-code">float</span> and print the total area <b>computed from the file</b>. Handle <span class="inline-code">FileNotFoundError</span> and <span class="inline-code">ValueError</span> (a non-numeric field) using <span class="inline-code">try / except</span>, and close the file safely with a <span class="inline-code">with</span> statement.
+        </div>
+      </li>
+      <li><span class="tag">20 Marks</span> <b>Custom Exception Hierarchy, Operator Overloading and File Handling.</b>
+        <div class="sub">
+          <b>(a) Exception hierarchy and class &mdash; 7 marks.</b> Define <span class="inline-code">BankError(Exception)</span>, <span class="inline-code">InsufficientBalance(BankError)</span> and <span class="inline-code">InvalidAmount(BankError)</span>. Write a class <span class="inline-code">Account</span> with <span class="inline-code">acc_no</span>, <span class="inline-code">name</span>, <span class="inline-code">balance</span> and a <span class="inline-code">history</span> list, with methods <span class="inline-code">deposit(amount)</span>, <span class="inline-code">withdraw(amount)</span>, and the special methods <span class="inline-code">__str__</span>, <span class="inline-code">__repr__</span>, <span class="inline-code">__eq__</span> (two accounts are equal when the account numbers match) and <span class="inline-code">__lt__</span> (compare balances).
+        </div>
+        <div class="sub">
+          <b>(b) Handling errors &mdash; 7 marks.</b> Demonstrate the use of <span class="inline-code">try / except</span> to catch: (i) a withdrawal larger than the balance &rarr; <span class="inline-code">InsufficientBalance</span>, (ii) a negative deposit &rarr; <span class="inline-code">InvalidAmount</span>, and (iii) a generic exception using <span class="inline-code">except Exception as e</span>. Use <span class="inline-code">raise ... from e</span> at least once to show exception chaining, and print the chained traceback message.
+        </div>
+        <div class="sub">
+          <b>(c) Transaction log in a file &mdash; 6 marks.</b> Append every transaction (type, amount, running balance) of every account to a file <span class="inline-code">bank.txt</span> using <span class="inline-code">with open("bank.txt", "a")</span>. Read the file back and print a per-account balance summary. Use a <span class="inline-code">finally</span> block to guarantee that a confirmation message such as <span class="inline-code">"File closed safely"</span> is printed, and use <span class="inline-code">try / except</span> to handle <span class="inline-code">FileNotFoundError</span>.
+        </div>
+      </li>
+      <li><span class="tag">20 Marks</span> <b>Comprehensive Program: Menu-driven Record System.</b>
+        <div class="sub">
+          <b>(a) Menu-driven system &mdash; 7 marks.</b> Write a <b>Student Record System</b> using functions and a list of dictionaries. The menu must contain: <b>1.</b> Add student (roll no, name, marks), <b>2.</b> Display all students, <b>3.</b> Search by roll number / name, <b>4.</b> Delete a student by roll number, <b>5.</b> Exit. Use a <span class="inline-code">while True</span> loop with <span class="inline-code">break</span> for the exit option and <span class="inline-code">elif</span> for the other choices.
+        </div>
+        <div class="sub">
+          <b>(b) Persistence and validation &mdash; 7 marks.</b> Store the records in a file <span class="inline-code">students.txt</span>: append a line when a student is added and rewrite the whole file when a student is deleted. Load the records into the list when the program starts. Use <span class="inline-code">try / except FileNotFoundError</span> to handle a missing file and <span class="inline-code">try / except ValueError</span> when converting the marks read from the file to <span class="inline-code">int</span>. Print a message if the roll number already exists.
+        </div>
+        <div class="sub">
+          <b>(c) Nested loops, grades and recursion &mdash; 6 marks.</b> Print all students in a formatted table using nested loops (an outer loop over the students and an inner loop over the fields to be displayed). Assign the grade with <span class="inline-code">if / elif / else</span>: marks &ge; 90 &rarr; <b>A</b>, &ge; 75 &rarr; <b>B</b>, &ge; 60 &rarr; <b>C</b>, &ge; 45 &rarr; <b>D</b>, otherwise <b>F</b>. Finally, write a <b>recursive</b> function <span class="inline-code">total(marks_list)</span> that returns the sum of the marks by calling itself with the shortened list <span class="inline-code">marks_list[1:]</span> and returns 0 for an empty list. Use it to print the class average (total marks divided by the number of students).
+        </div>
+      </li>
+    </ol>
+
+    <p class="footer-note">End of Question Paper &mdash; Best of Luck</p>
+  </section>
+
+  <section class="paper" aria-label="Answer Key and Marking Scheme">
+    <header class="header">
+      <div class="logo" aria-label="Institute Logo">
+        <img src="prathibha_logo.png" alt="Institute logo" />
+      </div>
+      <div class="title-block">
+        <div class="institute">Prathibha Institute</div>
+        <div class="exam-title">Answer Key &amp; Marking Scheme</div>
+        <div class="subject-line">Programming in Python &mdash; 100 Marks &mdash; For Examiner Use Only</div>
+      </div>
+      <div class="paper-stamp">Answer Key</div>
+    </header>
+
+    <div class="banner">For Examiner Use Only &mdash; Detach Before Distribution</div>
+
+    <h3>Section A: MCQ Answer Key (10 Marks)</h3>
+    <div class="key-grid">
+      <div class="key-item"><b>1. B</b> &mdash; [1, 2] [1, 2]. The default list is created once; both calls mutate the <i>same</i> object, so both printed references show the final state.<br /><span class="key-note"><b>Common trap:</b> students usually answer A.</span></div>
+      <div class="key-item"><b>2. B</b> &mdash; [2, 2, 2]. The lambda captures the variable <span class="inline-code">i</span>, not its value; late binding makes all three read the final value 2.</div>
+      <div class="key-item"><b>3. B</b> &mdash; AttributeError. <span class="inline-code">__slots__</span> removes <span class="inline-code">__dict__</span>, so only the listed attributes may be set.</div>
+      <div class="key-item"><b>4. A</b> &mdash; ['D', 'B', 'C', 'A', 'object']. C3 linearisation keeps the left base first.</div>
+      <div class="key-item"><b>5. B</b> &mdash; True False. <span class="inline-code">==</span> compares values; <span class="inline-code">is</span> compares identity, and a joined string is not the interned literal.</div>
+      <div class="key-item"><b>6. C</b> &mdash; 12. <span class="inline-code">KeyError</span> is a subclass of <span class="inline-code">LookupError</span>; the <span class="inline-code">finally</span> block still runs and adds 10.</div>
+      <div class="key-item"><b>7. A</b> &mdash; [6, 8]. The walrus operator binds <span class="inline-code">y</span> inside the condition so the expression can use it.</div>
+      <div class="key-item"><b>8. B</b> &mdash; A C B D. MRO is D, B, C, A; <span class="inline-code">super()</span> in B continues with C, which prints A first.</div>
+      <div class="key-item"><b>9. A</b> &mdash; prints True, then TypeError. Defining <span class="inline-code">__eq__</span> sets <span class="inline-code">__hash__ = None</span> unless <span class="inline-code">__hash__</span> is also defined.</div>
+      <div class="key-item"><b>10. B</b> &mdash; 0, [1, 4, 9], []. A generator is exhausted after it is fully consumed.</div>
+    </div>
+
+    <h3>Section B: Fill In The Blanks Answer Key (10 Marks)</h3>
+    <div class="key-grid">
+      <div class="key-item"><b>1.</b> generator</div>
+      <div class="key-item"><b>2.</b> nonlocal</div>
+      <div class="key-item"><b>3.</b> else</div>
+      <div class="key-item"><b>4.</b> finally</div>
+      <div class="key-item"><b>5.</b> with</div>
+      <div class="key-item"><b>6.</b> abstractmethod</div>
+      <div class="key-item"><b>7.</b> __del__</div>
+      <div class="key-item"><b>8.</b> shortest</div>
+      <div class="key-item"><b>9.</b> unhashable</div>
+      <div class="key-item"><b>10.</b> __dict__</div>
+    </div>
+
+    <h3>Section C: Theory Marking Scheme (20 Marks)</h3>
+    <table class="tbl">
+      <thead>
+        <tr><th style="width: 12mm;">Q. No</th><th>Expected Key Points (4 Marks Each)</th><th style="width: 22mm;">Split</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><span class="inline-code">break</span> exits the innermost loop; <span class="inline-code">continue</span> skips to the next iteration; <span class="inline-code">pass</span> is a placeholder. Loop <span class="inline-code">else</span> runs when the loop finishes without a <span class="inline-code">break</span>; <span class="inline-code">try-else</span> runs when the try block raises no exception.</td><td>2 + 2</td></tr>
+        <tr><td>2</td><td>Mutable objects (list, dict, set) change in place; immutable ones (int, str, tuple, float) cannot. Default arguments are evaluated once at definition time; fix with <span class="inline-code">def add(x, lst=None)</span> and <span class="inline-code">lst = [] if lst is None else lst</span>.</td><td>1 + 2 + 1</td></tr>
+        <tr><td>3</td><td><span class="inline-code">global</span> rebinds a module-level name; <span class="inline-code">nonlocal</span> rebinds a name of the enclosing function; <span class="inline-code">local</span> is the innermost scope. LEGB: Local &rarr; Enclosing &rarr; Global &rarr; Built-in.</td><td>2 + 1 + 1</td></tr>
+        <tr><td>4</td><td>Base case + recursive case; <span class="inline-code">fib(n)</span> with <span class="inline-code">fib(n-1) + fib(n-2)</span>; naive recursion repeats work (O(2^n)) while the loop is O(n); memoisation caches results in a dict.</td><td>1 + 1 + 1 + 1</td></tr>
+        <tr><td>5</td><td>Encapsulation via name mangling (<span class="inline-code">__name</span>) and <span class="inline-code">@property</span>; abstraction through abstract methods; inheritance by subclassing; polymorphism by overriding. Class variables are shared, instance variables belong to one object (<span class="inline-code">self</span>).</td><td>2 + 1 + 1</td></tr>
+        <tr><td>6</td><td>Single, multiple, multilevel, hierarchical and hybrid (diamond) inheritance. MRO by C3 linearisation; in a diamond the base class is reached once; <span class="inline-code">super().__init__()</span> follows the MRO, not the source order.</td><td>2 + 1 + 1</td></tr>
+        <tr><td>7</td><td>Duck typing (behaviour, not type), overriding (subclass redefines a method) and operator overloading through dunder methods. <span class="inline-code">abc.ABC</span> + <span class="inline-code">@abstractmethod</span> forces subclasses to implement the interface.</td><td>1 + 1 + 1 + 1</td></tr>
+        <tr><td>8</td><td>Table of modes: <span class="inline-code">r</span> read, <span class="inline-code">w</span> write (truncates), <span class="inline-code">a</span> append, <span class="inline-code">x</span> exclusive create, <span class="inline-code">+</span> read and write, <span class="inline-code">b</span> binary. <span class="inline-code">with</span> closes the file automatically. Explain the six read/write functions.</td><td>2 + 1 + 1</td></tr>
+        <tr><td>9</td><td><span class="inline-code">except</span> catches, <span class="inline-code">else</span> runs on success, <span class="inline-code">finally</span> always runs. <span class="inline-code">raise ValueError("...")</span>; custom class inheriting <span class="inline-code">Exception</span>; <span class="inline-code">raise NewError(...) from e</span> keeps the cause. Four exceptions: <span class="inline-code">ValueError</span>, <span class="inline-code">TypeError</span>, <span class="inline-code">ZeroDivisionError</span>, <span class="inline-code">FileNotFoundError</span>.</td><td>1 + 1 + 1 + 1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Section D: Program Marking Scheme (60 Marks)</h3>
+    <table class="tbl">
+      <thead>
+        <tr><th style="width: 12mm;">Program</th><th>Sub-parts and Marks</th><th style="width: 22mm;">Total</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>P1</td>
+          <td><b>(a) 5</b> &mdash; correct nested loop structure 2, spacing/star logic 2, output 1.<br /><b>(b) 8</b> &mdash; recursive Pell correct 2, iterative Pell correct 2, recursive sum correct 2, table output + verification 1, <span class="inline-code">try/except</span> 1.<br /><b>(c) 7</b> &mdash; custom exception class 1, raising on invalid input 2, catching and re-prompting 2, attempt limit 1, valid demo 1.</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>P2</td>
+          <td><b>(a) 6</b> &mdash; ABC with two abstract methods 2, <span class="inline-code">__str__</span> 1, three correct subclasses 2, <span class="inline-code">TypeError</span> demo 1.<br /><b>(b) 6</b> &mdash; mixed list 1, sorting with <span class="inline-code">key</span> 2, polymorphic printing 1, total via <span class="inline-code">sum</span> 2.<br /><b>(c) 8</b> &mdash; correct write mode 1, <span class="inline-code">csv</span>/formatting 2, reading back 2, total from file 1, exception handling 2.</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>P3</td>
+          <td><b>(a) 7</b> &mdash; three-level exception hierarchy 2, <span class="inline-code">__init__</span> and history 2, deposit/withdraw 1, <span class="inline-code">__str__</span>/<span class="inline-code">__repr__</span> 1, <span class="inline-code">__eq__</span>/<span class="inline-code">__lt__</span> 1.<br /><b>(b) 7</b> &mdash; catching <span class="inline-code">InsufficientBalance</span> 2, <span class="inline-code">InvalidAmount</span> 2, generic handler 1, <span class="inline-code">raise ... from</span> 1, demonstration output 1.<br /><b>(c) 6</b> &mdash; append mode 1, transaction format 2, reading back and summary 2, <span class="inline-code">finally</span> 1.</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>P4</td>
+          <td><b>(a) 7</b> &mdash; menu display 1, add 1, display 1, search 1, delete 1, <span class="inline-code">while True</span> + <span class="inline-code">break</span> 1, <span class="inline-code">elif</span> usage 1.<br /><b>(b) 7</b> &mdash; append on add 1, rewrite on delete 1, load at start 1, <span class="inline-code">FileNotFoundError</span> 1, <span class="inline-code">ValueError</span> 1, duplicate roll check 1, list of dicts 1.<br /><b>(c) 6</b> &mdash; nested loop table 2, grade ladder 2, recursive total function + class average 2.</td>
+          <td>20</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="marks">
+      <b>Overall mark distribution:</b> Section A = 10 + Section B = 10 + Section C (5 &times; 4) = 20 + Section D (3 &times; 20) = 60 &rarr; <b>Total = 100 Marks</b>. Award 1 mark for the correct program logic even if a minor formatting error exists; deduct 1 mark per wrong output line in table-based sub-parts.
+    </div>
+
+    <p class="footer-note">End of Answer Key</p>
+  </section>
+
+  <p class="print-tip">Print tip: set scale to 100% and disable browser header/footer.</p>
+</body>
+</html>
