@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Functional Programming and OOP Full Test - 100 Marks - A4 Print</title>
+  <style>
+    :root {
+      --paper-w: 210mm;
+      --ink: #13212d;
+      --muted: #465867;
+      --line: #9cb0c2;
+      --soft: #d7e0e8;
+      --accent: #0f4f82;
+      --bg-top: #e8eef5;
+      --bg-bottom: #dde7f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 9mm;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+      font-family: "Times New Roman", Georgia, serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .paper {
+      width: var(--paper-w);
+      min-height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      border: 1px solid #c8d4e0;
+      border-top: 2.2mm solid var(--accent);
+      box-shadow: 0 2.8mm 8mm rgba(16, 32, 50, 0.09);
+      padding: 8mm 7.2mm;
+    }
+
+    .header {
+      border: 1px solid var(--line);
+      border-radius: 1.7mm;
+      padding: 2.7mm 3mm;
+      background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 16mm 1fr;
+      gap: 3mm;
+      align-items: center;
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border: 1px solid var(--soft);
+      border-radius: 1.2mm;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 13.1pt;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: #103a60;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 1mm;
+      text-align: center;
+      font-size: 8.6pt;
+      color: #42576c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 2.6mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2mm;
+      font-size: 9.3pt;
+    }
+
+    .meta div {
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      min-height: 8.3mm;
+      padding: 1.9mm 2.1mm;
+      background: #fff;
+    }
+
+    .instructions {
+      margin-top: 2.5mm;
+      border: 1px solid var(--soft);
+      border-left: 1.9mm solid var(--accent);
+      border-radius: 0 1.2mm 1.2mm 0;
+      padding: 2mm 2.2mm;
+      font-size: 9pt;
+      line-height: 1.42;
+      color: #2b3f52;
+      background: #fbfdff;
+    }
+
+    .instructions b {
+      color: #113f68;
+    }
+
+    h3 {
+      margin: 3.2mm 0 1.9mm;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: #124a76;
+      border: 1px solid var(--soft);
+      border-radius: 1.1mm;
+      padding: 1.5mm 2mm;
+      background: #f7fbff;
+    }
+
+    .marks {
+      margin: -0.7mm 0 1.8mm;
+      font-size: 8.55pt;
+      color: #3e566c;
+    }
+
+    .two-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.45pt;
+      line-height: 1.36;
+      column-count: 2;
+      column-gap: 6mm;
+      column-fill: balance;
+    }
+
+    .single-col {
+      margin: 0;
+      padding-left: 5.6mm;
+      font-size: 9.4pt;
+      line-height: 1.37;
+    }
+
+    li {
+      margin: 0 0 2.6mm;
+      break-inside: avoid;
+      border-bottom: 1px dotted #d8e2ec;
+      padding-bottom: 1.4mm;
+    }
+
+    .opts {
+      display: block;
+      margin-top: 0.6mm;
+      color: #223c52;
+      font-size: 8.9pt;
+      line-height: 1.45;
+      padding-left: 1.2mm;
+    }
+
+    .blank {
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      color: #2c4860;
+    }
+
+    pre {
+      margin: 1mm 0;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 8.6pt;
+      line-height: 1.35;
+      color: #223c52;
+    }
+
+    .footer {
+      margin-top: 3mm;
+      border-top: 1px dashed #a7b6c4;
+      padding-top: 1.2mm;
+      text-align: center;
+      font-size: 8.1pt;
+      color: #4b5f72;
+      text-transform: uppercase;
+      letter-spacing: 0.33px;
+    }
+
+    .print-tip {
+      width: var(--paper-w);
+      margin: 0 auto 7mm;
+      text-align: right;
+      color: #425463;
+      font-size: 8.5pt;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        min-height: calc(297mm - 18mm);
+        box-shadow: none;
+      }
+
+      .print-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="paper" aria-label="Java Functional Programming and OOP Full Test Question Paper">
+    <header class="header">
+      <div class="logo">
+        <img src="prathibha_logo.png" alt="Institute Logo" />
+      </div>
+      <div>
+        <div class="title">Java Functional Programming and OOP - Full Test</div>
+        <div class="subtitle">Syllabus: Arrays, Strings, Loops, Nested Loops, Methods and Functions, Recursion, Classes and Objects, Constructors, Encapsulation, Inheritance, Polymorphism, Abstraction, Interfaces</div>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Exam Metadata">
+      <div><b>Time:</b> 2 Hours</div>
+      <div><b>Total Marks:</b> 100</div>
+      <div><b>Name:</b> ____________________</div>
+    </section>
+
+    <section class="instructions" aria-label="Instructions">
+      <b>Instructions:</b> Answer all questions. Section A has 10 MCQs, Section B has 10 fill in the blanks, Section C has 5 theory questions, and Section D has 6 programs. Write programs in Java with proper syntax and sample output wherever applicable.
+    </section>
+
+    <h3>Section A: Multiple Choice Questions (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>
+        Which field gives the number of elements in an array?
+        <span class="opts">A) size<br>B) length<br>C) count<br>D) index</span>
+      </li>
+      <li>
+        Which loop is best when the number of iterations is known in advance?
+        <span class="opts">A) while<br>B) do-while<br>C) for<br>D) switch</span>
+      </li>
+      <li>
+        Which String method returns the number of characters in a string?
+        <span class="opts">A) size()<br>B) count()<br>C) length()<br>D) chars()</span>
+      </li>
+      <li>
+        A method that calls itself is called:
+        <span class="opts">A) static method<br>B) recursive method<br>C) abstract method<br>D) overloaded method</span>
+      </li>
+      <li>
+        Which OOP principle hides the internal data of a class?
+        <span class="opts">A) Inheritance<br>B) Polymorphism<br>C) Encapsulation<br>D) Abstraction</span>
+      </li>
+      <li>
+        Which method is called automatically when an object is created?
+        <span class="opts">A) main()<br>B) constructor<br>C) finalize()<br>D) toString()</span>
+      </li>
+      <li>
+        Which keyword is used by a class to inherit another class?
+        <span class="opts">A) implements<br>B) extends<br>C) inherits<br>D) super</span>
+      </li>
+      <li>
+        Which keyword is used to declare a class that cannot be instantiated?
+        <span class="opts">A) static<br>B) final<br>C) abstract<br>D) private</span>
+      </li>
+      <li>
+        Which access modifier provides the least accessibility?
+        <span class="opts">A) public<br>B) protected<br>C) default<br>D) private</span>
+      </li>
+      <li>
+        The ability of an object to take many forms is called:
+        <span class="opts">A) Abstraction<br>B) Encapsulation<br>C) Polymorphism<br>D) Inheritance</span>
+      </li>
+    </ol>
+
+    <h3>Section B: Fill In The Blanks (10 x 1 = 10 Marks)</h3>
+    <ol class="two-col">
+      <li>The number of elements in an array is given by its <span class="blank">__________</span> field.</li>
+      <li>A method that calls itself is called a <span class="blank">__________</span> method.</li>
+      <li>The <span class="blank">__________</span> loop is used when the number of iterations is known in advance.</li>
+      <li>The String method used to compare two strings is <span class="blank">__________</span>.</li>
+      <li>A class is a blueprint, and an object is an <span class="blank">__________</span> of a class.</li>
+      <li>Binding data and methods into a single unit is called <span class="blank">__________</span>.</li>
+      <li>A constructor has the same name as the <span class="blank">__________</span>.</li>
+      <li>The keyword used to inherit a class is <span class="blank">__________</span>.</li>
+      <li>Same method name with different parameters is called method <span class="blank">__________</span>.</li>
+      <li>An interface is implemented using the keyword <span class="blank">__________</span>.</li>
+    </ol>
+
+    <h3>Section C: Theory (5 x 4 = 20 Marks)</h3>
+    <p class="marks">Answer the following questions in brief. Support your answers with examples where necessary.</p>
+    <ol class="single-col">
+      <li>
+        Differentiate between method overloading and method overriding with one example each.
+      </li>
+      <li>
+        Explain the four pillars of OOP: encapsulation, inheritance, polymorphism, and abstraction.
+      </li>
+      <li>
+        What is recursion? Explain it with the help of a factorial example.
+      </li>
+      <li>
+        What is an array? Explain declaration, initialization, and traversal of an array with an example.
+      </li>
+      <li>
+        What is abstraction? Differentiate between an abstract class and an interface in brief.
+      </li>
+    </ol>
+
+    <h3>Section D: Programs (6 x 10 = 60 Marks)</h3>
+    <p class="marks">Write complete Java programs. Include proper input, logic, and output.</p>
+    <ol class="single-col">
+      <li>
+        Write a program to read 10 integers into an array and print the sum, largest element, smallest element, and average of the array.
+        <br><b>Sample Input:</b> 10 20 30 40 50 60 70 80 90 100
+        <br><b>Sample Output:</b> Sum: 550, Largest: 100, Smallest: 10, Average: 55.0
+      </li>
+      <li>
+        Write a program to read a string and count the number of vowels, consonants, digits, and spaces in it using loops and String methods.
+        <br><b>Sample Input:</b> Java 123 is Fun
+        <br><b>Sample Output:</b> Vowels: 4, Consonants: 5, Digits: 3, Spaces: 3
+      </li>
+      <li>
+        Write a nested-loop program to print the following star pattern up to n rows.
+        <pre>*
+**
+***
+****
+*****</pre>
+        <br><b>Sample Input:</b> 5
+        <br><b>Sample Output:</b> The pattern shown above.
+      </li>
+      <li>
+        Write a program with a method <b>isPrime(int n)</b> that returns true if a number is prime. Use this method to print all prime numbers from 1 to n.
+        <br><b>Sample Input:</b> 20
+        <br><b>Sample Output:</b> 2 3 5 7 11 13 17 19
+      </li>
+      <li>
+        Write a program using recursion to find the factorial of a number and to print the first n terms of the Fibonacci series.
+        <br><b>Sample Input:</b> 5
+        <br><b>Sample Output:</b> Factorial: 120, Fibonacci: 0 1 1 2 3
+      </li>
+      <li>
+        Create an abstract class <b>Shape</b> with an abstract method area(). Create subclasses <b>Circle</b> and <b>Rectangle</b> that implement area(). In main, use a Shape reference to call area() for both objects and print the results.
+        <br><b>Sample Input:</b> Circle radius: 7, Rectangle: 10 5
+        <br><b>Sample Output:</b> Circle Area: 153.86, Rectangle Area: 50
+      </li>
+    </ol>
+
+    <div class="footer">End of Paper</div>
+  </section>
+
+  <p class="print-tip">Print tip: Choose A4 portrait, scale 100%, and disable browser header/footer.</p>
+</body>
+</html>
